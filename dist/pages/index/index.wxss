@@ -1,0 +1,39 @@
+.title-text {
+  font-weight: bold;
+  font-size: 2em;
+}
+.item-new {
+  color: red;
+}
+.title-text {
+  font-weight: bold;
+  font-size: 2em;
+}
+.counter {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eaeaea;
+  padding: 2rem;
+}
+.userinfo-avatar {
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.usermotto {
+  margin-top: 100px;
+}
+.motto-title-text {
+  font-size: 3em;
+  padding-bottom: 1rem;
+}

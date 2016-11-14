@@ -1,0 +1,1421 @@
+{
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/app.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/global.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/global.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/regenerator/index.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/regenerator/index.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/asyncToGenerator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/asyncToGenerator.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/classCallCheck.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/classCallCheck.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/createClass.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/createClass.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/index.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/index.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/app.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/global.js": {
+    "mtime": "Wed Oct 12 2016 00:07:48 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/global.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/regenerator/index.js": {
+    "mtime": "Tue Oct 18 2016 06:44:22 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/regenerator-runtime/runtime-module.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/regenerator-runtime/runtime-module.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/regenerator/index.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/regenerator-runtime/runtime-module.js": {
+    "mtime": "Fri Nov 04 2016 22:38:02 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/get-own-property-names.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/get-own-property-names.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/typeof.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/typeof.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/regenerator-runtime/runtime.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/regenerator-runtime/runtime.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/regenerator-runtime/runtime-module.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/get-own-property-names.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/get-own-property-names.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/get-own-property-names.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/get-own-property-names.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/get-own-property-names.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.get-own-property-names.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.get-own-property-names.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_core.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_core.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/get-own-property-names.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.get-own-property-names.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-sap.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-sap.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopn-ext.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopn-ext.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.get-own-property-names.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-sap.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_export.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_export.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_core.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_core.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_fails.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_fails.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-sap.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_export.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_global.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_global.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_core.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_core.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_ctx.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_ctx.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_hide.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_hide.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_export.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_global.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_global.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_core.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_core.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_ctx.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_a-function.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_a-function.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_ctx.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_a-function.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_a-function.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_hide.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-dp.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-dp.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_property-desc.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_property-desc.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_descriptors.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_descriptors.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_hide.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-dp.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_an-object.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_an-object.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_ie8-dom-define.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_ie8-dom-define.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-primitive.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-primitive.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_descriptors.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_descriptors.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-dp.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_an-object.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-object.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-object.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_an-object.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-object.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-object.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_ie8-dom-define.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_descriptors.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_descriptors.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_fails.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_fails.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_dom-create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_dom-create.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_ie8-dom-define.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_descriptors.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_fails.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_fails.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_descriptors.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_fails.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_fails.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_dom-create.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_dom-create.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-primitive.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-primitive.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_property-desc.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_property-desc.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopn-ext.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-iobject.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-iobject.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopn.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopn.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopn-ext.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-iobject.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iobject.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iobject.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_defined.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_defined.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-iobject.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iobject.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_cof.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_cof.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iobject.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_cof.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_cof.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_defined.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_defined.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopn.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-keys-internal.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-keys-internal.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_enum-bug-keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_enum-bug-keys.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopn.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-keys-internal.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_has.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_has.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_array-includes.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_array-includes.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_shared-key.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_shared-key.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-keys-internal.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_has.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_has.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_array-includes.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-length.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-length.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-index.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-index.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_array-includes.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-length.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-integer.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-integer.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-length.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-integer.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-integer.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-index.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-index.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_shared-key.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_shared.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_shared.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_uid.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_uid.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_shared-key.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_shared.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_shared.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_uid.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_uid.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_enum-bug-keys.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_enum-bug-keys.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/typeof.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/symbol/iterator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/symbol/iterator.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/symbol.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/symbol.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/typeof.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/symbol/iterator.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/symbol/iterator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/symbol/iterator.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/symbol/iterator.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/symbol/iterator.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.string.iterator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.string.iterator.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/web.dom.iterable.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/web.dom.iterable.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks-ext.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks-ext.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/symbol/iterator.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.string.iterator.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_string-at.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_string-at.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-define.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-define.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.string.iterator.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_string-at.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_string-at.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-define.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_library.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_library.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_redefine.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_redefine.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iterators.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iterators.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-create.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-to-string-tag.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-to-string-tag.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gpo.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gpo.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-define.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_library.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_library.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_redefine.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_redefine.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iterators.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iterators.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-create.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-create.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-to-string-tag.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-to-string-tag.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-create.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-create.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-dps.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-dps.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_html.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_html.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-create.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-dps.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-keys.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-dps.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-keys.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-keys.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_html.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_html.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-to-string-tag.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-to-string-tag.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gpo.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-object.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-object.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gpo.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_to-object.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_to-object.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/web.dom.iterable.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.array.iterator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.array.iterator.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/web.dom.iterable.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.array.iterator.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_add-to-unscopables.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_add-to-unscopables.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-step.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-step.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.array.iterator.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_add-to-unscopables.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_add-to-unscopables.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-step.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-step.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks-ext.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks-ext.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/symbol.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/symbol/index.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/symbol/index.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/symbol.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/symbol/index.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.symbol.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.symbol.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.to-string.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.to-string.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es7.symbol.async-iterator.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es7.symbol.async-iterator.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es7.symbol.observable.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es7.symbol.observable.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/symbol/index.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.symbol.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_meta.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_meta.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks-define.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks-define.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_keyof.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_keyof.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_enum-keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_enum-keys.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-array.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-array.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopd.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopd.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-pie.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-pie.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gops.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gops.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.symbol.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_meta.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_meta.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_wks-define.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_wks-define.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_keyof.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_keyof.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_enum-keys.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gops.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gops.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-pie.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-pie.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_enum-keys.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gops.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gops.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-pie.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-pie.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-array.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-array.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-gopd.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-gopd.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.to-string.js": {
+    "mtime": "Sat Jul 09 2016 23:38:33 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.to-string.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es7.symbol.async-iterator.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es7.symbol.async-iterator.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es7.symbol.observable.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es7.symbol.observable.js": {
+    "mtime": "Mon Nov 14 2016 16:42:59 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/regenerator-runtime/runtime.js": {
+    "mtime": "Fri Nov 04 2016 22:38:02 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/promise.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/promise.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/set-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/set-prototype-of.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/create.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/regenerator-runtime/runtime.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/promise.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/promise.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/promise.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/promise.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/promise.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.promise.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.promise.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/promise.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.promise.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_classof.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_classof.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_an-instance.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_an-instance.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_for-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_for-of.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_species-constructor.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_species-constructor.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_task.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_task.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_microtask.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_microtask.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_redefine-all.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_redefine-all.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-species.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-species.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-detect.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-detect.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.promise.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_classof.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_classof.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_an-instance.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_an-instance.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_for-of.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-call.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-call.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-array-iter.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-array-iter.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/core.get-iterator-method.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/core.get-iterator-method.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_for-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-call.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-call.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_is-array-iter.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_is-array-iter.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/core.get-iterator-method.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/core.get-iterator-method.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_species-constructor.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_species-constructor.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_task.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_invoke.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_invoke.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_task.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_invoke.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_invoke.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_microtask.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_microtask.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_redefine-all.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_redefine-all.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-species.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-species.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_iter-detect.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_iter-detect.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/set-prototype-of.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/set-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/set-prototype-of.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/set-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/set-prototype-of.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.set-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.set-prototype-of.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/set-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.set-prototype-of.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-proto.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-proto.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.set-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_set-proto.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_set-proto.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/create.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/create.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/create.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/create.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.create.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.create.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/create.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.create.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.create.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/asyncToGenerator.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/asyncToGenerator.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/classCallCheck.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/classCallCheck.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/createClass.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/define-property.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/define-property.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/createClass.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/define-property.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/define-property.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/define-property.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/define-property.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/define-property.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.define-property.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.define-property.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/define-property.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.define-property.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.define-property.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/index.js": {
+    "mtime": "Fri Oct 21 2016 19:52:23 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/keys.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/create-page.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/create-page.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/component.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/component.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/list.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/list.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/prop-types.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/prop-types.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/index.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/keys.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/keys.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/keys.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/keys.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.keys.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.keys.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/keys.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.keys.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.keys.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/create-page.js": {
+    "mtime": "Thu Oct 20 2016 12:18:15 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/assign.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/assign.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/json/stringify.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/json/stringify.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/create-page.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/assign.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/assign.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/assign.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/assign.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/assign.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.assign.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.assign.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/assign.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.assign.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-assign.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-assign.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.assign.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/_object-assign.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/_object-assign.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/json/stringify.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/json/stringify.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/json/stringify.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/json/stringify.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/json/stringify.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/json/stringify.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/component.js": {
+    "mtime": "Wed Nov 02 2016 16:58:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/component.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/list.js": {
+    "mtime": "Fri Oct 21 2016 14:39:25 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/list.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/labrador/prop-types.js": {
+    "mtime": "Thu Oct 13 2016 12:40:05 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/labrador/prop-types.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/counter/counter.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/get-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/get-prototype-of.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/possibleConstructorReturn.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/possibleConstructorReturn.js",
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/inherits.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/inherits.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/counter/counter.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/core-js/object/get-prototype-of.js": {
+    "mtime": "Tue Oct 25 2016 05:25:07 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/get-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/get-prototype-of.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/core-js/object/get-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/fn/object/get-prototype-of.js": {
+    "mtime": "Mon Jul 18 2016 05:23:45 GMT+0800 (CST)",
+    "depends": {
+      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.get-prototype-of.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.get-prototype-of.js"
+    },
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/fn/object/get-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/core-js/library/modules/es6.object.get-prototype-of.js": {
+    "mtime": "Mon Jul 18 2016 05:23:46 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/core-js/library/modules/es6.object.get-prototype-of.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/possibleConstructorReturn.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/possibleConstructorReturn.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/inherits.js": {
+    "mtime": "Tue Oct 25 2016 05:25:08 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/inherits.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/counter/counter.test.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/counter/counter.test.js": {},
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/item/item.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/item/item.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/list/list.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/list/list.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/list/list.test.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/list/list.test.js": {},
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/title/title.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/components/title/title.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/index/index.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/pages/index/index.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/index/index.test.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/pages/index/index.test.js": {},
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/logs/logs.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/pages/logs/logs.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/utils/random-color.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/utils/random-color.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/utils/util.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/utils/util.js": {
+    "mtime": "Mon Nov 14 2016 16:43:00 GMT+0800 (CST)",
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/utils/util.test.js": {
+    "mtime": "Mon Nov 14 2016 16:42:24 GMT+0800 (CST)",
+    "depends": {},
+    "v": "0.5.12"
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/utils/util.test.js": {}
+}

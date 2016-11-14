@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="userinfo" catchtap="_dispatch" data-catchtap="handleViewTap">
+    <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
+  <view class="usermotto">
+    <view class="text-view motto-text-view">
+  <text class="title-text motto-title-text" catchtap="_dispatch" style="color:{{motto.color}};" data-catchtap="handleTap" data-path="motto">{{motto.text}}</text>
+</view>
+  </view>
+  <view class="list list-list">
+  <view class="text-view list-title-text-view">
+  <text class="title-text list-title-title-text" catchtap="_dispatch" style="color:{{list.title.color}};" data-catchtap="handleTap" data-path="list.title">{{list.title.text}}</text>
+</view>
+  <block wx:for="{{list.listItems}}" wx:for-index="_index_1" wx:for-item="_item_2"><view class="item list-listItems-item {{_item_2.cls}} list-listItems-{{_item_2.cls}}">
+  <view class="item-inner list-listItems-item-inner" catchtap="_dispatch" data-catchtap="handleTap" data-path="list.listItems.{{_index_1}}">
+    {{_item_2.title}}
+  </view>
+</view></block>
+</view>
+  <view class="counter counter-counter" catchtap="_dispatch" data-catchtap="handleTap" data-path="counter">
+  点击次数 {{counter.num}}
+</view>
+</view>
