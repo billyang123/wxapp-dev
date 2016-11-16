@@ -1,5 +1,6 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -60,12 +61,21 @@ var Account = function (_wx$Component) {
 	}
 
 	(0, _createClass3.default)(Account, [{
-		key: 'isLogin',
+		key: "isLogin",
 		value: function isLogin() {
 			this.checkLogin();
 		}
 	}, {
-		key: 'checkLogin',
+		key: "json2Form",
+		value: function json2Form(json) {
+			var str = [];
+			for (var p in json) {
+				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+			}
+			return str.join("&");
+		}
+	}, {
+		key: "checkLogin",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
 				var check, storageInfo, rdsData, rds, postdata, loginData, rdRes, userInfo, userInfoPost;
@@ -135,11 +145,11 @@ var Account = function (_wx$Component) {
 								_context.next = 28;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
-									//method:"POST",
+									method: "POST",
 									header: {
-										'Content-Type': 'application/x-www-form-urlencoded'
+										'content-type': 'application/x-www-form-urlencoded'
 									},
-									data: postdata
+									data: this.json2Form(postdata)
 								});
 
 							case 28:
@@ -160,9 +170,9 @@ var Account = function (_wx$Component) {
 								_context.next = 36;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
-									//method:"POST",
+									method: "POST",
 									header: {
-										'Content-Type': 'application/x-www-form-urlencoded'
+										'content-type': 'application/x-www-form-urlencoded'
 									},
 									data: {
 										rawData: userInfo.rawData,
@@ -183,7 +193,7 @@ var Account = function (_wx$Component) {
 								});
 
 							case 38:
-							case 'end':
+							case "end":
 								return _context.stop();
 						}
 					}
@@ -197,14 +207,14 @@ var Account = function (_wx$Component) {
 			return checkLogin;
 		}()
 	}, {
-		key: 'onLoad',
+		key: "onLoad",
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
-							case 'end':
+							case "end":
 								return _context2.stop();
 						}
 					}

@@ -8,6 +8,13 @@ export default class Account extends wx.Component {
 	isLogin(){
 		this.checkLogin();
 	}
+	json2Form(json) { 
+	  var str = []; 
+	  for(var p in json){ 
+	    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p])); 
+	  } 
+	  return str.join("&"); 
+	} 
 	async checkLogin(){
 		//调用应用实例的方法获取全局数据 	
 	    var check = await wx.checkSession();
@@ -32,20 +39,20 @@ export default class Account extends wx.Component {
 		    }
 		    let rdRes = await wx.request({
 	            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
-	            //method:"POST",
+	            method:"POST",
 	            header: {
-				    'Content-Type': 'application/x-www-form-urlencoded'
+				    'content-type': 'application/x-www-form-urlencoded'
 				},
-	            data: postdata
+	            data: this.json2Form(postdata)
 	        })
 			let userInfo = await wx.getUserInfo();
 			console.log(userInfo)
 			if(postdata.code){
 				let userInfoPost = await wx.request({
 		            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
-		            //method:"POST",
+		            method:"POST",
 		            header: {
-					    'Content-Type': 'application/x-www-form-urlencoded'
+					    'content-type': 'application/x-www-form-urlencoded'
 					},
 		            data: {
 		            	rawData:userInfo.rawData,
