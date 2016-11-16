@@ -5,7 +5,7 @@ export default class Account extends wx.Component {
 		login:false,
 		userInfo:{}
 	};
-	bindLogin(){
+	 bindLogin(){
 		this.checkLogin();
 	}
 	json2Form(json) { 
@@ -15,63 +15,72 @@ export default class Account extends wx.Component {
 	  } 
 	  return str.join("&"); 
 	} 
-	async checkLogin(){
-		//调用应用实例的方法获取全局数据 	
-	    var check = await wx.checkSession();
-	   	wx.clearStorage()
-	    if(check.errMsg == "checkSession:ok") {
-	    	wx.showToast({
-			  title: '登录中',
-			  icon: 'loading',
-			  duration: 30000
-			})
-	    	let storageInfo = await wx.getStorageInfo();
-	    	if(storageInfo.keys.indexOf('Loginsessionkey')<0){
-	    		await wx.setStorage({ key: 'Loginsessionkey', data: '' });
-	    	}
+	async doLogin() {
+		wx.showToast({
+		  title: '登录中',
+		  icon: 'loading',
+		  duration: 30000
+		})
+    	let storageInfo = await wx.getStorageInfo();
+    	if(storageInfo.keys.indexOf('Loginsessionkey')<0){
+    		await wx.setStorage({ key: 'Loginsessionkey', data: '' });
+    	}
 
-	    	let rdsData = await wx.getStorage({ key: 'Loginsessionkey' });
-	    	let rds = rdsData.data;
-	    	let postdata = {};
-	    	
-	    	if(rds==''){
-		      	let loginData = await wx.login();
-		      	postdata.code = loginData.code;
-		      	await wx.setStorage({ key: 'Loginsessionkey', data: loginData.code });
-		    }else{
-		    	postdata.sessionKey = rds;
-		    }
-		    let rdRes = await wx.request({
-	            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
+    	let rdsData = await wx.getStorage({ key: 'Loginsessionkey' });
+    	let rds = rdsData.data;
+    	let postdata = {};
+    	
+    	if(rds==''){
+	      	let loginData = await wx.login();
+	      	postdata.code = loginData.code;
+	      	await wx.setStorage({ key: 'Loginsessionkey', data: loginData.code });
+	    }else{
+	    	postdata.sessionKey = rds;
+	    }
+	    let rdRes = await wx.request({
+            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
+            method:"POST",
+            header: {
+			    'content-type': 'application/x-www-form-urlencoded'
+			},
+            data: postdata
+        })
+		let userInfo = await wx.getUserInfo();
+		if(postdata.code){
+			let userInfoPost = await wx.request({
+	            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 	            method:"POST",
 	            header: {
 				    'content-type': 'application/x-www-form-urlencoded'
 				},
-	            data: postdata
+	            data: {
+	            	rawData:userInfo.rawData,
+	            	signature:userInfo.signature,
+	            	encryptedData:userInfo.encryptedData,
+	            	iv:userInfo.iv,
+	            	sessionKey:userInfo.sessionKey
+	            }
 	        })
-			let userInfo = await wx.getUserInfo();
-			if(postdata.code){
-				let userInfoPost = await wx.request({
-		            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
-		            method:"POST",
-		            header: {
-					    'content-type': 'application/x-www-form-urlencoded'
-					},
-		            data: {
-		            	rawData:userInfo.rawData,
-		            	signature:userInfo.signature,
-		            	encryptedData:userInfo.encryptedData,
-		            	iv:userInfo.iv,
-		            	sessionKey:userInfo.sessionKey
-		            }
-		        })
-			}
-			wx.hideToast();
-			this.setData({
-				login:true,
-				userInfo:userInfo.userInfo
-			})
 		}
+		wx.hideToast();
+		this.setData({
+			login:true,
+			userInfo:userInfo.userInfo
+		})
+	}
+	async checkLogin(){
+		//调用应用实例的方法获取全局数据 
+		wx.clearStorage();
+		this.doLogin();
+	 //    var check = await wx.checkSession();
+	 //    if(check.errMsg == "checkSession:ok") {
+	 //    	this.doLogin();
+		// }else{
+		// 	this.setData({
+		// 		login:false,
+		// 		userInfo:{}
+		// 	})
+		// }
 	}
 	async onLoad(){
 		 //调用API从本地缓存中获取数据

@@ -75,79 +75,66 @@ var Account = function (_wx$Component) {
 			return str.join("&");
 		}
 	}, {
-		key: "checkLogin",
+		key: "doLogin",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-				var check, storageInfo, rdsData, rds, postdata, loginData, rdRes, userInfo, userInfoPost;
+				var storageInfo, rdsData, rds, postdata, loginData, rdRes, userInfo, userInfoPost;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
-								_context.next = 2;
-								return _labrador2.default.checkSession();
-
-							case 2:
-								check = _context.sent;
-
-								_labrador2.default.clearStorage();
-
-								if (!(check.errMsg == "checkSession:ok")) {
-									_context.next = 39;
-									break;
-								}
-
 								_labrador2.default.showToast({
 									title: '登录中',
 									icon: 'loading',
 									duration: 30000
 								});
-								_context.next = 8;
+								_context.next = 3;
 								return _labrador2.default.getStorageInfo();
 
-							case 8:
+							case 3:
 								storageInfo = _context.sent;
 
 								if (!(storageInfo.keys.indexOf('Loginsessionkey') < 0)) {
-									_context.next = 12;
+									_context.next = 7;
 									break;
 								}
 
-								_context.next = 12;
+								_context.next = 7;
 								return _labrador2.default.setStorage({ key: 'Loginsessionkey', data: '' });
 
-							case 12:
-								_context.next = 14;
+							case 7:
+								_context.next = 9;
 								return _labrador2.default.getStorage({ key: 'Loginsessionkey' });
 
-							case 14:
+							case 9:
 								rdsData = _context.sent;
 								rds = rdsData.data;
 								postdata = {};
 
 								if (!(rds == '')) {
-									_context.next = 26;
+									_context.next = 21;
 									break;
 								}
 
-								_context.next = 20;
+								_context.next = 15;
 								return _labrador2.default.login();
 
-							case 20:
+							case 15:
 								loginData = _context.sent;
 
 								postdata.code = loginData.code;
-								_context.next = 24;
+								_context.next = 19;
 								return _labrador2.default.setStorage({ key: 'Loginsessionkey', data: loginData.code });
 
-							case 24:
-								_context.next = 27;
+							case 19:
+								_context.next = 22;
 								break;
 
-							case 26:
+							case 21:
 								postdata.sessionKey = rds;
 
-							case 27:
-								_context.next = 29;
+							case 22:
+								_context.next = 24;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -157,20 +144,20 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 29:
+							case 24:
 								rdRes = _context.sent;
-								_context.next = 32;
+								_context.next = 27;
 								return _labrador2.default.getUserInfo();
 
-							case 32:
+							case 27:
 								userInfo = _context.sent;
 
 								if (!postdata.code) {
-									_context.next = 37;
+									_context.next = 32;
 									break;
 								}
 
-								_context.next = 36;
+								_context.next = 31;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -186,17 +173,17 @@ var Account = function (_wx$Component) {
 									}
 								});
 
-							case 36:
+							case 31:
 								userInfoPost = _context.sent;
 
-							case 37:
+							case 32:
 								_labrador2.default.hideToast();
 								this.setData({
 									login: true,
 									userInfo: userInfo.userInfo
 								});
 
-							case 39:
+							case 34:
 							case "end":
 								return _context.stop();
 						}
@@ -204,20 +191,34 @@ var Account = function (_wx$Component) {
 				}, _callee, this);
 			}));
 
-			function checkLogin() {
+			function doLogin() {
 				return _ref2.apply(this, arguments);
 			}
 
-			return checkLogin;
+			return doLogin;
 		}()
 	}, {
-		key: "onLoad",
+		key: "checkLogin",
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
+								//调用应用实例的方法获取全局数据 
+								_labrador2.default.clearStorage();
+								this.doLogin();
+								//    var check = await wx.checkSession();
+								//    if(check.errMsg == "checkSession:ok") {
+								//    	this.doLogin();
+								// }else{
+								// 	this.setData({
+								// 		login:false,
+								// 		userInfo:{}
+								// 	})
+								// }
+
+							case 2:
 							case "end":
 								return _context2.stop();
 						}
@@ -225,8 +226,29 @@ var Account = function (_wx$Component) {
 				}, _callee2, this);
 			}));
 
-			function onLoad() {
+			function checkLogin() {
 				return _ref3.apply(this, arguments);
+			}
+
+			return checkLogin;
+		}()
+	}, {
+		key: "onLoad",
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+							case "end":
+								return _context3.stop();
+						}
+					}
+				}, _callee3, this);
+			}));
+
+			function onLoad() {
+				return _ref4.apply(this, arguments);
 			}
 
 			return onLoad;
