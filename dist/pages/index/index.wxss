@@ -73,7 +73,7 @@
 }
 .hdnav .iconfont {
   margin-left: 8rpx;
-  font-size: 52rpx;
+  font-size: 45rpx;
   float: right;
   margin-right: 40rpx;
   position: relative;
@@ -100,6 +100,7 @@
   float: left;
   color: #ff6a00;
   padding: 28rpx 0;
+  line-height: 60rpx;
 }
 .hdnav .col-50.nr {
   width: 340rpx;

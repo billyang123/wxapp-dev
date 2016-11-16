@@ -61,8 +61,8 @@ var Account = function (_wx$Component) {
 	}
 
 	(0, _createClass3.default)(Account, [{
-		key: "isLogin",
-		value: function isLogin() {
+		key: "bindLogin",
+		value: function bindLogin() {
 			this.checkLogin();
 		}
 	}, {
@@ -92,75 +92,78 @@ var Account = function (_wx$Component) {
 								_labrador2.default.clearStorage();
 
 								if (!(check.errMsg == "checkSession:ok")) {
-									_context.next = 38;
+									_context.next = 39;
 									break;
 								}
 
-								_context.next = 7;
+								_labrador2.default.showToast({
+									title: '登录中',
+									icon: 'loading',
+									duration: 30000
+								});
+								_context.next = 8;
 								return _labrador2.default.getStorageInfo();
 
-							case 7:
+							case 8:
 								storageInfo = _context.sent;
 
 								if (!(storageInfo.keys.indexOf('Loginsessionkey') < 0)) {
-									_context.next = 11;
+									_context.next = 12;
 									break;
 								}
 
-								_context.next = 11;
+								_context.next = 12;
 								return _labrador2.default.setStorage({ key: 'Loginsessionkey', data: '' });
 
-							case 11:
-								_context.next = 13;
+							case 12:
+								_context.next = 14;
 								return _labrador2.default.getStorage({ key: 'Loginsessionkey' });
 
-							case 13:
+							case 14:
 								rdsData = _context.sent;
 								rds = rdsData.data;
 								postdata = {};
 
 								if (!(rds == '')) {
-									_context.next = 25;
+									_context.next = 26;
 									break;
 								}
 
-								_context.next = 19;
+								_context.next = 20;
 								return _labrador2.default.login();
 
-							case 19:
+							case 20:
 								loginData = _context.sent;
 
 								postdata.code = loginData.code;
-								_context.next = 23;
+								_context.next = 24;
 								return _labrador2.default.setStorage({ key: 'Loginsessionkey', data: loginData.code });
 
-							case 23:
-								_context.next = 26;
+							case 24:
+								_context.next = 27;
 								break;
 
-							case 25:
+							case 26:
 								postdata.sessionKey = rds;
 
-							case 26:
-								_context.next = 28;
+							case 27:
+								_context.next = 29;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
 									header: {
 										'content-type': 'application/x-www-form-urlencoded'
 									},
-									data: this.json2Form(postdata)
+									data: postdata
 								});
 
-							case 28:
+							case 29:
 								rdRes = _context.sent;
-								_context.next = 31;
+								_context.next = 32;
 								return _labrador2.default.getUserInfo();
 
-							case 31:
+							case 32:
 								userInfo = _context.sent;
-
-								console.log(userInfo);
 
 								if (!postdata.code) {
 									_context.next = 37;
@@ -187,12 +190,13 @@ var Account = function (_wx$Component) {
 								userInfoPost = _context.sent;
 
 							case 37:
+								_labrador2.default.hideToast();
 								this.setData({
 									login: true,
 									userInfo: userInfo.userInfo
 								});
 
-							case 38:
+							case 39:
 							case "end":
 								return _context.stop();
 						}

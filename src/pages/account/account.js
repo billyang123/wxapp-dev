@@ -5,7 +5,7 @@ export default class Account extends wx.Component {
 		login:false,
 		userInfo:{}
 	};
-	isLogin(){
+	bindLogin(){
 		this.checkLogin();
 	}
 	json2Form(json) { 
@@ -20,7 +20,11 @@ export default class Account extends wx.Component {
 	    var check = await wx.checkSession();
 	   	wx.clearStorage()
 	    if(check.errMsg == "checkSession:ok") {
-	    
+	    	wx.showToast({
+			  title: '登录中',
+			  icon: 'loading',
+			  duration: 30000
+			})
 	    	let storageInfo = await wx.getStorageInfo();
 	    	if(storageInfo.keys.indexOf('Loginsessionkey')<0){
 	    		await wx.setStorage({ key: 'Loginsessionkey', data: '' });
@@ -43,10 +47,9 @@ export default class Account extends wx.Component {
 	            header: {
 				    'content-type': 'application/x-www-form-urlencoded'
 				},
-	            data: this.json2Form(postdata)
+	            data: postdata
 	        })
 			let userInfo = await wx.getUserInfo();
-			console.log(userInfo)
 			if(postdata.code){
 				let userInfoPost = await wx.request({
 		            url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
@@ -63,6 +66,7 @@ export default class Account extends wx.Component {
 		            }
 		        })
 			}
+			wx.hideToast();
 			this.setData({
 				login:true,
 				userInfo:userInfo.userInfo

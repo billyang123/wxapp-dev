@@ -25,11 +25,9 @@
 				</view>
 			</view>
 		</view>
-		<view class="account-info no-login" wx:else="wx:else" bindtap="_dispatch" data-bindtap="isLogin">
-			<view class="acimage default-image">
-				<image src="#" class="avatar"/>
-			</view>
-			<view class="txt">
+		<view wx:else="wx:else" class="account-info no-login">
+			<view class="acimage default-image" catchtap="_dispatch" data-catchtap="bindLogin"/>
+			<view class="txt" catchtap="_dispatch" data-catchtap="bindLogin">
 				<text>立即登录</text>
 			</view>
 		</view>
