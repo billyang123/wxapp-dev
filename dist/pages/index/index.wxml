@@ -1,24 +1,230 @@
 <view class="container">
-  <view class="userinfo" catchtap="_dispatch" data-catchtap="handleViewTap">
-    <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
-    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
-  </view>
-  <view class="usermotto">
-    <view class="text-view motto-text-view">
-  <text class="title-text motto-title-text" catchtap="_dispatch" style="color:{{motto.color}};" data-catchtap="handleTap" data-path="motto">{{motto.text}}</text>
-</view>
-  </view>
-  <view class="list list-list">
-  <view class="text-view list-title-text-view">
-  <text class="title-text list-title-title-text" catchtap="_dispatch" style="color:{{list.title.color}};" data-catchtap="handleTap" data-path="list.title">{{list.title.text}}</text>
-</view>
-  <block wx:for="{{list.listItems}}" wx:for-index="_index_1" wx:for-item="_item_2"><view class="item list-listItems-item {{_item_2.cls}} list-listItems-{{_item_2.cls}}">
-  <view class="item-inner list-listItems-item-inner" catchtap="_dispatch" data-catchtap="handleTap" data-path="list.listItems.{{_index_1}}">
-    {{_item_2.title}}
-  </view>
-</view></block>
-</view>
-  <view class="counter counter-counter" catchtap="_dispatch" data-catchtap="handleTap" data-path="counter">
-  点击次数 {{counter.num}}
-</view>
+	<view class="swiper">
+		<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
+  <block wx:for="{{swiper.imgUrls}}">
+    <swiper-item>
+      <image src="{{item.img}}" data-link="{{item.link}}" class="slide-image swiper-slide-image" bindtap="_dispatch" data-bindtap="bannerimglink" data-path="swiper"/>
+    </swiper-item>
+  </block>
+</swiper>
+	</view>
+	<view class="broad">
+		<!-- <view class="broad-number">
+			<view class="col-50">
+				<view class="nm-line"><text class="bm-num">564,433</text><text>人</text></view>
+				<view class="nm-line"><text>已加入会员人数</text></view>
+			</view>
+			<view class="col-50 sline">
+				<view class="nm-line"><text  class="bm-num">1,946,289</text><text>元</text></view>
+				<view class="nm-line"><text>已筹互助金额</text></view>
+			</view>
+		</view> -->
+		<view class="broad-case" data-link="#" bindtap="_dispatch" data-bindtap="linkTo">
+			<text class="bc-t">公示：</text>
+			<text>【资金公示】十月既第三期资金公示</text>
+			<icon class="iconfont icon-jiantou-right"/>
+		</view>
+	</view>
+	<view class="hdnav">
+		<view class="col-50">
+			<icon class="myicon-index-1"/>
+			<text class="txt">查看我的保障</text>
+			<icon class="iconfont icon-fangxiang-right"/>
+		</view>
+		<view class="col-50 nr">
+			<icon class="myicon-index-2"/>
+			<text class="txt">送亲友</text>
+			<icon class="iconfont icon-fangxiang-right"/>
+		</view>
+	</view>
+	<view class="hz-content hz-group">
+		<view class="title">
+			<view class="tname">互助社群</view>
+		</view>
+		<view class="hz-item" wx:for="{{project}}">
+			<image class="img" mode="aspectFill" src="{{item.img}}"/>
+			<view class="hi-title"><text>{{item.title}}</text></view>
+			<view class="hi-info">
+				<text>{{item.content}}</text>
+			</view>
+			<view class="hi-opt">
+				<button class="joinbtn">立即加入</button>
+				<view class="opt-imglist">
+					<image mode="aspectFill" wx:for="{{item.mImgArr}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="hz-content hz-apply">
+		<view class="title">
+			<view class="tname">申请互助</view>
+		</view>
+		<view class="hz-process">
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>1</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<text class="st">申请互助金</text>
+					<text class="gray">拨打客服热线，提交相关资料</text>
+				</view>
+				<view class="st-inner tel-kf">
+					<text class="gray">客服电话：</text>
+					<button class="telbtn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+				</view>
+				<view class="st-inner">
+					<text class="gray">有疑问也可电话咨询</text>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>2</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<text class="st">事件审核</text>
+					<text class="gray">权威公估机构调查</text>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>3</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<text class="st">全员公示</text>
+					<text class="gray">事故审核结果，向全体会员公示</text>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>3</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<text class="st">资金划款</text>
+					<text class="gray">资金无异议，招商银行直接划款</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="hz-content hzo-guarantee">
+		<view class="title">
+			<view class="tname">运营保证</view>
+		</view>
+		<view class="hzo-list">
+			<view class="hzol-item">
+				<icon class="myicon-index-3"/>
+				<view class="tt">
+					<text>0平台费用</text>
+					<icon class="iconfont icon-fangxiang-right"/>
+				</view>
+				<view class="tf">
+					<text>互助金将100%用于社群互助，平台免费，不抽取任何形式的佣金</text>
+				</view>
+			</view>
+			<view class="hzol-item">
+				<icon class="ticon iconfont icon-beiyusan"/>
+				<view class="tt">
+					<text>专业风控</text>
+					<icon class="iconfont icon-fangxiang-right"/>
+				</view>
+				<view class="tf">
+					<text>权威第三方公估公司商保通、中瑞国际实地调查验证审核</text>
+				</view>
+			</view>
+			<view class="hzol-item">
+				<icon class="ticon iconfont icon-zhaoshangyinxing"/>
+				<view class="tt">
+					<text>资金安全</text>
+					<icon class="iconfont icon-fangxiang-right"/>
+				</view>
+				<view class="tf">
+					<text>招商银行资金专户全程管理，定期公示资金进出及明细</text>
+				</view>
+			</view>
+			<view class="hzol-item">
+				<icon class="myicon-index-4"/>
+				<view class="tt">
+					<text>顶级风投</text>
+					<icon class="iconfont icon-fangxiang-right"/>
+				</view>
+				<view class="tf">
+					<text>执一资本、经纬创投、晨兴资本、李治国，顶级风投全力支持，重金投资</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="hz-content hzo-media">
+		<view class="title">
+			<view class="tname">媒体报道</view>
+		</view>
+		<view class="hz-media-list">
+			<view class="media">
+				<image class="img" src="/images/index02_36kr.png"/>
+				<view class="mname">
+					<text>17互助：将互联网保险业态升级为互助社群</text>
+				</view>
+				<view class="time">2016-08-01</view>
+			</view>
+			<view class="media">
+				<image class="img" src="/images/index02_souhu.png"/>
+				<view class="mname">
+					<text>曾经扛起阿里金融大旗的高竞，想用17互助让保险更性感</text>
+				</view>
+				<view class="time">2016-08-01</view>
+			</view>
+			<view class="media">
+				<image class="img" src="/images/index02_huxiu.png"/>
+				<view class="mname">
+					<text>17互助：来自两个500亿市值公司创始人的再创业故事</text>
+				</view>
+				<view class="time">2016-08-01</view>
+			</view>
+			<view class="media">
+				<image class="img" src="/images/index02_fenghuang.png"/>
+				<view class="mname">
+					<text>阿里巴巴网商银行和众安保险的创始人他们创业的17互助是什么？</text>
+				</view>
+				<view class="time">2016-08-01</view>
+			</view>
+			<view class="media">
+				<image class="img" src="/images/index02_baidu.png"/>
+				<view class="mname">
+					<text>获经纬、执一资本等数千万投资，十年阿里人创办互助保障平台</text>
+				</view>
+				<view class="time">2016-08-01</view>
+			</view>
+		</view>
+	</view>
+	<view class="hz-content hzo-service">
+		<view class="title">
+			<view class="tname">专属客服</view>
+		</view>
+		<view class="hzs-con">
+			<view class="tel">
+				<text class="gray-m">客服电话：</text>
+				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+			</view>
+			<view class="work-time">
+				<text class="gray-m">工作时间：  09:30-20:00（周一至周六）</text>
+			</view>
+		</view>
+		<view class="ewm-area">
+			<view>
+				<text>咨询、求助、志愿者、申请互助</text>
+			</view>
+			<view class="gray">
+				<text>长按扫码添加客服，专人答疑</text>
+			</view>
+			<view>
+				<image class="ewm-img" src="/images/kf02_img001.png"/>
+			</view>
+		</view>
+	</view>
 </view>

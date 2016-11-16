@@ -1,0 +1,118 @@
+<view class="container">
+	<view class="account-header">
+		<view class="account-info login" wx:if={{login}}>
+			<view class="acimage default-image">
+				<image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+			</view>
+			<view class="txt-area">
+				<view class="name">
+					<text>{{userInfo.nickName}}</text>
+				</view>
+				<view class="hnumber">
+					<view class="hn-l">
+						<view class="num"><text>500</text></view>
+						<view class="th"><text>加入社群排位</text></view>
+					</view>
+					<view class="hn-l">
+						<view class="num"><text>107</text></view>
+						<view class="th"><text>加入社群天数</text></view>
+					</view>
+				</view>
+				<view class="msgnum-icon">
+					<view class="num">
+						<text>2</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="account-info no-login" wx:else bindtap="isLogin">
+			<view class="acimage default-image">
+				<image src="#" class="avatar"></image>
+			</view>
+			<view class="txt">
+				<text>立即登录</text>
+			</view>
+		</view>
+	</view>
+	<view class="hdnav">
+		<view class="col-50">
+			<icon class="myicon-index-1"></icon>
+			<text class="txt">为家人加社群</text>
+			<icon class="iconfont icon-fangxiang-right"></icon>
+		</view>
+		<view class="col-50 nr">
+			<icon class="myicon-index-2"></icon>
+			<text class="txt">送亲友</text>
+			<icon class="iconfont icon-fangxiang-right"></icon>
+		</view>
+	</view>
+	<view class="media-list ac-list">
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account_wdsq_icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>我的社群</text>
+				</view>
+				<view class="item-after">
+					<text>家庭账单、充值、互助凭单</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account_sqhz_icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>申请互助</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="media-list ac-list">
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account-volunteer-icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>志愿者</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account-city-icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>同城会</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="media-list ac-list">
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account-card-icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>券</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-link item-content">
+			<view class="item-media">
+				<image class="img" src="/images/account-question-icon.png"></image>
+			</view>
+			<view class="item-inner">
+				<view class="item-title">
+					<text>常见问题</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -5,7 +5,6 @@ export default class {
   globalData = {
     userInfo: null
   };
-
   async onLaunch() {
     //调用API从本地缓存中获取数据
     let res = await wx.getStorage({ key: 'logs' });
@@ -21,7 +20,6 @@ export default class {
       await sleep(10000);
     }
   }
-
   async getUserInfo() {
     if (this.globalData.userInfo) {
       return this.globalData.userInfo;
