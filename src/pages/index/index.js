@@ -56,6 +56,9 @@ export default class Index extends wx.Component {
       url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
       data: {
          bannerType:0
+      },
+      header: {
+          'content-type': 'application/x-www-form-urlencoded'
       }
     })
     let imgUrls = [];
@@ -83,7 +86,10 @@ export default class Index extends wx.Component {
   async objectInit(){
     let _this = this;
     let objRes = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject'
+      url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject',
+      header: {
+          'content-type': 'application/x-www-form-urlencoded'
+      }
     })
     let obj_data = objRes.data.data;
     let project = this.data.project;

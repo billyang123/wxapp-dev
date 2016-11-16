@@ -156,6 +156,9 @@ var Index = function (_wx$Component) {
                   url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
                   data: {
                     bannerType: 0
+                  },
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
                   }
                 });
 
@@ -214,7 +217,10 @@ var Index = function (_wx$Component) {
                 _this = this;
                 _context4.next = 3;
                 return _labrador2.default.request({
-                  url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject'
+                  url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  }
                 });
 
               case 3:
