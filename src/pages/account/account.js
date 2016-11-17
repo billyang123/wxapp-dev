@@ -22,18 +22,17 @@ export default class Account extends wx.Component {
 		  duration: 30000
 		})
     	let storageInfo = await wx.getStorageInfo();
-    	if(storageInfo.keys.indexOf('Loginsessionkey')<0){
-    		await wx.setStorage({ key: 'Loginsessionkey', data: '' });
+    	if(storageInfo.keys.indexOf('sessionKey')<0){
+    		await wx.setStorage({ key: 'sessionKey', data: '' });
     	}
 
-    	let rdsData = await wx.getStorage({ key: 'Loginsessionkey' });
+    	let rdsData = await wx.getStorage({ key: 'sessionKey' });
     	let rds = rdsData.data;
     	let postdata = {};
     	
     	if(rds==''){
 	      	let loginData = await wx.login();
 	      	postdata.code = loginData.code;
-	      	await wx.setStorage({ key: 'Loginsessionkey', data: loginData.code });
 	    }else{
 	    	postdata.sessionKey = rds;
 	    }
@@ -58,9 +57,10 @@ export default class Account extends wx.Component {
 	            	signature:userInfo.signature,
 	            	encryptedData:userInfo.encryptedData,
 	            	iv:userInfo.iv,
-	            	sessionKey:userInfo.sessionKey
+	            	sessionKey:rdRes.data.data
 	            }
 	        })
+	        await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 		}
 		wx.hideToast();
 		this.setData({
