@@ -1,7 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/account/account"
+    "pages/account/account",
+    "pages/bindphone/bindphone",
+    "pages/community/community",
+    "pages/range/range"
   ],
   "window":{
     "backgroundTextStyle":"light",

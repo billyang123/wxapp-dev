@@ -1,5 +1,6 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -78,7 +79,7 @@ var Account = function (_wx$Component) {
 		key: "doLogin",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-				var storageInfo, rdsData, rds, postdata, loginData, rdRes, userInfo, userInfoPost;
+				var postdata, rdRes, userInfo, userInfoPost;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
@@ -88,49 +89,17 @@ var Account = function (_wx$Component) {
 									icon: 'loading',
 									duration: 30000
 								});
-								_context.next = 3;
-								return _labrador2.default.getStorageInfo();
+								postdata = {
+									code: _labrador2.default.app.globalData.storage.code,
+									sessionKey: _labrador2.default.app.globalData.storage.sessionKey
+								};
 
-							case 3:
-								storageInfo = _context.sent;
-
-								if (!(storageInfo.keys.indexOf('sessionKey') < 0)) {
-									_context.next = 7;
+								if (postdata.sessionKey) {
+									_context.next = 11;
 									break;
 								}
 
-								_context.next = 7;
-								return _labrador2.default.setStorage({ key: 'sessionKey', data: '' });
-
-							case 7:
-								_context.next = 9;
-								return _labrador2.default.getStorage({ key: 'sessionKey' });
-
-							case 9:
-								rdsData = _context.sent;
-								rds = rdsData.data;
-								postdata = {};
-
-								if (!(rds == '')) {
-									_context.next = 19;
-									break;
-								}
-
-								_context.next = 15;
-								return _labrador2.default.login();
-
-							case 15:
-								loginData = _context.sent;
-
-								postdata.code = loginData.code;
-								_context.next = 20;
-								break;
-
-							case 19:
-								postdata.sessionKey = rds;
-
-							case 20:
-								_context.next = 22;
+								_context.next = 5;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -140,20 +109,25 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 22:
+							case 5:
 								rdRes = _context.sent;
-								_context.next = 25;
+								_context.next = 8;
+								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
+
+							case 8:
+								_context.next = 10;
+								return _labrador2.default.app.getStorage();
+
+							case 10:
+								_labrador2.default.app.globalData.storage = _context.sent;
+
+							case 11:
+								_context.next = 13;
 								return _labrador2.default.getUserInfo();
 
-							case 25:
+							case 13:
 								userInfo = _context.sent;
-
-								if (!postdata.code) {
-									_context.next = 32;
-									break;
-								}
-
-								_context.next = 29;
+								_context.next = 16;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -165,23 +139,24 @@ var Account = function (_wx$Component) {
 										signature: userInfo.signature,
 										encryptedData: userInfo.encryptedData,
 										iv: userInfo.iv,
-										sessionKey: rdRes.data.data
+										sessionKey: postdata.sessionKey,
+										code: postdata.code
 									}
 								});
 
-							case 29:
+							case 16:
 								userInfoPost = _context.sent;
-								_context.next = 32;
-								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
-							case 32:
 								_labrador2.default.hideToast();
+								_labrador2.default.navigateTo({
+									url: '/pages/bindphone/bindphone'
+								});
 								this.setData({
 									login: true,
 									userInfo: userInfo.userInfo
 								});
 
-							case 34:
+							case 20:
 							case "end":
 								return _context.stop();
 						}
@@ -203,18 +178,8 @@ var Account = function (_wx$Component) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
-								//调用应用实例的方法获取全局数据 
 								_labrador2.default.clearStorage();
 								this.doLogin();
-								//    var check = await wx.checkSession();
-								//    if(check.errMsg == "checkSession:ok") {
-								//    	this.doLogin();
-								// }else{
-								// 	this.setData({
-								// 		login:false,
-								// 		userInfo:{}
-								// 	})
-								// }
 
 							case 2:
 							case "end":
@@ -238,6 +203,10 @@ var Account = function (_wx$Component) {
 					while (1) {
 						switch (_context3.prev = _context3.next) {
 							case 0:
+								//调用API从本地缓存中获取数据
+								console.log(_labrador2.default.app.globalData);
+
+							case 1:
 							case "end":
 								return _context3.stop();
 						}

@@ -1,0 +1,118 @@
+<view class="container">
+	<view class="community">
+		<view class="top-head">
+			<image class="img" src="{{bannerImg.b}}"/>
+			<text class="txt">{{bannerImg.t}}</text>
+		</view>
+		<view class="top-body">
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<text class="num">10,9875</text>
+					<text>人</text>
+				</view>
+				<view class="tb-txt">
+					本社群加入人数
+				</view>
+			</view>
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<text class="num">9,146,289</text>
+					<text>元</text>
+				</view>
+				<view class="tb-txt">
+					本社群互助金额
+				</view>
+			</view>
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<text class="num">0</text>
+					<text>起</text>
+				</view>
+				<view class="tb-txt">
+					互助事件
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit01.png" style="width:404rpx;height:53rpx;"/>
+		</view>
+		<view class="pj_aim">
+			<view class="lis lis1">
+				<text>为患癌症等25种重大疾病的会员提供互助金</text>
+			</view>
+			<view class="lis lis2">
+				<text>一人患病，会员均摊。每次均摊不超过3元</text>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit02.png" style="width:404rpx;height:53rpx;"/>
+		</view>
+		<view class="media-list pj_meidalist">
+			<view class="item-content">
+				<view class="item-inner">
+					<view class="item-after">
+						<text>加入留守儿童互助社群，90天后，如果不幸发生重大疾病，180天后，不幸发生意外事故，即可获得：</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>25种重大疾病包括</text>
+					</view>
+					<view class="item-after">
+						<text>白血病、恶性肿瘤</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>重大疾病保障</text>
+					</view>
+					<view class="item-after">
+						<text>最高10万元</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>意外伤残、死亡</text>
+					</view>
+					<view class="item-after">
+						<text>最高10万元</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>走失、被拐寻子互助金</text>
+					</view>
+					<view class="item-after">
+						<text>最高10万元</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>暴力、性侵法律维权互助金</text>
+					</view>
+					<view class="item-after">
+						<text>最高1万元</text>
+
+					</view>
+				</view>
+			</view>
+			<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/range/range" data-catchtap="linkTo">
+				<view class="item-inner">
+					<view class="item-title org">
+						<text>了解详情</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

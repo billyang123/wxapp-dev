@@ -8,32 +8,38 @@ export default class Index extends wx.Component {
       {
         title:"789重大疾病互助社群",
         content:"适用于{0}-{1}周岁健康人群癌症等25种重大疾病互助最高可获30万元互助金{2}人加入",
-        img:"/images/78902_img001.png"
+        img:"/images/78902_img001.png",
+        link:'/pages/community/community?type=1'
       },
       {
         title:"留守儿童互助社群",
         content:"适用于{0}-{1}周岁人群大病、意外、走失、辍学互助最高可获33万元互助金{2}人加入",
-        img:"/images/stayChildren02_img001.png"
+        img:"/images/stayChildren02_img001.png",
+        link:'/pages/community/community?type=2'
       },
       {
         title:"交通、旅游意外互助社群",
         content:"适用于{0}-{1}周岁人群公共交通、旅游意外互助",
-        img:"/images/traffic02_img001.png"
+        img:"/images/traffic02_img001.png",
+        link:'/pages/community/community?type=3'
       },    
       {
         title:"少儿大病、意外互助社群",
         content:"适用于{0}-{1}周岁少儿少儿大饼、意外互助最高可获35万元互助金{2}人加入",
-        img:"/images/children02_img001.png"
+        img:"/images/children02_img001.png",
+        link:'/pages/community/community?type=4'
       },
       {
         title:"80后孕妈婴宝互助社群",
         content:"适用于80后备孕、已孕妈妈孕期、孕产、婴儿疾病互助最高可获10万元互助金{2}人加入",
-        img:"/images/8002_img001.png"
+        img:"/images/8002_img001.png",
+        link:'/pages/community/community?type=5'
       },
       {
         title:"中老年大病、意外互助社群",
         content:"适用于{0}-{1}周岁人群抗癌、大病、意外互助最高可获35万元互助金{2}人加入",
-        img:"/images/old02_img001.png"
+        img:"/images/old02_img001.png",
+        link:'/pages/community/community?type=6'
       }
     ],
     media:[]
@@ -43,12 +49,12 @@ export default class Index extends wx.Component {
   };
   async makePhoneCall(event){
     wx.makePhoneCall({
-      phoneNumber: event.target.dataset.phoneNumber
+      phoneNumber: event.currentTarget.dataset.phoneNumber
     })
   }
-  async linkTo(event) {
+  linkTo(event) {
     wx.navigateTo({
-      url:event.target.dataset.link
+      url:event.currentTarget.dataset.link
     })
   }
   async bannerInit() {
@@ -56,9 +62,6 @@ export default class Index extends wx.Component {
       url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
       data: {
          bannerType:0
-      },
-      header: {
-          'content-type': 'application/x-www-form-urlencoded'
       }
     })
     let imgUrls = [];
@@ -104,12 +107,10 @@ export default class Index extends wx.Component {
       project:project
     })
   }
-  async onLoad() {
+  async onLoad(e) {
     this.bannerInit();
-    this.objectInit();
-    
-  }
-  onReady() {
-      
+    this.objectInit(); 
+    let location = await wx.getLocation();
+    console.log(e)
   }
 }

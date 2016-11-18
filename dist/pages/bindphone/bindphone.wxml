@@ -1,0 +1,32 @@
+<view class="container">
+	<view class="bind-top">
+		<view class="head">
+			<image class="img" src="{{userInfo.avatarUrl}}"/>
+		</view>
+		<view class="name">
+			<text>{{userInfo.nickName}}</text>
+		</view>
+		<view class="note">
+			<icon class="icon-tip"/>
+			<text>为了使用顺畅，请绑定您的手机号</text>
+		</view>
+	</view>
+	<view class="bind-form">
+		<form>
+			<view class="input-area">
+				<view class="section">
+					<view class="section_title">手机号码</view>
+					<input bindinput="_dispatch" placeholder="输入手机号码" data-name="phoneValue" data-bindinput="bindKeyInput"/>
+				</view>
+				<view class="section pcode">
+					<view class="section_title">验证码</view>
+					<input bindinput="_dispatch" placeholder="输入验证码" data-name="codeValue" data-bindinput="bindKeyInput"/>
+					<view class="{{cDisCls}}" bindtap="_dispatch" data-bindtap="getCheckCode">{{btnText}}</view>
+				</view>
+			</view>
+			<view class="bind-btn">
+				<button class="submitbtn" disabled="{{disabled}}" form-type="submit">绑定</button>
+			</view>
+		</form>
+	</view>
+</view>

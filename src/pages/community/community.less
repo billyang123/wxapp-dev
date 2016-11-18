@@ -1,0 +1,97 @@
+.community {
+	.top-head {
+		height: 150rpx;
+		width: 100%;
+		position: relative;
+		.img {
+			height: 150rpx;
+			width:100%;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.txt {
+			position: absolute;
+			top: 47rpx;
+			left: 44rpx;
+			z-index: 2;
+			color: #fff;
+			font-size: 40rpx;
+		}
+	}
+	.top-body {
+		display: -webkit-box;
+	    display: -webkit-flex;
+	    display: flex;
+	    .tb-item {
+	    	-webkit-flex-shrink: 1;
+		    flex-shrink: 1;
+		    width: 100%;
+		    background-color: #fff;
+		    border-left: 1rpx solid #ddd;
+		    text-align: center;
+		    padding: 20rpx 0;
+		    border-bottom: 1rpx solid #ddd;
+		    &:first-child {
+		    	border-left: 0;
+		    }
+		    .nmb-txt {
+				font-size:22rpx;
+				color:#ff6a00;
+				.num {
+					font-size: 36rpx;
+				}
+		    }
+
+		    .tb-txt {
+		    	margin-top: 10rpx;
+		    	color: #999;
+		    	font-size: 24rpx;
+		    }
+	    }
+	}
+	.pj_tit {
+		text-align: center;
+		padding:30rpx 0;
+	}
+	.pj_aim {
+		padding: 30rpx 24rpx;
+		background-color: #fff;
+		.lis {
+			height: 60rpx;
+			line-height: 60rpx;
+			padding-left: 80rpx;
+			color: #666;
+			font-size: 28rpx;
+		}
+		.lis1 {
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAzFBMVEUAAAD/awD/awD/agD/awD/agD/bAD/cQD/cAD/agD/awD/agD/agD/awD/awD/bAD/awD/bAD/gAD/bQD/bAD/bgD/agD//////f3/9/L/0K//omD/nFb/ijf/bQb/6Nn/07T/k0f/hjD/ex7/eRn/+vf/28L/cg//9e//8uj/mVH//Pv/+PT/7N7/17z/x5//vI3/cAr/8+z/rHH/fiP/4s7/y6f/wpf/t4T/tYH/qW3/pmf/jT3/gSn/dhT/7uL/gSf/3cb/zav/snx/ye1sAAAAFnRSTlMA+/nDoHFHFRnw7N/HxbOmeT4KB0BBR9hutgAAAphJREFUSMell2lX6jAQhttSFgER0Ttp6Q6l7LKKLKLee///f5JtBGaClNP3A6Vz8pwmmSUTRa5KpqwXC3lNyxeKejlTUWIrm05pcCYtlc7GQh9LKkiklh6von9ScFGp51/R3AP8qofcZTZzB1d0l7nEplW4KjUtRZ90iCX9SeKfe4ip+yz7LrJxaPptHW6QTvYKblL6zEfqbbB64rGcxL/1pe+1ev1oUZP6+xgtPK6+quJHr4Es1pB9BqqFIU7lNzmNcU5zYVQVRN6UZ8khB6l9z47Hu0e7tf3tfzB6n6ElYp3voF5z9LJ5/HPD3RIil8KlXVwSN6336zWmsKFnAI7YacXclZXEBy64X4fRBKDW3r+2RyxS+HbVhTjSG3aMr5Zkyyqk1k1w8JvtAEBgz9BfFNYqSoaYXg5jTTSEB0ODbVlGKROLh18eWFYIa8vy0VCncJnlooljW1HkQCeKGmhweGYWiQXHNjAsagi/U7ioFC5M28Bs6iC8pnBBybMNQ5lmACuzh68Gy468ohHLR+D/4AEsTzITqDQCN4cvw7CDX7NgfoQXHCbTjrbT7TitQ0gOTNHo7v93Q+DTLvDYNCwHHdYPXDcYtLYBB0yFc1d9HfbGft/T47Dz6g0d1/Y/mwDcVbosRLoHejjd5af3v+4Cl07CcyCQrv3dPJY2+snvcLxMEqNm4OhhczqZTUJToNrzOk0MmpJvAtWormouWOIowyIpSYtB81OcDm97p0W4SooBK0NOQzDJ4bSkANpGPFjNykqv1Y0Fl+RFP2jFgR/lxw2E/nU4hY0bMDkDjy+9Z5ODDo/YW/XADvf4usslaSuSNDRJWqlETVyS9jFZ45q8ZU7erCe/JqCeY19Qkl+NuHJxL2WJroPfvVsBnbk54x4AAAAASUVORK5CYII=) 0 center no-repeat;
+			background-size: 60rpx 60rpx;
+			margin-bottom: 20rpx;
+		}
+		.lis2 {
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAsVBMVEUAAAD/awD/awD/agD/agD/awD/agD/bAD/bQD/cQD/cAD/agD/awD/agD/awD/bAD/awD/gAD/bQD/awD/agD/////cQz/+fb/iDP/3cX/sHj/lUv/jz//jDr/9e7/7eH/697/38j/zqz/y6f/toP/eRv/bQX/49D/17r/w5r/p2n/gCX//Pr/6dv/07X/xZz/vY7/tH//rHH/oV//kUP/fSL/dhX/7+X/nVf/gyv/gSiCGOatAAAAFHRSTlMA+/nHw6BxR0AVGfDs37OmeQoHPqZKAIMAAAItSURBVEjHpZfZdoIwEEDZqYqKdUBWUUHcl7p1+f8PK6FYgUACJ/dBn645zkxmJlw1I1WXxb4mCFpflHV1xDWmo0gCFBAkpdNIHQ94qIAfjKnqmwS1SG9EtTsEIsNuvav2gEJPrXMVHqjwSqX6LkMj5PeK/IjQELGDnYu5BLt8tgwtkEuxglYohRzx7WQ+l7FuD1rSe1XLEFoz/K9nIHEPg+nRhzLPOpdIrjcxEFvsljQ42JwZKZN79dEDkuwaGRcoMUjrkpgm5ylvsHR1qPXhbxd/8gdeKbRwWcfgaqfyDSpCNhLq1V2YWNEJuQvAEEacWqsuN/vECh9B8nmOAUfldChy+zg7FgA8zhOUoS2A6XkmVKGX7uJubiDse7xG3zOLfDNFrJwQ0x8zSP6oCSREro+VU8ohjvYXINPnNHgRGS+uvgUUNC6fqVVOXgAVoSBPcvKqiazBi2lOtumyVgjYPCdv6HK/kKptTvboslgsEvvfXYNj0tu3XiiwZ6LnS99YLSmyXroY5ibtOVHsfxrGJyXTKnYlH+7VNcFcpD/yBQjLXVZmalTbDKx11j++DygEFbpEakMeCl+4+0v+DA+fQm6AblKvbmCkOHgDpLXeL/snK7sj3noRYyAQz5/JgxLjBuPmkMknPFz0eXPJZB+bNk1GbIjUfTlew4bD/RadnG9suLOsFSwLDcsqxbTEsayPLIsrw8rMuKyzPxPYHyi4Xvc0QiqdbtNHGdNz8BdL9eS17tV+NQAAAABJRU5ErkJggg==) 0 center no-repeat;
+			background-size: 60rpx 60rpx;
+		}
+	}
+}
+.pj_meidalist.media-list {
+	.org {
+		color: #ff6a00 !important;
+	}
+	.item-title {
+		font-size: 28rpx;
+		color: #666;
+
+	}
+	.item-after {
+		font-size: 28rpx;
+		color: #333;
+	}
+	.item-content {	
+	    min-height: 88rpx;
+	}
+	.item-inner {
+		min-height: 88rpx;
+	}
+}

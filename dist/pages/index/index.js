@@ -62,27 +62,33 @@ var Index = function (_wx$Component) {
       project: [{
         title: "789重大疾病互助社群",
         content: "适用于{0}-{1}周岁健康人群癌症等25种重大疾病互助最高可获30万元互助金{2}人加入",
-        img: "/images/78902_img001.png"
+        img: "/images/78902_img001.png",
+        link: '/pages/community/community?type=1'
       }, {
         title: "留守儿童互助社群",
         content: "适用于{0}-{1}周岁人群大病、意外、走失、辍学互助最高可获33万元互助金{2}人加入",
-        img: "/images/stayChildren02_img001.png"
+        img: "/images/stayChildren02_img001.png",
+        link: '/pages/community/community?type=2'
       }, {
         title: "交通、旅游意外互助社群",
         content: "适用于{0}-{1}周岁人群公共交通、旅游意外互助",
-        img: "/images/traffic02_img001.png"
+        img: "/images/traffic02_img001.png",
+        link: '/pages/community/community?type=3'
       }, {
         title: "少儿大病、意外互助社群",
         content: "适用于{0}-{1}周岁少儿少儿大饼、意外互助最高可获35万元互助金{2}人加入",
-        img: "/images/children02_img001.png"
+        img: "/images/children02_img001.png",
+        link: '/pages/community/community?type=4'
       }, {
         title: "80后孕妈婴宝互助社群",
         content: "适用于80后备孕、已孕妈妈孕期、孕产、婴儿疾病互助最高可获10万元互助金{2}人加入",
-        img: "/images/8002_img001.png"
+        img: "/images/8002_img001.png",
+        link: '/pages/community/community?type=5'
       }, {
         title: "中老年大病、意外互助社群",
         content: "适用于{0}-{1}周岁人群抗癌、大病、意外互助最高可获35万元互助金{2}人加入",
-        img: "/images/old02_img001.png"
+        img: "/images/old02_img001.png",
+        link: '/pages/community/community?type=6'
       }],
       media: []
     }, _this2.children = {
@@ -99,7 +105,7 @@ var Index = function (_wx$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _labrador2.default.makePhoneCall({
-                  phoneNumber: event.target.dataset.phoneNumber
+                  phoneNumber: event.currentTarget.dataset.phoneNumber
                 });
 
               case 1:
@@ -118,52 +124,30 @@ var Index = function (_wx$Component) {
     }()
   }, {
     key: 'linkTo',
+    value: function linkTo(event) {
+      _labrador2.default.navigateTo({
+        url: event.currentTarget.dataset.link
+      });
+    }
+  }, {
+    key: 'bannerInit',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+        var res, imgUrls, imgUrlsArr, i, imgObj;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _labrador2.default.navigateTo({
-                  url: event.target.dataset.link
-                });
-
-              case 1:
-              case 'end':
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function linkTo(_x2) {
-        return _ref3.apply(this, arguments);
-      }
-
-      return linkTo;
-    }()
-  }, {
-    key: 'bannerInit',
-    value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-        var res, imgUrls, imgUrlsArr, i, imgObj;
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
+                _context2.next = 2;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
                   data: {
                     bannerType: 0
-                  },
-                  header: {
-                    'content-type': 'application/x-www-form-urlencoded'
                   }
                 });
 
               case 2:
-                res = _context3.sent;
+                res = _context2.sent;
                 imgUrls = [];
                 imgUrlsArr = res.data.data || [];
 
@@ -180,14 +164,14 @@ var Index = function (_wx$Component) {
 
               case 7:
               case 'end':
-                return _context3.stop();
+                return _context2.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee2, this);
       }));
 
       function bannerInit() {
-        return _ref4.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return bannerInit;
@@ -207,15 +191,15 @@ var Index = function (_wx$Component) {
   }, {
     key: 'objectInit',
     value: function () {
-      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
         var _this, objRes, obj_data, project;
 
-        return _regenerator2.default.wrap(function _callee4$(_context4) {
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 _this = this;
-                _context4.next = 3;
+                _context3.next = 3;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject',
                   header: {
@@ -224,7 +208,7 @@ var Index = function (_wx$Component) {
                 });
 
               case 3:
-                objRes = _context4.sent;
+                objRes = _context3.sent;
                 obj_data = objRes.data.data;
                 project = this.data.project;
 
@@ -241,14 +225,14 @@ var Index = function (_wx$Component) {
 
               case 8:
               case 'end':
-                return _context4.stop();
+                return _context3.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee3, this);
       }));
 
       function objectInit() {
-        return _ref5.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return objectInit;
@@ -256,31 +240,36 @@ var Index = function (_wx$Component) {
   }, {
     key: 'onLoad',
     value: function () {
-      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5() {
-        return _regenerator2.default.wrap(function _callee5$(_context5) {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
+        var location;
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 this.bannerInit();
                 this.objectInit();
+                _context4.next = 4;
+                return _labrador2.default.getLocation();
 
-              case 2:
+              case 4:
+                location = _context4.sent;
+
+                console.log(e);
+
+              case 6:
               case 'end':
-                return _context5.stop();
+                return _context4.stop();
             }
           }
-        }, _callee5, this);
+        }, _callee4, this);
       }));
 
-      function onLoad() {
-        return _ref6.apply(this, arguments);
+      function onLoad(_x2) {
+        return _ref5.apply(this, arguments);
       }
 
       return onLoad;
     }()
-  }, {
-    key: 'onReady',
-    value: function onReady() {}
   }]);
   return Index;
 }(_labrador2.default.Component);

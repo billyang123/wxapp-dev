@@ -34,7 +34,8 @@ var _class = function () {
   function _class() {
     (0, _classCallCheck3.default)(this, _class);
     this.globalData = {
-      userInfo: null
+      userInfo: null,
+      storage: null
     };
   }
 
@@ -42,26 +43,22 @@ var _class = function () {
     key: 'onLaunch',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-        var res, logs;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _labrador2.default.getStorage({ key: 'logs' });
+                return this.getUserInfo();
 
               case 2:
-                res = _context.sent;
-                logs = res.data || [];
+                this.globalData.userInfo = _context.sent;
+                _context.next = 5;
+                return this.getStorage();
 
-                logs.unshift(Date.now());
-                _context.next = 7;
-                return _labrador2.default.setStorage({ key: 'logs', data: logs });
+              case 5:
+                this.globalData.storage = _context.sent;
 
-              case 7:
-                this.timer();
-
-              case 8:
+              case 6:
               case 'end':
                 return _context.stop();
             }
@@ -76,27 +73,51 @@ var _class = function () {
       return onLaunch;
     }()
   }, {
-    key: 'timer',
+    key: 'getStorage',
     value: function () {
       var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+        var localSession, storageInfo, keys, i, res;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (!true) {
-                  _context2.next = 6;
+                // if (this.globalData.storage) {
+                //   return this.globalData.storage;
+                // }
+                localSession = {};
+                _context2.next = 3;
+                return _labrador2.default.getStorageInfo();
+
+              case 3:
+                storageInfo = _context2.sent;
+                keys = storageInfo.keys;
+
+                console.log(keys);
+                i = 0;
+
+              case 7:
+                if (!(i < keys.length)) {
+                  _context2.next = 15;
                   break;
                 }
 
-                console.log('hello');
-                _context2.next = 4;
-                return (0, _util.sleep)(10000);
+                _context2.next = 10;
+                return _labrador2.default.getStorage({ key: keys[i] });
 
-              case 4:
-                _context2.next = 0;
+              case 10:
+                res = _context2.sent;
+
+                localSession[keys[i]] = res.data || '';
+
+              case 12:
+                i++;
+                _context2.next = 7;
                 break;
 
-              case 6:
+              case 15:
+                return _context2.abrupt('return', localSession);
+
+              case 16:
               case 'end':
                 return _context2.stop();
             }
@@ -104,43 +125,49 @@ var _class = function () {
         }, _callee2, this);
       }));
 
-      function timer() {
+      function getStorage() {
         return _ref2.apply(this, arguments);
       }
 
-      return timer;
+      return getStorage;
     }()
   }, {
     key: 'getUserInfo',
     value: function () {
       var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-        var res;
+        var ckSess, loginInfo, res;
         return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                if (!this.globalData.userInfo) {
-                  _context3.next = 2;
+                _context3.next = 2;
+                return _labrador2.default.checkSession();
+
+              case 2:
+                ckSess = _context3.sent;
+
+                if (!(ckSess.errMsg != "checkSession:ok")) {
+                  _context3.next = 9;
                   break;
                 }
 
-                return _context3.abrupt('return', this.globalData.userInfo);
-
-              case 2:
-                _context3.next = 4;
+                _context3.next = 6;
                 return _labrador2.default.login();
 
-              case 4:
-                _context3.next = 6;
-                return _labrador2.default.getUserInfo();
-
               case 6:
-                res = _context3.sent;
-
-                this.globalData.userInfo = res.userInfo;
-                return _context3.abrupt('return', res.userInfo);
+                loginInfo = _context3.sent;
+                _context3.next = 9;
+                return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
 
               case 9:
+                _context3.next = 11;
+                return _labrador2.default.getUserInfo();
+
+              case 11:
+                res = _context3.sent;
+                return _context3.abrupt('return', res.userInfo);
+
+              case 13:
               case 'end':
                 return _context3.stop();
             }

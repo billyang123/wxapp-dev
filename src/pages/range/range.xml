@@ -1,0 +1,25 @@
+<view class="container">
+	<view class="media-list range-list">
+		<view class="item-content" catchtap="setSlide" data-id="0">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>国内国际航班意外身故/重度伤残</text>
+				</view>
+				<view class="item-after">
+					<text>最高100万元</text>
+				</view>
+				<icon class="icon-chevron" animation="{{chevron}}"></icon>
+			</view>
+		</view>
+		<view class="item-xmain" animation="{{slide}}">
+			<view class="item-xmain-bd">
+				<view class="p">
+					<text>保障会员自加入次日起，因乘坐国内、国际航班发生意外事故，导致保障会员意外身故或者重度伤残的，互助小组一次性给付身故或者重度伤残互助金100万。</text>
+				</view>
+				<view class="p">
+					<text>重度伤残是指根据《伤残评定标准》认定为1-3级。</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

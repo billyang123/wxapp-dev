@@ -13,7 +13,7 @@
 				<view class="nm-line"><text>已筹互助金额</text></view>
 			</view>
 		</view> -->
-		<view class="broad-case" data-link="#" bindtap="linkTo">
+		<view class="broad-case" data-link="#" catchtap="linkTo">
 			<text class="bc-t">公示：</text>
 			<text>【资金公示】十月既第三期资金公示</text>
 			<icon class="iconfont icon-jiantou-right"></icon>
@@ -35,7 +35,7 @@
 		<view class="title">
 			<view class="tname">互助社群</view>
 		</view>
-		<view class="hz-item" wx:for="{{project}}">
+		<view class="hz-item" wx:for="{{project}}" data-link="{{item.link}}" catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="{{item.img}}"></image>
 			<view class="hi-title"><text>{{item.title}}</text></view>
 			<view class="hi-info">
