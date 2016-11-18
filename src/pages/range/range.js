@@ -22,7 +22,7 @@ export default class Range extends wx.Component {
 	setSlide(event){		
 		let id = event.currentTarget.dataset.id;
 		let slideData = this.data.slideData;
-		let curSlide = slideData[id];
+		let curSlide = slideData[parseInt(id)];
 		let o = 1,h = curSlide.height+"rpx",deg=-90;
 		if(curSlide.isdown){
 			o = 0;
@@ -34,7 +34,7 @@ export default class Range extends wx.Component {
 		curSlide.chevron.rotate(deg).step();
 		curSlide.slide = curSlide.slide.export(),
 		curSlide.chevron = curSlide.chevron.export()
-		slideData[id] = curSlide;
+		slideData[parseInt(id)] = curSlide;
 		this.setData({
 			slideData:slideData
 		})

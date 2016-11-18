@@ -7,11 +7,20 @@ export default class {
     storage:null
   };
   async onLaunch() {
-    //调用API从本地缓存中获取数据
-    this.globalData.userInfo = await this.getUserInfo();
-    this.globalData.storage =  await this.getStorage();
+    await this.__init();
+    console.log(this.globalData)
   }
-
+  async __init(){
+    //this.globalData.storage =  await this.getStorage();
+    let ckSess = await wx.checkSession();
+    //console.log(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
+    if(ckSess.errMsg == "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
+      let loginInfo = await wx.login();
+      await wx.setStorage({ key: 'code', data: loginInfo.code });
+    }
+    await this.getUserInfo();
+    this.globalData.storage = await this.getStorage();
+  }
   async getStorage (){
     // if (this.globalData.storage) {
     //   return this.globalData.storage;
@@ -28,13 +37,12 @@ export default class {
     return localSession;
   }
   async getUserInfo() {
-    let ckSess = await wx.checkSession();
-    if(ckSess.errMsg != "checkSession:ok"){
-      let loginInfo = await wx.login();
-      await wx.setStorage({ key: 'code', data: loginInfo.code });
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo;
     }
+    await wx.login();
     let res = await wx.getUserInfo();
-    //this.globalData.userInfo = res.userInfo;
+    this.globalData.userInfo = res.userInfo;
     return res.userInfo;
   }
 }

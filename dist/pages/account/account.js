@@ -94,12 +94,14 @@ var Account = function (_wx$Component) {
 									sessionKey: _labrador2.default.app.globalData.storage.sessionKey
 								};
 
+								console.log(postdata);
+
 								if (postdata.sessionKey) {
-									_context.next = 11;
+									_context.next = 12;
 									break;
 								}
 
-								_context.next = 5;
+								_context.next = 6;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -109,25 +111,25 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 5:
+							case 6:
 								rdRes = _context.sent;
-								_context.next = 8;
+								_context.next = 9;
 								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
-							case 8:
-								_context.next = 10;
+							case 9:
+								_context.next = 11;
 								return _labrador2.default.app.getStorage();
 
-							case 10:
+							case 11:
 								_labrador2.default.app.globalData.storage = _context.sent;
 
-							case 11:
-								_context.next = 13;
+							case 12:
+								_context.next = 14;
 								return _labrador2.default.getUserInfo();
 
-							case 13:
+							case 14:
 								userInfo = _context.sent;
-								_context.next = 16;
+								_context.next = 17;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -144,7 +146,7 @@ var Account = function (_wx$Component) {
 									}
 								});
 
-							case 16:
+							case 17:
 								userInfoPost = _context.sent;
 
 								_labrador2.default.hideToast();
@@ -156,7 +158,7 @@ var Account = function (_wx$Component) {
 									userInfo: userInfo.userInfo
 								});
 
-							case 20:
+							case 21:
 							case "end":
 								return _context.stop();
 						}

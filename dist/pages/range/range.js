@@ -66,7 +66,7 @@ var Range = function (_wx$Component) {
 		value: function setSlide(event) {
 			var id = event.currentTarget.dataset.id;
 			var slideData = this.data.slideData;
-			var curSlide = slideData[id];
+			var curSlide = slideData[parseInt(id)];
 			var o = 1,
 			    h = curSlide.height + "rpx",
 			    deg = -90;
@@ -79,7 +79,7 @@ var Range = function (_wx$Component) {
 			curSlide.slide.opacity(o).height(h).step();
 			curSlide.chevron.rotate(deg).step();
 			curSlide.slide = curSlide.slide.export(), curSlide.chevron = curSlide.chevron.export();
-			slideData[id] = curSlide;
+			slideData[parseInt(id)] = curSlide;
 			this.setData({
 				slideData: slideData
 			});

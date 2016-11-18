@@ -48,17 +48,12 @@ var _class = function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this.getUserInfo();
+                return this.__init();
 
               case 2:
-                this.globalData.userInfo = _context.sent;
-                _context.next = 5;
-                return this.getStorage();
+                console.log(this.globalData);
 
-              case 5:
-                this.globalData.storage = _context.sent;
-
-              case 6:
+              case 3:
               case 'end':
                 return _context.stop();
             }
@@ -73,51 +68,45 @@ var _class = function () {
       return onLaunch;
     }()
   }, {
-    key: 'getStorage',
+    key: '__init',
     value: function () {
       var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
-        var localSession, storageInfo, keys, i, res;
+        var ckSess, loginInfo;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                // if (this.globalData.storage) {
-                //   return this.globalData.storage;
-                // }
-                localSession = {};
-                _context2.next = 3;
-                return _labrador2.default.getStorageInfo();
+                _context2.next = 2;
+                return _labrador2.default.checkSession();
 
-              case 3:
-                storageInfo = _context2.sent;
-                keys = storageInfo.keys;
+              case 2:
+                ckSess = _context2.sent;
 
-                console.log(keys);
-                i = 0;
-
-              case 7:
-                if (!(i < keys.length)) {
-                  _context2.next = 15;
+                if (!(ckSess.errMsg == "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
+                  _context2.next = 9;
                   break;
                 }
 
-                _context2.next = 10;
-                return _labrador2.default.getStorage({ key: keys[i] });
+                _context2.next = 6;
+                return _labrador2.default.login();
 
-              case 10:
-                res = _context2.sent;
+              case 6:
+                loginInfo = _context2.sent;
+                _context2.next = 9;
+                return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
 
-                localSession[keys[i]] = res.data || '';
+              case 9:
+                _context2.next = 11;
+                return this.getUserInfo();
 
-              case 12:
-                i++;
-                _context2.next = 7;
-                break;
+              case 11:
+                _context2.next = 13;
+                return this.getStorage();
 
-              case 15:
-                return _context2.abrupt('return', localSession);
+              case 13:
+                this.globalData.storage = _context2.sent;
 
-              case 16:
+              case 14:
               case 'end':
                 return _context2.stop();
             }
@@ -125,49 +114,58 @@ var _class = function () {
         }, _callee2, this);
       }));
 
-      function getStorage() {
+      function __init() {
         return _ref2.apply(this, arguments);
       }
 
-      return getStorage;
+      return __init;
     }()
   }, {
-    key: 'getUserInfo',
+    key: 'getStorage',
     value: function () {
       var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-        var ckSess, loginInfo, res;
+        var localSession, storageInfo, keys, i, res;
         return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
-                return _labrador2.default.checkSession();
+                // if (this.globalData.storage) {
+                //   return this.globalData.storage;
+                // }
+                localSession = {};
+                _context3.next = 3;
+                return _labrador2.default.getStorageInfo();
 
-              case 2:
-                ckSess = _context3.sent;
+              case 3:
+                storageInfo = _context3.sent;
+                keys = storageInfo.keys;
 
-                if (!(ckSess.errMsg != "checkSession:ok")) {
-                  _context3.next = 9;
+                console.log(keys);
+                i = 0;
+
+              case 7:
+                if (!(i < keys.length)) {
+                  _context3.next = 15;
                   break;
                 }
 
-                _context3.next = 6;
-                return _labrador2.default.login();
+                _context3.next = 10;
+                return _labrador2.default.getStorage({ key: keys[i] });
 
-              case 6:
-                loginInfo = _context3.sent;
-                _context3.next = 9;
-                return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
-
-              case 9:
-                _context3.next = 11;
-                return _labrador2.default.getUserInfo();
-
-              case 11:
+              case 10:
                 res = _context3.sent;
-                return _context3.abrupt('return', res.userInfo);
 
-              case 13:
+                localSession[keys[i]] = res.data || '';
+
+              case 12:
+                i++;
+                _context3.next = 7;
+                break;
+
+              case 15:
+                return _context3.abrupt('return', localSession);
+
+              case 16:
               case 'end':
                 return _context3.stop();
             }
@@ -175,8 +173,52 @@ var _class = function () {
         }, _callee3, this);
       }));
 
-      function getUserInfo() {
+      function getStorage() {
         return _ref3.apply(this, arguments);
+      }
+
+      return getStorage;
+    }()
+  }, {
+    key: 'getUserInfo',
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+        var res;
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                if (!this.globalData.userInfo) {
+                  _context4.next = 2;
+                  break;
+                }
+
+                return _context4.abrupt('return', this.globalData.userInfo);
+
+              case 2:
+                _context4.next = 4;
+                return _labrador2.default.login();
+
+              case 4:
+                _context4.next = 6;
+                return _labrador2.default.getUserInfo();
+
+              case 6:
+                res = _context4.sent;
+
+                this.globalData.userInfo = res.userInfo;
+                return _context4.abrupt('return', res.userInfo);
+
+              case 9:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function getUserInfo() {
+        return _ref4.apply(this, arguments);
       }
 
       return getUserInfo;

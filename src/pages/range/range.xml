@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="media-list range-list">
-		<view class="item-content" catchtap="setSlide" data-id="0">
+		<view class="item-content" wx:for={{slideData}} wx:for-index="idx" catchtap="setSlide" data-id="{{idx}}">
 			<view class="item-inner">
 				<view class="item-title">
 					<text>国内国际航班意外身故/重度伤残</text>
