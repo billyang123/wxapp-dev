@@ -94,14 +94,12 @@ var Account = function (_wx$Component) {
 									sessionKey: _labrador2.default.app.globalData.storage.sessionKey
 								};
 
-								console.log(postdata);
-
 								if (postdata.sessionKey) {
-									_context.next = 12;
+									_context.next = 11;
 									break;
 								}
 
-								_context.next = 6;
+								_context.next = 5;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -111,25 +109,25 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 6:
+							case 5:
 								rdRes = _context.sent;
-								_context.next = 9;
+								_context.next = 8;
 								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
-							case 9:
-								_context.next = 11;
+							case 8:
+								_context.next = 10;
 								return _labrador2.default.app.getStorage();
 
-							case 11:
+							case 10:
 								_labrador2.default.app.globalData.storage = _context.sent;
 
-							case 12:
-								_context.next = 14;
+							case 11:
+								_context.next = 13;
 								return _labrador2.default.getUserInfo();
 
-							case 14:
+							case 13:
 								userInfo = _context.sent;
-								_context.next = 17;
+								_context.next = 16;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -141,12 +139,12 @@ var Account = function (_wx$Component) {
 										signature: userInfo.signature,
 										encryptedData: userInfo.encryptedData,
 										iv: userInfo.iv,
-										sessionKey: postdata.sessionKey,
+										sessionKey: _labrador2.default.app.globalData.storage.sessionKey,
 										code: postdata.code
 									}
 								});
 
-							case 17:
+							case 16:
 								userInfoPost = _context.sent;
 
 								_labrador2.default.hideToast();
@@ -158,7 +156,7 @@ var Account = function (_wx$Component) {
 									userInfo: userInfo.userInfo
 								});
 
-							case 21:
+							case 20:
 							case "end":
 								return _context.stop();
 						}
