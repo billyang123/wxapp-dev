@@ -77,36 +77,43 @@ var _class = function () {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _labrador2.default.checkSession();
+                return this.getStorage();
 
               case 2:
+                this.globalData.storage = _context2.sent;
+                _context2.next = 5;
+                return _labrador2.default.checkSession();
+
+              case 5:
                 ckSess = _context2.sent;
 
-                if (!(ckSess.errMsg == "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
-                  _context2.next = 9;
+                console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code);
+
+                if (!(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
+                  _context2.next = 13;
                   break;
                 }
 
-                _context2.next = 6;
+                _context2.next = 10;
                 return _labrador2.default.login();
 
-              case 6:
+              case 10:
                 loginInfo = _context2.sent;
-                _context2.next = 9;
+                _context2.next = 13;
                 return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
 
-              case 9:
-                _context2.next = 11;
+              case 13:
+                _context2.next = 15;
                 return this.getUserInfo();
 
-              case 11:
-                _context2.next = 13;
+              case 15:
+                _context2.next = 17;
                 return this.getStorage();
 
-              case 13:
+              case 17:
                 this.globalData.storage = _context2.sent;
 
-              case 14:
+              case 18:
               case 'end':
                 return _context2.stop();
             }
@@ -188,28 +195,16 @@ var _class = function () {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                if (!this.globalData.userInfo) {
-                  _context4.next = 2;
-                  break;
-                }
-
-                return _context4.abrupt('return', this.globalData.userInfo);
-
-              case 2:
-                _context4.next = 4;
-                return _labrador2.default.login();
-
-              case 4:
-                _context4.next = 6;
+                _context4.next = 2;
                 return _labrador2.default.getUserInfo();
 
-              case 6:
+              case 2:
                 res = _context4.sent;
 
                 this.globalData.userInfo = res.userInfo;
                 return _context4.abrupt('return', res.userInfo);
 
-              case 9:
+              case 5:
               case 'end':
                 return _context4.stop();
             }

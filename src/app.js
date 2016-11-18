@@ -11,10 +11,10 @@ export default class {
     console.log(this.globalData)
   }
   async __init(){
-    //this.globalData.storage =  await this.getStorage();
+    this.globalData.storage =  await this.getStorage();
     let ckSess = await wx.checkSession();
-    //console.log(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
-    if(ckSess.errMsg == "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
+    console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
+    if(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
       let loginInfo = await wx.login();
       await wx.setStorage({ key: 'code', data: loginInfo.code });
     }
@@ -37,10 +37,6 @@ export default class {
     return localSession;
   }
   async getUserInfo() {
-    if (this.globalData.userInfo) {
-      return this.globalData.userInfo;
-    }
-    await wx.login();
     let res = await wx.getUserInfo();
     this.globalData.userInfo = res.userInfo;
     return res.userInfo;
