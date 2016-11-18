@@ -4,7 +4,8 @@
     "pages/account/account",
     "pages/bindphone/bindphone",
     "pages/community/community",
-    "pages/range/range"
+    "pages/range/range",
+    "pages/publicity/publicity"
   ],
   "window":{
     "backgroundTextStyle":"light",

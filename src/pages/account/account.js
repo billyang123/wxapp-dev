@@ -49,7 +49,7 @@ export default class Account extends wx.Component {
             data: {
             	rawData:userInfo.rawData,
             	signature:userInfo.signature,
-            	encryptedData:userInfo.encryptedData,
+            	encryptedData:encodeURIComponent(userInfo.encryptedData),
             	iv:userInfo.iv,
             	sessionKey: wx.app.globalData.storage.sessionKey,
             	code:postdata.code

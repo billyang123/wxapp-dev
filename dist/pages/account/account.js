@@ -137,7 +137,7 @@ var Account = function (_wx$Component) {
 									data: {
 										rawData: userInfo.rawData,
 										signature: userInfo.signature,
-										encryptedData: userInfo.encryptedData,
+										encryptedData: encodeURIComponent(userInfo.encryptedData),
 										iv: userInfo.iv,
 										sessionKey: _labrador2.default.app.globalData.storage.sessionKey,
 										code: postdata.code

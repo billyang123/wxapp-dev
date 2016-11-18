@@ -13,7 +13,7 @@
 				<view class="nm-line"><text>已筹互助金额</text></view>
 			</view>
 		</view> -->
-		<view class="broad-case" data-link="#" catchtap="linkTo">
+		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
 			<text class="bc-t">公示：</text>
 			<text>【资金公示】十月既第三期资金公示</text>
 			<icon class="iconfont icon-jiantou-right"></icon>
