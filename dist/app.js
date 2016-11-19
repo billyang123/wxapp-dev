@@ -73,7 +73,7 @@ var _class = function () {
     key: '__init',
     value: function () {
       var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
-        var ckSess, loginInfo;
+        var loginInfo;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -83,39 +83,32 @@ var _class = function () {
 
               case 2:
                 this.globalData.storage = _context2.sent;
-                _context2.next = 5;
-                return _labrador2.default.checkSession();
 
-              case 5:
-                ckSess = _context2.sent;
-
-                console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code);
-
-                if (!(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
-                  _context2.next = 13;
+                if (!(!this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
+                  _context2.next = 9;
                   break;
                 }
 
-                _context2.next = 10;
+                _context2.next = 6;
                 return _labrador2.default.login();
 
-              case 10:
+              case 6:
                 loginInfo = _context2.sent;
-                _context2.next = 13;
+                _context2.next = 9;
                 return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
 
-              case 13:
-                _context2.next = 15;
+              case 9:
+                _context2.next = 11;
                 return this.getUserInfo();
 
-              case 15:
-                _context2.next = 17;
+              case 11:
+                _context2.next = 13;
                 return this.getStorage();
 
-              case 17:
+              case 13:
                 this.globalData.storage = _context2.sent;
 
-              case 18:
+              case 14:
               case 'end':
                 return _context2.stop();
             }

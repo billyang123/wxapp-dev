@@ -13,9 +13,10 @@ export default class {
   }
   async __init(){
     this.globalData.storage =  await this.getStorage();
-    let ckSess = await wx.checkSession();
-    console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
-    if(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
+    //let ckSess = await wx.checkSession();
+    //ckSess.errMsg != "checkSession:ok"
+    //console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
+    if(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
       let loginInfo = await wx.login();
       await wx.setStorage({ key: 'code', data: loginInfo.code });
     }
