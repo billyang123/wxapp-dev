@@ -10,11 +10,15 @@
 			color: #fff;
 			overflow: hidden;
 			margin: 48rpx 36rpx;
-			.txt {
-				float: left;
-				line-height: 130rpx;
-				margin-left: 29rpx;
+			.acimage {
+				overflow: hidden;
 			}
+		}
+		.txt{
+			float: left;
+			line-height: 130rpx;
+			margin-left: 29rpx;
+			color: #fff;
 		}
 		.avatar {
 			width:130rpx;
@@ -23,12 +27,26 @@
 		}
 		.acimage {
 			float: left;
-			overflow: hidden;
 			background-color:#dddee3;
 			border:5rpx solid rgba(255,255,255,0.30);
 			width:130rpx;
 			height:130rpx;
 			border-radius:100%;
+			position: relative;
+			.volunteer {
+				position: absolute;
+				background:#ffe740;
+				border:3rpx solid rgba(255,255,255,0.30);
+				border-radius:20rpx;
+				width:134rpx;
+				height:40rpx;
+				line-height: 46rpx;
+				text-align: center;
+				font-size:24rpx;
+				color:#ff6a00;
+				bottom: -22rpx;
+				left: 0;
+			}
 		}
 		&.login {
 			margin: 48rpx 36rpx;

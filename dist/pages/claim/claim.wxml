@@ -5,7 +5,7 @@
 			<button size="mini" type="warn" plain="true" class="btn">400-688-6259</button>
 		</view>
 	</view>
-	<view class="hp-claim-btn" data-link="#" catchtap="_dispatch" data-catchtap="linkTo">
+	<view class="hp-claim-btn" data-link="/pages/applyform/applyform" catchtap="_dispatch" data-catchtap="linkTo">
 		<text>申请互助</text>
 	</view>
 </view>

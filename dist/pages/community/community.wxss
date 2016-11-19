@@ -115,3 +115,54 @@
   border-top: 1rpx solid #ff6a00;
   background-color: #ff6a00;
 }
+.process .proc-li {
+  padding-left: 65rpx;
+  min-height: 88rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  position: relative;
+}
+.process .proc-li:before {
+  content: "";
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  background-color: #ff6a00;
+  border-radius: 100%;
+  position: absolute;
+}
+.process .proc-li:after {
+  content: "";
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  background-color: #ff6a00;
+  border-radius: 100%;
+  position: absolute;
+}
+.process .proc-li .proc-inner {
+  border-bottom: 1rpx solid #ddd;
+  padding: 29rpx 23rpx 29rpx 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.process .proc-li .pl-title {
+  font-size: 28rpx;
+}
+.process .proc-li .pl-after {
+  color: #999;
+  font-size: 26rpx;
+}
+.process .proc-li .pl-after .spr {
+  color: #333;
+}

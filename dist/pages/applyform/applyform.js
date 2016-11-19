@@ -45,10 +45,26 @@ var Applyform = function (_wx$Component) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Applyform.__proto__ || (0, _getPrototypeOf2.default)(Applyform)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Applyform.__proto__ || (0, _getPrototypeOf2.default)(Applyform)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+			planArr: ["请选择", '美国', '中国', '巴西', '日本'],
+			index: 0
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
 	(0, _createClass3.default)(Applyform, [{
+		key: 'bindPickerChange',
+		value: function bindPickerChange(e) {
+			console.log('picker发送选择改变，携带值为', e.detail.value);
+			this.setData({
+				index: e.detail.value
+			});
+		}
+	}, {
+		key: 'bindTextAreaBlur',
+		value: function bindTextAreaBlur(e) {
+			console.log(e.detail.value);
+		}
+	}, {
 		key: 'linkTo',
 		value: function linkTo(event) {
 			_labrador2.default.navigateTo({

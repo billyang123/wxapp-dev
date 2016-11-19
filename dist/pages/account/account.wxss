@@ -9,10 +9,14 @@
   overflow: hidden;
   margin: 48rpx 36rpx;
 }
-.account-info.no-login .txt {
+.account-info.no-login .acimage {
+  overflow: hidden;
+}
+.account-info .txt {
   float: left;
   line-height: 130rpx;
   margin-left: 29rpx;
+  color: #fff;
 }
 .account-info .avatar {
   width: 130rpx;
@@ -21,12 +25,26 @@
 }
 .account-info .acimage {
   float: left;
-  overflow: hidden;
   background-color: #dddee3;
   border: 5rpx solid rgba(255, 255, 255, 0.3);
   width: 130rpx;
   height: 130rpx;
   border-radius: 100%;
+  position: relative;
+}
+.account-info .acimage .volunteer {
+  position: absolute;
+  background: #ffe740;
+  border: 3rpx solid rgba(255, 255, 255, 0.3);
+  border-radius: 20rpx;
+  width: 134rpx;
+  height: 40rpx;
+  line-height: 46rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ff6a00;
+  bottom: -22rpx;
+  left: 0;
 }
 .account-info.login {
   margin: 48rpx 36rpx;

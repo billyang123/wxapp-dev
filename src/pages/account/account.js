@@ -21,6 +21,9 @@ export default class Account extends wx.Component {
 	  return str.join("&"); 
 	} 
 	async doLogin() {
+		if(this.data.login){
+			return;
+		}
 		wx.showToast({
 		  title: '登录中',
 		  icon: 'loading',
@@ -60,21 +63,51 @@ export default class Account extends wx.Component {
             	code:postdata.code
             }
         })
+        if(userInfoPost.data.data == "logged"){
+        	let myuser = await this.getUser(postdata.code);
+        	if(myuser.data.loginStatus){
+        		this.setData({
+					login:true,
+					userInfo:myuser.data.data
+				})
+        	}
+        }
+        if(userInfoPost.data.data == "notlogged"){
+        	await wx.navigateTo({
+		      url:'/pages/bindphone/bindphone'
+		    })
+        }
 		wx.hideToast();
-		wx.navigateTo({
-	      url:'/pages/bindphone/bindphone'
-	    })
-		this.setData({
-			login:true,
-			userInfo:userInfo.userInfo
-		})
+	}
+	async getUser(code){
+		let myuser = await wx.request({
+            url: 'https://xcx.chinamuxie.com/wxapi/user/account',
+            method:"get",
+            header: {
+			    'content-type': 'application/x-www-form-urlencoded'
+			},
+            data: {
+            	code:code
+            }
+        })
+        return myuser;
 	}
 	async checkLogin(){
 		//wx.clearStorage();
 		this.doLogin();
 	}
 	async onLoad(){
-		 //调用API从本地缓存中获取数据
-		 console.log(wx.app.globalData)
+		let myuser = await this.getUser(wx.app.globalData.storage.code);
+		console.log(myuser)
+		if(myuser.data.data.loginStatus){
+    		this.setData({
+				login:true,
+				userInfo:myuser.data.data
+			})
+    	}else{
+    		this.setData({
+				login:false
+			})
+    	}
 	}
 }

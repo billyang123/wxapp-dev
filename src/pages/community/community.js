@@ -36,10 +36,20 @@ export default class Community extends wx.Component {
 	    })
 	}
     async onLoad(e){
-    	console.log(e)
+    	let id = parseInt(e.type);
+    	let Res = await wx.request({
+            url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
+            method:"get",
+            header: {
+			    'content-type': 'application/x-www-form-urlencoded'
+			},
+            data: {
+            	id:id
+            }
+        })
     	this.setData({
-    		bannerImg:this.data.topBanner[parseInt(e.type)-1]
+    		bannerImg:this.data.topBanner[id-1]
     	})
-    	console.log(type);
+    	console.log(Res);
     }
 }

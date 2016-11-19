@@ -122,5 +122,18 @@
 				</view>
 			</view>
 		</view>
+		<view class="process">
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>提交材料</text>
+					</view>
+					<view class="pl-after">
+						<text>拨打</text>
+						<text>400-688-6259</text>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>

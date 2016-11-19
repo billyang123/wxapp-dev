@@ -34,14 +34,54 @@ export default class Bindphone extends wx.Component {
 				_this.setData({
 					cDisCls:""
 				})
+				_this.setData({
+					btnText:"重发"
+				})
 			}
 			_this.setData({
 				btnText:secNum+"秒后重发"
 			})
 		},1000);
 	}
-	getCheckCode(e){
-		this.shoutTime()
+	async doBind(e){
+		let postBind = await wx.request({
+            url: 'https://xcx.chinamuxie.com/wxapi/user/doBindPhone',
+            method:"POST",
+            header: {
+			    'content-type': 'application/x-www-form-urlencoded'
+			},
+            data: {
+            	phone:this.data.phoneValue,
+            	valideCode:this.data.codeValue,
+            	code:wx.app.globalData.storage.code
+            }
+        })
+        if(postBind.data.status == 0){
+        	wx.showToast({
+			  title: '绑定成功',
+			  icon: 'success',
+			  duration: 2000
+			})
+        }
+	}
+	async getCheckCode(e){
+		let postCode = await wx.request({
+            url: 'https://xcx.chinamuxie.com/wxapi/user/sendCode',
+            method:"POST",
+            header: {
+			    'content-type': 'application/x-www-form-urlencoded'
+			},
+            data: {
+            	telphone:this.data.phoneValue
+            }
+        })
+        if(postCode.data.status == 0){
+        	this.shoutTime();
+        	this.setData({
+        		disabled:false
+        	})
+        	wx.navigateBack();
+        }
 	}
 	async onLoad() {
 	    var userInfo = await wx.getUserInfo();

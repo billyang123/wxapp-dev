@@ -89,17 +89,33 @@ var Community = function (_wx$Component) {
 		key: "onLoad",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
+				var id, Res;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
-								console.log(e);
-								this.setData({
-									bannerImg: this.data.topBanner[parseInt(e.type) - 1]
+								id = parseInt(e.type);
+								_context.next = 3;
+								return _labrador2.default.request({
+									url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
+									method: "get",
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									data: {
+										id: id
+									}
 								});
-								console.log(type);
 
 							case 3:
+								Res = _context.sent;
+
+								this.setData({
+									bannerImg: this.data.topBanner[id - 1]
+								});
+								console.log(Res);
+
+							case 6:
 							case "end":
 								return _context.stop();
 						}

@@ -21,11 +21,11 @@
 				<view class="section pcode">
 					<view class="section_title">验证码</view>
 					<input bindinput="bindKeyInput" placeholder="输入验证码" data-name="codeValue"/>
-					<view class="{{cDisCls}}" bindtap="getCheckCode">{{btnText}}</view>
+					<view class="{{cDisCls}}"  bindtap="getCheckCode">{{btnText}}</view>
 				</view>
 			</view>
 			<view class="bind-btn">
-				<button class="submitbtn" disabled="{{disabled}}" form-type="submit">绑定</button>
+				<button class="submitbtn" disabled="{{disabled}}" bindtap="doBind">绑定</button>
 			</view>
 		</form>
 	</view>

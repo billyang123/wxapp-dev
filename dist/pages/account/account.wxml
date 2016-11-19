@@ -2,27 +2,33 @@
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
 			<view class="acimage default-image">
-				<image src="{{userInfo.avatarUrl}}" class="avatar"/>
+				<image src="{{userInfo.headImgUrl}}" class="avatar"/>
+				<view class="volunteer" wx:if="{{isVolunteer}}">
+					<text>自愿者</text>
+				</view>
 			</view>
-			<view class="txt-area">
+			<view class="txt-area" wx:if="{{userInfo.existGuarantee}}">
 				<view class="name">
 					<text>{{userInfo.nickName}}</text>
 				</view>
 				<view class="hnumber">
 					<view class="hn-l">
-						<view class="num"><text>500</text></view>
+						<view class="num"><text>{{userInfo.serialNumber}}</text></view>
 						<view class="th"><text>加入社群排位</text></view>
 					</view>
 					<view class="hn-l">
-						<view class="num"><text>107</text></view>
+						<view class="num"><text>{{userInfo.joinedDays}}</text></view>
 						<view class="th"><text>加入社群天数</text></view>
 					</view>
 				</view>
-				<view class="msgnum-icon">
+				<!-- <view class="msgnum-icon">
 					<view class="num">
 						<text>2</text>
 					</view>
-				</view>
+				</view> -->
+			</view>
+			<view class="txt" wx:else="wx:else">
+				<text>{{userInfo.nickName}}</text>
 			</view>
 		</view>
 		<view wx:else="wx:else" class="account-info no-login">

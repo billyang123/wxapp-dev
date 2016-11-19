@@ -86,11 +86,19 @@ var Account = function (_wx$Component) {
 		key: "doLogin",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-				var postdata, rdRes, userInfo, userInfoPost;
+				var postdata, rdRes, userInfo, userInfoPost, myuser;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
+								if (!this.data.login) {
+									_context.next = 2;
+									break;
+								}
+
+								return _context.abrupt("return");
+
+							case 2:
 								_labrador2.default.showToast({
 									title: '登录中',
 									icon: 'loading',
@@ -102,11 +110,11 @@ var Account = function (_wx$Component) {
 								};
 
 								if (postdata.sessionKey) {
-									_context.next = 11;
+									_context.next = 13;
 									break;
 								}
 
-								_context.next = 5;
+								_context.next = 7;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -116,25 +124,25 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 5:
+							case 7:
 								rdRes = _context.sent;
-								_context.next = 8;
+								_context.next = 10;
 								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
-							case 8:
-								_context.next = 10;
+							case 10:
+								_context.next = 12;
 								return _labrador2.default.app.getStorage();
 
-							case 10:
+							case 12:
 								_labrador2.default.app.globalData.storage = _context.sent;
 
-							case 11:
-								_context.next = 13;
+							case 13:
+								_context.next = 15;
 								return _labrador2.default.getUserInfo();
 
-							case 13:
+							case 15:
 								userInfo = _context.sent;
-								_context.next = 16;
+								_context.next = 18;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -151,19 +159,42 @@ var Account = function (_wx$Component) {
 									}
 								});
 
-							case 16:
+							case 18:
 								userInfoPost = _context.sent;
 
-								_labrador2.default.hideToast();
-								_labrador2.default.navigateTo({
+								if (!(userInfoPost.data.data == "logged")) {
+									_context.next = 24;
+									break;
+								}
+
+								_context.next = 22;
+								return this.getUser(postdata.code);
+
+							case 22:
+								myuser = _context.sent;
+
+								if (myuser.data.loginStatus) {
+									this.setData({
+										login: true,
+										userInfo: myuser.data.data
+									});
+								}
+
+							case 24:
+								if (!(userInfoPost.data.data == "notlogged")) {
+									_context.next = 27;
+									break;
+								}
+
+								_context.next = 27;
+								return _labrador2.default.navigateTo({
 									url: '/pages/bindphone/bindphone'
 								});
-								this.setData({
-									login: true,
-									userInfo: userInfo.userInfo
-								});
 
-							case 20:
+							case 27:
+								_labrador2.default.hideToast();
+
+							case 28:
 							case "end":
 								return _context.stop();
 						}
@@ -178,17 +209,31 @@ var Account = function (_wx$Component) {
 			return doLogin;
 		}()
 	}, {
-		key: "checkLogin",
+		key: "getUser",
 		value: function () {
-			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(code) {
+				var myuser;
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
-								//wx.clearStorage();
-								this.doLogin();
+								_context2.next = 2;
+								return _labrador2.default.request({
+									url: 'https://xcx.chinamuxie.com/wxapi/user/account',
+									method: "get",
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									data: {
+										code: code
+									}
+								});
 
-							case 1:
+							case 2:
+								myuser = _context2.sent;
+								return _context2.abrupt("return", myuser);
+
+							case 4:
 							case "end":
 								return _context2.stop();
 						}
@@ -196,22 +241,22 @@ var Account = function (_wx$Component) {
 				}, _callee2, this);
 			}));
 
-			function checkLogin() {
+			function getUser(_x) {
 				return _ref3.apply(this, arguments);
 			}
 
-			return checkLogin;
+			return getUser;
 		}()
 	}, {
-		key: "onLoad",
+		key: "checkLogin",
 		value: function () {
 			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
 				return _regenerator2.default.wrap(function _callee3$(_context3) {
 					while (1) {
 						switch (_context3.prev = _context3.next) {
 							case 0:
-								//调用API从本地缓存中获取数据
-								console.log(_labrador2.default.app.globalData);
+								//wx.clearStorage();
+								this.doLogin();
 
 							case 1:
 							case "end":
@@ -221,8 +266,49 @@ var Account = function (_wx$Component) {
 				}, _callee3, this);
 			}));
 
-			function onLoad() {
+			function checkLogin() {
 				return _ref4.apply(this, arguments);
+			}
+
+			return checkLogin;
+		}()
+	}, {
+		key: "onLoad",
+		value: function () {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+				var myuser;
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
+					while (1) {
+						switch (_context4.prev = _context4.next) {
+							case 0:
+								_context4.next = 2;
+								return this.getUser(_labrador2.default.app.globalData.storage.code);
+
+							case 2:
+								myuser = _context4.sent;
+
+								console.log(myuser);
+								if (myuser.data.data.loginStatus) {
+									this.setData({
+										login: true,
+										userInfo: myuser.data.data
+									});
+								} else {
+									this.setData({
+										login: false
+									});
+								}
+
+							case 5:
+							case "end":
+								return _context4.stop();
+						}
+					}
+				}, _callee4, this);
+			}));
+
+			function onLoad() {
+				return _ref5.apply(this, arguments);
 			}
 
 			return onLoad;

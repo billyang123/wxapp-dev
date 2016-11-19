@@ -1,5 +1,6 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -93,6 +94,9 @@ var Bindphone = function (_wx$Component) {
 					_this.setData({
 						cDisCls: ""
 					});
+					_this.setData({
+						btnText: "重发"
+					});
 				}
 				_this.setData({
 					btnText: secNum + "秒后重发"
@@ -100,28 +104,38 @@ var Bindphone = function (_wx$Component) {
 			}, 1000);
 		}
 	}, {
-		key: "getCheckCode",
-		value: function getCheckCode(e) {
-			this.shoutTime();
-		}
-	}, {
-		key: "onLoad",
+		key: "doBind",
 		value: function () {
-			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-				var userInfo;
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
+				var postBind;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
 								_context.next = 2;
-								return _labrador2.default.getUserInfo();
+								return _labrador2.default.request({
+									url: 'https://xcx.chinamuxie.com/wxapi/user/doBindPhone',
+									method: "POST",
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									data: {
+										phone: this.data.phoneValue,
+										valideCode: this.data.codeValue,
+										code: _labrador2.default.app.globalData.storage.code
+									}
+								});
 
 							case 2:
-								userInfo = _context.sent;
+								postBind = _context.sent;
 
-								this.setData({
-									userInfo: userInfo.userInfo
-								});
+								if (postBind.data.status == 0) {
+									_labrador2.default.showToast({
+										title: '绑定成功',
+										icon: 'success',
+										duration: 2000
+									});
+								}
 
 							case 4:
 							case "end":
@@ -131,8 +145,87 @@ var Bindphone = function (_wx$Component) {
 				}, _callee, this);
 			}));
 
-			function onLoad() {
+			function doBind(_x) {
 				return _ref2.apply(this, arguments);
+			}
+
+			return doBind;
+		}()
+	}, {
+		key: "getCheckCode",
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+				var postCode;
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								_context2.next = 2;
+								return _labrador2.default.request({
+									url: 'https://xcx.chinamuxie.com/wxapi/user/sendCode',
+									method: "POST",
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									data: {
+										telphone: this.data.phoneValue
+									}
+								});
+
+							case 2:
+								postCode = _context2.sent;
+
+								if (postCode.data.status == 0) {
+									this.shoutTime();
+									this.setData({
+										disabled: false
+									});
+									_labrador2.default.navigateBack();
+								}
+
+							case 4:
+							case "end":
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function getCheckCode(_x2) {
+				return _ref3.apply(this, arguments);
+			}
+
+			return getCheckCode;
+		}()
+	}, {
+		key: "onLoad",
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+				var userInfo;
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+								_context3.next = 2;
+								return _labrador2.default.getUserInfo();
+
+							case 2:
+								userInfo = _context3.sent;
+
+								this.setData({
+									userInfo: userInfo.userInfo
+								});
+
+							case 4:
+							case "end":
+								return _context3.stop();
+						}
+					}
+				}, _callee3, this);
+			}));
+
+			function onLoad() {
+				return _ref4.apply(this, arguments);
 			}
 
 			return onLoad;
