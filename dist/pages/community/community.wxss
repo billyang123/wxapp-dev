@@ -1,3 +1,6 @@
+.community {
+  padding-bottom: 110rpx;
+}
 .community .top-head {
   height: 150rpx;
   width: 100%;
@@ -88,4 +91,27 @@
 }
 .pj_meidalist.media-list .item-inner {
   min-height: 88rpx;
+}
+.commun-nav {
+  position: fixed;
+  bottom: 0;
+  z-index: 2000;
+  background-color: #fff;
+  overflow: hidden;
+}
+.commun-nav .cnav-li {
+  display: block;
+  width: 375rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  float: left;
+  color: #666;
+  font-size: 32rpx;
+  border-top: 1rpx solid #ddd;
+}
+.commun-nav .cnav-li.join {
+  color: #fff;
+  border-top: 1rpx solid #ff6a00;
+  background-color: #ff6a00;
 }

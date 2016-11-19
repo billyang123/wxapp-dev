@@ -26,7 +26,7 @@
 		</view>
 	</view>
 	<view class="hdnav">
-		<view class="col-50">
+		<view class="col-50" catchtap="_dispatch" data-link="/pages/account/account" data-type="redirectTo" data-catchtap="linkTo">
 			<icon class="myicon-index-1"/>
 			<text class="txt">查看我的保障</text>
 			<icon class="iconfont icon-fangxiang-right"/>

@@ -68,5 +68,37 @@
 				</view>
 			</view>
 		</view>
+		<view class="casePublicity-item">
+			<view class="casePublicity-item-inner">
+				<view class="dl">
+					<view class="dt">
+						<image src="https://image1.chinamuxie.com/images/project/789_img001.png" style="width:200rpx;height:200rpx;"></image>
+					</view>
+					<view class="dd">
+						<view class="h2">【第1期案例公示】</view>
+						<view class="p">
+							<text class="t">参与计划：</text>
+							<text class="org">789</text>重大疾病互助计划
+						</view>
+						<view class="p">
+							<text class="t">互助金额：</text>
+							<text class="org">283000</text>元
+						</view>
+						<view class="p">
+							<text class="t">人均均摊：</text>
+							<text class="org">0.98</text>元
+						</view>
+					</view>
+				</view>
+				<view class="bt-dl">
+					<view class="btd-text">
+						<text>XXX，男，24周岁，2016.5.23加入789重大疾病互助计划，于2016.5.6发现结肠癌晚期...</text>
+					</view>
+					<view class="time">
+						<text>—— 2016年10月21日</text>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>

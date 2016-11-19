@@ -85,6 +85,10 @@
 .casePublicity-item {
   padding: 40rpx 36rpx;
   background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.casePublicity-item .dl {
+  margin-bottom: 39rpx;
 }
 .casePublicity-item .dl .dt {
   float: left;
@@ -114,5 +118,16 @@
   overflow: hidden;
 }
 .casePublicity-item .bt-dl {
-  padding: 30rpx 35rpx;
+  padding-top: 30rpx;
+  line-height: 44rpx;
+  border-top: 1rpx solid #ddd;
+}
+.casePublicity-item .bt-dl .btd-text {
+  font-size: 30rpx;
+  color: #666;
+}
+.casePublicity-item .bt-dl .time {
+  text-align: right;
+  margin-top: 12rpx;
+  color: #999;
 }

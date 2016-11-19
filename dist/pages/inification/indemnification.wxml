@@ -1,0 +1,7 @@
+<view class="container">
+	<view class="nopart">
+		<image src="https://image1.chinamuxie.com/src/images/shibai.png"/>
+		<text>他人已加入社群，只有你在裸奔</text>
+		<view class="null-record-wrap"/>
+	</view>
+</view>

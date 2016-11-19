@@ -1,0 +1,67 @@
+<view class="container join-main">
+	<view class="justjoin">
+		<text>立即加入</text>
+	</view>
+	<view class="input-area">
+		<view class="sec-con">
+			<view class="section">
+				<view class="section_title">姓名</view>
+				<input bindinput="_dispatch" placeholder="例如：张三" data-name="name" data-bindinput="bindKeyInput"/>
+			</view>
+			<view class="section">
+				<view class="section_title">证件号码</view>
+				<input bindinput="_dispatch" placeholder="身份证号" data-name="vcard" data-bindinput="bindKeyInput"/>
+			</view>
+		</view>
+		<view class="del-btn">
+			<icon class="del-icon"/>
+		</view>
+	</view>
+	<view class="input-area">
+		<view class="sec-con">
+			<view class="section">
+				<view class="section_title">姓名</view>
+				<input bindinput="_dispatch" placeholder="例如：张三" data-name="name" data-bindinput="bindKeyInput"/>
+			</view>
+			<view class="section">
+				<view class="section_title">证件号码</view>
+				<input bindinput="_dispatch" placeholder="身份证号" data-name="vcard" data-bindinput="bindKeyInput"/>
+			</view>
+		</view>
+		<view class="del-btn">
+			<icon class="del-icon"/>
+		</view>
+
+	</view>
+	<view class="add-btn">
+		<icon class="icon-add iconfont icon-roundadd"/>
+		<text> 继续添加</text>
+	</view>
+	<view class="money">
+		<view class="t">
+			<text>选择金额</text>
+		</view>
+		<view class="num">
+			<text>9元</text>
+		</view>
+	</view>
+	<view class="intro">
+		<view><text>加入条件：未满36周岁的孕妈妈或者备孕妈妈，加入之日怀孕周期未超过24周，并且身体健康，未曾患有互助公约所描述的疾病的人群。
+		</text></view>
+		<view class="tip">
+			请在加入本互助社群前咨询家人，避免重复加入。
+		</view>
+	</view>
+	<view class="checkbox-group">
+		<view>
+			<label class="checkbox">
+			    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>已同意 <text class="text">《17互助公约》</text>
+			</label>
+		</view>
+		<view>
+			<label class="checkbox">
+		    	<checkbox value="{{item.name}}" checked="{{item.checked}}"/>已同意 <text class="text">《留守儿童互助公约》</text>
+		  	</label>
+		</view>
+	</view>
+</view>

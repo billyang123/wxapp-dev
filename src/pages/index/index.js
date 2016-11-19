@@ -53,9 +53,9 @@ export default class Index extends wx.Component {
     })
   }
   linkTo(event) {
-    wx.navigateTo({
-      url:event.currentTarget.dataset.link
-    })
+      wx.navigateTo({
+        url:event.currentTarget.dataset.link
+      })
   }
   async bannerInit() {
     var res = await wx.request({
