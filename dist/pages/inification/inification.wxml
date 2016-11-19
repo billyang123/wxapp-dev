@@ -1,7 +1,45 @@
 <view class="container">
 	<view class="nopart">
-		<image src="https://image1.chinamuxie.com/src/images/shibai.png"/>
-		<text>他人已加入社群，只有你在裸奔</text>
-		<view class="null-record-wrap"/>
+		<view class="img-b">
+			<image class="img" src="https://image1.chinamuxie.com/src/images/shibai.png"/>
+		</view>
+		<view class="null-top-word"><text>他人已加入社群，只有你在裸奔</text></view>
+		<view class="null-record-wrap">
+			<view class="p">
+				<view class="txt">
+					<text>已有</text>
+				</view>
+				<view class="specal-num">
+					<text class="num_bg">7</text>
+					<text class="num_bg">7</text>
+					<text class="num_bg">7</text>
+				</view>
+				<view class="txt">
+					<text>人加入</text>
+				</view>
+			</view>
+			<view class="p">
+				<view class="txt">
+					<text>共享互助金</text>
+				</view>
+				<view class="specal-num">
+					<text class="num_bg">7</text>
+					<text class="num_bg">7</text>
+					<text class="num_bg">7</text>
+				</view>
+				<view class="txt">
+					<text>元</text>
+				</view>
+			</view>
+			<view class="p null_join_word">
+				<text>最低1元加入，拒绝裸奔</text>
+			</view>
+		</view>
+		<view class="add_plan_btn_box">
+			<view class="add_plan_btn" data-link="/pages/forfamily/forfamily" catchtap="_dispatch" data-catchtap="linkTo">
+				<icon class="icon-add"/>
+				<text>    立即加入</text>
+			</view>
+		</view>
 	</view>
 </view>

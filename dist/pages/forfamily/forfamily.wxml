@@ -1,0 +1,54 @@
+<view class="container">
+	<view class="give-family">
+		<view class="give-family-banner">
+			<image src="https://image1.chinamuxie.com/images/common/give-family.png" style="width:750rpx;height:250rpx;"/>
+		</view>
+		<view class="give-family-item">
+			<view class="p">
+				<view>父母在慢慢变老，孩子在慢慢长大</view>
+				<view>为人子女，为人父母</view>
+				<view>我只希望他们都能够健健康康</view>
+			</view>
+		</view>
+		<view class="give-family-list">
+			<view class="dl">
+				<view class="dt">
+					<text>给爱人</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>789重大疾病互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">18-46</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>癌症等25种重大疾病互助</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="give-family-list">
+			<view class="dl">
+				<view class="dt">
+					<text>给爱人</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>789重大疾病互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">18-46</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>癌症等25种重大疾病互助</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

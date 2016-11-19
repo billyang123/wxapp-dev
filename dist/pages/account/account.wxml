@@ -45,20 +45,20 @@
 		</view>
 	</view>
 	<view class="media-list ac-list">
-		<view class="item-link item-content">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/inification/inification" data-catchtap="linkTo">
 			<view class="item-media">
 				<image class="img" src="/images/account_wdsq_icon.png"/>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
-					<text>我的社群</text>
+					<text>我的互助</text>
 				</view>
 				<view class="item-after">
 					<text>家庭账单、充值、互助凭单</text>
 				</view>
 			</view>
 		</view>
-		<view class="item-link item-content">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/claim/claim" data-catchtap="linkTo">
 			<view class="item-media">
 				<image class="img" src="/images/account_sqhz_icon.png"/>
 			</view>

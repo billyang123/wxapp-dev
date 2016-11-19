@@ -1,0 +1,11 @@
+<view class="container">
+	<view class="claim-process">
+		<view class="tel-number">
+			<text class="span">互助热线：</text>
+			<button size="mini" type="warn" plain="true" class="btn">400-688-6259</button>
+		</view>
+	</view>
+	<view class="hp-claim-btn" data-link="#" catchtap="linkTo">
+		<text>申请互助</text>
+	</view>
+</view>

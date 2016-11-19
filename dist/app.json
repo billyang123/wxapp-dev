@@ -7,7 +7,9 @@
     "pages/range/range",
     "pages/publicity/publicity",
     "pages/join/join",
-    "pages/inification/inification"
+    "pages/inification/inification",
+    "pages/claim/claim",
+    "pages/forfamily/forfamily"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,6 +32,5 @@
       "iconPath":"images/page_icon04.png",
       "selectedIconPath":"images/page_icon14.png"
     }]
-  },
-  "debug": true
+  }
 }

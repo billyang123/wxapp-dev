@@ -7,8 +7,9 @@ export default class {
     storage:null
   };
   async onLaunch() {
+    var _this = this;
+    //await wx.clearStorage();
     await this.__init();
-    console.log(this.globalData)
   }
   async __init(){
     this.globalData.storage =  await this.getStorage();
@@ -18,6 +19,7 @@ export default class {
       let loginInfo = await wx.login();
       await wx.setStorage({ key: 'code', data: loginInfo.code });
     }
+    
     await this.getUserInfo();
     this.globalData.storage = await this.getStorage();
   }

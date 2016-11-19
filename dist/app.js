@@ -43,15 +43,17 @@ var _class = function () {
     key: 'onLaunch',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+        var _this;
+
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return this.__init();
+                _this = this;
+                //await wx.clearStorage();
 
-              case 2:
-                console.log(this.globalData);
+                _context.next = 3;
+                return this.__init();
 
               case 3:
               case 'end':

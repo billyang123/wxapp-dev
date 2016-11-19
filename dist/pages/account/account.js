@@ -62,6 +62,13 @@ var Account = function (_wx$Component) {
 	}
 
 	(0, _createClass3.default)(Account, [{
+		key: "linkTo",
+		value: function linkTo(event) {
+			_labrador2.default.navigateTo({
+				url: event.currentTarget.dataset.link
+			});
+		}
+	}, {
 		key: "bindLogin",
 		value: function bindLogin() {
 			this.checkLogin();

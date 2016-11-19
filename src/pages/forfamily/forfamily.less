@@ -1,0 +1,93 @@
+.flexbox() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
+    -webkit-box-align: @ai;
+    -ms-flex-align: @ai;
+    -webkit-align-items: @ai;
+    align-items: @ai;
+}
+.flex-shrink(@fs) {
+    -webkit-flex-shrink: @fs;
+    -ms-flex: 0 @fs auto;
+    flex-shrink: @fs;
+}
+.give-family {
+	&-banner {
+	}
+	&-item {
+		padding: 42rpx 0;
+		.p {
+			margin: 0 auto;
+			position: relative;
+			width: 420rpx;
+			font-size: 28rpx;
+			line-height: 40rpx;
+			color: #666;
+			&:before {
+				content: '“';
+			    position: absolute;
+			    font-size: 150rpx;
+			    color: #dddddd;
+			    top: 30rpx;
+			    left: -150rpx;
+			}
+			&:after {
+				content: '”';
+			    position: absolute;
+			    font-size: 150rpx;
+			    color: #dddddd;
+			    bottom: -50rpx;
+			    right: -150rpx;
+			}
+		}
+	}
+	&-list {
+		background-color: #fff;
+		margin-bottom: 20rpx;
+		.dl {
+			overflow: hidden;
+			padding-right: 23rpx;
+			.flexbox();
+			.align-items(center);
+		    
+			.dt {
+				float: left;
+				width: 90rpx;
+				height: 240rpx;
+				background-color: #FF6A00;
+				color: #fff;
+				layout-flow : vertical-ideographic; /*这样也有一样的竖排效果，一样的不支持FF*/
+			   	text-align:center;
+			    letter-spacing: 4rpx;
+			    writing-mode: tb-rl;
+			    font-size: 36rpx;
+			    line-height: 90rpx;
+			}
+			.dd {
+				float: left;
+				padding:0 68rpx 0 38rpx; 
+				background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=") no-repeat right center;
+		    	background-size:13rpx 23rpx;
+				.flex-shrink(1);
+				width: 100%;
+				.align-items(center);
+				
+				.h2 {
+					font-size: 36rpx;
+					height: 40rpx;
+					font-weight: 500;
+					padding-bottom: 20rpx;
+				}
+				.p {
+					color: #999;
+					line-height: 38rpx;
+					font-size: 28rpx;
+				}
+			}
+		}
+	}
+}
