@@ -9,7 +9,8 @@
     "pages/join/join",
     "pages/inification/inification",
     "pages/claim/claim",
-    "pages/forfamily/forfamily"
+    "pages/forfamily/forfamily",
+    "pages/applyform/applyform"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -31,24 +31,24 @@ var _labrador2 = _interopRequireDefault(_labrador);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Applyform = function (_wx$Component) {
-	(0, _inherits3.default)(Applyform, _wx$Component);
+var Forfamily = function (_wx$Component) {
+	(0, _inherits3.default)(Forfamily, _wx$Component);
 
-	function Applyform() {
+	function Forfamily() {
 		var _ref;
 
 		var _temp, _this, _ret;
 
-		(0, _classCallCheck3.default)(this, Applyform);
+		(0, _classCallCheck3.default)(this, Forfamily);
 
 		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Applyform.__proto__ || (0, _getPrototypeOf2.default)(Applyform)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Forfamily.__proto__ || (0, _getPrototypeOf2.default)(Forfamily)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
-	(0, _createClass3.default)(Applyform, [{
+	(0, _createClass3.default)(Forfamily, [{
 		key: 'linkTo',
 		value: function linkTo(event) {
 			_labrador2.default.navigateTo({
@@ -56,10 +56,10 @@ var Applyform = function (_wx$Component) {
 			});
 		}
 	}]);
-	return Applyform;
+	return Forfamily;
 }(_labrador2.default.Component);
 
 
-Page(_labrador._createPage(Applyform));
+Page(_labrador._createPage(Forfamily));
 
 })(module,require);
