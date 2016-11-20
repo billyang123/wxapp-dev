@@ -59,38 +59,8 @@ var Index = function (_wx$Component) {
 
     return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
       bannerImgs: [],
-      project: [{
-        title: "789重大疾病互助社群",
-        content: "适用于{0}-{1}周岁健康人群癌症等25种重大疾病互助最高可获30万元互助金{2}人加入",
-        img: "/images/78902_img001.png",
-        link: '/pages/community/community?type=1'
-      }, {
-        title: "留守儿童互助社群",
-        content: "适用于{0}-{1}周岁人群大病、意外、走失、辍学互助最高可获33万元互助金{2}人加入",
-        img: "/images/stayChildren02_img001.png",
-        link: '/pages/community/community?type=2'
-      }, {
-        title: "交通、旅游意外互助社群",
-        content: "适用于{0}-{1}周岁人群公共交通、旅游意外互助",
-        img: "/images/traffic02_img001.png",
-        link: '/pages/community/community?type=3'
-      }, {
-        title: "少儿大病、意外互助社群",
-        content: "适用于{0}-{1}周岁少儿少儿大饼、意外互助最高可获35万元互助金{2}人加入",
-        img: "/images/children02_img001.png",
-        link: '/pages/community/community?type=4'
-      }, {
-        title: "80后孕妈婴宝互助社群",
-        content: "适用于80后备孕、已孕妈妈孕期、孕产、婴儿疾病互助最高可获10万元互助金{2}人加入",
-        img: "/images/8002_img001.png",
-        link: '/pages/community/community?type=5'
-      }, {
-        title: "中老年大病、意外互助社群",
-        content: "适用于{0}-{1}周岁人群抗癌、大病、意外互助最高可获35万元互助金{2}人加入",
-        img: "/images/old02_img001.png",
-        link: '/pages/community/community?type=6'
-      }],
-      media: []
+      media: [],
+      mImgArr: {}
     }, _this2.children = {
       swiper: new _swiper2.default({ imgUrls: "@bannerImgs" })
     }, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
@@ -214,13 +184,13 @@ var Index = function (_wx$Component) {
 
                 obj_data.forEach(function (item) {
                   var id = item.id - 1;
-                  project[id].content = _this.mreplace(project[id].content, [item.minAge, item.maxAge, item.projectTotalUser]);
+                  //project[id].content = _this.mreplace(project[id].content,[item.minAge,item.maxAge,item.projectTotalUser])
                   //project[item.id].content = project[item.id].content.replace("{0}",item.minAge).replace("{1}",item.maxAge).replace("{2}",item.projectTotalUser);
                   //console.log(project[item.id].content)
-                  project[id].mImgArr = item.headImg;
+                  mImgArr[id].mImgArr = item.headImg;
                 });
                 this.setData({
-                  project: project
+                  mImgArr: mImgArr
                 });
 
               case 8:

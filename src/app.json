@@ -10,7 +10,11 @@
     "pages/inification/inification",
     "pages/claim/claim",
     "pages/forfamily/forfamily",
-    "pages/applyform/applyform"
+    "pages/applyform/applyform",
+    "pages/profile/profile",
+    "pages/elecert/elecert",
+    "pages/accountlist/accountlist",
+    "pages/accountdetail/accountdetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

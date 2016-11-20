@@ -1,3 +1,27 @@
+.flexbox() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
+    -webkit-box-align: @ai;
+    -ms-flex-align: @ai;
+    -webkit-align-items: @ai;
+    align-items: @ai;
+}
+.align-items(@ai) when (@ai = flex-start) {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.justify-content(@jc) when (@jc = space-between) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
 .nopart {
 	text-align: center;
 	.img-b {
@@ -67,4 +91,98 @@
   	background-size: 48rpx 48rpx;
     display: inline-block;
     vertical-align: top;
+}
+.num-box {
+	padding: 30rpx 0;
+	background-color: #fff;
+	.flexbox();
+	.align-items(center);
+	.justify-content(space-around);
+	justify-content:space-around;
+	.num-item {
+		text-align: center;
+		width: 374rpx;
+		border-right: 1rpx solid #ddd;
+		.num {
+			font-size:44rpx;
+			color:#ff6a00;
+		}
+		.txt {
+			font-size: 24rpx;
+			color: #999;
+			margin-top: 10rpx;
+		}
+	}
+}
+.relationship {
+	.flexbox();
+	.align-items(center);
+	justify-content:space-around;
+	.justify-content(space-around);
+	padding: 40rpx;
+	.img {
+		width: 80rpx;
+		height: 80rpx;
+		margin: 0 auto;
+	}
+	.icon-img {
+		text-align: center;
+	}
+	.txt {
+		text-align: center;
+		margin-top: 15rpx;
+		font-size: 24rpx;
+		color: #999;
+	}
+}
+.group-item {
+	margin-bottom: 20rpx;
+	.gi-content,.gi-title {
+		background-color: #fff;
+		padding: 30rpx 35rpx;
+		border-bottom: 1rpx solid #ddd;
+	}
+	.gi-title {
+		.gt {
+			border-left: 10rpx solid #ff6a00;
+			padding-left: 18rpx;
+			font-size: 36rpx;
+		}
+	}
+	.p {
+		margin-bottom: 25rpx;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		.emer {
+			display: inline-block;
+			background-color: #ff6a00;
+			color: #fff;
+			padding: 7rpx 14rpx;
+			border-radius: 10rpx;
+			margin-left: 17rpx;
+		}
+	}
+	.gi-footer {
+		.flexbox();
+		.align-items(center);
+		justify-content:space-around;
+		.justify-content(space-around);
+		background-color: #fff;
+		color: #ff6a00;
+		padding: 10rpx;
+		border-bottom: 1rpx solid #ddd;
+		.gi-item {
+			color: #ff6a00;
+			font-size: 36rpx;
+			line-height: 88rpx;
+			height: 88rpx;
+			border-right: 1rpx solid #ddd;
+			width: 374rpx;
+			text-align: center;
+			&:last-child {
+				border-right:0;
+			}
+		}
+	}
 }

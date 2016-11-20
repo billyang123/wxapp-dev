@@ -15,7 +15,7 @@
 		<view class="top-body">
 			<view class="tb-item">
 				<view class="nmb-txt">
-					<text class="num">10,9875</text>
+					<text class="num">{{numData.jionNumbers}}</text>
 					<text>人</text>
 				</view>
 				<view class="tb-txt">
@@ -24,8 +24,8 @@
 			</view>
 			<view class="tb-item">
 				<view class="nmb-txt">
-					<text class="num">9,146,289</text>
-					<text>元</text>
+					<text class="num">{{numData.totalAmt}}</text>
+					<text>{{numData.totalAmtUnit}}</text>
 				</view>
 				<view class="tb-txt">
 					本社群互助金额
@@ -33,7 +33,7 @@
 			</view>
 			<view class="tb-item">
 				<view class="nmb-txt">
-					<text class="num">0</text>
+					<text class="num">{{numData.totalDefend}}</text>
 					<text>起</text>
 				</view>
 				<view class="tb-txt">
@@ -45,82 +45,96 @@
 			<image src="https://image1.chinamuxie.com/images/project/pj_tit01.png" style="width:404rpx;height:53rpx;"></image>
 		</view>
 		<view class="pj_aim">
-			<view class="lis lis1">
-				<text>为患癌症等25种重大疾病的会员提供互助金</text>
-			</view>
-			<view class="lis lis2">
-				<text>一人患病，会员均摊。每次均摊不超过3元</text>
+			<view wx:for="{{purpose}}" wx:for-index="index" class="lis lis{{index+1}}">
+				<text>{{item}}</text>
 			</view>
 		</view>
 		<view class="pj_tit">
-			<image src="https://image1.chinamuxie.com/images/project/pj_tit02.png" style="width:404rpx;height:53rpx;"></image>
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit02.png" style="width:378rpx;height:53rpx;"></image>
 		</view>
 		<view class="media-list pj_meidalist">
 			<view class="item-content">
 				<view class="item-inner">
 					<view class="item-after">
-						<text>加入留守儿童互助社群，90天后，如果不幸发生重大疾病，180天后，不幸发生意外事故，即可获得：</text>
+						<text>{{power.t}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content">
+			<view class="item-content" wx:for="{{power.l}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text>25种重大疾病包括</text>
+						<text>{{item[0]}}</text>
 					</view>
 					<view class="item-after">
-						<text>白血病、恶性肿瘤</text>
+						<text>{{item[1]}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content">
+			<view class="item-link item-content" wx:for="{{power.ll}}"  catchtap="linkTo" data-link="{{item.link}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text>重大疾病保障</text>
-					</view>
-					<view class="item-after">
-						<text>最高10万元</text>
+						<text wx:if="{{item.t}}">{{item.t}}</text>
+						<text class="org" wx:if="{{item.o}}">{{item.o}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content">
+		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit03.png" style="width:378rpx;height:53rpx;"></image>
+		</view>
+		<view class="media-list pj_meidalist">
+			<view class="item-content">
+				<view class="item-inner">
+					<view class="item-after">
+						<text>{{treaty.t}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-content" wx:for="{{treaty.l}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text>意外伤残、死亡</text>
+						<text class="org">{{item[0]}}</text>
 					</view>
 					<view class="item-after">
-						<text>最高10万元</text>
+						<text class="gray-m fsize-26">{{item[1]}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content">
+			<view class="item-content item-link" wx:for="{{treaty.ll}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text>走失、被拐寻子互助金</text>
-					</view>
-					<view class="item-after">
-						<text>最高10万元</text>
+						<text class="gray">{{item[0]}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content">
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit04.png" style="width:378rpx;height:53rpx;"></image>
+		</view>
+		<view class="media-list pj_meidalist pj-list">
+			<view class="item-content" wx:if="{{condition[0]}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text>暴力、性侵法律维权互助金</text>
+						<text class="gray bb">年龄段</text>
 					</view>
-					<view class="item-after">
-						<text>最高1万元</text>
-
+					<view class="item-after" style="max-width: 566rpx;">
+						<text class="b">{{condition[0]}}</text>
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" catchtap="linkTo" data-link="/pages/range/range">
+			<view class="item-content" wx:if="{{condition[1]}}">
 				<view class="item-inner">
-					<view class="item-title org">
-						<text>了解详情</text>
+					<view class="item-title">
+						<text class="gray bb">身体健康是指：</text>
+					</view>
+					<view class="item-after" style="max-width: 480rpx;">
+						<text class="b">{{condition[1]}}</text>
 					</view>
 				</view>
 			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit05.png" style="width:461rpx;height:53rpx;"></image>
 		</view>
 		<view class="process">
 			<view class="proc-li">
@@ -130,10 +144,59 @@
 					</view>
 					<view class="pl-after">
 						<text>拨打</text>
-						<text>400-688-6259</text>
+						<text class="spr">400-688-6259</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>事件审核</text>
+					</view>
+					<view class="pl-after">
+						<text>商保通等权威公估机构实地调查</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>全员公示</text>
+					</view>
+					<view class="pl-after">
+						<text>事故核查结果，向全体会员公示</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>资金划款</text>
+					</view>
+					<view class="pl-after">
+						<text>公示无异议后，招商银行直接划款</text>
 					</view>
 				</view>
 			</view>
 		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit06.png" style="width:573rpx;height:53rpx;"></image>
+		</view>
+		<view class="diff-list">
+			<view class="dl-item" wx:for="{{diff}}">
+				<view class="dl-media">
+					<view class="dlimg">
+						<text>{{item.t}}</text>
+					</view>
+				</view>
+				<view class="dl-after">
+					<text>{{item.n}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit07.png" style="width:378rpx;height:53rpx;"></image>
+		</view>
+		<component key="slide"/>
 	</view>
 </view>

@@ -1,0 +1,22 @@
+<view class="media-list slide-list">
+	<view wx:for={{slideData}} wx:for-index="idx" catchtap="setSlide" data-index="{{idx}}">
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>{{item.t}}</text>
+				</view>
+				<view class="item-after" wx:if="{{item.a}}">
+					<text>{{item.a}}</text>
+				</view>
+				<icon class="icon-chevron" animation="{{chevronAnim[idx]}}"></icon>
+			</view>
+		</view>
+		<view class="item-xmain" animation="{{slideAnim[idx]}}" style="height:0;">
+			<view class="item-xmain-bd">
+				<view class="p" wx:for="{{item.txt}}" wx:for-item="text">
+					<text>{{text}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

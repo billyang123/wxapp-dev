@@ -77,6 +77,9 @@ page {
 .gray-m {
   color: #666;
 }
+.blue {
+  color: #01c200 !important;
+}
 .tel-btn {
   display: inline-block;
   border: 2px solid #ff6a00;
@@ -151,11 +154,53 @@ page {
   display: -webkit-flex;
   display: flex;
   -webkit-box-flex: 1;
-  -ms-flex: 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+.btn-padd {
+  padding: 25rpx;
+}
+.btn-padd .btn {
+  display: block;
+  height: 94rpx;
+  text-align: center;
+  line-height: 94rpx;
+  border-radius: 8rpx;
+  font-size: 36rpx;
+}
+.btn-padd .btn-org {
+  background-color: #ff6a00;
+  color: #fff;
+}
+.top-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  padding: 0 35rpx;
+  border-bottom: 1rpx solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.top-title .h2 {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+}
+.top-title .tt-r {
+  font-size: 32rpx;
+  color: #666;
 }

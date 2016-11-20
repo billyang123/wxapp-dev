@@ -67,3 +67,111 @@
   display: inline-block;
   vertical-align: top;
 }
+.num-box {
+  padding: 30rpx 0;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.num-box .num-item {
+  text-align: center;
+  width: 374rpx;
+  border-right: 1rpx solid #ddd;
+}
+.num-box .num-item .num {
+  font-size: 44rpx;
+  color: #ff6a00;
+}
+.num-box .num-item .txt {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.relationship {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40rpx;
+}
+.relationship .img {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.relationship .icon-img {
+  text-align: center;
+}
+.relationship .txt {
+  text-align: center;
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.group-item {
+  margin-bottom: 20rpx;
+}
+.group-item .gi-content,
+.group-item .gi-title {
+  background-color: #fff;
+  padding: 30rpx 35rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.group-item .gi-title .gt {
+  border-left: 10rpx solid #ff6a00;
+  padding-left: 18rpx;
+  font-size: 36rpx;
+}
+.group-item .p {
+  margin-bottom: 25rpx;
+}
+.group-item .p:last-child {
+  margin-bottom: 0;
+}
+.group-item .p .emer {
+  display: inline-block;
+  background-color: #ff6a00;
+  color: #fff;
+  padding: 7rpx 14rpx;
+  border-radius: 10rpx;
+  margin-left: 17rpx;
+}
+.group-item .gi-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  color: #ff6a00;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.group-item .gi-footer .gi-item {
+  color: #ff6a00;
+  font-size: 36rpx;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-right: 1rpx solid #ddd;
+  width: 374rpx;
+  text-align: center;
+}
+.group-item .gi-footer .gi-item:last-child {
+  border-right: 0;
+}

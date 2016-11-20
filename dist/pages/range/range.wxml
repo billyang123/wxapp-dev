@@ -1,25 +1,24 @@
 <view class="container">
-	<view class="media-list range-list">
-		<view class="item-content" wx:for="{{slideData}}" wx:for-index="idx" catchtap="_dispatch" data-id="{{idx}}" data-catchtap="setSlide">
-			<view class="item-inner">
-				<view class="item-title">
-					<text>国内国际航班意外身故/重度伤残</text>
+	<view class="media-list slide-media-list slide-list slide-slide-list">
+	<view wx:for="{{slide.slideData}}" wx:for-index="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
+		<view class="item-content slide-item-content">
+			<view class="item-inner slide-item-inner">
+				<view class="item-title slide-item-title">
+					<text>{{item.t}}</text>
 				</view>
-				<view class="item-after">
-					<text>最高100万元</text>
+				<view class="item-after slide-item-after" wx:if="{{item.a}}">
+					<text>{{item.a}}</text>
 				</view>
-				<icon class="icon-chevron" animation="{{chevron}}"/>
+				<icon class="icon-chevron slide-icon-chevron" animation="{{slide.chevronAnim[idx]}}"/>
 			</view>
 		</view>
-		<view class="item-xmain" animation="{{slide}}">
-			<view class="item-xmain-bd">
-				<view class="p">
-					<text>保障会员自加入次日起，因乘坐国内、国际航班发生意外事故，导致保障会员意外身故或者重度伤残的，互助小组一次性给付身故或者重度伤残互助金100万。</text>
-				</view>
-				<view class="p">
-					<text>重度伤残是指根据《伤残评定标准》认定为1-3级。</text>
+		<view class="item-xmain slide-item-xmain" animation="{{slide.slideAnim[idx]}}" style="height:0;">
+			<view class="item-xmain-bd slide-item-xmain-bd">
+				<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text">
+					<text>{{text}}</text>
 				</view>
 			</view>
 		</view>
 	</view>
+</view>
 </view>

@@ -1,3 +1,27 @@
+.flexbox() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
+    -webkit-box-align: @ai;
+    -ms-flex-align: @ai;
+    -webkit-align-items: @ai;
+    align-items: @ai;
+}
+.align-items(@ai) when (@ai = flex-start) {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.justify-content(@jc) when (@jc = space-between) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
 /**字体样式**/
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_j49qjnt54ic3ow29.eot?t=1479114231018'); /* IE9*/
@@ -62,6 +86,9 @@ page {
 }
 .gray-m {
   color: #666;
+}
+.blue {
+  color: #01c200 !important;
 }
 .tel-btn {
   display: inline-block;
@@ -136,7 +163,6 @@ page {
       display: -webkit-flex;
       display: flex;
       -webkit-box-flex: 1;
-      -ms-flex: 1;
       -webkit-box-pack: justify;
       -webkit-justify-content: space-between;
       justify-content: space-between;
@@ -145,4 +171,38 @@ page {
       align-items: center;
   }
 
+}
+.btn-padd {
+  padding: 25rpx;
+  .btn {
+    display: block;
+    height: 94rpx;
+    text-align: center;
+    line-height: 94rpx;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+  }
+  .btn-org {
+    background-color: #ff6a00;
+    color: #fff;
+  }
+}
+.top-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  padding: 0 35rpx;
+  border-bottom: 1rpx solid #ddd;
+  .flexbox();
+  .align-items(center);
+  .justify-content(space-between);
+  .h2 {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+  }
+  .tt-r {
+    font-size: 32rpx;
+    color: #666;
+  }
 }
