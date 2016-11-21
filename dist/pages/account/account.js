@@ -153,7 +153,7 @@ var Account = function (_wx$Component) {
 										rawData: userInfo.rawData,
 										signature: userInfo.signature,
 										encryptedData: encodeURIComponent(userInfo.encryptedData),
-										iv: userInfo.iv,
+										iv: encodeURIComponent(userInfo.iv),
 										sessionKey: _labrador2.default.app.globalData.storage.sessionKey,
 										code: postdata.code
 									}
@@ -173,7 +173,7 @@ var Account = function (_wx$Component) {
 							case 22:
 								myuser = _context.sent;
 
-								if (myuser.data.loginStatus) {
+								if (myuser.data.data.loginStatus) {
 									this.setData({
 										login: true,
 										userInfo: myuser.data.data
@@ -181,7 +181,7 @@ var Account = function (_wx$Component) {
 								}
 
 							case 24:
-								if (!(userInfoPost.data.data == "notlogged")) {
+								if (!(userInfoPost.data.data == "notLogged")) {
 									_context.next = 27;
 									break;
 								}

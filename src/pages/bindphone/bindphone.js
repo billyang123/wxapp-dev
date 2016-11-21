@@ -61,7 +61,8 @@ export default class Bindphone extends wx.Component {
 			  title: '绑定成功',
 			  icon: 'success',
 			  duration: 2000
-			})
+			});
+          wx.navigateBack()
         }
 	}
 	async getCheckCode(e){
@@ -79,8 +80,8 @@ export default class Bindphone extends wx.Component {
         	this.shoutTime();
         	this.setData({
         		disabled:false
-        	})
-        	wx.navigateBack();
+        	});
+        	
         }
 	}
 	async onLoad() {

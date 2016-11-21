@@ -135,6 +135,7 @@ var Bindphone = function (_wx$Component) {
 										icon: 'success',
 										duration: 2000
 									});
+									_labrador2.default.navigateBack();
 								}
 
 							case 4:
@@ -180,7 +181,6 @@ var Bindphone = function (_wx$Component) {
 									this.setData({
 										disabled: false
 									});
-									_labrador2.default.navigateBack();
 								}
 
 							case 4:

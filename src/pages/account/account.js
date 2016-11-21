@@ -58,21 +58,21 @@ export default class Account extends wx.Component {
             	rawData:userInfo.rawData,
             	signature:userInfo.signature,
             	encryptedData:encodeURIComponent(userInfo.encryptedData),
-            	iv:userInfo.iv,
+            	iv:encodeURIComponent(userInfo.iv),
             	sessionKey: wx.app.globalData.storage.sessionKey,
             	code:postdata.code
             }
-        })
+        });
         if(userInfoPost.data.data == "logged"){
         	let myuser = await this.getUser(postdata.code);
-        	if(myuser.data.loginStatus){
+        	if(myuser.data.data.loginStatus){
         		this.setData({
 					login:true,
 					userInfo:myuser.data.data
-				})
+				    });
         	}
         }
-        if(userInfoPost.data.data == "notlogged"){
+        if(userInfoPost.data.data == "notLogged"){
         	await wx.navigateTo({
 		      url:'/pages/bindphone/bindphone'
 		    })
