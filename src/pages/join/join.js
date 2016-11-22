@@ -35,7 +35,9 @@ export default class Join extends wx.Component {
 	      }
 	    })
 	    if(res.data.status == 0){
-
+        await wx.navigateTo({
+          url:'/pages/joinEnd/joinEnd'
+        })
 	    }
 	    console.log(res);
 	}

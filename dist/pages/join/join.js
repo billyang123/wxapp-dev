@@ -106,10 +106,20 @@ var Join = function (_wx$Component) {
 							case 2:
 								res = _context.sent;
 
-								if (res.data.status == 0) {}
+								if (!(res.data.status == 0)) {
+									_context.next = 6;
+									break;
+								}
+
+								_context.next = 6;
+								return _labrador2.default.navigateTo({
+									url: '/pages/joinEnd/joinEnd'
+								});
+
+							case 6:
 								console.log(res);
 
-							case 5:
+							case 7:
 							case 'end':
 								return _context.stop();
 						}
