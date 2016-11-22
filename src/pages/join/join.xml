@@ -6,11 +6,11 @@
 		<view class="sec-con">
 			<view class="section">
 				<view class="section_title">姓名</view>
-				<input bindinput="bindKeyInput" placeholder="例如：张三" data-idx="{{idx}}" data-name="name" value="{{item.name}}"/>
+				<input bindinput="bindKeyInput" placeholder="例如：张三" data-idx="{{idx}}" data-name="name"/>
 			</view>
 			<view class="section">
 				<view class="section_title">证件号码</view>
-				<input bindinput="bindKeyInput" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" value="{{item.code}}"/>
+				<input bindinput="bindKeyInput" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode"/>
 			</view>
 		</view>
 		<view class="del-btn" catchtap="removePerson" data-idx="{{idx}}">

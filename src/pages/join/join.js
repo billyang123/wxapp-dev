@@ -11,10 +11,11 @@ export default class Join extends wx.Component {
 			persons:this.data.persons
 		})
 	}
-	removePerson(){
+	removePerson(e){
 		if(this.data.persons.length==1){
 			return;
 		}
+		let idx=e.currentTarget.dataset.idx;
 		let index = this.data.persons[idx];
 		this.data.persons.splice(parseInt(index),1);
 		this.setData({

@@ -70,10 +70,11 @@ var Join = function (_wx$Component) {
 		}
 	}, {
 		key: 'removePerson',
-		value: function removePerson() {
+		value: function removePerson(e) {
 			if (this.data.persons.length == 1) {
 				return;
 			}
+			var idx = e.currentTarget.dataset.idx;
 			var index = this.data.persons[idx];
 			this.data.persons.splice(parseInt(index), 1);
 			this.setData({
