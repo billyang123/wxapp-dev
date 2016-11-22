@@ -62,9 +62,7 @@ export default class Bindphone extends wx.Component {
 			  icon: 'success',
 			  duration: 2000
 			});
-          await wx.navigateTo({
-            url:'/pages/account/account'
-          })
+          wx.navigateBack()
         }
 	}
 	async getCheckCode(e){

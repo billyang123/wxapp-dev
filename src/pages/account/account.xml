@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="account-header">
-		<view class="account-info login" wx:if={{login}}>
+		<view class="account-info login" wx:if="{{login}}">
 			<view class="acimage default-image" catchtap="linkTo" data-link="/pages/profile/profile">
 				<image src="{{userInfo.headImgUrl}}" class="avatar"></image>
 				<view class="volunteer" wx:if="{{isVolunteer}}">

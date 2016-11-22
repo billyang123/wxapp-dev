@@ -96,9 +96,8 @@ export default class Account extends wx.Component {
 		//wx.clearStorage();
 		this.doLogin();
 	}
-	async onLoad(){
+	async onShow(){
 		let myuser = await this.getUser(wx.app.globalData.storage.code);
-		console.log(myuser)
 		if(myuser.data.data.loginStatus){
     		this.setData({
 				login:true,

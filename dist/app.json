@@ -12,6 +12,7 @@
     "pages/forfamily/forfamily",
     "pages/applyform/applyform",
     "pages/profile/profile",
+    "pages/changeProfile/changeProfile",
     "pages/elecert/elecert",
     "pages/accountlist/accountlist",
     "pages/accountdetail/accountdetail",

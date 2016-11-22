@@ -129,22 +129,16 @@ var Bindphone = function (_wx$Component) {
 							case 2:
 								postBind = _context.sent;
 
-								if (!(postBind.data.status == 0)) {
-									_context.next = 7;
-									break;
+								if (postBind.data.status == 0) {
+									_labrador2.default.showToast({
+										title: '绑定成功',
+										icon: 'success',
+										duration: 2000
+									});
+									_labrador2.default.navigateBack();
 								}
 
-								_labrador2.default.showToast({
-									title: '绑定成功',
-									icon: 'success',
-									duration: 2000
-								});
-								_context.next = 7;
-								return _labrador2.default.navigateTo({
-									url: '/pages/account/account'
-								});
-
-							case 7:
+							case 4:
 							case "end":
 								return _context.stop();
 						}

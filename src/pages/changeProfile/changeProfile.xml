@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="changeProfile_top">
+    <view class="changeProfile_top_txt">{{txt}}</view>
+    <view class="changeProfile_top_btn" catchtap="onSub">保存</view>
+  </view>
+  <view class="changeProfile_userNickname">
+    <input bindinput="bindKeyInput" value="{{value}}" data-index="{{index}}"/>
+  </view>
+</view>

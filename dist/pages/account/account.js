@@ -273,7 +273,7 @@ var Account = function (_wx$Component) {
 			return checkLogin;
 		}()
 	}, {
-		key: "onLoad",
+		key: "onShow",
 		value: function () {
 			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
 				var myuser;
@@ -287,7 +287,6 @@ var Account = function (_wx$Component) {
 							case 2:
 								myuser = _context4.sent;
 
-								console.log(myuser);
 								if (myuser.data.data.loginStatus) {
 									this.setData({
 										login: true,
@@ -299,7 +298,7 @@ var Account = function (_wx$Component) {
 									});
 								}
 
-							case 5:
+							case 4:
 							case "end":
 								return _context4.stop();
 						}
@@ -307,11 +306,11 @@ var Account = function (_wx$Component) {
 				}, _callee4, this);
 			}));
 
-			function onLoad() {
+			function onShow() {
 				return _ref5.apply(this, arguments);
 			}
 
-			return onLoad;
+			return onShow;
 		}()
 	}]);
 	return Account;
