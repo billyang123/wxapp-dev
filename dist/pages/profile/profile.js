@@ -97,7 +97,7 @@ var Profile = function (_wx$Component) {
                 if (res.data.status == 0) {
                   this.setData({
                     userNickname: res.data.data.userNickname,
-                    userName: res.data.data.userTrueName,
+                    userTrueName: res.data.data.userTrueName,
                     userGender: res.data.data.userGender,
                     userIdNumber: res.data.data.userIdNumber,
                     userPhone: res.data.data.userPhone,
