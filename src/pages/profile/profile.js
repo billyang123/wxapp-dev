@@ -57,7 +57,6 @@ export default class Profile extends wx.Component {
   }
   chooseSex(e){
     let id=e.currentTarget.id;
-    console.log(id);
     if (id=="sexm"){
       this.setData({
         sexm:id,
@@ -103,7 +102,7 @@ export default class Profile extends wx.Component {
     });
     if(res.data.status == 0){
       this.setData({
-        sex:e.currentTarget.dataset.choose
+        userGender:e.currentTarget.dataset.choose
       });
       var animation = wx.createAnimation({
         duration: 300,

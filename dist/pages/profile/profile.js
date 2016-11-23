@@ -146,7 +146,6 @@ var Profile = function (_wx$Component) {
     key: 'chooseSex',
     value: function chooseSex(e) {
       var id = e.currentTarget.id;
-      console.log(id);
       if (id == "sexm") {
         this.setData({
           sexm: id,
@@ -206,7 +205,7 @@ var Profile = function (_wx$Component) {
 
                 if (res.data.status == 0) {
                   this.setData({
-                    sex: e.currentTarget.dataset.choose
+                    userGender: e.currentTarget.dataset.choose
                   });
                   animation = _labrador2.default.createAnimation({
                     duration: 300,

@@ -189,6 +189,11 @@ var Profile = function (_wx$Component) {
                         nickName: res.data.data,
                         value: res.data.data
                       });
+                    } else if (id == 2) {
+                      this.setData({
+                        email: res.data.data,
+                        value: res.data.data
+                      });
                     }
                   } else {
                     this.setData({

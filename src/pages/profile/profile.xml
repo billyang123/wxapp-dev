@@ -47,8 +47,8 @@
 				<view class="item-title">
 					<text>姓别</text>
 				</view>
-				<view class="item-after">
-					<text>{{sex}}</text>
+				<view class="item-after" wx:if="{{userGender}}">
+					<text>{{userGender}}</text>
 				</view>
 			</view>
 		</view>

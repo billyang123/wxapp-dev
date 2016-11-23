@@ -16,11 +16,11 @@
 			<view class="input-area">
 				<view class="section">
 					<view class="section_title">手机号码</view>
-					<input bindinput="_dispatch" placeholder="输入手机号码" data-name="phoneValue" data-bindinput="bindKeyInput" data-path=""/>
+					<input bindinput="_dispatch" placeholder="输入手机号码" data-name="phoneValue" maxlength="11" data-bindinput="bindKeyInput" data-path=""/>
 				</view>
 				<view class="section pcode">
 					<view class="section_title">验证码</view>
-					<input bindinput="_dispatch" placeholder="输入验证码" data-name="codeValue" data-bindinput="bindKeyInput" data-path=""/>
+					<input bindinput="_dispatch" placeholder="输入验证码" data-name="codeValue" maxlength="6" data-bindinput="bindKeyInput" data-path=""/>
 					<view class="{{cDisCls}}" bindtap="_dispatch" data-bindtap="getCheckCode" data-path="">{{btnText}}</view>
 				</view>
 			</view>

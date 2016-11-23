@@ -10,7 +10,7 @@
 			</view>
 			<view class="section">
 				<view class="section_title">证件号码</view>
-				<input bindinput="_dispatch" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" data-bindinput="bindKeyInput" data-path=""/>
+				<input bindinput="_dispatch" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" data-bindinput="bindKeyInput" data-path=""/>
 			</view>
 		</view>
 		<view class="del-btn" catchtap="_dispatch" data-idx="{{idx}}" data-catchtap="removePerson" data-path="">
@@ -30,8 +30,7 @@
 		</view>
 	</view> -->
 	<view class="intro">
-		<view><text>加入条件：未满36周岁的孕妈妈或者备孕妈妈，加入之日怀孕周期未超过24周，并且身体健康，未曾患有互助公约所描述的疾病的人群。
-		</text></view>
+		<view><text>{{conditionTxt}}</text></view>
 		<view class="tip">
 			请在加入本互助社群前咨询家人，避免重复加入。
 		</view>
