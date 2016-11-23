@@ -57,7 +57,7 @@ export default class Join extends wx.Component {
 	      	persons:this.data.persons,
 	      	code:wx.app.globalData.storage.code
 	      }
-	    })
+	    });
 	    if(res.data.status == 0){
         await wx.navigateTo({
           url:'/pages/joinEnd/joinEnd'
@@ -68,8 +68,7 @@ export default class Join extends wx.Component {
 	bindKeyInput(e){
 		let name = e.currentTarget.dataset.name,
 			index = e.currentTarget.dataset.idx;
-		console.log(name,index)
-		this.data.persons[index][name] = e.detail.value
+		this.data.persons[index][name] = e.detail.value;
 		this.setData({
 			persons:this.data.persons
 		});
@@ -78,7 +77,8 @@ export default class Join extends wx.Component {
     let id = parseInt(e.type);
     this.setData({
       publicConvention:jsonData.items[0].convention,
-      conventionTxt:jsonData.items[id].convention
+      conventionTxt:jsonData.items[id].convention,
+      projectId:id
     });
   }
 

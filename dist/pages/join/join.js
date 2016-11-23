@@ -157,7 +157,6 @@ var Join = function (_wx$Component) {
 		value: function bindKeyInput(e) {
 			var name = e.currentTarget.dataset.name,
 			    index = e.currentTarget.dataset.idx;
-			console.log(name, index);
 			this.data.persons[index][name] = e.detail.value;
 			this.setData({
 				persons: this.data.persons
@@ -176,7 +175,8 @@ var Join = function (_wx$Component) {
 
 								this.setData({
 									publicConvention: jsonData.items[0].convention,
-									conventionTxt: jsonData.items[id].convention
+									conventionTxt: jsonData.items[id].convention,
+									projectId: id
 								});
 
 							case 2:
