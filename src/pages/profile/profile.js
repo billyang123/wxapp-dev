@@ -9,7 +9,7 @@ export default class Profile extends wx.Component {
     userEmail:'',
     userHeadimgurl:'',
     active:'',
-    sexm:'sexm',
+    sexm:'',
     sexw:'',
     sex:'男',
     chooseSex:'男'
@@ -42,7 +42,34 @@ export default class Profile extends wx.Component {
       url:event.currentTarget.dataset.link
     })
   }
-  choose(){
+  async choose(){
+    let res = await wx.request({
+      url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/gender",
+      method:"GET",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        code:wx.app.globalData.storage.code
+      }
+    });
+    if(res.data.status == 0){
+      if (res.data.data=="男"){
+        this.setData({
+          sexm:res.data.data
+        })
+      }else if (res.data.data=="女"){
+        this.setData({
+          sexw:res.data.data
+        })
+      }else {
+        this.setData({
+          sexm:"男"
+        })
+      }
+      
+
+    }
     var animation = wx.createAnimation({
       duration: 300,
       timingFunction: 'ease',
@@ -53,7 +80,8 @@ export default class Profile extends wx.Component {
 
     this.setData({
       animationData:animation.export()
-    })
+    });
+    
   }
   chooseSex(e){
     let id=e.currentTarget.id;

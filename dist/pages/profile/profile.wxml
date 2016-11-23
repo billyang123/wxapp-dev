@@ -38,14 +38,14 @@
 					<text>姓名</text>
 				</view>
 				<view class="item-after" wx:if="{{userTrueName}}">
-					<text>姓名</text>
+					<text>{{userTrueName}}</text>
 				</view>
 			</view>
 		</view>
 		<view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose" data-path="">
 			<view class="item-inner">
 				<view class="item-title">
-					<text>姓别</text>
+					<text>性别</text>
 				</view>
 				<view class="item-after" wx:if="{{userGender}}">
 					<text>{{userGender}}</text>

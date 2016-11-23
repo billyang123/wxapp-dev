@@ -63,7 +63,7 @@ var Profile = function (_wx$Component) {
       userEmail: '',
       userHeadimgurl: '',
       active: '',
-      sexm: 'sexm',
+      sexm: '',
       sexw: '',
       sex: '男',
       chooseSex: '男'
@@ -129,19 +129,70 @@ var Profile = function (_wx$Component) {
     }
   }, {
     key: 'choose',
-    value: function choose() {
-      var animation = _labrador2.default.createAnimation({
-        duration: 300,
-        timingFunction: 'ease'
-      });
-      this.animation = animation;
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+        var res, animation;
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _labrador2.default.request({
+                  url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/gender",
+                  method: "GET",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    code: _labrador2.default.app.globalData.storage.code
+                  }
+                });
 
-      animation.translateY(0).step();
+              case 2:
+                res = _context2.sent;
 
-      this.setData({
-        animationData: animation.export()
-      });
-    }
+                if (res.data.status == 0) {
+                  if (res.data.data == "男") {
+                    this.setData({
+                      sexm: res.data.data
+                    });
+                  } else if (res.data.data == "女") {
+                    this.setData({
+                      sexw: res.data.data
+                    });
+                  } else {
+                    this.setData({
+                      sexm: "男"
+                    });
+                  }
+                }
+                animation = _labrador2.default.createAnimation({
+                  duration: 300,
+                  timingFunction: 'ease'
+                });
+
+                this.animation = animation;
+
+                animation.translateY(0).step();
+
+                this.setData({
+                  animationData: animation.export()
+                });
+
+              case 8:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function choose() {
+        return _ref3.apply(this, arguments);
+      }
+
+      return choose;
+    }()
   }, {
     key: 'chooseSex',
     value: function chooseSex(e) {
@@ -180,17 +231,17 @@ var Profile = function (_wx$Component) {
   }, {
     key: 'chooseSure',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
         var postData, res, animation;
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 postData = {
                   code: _labrador2.default.app.globalData.storage.code,
                   gender: e.currentTarget.dataset.choose
                 };
-                _context2.next = 3;
+                _context3.next = 3;
                 return _labrador2.default.request({
                   url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyGender",
                   method: "POST",
@@ -201,7 +252,7 @@ var Profile = function (_wx$Component) {
                 });
 
               case 3:
-                res = _context2.sent;
+                res = _context3.sent;
 
                 if (res.data.status == 0) {
                   this.setData({
@@ -223,14 +274,14 @@ var Profile = function (_wx$Component) {
 
               case 5:
               case 'end':
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
       function chooseSure(_x) {
-        return _ref3.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return chooseSure;
@@ -242,23 +293,23 @@ var Profile = function (_wx$Component) {
   }, {
     key: 'onShow',
     value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 this.getData();
 
               case 1:
               case 'end':
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee4, this);
       }));
 
       function onShow(_x2) {
-        return _ref4.apply(this, arguments);
+        return _ref5.apply(this, arguments);
       }
 
       return onShow;
