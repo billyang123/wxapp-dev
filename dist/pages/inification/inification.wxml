@@ -96,9 +96,9 @@
 				</view>
 			</view>
 			<view class="gi-footer">
-				<view class="gi-item">
+				<!--<view class="gi-item">
 					<text>充值</text>
-				</view>
+				</view>-->
 				<view class="gi-item" catchtap="_dispatch" data-link="/pages/elecert/elecert?id={{item.id}}" data-catchtap="linkTo" data-path="">
 					<text>查看凭单</text>
 				</view>

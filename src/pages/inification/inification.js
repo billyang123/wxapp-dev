@@ -24,8 +24,7 @@ export default class Indemnification extends wx.Component {
             data: {
             	code:wx.app.globalData.storage.code
             }
-        })
-        console.log(listData);
+        });
         this.setData({
         	tpNum:(listData.data.data.totalPersons+"").split(""),
         	taNum:(listData.data.data.totalAmt+"").split(""),
@@ -33,8 +32,6 @@ export default class Indemnification extends wx.Component {
         	totalAmt:listData.data.data.totalAmt,
         	hasAcount:listData.data.data.hasAcount,
         	list:listData.data.data.list
-        })
-        console.log(listData);
-
+        });
 	}
 }

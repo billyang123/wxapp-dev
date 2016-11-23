@@ -95,7 +95,6 @@ var Indemnification = function (_wx$Component) {
 							case 2:
 								listData = _context.sent;
 
-								console.log(listData);
 								this.setData({
 									tpNum: (listData.data.data.totalPersons + "").split(""),
 									taNum: (listData.data.data.totalAmt + "").split(""),
@@ -104,9 +103,8 @@ var Indemnification = function (_wx$Component) {
 									hasAcount: listData.data.data.hasAcount,
 									list: listData.data.data.list
 								});
-								console.log(listData);
 
-							case 6:
+							case 4:
 							case 'end':
 								return _context.stop();
 						}

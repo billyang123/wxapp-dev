@@ -20,7 +20,7 @@
 			<view class="item-inner">
 				<view class="item-title">
 					<text class="txt">申请人</text>
-					<input  bindinput="bindKeyInput" placeholder="请填写申请人姓名"/>
+					<input  bindinput="bindKeyInput" placeholder="请填写申请人姓名" data-name="name"/>
 				</view>
 			</view>
 		</view>
@@ -28,13 +28,13 @@
 			<view class="item-inner">
 				<view class="item-title">
 					<text class="txt">联系方式</text>
-					<input  bindinput="bindKeyInput" placeholder="请填写联系方式"/>
+					<input  bindinput="bindKeyInput" placeholder="请填写联系方式" data-name="phone"/>
 				</view>
 			</view>
 		</view>
 	</view>
 	<view class="section">
-	  <textarea maxlength="140" bindblur="bindTextAreaBlur" auto-height placeholder="请简要叙述事件内容" />
+	  <textarea maxlength="140" bindblur="bindTextAreaBlur" placeholder="请简要叙述事件内容" data-name="txtarea" />
 	</view>
 	<view class="apply-btn">
 		<text>提交申请</text>

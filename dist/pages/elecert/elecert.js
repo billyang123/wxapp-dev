@@ -78,7 +78,8 @@ var Elecert = function (_wx$Component) {
     return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Elecert.__proto__ || (0, _getPrototypeOf2.default)(Elecert)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
       project: {},
       list: {},
-      projectAccount: {}
+      projectAccount: {},
+      projectId: ''
     }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
@@ -119,9 +120,9 @@ var Elecert = function (_wx$Component) {
     }()
   }, {
     key: 'linkTo',
-    value: function linkTo(event) {
+    value: function linkTo(e) {
       _labrador2.default.navigateTo({
-        url: event.currentTarget.dataset.link
+        url: e.currentTarget.dataset.link
       });
     }
   }, {
@@ -157,7 +158,8 @@ var Elecert = function (_wx$Component) {
                 this.setData({
                   project: elecertData.data.data.project,
                   list: elecertData.data.data.list,
-                  projectAccount: elecertData.data.data.projectAccount
+                  projectAccount: elecertData.data.data.projectAccount,
+                  projectId: elecertData.data.data.project.id
                 });
                 console.log(elecertData);
 

@@ -51,7 +51,7 @@
 		</view>
 	</view>
 	<view class="btn-padd">
-		<view class="btn btn-org" catchtap="{{linkTo}}" data-link="/pages/community/community?type={{item.project.id}}">
+		<view class="btn btn-org" catchtap="linkTo" data-link="/pages/community/community?type={{projectId}}">
 			<text>查看社群详情</text>
 		</view>
 	</view>

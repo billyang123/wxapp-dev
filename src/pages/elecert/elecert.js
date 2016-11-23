@@ -19,7 +19,8 @@ export default class Elecert extends wx.Component {
 	data = {
 		project:{},
 		list:{},
-		projectAccount:{}
+		projectAccount:{},
+    projectId:''
 	};
 	async showIntro(){
 		let showModal = await wx.showModal({
@@ -30,9 +31,9 @@ export default class Elecert extends wx.Component {
 		  confirmColor:"#ff6a00"
 		})
 	}
-	linkTo(event) {
+	linkTo(e) {
 		wx.navigateTo({
-			url:event.currentTarget.dataset.link
+			url:e.currentTarget.dataset.link
 		})
 	}
 	async onLoad(e){
@@ -41,22 +42,23 @@ export default class Elecert extends wx.Component {
             url: 'https://xcx.chinamuxie.com/wxapi/project/account/detail',
             method:"post",
             header: {
-			    'content-type': 'application/x-www-form-urlencoded'
-			},
+			        'content-type': 'application/x-www-form-urlencoded'
+			      },
             data: {
             	code:wx.app.globalData.storage.code,
             	projectAccountId:id
             }
-        })
+        });
         let createTime = elecertData.data.data.projectAccount.createTime;
-        let effectiveTime = elecertData.data.data.projectAccount.effectiveTime
+        let effectiveTime = elecertData.data.data.projectAccount.effectiveTime;
         elecertData.data.data.projectAccount.createTime = (new Date(createTime)).Format("yyyy-MM-dd hh:mm:ss");
         elecertData.data.data.projectAccount.effectiveTime = (new Date(effectiveTime)).Format("yyyy-MM-dd hh:mm:ss")
         this.setData({
         	project:elecertData.data.data.project,
-			list:elecertData.data.data.list,
-			projectAccount:elecertData.data.data.projectAccount
-        })
+			    list:elecertData.data.data.list,
+			    projectAccount:elecertData.data.data.projectAccount,
+          projectId:elecertData.data.data.project.id
+        });
         console.log(elecertData)
 	}
 }
