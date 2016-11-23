@@ -10,7 +10,7 @@
 			</picker>
 		</view>
 	</view>
-	<view class="account-item" wx:for="{{rows}}" catchtap="linkTo" data-link="/pages/accountdetail/accountdetail?id={{item.id}}">
+	<view class="account-item" wx:for="{{rowsArr}}" catchtap="linkTo" data-link="/pages/accountdetail/accountdetail?id={{item.id}}">
 		<view class="inner account-time">
 			<view class="day">{{item.day}}</view>
 			<view class="time">{{item.time}}</view>

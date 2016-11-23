@@ -5,7 +5,7 @@ export default class Accountlist extends wx.Component {
 		index:0,
 		typeArr:["全部","充值","援助"],
 		pageIndex:1,
-		rows:[]
+		rowsArr:[]
 	};
 	linkTo(event) {
 	      wx.navigateTo({
@@ -25,35 +25,48 @@ export default class Accountlist extends wx.Component {
             	rows:options.rows || 20,
             	code:wx.app.globalData.storage.code
             }
-        })
-        let __data = accountList.data.data;;
-        let rows = __data.rows;
-		for (var i = 0; i < rows.length; i++) {
-			let times = rows[i].createTimeStr.split(" ");
-			rows[i].day = times[0];
-			rows[i].time = times[1];
-		}
-		__data.rows = rows; 
-        return __data;
+        });
+    if (accountList.data.status==0){
+      let __data = accountList.data.data;
+      let rows = null;
+      if (__data.rows){
+        rows=__data.rows
+      }else {
+        rows=[]
+      }
+
+      for (var i = 0; i < rows.length; i++) {
+        let times = rows[i].createTimeStr.split(" ");
+        rows[i].day = times[0];
+        rows[i].time = times[1];
+      }
+      __data.rows = rows;
+      return __data;
+    }
 	}
 	async bindPickerChange(e) {
 		let index = e.detail.value;
+    let _rows=[];
 		let accountList = await this.getAccount({
-			type:index,
+			    type:index,
         	pageIndex:1,
         	rows:20,
 		});
-		console.log(index)
+    
+    if (accountList.rows){
+       _rows=accountList.rows
+    }else {
+        _rows=[]
+    }
 		this.setData({
-			rows:accountList.rows,
+      rowsArr:_rows,
 			index:index
 		})
 	}
 	async onLoad(){
 		let accountList = await this.getAccount({});
 		this.setData({
-			rows:accountList.rows
+      rowsArr:accountList.rows
 		})
-		console.log(accountList)
 	}
 }
