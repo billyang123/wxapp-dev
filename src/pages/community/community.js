@@ -37,7 +37,7 @@ let jsonData = {
 	],
 	power:[
 		{
-			t:"加入留守儿童互助社群，如果不幸患重大疾病或发生意外事故，即可获得：",
+			t:"加入789互助社群，180天后，如果会员不幸患25种重大疾病，即可获得：",
 			l:[
 				["重大疾病保障(90天后)","最高10万元"],
 				["意外伤残、死亡","最高10万元"],
@@ -53,7 +53,7 @@ let jsonData = {
 				}
 			]
 		},{
-			t:"加入789互助社群，180天后，如果会员不幸患25种重大疾病，即可获得：",
+			t:"加入留守儿童互助社群，如果不幸患重大疾病或发生意外事故，即可获得：",
 			l:[
 				["住院医疗费用报销（含非医保类用药）","最高30万元"],
 				["住院津贴","100元/天"],
@@ -454,8 +454,10 @@ export default class Community extends wx.Component {
 		condition:{},
 		slidedata:[],
 		bannerImg:{},
-		numData:{}
+		numData:{},
+    linkUrl:''
 	};
+/*/pages/join/join*/
 	children = {
 	    slide: new Slide({slideData:"@slidedata"})
 	};
@@ -466,6 +468,9 @@ export default class Community extends wx.Component {
 	}
     async onLoad(e){
     	let id = parseInt(e.type);
+      this.setData({
+        linkUrl:'/pages/join/join?type='+id
+      });
     	let ResData = await wx.request({
             url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
             method:"get",

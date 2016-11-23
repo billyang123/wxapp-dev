@@ -38,7 +38,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="my-group">
+	<view class="my-group" wx:else>
 		<view class="top-title">
 			<text></text>
 			<view class="h2">我的社群</view>

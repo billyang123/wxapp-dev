@@ -65,14 +65,14 @@ var jsonData = {
 	}],
 	purpose: [["为患癌症等25种重大疾病的会员提供互助金", "一人患病，会员均摊。每次均摊不超过3元"], ["为留守儿童的多种风险提供互助金", "一人患病，会员均摊。每次均摊不超过3元"], ["为遭遇旅游、公共交通意外的会员提供互助金", "一人患病，会员均摊。每次均摊不超过1元"], ["为患癌症等25种重大疾病的会员提供互助金", "一人患病，会员均摊。每次均摊不超过3元"], ["为孕妈的生育风险和新生儿大病等提供互助金", "一人患病，会员均摊。每次均摊不超过3元"], ["为患癌症以及24种重大疾病的会员提供互助金", "一人患病，会员均摊。每次均摊不超过3元"]],
 	power: [{
-		t: "加入留守儿童互助社群，如果不幸患重大疾病或发生意外事故，即可获得：",
+		t: "加入789互助社群，180天后，如果会员不幸患25种重大疾病，即可获得：",
 		l: [["重大疾病保障(90天后)", "最高10万元"], ["意外伤残、死亡", "最高10万元"], ["走失、被拐寻子互助金", "最高10万元"], ["暴力、性侵法律维权互助金", "最高1万元"], ["辍学(180天后)", "最高2万元"], ["心理障碍(90天后)", "最高5000元"]],
 		ll: [{
 			o: ["了解详情"],
 			link: "/pages/range/range"
 		}]
 	}, {
-		t: "加入789互助社群，180天后，如果会员不幸患25种重大疾病，即可获得：",
+		t: "加入留守儿童互助社群，如果不幸患重大疾病或发生意外事故，即可获得：",
 		l: [["住院医疗费用报销（含非医保类用药）", "最高30万元"], ["住院津贴", "100元/天"], ["一次性互助金", "2万元"]],
 		ll: [{
 			t: "免费预约公立医院700个专家门诊号",
@@ -304,11 +304,14 @@ var Community = function (_wx$Component) {
 			condition: {},
 			slidedata: [],
 			bannerImg: {},
-			numData: {}
+			numData: {},
+			linkUrl: ''
 		}, _this.children = {
 			slide: new _slide2.default({ slideData: "@slidedata" })
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
+	/*/pages/join/join*/
+
 
 	(0, _createClass3.default)(Community, [{
 		key: 'linkTo',
@@ -327,7 +330,11 @@ var Community = function (_wx$Component) {
 						switch (_context.prev = _context.next) {
 							case 0:
 								id = parseInt(e.type);
-								_context.next = 3;
+
+								this.setData({
+									linkUrl: '/pages/join/join?type=' + id
+								});
+								_context.next = 4;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
 									method: "get",
@@ -339,7 +346,7 @@ var Community = function (_wx$Component) {
 									}
 								});
 
-							case 3:
+							case 4:
 								ResData = _context.sent;
 
 								this.setData({
@@ -355,7 +362,7 @@ var Community = function (_wx$Component) {
 								});
 								console.log(Res);
 
-							case 6:
+							case 7:
 							case 'end':
 								return _context.stop();
 						}

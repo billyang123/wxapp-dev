@@ -40,6 +40,10 @@ var _labrador2 = _interopRequireDefault(_labrador);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var jsonData = {
+	items: [{ convention: '《17互助公约》', checked: 'true' }, { convention: '《789重大疾病互助公约》', checked: 'true' }, { convention: '《留守儿童互助公约》', checked: 'true' }, { convention: '《公共交通、旅游意外互助公约》', checked: 'true' }, { convention: '《少儿大病、意外互助计划公约》', checked: 'true' }, { convention: '《80后孕妈婴宝互助公约》', checked: 'true' }, { convention: '《中老年大病意外互助公约》', checked: 'true' }]
+};
+
 var Join = function (_wx$Component) {
 	(0, _inherits3.default)(Join, _wx$Component);
 
@@ -56,7 +60,11 @@ var Join = function (_wx$Component) {
 
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Join.__proto__ || (0, _getPrototypeOf2.default)(Join)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			projectId: 1,
-			persons: [{}]
+			persons: [{}],
+			publicConvention: '',
+			conventionTxt: '',
+			publicChecked: true,
+			checked: true
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
@@ -82,6 +90,15 @@ var Join = function (_wx$Component) {
 			});
 		}
 	}, {
+		key: 'checkChange',
+		value: function checkChange() {
+			this.setData({
+				checked: !this.data.publicChecked
+			});
+			console.log('publicChecked' + this.data.publicChecked);
+			console.log('checked' + this.data.checked);
+		}
+	}, {
 		key: 'joinBind',
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
@@ -90,7 +107,8 @@ var Join = function (_wx$Component) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
-								_context.next = 2;
+								console.log(this.data.checked);
+								_context.next = 3;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
 									header: {
@@ -104,23 +122,23 @@ var Join = function (_wx$Component) {
 									}
 								});
 
-							case 2:
+							case 3:
 								res = _context.sent;
 
 								if (!(res.data.status == 0)) {
-									_context.next = 6;
+									_context.next = 7;
 									break;
 								}
 
-								_context.next = 6;
+								_context.next = 7;
 								return _labrador2.default.navigateTo({
 									url: '/pages/joinEnd/joinEnd'
 								});
 
-							case 6:
+							case 7:
 								console.log(res);
 
-							case 7:
+							case 8:
 							case 'end':
 								return _context.stop();
 						}
@@ -145,6 +163,36 @@ var Join = function (_wx$Component) {
 				persons: this.data.persons
 			});
 		}
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+				var id;
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								id = parseInt(e.type);
+
+								this.setData({
+									publicConvention: jsonData.items[0].convention,
+									conventionTxt: jsonData.items[id].convention
+								});
+
+							case 2:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function onLoad(_x2) {
+				return _ref3.apply(this, arguments);
+			}
+
+			return onLoad;
+		}()
 	}]);
 	return Join;
 }(_labrador2.default.Component);

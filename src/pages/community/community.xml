@@ -3,7 +3,7 @@
 		<view class="cnav-li">
 			<text>分享给好友</text>
 		</view>
-		<view class="cnav-li join" catchtap="linkTo" data-link="/pages/join/join">
+		<view class="cnav-li join" catchtap="linkTo" data-link="{{linkUrl}}">
 			<text>立即加入</text>
 		</view>
 	</view>

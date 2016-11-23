@@ -32,17 +32,17 @@
 			</view>
 		</view>
 		<view class="add_plan_btn_box">
-			<view class="add_plan_btn" data-link="/pages/forfamily/forfamily" catchtap="_dispatch" data-catchtap="linkTo">
+			<view class="add_plan_btn" data-link="/pages/forfamily/forfamily" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
 				<icon class="icon-add"/>
 				<text>    立即加入</text>
 			</view>
 		</view>
 	</view>
-	<view class="my-group">
+	<view class="my-group" wx:else="wx:else">
 		<view class="top-title">
 			<text/>
 			<view class="h2">我的社群</view>
-			<view class="tt-r" catchtap="_dispatch" data-link="/pages/accountlist/accountlist" data-catchtap="linkTo">
+			<view class="tt-r" catchtap="_dispatch" data-link="/pages/accountlist/accountlist" data-catchtap="linkTo" data-path="">
 				<text>账单</text>
 			</view>
 		</view>
@@ -99,7 +99,7 @@
 				<view class="gi-item">
 					<text>充值</text>
 				</view>
-				<view class="gi-item" catchtap="_dispatch" data-link="/pages/elecert/elecert?id={{item.id}}" data-catchtap="linkTo">
+				<view class="gi-item" catchtap="_dispatch" data-link="/pages/elecert/elecert?id={{item.id}}" data-catchtap="linkTo" data-path="">
 					<text>查看凭单</text>
 				</view>
 			</view>

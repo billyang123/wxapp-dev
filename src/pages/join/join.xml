@@ -37,15 +37,17 @@
 		</view>
 	</view>
 	<view class="checkbox-group">
+    <checkbox-group bindchange="checkChange">
 		<view>
 			<label class="checkbox">
-			    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>已同意 <text class="text">《17互助公约》</text>
+			    <checkbox checked="{{publicChecked}}" />已同意 <text class="text">{{publicConvention}}</text>
 			</label>
 		</view>
 		<view>
 			<label class="checkbox">
-		    	<checkbox value="{{item.name}}" checked="{{item.checked}}"/>已同意 <text class="text">《留守儿童互助公约》</text>
+		    	<checkbox checked="{{checked}}" />已同意 <text class="text">{{conventionTxt}}</text>
 		  	</label>
 		</view>
+    </checkbox-group>
 	</view>
 </view>

@@ -1,7 +1,7 @@
 <view class="container">
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
-			<view class="acimage default-image" catchtap="_dispatch" data-link="/pages/profile/profile" data-catchtap="linkTo">
+			<view class="acimage default-image" catchtap="_dispatch" data-link="/pages/profile/profile" data-catchtap="linkTo" data-path="">
 				<image src="{{userInfo.headImgUrl}}" class="avatar"/>
 				<view class="volunteer" wx:if="{{isVolunteer}}">
 					<text>自愿者</text>
@@ -32,8 +32,8 @@
 			</view>
 		</view>
 		<view wx:else="wx:else" class="account-info no-login">
-			<view class="acimage default-image" catchtap="_dispatch" data-catchtap="bindLogin"/>
-			<view class="txt" catchtap="_dispatch" data-catchtap="bindLogin">
+			<view class="acimage default-image" catchtap="_dispatch" data-catchtap="bindLogin" data-path=""/>
+			<view class="txt" catchtap="_dispatch" data-catchtap="bindLogin" data-path="">
 				<text>立即登录</text>
 			</view>
 		</view>
@@ -51,7 +51,7 @@
 		</view>
 	</view>
 	<view class="media-list ac-list">
-		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/inification/inification" data-catchtap="linkTo">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/inification/inification" data-catchtap="linkTo" data-path="">
 			<view class="item-media">
 				<image class="img" src="/images/account_wdsq_icon.png"/>
 			</view>
@@ -64,7 +64,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/claim/claim" data-catchtap="linkTo">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/claim/claim" data-catchtap="linkTo" data-path="">
 			<view class="item-media">
 				<image class="img" src="/images/account_sqhz_icon.png"/>
 			</view>
