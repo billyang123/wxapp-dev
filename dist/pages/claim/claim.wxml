@@ -1,4 +1,8 @@
 <view class="container">
+  <view class="claim-top">
+    <text class="claim-topTxt">申请互助</text>
+    <text class="applyHistory" catchtap="_dispatch" data-link="/pages/applyHistory/applyHistory" data-catchtap="linkTo" data-path="">申请记录</text>
+  </view>
 	<view class="claim-process">
 		<view class="tel-number">
 			<text class="span">互助热线：</text>

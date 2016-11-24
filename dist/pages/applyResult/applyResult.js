@@ -77,30 +77,12 @@ var Applyform = function (_wx$Component) {
     }
   }, {
     key: 'bindTextAreaBlur',
-    value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
-        return _regenerator2.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                this.setData({
-                  claimContent: e.detail.value
-                });
+    value: function bindTextAreaBlur(e) {
 
-              case 1:
-              case 'end':
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function bindTextAreaBlur(_x) {
-        return _ref2.apply(this, arguments);
-      }
-
-      return bindTextAreaBlur;
-    }()
+      this.setData({
+        claimContent: e.detail.value
+      });
+    }
   }, {
     key: 'bindKeyInput',
     value: function bindKeyInput(e) {
@@ -113,19 +95,19 @@ var Applyform = function (_wx$Component) {
   }, {
     key: 'onSub',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
         var res;
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
+        return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
                 if (!(this.data.index > 0)) {
-                  _context2.next = 22;
+                  _context.next = 22;
                   break;
                 }
 
                 if (!(typeof this.data.persons.name == "undefined")) {
-                  _context2.next = 4;
+                  _context.next = 4;
                   break;
                 }
 
@@ -135,11 +117,11 @@ var Applyform = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
-                return _context2.abrupt('return');
+                return _context.abrupt('return');
 
               case 4:
                 if (!(typeof this.data.persons.phone == "undefined")) {
-                  _context2.next = 7;
+                  _context.next = 7;
                   break;
                 }
 
@@ -149,11 +131,11 @@ var Applyform = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
-                return _context2.abrupt('return');
+                return _context.abrupt('return');
 
               case 7:
                 if (!(!this.data.persons.name.length > 0)) {
-                  _context2.next = 10;
+                  _context.next = 10;
                   break;
                 }
 
@@ -163,11 +145,11 @@ var Applyform = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
-                return _context2.abrupt('return');
+                return _context.abrupt('return');
 
               case 10:
                 if (!(!this.data.persons.phone.length > 0)) {
-                  _context2.next = 13;
+                  _context.next = 13;
                   break;
                 }
 
@@ -177,11 +159,11 @@ var Applyform = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
-                return _context2.abrupt('return');
+                return _context.abrupt('return');
 
               case 13:
                 if (!(!this.data.claimContent.length > 0)) {
-                  _context2.next = 16;
+                  _context.next = 16;
                   break;
                 }
 
@@ -191,10 +173,10 @@ var Applyform = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
-                return _context2.abrupt('return');
+                return _context.abrupt('return');
 
               case 16:
-                _context2.next = 18;
+                _context.next = 18;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/user/claim/commit',
                   method: 'POST',
@@ -211,12 +193,10 @@ var Applyform = function (_wx$Component) {
                 });
 
               case 18:
-                res = _context2.sent;
+                res = _context.sent;
 
                 if (res.data.status == 0) {
-                  _labrador2.default.navigateTo({
-                    url: '/pages/applyResult/applyResult'
-                  });
+                  console.log('提交成功--' + res);
                 } else {
                   _labrador2.default.showModal({
                     title: '提示',
@@ -225,7 +205,7 @@ var Applyform = function (_wx$Component) {
                     success: function success(res) {}
                   });
                 }
-                _context2.next = 23;
+                _context.next = 23;
                 break;
 
               case 22:
@@ -238,14 +218,14 @@ var Applyform = function (_wx$Component) {
 
               case 23:
               case 'end':
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee, this);
       }));
 
       function onSub() {
-        return _ref3.apply(this, arguments);
+        return _ref2.apply(this, arguments);
       }
 
       return onSub;
@@ -253,13 +233,13 @@ var Applyform = function (_wx$Component) {
   }, {
     key: 'onLoad',
     value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
         var res, i;
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
-                _context3.next = 2;
+                _context2.next = 2;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/user/claim/index',
                   method: "get",
@@ -272,7 +252,7 @@ var Applyform = function (_wx$Component) {
                 });
 
               case 2:
-                res = _context3.sent;
+                res = _context2.sent;
 
                 if (res.data.status == 0) {
                   for (i = 0; i < res.data.data.length; i++) {
@@ -287,14 +267,14 @@ var Applyform = function (_wx$Component) {
 
               case 4:
               case 'end':
-                return _context3.stop();
+                return _context2.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee2, this);
       }));
 
-      function onLoad(_x2) {
-        return _ref4.apply(this, arguments);
+      function onLoad(_x) {
+        return _ref3.apply(this, arguments);
       }
 
       return onLoad;

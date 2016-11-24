@@ -480,7 +480,8 @@ export default class Community extends wx.Component {
             data: {
             	id:id
             }
-        })
+        });
+      console.log(ResData);
     	this.setData({
     		id:id,
     		bannerImg:jsonData.topBanner[id-1],

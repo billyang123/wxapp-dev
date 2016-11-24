@@ -90,7 +90,7 @@ var Accountlist = function (_wx$Component) {
                   data: {
                     type: options.type || 0,
                     pageIndex: options.pageIndex || 1,
-                    rows: options.rows || 20,
+                    rows: options.rows || 30,
                     code: _labrador2.default.app.globalData.storage.code
                   }
                 });
@@ -151,7 +151,7 @@ var Accountlist = function (_wx$Component) {
                 return this.getAccount({
                   type: index,
                   pageIndex: 1,
-                  rows: 20
+                  rows: 30
                 });
 
               case 4:

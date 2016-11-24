@@ -18,7 +18,8 @@ export default class Applyform extends wx.Component {
 		  index: e.detail.value
 		});
 	}
-  async bindTextAreaBlur(e) {
+	bindTextAreaBlur(e) {
+   
     this.setData({
       claimContent:e.detail.value
     });
@@ -94,9 +95,7 @@ export default class Applyform extends wx.Component {
         }
       });
       if (res.data.status ==0){
-        wx.navigateTo({
-          url:'/pages/applyResult/applyResult'
-        })
+        console.log('提交成功--'+res)
       }else {
         wx.showModal({
           title: '提示',

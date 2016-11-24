@@ -224,9 +224,7 @@ var Index = function (_wx$Component) {
               case 4:
                 location = _context4.sent;
 
-                console.log(e);
-
-              case 6:
+              case 5:
               case 'end':
                 return _context4.stop();
             }

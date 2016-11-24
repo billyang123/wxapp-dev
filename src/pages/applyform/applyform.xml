@@ -28,7 +28,7 @@
 			<view class="item-inner">
 				<view class="item-title">
 					<text class="txt">联系方式</text>
-					<input  bindinput="bindKeyInput" placeholder="请填写联系方式" data-name="phone"/>
+					<input  bindinput="bindKeyInput" type="number" placeholder="请填写联系方式" data-name="phone"/>
 				</view>
 			</view>
 		</view>
@@ -36,7 +36,7 @@
 	<view class="section">
 	  <textarea maxlength="140" bindblur="bindTextAreaBlur" placeholder="请简要叙述事件内容" data-name="txtarea" />
 	</view>
-	<view class="apply-btn">
+	<view class="apply-btn" catchtap="onSub">
 		<text>提交申请</text>
 	</view>
 </view>

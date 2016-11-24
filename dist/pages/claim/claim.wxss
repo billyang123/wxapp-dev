@@ -1,6 +1,28 @@
 .container {
   padding-bottom: 100rpx;
 }
+.claim-top {
+  height: 100rpx;
+  background-color: #ffffff;
+  position: relative;
+  border-bottom: 1rpx solid #dddddd;
+}
+.claim-top .claim-topTxt {
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  color: #333333;
+  line-height: 100rpx;
+}
+.claim-top .applyHistory {
+  position: absolute;
+  right: 24rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666666;
+  font-size: 32rpx;
+  top: 0;
+}
 .claim-process {
   background: url(https://image1.chinamuxie.com/images/common/hp-claim.png) no-repeat;
   background-origin: padding-box;

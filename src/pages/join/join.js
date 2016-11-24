@@ -46,7 +46,6 @@ export default class Join extends wx.Component {
     console.log('checked'+this.data.checked)
   }
 	async joinBind(e){
-    console.log(this.data.checked);
 		let res = await wx.request({
 	      url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
 	      header: {
@@ -63,8 +62,19 @@ export default class Join extends wx.Component {
         await wx.navigateTo({
           url:'/pages/joinEnd/joinEnd'
         })
-	    }
-	    console.log(res);
+	    }else {
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg,
+          showCancel:false,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+	   
 	}
 	bindKeyInput(e){
 		let name = e.currentTarget.dataset.name,

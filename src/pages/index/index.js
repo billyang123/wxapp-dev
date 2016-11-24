@@ -65,7 +65,7 @@ export default class Index extends wx.Component {
         //project[item.id].content = project[item.id].content.replace("{0}",item.minAge).replace("{1}",item.maxAge).replace("{2}",item.projectTotalUser);
         //console.log(project[item.id].content)
         mImgArr[id].mImgArr = item.headImg;
-    })
+    });
     this.setData({
       mImgArr:mImgArr
     })
@@ -74,6 +74,5 @@ export default class Index extends wx.Component {
     this.bannerInit();
     this.objectInit(); 
     let location = await wx.getLocation();
-    console.log(e)
   }
 }

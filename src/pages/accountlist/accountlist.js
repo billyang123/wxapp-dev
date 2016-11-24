@@ -22,7 +22,7 @@ export default class Accountlist extends wx.Component {
             data: {
             	type:options.type || 0,
             	pageIndex:options.pageIndex || 1,
-            	rows:options.rows || 20,
+            	rows:options.rows || 30,
             	code:wx.app.globalData.storage.code
             }
         });
@@ -50,7 +50,7 @@ export default class Accountlist extends wx.Component {
 		let accountList = await this.getAccount({
 			    type:index,
         	pageIndex:1,
-        	rows:20,
+        	rows:30,
 		});
     
     if (accountList.rows){
