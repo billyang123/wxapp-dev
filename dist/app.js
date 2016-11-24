@@ -141,33 +141,31 @@ var _class = function () {
               case 3:
                 storageInfo = _context3.sent;
                 keys = storageInfo.keys;
-
-                console.log(keys);
                 i = 0;
 
-              case 7:
+              case 6:
                 if (!(i < keys.length)) {
-                  _context3.next = 15;
+                  _context3.next = 14;
                   break;
                 }
 
-                _context3.next = 10;
+                _context3.next = 9;
                 return _labrador2.default.getStorage({ key: keys[i] });
 
-              case 10:
+              case 9:
                 res = _context3.sent;
 
                 localSession[keys[i]] = res.data || '';
 
-              case 12:
+              case 11:
                 i++;
-                _context3.next = 7;
+                _context3.next = 6;
                 break;
 
-              case 15:
+              case 14:
                 return _context3.abrupt('return', localSession);
 
-              case 16:
+              case 15:
               case 'end':
                 return _context3.stop();
             }

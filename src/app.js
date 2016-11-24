@@ -31,7 +31,6 @@ export default class {
     let localSession = {};
     let storageInfo = await wx.getStorageInfo();
     let keys = storageInfo.keys;
-    console.log(keys)
     for (let i = 0; i < keys.length; i++) {
       let res = await wx.getStorage({ key: keys[i] });
       localSession[keys[i]] = res.data || '';

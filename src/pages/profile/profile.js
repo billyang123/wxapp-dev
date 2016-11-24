@@ -146,6 +146,24 @@ export default class Profile extends wx.Component {
 
     }
   }
+  async quit(e){
+    let res = await wx.request({
+      url: "https://xcx.chinamuxie.com/wxapi/user/logout",
+      method:"GET",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        code:wx.app.globalData.storage.code
+      }
+    });
+    if(res.data.status == 0){
+      wx.clearStorage();
+      wx.navigateBack();
+
+
+    }
+  }
  /* async onLoad(e){
     this.getData();
   }*/

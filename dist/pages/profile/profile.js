@@ -286,21 +286,36 @@ var Profile = function (_wx$Component) {
 
       return chooseSure;
     }()
-    /* async onLoad(e){
-       this.getData();
-     }*/
-
   }, {
-    key: 'onShow',
+    key: 'quit',
     value: function () {
       var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
+        var res;
         return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                this.getData();
+                _context4.next = 2;
+                return _labrador2.default.request({
+                  url: "https://xcx.chinamuxie.com/wxapi/user/logout",
+                  method: "GET",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    code: _labrador2.default.app.globalData.storage.code
+                  }
+                });
 
-              case 1:
+              case 2:
+                res = _context4.sent;
+
+                if (res.data.status == 0) {
+                  _labrador2.default.clearStorage();
+                  _labrador2.default.navigateBack();
+                }
+
+              case 4:
               case 'end':
                 return _context4.stop();
             }
@@ -308,8 +323,36 @@ var Profile = function (_wx$Component) {
         }, _callee4, this);
       }));
 
-      function onShow(_x2) {
+      function quit(_x2) {
         return _ref5.apply(this, arguments);
+      }
+
+      return quit;
+    }()
+    /* async onLoad(e){
+       this.getData();
+     }*/
+
+  }, {
+    key: 'onShow',
+    value: function () {
+      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(e) {
+        return _regenerator2.default.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                this.getData();
+
+              case 1:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function onShow(_x3) {
+        return _ref6.apply(this, arguments);
       }
 
       return onShow;
