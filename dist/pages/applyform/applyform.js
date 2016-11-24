@@ -274,9 +274,10 @@ var Applyform = function (_wx$Component) {
               case 2:
                 res = _context3.sent;
 
+                console.log(res);
                 if (res.data.status == 0) {
                   for (i = 0; i < res.data.data.length; i++) {
-                    this.data.planArr.push(res.data.data[i].projectName);
+                    this.data.planArr.push(res.data.data[i].projectName + ' ' + res.data.data[i].insuredName);
                     this.data.projectIdArr.push(res.data.data[i].projectId);
                   }
                   this.setData({
@@ -285,7 +286,7 @@ var Applyform = function (_wx$Component) {
                   });
                 }
 
-              case 4:
+              case 5:
               case 'end':
                 return _context3.stop();
             }

@@ -349,7 +349,6 @@ var Community = function (_wx$Component) {
 							case 4:
 								ResData = _context.sent;
 
-								console.log(ResData);
 								this.setData({
 									id: id,
 									bannerImg: jsonData.topBanner[id - 1],
@@ -361,9 +360,8 @@ var Community = function (_wx$Component) {
 									diff: jsonData.diff,
 									numData: ResData.data.data
 								});
-								console.log(Res);
 
-							case 8:
+							case 6:
 							case 'end':
 								return _context.stop();
 						}

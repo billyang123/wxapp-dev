@@ -126,9 +126,10 @@ export default class Applyform extends wx.Component {
         code:wx.app.globalData.storage.code
       }
     });
+    console.log(res);
     if (res.data.status ==0){
       for (let i=0; i<res.data.data.length;i++){
-        this.data.planArr.push(res.data.data[i].projectName);
+        this.data.planArr.push(res.data.data[i].projectName +' '+ res.data.data[i].insuredName);
         this.data.projectIdArr.push(res.data.data[i].projectId)
       }
         this.setData({

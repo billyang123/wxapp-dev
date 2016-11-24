@@ -481,7 +481,6 @@ export default class Community extends wx.Component {
             	id:id
             }
         });
-      console.log(ResData);
     	this.setData({
     		id:id,
     		bannerImg:jsonData.topBanner[id-1],
@@ -493,6 +492,5 @@ export default class Community extends wx.Component {
     		diff:jsonData.diff,
     		numData:ResData.data.data
     	})
-    	console.log(Res);
     }
 }
