@@ -4,7 +4,7 @@ var global=window=require('../../npm/labrador/global.js');
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
@@ -42,196 +42,283 @@ var _labrador2 = _interopRequireDefault(_labrador);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Bindphone = function (_wx$Component) {
-	(0, _inherits3.default)(Bindphone, _wx$Component);
+  (0, _inherits3.default)(Bindphone, _wx$Component);
 
-	function Bindphone() {
-		var _ref;
+  function Bindphone() {
+    var _ref;
 
-		var _temp, _this2, _ret;
+    var _temp, _this2, _ret;
 
-		(0, _classCallCheck3.default)(this, Bindphone);
+    (0, _classCallCheck3.default)(this, Bindphone);
 
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-		return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Bindphone.__proto__ || (0, _getPrototypeOf2.default)(Bindphone)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
-			userInfo: {},
-			phoneValue: "",
-			codeValue: "",
-			btnText: "获取验证码",
-			disabled: true,
-			cDisCls: "btn",
-			loading: false,
-			tmOn: false
-		}, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
-	}
+    return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Bindphone.__proto__ || (0, _getPrototypeOf2.default)(Bindphone)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
+      userInfo: {},
+      phoneValue: "",
+      codeValue: "",
+      btnText: "获取验证码",
+      disabled: true,
+      cDisCls: "btn",
+      loading: false,
+      tmOn: false,
+      bl: true,
+      btnBl: true
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
+  }
 
-	(0, _createClass3.default)(Bindphone, [{
-		key: "bindKeyInput",
-		value: function bindKeyInput(e) {
-			var name = e.target.dataset.name,
-			    data = {};
-			data[name] = e.detail.value;
-			this.setData(data);
-		}
-	}, {
-		key: "shoutTime",
-		value: function shoutTime() {
-			var _this = this;
-			var secNum = 60;
-			if (this.tmOn) return;
-			this.tmOn = true;
-			this.setData({
-				cDisCls: "btn disabled",
-				btnText: secNum + "秒后重发"
-			});
-			var STM = setInterval(function () {
-				secNum--;
-				if (secNum <= 0) {
-					clearInterval(STM);
-					this.tmOn = false;
-					_this.setData({
-						cDisCls: ""
-					});
-					_this.setData({
-						btnText: "重发"
-					});
-				}
-				_this.setData({
-					btnText: secNum + "秒后重发"
-				});
-			}, 1000);
-		}
-	}, {
-		key: "doBind",
-		value: function () {
-			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
-				var postBind;
-				return _regenerator2.default.wrap(function _callee$(_context) {
-					while (1) {
-						switch (_context.prev = _context.next) {
-							case 0:
-								_context.next = 2;
-								return _labrador2.default.request({
-									url: 'https://xcx.chinamuxie.com/wxapi/user/doBindPhone',
-									method: "POST",
-									header: {
-										'content-type': 'application/x-www-form-urlencoded'
-									},
-									data: {
-										phone: this.data.phoneValue,
-										valideCode: this.data.codeValue,
-										code: _labrador2.default.app.globalData.storage.code
-									}
-								});
+  (0, _createClass3.default)(Bindphone, [{
+    key: "bindKeyInput",
+    value: function bindKeyInput(e) {
+      var name = e.target.dataset.name,
+          data = {};
+      data[name] = e.detail.value;
+      this.setData(data);
+    }
+  }, {
+    key: "shoutTime",
+    value: function shoutTime() {
+      var _this = this;
+      var secNum = 60;
+      var STM = null;
+      if (this.tmOn) return;
+      this.setData({
+        cDisCls: "btn disabled",
+        btnText: secNum + "秒后重发",
+        tmOn: true
+      });
+      STM = setInterval(function () {
+        secNum--;
+        if (secNum <= 0) {
+          clearInterval(STM);
+          _this.setData({
+            cDisCls: "btn",
+            bl: true,
+            btnText: "获取验证码",
+            tmOn: false
+          });
+        } else {
+          _this.setData({
+            btnText: secNum + "秒后重发"
+          });
+        }
+      }, 1000);
+    }
+  }, {
+    key: "checkisPhone",
+    value: function checkisPhone(_phone) {
+      var phone = /^1(2|3|4|5|6|7|8)[0-9]{9}$/;
 
-							case 2:
-								postBind = _context.sent;
+      if (phone.test(_phone)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }, {
+    key: "doBind",
+    value: function () {
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
+        var postBind;
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (this.checkisPhone(this.data.phoneValue)) {
+                  _context.next = 3;
+                  break;
+                }
 
-								if (postBind.data.status == 0) {
-									_labrador2.default.showToast({
-										title: '绑定成功',
-										icon: 'success',
-										duration: 2000
-									});
-									_labrador2.default.navigateBack();
-								}
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: '请输入有效手机号',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                return _context.abrupt("return");
 
-							case 4:
-							case "end":
-								return _context.stop();
-						}
-					}
-				}, _callee, this);
-			}));
+              case 3:
+                if (!(!this.data.codeValue.length > 0)) {
+                  _context.next = 6;
+                  break;
+                }
 
-			function doBind(_x) {
-				return _ref2.apply(this, arguments);
-			}
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: '请输入有效验证码',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                return _context.abrupt("return");
 
-			return doBind;
-		}()
-	}, {
-		key: "getCheckCode",
-		value: function () {
-			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
-				var postCode;
-				return _regenerator2.default.wrap(function _callee2$(_context2) {
-					while (1) {
-						switch (_context2.prev = _context2.next) {
-							case 0:
-								_context2.next = 2;
-								return _labrador2.default.request({
-									url: 'https://xcx.chinamuxie.com/wxapi/user/sendCode',
-									method: "POST",
-									header: {
-										'content-type': 'application/x-www-form-urlencoded'
-									},
-									data: {
-										telphone: this.data.phoneValue
-									}
-								});
+              case 6:
+                if (!this.data.btnBl) {
+                  _context.next = 13;
+                  break;
+                }
 
-							case 2:
-								postCode = _context2.sent;
+                this.setData({
+                  btnBl: false
+                });
+                _context.next = 10;
+                return _labrador2.default.request({
+                  url: 'https://xcx.chinamuxie.com/wxapi/user/doBindPhone',
+                  method: "POST",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    phone: this.data.phoneValue,
+                    valideCode: this.data.codeValue,
+                    code: _labrador2.default.app.globalData.storage.code
+                  }
+                });
 
-								if (postCode.data.status == 0) {
-									this.shoutTime();
-									this.setData({
-										disabled: false
-									});
-								}
+              case 10:
+                postBind = _context.sent;
 
-							case 4:
-							case "end":
-								return _context2.stop();
-						}
-					}
-				}, _callee2, this);
-			}));
+                if (postBind.data.status == 0) {
+                  _labrador2.default.showToast({
+                    title: '绑定成功',
+                    icon: 'success',
+                    duration: 2000
+                  });
+                  _labrador2.default.navigateBack();
+                } else {
+                  _labrador2.default.showModal({
+                    title: '提示',
+                    content: postBind.data.msg,
+                    showCancel: false,
+                    success: function success(res) {
+                      if (res.confirm) {
+                        console.log('用户点击确定');
+                      }
+                    }
+                  });
+                }
+                this.setData({
+                  btnBl: true
+                });
 
-			function getCheckCode(_x2) {
-				return _ref3.apply(this, arguments);
-			}
+              case 13:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
 
-			return getCheckCode;
-		}()
-	}, {
-		key: "onLoad",
-		value: function () {
-			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-				var userInfo;
-				return _regenerator2.default.wrap(function _callee3$(_context3) {
-					while (1) {
-						switch (_context3.prev = _context3.next) {
-							case 0:
-								_context3.next = 2;
-								return _labrador2.default.getUserInfo();
+      function doBind(_x) {
+        return _ref2.apply(this, arguments);
+      }
 
-							case 2:
-								userInfo = _context3.sent;
+      return doBind;
+    }()
+  }, {
+    key: "getCheckCode",
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+        var postCode;
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (this.checkisPhone(this.data.phoneValue)) {
+                  _context2.next = 3;
+                  break;
+                }
 
-								this.setData({
-									userInfo: userInfo.userInfo
-								});
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: '请输入有效手机号',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                return _context2.abrupt("return");
 
-							case 4:
-							case "end":
-								return _context3.stop();
-						}
-					}
-				}, _callee3, this);
-			}));
+              case 3:
+                if (!this.data.bl) {
+                  _context2.next = 9;
+                  break;
+                }
 
-			function onLoad() {
-				return _ref4.apply(this, arguments);
-			}
+                this.setData({
+                  bl: false
+                });
 
-			return onLoad;
-		}()
-	}]);
-	return Bindphone;
+                _context2.next = 7;
+                return _labrador2.default.request({
+                  url: 'https://xcx.chinamuxie.com/wxapi/user/sendCode',
+                  method: "POST",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    telphone: this.data.phoneValue
+                  }
+                });
+
+              case 7:
+                postCode = _context2.sent;
+
+                if (postCode.data.status == 0) {
+                  this.shoutTime();
+                  this.setData({
+                    disabled: false
+                  });
+                }
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function getCheckCode(_x2) {
+        return _ref3.apply(this, arguments);
+      }
+
+      return getCheckCode;
+    }()
+  }, {
+    key: "onLoad",
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+        var userInfo;
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _labrador2.default.getUserInfo();
+
+              case 2:
+                userInfo = _context3.sent;
+
+                this.setData({
+                  userInfo: userInfo.userInfo
+                });
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function onLoad() {
+        return _ref4.apply(this, arguments);
+      }
+
+      return onLoad;
+    }()
+  }]);
+  return Bindphone;
 }(_labrador2.default.Component);
 
 
