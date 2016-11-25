@@ -65,7 +65,8 @@ var Join = function (_wx$Component) {
       conventionTxt: '',
       publicChecked: true,
       checked: true,
-      conditionTxt: ''
+      conditionTxt: '',
+      bl: true
     }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
@@ -139,7 +140,7 @@ var Join = function (_wx$Component) {
   }, {
     key: 'checkisIDCard',
     value: function checkisIDCard(IDcard) {
-      var isIDCard = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/;
+      var isIDCard = /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X|x)$/;
 
       if (isIDCard.test(IDcard)) {
         return true;
@@ -225,7 +226,15 @@ var Join = function (_wx$Component) {
                 break;
 
               case 17:
-                _context.next = 19;
+                if (!this.data.bl) {
+                  _context.next = 29;
+                  break;
+                }
+
+                this.setData({
+                  bl: false
+                });
+                _context.next = 21;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
                   header: {
@@ -239,24 +248,24 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 19:
+              case 21:
                 res = _context.sent;
 
                 if (!(res.data.status == 0)) {
-                  _context.next = 25;
+                  _context.next = 27;
                   break;
                 }
 
-                _context.next = 23;
+                _context.next = 25;
                 return _labrador2.default.navigateTo({
                   url: '/pages/joinEnd/joinEnd'
                 });
 
-              case 23:
-                _context.next = 26;
+              case 25:
+                _context.next = 28;
                 break;
 
-              case 25:
+              case 27:
                 _labrador2.default.showModal({
                   title: '提示',
                   content: res.data.msg,
@@ -268,7 +277,12 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 26:
+              case 28:
+                this.setData({
+                  bl: true
+                });
+
+              case 29:
               case 'end':
                 return _context.stop();
             }
