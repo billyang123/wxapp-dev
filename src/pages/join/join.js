@@ -22,24 +22,62 @@ export default class Join extends wx.Component {
     conditionTxt:''
 	};
 	addPerson(e){
+    for(let i=0;i<this.data.persons.length;i++) {
+      if (typeof this.data.persons[i].name == "undefined") {
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确姓名',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (typeof this.data.persons[i].cardCode == "undefined") {
+        wx.showModal({
+          title: '提示',
+          content: '请输入有效身份证号',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (!this.data.persons[i].name.length>0) {
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确姓名',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
+        wx.showModal({
+          title: '提示',
+          content: '请输入有效身份证号',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+    }
 		this.data.persons.push({});
 		this.setData({
 			persons:this.data.persons
 		});
-    console.log(this.data.persons)
 	}
 	removePerson(e){
 		if(this.data.persons.length==1){
 			return;
 		}
 		let idx=e.currentTarget.dataset.idx;
-    console.log(idx);
-
-    this.data.persons.splice(parseInt(idx),1);
-    console.log(this.data.persons);
+		this.data.persons.splice(parseInt(idx),1);
 		this.setData({
 			persons:this.data.persons
-		})
+		});
 	}
   checkChange(){
     this.setData({
@@ -56,6 +94,7 @@ export default class Join extends wx.Component {
       return false;
     }
   }
+  
 	async joinBind(e){
     for(let i=0;i<this.data.persons.length;i++) {
       if (typeof this.data.persons[i].name == "undefined") {

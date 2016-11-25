@@ -72,11 +72,48 @@ var Join = function (_wx$Component) {
   (0, _createClass3.default)(Join, [{
     key: 'addPerson',
     value: function addPerson(e) {
+      for (var i = 0; i < this.data.persons.length; i++) {
+        if (typeof this.data.persons[i].name == "undefined") {
+          _labrador2.default.showModal({
+            title: '提示',
+            content: '请输入正确姓名',
+            showCancel: false,
+            success: function success(res) {}
+          });
+          return;
+        }
+        if (typeof this.data.persons[i].cardCode == "undefined") {
+          _labrador2.default.showModal({
+            title: '提示',
+            content: '请输入有效身份证号',
+            showCancel: false,
+            success: function success(res) {}
+          });
+          return;
+        }
+        if (!this.data.persons[i].name.length > 0) {
+          _labrador2.default.showModal({
+            title: '提示',
+            content: '请输入正确姓名',
+            showCancel: false,
+            success: function success(res) {}
+          });
+          return;
+        }
+        if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
+          _labrador2.default.showModal({
+            title: '提示',
+            content: '请输入有效身份证号',
+            showCancel: false,
+            success: function success(res) {}
+          });
+          return;
+        }
+      }
       this.data.persons.push({});
       this.setData({
         persons: this.data.persons
       });
-      console.log(this.data.persons);
     }
   }, {
     key: 'removePerson',
@@ -85,10 +122,7 @@ var Join = function (_wx$Component) {
         return;
       }
       var idx = e.currentTarget.dataset.idx;
-      console.log(idx);
-
       this.data.persons.splice(parseInt(idx), 1);
-      console.log(this.data.persons);
       this.setData({
         persons: this.data.persons
       });
