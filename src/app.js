@@ -43,4 +43,66 @@ export default class {
     this.globalData.userInfo = res.userInfo;
     return res.userInfo;
   }
+
+  
+  bindLogin(url,bl){
+    this.checkLogin(url,bl);
+  }
+  async checkLogin(url,bl){
+    //wx.clearStorage();
+    this.doLogin(url,bl);
+  }
+  async doLogin(url,bl) {
+    if(bl){
+      wx.navigateTo({
+        url:url
+      });
+      return;
+    }
+    let postdata = {
+      code:wx.app.globalData.storage.code,
+      sessionKey:wx.app.globalData.storage.sessionKey
+    };
+    if(!postdata.sessionKey){
+      //await wx.setStorage({ key: 'sessionKey', data: "111"});
+      let rdRes = await wx.request({
+        url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
+        method:"POST",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: postdata
+      });
+      await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
+      wx.app.globalData.storage =  await  wx.app.getStorage();
+    }
+
+    let userInfo = await wx.getUserInfo();
+    let userInfoPost = await wx.request({
+      url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
+      method:"POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        rawData:userInfo.rawData,
+        signature:userInfo.signature,
+        encryptedData:encodeURIComponent(userInfo.encryptedData),
+        iv:encodeURIComponent(userInfo.iv),
+        sessionKey: wx.app.globalData.storage.sessionKey,
+        code:postdata.code
+      }
+    });
+    
+    if(userInfoPost.data.data == "logged"){
+      wx.navigateTo({
+       url:url
+       });
+    }
+    if(userInfoPost.data.data == "notLogged"){
+      await wx.navigateTo({
+        url:'/pages/bindphone/bindphone'
+      })
+    }
+  }
 }

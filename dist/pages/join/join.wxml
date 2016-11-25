@@ -39,12 +39,12 @@
     <checkbox-group bindchange="_dispatch" data-bindchange="checkChange" data-path="">
 		<view>
 			<label class="checkbox">
-			    <checkbox checked="{{publicChecked}}"/>已同意 <text class="text">{{publicConvention}}</text>
+			    <checkbox disabled="true" checked="{{publicChecked}}"/>已同意 <text class="text">{{publicConvention}}</text>
 			</label>
 		</view>
 		<view>
 			<label class="checkbox">
-		    	<checkbox checked="{{checked}}"/>已同意 <text class="text">{{conventionTxt}}</text>
+		    	<checkbox disabled="true" checked="{{checked}}"/>已同意 <text class="text">{{conventionTxt}}</text>
 		  	</label>
 		</view>
     </checkbox-group>

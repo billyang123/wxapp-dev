@@ -1,5 +1,6 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -136,7 +137,7 @@ var jsonData = {
 		l: [["预存39元 启动保障", "预计500元/年"], ["互助费用 会员均摊", "从预存费用中扣除"], ["单次互助 不超3元", "设定限额，保障用户权益"], ["扣至0元 需要续费", "不充值则退出社群"]],
 		ll: [["《17互助公约》"], ["《中老年大病意外互助公约》"]]
 	}],
-	condition: [["3-15周岁，父母双发或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["适用于18-46周岁，且身体健康", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["16-60周岁"], ["1周岁－未满18周岁健康青少年", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["未满36周岁的孕妈妈或者备孕妈妈，加入之日怀孕周期未超过24周", "在加入互助社群之前，未曾患有互助公约所描述的疾病的人群"], ["46-70周岁，身体健康中老年人", "在加入互助社群之前，未曾患有互助公约所描述的恶性肿瘤或24种重大疾病的人群。"]],
+	condition: [["适用于18-46周岁，且身体健康", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["3-15周岁，父母双发或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["16-60周岁"], ["1周岁－未满18周岁健康青少年", "在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"], ["未满36周岁的孕妈妈或者备孕妈妈，加入之日怀孕周期未超过24周", "在加入互助社群之前，未曾患有互助公约所描述的疾病的人群"], ["46-70周岁，身体健康中老年人", "在加入互助社群之前，未曾患有互助公约所描述的恶性肿瘤或24种重大疾病的人群。"]],
 	diff: [{
 		t: "互助",
 		n: "互助不是商业保险，是一种经济救助行为。事前加入社群，有享受别人捐助的权利，同时也有捐助别人的义务。"
@@ -305,7 +306,8 @@ var Community = function (_wx$Component) {
 			slidedata: [],
 			bannerImg: {},
 			numData: {},
-			linkUrl: ''
+			linkUrl: '',
+			login: true
 		}, _this.children = {
 			slide: new _slide2.default({ slideData: "@slidedata" })
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
@@ -316,25 +318,65 @@ var Community = function (_wx$Component) {
 	(0, _createClass3.default)(Community, [{
 		key: 'linkTo',
 		value: function linkTo(event) {
-			_labrador2.default.navigateTo({
-				url: event.currentTarget.dataset.link
-			});
+			_labrador2.default.app.bindLogin(event.currentTarget.dataset.link, this.data.login);
+			/*wx.navigateTo({
+     url:event.currentTarget.dataset.link
+   })*/
 		}
 	}, {
-		key: 'onLoad',
+		key: 'getUser',
 		value: function () {
-			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
-				var id, ResData;
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(code) {
+				var myuser;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
+							case 0:
+								_context.next = 2;
+								return _labrador2.default.request({
+									url: 'https://xcx.chinamuxie.com/wxapi/user/account',
+									method: "get",
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									data: {
+										code: code
+									}
+								});
+
+							case 2:
+								myuser = _context.sent;
+								return _context.abrupt('return', myuser);
+
+							case 4:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function getUser(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return getUser;
+		}()
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+				var id, ResData, myuser;
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
 							case 0:
 								id = parseInt(e.type);
 
 								this.setData({
 									linkUrl: '/pages/join/join?type=' + id
 								});
-								_context.next = 4;
+								_context2.next = 4;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
 									method: "get",
@@ -347,7 +389,7 @@ var Community = function (_wx$Component) {
 								});
 
 							case 4:
-								ResData = _context.sent;
+								ResData = _context2.sent;
 
 								this.setData({
 									id: id,
@@ -360,17 +402,32 @@ var Community = function (_wx$Component) {
 									diff: jsonData.diff,
 									numData: ResData.data.data
 								});
+								_context2.next = 8;
+								return this.getUser(_labrador2.default.app.globalData.storage.code);
 
-							case 6:
+							case 8:
+								myuser = _context2.sent;
+
+								if (myuser.data.data.loginStatus) {
+									this.setData({
+										login: true
+									});
+								} else {
+									this.setData({
+										login: false
+									});
+								}
+
+							case 10:
 							case 'end':
-								return _context.stop();
+								return _context2.stop();
 						}
 					}
-				}, _callee, this);
+				}, _callee2, this);
 			}));
 
-			function onLoad(_x) {
-				return _ref2.apply(this, arguments);
+			function onLoad(_x2) {
+				return _ref3.apply(this, arguments);
 			}
 
 			return onLoad;

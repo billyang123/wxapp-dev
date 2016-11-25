@@ -211,6 +211,145 @@ var _class = function () {
 
       return getUserInfo;
     }()
+  }, {
+    key: 'bindLogin',
+    value: function bindLogin(url, bl) {
+      this.checkLogin(url, bl);
+    }
+  }, {
+    key: 'checkLogin',
+    value: function () {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(url, bl) {
+        return _regenerator2.default.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                //wx.clearStorage();
+                this.doLogin(url, bl);
+
+              case 1:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function checkLogin(_x, _x2) {
+        return _ref5.apply(this, arguments);
+      }
+
+      return checkLogin;
+    }()
+  }, {
+    key: 'doLogin',
+    value: function () {
+      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(url, bl) {
+        var postdata, rdRes, userInfo, userInfoPost;
+        return _regenerator2.default.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                if (!bl) {
+                  _context6.next = 3;
+                  break;
+                }
+
+                _labrador2.default.navigateTo({
+                  url: url
+                });
+                return _context6.abrupt('return');
+
+              case 3:
+                postdata = {
+                  code: _labrador2.default.app.globalData.storage.code,
+                  sessionKey: _labrador2.default.app.globalData.storage.sessionKey
+                };
+
+                if (postdata.sessionKey) {
+                  _context6.next = 13;
+                  break;
+                }
+
+                _context6.next = 7;
+                return _labrador2.default.request({
+                  url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
+                  method: "POST",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: postdata
+                });
+
+              case 7:
+                rdRes = _context6.sent;
+                _context6.next = 10;
+                return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
+
+              case 10:
+                _context6.next = 12;
+                return _labrador2.default.app.getStorage();
+
+              case 12:
+                _labrador2.default.app.globalData.storage = _context6.sent;
+
+              case 13:
+                _context6.next = 15;
+                return _labrador2.default.getUserInfo();
+
+              case 15:
+                userInfo = _context6.sent;
+                _context6.next = 18;
+                return _labrador2.default.request({
+                  url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
+                  method: "POST",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    rawData: userInfo.rawData,
+                    signature: userInfo.signature,
+                    encryptedData: encodeURIComponent(userInfo.encryptedData),
+                    iv: encodeURIComponent(userInfo.iv),
+                    sessionKey: _labrador2.default.app.globalData.storage.sessionKey,
+                    code: postdata.code
+                  }
+                });
+
+              case 18:
+                userInfoPost = _context6.sent;
+
+
+                if (userInfoPost.data.data == "logged") {
+                  _labrador2.default.navigateTo({
+                    url: url
+                  });
+                }
+
+                if (!(userInfoPost.data.data == "notLogged")) {
+                  _context6.next = 23;
+                  break;
+                }
+
+                _context6.next = 23;
+                return _labrador2.default.navigateTo({
+                  url: '/pages/bindphone/bindphone'
+                });
+
+              case 23:
+              case 'end':
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this);
+      }));
+
+      function doLogin(_x3, _x4) {
+        return _ref6.apply(this, arguments);
+      }
+
+      return doLogin;
+    }()
   }]);
   return _class;
 }();

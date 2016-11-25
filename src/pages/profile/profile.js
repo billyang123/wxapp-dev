@@ -160,6 +160,7 @@ export default class Profile extends wx.Component {
     if(res.data.status == 0){
       wx.clearStorage();
       wx.navigateBack();
+     
 
 
     }

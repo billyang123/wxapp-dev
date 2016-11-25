@@ -208,11 +208,11 @@ let jsonData = {
 	],
 	condition:[
 		[
-			"3-15周岁，父母双发或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。",
+			"适用于18-46周岁，且身体健康",
 			"在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"
 		],
 		[
-			"适用于18-46周岁，且身体健康",
+      "3-15周岁，父母双发或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。",
 			"在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"
 		],
 		["16-60周岁"],
@@ -455,17 +455,32 @@ export default class Community extends wx.Component {
 		slidedata:[],
 		bannerImg:{},
 		numData:{},
-    linkUrl:''
+    linkUrl:'',
+    login:true
 	};
 /*/pages/join/join*/
 	children = {
 	    slide: new Slide({slideData:"@slidedata"})
 	};
 	linkTo(event) {
-	    wx.navigateTo({
+    wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+	    /*wx.navigateTo({
 	      url:event.currentTarget.dataset.link
-	    })
+	    })*/
 	}
+  async getUser(code){
+    let myuser = await wx.request({
+      url: 'https://xcx.chinamuxie.com/wxapi/user/account',
+      method:"get",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        code:code
+      }
+    });
+    return myuser;
+  }
     async onLoad(e){
     	let id = parseInt(e.type);
       this.setData({
@@ -491,6 +506,16 @@ export default class Community extends wx.Component {
     		condition:jsonData.condition[id-1],
     		diff:jsonData.diff,
     		numData:ResData.data.data
-    	})
+    	});
+      let myuser = await this.getUser(wx.app.globalData.storage.code);
+      if(myuser.data.data.loginStatus){
+        this.setData({
+          login:true,
+        })
+      }else{
+        this.setData({
+          login:false
+        })
+      }
     }
 }

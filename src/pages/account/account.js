@@ -6,9 +6,10 @@ export default class Account extends wx.Component {
 		userInfo:{}
 	};
 	linkTo(event) {
-		wx.navigateTo({
+    wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+		/*wx.navigateTo({
 			url:event.currentTarget.dataset.link
-		})
+		})*/
 	}
 	 bindLogin(){
 		this.checkLogin();
