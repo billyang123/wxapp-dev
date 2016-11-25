@@ -13,11 +13,11 @@
 				<view class="nm-line"><text>已筹互助金额</text></view>
 			</view>
 		</view> -->
-		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
+		<!--<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
 			<text class="bc-t">公示：</text>
 			<text>【资金公示】十月既第三期资金公示</text>
 			<icon class="iconfont icon-jiantou-right"></icon>
-		</view>
+		</view>-->
 	</view>
 	<view class="hdnav">
 		<view class="col-50" catchtap="linkTo" data-link="/pages/account/account" data-type="redirectTo">
@@ -25,11 +25,11 @@
 			<text class="txt">查看我的保障</text>
 			<icon class="iconfont icon-fangxiang-right"></icon>
 		</view>
-		<view class="col-50 nr">
+		<!--<view class="col-50 nr">
 			<icon class="myicon-index-2"></icon>
 			<text class="txt">送亲友</text>
 			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
+		</view>-->
 	</view>
 	<view class="hz-content hz-group">
 		<view class="title">
@@ -249,7 +249,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="hz-content hzo-media">
+	<!--<view class="hz-content hzo-media">
 		<view class="title">
 			<view class="tname">媒体报道</view>
 		</view>
@@ -290,7 +290,7 @@
 				<view class="time">2016-08-01</view>
 			</view>
 		</view>
-	</view>
+	</view>-->
 	<view class="hz-content hzo-service">
 		<view class="title">
 			<view class="tname">专属客服</view>

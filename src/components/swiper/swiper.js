@@ -15,11 +15,11 @@ export default class Swiper extends wx.Component {
 	props = {
 	    imgUrls: []
 	};
-	bannerimglink(event) {
+	/*bannerimglink(event) {
 		wx.navigateTo({
 			url:event.target.dataset.link
 		})
-	}
+	}*/
 	onUpdate(props) {
 	    this.setData('imgUrls', props.imgUrls);
 	}

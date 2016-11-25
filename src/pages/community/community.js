@@ -44,9 +44,14 @@ let jsonData = {
         ["一次性互助金","2万元"]
       ],
 			ll:[
+        /*{
+          t:"免费预约公立医院700个专家门诊号",
+          o:["［福利］"],
+          link:"#"
+        },*/
 				{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=1"
 				}
 			]
 		},{
@@ -61,12 +66,8 @@ let jsonData = {
 			],
 			ll:[
 				{
-					t:"免费预约公立医院700个专家门诊号",
-					o:["［福利］"],
-					link:"#"
-				},{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=2"
 				}
 			]
 		},{
@@ -80,7 +81,7 @@ let jsonData = {
 			ll:[
 				{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=3"
 				}
 			]
 		},{
@@ -92,7 +93,7 @@ let jsonData = {
 			ll:[
 				{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=4"
 				}
 			]
 		},
@@ -107,7 +108,7 @@ let jsonData = {
 			ll:[
 				{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=5"
 				}
 			]
 		},
@@ -121,7 +122,7 @@ let jsonData = {
 			ll:[
 				{
 					o:["了解详情"],
-					link:"/pages/range/range"
+					link:"/pages/range/range?type=6"
 				}
 			]
 		}
@@ -468,6 +469,11 @@ export default class Community extends wx.Component {
 	      url:event.currentTarget.dataset.link
 	    })*/
 	}
+  linkUrl(event) {
+    wx.navigateTo({
+     url:event.currentTarget.dataset.link
+     })
+  }
   async getUser(code){
     let myuser = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/user/account',

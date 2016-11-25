@@ -13,13 +13,13 @@
 				</view>
 				<view class="hnumber">
 					<view class="hn-l">
-						<view class="num"><text>{{userInfo.serialNumber}}</text></view>
-						<view class="th"><text>加入社群排位</text></view>
+						<view class="num"><text>第{{userInfo.serialNumber}}名加入社群，已加入{{userInfo.joinedDays}}天</text></view>
+						<!--<view class="th"><text>加入社群排位</text></view>-->
 					</view>
-					<view class="hn-l">
-						<view class="num"><text>{{userInfo.joinedDays}}</text></view>
+					<!--<view class="hn-l">
+						<view class="num"><text></text></view>
 						<view class="th"><text>加入社群天数</text></view>
-					</view>
+					</view>-->
 				</view>
 				<!-- <view class="msgnum-icon">
 					<view class="num">
@@ -38,18 +38,18 @@
 			</view>
 		</view>
 	</view>
-	<view class="hdnav">
+	<!--<view class="hdnav">
 		<view class="col-50">
-			<icon class="myicon-index-1"/>
+			<icon class="myicon-index-1"></icon>
 			<text class="txt">为家人加社群</text>
-			<icon class="iconfont icon-fangxiang-right"/>
+			<icon class="iconfont icon-fangxiang-right"></icon>
 		</view>
 		<view class="col-50 nr">
-			<icon class="myicon-index-2"/>
+			<icon class="myicon-index-2"></icon>
 			<text class="txt">送亲友</text>
-			<icon class="iconfont icon-fangxiang-right"/>
+			<icon class="iconfont icon-fangxiang-right"></icon>
 		</view>
-	</view>
+	</view>-->
 	<view class="media-list ac-list">
 		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/inification/inification" data-catchtap="linkTo" data-path="">
 			<view class="item-media">
@@ -60,7 +60,7 @@
 					<text>我的互助</text>
 				</view>
 				<view class="item-after">
-					<text>家庭账单、充值、互助凭单</text>
+					<text/>
 				</view>
 			</view>
 		</view>
@@ -75,10 +75,10 @@
 			</view>
 		</view>
 	</view>
-	<view class="media-list ac-list">
+	<!--<view class="media-list ac-list">
 		<view class="item-link item-content">
 			<view class="item-media">
-				<image class="img" src="/images/account-volunteer-icon.png"/>
+				<image class="img" src="/images/account-volunteer-icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
@@ -88,7 +88,7 @@
 		</view>
 		<view class="item-link item-content">
 			<view class="item-media">
-				<image class="img" src="/images/account-city-icon.png"/>
+				<image class="img" src="/images/account-city-icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
@@ -96,11 +96,11 @@
 				</view>
 			</view>
 		</view>
-	</view>
-	<view class="media-list ac-list">
+	</view>-->
+	<!--<view class="media-list ac-list">
 		<view class="item-link item-content">
 			<view class="item-media">
-				<image class="img" src="/images/account-card-icon.png"/>
+				<image class="img" src="/images/account-card-icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
@@ -110,7 +110,7 @@
 		</view>
 		<view class="item-link item-content">
 			<view class="item-media">
-				<image class="img" src="/images/account-question-icon.png"/>
+				<image class="img" src="/images/account-question-icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
@@ -118,5 +118,30 @@
 				</view>
 			</view>
 		</view>
-	</view>
+	</view>-->
+  <view class="hz-content hzo-service">
+    <view class="title">
+      <view class="tname">专属客服</view>
+    </view>
+    <view class="hzs-con">
+      <view class="tel">
+        <text class="gray-m">客服电话：</text>
+        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+      </view>
+      <view class="work-time">
+        <text class="gray-m">工作时间：  09:30-20:00（周一至周六）</text>
+      </view>
+    </view>
+    <view class="ewm-area">
+      <view>
+        <text>咨询、求助、志愿者、申请互助</text>
+      </view>
+      <view class="gray">
+        <text>长按扫码添加客服，专人答疑</text>
+      </view>
+      <view>
+        <image class="ewm-img" src="/images/kf02_img001.png"/>
+      </view>
+    </view>
+  </view>
 </view>

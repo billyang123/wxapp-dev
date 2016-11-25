@@ -1,10 +1,11 @@
 <view class="container">
 	<view class="commun-nav">
-		<view class="cnav-li">
+		<!--<view class="cnav-li">
 			<text>分享给好友</text>
-		</view>
+		</view>-->
 		<view class="cnav-li join" catchtap="_dispatch" data-link="{{linkUrl}}" data-catchtap="linkTo" data-path="">
 			<text>立即加入</text>
+     
 		</view>
 	</view>
 	<view class="community">
@@ -70,7 +71,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkTo" data-path="">
+			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl" data-path="">
 				<view class="item-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>

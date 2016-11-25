@@ -3,7 +3,7 @@
 		<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
   <block wx:for="{{swiper.imgUrls}}">
     <swiper-item>
-      <image src="{{item.img}}" data-link="{{item.link}}" class="slide-image swiper-slide-image" bindtap="_dispatch" data-bindtap="bannerimglink" data-path="swiper"/>
+      <image src="{{item.img}}" class="slide-image swiper-slide-image"/>
     </swiper-item>
   </block>
 </swiper>
@@ -19,11 +19,11 @@
 				<view class="nm-line"><text>已筹互助金额</text></view>
 			</view>
 		</view> -->
-		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<!--<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
 			<text class="bc-t">公示：</text>
 			<text>【资金公示】十月既第三期资金公示</text>
-			<icon class="iconfont icon-jiantou-right"/>
-		</view>
+			<icon class="iconfont icon-jiantou-right"></icon>
+		</view>-->
 	</view>
 	<view class="hdnav">
 		<view class="col-50" catchtap="_dispatch" data-link="/pages/account/account" data-type="redirectTo" data-catchtap="linkTo" data-path="">
@@ -31,11 +31,11 @@
 			<text class="txt">查看我的保障</text>
 			<icon class="iconfont icon-fangxiang-right"/>
 		</view>
-		<view class="col-50 nr">
-			<icon class="myicon-index-2"/>
+		<!--<view class="col-50 nr">
+			<icon class="myicon-index-2"></icon>
 			<text class="txt">送亲友</text>
-			<icon class="iconfont icon-fangxiang-right"/>
-		</view>
+			<icon class="iconfont icon-fangxiang-right"></icon>
+		</view>-->
 	</view>
 	<view class="hz-content hz-group">
 		<view class="title">
@@ -255,48 +255,48 @@
 			</view>
 		</view>
 	</view>
-	<view class="hz-content hzo-media">
+	<!--<view class="hz-content hzo-media">
 		<view class="title">
 			<view class="tname">媒体报道</view>
 		</view>
 		<view class="hz-media-list">
 			<view class="media">
-				<image class="img" src="/images/index02_36kr.png"/>
+				<image class="img" src="/images/index02_36kr.png"></image>
 				<view class="mname">
 					<text>17互助：将互联网保险业态升级为互助社群</text>
 				</view>
 				<view class="time">2016-08-01</view>
 			</view>
 			<view class="media">
-				<image class="img" src="/images/index02_souhu.png"/>
+				<image class="img" src="/images/index02_souhu.png"></image>
 				<view class="mname">
 					<text>曾经扛起阿里金融大旗的高竞，想用17互助让保险更性感</text>
 				</view>
 				<view class="time">2016-08-01</view>
 			</view>
 			<view class="media">
-				<image class="img" src="/images/index02_huxiu.png"/>
+				<image class="img" src="/images/index02_huxiu.png"></image>
 				<view class="mname">
 					<text>17互助：来自两个500亿市值公司创始人的再创业故事</text>
 				</view>
 				<view class="time">2016-08-01</view>
 			</view>
 			<view class="media">
-				<image class="img" src="/images/index02_fenghuang.png"/>
+				<image class="img" src="/images/index02_fenghuang.png"></image>
 				<view class="mname">
 					<text>阿里巴巴网商银行和众安保险的创始人他们创业的17互助是什么？</text>
 				</view>
 				<view class="time">2016-08-01</view>
 			</view>
 			<view class="media">
-				<image class="img" src="/images/index02_baidu.png"/>
+				<image class="img" src="/images/index02_baidu.png"></image>
 				<view class="mname">
 					<text>获经纬、执一资本等数千万投资，十年阿里人创办互助保障平台</text>
 				</view>
 				<view class="time">2016-08-01</view>
 			</view>
 		</view>
-	</view>
+	</view>-->
 	<view class="hz-content hzo-service">
 		<view class="title">
 			<view class="tname">专属客服</view>

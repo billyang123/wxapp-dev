@@ -17,14 +17,138 @@ let postData={
       opacity:1,
       isDown:false
     }
+  ],
+  project02:[
+    {
+      t:"重大疾病保障",
+      a:"最高10万元",
+      txt:[
+        "保障会员自加入之日起90日后初次患重大疾病，一次性给付10万元的重大疾病医疗互助金",
+        "等待期"
+      ],
+      height:200,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"意外伤残、死亡",
+      a:"最高10万元",
+      txt:[
+        "保障会员自加入次日起，因意外事故造成符合《人身保险伤残评定标准（行业标准）》（简称《伤残评定标准》）所列伤残之一的，一次性按照如下标准给予互助金：",
+        "1、保障会员自事故发生之日起180天内因该事故身故的，一次性给予互助金10万元",
+        "2、符合《伤残评定标准》，与伤残程度等级相对应的互助金给付比例分为十档，伤残程度第一级对应的互助给付比例为100%，伤残程度第十级对应的互助金给付比例为10%，每级相差10%”"
+      ],
+      height:380,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"走失、被拐寻子互助金",
+      a:"最高10万元",
+      txt:[
+        "保障会员走失后下落不明且经公安机关立案的，自立案之日起走失超过15天，按照如下标准给付寻子互助金：",
+        "1、走失超过15天，且未达到一年；寻子互助金=走失天数*150元/天",
+        "2、自立案之日起走失超过1年，一次性给付10万元寻子互助金。"
+      ],
+      height:300,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"暴力、性侵法律维权互助金",
+      a:"最高1万元",
+      txt:[
+        "保障会员自加入之日起，因遭受暴力事件、性侵事件，被公安机关立案受理，且互助会员或其监护人以诉讼当事人的身份参加一审民事诉讼或仲裁，一次性给予0.5万元法律援助互助金"
+      ],
+      height:220,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"辍学",
+      a:"最高2万元",
+      txt:[
+        "保障会员父母自加入之日起因意外伤害丧失劳动能力；或自加入之日起180天后因首次发生致使丧失劳动能力的重大疾病而丧失劳动能力，符合《职工非因工伤残或因病丧失劳动能力程度鉴定标准(试行)》认定的标准，影响家庭收入导致互助会员辍学的，按照如下条件给予辍学互助金：",
+        "1、保障会员父母，双方完全丧失劳动能力；或者一方完全丧失劳动能力，一方部分丧失劳动能力；一次性给予互助金2万元",
+        "2、保障会员父母，双方部分丧失劳动能力；或者一方完全丧失劳动能力，一次性给予互助金1万元；",
+        "3、保障会员父母，一方部分丧失劳动能力，一次性给予互助金0.5万元"
+      ],
+      height:320,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"心理障碍",
+      a:"最高5000元",
+      txt:[
+        "保障会员自加入之日起90日后初次患心理疾病，因治疗心理疾病产生的费用，按照如下标准给与互助金：",
+        "1、心理治疗费实报实销，每次最多给付500元治疗费",
+        "2、一年最多给付10次治疗费互助金"
+      ],
+      height:266,
+      opacity:1,
+      isDown:false
+    },
+    {
+      t:"25种重大疾病介绍",
+      a:"",
+      txt:[
+        "保障会员自加入之日起90日后初次患心理疾病，因治疗心理疾病产生的费用，按照如下标准给与互助金：",
+        "1、心理治疗费实报实销，每次最多给付500元治疗费",
+        "2、一年最多给付10次治疗费互助金"
+      ],
+      height:1480,
+      opacity:1,
+      isDown:false
+    }
   ]
 };
 
 export default class Range extends wx.Component {
 	data = {
-		slidedata:postData.project01
+		slidedata:[{}]
 	};
-	children = {
-	    slide: new Slide({slideData:"@slidedata"})
-	};
+  async onLoad(e){
+    let id = parseInt(e.type);
+   if (id==1){
+     this.setData({
+       slidedata:postData.project01
+     });
+     return;
+   }
+    if (id==2){
+      this.setData({
+        slidedata:postData.project02
+      });
+      return;
+    }
+    if (id==3){
+      this.setData({
+        slidedata:postData.project03
+      });
+      return;
+    }
+    if (id==4){
+      this.setData({
+        slidedata:postData.project04
+      });
+      return;
+    }
+    if (id==5){
+      this.setData({
+        slidedata:postData.project05
+      });
+      return;
+    }
+    if (id==6){
+      this.setData({
+        slidedata:postData.project06
+      });
+      return;
+    }
+   
+  }
+  children = {
+    slide: new Slide({slideData:"@slidedata"})
+  };
 }

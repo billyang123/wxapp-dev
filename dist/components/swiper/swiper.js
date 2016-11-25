@@ -60,14 +60,13 @@ var Swiper = function (_wx$Component) {
 	}
 
 	(0, _createClass3.default)(Swiper, [{
-		key: 'bannerimglink',
-		value: function bannerimglink(event) {
-			_labrador2.default.navigateTo({
-				url: event.target.dataset.link
-			});
-		}
-	}, {
 		key: 'onUpdate',
+
+		/*bannerimglink(event) {
+  	wx.navigateTo({
+  		url:event.target.dataset.link
+  	})
+  }*/
 		value: function onUpdate(props) {
 			this.setData('imgUrls', props.imgUrls);
 		}

@@ -29,7 +29,7 @@ export default class Account extends wx.Component {
 		  title: '登录中',
 		  icon: 'loading',
 		  duration: 30000
-		})
+		});
     	let postdata = {
     		code:wx.app.globalData.storage.code,
     		sessionKey:wx.app.globalData.storage.sessionKey

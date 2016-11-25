@@ -20,7 +20,8 @@ export default class Join extends wx.Component {
     publicChecked:true,
     checked:true,
     conditionTxt:'',
-    bl:true
+    bl:true,
+    checkedValue:["1","2"]
 	};
 	addPerson(e){
     for(let i=0;i<this.data.persons.length;i++) {
@@ -80,9 +81,9 @@ export default class Join extends wx.Component {
 			persons:this.data.persons
 		});
 	}
-  checkChange(){
+  checkChange(e){
     this.setData({
-      checked:!this.data.publicChecked
+      checkedValue:e.detail.value
     });
   }
   /*身份证校验*/
@@ -132,6 +133,16 @@ export default class Join extends wx.Component {
           wx.showModal({
             title: '提示',
             content: '请输入有效身份证号',
+            showCancel: false,
+            success: function (res) {
+            }
+          });
+          return;
+        }
+        if (this.data.checkedValue.length<2){
+          wx.showModal({
+            title: '提示',
+            content: '加入前请先同意社群公约',
             showCancel: false,
             success: function (res) {
             }

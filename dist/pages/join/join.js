@@ -66,7 +66,8 @@ var Join = function (_wx$Component) {
       publicChecked: true,
       checked: true,
       conditionTxt: '',
-      bl: true
+      bl: true,
+      checkedValue: ["1", "2"]
     }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
@@ -130,9 +131,9 @@ var Join = function (_wx$Component) {
     }
   }, {
     key: 'checkChange',
-    value: function checkChange() {
+    value: function checkChange(e) {
       this.setData({
-        checked: !this.data.publicChecked
+        checkedValue: e.detail.value
       });
     }
     /*身份证校验*/
@@ -161,7 +162,7 @@ var Join = function (_wx$Component) {
 
               case 1:
                 if (!(i < this.data.persons.length)) {
-                  _context.next = 17;
+                  _context.next = 20;
                   break;
                 }
 
@@ -221,20 +222,34 @@ var Join = function (_wx$Component) {
                 return _context.abrupt('return');
 
               case 14:
+                if (!(this.data.checkedValue.length < 2)) {
+                  _context.next = 17;
+                  break;
+                }
+
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: '加入前请先同意社群公约',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                return _context.abrupt('return');
+
+              case 17:
                 i++;
                 _context.next = 1;
                 break;
 
-              case 17:
+              case 20:
                 if (!this.data.bl) {
-                  _context.next = 29;
+                  _context.next = 32;
                   break;
                 }
 
                 this.setData({
                   bl: false
                 });
-                _context.next = 21;
+                _context.next = 24;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
                   header: {
@@ -248,24 +263,24 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 21:
+              case 24:
                 res = _context.sent;
 
                 if (!(res.data.status == 0)) {
-                  _context.next = 27;
+                  _context.next = 30;
                   break;
                 }
 
-                _context.next = 25;
+                _context.next = 28;
                 return _labrador2.default.navigateTo({
                   url: '/pages/joinEnd/joinEnd'
                 });
 
-              case 25:
-                _context.next = 28;
+              case 28:
+                _context.next = 31;
                 break;
 
-              case 27:
+              case 30:
                 _labrador2.default.showModal({
                   title: '提示',
                   content: res.data.msg,
@@ -277,12 +292,12 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 28:
+              case 31:
                 this.setData({
                   bl: true
                 });
 
-              case 29:
+              case 32:
               case 'end':
                 return _context.stop();
             }

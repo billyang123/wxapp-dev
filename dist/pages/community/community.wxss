@@ -170,7 +170,7 @@
 }
 .commun-nav .cnav-li {
   display: block;
-  width: 375rpx;
+  width: 750rpx;
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
