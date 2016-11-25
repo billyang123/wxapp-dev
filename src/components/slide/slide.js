@@ -11,12 +11,18 @@ export default class Slide extends wx.Component {
 	};
 	onUpdate(props) {
 	    this.setData('slideData', props.slideData);
+   /* this.setData({
+      slideData:props.slideData
+    });*/
+    this.initAnim();
+   
+
 	}
-	setSlide(event){		
-		let index = parseInt(event.currentTarget.dataset.index,10);
+	setSlide(e){
+		let index = parseInt(e.currentTarget.dataset.index);
 		let slideData = this.data.slideData;
 		let slideAnim = this.data.slideAnim;
-		let chevronAnim = this.data.chevronAnim
+		let chevronAnim = this.data.chevronAnim;
 
 		let tempIndex = null;
 		let curSlide = slideData[index];
@@ -27,12 +33,12 @@ export default class Slide extends wx.Component {
 			h = 0;
 			deg = 90;
 		}
-		curSlide.isDown = !curSlide.isDown
+		curSlide.isDown = !curSlide.isDown;
 		curSlide.opacity = o;
 		this.slide.opacity(o).height(h).step();
 		this.chevron.rotate(deg).step();
-		slideAnim[index] = this.slide.export(),
-		chevronAnim[index] = this.chevron.export()
+		slideAnim[index] = this.slide.export();
+		chevronAnim[index] = this.chevron.export();
 		slideData[index] = curSlide;
 		this.setData({
 			slideData:slideData,
@@ -45,21 +51,21 @@ export default class Slide extends wx.Component {
 		let slide = wx.createAnimation({
 	      	duration: 400,
 	        timingFunction: 'ease',
-	    })
+	    });
 	    let chevron = wx.createAnimation({
 	      	duration: 300,
 	        timingFunction: 'ease',
-	    })
+	    });
 	    let animData = {
 			slideAnim:[],
 			chevronAnim:[]
-		}
+		};
 		this.slide = slide;
 		this.chevron = chevron;
 		for (var i = 0; i < slideData.length; i++) {
 		    chevron.rotate(90).step();
 		    slide.height(0).opacity(0).step();
-		    animData.slideAnim[i] = slide.export()
+		    animData.slideAnim[i] = slide.export();
 		    animData.chevronAnim[i] = chevron.export()
 		}
 		this.setData(animData);
@@ -67,7 +73,7 @@ export default class Slide extends wx.Component {
     onLoad(e){
     	//this.initAnim();
     }
-    onShow(){
+    /*onShow(){
     	this.initAnim();
-    }
+    }*/
 }

@@ -58,11 +58,15 @@ var Slide = function (_wx$Component) {
 		key: 'onUpdate',
 		value: function onUpdate(props) {
 			this.setData('slideData', props.slideData);
+			/* this.setData({
+      slideData:props.slideData
+    });*/
+			this.initAnim();
 		}
 	}, {
 		key: 'setSlide',
-		value: function setSlide(event) {
-			var index = parseInt(event.currentTarget.dataset.index, 10);
+		value: function setSlide(e) {
+			var index = parseInt(e.currentTarget.dataset.index);
 			var slideData = this.data.slideData;
 			var slideAnim = this.data.slideAnim;
 			var chevronAnim = this.data.chevronAnim;
@@ -82,7 +86,8 @@ var Slide = function (_wx$Component) {
 			curSlide.opacity = o;
 			this.slide.opacity(o).height(h).step();
 			this.chevron.rotate(deg).step();
-			slideAnim[index] = this.slide.export(), chevronAnim[index] = this.chevron.export();
+			slideAnim[index] = this.slide.export();
+			chevronAnim[index] = this.chevron.export();
 			slideData[index] = curSlide;
 			this.setData({
 				slideData: slideData,
@@ -118,14 +123,13 @@ var Slide = function (_wx$Component) {
 		}
 	}, {
 		key: 'onLoad',
-		value: function onLoad(e) {
-			//this.initAnim();
-		}
-	}, {
-		key: 'onShow',
-		value: function onShow() {
-			this.initAnim();
-		}
+		value: function onLoad(e) {}
+		//this.initAnim();
+
+		/*onShow(){
+  	this.initAnim();
+  }*/
+
 	}]);
 	return Slide;
 }(_labrador2.default.Component);
