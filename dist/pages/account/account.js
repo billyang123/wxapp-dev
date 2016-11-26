@@ -306,7 +306,7 @@ var Account = function (_wx$Component) {
 
 							case 9:
 								_context4.next = 11;
-								return app.wx.__init();
+								return _labrador2.default.app.__init();
 
 							case 11:
 								this.setData({

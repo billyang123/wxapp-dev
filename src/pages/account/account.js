@@ -6,7 +6,7 @@ export default class Account extends wx.Component {
 		userInfo:{}
 	};
 	linkTo(event) {
-    wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+    	wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
 		/*wx.navigateTo({
 			url:event.currentTarget.dataset.link
 		})*/
@@ -97,6 +97,7 @@ export default class Account extends wx.Component {
 		this.doLogin();
 	}
 	async onShow(){
+
 		let myuser = await this.getUser(wx.app.globalData.storage.code);
 		//console.log(myuser)
 		if(myuser.data.data.loginStatus){
@@ -106,7 +107,7 @@ export default class Account extends wx.Component {
 			})
     	}else{
     		await wx.clearStorage();
-    		await app.wx.__init();
+    		await wx.app.__init();
     		this.setData({
 				login:false
 			})
