@@ -288,18 +288,32 @@ var Account = function (_wx$Component) {
 							case 2:
 								myuser = _context4.sent;
 
-								if (myuser.data.data.loginStatus) {
-									this.setData({
-										login: true,
-										userInfo: myuser.data.data
-									});
-								} else {
-									this.setData({
-										login: false
-									});
+								if (!myuser.data.data.loginStatus) {
+									_context4.next = 7;
+									break;
 								}
 
-							case 4:
+								this.setData({
+									login: true,
+									userInfo: myuser.data.data
+								});
+								_context4.next = 12;
+								break;
+
+							case 7:
+								_context4.next = 9;
+								return _labrador2.default.clearStorage();
+
+							case 9:
+								_context4.next = 11;
+								return app.wx.__init();
+
+							case 11:
+								this.setData({
+									login: false
+								});
+
+							case 12:
 							case "end":
 								return _context4.stop();
 						}

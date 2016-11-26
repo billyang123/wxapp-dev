@@ -1,23 +1,23 @@
 <view class="container join-main">
-	<view class="justjoin" catchtap="_dispatch" data-catchtap="joinBind" data-path="">
+	<view class="justjoin" catchtap="_dispatch" data-catchtap="joinBind">
 		<text>立即加入</text>
 	</view>
 	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
 		<view class="sec-con">
 			<view class="section">
 				<view class="section_title">姓名</view>
-				<input bindinput="_dispatch" placeholder="例如：张三" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}" data-bindinput="bindKeyInput" data-path=""/>
+				<input bindinput="_dispatch" placeholder="例如：张三" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}" data-bindinput="bindKeyInput"/>
 			</view>
 			<view class="section">
 				<view class="section_title">证件号码</view>
-				<input bindinput="_dispatch" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}" data-bindinput="bindKeyInput" data-path=""/>
+				<input bindinput="_dispatch" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}" data-bindinput="bindKeyInput"/>
 			</view>
 		</view>
-		<view class="del-btn" catchtap="_dispatch" data-idx="{{idx}}" data-catchtap="removePerson" data-path="">
+		<view class="del-btn" catchtap="_dispatch" data-idx="{{idx}}" data-catchtap="removePerson">
 			<icon class="del-icon"/>
 		</view>
 	</view>
-	<view class="add-btn" catchtap="_dispatch" data-catchtap="addPerson" data-path="">
+	<view class="add-btn" catchtap="_dispatch" data-catchtap="addPerson">
 		<icon class="icon-add iconfont icon-roundadd"/>
 		<text> 继续添加</text>
 	</view>
@@ -36,7 +36,7 @@
 		</view>
 	</view>
 	<view class="checkbox-group">
-    <checkbox-group bindchange="_dispatch" data-bindchange="checkChange" data-path="">
+    <checkbox-group bindchange="_dispatch" data-bindchange="checkChange">
 		<view>
 			<label class="checkbox">
 			    <checkbox checked="true" value="1"/>已同意 <text class="text">{{publicConvention}}</text>

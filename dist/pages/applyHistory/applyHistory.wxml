@@ -6,7 +6,7 @@
     </view>
   </view>
   <view class="applyHistory-list" wx:else="wx:else">
-    <view class="applyHistory-item" catchtap="_dispatch" data-link="/pages/applyDetail/applyDetail?type={{item.id}}" wx:for="{{array}}" wx:for-index="idx" data-catchtap="linkTo" data-path="">
+    <view class="applyHistory-item" catchtap="_dispatch" data-link="/pages/applyDetail/applyDetail?type={{item.id}}" wx:for="{{array}}" wx:for-index="idx" data-catchtap="linkTo">
       <text class="applyHistory-item-txt">{{item.projectName}}</text>
       <text class="applyHistory-item-cont">{{item.claimContent}}</text>
       <text class="applyHistory-item-time">{{item.claimTimeStr}}</text>

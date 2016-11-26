@@ -26,7 +26,7 @@
 		</view>-->
 	</view>
 	<view class="hdnav">
-		<view class="col-50" catchtap="_dispatch" data-link="/pages/account/account" data-type="redirectTo" data-catchtap="linkTo" data-path="">
+		<view class="col-50" catchtap="_dispatch" data-link="/pages/account/account" data-type="redirectTo" data-catchtap="linkTo">
 			<icon class="myicon-index-1"/>
 			<text class="txt">查看我的保障</text>
 			<icon class="iconfont icon-fangxiang-right"/>
@@ -41,7 +41,7 @@
 		<view class="title">
 			<view class="tname">互助社群</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=2" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=2" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/stayChildren02_img001.png"/>
 			<view class="hi-title"><text>留守儿童互助社群</text></view>
 			<view class="hi-info">
@@ -59,7 +59,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=5" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=5" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/8002_img001.png"/>
 			<view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
 			<view class="hi-info">
@@ -77,7 +77,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=4" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=4" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/children02_img001.png"/>
 			<view class="hi-title"><text>少儿大病、意外互助社群</text></view>
 			<view class="hi-info">
@@ -95,7 +95,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=3" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=3" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/traffic02_img001.png"/>
 			<view class="hi-title"><text>交通、旅游意外互助社群</text></view>
 			<view class="hi-info">
@@ -113,7 +113,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=6" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=6" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/old02_img001.png"/>
 			<view class="hi-title"><text>中老年大病、意外互助社群</text></view>
 			<view class="hi-info">
@@ -131,7 +131,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=1" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="hz-item" data-link="/pages/community/community?type=1" catchtap="_dispatch" data-catchtap="linkTo">
 			<image class="img" mode="aspectFill" src="/images/78902_img001.png"/>
 			<view class="hi-title"><text>789重大疾病互助社群</text></view>
 			<view class="hi-info">
@@ -167,7 +167,7 @@
 				</view>
 				<view class="st-inner tel-kf">
 					<text class="gray">客服电话：</text>
-					<button class="telbtn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+					<button class="telbtn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 				</view>
 				<view class="st-inner">
 					<text class="gray">有疑问也可电话咨询</text>
@@ -304,7 +304,7 @@
 		<view class="hzs-con">
 			<view class="tel">
 				<text class="gray-m">客服电话：</text>
-				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 			</view>
 			<view class="work-time">
 				<text class="gray-m">工作时间：  09:30-20:00（周一至周六）</text>

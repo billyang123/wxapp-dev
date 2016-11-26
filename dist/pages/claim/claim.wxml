@@ -1,7 +1,7 @@
 <view class="container">
   <view class="claim-top">
     <text class="claim-topTxt">申请互助</text>
-    <text class="applyHistory" catchtap="_dispatch" data-link="/pages/applyHistory/applyHistory" data-catchtap="linkTo" data-path="">申请记录</text>
+    <text class="applyHistory" catchtap="_dispatch" data-link="/pages/applyHistory/applyHistory" data-catchtap="linkTo">申请记录</text>
   </view>
 	<view class="claim-process">
 		<view class="tel-number">
@@ -9,7 +9,7 @@
 			<button size="mini" type="warn" plain="true" class="btn">400-688-6259</button>
 		</view>
 	</view>
-	<view class="hp-claim-btn" data-link="/pages/applyform/applyform" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+	<view class="hp-claim-btn" data-link="/pages/applyform/applyform" catchtap="_dispatch" data-catchtap="linkTo">
 		<text>申请互助</text>
 	</view>
 </view>

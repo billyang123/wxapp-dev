@@ -1,5 +1,5 @@
 <view class="container">
-   <view class="tab" bindtap="_dispatch" data-bindtap="tabFun" data-path="">
+   <view class="tab" bindtap="_dispatch" data-bindtap="tabFun">
      <view class="tab_nav {{tabArr.navIndex=='0'?'active':''}}" data-id="0">申请详情</view>
      <view class="tab_nav {{tabArr.navIndex=='1'?'active':''}}" data-id="1">申请状态</view>
    </view>

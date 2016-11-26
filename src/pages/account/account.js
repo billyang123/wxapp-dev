@@ -47,7 +47,6 @@ export default class Account extends wx.Component {
 	        await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
 	        wx.app.globalData.storage =  await  wx.app.getStorage();
         }
-
         let userInfo = await wx.getUserInfo();
         let userInfoPost = await wx.request({
             url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
@@ -99,15 +98,19 @@ export default class Account extends wx.Component {
 	}
 	async onShow(){
 		let myuser = await this.getUser(wx.app.globalData.storage.code);
+		//console.log(myuser)
 		if(myuser.data.data.loginStatus){
     		this.setData({
 				login:true,
 				userInfo:myuser.data.data
 			})
     	}else{
+    		await wx.clearStorage();
+    		await app.wx.__init();
     		this.setData({
 				login:false
 			})
+
     	}
 	}
 }

@@ -1,14 +1,14 @@
 <view class="container profile">
   <view class="profile_pop" animation="{{animationData}}">
     <view class="profile_pop_cont">
-      <view class="profile_pop_close" catchtap="_dispatch" data-catchtap="chooseClose" data-path="">取消</view>
-      <view class="profile_pop_sure" catchtap="_dispatch" data-choose="{{chooseSex}}" data-catchtap="chooseSure" data-path="">确定</view>
+      <view class="profile_pop_close" catchtap="_dispatch" data-catchtap="chooseClose">取消</view>
+      <view class="profile_pop_sure" catchtap="_dispatch" data-choose="{{chooseSex}}" data-catchtap="chooseSure">确定</view>
     </view>
     <view class="profile_pop_choose">
-      <view class="profile_pop_sex profile_pop_sexm active" catchtap="_dispatch" id="sexm" wx:if="{{sexm}}" data-catchtap="chooseSex" data-path="">男</view>
-      <view class="profile_pop_sex profile_pop_sexm" catchtap="_dispatch" id="sexm" wx:else="wx:else" data-catchtap="chooseSex" data-path="">男</view>
-      <view class="profile_pop_sex profile_pop_sexw active" catchtap="_dispatch" id="sexw" wx:if="{{sexw}}" data-catchtap="chooseSex" data-path="">女</view>
-      <view class="profile_pop_sex profile_pop_sexw" catchtap="_dispatch" id="sexw" wx:else="wx:else" data-catchtap="chooseSex" data-path="">女</view>
+      <view class="profile_pop_sex profile_pop_sexm active" catchtap="_dispatch" id="sexm" wx:if="{{sexm}}" data-catchtap="chooseSex">男</view>
+      <view class="profile_pop_sex profile_pop_sexm" catchtap="_dispatch" id="sexm" wx:else="wx:else" data-catchtap="chooseSex">男</view>
+      <view class="profile_pop_sex profile_pop_sexw active" catchtap="_dispatch" id="sexw" wx:if="{{sexw}}" data-catchtap="chooseSex">女</view>
+      <view class="profile_pop_sex profile_pop_sexw" catchtap="_dispatch" id="sexw" wx:else="wx:else" data-catchtap="chooseSex">女</view>
     </view>
   </view>
 	<view class="media-list">
@@ -22,7 +22,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=1" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=1" catchtap="_dispatch" data-catchtap="linkTo">
 			<view class="item-inner">
 				<view class="item-title">
 					<text>昵称</text>
@@ -42,7 +42,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose" data-path="">
+		<view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose">
 			<view class="item-inner">
 				<view class="item-title">
 					<text>性别</text>
@@ -84,7 +84,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=2" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=2" catchtap="_dispatch" data-catchtap="linkTo">
 			<view class="item-inner">
 				<view class="item-title">
 					<text>邮箱地址</text>
@@ -96,7 +96,7 @@
 		</view>
 	</view>
 	<view class="btn-padd">
-		<view class="btn btn-org" catchtap="_dispatch" data-catchtap="quit" data-path="">
+		<view class="btn btn-org" catchtap="_dispatch" data-catchtap="quit">
 			<text>退出登录</text>
 		</view>
 	</view>

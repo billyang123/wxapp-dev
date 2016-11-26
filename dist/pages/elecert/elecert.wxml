@@ -42,7 +42,7 @@
 						<text class="blue">保障中</text>
 					</view>
 					<view class="item-after" wx:if="{{item.projectSubject.subjectStatus == 1}}">
-						<text class="gray-m">等待期还剩{{item.projectSubject.subjectWaiteTime}}天</text><icon class="iconwh" bindtap="_dispatch" data-bindtap="showIntro" data-path=""/>
+						<text class="gray-m">等待期还剩{{item.projectSubject.subjectWaiteTime}}天</text><icon class="iconwh" bindtap="_dispatch" data-bindtap="showIntro"/>
 					</view>
 					
 				</view>
@@ -51,7 +51,7 @@
 		</view>
 	</view>
 	<view class="btn-padd">
-		<view class="btn btn-org" catchtap="_dispatch" data-link="/pages/community/community?type={{projectId}}" data-catchtap="linkTo" data-path="">
+		<view class="btn btn-org" catchtap="_dispatch" data-link="/pages/community/community?type={{projectId}}" data-catchtap="linkTo">
 			<text>查看社群详情</text>
 		</view>
 	</view>

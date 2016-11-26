@@ -3,14 +3,14 @@
 		<text/>
 		<view class="h2">账单</view>
 		<view class="tt-r">
-			<picker bindchange="_dispatch" value="{{index}}" range="{{typeArr}}" data-bindchange="bindPickerChange" data-path="">
+			<picker bindchange="_dispatch" value="{{index}}" range="{{typeArr}}" data-bindchange="bindPickerChange">
 			    <view class="picker">
 			      {{typeArr[index]}}
 			    </view>
 			</picker>
 		</view>
 	</view>
-	<view class="account-item" wx:for="{{rowsArr}}" catchtap="_dispatch" data-link="/pages/accountdetail/accountdetail?id={{item.id}}" data-catchtap="linkTo" data-path="">
+	<view class="account-item" wx:for="{{rowsArr}}" catchtap="_dispatch" data-link="/pages/accountdetail/accountdetail?id={{item.id}}" data-catchtap="linkTo">
 		<view class="inner account-time">
 			<view class="day">{{item.day}}</view>
 			<view class="time">{{item.time}}</view>
