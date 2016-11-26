@@ -67,7 +67,7 @@ var Indemnification = function (_wx$Component) {
 	(0, _createClass3.default)(Indemnification, [{
 		key: 'linkTo',
 		value: function linkTo(event) {
-			_labrador2.default.navigateTo({
+			_labrador2.default.redirectTo({
 				url: event.currentTarget.dataset.link
 			});
 		}

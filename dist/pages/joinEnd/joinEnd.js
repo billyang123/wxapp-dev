@@ -87,7 +87,7 @@ var JoinEnd = function (_wx$Component) {
                 }
 
                 _context.next = 6;
-                return _labrador2.default.navigateTo({
+                return _labrador2.default.redirectTo({
                   url: '/pages/inification/inification'
                 });
 

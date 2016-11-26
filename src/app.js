@@ -39,6 +39,9 @@ export default class {
     return localSession;
   }
   async getUserInfo() {
+    // if(this.globalData.userInfo){
+    //   return this.globalData.userInfo;
+    // }
     let res = await wx.getUserInfo();
     this.globalData.userInfo = res.userInfo;
     return res.userInfo;

@@ -6,7 +6,7 @@ export default class Claim extends wx.Component {
     array:[{}]
 	};
 	linkTo(event) {
-	  wx.navigateTo({
+	  wx.redirectTo({
 	    url:event.currentTarget.dataset.link
 	  })
 	}

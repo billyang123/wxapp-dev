@@ -168,7 +168,7 @@ export default class Join extends wx.Component {
           }
         });
         if(res.data.status == 0){
-          await wx.navigateTo({
+          await wx.redirectTo({
             url:'/pages/joinEnd/joinEnd'
           })
         }else {

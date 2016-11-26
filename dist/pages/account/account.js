@@ -11,6 +11,10 @@ var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
+var _defineProperty2 = require('../../npm/babel-runtime/helpers/defineProperty.js');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
@@ -150,14 +154,13 @@ var Account = function (_wx$Component) {
 									header: {
 										'content-type': 'application/x-www-form-urlencoded'
 									},
-									data: {
+									data: (0, _defineProperty3.default)({
+										code: _labrador2.default.app.globalData.storage.code,
 										rawData: userInfo.rawData,
 										signature: userInfo.signature,
 										encryptedData: encodeURIComponent(userInfo.encryptedData),
-										iv: encodeURIComponent(userInfo.iv),
-										sessionKey: _labrador2.default.app.globalData.storage.sessionKey,
-										code: postdata.code
-									}
+										iv: encodeURIComponent(userInfo.iv)
+									}, "code", postdata.code)
 								});
 
 							case 18:

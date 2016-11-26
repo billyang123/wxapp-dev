@@ -272,7 +272,7 @@ var Join = function (_wx$Component) {
                 }
 
                 _context.next = 28;
-                return _labrador2.default.navigateTo({
+                return _labrador2.default.redirectTo({
                   url: '/pages/joinEnd/joinEnd'
                 });
 

@@ -214,7 +214,7 @@ var Applyform = function (_wx$Component) {
                 res = _context2.sent;
 
                 if (res.data.status == 0) {
-                  _labrador2.default.navigateTo({
+                  _labrador2.default.redirectTo({
                     url: '/pages/applyResult/applyResult'
                   });
                 } else {

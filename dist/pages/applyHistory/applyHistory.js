@@ -63,7 +63,7 @@ var Claim = function (_wx$Component) {
   (0, _createClass3.default)(Claim, [{
     key: 'linkTo',
     value: function linkTo(event) {
-      _labrador2.default.navigateTo({
+      _labrador2.default.redirectTo({
         url: event.currentTarget.dataset.link
       });
     }

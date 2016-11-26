@@ -121,7 +121,7 @@ var Elecert = function (_wx$Component) {
   }, {
     key: 'linkTo',
     value: function linkTo(e) {
-      _labrador2.default.navigateTo({
+      _labrador2.default.redirectTo({
         url: e.currentTarget.dataset.link
       });
     }

@@ -94,7 +94,7 @@ export default class Applyform extends wx.Component {
         }
       });
       if (res.data.status ==0){
-        wx.navigateTo({
+        wx.redirectTo({
           url:'/pages/applyResult/applyResult'
         })
       }else {

@@ -32,7 +32,7 @@ export default class Elecert extends wx.Component {
 		})
 	}
 	linkTo(e) {
-		wx.navigateTo({
+		wx.redirectTo({
 			url:e.currentTarget.dataset.link
 		})
 	}

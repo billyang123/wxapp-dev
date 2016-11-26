@@ -16,7 +16,7 @@ export default class JoinEnd extends wx.Component {
       }
     });
     if(res.data.status == 0){
-      await wx.navigateTo({
+      await wx.redirectTo({
         url:'/pages/inification/inification'
       })
     }

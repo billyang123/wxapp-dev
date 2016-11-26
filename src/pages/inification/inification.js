@@ -10,7 +10,7 @@ export default class Indemnification extends wx.Component {
 		list:{}
 	};
 	linkTo(event) {
-		wx.navigateTo({
+		wx.redirectTo({
 			url:event.currentTarget.dataset.link
 		})
 	}

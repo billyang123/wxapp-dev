@@ -4,7 +4,7 @@ export default class Forfamily extends wx.Component {
 	data = {
 	};
 	linkTo(event) {
-	  wx.navigateTo({
+	  wx.redirectTo({
 	    url:event.currentTarget.dataset.link
 	  })
 	}
