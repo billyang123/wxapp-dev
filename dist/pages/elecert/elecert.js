@@ -136,7 +136,7 @@ var Elecert = function (_wx$Component) {
               case 2:
                 this.isLink = true;
                 _context2.next = 5;
-                return _labrador2.default.navigateTo({
+                return _labrador2.default.redirectTo({
                   url: event.currentTarget.dataset.link
                 });
 

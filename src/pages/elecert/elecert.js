@@ -34,7 +34,7 @@ export default class Elecert extends wx.Component {
 	async linkTo(event) {
           if(this.isLink) return;
           this.isLink = true;
-          await wx.navigateTo({
+          await wx.redirectTo({
             url:event.currentTarget.dataset.link
           })
           this.isLink = false;
