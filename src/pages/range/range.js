@@ -14,7 +14,7 @@ let postData={
         "（3）对于住院医疗费用不符合医保支付范围的（包括进口药、自费药等），其报销比例为70%。",
         "存在180天等待期"
       ],
-      height:468,
+      height:568,
       opacity:1,
       isDown:false
     },
