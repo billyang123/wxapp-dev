@@ -23,6 +23,7 @@
 }
 .join-main .input-area input {
   height: 52rpx;
+  width: 332rpx;
   float: left;
 }
 .join-main .input-area input::-webkit-input-placeholder {
@@ -47,7 +48,7 @@
 }
 .join-main .del-btn {
   float: left;
-  width: 125rpx;
+  width: 120rpx;
   height: 163rpx;
   margin-top: 20rpx;
   border-left: 1rpx solid #ddd;
