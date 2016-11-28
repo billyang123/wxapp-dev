@@ -7,13 +7,13 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
 var _defineProperty2 = require('../../npm/babel-runtime/helpers/defineProperty.js');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
 
@@ -67,17 +67,69 @@ var Account = function (_wx$Component) {
 
 	(0, _createClass3.default)(Account, [{
 		key: "linkTo",
-		value: function linkTo(event) {
-			_labrador2.default.app.bindLogin(event.currentTarget.dataset.link, this.data.login);
-			/*wx.navigateTo({
-   	url:event.currentTarget.dataset.link
-   })*/
-		}
+		value: function () {
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
+				return _regenerator2.default.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								if (!this.isLink) {
+									_context.next = 2;
+									break;
+								}
+
+								return _context.abrupt("return");
+
+							case 2:
+								this.isLink = true;
+								_context.next = 5;
+								return _labrador2.default.app.bindLogin(event.currentTarget.dataset.link, this.data.login);
+
+							case 5:
+								this.isLink = false;
+								/*wx.navigateTo({
+          url:event.currentTarget.dataset.link
+        })*/
+
+							case 6:
+							case "end":
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function linkTo(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return linkTo;
+		}()
 	}, {
 		key: "bindLogin",
-		value: function bindLogin() {
-			this.checkLogin();
-		}
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								_context2.next = 2;
+								return this.checkLogin();
+
+							case 2:
+							case "end":
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function bindLogin() {
+				return _ref3.apply(this, arguments);
+			}
+
+			return bindLogin;
+		}()
 	}, {
 		key: "json2Form",
 		value: function json2Form(json) {
@@ -90,22 +142,31 @@ var Account = function (_wx$Component) {
 	}, {
 		key: "doLogin",
 		value: function () {
-			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
 				var _data;
 
 				var postdata, rdRes, userInfo, userInfoPost, myuser;
-				return _regenerator2.default.wrap(function _callee$(_context) {
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
 					while (1) {
-						switch (_context.prev = _context.next) {
+						switch (_context3.prev = _context3.next) {
 							case 0:
 								if (!this.data.login) {
-									_context.next = 2;
+									_context3.next = 2;
 									break;
 								}
 
-								return _context.abrupt("return");
+								return _context3.abrupt("return");
 
 							case 2:
+								if (!this.status) {
+									_context3.next = 4;
+									break;
+								}
+
+								return _context3.abrupt("return");
+
+							case 4:
+								this.status = true;
 								_labrador2.default.showToast({
 									title: '登录中',
 									icon: 'loading',
@@ -117,11 +178,11 @@ var Account = function (_wx$Component) {
 								};
 
 								if (postdata.sessionKey) {
-									_context.next = 13;
+									_context3.next = 16;
 									break;
 								}
 
-								_context.next = 7;
+								_context3.next = 10;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
 									method: "POST",
@@ -131,25 +192,25 @@ var Account = function (_wx$Component) {
 									data: postdata
 								});
 
-							case 7:
-								rdRes = _context.sent;
-								_context.next = 10;
+							case 10:
+								rdRes = _context3.sent;
+								_context3.next = 13;
 								return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
-							case 10:
-								_context.next = 12;
+							case 13:
+								_context3.next = 15;
 								return _labrador2.default.app.getStorage();
 
-							case 12:
-								_labrador2.default.app.globalData.storage = _context.sent;
+							case 15:
+								_labrador2.default.app.globalData.storage = _context3.sent;
 
-							case 13:
-								_context.next = 15;
+							case 16:
+								_context3.next = 18;
 								return _labrador2.default.getUserInfo();
 
-							case 15:
-								userInfo = _context.sent;
-								_context.next = 18;
+							case 18:
+								userInfo = _context3.sent;
+								_context3.next = 21;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
 									method: "POST",
@@ -165,19 +226,19 @@ var Account = function (_wx$Component) {
 									}, (0, _defineProperty3.default)(_data, "code", postdata.code), (0, _defineProperty3.default)(_data, "sessionKey", _labrador2.default.app.globalData.storage.sessionKey), _data)
 								});
 
-							case 18:
-								userInfoPost = _context.sent;
+							case 21:
+								userInfoPost = _context3.sent;
 
 								if (!(userInfoPost.data.data == "logged")) {
-									_context.next = 24;
+									_context3.next = 27;
 									break;
 								}
 
-								_context.next = 22;
+								_context3.next = 25;
 								return this.getUser(postdata.code);
 
-							case 22:
-								myuser = _context.sent;
+							case 25:
+								myuser = _context3.sent;
 
 								if (myuser.data.data.loginStatus) {
 									this.setData({
@@ -186,30 +247,31 @@ var Account = function (_wx$Component) {
 									});
 								}
 
-							case 24:
+							case 27:
 								if (!(userInfoPost.data.data == "notLogged")) {
-									_context.next = 27;
+									_context3.next = 30;
 									break;
 								}
 
-								_context.next = 27;
+								_context3.next = 30;
 								return _labrador2.default.navigateTo({
 									url: '/pages/bindphone/bindphone'
 								});
 
-							case 27:
+							case 30:
 								_labrador2.default.hideToast();
+								this.status = false;
 
-							case 28:
+							case 32:
 							case "end":
-								return _context.stop();
+								return _context3.stop();
 						}
 					}
-				}, _callee, this);
+				}, _callee3, this);
 			}));
 
 			function doLogin() {
-				return _ref2.apply(this, arguments);
+				return _ref4.apply(this, arguments);
 			}
 
 			return doLogin;
@@ -217,13 +279,13 @@ var Account = function (_wx$Component) {
 	}, {
 		key: "getUser",
 		value: function () {
-			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(code) {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(code) {
 				var myuser;
-				return _regenerator2.default.wrap(function _callee2$(_context2) {
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
 					while (1) {
-						switch (_context2.prev = _context2.next) {
+						switch (_context4.prev = _context4.next) {
 							case 0:
-								_context2.next = 2;
+								_context4.next = 2;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/account',
 									method: "get",
@@ -236,19 +298,19 @@ var Account = function (_wx$Component) {
 								});
 
 							case 2:
-								myuser = _context2.sent;
-								return _context2.abrupt("return", myuser);
+								myuser = _context4.sent;
+								return _context4.abrupt("return", myuser);
 
 							case 4:
 							case "end":
-								return _context2.stop();
+								return _context4.stop();
 						}
 					}
-				}, _callee2, this);
+				}, _callee4, this);
 			}));
 
-			function getUser(_x) {
-				return _ref3.apply(this, arguments);
+			function getUser(_x2) {
+				return _ref5.apply(this, arguments);
 			}
 
 			return getUser;
@@ -256,24 +318,24 @@ var Account = function (_wx$Component) {
 	}, {
 		key: "checkLogin",
 		value: function () {
-			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-				return _regenerator2.default.wrap(function _callee3$(_context3) {
+			var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5() {
+				return _regenerator2.default.wrap(function _callee5$(_context5) {
 					while (1) {
-						switch (_context3.prev = _context3.next) {
+						switch (_context5.prev = _context5.next) {
 							case 0:
-								//wx.clearStorage();
-								this.doLogin();
+								_context5.next = 2;
+								return this.doLogin();
 
-							case 1:
+							case 2:
 							case "end":
-								return _context3.stop();
+								return _context5.stop();
 						}
 					}
-				}, _callee3, this);
+				}, _callee5, this);
 			}));
 
 			function checkLogin() {
-				return _ref4.apply(this, arguments);
+				return _ref6.apply(this, arguments);
 			}
 
 			return checkLogin;
@@ -281,20 +343,20 @@ var Account = function (_wx$Component) {
 	}, {
 		key: "onShow",
 		value: function () {
-			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
 				var myuser;
-				return _regenerator2.default.wrap(function _callee4$(_context4) {
+				return _regenerator2.default.wrap(function _callee6$(_context6) {
 					while (1) {
-						switch (_context4.prev = _context4.next) {
+						switch (_context6.prev = _context6.next) {
 							case 0:
-								_context4.next = 2;
+								_context6.next = 2;
 								return this.getUser(_labrador2.default.app.globalData.storage.code);
 
 							case 2:
-								myuser = _context4.sent;
+								myuser = _context6.sent;
 
 								if (!myuser.data.data.loginStatus) {
-									_context4.next = 7;
+									_context6.next = 7;
 									break;
 								}
 
@@ -302,15 +364,15 @@ var Account = function (_wx$Component) {
 									login: true,
 									userInfo: myuser.data.data
 								});
-								_context4.next = 12;
+								_context6.next = 12;
 								break;
 
 							case 7:
-								_context4.next = 9;
+								_context6.next = 9;
 								return _labrador2.default.clearStorage();
 
 							case 9:
-								_context4.next = 11;
+								_context6.next = 11;
 								return _labrador2.default.app.__init();
 
 							case 11:
@@ -320,14 +382,14 @@ var Account = function (_wx$Component) {
 
 							case 12:
 							case "end":
-								return _context4.stop();
+								return _context6.stop();
 						}
 					}
-				}, _callee4, this);
+				}, _callee6, this);
 			}));
 
 			function onShow() {
-				return _ref5.apply(this, arguments);
+				return _ref7.apply(this, arguments);
 			}
 
 			return onShow;

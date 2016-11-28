@@ -5,6 +5,8 @@ export default class JoinEnd extends wx.Component {
 		
 	};
   async lookBind(e){
+    if(this.status) return;
+    this.status = true;
     let res = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/project/account/list',
       method:"get",
@@ -20,7 +22,7 @@ export default class JoinEnd extends wx.Component {
         url:'/pages/inification/inification'
       })
     }
-    
+    this.status = false;
 
   }
 	

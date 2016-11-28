@@ -24,7 +24,6 @@ export default class Claim extends wx.Component {
         code:wx.app.globalData.storage.code
       }
     });
-    console.log(res);
     if (res.data.status ==0){
       if (res.data.data){
         this.setData({

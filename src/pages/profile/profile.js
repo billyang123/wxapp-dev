@@ -119,6 +119,8 @@ export default class Profile extends wx.Component {
     })
   }
   async chooseSure(e){
+    if(this.status) return;
+    this.status = true;
     let  postData={
       code:wx.app.globalData.storage.code,
       gender:e.currentTarget.dataset.choose
@@ -148,8 +150,11 @@ export default class Profile extends wx.Component {
       })
 
     }
+    this.status = false;
   }
   async quit(e){
+    if(this.status) return;
+    this.status = true;
     let res = await wx.request({
       url: "https://xcx.chinamuxie.com/wxapi/user/logout",
       method:"GET",
@@ -167,6 +172,7 @@ export default class Profile extends wx.Component {
 
 
     }
+    this.status = false;
   }
  /* async onLoad(e){
     this.getData();

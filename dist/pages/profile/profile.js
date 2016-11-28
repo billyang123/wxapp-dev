@@ -269,11 +269,20 @@ var Profile = function (_wx$Component) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
+                if (!this.status) {
+                  _context4.next = 2;
+                  break;
+                }
+
+                return _context4.abrupt('return');
+
+              case 2:
+                this.status = true;
                 postData = {
                   code: _labrador2.default.app.globalData.storage.code,
                   gender: e.currentTarget.dataset.choose
                 };
-                _context4.next = 3;
+                _context4.next = 6;
                 return _labrador2.default.request({
                   url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyGender",
                   method: "POST",
@@ -283,7 +292,7 @@ var Profile = function (_wx$Component) {
                   data: postData
                 });
 
-              case 3:
+              case 6:
                 res = _context4.sent;
 
                 if (res.data.status == 0) {
@@ -303,8 +312,9 @@ var Profile = function (_wx$Component) {
                     animationData: animation.export()
                   });
                 }
+                this.status = false;
 
-              case 5:
+              case 9:
               case 'end':
                 return _context4.stop();
             }
@@ -327,7 +337,16 @@ var Profile = function (_wx$Component) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                _context5.next = 2;
+                if (!this.status) {
+                  _context5.next = 2;
+                  break;
+                }
+
+                return _context5.abrupt('return');
+
+              case 2:
+                this.status = true;
+                _context5.next = 5;
                 return _labrador2.default.request({
                   url: "https://xcx.chinamuxie.com/wxapi/user/logout",
                   method: "GET",
@@ -339,15 +358,16 @@ var Profile = function (_wx$Component) {
                   }
                 });
 
-              case 2:
+              case 5:
                 res = _context5.sent;
 
                 if (res.data.status == 0) {
                   _labrador2.default.clearStorage();
                   _labrador2.default.navigateBack();
                 }
+                this.status = false;
 
-              case 4:
+              case 8:
               case 'end':
                 return _context5.stop();
             }

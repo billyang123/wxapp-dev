@@ -73,7 +73,6 @@ var Claim = function (_wx$Component) {
     key: 'tabFun',
     value: function tabFun(e) {
       var id = e.target.dataset.id;
-      console.log(id);
       this.setData({
         tabArr: {
           navIndex: id,

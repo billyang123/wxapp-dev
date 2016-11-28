@@ -48,12 +48,12 @@ export default class {
   }
 
   
-  bindLogin(url,bl){
-    this.checkLogin(url,bl);
+  async bindLogin(url,bl){
+    await this.checkLogin(url,bl);
   }
   async checkLogin(url,bl){
     //wx.clearStorage();
-    this.doLogin(url,bl);
+    await this.doLogin(url,bl);
   }
   async doLogin(url,bl) {
     if(bl){
@@ -66,6 +66,7 @@ export default class {
       code:wx.app.globalData.storage.code,
       sessionKey:wx.app.globalData.storage.sessionKey
     };
+    //console.log(wx.app.globalData)
     if(!postdata.sessionKey){
       //await wx.setStorage({ key: 'sessionKey', data: "111"});
       let rdRes = await wx.request({
@@ -79,7 +80,6 @@ export default class {
       await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
       wx.app.globalData.storage =  await  wx.app.getStorage();
     }
-
     let userInfo = await wx.getUserInfo();
     let userInfoPost = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',

@@ -463,16 +463,22 @@ export default class Community extends wx.Component {
 	children = {
 	    slide: new Slide({slideData:"@slidedata"})
 	};
-	linkTo(event) {
-    wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+	async linkTo(event) {
+		if(this.isLink) return;
+      	this.isLink = true;
+    	await wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+    	this.isLink = false;
 	    /*wx.navigateTo({
 	      url:event.currentTarget.dataset.link
 	    })*/
 	}
-  linkUrl(event) {
-    wx.navigateTo({
+  async linkUrl(event) {
+  	if(this.isLink1) return;
+    this.isLink1 = true;
+    await wx.navigateTo({
      url:event.currentTarget.dataset.link
      })
+    this.isLink1 = false;
   }
   async getUser(code){
     let myuser = await wx.request({

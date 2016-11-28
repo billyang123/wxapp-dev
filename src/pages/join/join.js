@@ -98,98 +98,98 @@ export default class Join extends wx.Component {
   }
   
 	async joinBind(e){
-      for(let i=0;i<this.data.persons.length;i++) {
-        if (typeof this.data.persons[i].name == "undefined") {
-          wx.showModal({
-            title: '提示',
-            content: '请输入正确姓名',
-            showCancel: false,
-            success: function (res) {
-            }
-          });
-          return;
-        }
-        if (typeof this.data.persons[i].cardCode == "undefined") {
-          wx.showModal({
-            title: '提示',
-            content: '请输入有效身份证号',
-            showCancel: false,
-            success: function (res) {
-            }
-          });
-          return;
-        }
-        if (!this.data.persons[i].name.length>0) {
-          wx.showModal({
-            title: '提示',
-            content: '请输入正确姓名',
-            showCancel: false,
-            success: function (res) {
-            }
-          });
-          return;
-        }
-        if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
-          wx.showModal({
-            title: '提示',
-            content: '请输入有效身份证号',
-            showCancel: false,
-            success: function (res) {
-            }
-          });
-          return;
-        }
-        if (this.data.checkedValue.length<2){
-          wx.showModal({
-            title: '提示',
-            content: '加入前请先同意社群公约',
-            showCancel: false,
-            success: function (res) {
-            }
-          });
-          return;
-        }
-      }
-    
-      if (this.data.bl){
-        this.setData({
-          bl:false
-        });
-        let res = await wx.request({
-          url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
-          header: {
-            'content-type': "application/json"//'application/x-www-form-urlencoded'
-          },
-          method:"POST",
-          data:{
-            projectId:this.data.projectId,
-            persons:this.data.persons,
-            code:wx.app.globalData.storage.code
+    if(this.status) return;
+    this.status = true;
+    for(let i=0;i<this.data.persons.length;i++) {
+      if (typeof this.data.persons[i].name == "undefined") {
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确姓名',
+          showCancel: false,
+          success: function (res) {
           }
         });
-        if(res.data.status == 0){
-          await wx.redirectTo({
-            url:'/pages/joinEnd/joinEnd'
-          })
-        }else {
-          wx.showModal({
-            title: '提示',
-            content: res.data.msg,
-            showCancel:false,
-            success: function(res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              }
-            }
-          })
-        }
-        this.setData({
-          bl:true
-        });
+        return;
       }
-      
-		
-	   
+      if (typeof this.data.persons[i].cardCode == "undefined") {
+        wx.showModal({
+          title: '提示',
+          content: '请输入有效身份证号',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (!this.data.persons[i].name.length>0) {
+        wx.showModal({
+          title: '提示',
+          content: '请输入正确姓名',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
+        wx.showModal({
+          title: '提示',
+          content: '请输入有效身份证号',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+      if (this.data.checkedValue.length<2){
+        wx.showModal({
+          title: '提示',
+          content: '加入前请先同意社群公约',
+          showCancel: false,
+          success: function (res) {
+          }
+        });
+        return;
+      }
+    }
+  
+    if (this.data.bl){
+      this.setData({
+        bl:false
+      });
+      let res = await wx.request({
+        url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
+        header: {
+          'content-type': "application/json"//'application/x-www-form-urlencoded'
+        },
+        method:"POST",
+        data:{
+          projectId:this.data.projectId,
+          persons:this.data.persons,
+          code:wx.app.globalData.storage.code
+        }
+      });
+      if(res.data.status == 0){
+        await wx.redirectTo({
+          url:'/pages/joinEnd/joinEnd'
+        })
+      }else {
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg,
+          showCancel:false,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        })
+      }
+      this.setData({
+        bl:true
+      });
+    }
+    this.status = false;  
 	}
 	bindKeyInput(e){
 		let name = e.currentTarget.dataset.name,

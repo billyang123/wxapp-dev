@@ -158,44 +158,53 @@ var Join = function (_wx$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                if (!this.status) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt('return');
+
+              case 2:
+                this.status = true;
                 i = 0;
 
-              case 1:
+              case 4:
                 if (!(i < this.data.persons.length)) {
-                  _context.next = 20;
+                  _context.next = 23;
                   break;
                 }
 
                 if (!(typeof this.data.persons[i].name == "undefined")) {
-                  _context.next = 5;
-                  break;
-                }
-
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入正确姓名',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
-                return _context.abrupt('return');
-
-              case 5:
-                if (!(typeof this.data.persons[i].cardCode == "undefined")) {
                   _context.next = 8;
                   break;
                 }
 
                 _labrador2.default.showModal({
                   title: '提示',
-                  content: '请输入有效身份证号',
+                  content: '请输入正确姓名',
                   showCancel: false,
                   success: function success(res) {}
                 });
                 return _context.abrupt('return');
 
               case 8:
-                if (!(!this.data.persons[i].name.length > 0)) {
+                if (!(typeof this.data.persons[i].cardCode == "undefined")) {
                   _context.next = 11;
+                  break;
+                }
+
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: '请输入有效身份证号',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                return _context.abrupt('return');
+
+              case 11:
+                if (!(!this.data.persons[i].name.length > 0)) {
+                  _context.next = 14;
                   break;
                 }
 
@@ -207,9 +216,9 @@ var Join = function (_wx$Component) {
                 });
                 return _context.abrupt('return');
 
-              case 11:
+              case 14:
                 if (this.checkisIDCard(this.data.persons[i].cardCode)) {
-                  _context.next = 14;
+                  _context.next = 17;
                   break;
                 }
 
@@ -221,9 +230,9 @@ var Join = function (_wx$Component) {
                 });
                 return _context.abrupt('return');
 
-              case 14:
+              case 17:
                 if (!(this.data.checkedValue.length < 2)) {
-                  _context.next = 17;
+                  _context.next = 20;
                   break;
                 }
 
@@ -235,21 +244,21 @@ var Join = function (_wx$Component) {
                 });
                 return _context.abrupt('return');
 
-              case 17:
+              case 20:
                 i++;
-                _context.next = 1;
+                _context.next = 4;
                 break;
 
-              case 20:
+              case 23:
                 if (!this.data.bl) {
-                  _context.next = 32;
+                  _context.next = 35;
                   break;
                 }
 
                 this.setData({
                   bl: false
                 });
-                _context.next = 24;
+                _context.next = 27;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
                   header: {
@@ -263,24 +272,24 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 24:
+              case 27:
                 res = _context.sent;
 
                 if (!(res.data.status == 0)) {
-                  _context.next = 30;
+                  _context.next = 33;
                   break;
                 }
 
-                _context.next = 28;
+                _context.next = 31;
                 return _labrador2.default.redirectTo({
                   url: '/pages/joinEnd/joinEnd'
                 });
 
-              case 28:
-                _context.next = 31;
+              case 31:
+                _context.next = 34;
                 break;
 
-              case 30:
+              case 33:
                 _labrador2.default.showModal({
                   title: '提示',
                   content: res.data.msg,
@@ -292,12 +301,15 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 31:
+              case 34:
                 this.setData({
                   bl: true
                 });
 
-              case 32:
+              case 35:
+                this.status = false;
+
+              case 36:
               case 'end':
                 return _context.stop();
             }

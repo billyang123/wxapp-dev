@@ -5,14 +5,17 @@ export default class Account extends wx.Component {
 		login:false,
 		userInfo:{}
 	};
-	linkTo(event) {
-    	wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
-		/*wx.navigateTo({
-			url:event.currentTarget.dataset.link
-		})*/
+	async linkTo(event) {
+		if(this.isLink) return;
+      	this.isLink = true;
+    	await wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+    	this.isLink = false;
+	    /*wx.navigateTo({
+	      url:event.currentTarget.dataset.link
+	    })*/
 	}
-	 bindLogin(){
-		this.checkLogin();
+	async bindLogin(){
+		await this.checkLogin();
 	}
 	json2Form(json) { 
 	  var str = []; 
@@ -25,6 +28,10 @@ export default class Account extends wx.Component {
 		if(this.data.login){
 			return;
 		}
+		if(this.status){
+			return;
+		}
+		this.status = true;
 		wx.showToast({
 		  title: '登录中',
 		  icon: 'loading',
@@ -79,6 +86,7 @@ export default class Account extends wx.Component {
 		    })
         }
 		wx.hideToast();
+		this.status = false;
 	}
 	async getUser(code){
 		let myuser = await wx.request({
@@ -95,7 +103,7 @@ export default class Account extends wx.Component {
 	}
 	async checkLogin(){
 		//wx.clearStorage();
-		this.doLogin();
+		await this.doLogin();
 	}
 	async onShow(){
 

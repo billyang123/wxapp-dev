@@ -66,7 +66,16 @@ var JoinEnd = function (_wx$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (!this.status) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt('return');
+
+              case 2:
+                this.status = true;
+                _context.next = 5;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/account/list',
                   method: "get",
@@ -78,20 +87,23 @@ var JoinEnd = function (_wx$Component) {
                   }
                 });
 
-              case 2:
+              case 5:
                 res = _context.sent;
 
                 if (!(res.data.status == 0)) {
-                  _context.next = 6;
+                  _context.next = 9;
                   break;
                 }
 
-                _context.next = 6;
+                _context.next = 9;
                 return _labrador2.default.redirectTo({
                   url: '/pages/inification/inification'
                 });
 
-              case 6:
+              case 9:
+                this.status = false;
+
+              case 10:
               case 'end':
                 return _context.stop();
             }

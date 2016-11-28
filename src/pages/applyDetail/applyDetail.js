@@ -16,7 +16,6 @@ export default class Claim extends wx.Component {
 	};
   tabFun(e) {
 	  let id=e.target.dataset.id;
-    console.log(id);
     this.setData({
       tabArr:{
         navIndex:id,

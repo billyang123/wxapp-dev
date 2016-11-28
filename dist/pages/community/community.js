@@ -319,29 +319,93 @@ var Community = function (_wx$Component) {
 
 	(0, _createClass3.default)(Community, [{
 		key: 'linkTo',
-		value: function linkTo(event) {
-			_labrador2.default.app.bindLogin(event.currentTarget.dataset.link, this.data.login);
-			/*wx.navigateTo({
-     url:event.currentTarget.dataset.link
-   })*/
-		}
-	}, {
-		key: 'linkUrl',
-		value: function linkUrl(event) {
-			_labrador2.default.navigateTo({
-				url: event.currentTarget.dataset.link
-			});
-		}
-	}, {
-		key: 'getUser',
 		value: function () {
-			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(code) {
-				var myuser;
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
-								_context.next = 2;
+								if (!this.isLink) {
+									_context.next = 2;
+									break;
+								}
+
+								return _context.abrupt('return');
+
+							case 2:
+								this.isLink = true;
+								_context.next = 5;
+								return _labrador2.default.app.bindLogin(event.currentTarget.dataset.link, this.data.login);
+
+							case 5:
+								this.isLink = false;
+								/*wx.navigateTo({
+          url:event.currentTarget.dataset.link
+        })*/
+
+							case 6:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function linkTo(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return linkTo;
+		}()
+	}, {
+		key: 'linkUrl',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								if (!this.isLink1) {
+									_context2.next = 2;
+									break;
+								}
+
+								return _context2.abrupt('return');
+
+							case 2:
+								this.isLink1 = true;
+								_context2.next = 5;
+								return _labrador2.default.navigateTo({
+									url: event.currentTarget.dataset.link
+								});
+
+							case 5:
+								this.isLink1 = false;
+
+							case 6:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function linkUrl(_x2) {
+				return _ref3.apply(this, arguments);
+			}
+
+			return linkUrl;
+		}()
+	}, {
+		key: 'getUser',
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(code) {
+				var myuser;
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+								_context3.next = 2;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/user/account',
 									method: "get",
@@ -354,19 +418,19 @@ var Community = function (_wx$Component) {
 								});
 
 							case 2:
-								myuser = _context.sent;
-								return _context.abrupt('return', myuser);
+								myuser = _context3.sent;
+								return _context3.abrupt('return', myuser);
 
 							case 4:
 							case 'end':
-								return _context.stop();
+								return _context3.stop();
 						}
 					}
-				}, _callee, this);
+				}, _callee3, this);
 			}));
 
-			function getUser(_x) {
-				return _ref2.apply(this, arguments);
+			function getUser(_x3) {
+				return _ref4.apply(this, arguments);
 			}
 
 			return getUser;
@@ -374,18 +438,18 @@ var Community = function (_wx$Component) {
 	}, {
 		key: 'onLoad',
 		value: function () {
-			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
 				var id, ResData, myuser;
-				return _regenerator2.default.wrap(function _callee2$(_context2) {
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
 					while (1) {
-						switch (_context2.prev = _context2.next) {
+						switch (_context4.prev = _context4.next) {
 							case 0:
 								id = parseInt(e.type);
 
 								this.setData({
 									linkUrl: '/pages/join/join?type=' + id
 								});
-								_context2.next = 4;
+								_context4.next = 4;
 								return _labrador2.default.request({
 									url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
 									method: "get",
@@ -398,7 +462,7 @@ var Community = function (_wx$Component) {
 								});
 
 							case 4:
-								ResData = _context2.sent;
+								ResData = _context4.sent;
 
 								this.setData({
 									id: id,
@@ -411,11 +475,11 @@ var Community = function (_wx$Component) {
 									diff: jsonData.diff,
 									numData: ResData.data.data
 								});
-								_context2.next = 8;
+								_context4.next = 8;
 								return this.getUser(_labrador2.default.app.globalData.storage.code);
 
 							case 8:
-								myuser = _context2.sent;
+								myuser = _context4.sent;
 
 								if (myuser.data.data.loginStatus) {
 									this.setData({
@@ -429,14 +493,14 @@ var Community = function (_wx$Component) {
 
 							case 10:
 							case 'end':
-								return _context2.stop();
+								return _context4.stop();
 						}
 					}
-				}, _callee2, this);
+				}, _callee4, this);
 			}));
 
-			function onLoad(_x2) {
-				return _ref3.apply(this, arguments);
+			function onLoad(_x4) {
+				return _ref5.apply(this, arguments);
 			}
 
 			return onLoad;

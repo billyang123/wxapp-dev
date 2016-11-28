@@ -213,21 +213,16 @@ var _class = function () {
     }()
   }, {
     key: 'bindLogin',
-    value: function bindLogin(url, bl) {
-      this.checkLogin(url, bl);
-    }
-  }, {
-    key: 'checkLogin',
     value: function () {
       var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(url, bl) {
         return _regenerator2.default.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                //wx.clearStorage();
-                this.doLogin(url, bl);
+                _context5.next = 2;
+                return this.checkLogin(url, bl);
 
-              case 1:
+              case 2:
               case 'end':
                 return _context5.stop();
             }
@@ -235,8 +230,33 @@ var _class = function () {
         }, _callee5, this);
       }));
 
-      function checkLogin(_x, _x2) {
+      function bindLogin(_x, _x2) {
         return _ref5.apply(this, arguments);
+      }
+
+      return bindLogin;
+    }()
+  }, {
+    key: 'checkLogin',
+    value: function () {
+      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(url, bl) {
+        return _regenerator2.default.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.next = 2;
+                return this.doLogin(url, bl);
+
+              case 2:
+              case 'end':
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this);
+      }));
+
+      function checkLogin(_x3, _x4) {
+        return _ref6.apply(this, arguments);
       }
 
       return checkLogin;
@@ -244,34 +264,35 @@ var _class = function () {
   }, {
     key: 'doLogin',
     value: function () {
-      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(url, bl) {
+      var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(url, bl) {
         var postdata, rdRes, userInfo, userInfoPost;
-        return _regenerator2.default.wrap(function _callee6$(_context6) {
+        return _regenerator2.default.wrap(function _callee7$(_context7) {
           while (1) {
-            switch (_context6.prev = _context6.next) {
+            switch (_context7.prev = _context7.next) {
               case 0:
                 if (!bl) {
-                  _context6.next = 3;
+                  _context7.next = 3;
                   break;
                 }
 
                 _labrador2.default.navigateTo({
                   url: url
                 });
-                return _context6.abrupt('return');
+                return _context7.abrupt('return');
 
               case 3:
                 postdata = {
                   code: _labrador2.default.app.globalData.storage.code,
                   sessionKey: _labrador2.default.app.globalData.storage.sessionKey
                 };
+                //console.log(wx.app.globalData)
 
                 if (postdata.sessionKey) {
-                  _context6.next = 13;
+                  _context7.next = 13;
                   break;
                 }
 
-                _context6.next = 7;
+                _context7.next = 7;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
                   method: "POST",
@@ -282,24 +303,24 @@ var _class = function () {
                 });
 
               case 7:
-                rdRes = _context6.sent;
-                _context6.next = 10;
+                rdRes = _context7.sent;
+                _context7.next = 10;
                 return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
 
               case 10:
-                _context6.next = 12;
+                _context7.next = 12;
                 return _labrador2.default.app.getStorage();
 
               case 12:
-                _labrador2.default.app.globalData.storage = _context6.sent;
+                _labrador2.default.app.globalData.storage = _context7.sent;
 
               case 13:
-                _context6.next = 15;
+                _context7.next = 15;
                 return _labrador2.default.getUserInfo();
 
               case 15:
-                userInfo = _context6.sent;
-                _context6.next = 18;
+                userInfo = _context7.sent;
+                _context7.next = 18;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
                   method: "POST",
@@ -317,7 +338,7 @@ var _class = function () {
                 });
 
               case 18:
-                userInfoPost = _context6.sent;
+                userInfoPost = _context7.sent;
 
 
                 if (userInfoPost.data.data == "logged") {
@@ -327,25 +348,25 @@ var _class = function () {
                 }
 
                 if (!(userInfoPost.data.data == "notLogged")) {
-                  _context6.next = 23;
+                  _context7.next = 23;
                   break;
                 }
 
-                _context6.next = 23;
+                _context7.next = 23;
                 return _labrador2.default.navigateTo({
                   url: '/pages/bindphone/bindphone'
                 });
 
               case 23:
               case 'end':
-                return _context6.stop();
+                return _context7.stop();
             }
           }
-        }, _callee6, this);
+        }, _callee7, this);
       }));
 
-      function doLogin(_x3, _x4) {
-        return _ref6.apply(this, arguments);
+      function doLogin(_x5, _x6) {
+        return _ref7.apply(this, arguments);
       }
 
       return doLogin;

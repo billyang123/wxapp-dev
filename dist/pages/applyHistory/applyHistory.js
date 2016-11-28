@@ -123,7 +123,6 @@ var Claim = function (_wx$Component) {
               case 2:
                 res = _context2.sent;
 
-                console.log(res);
                 if (res.data.status == 0) {
                   if (res.data.data) {
                     this.setData({
@@ -136,7 +135,7 @@ var Claim = function (_wx$Component) {
                   });
                 }
 
-              case 5:
+              case 4:
               case 'end':
                 return _context2.stop();
             }
