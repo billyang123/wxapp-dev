@@ -60,7 +60,8 @@ export default class Account extends wx.Component {
             	signature:userInfo.signature,
             	encryptedData:encodeURIComponent(userInfo.encryptedData),
             	iv:encodeURIComponent(userInfo.iv),
-            	code:postdata.code
+            	code:postdata.code,
+            	sessionKey:wx.app.globalData.storage.sessionKey
             }
         });
         if(userInfoPost.data.data == "logged"){

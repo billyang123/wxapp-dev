@@ -91,6 +91,8 @@ var Account = function (_wx$Component) {
 		key: "doLogin",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+				var _data;
+
 				var postdata, rdRes, userInfo, userInfoPost, myuser;
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
@@ -154,13 +156,13 @@ var Account = function (_wx$Component) {
 									header: {
 										'content-type': 'application/x-www-form-urlencoded'
 									},
-									data: (0, _defineProperty3.default)({
+									data: (_data = {
 										code: _labrador2.default.app.globalData.storage.code,
 										rawData: userInfo.rawData,
 										signature: userInfo.signature,
 										encryptedData: encodeURIComponent(userInfo.encryptedData),
 										iv: encodeURIComponent(userInfo.iv)
-									}, "code", postdata.code)
+									}, (0, _defineProperty3.default)(_data, "code", postdata.code), (0, _defineProperty3.default)(_data, "sessionKey", _labrador2.default.app.globalData.storage.sessionKey), _data)
 								});
 
 							case 18:
