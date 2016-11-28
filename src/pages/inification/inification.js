@@ -9,10 +9,13 @@ export default class Indemnification extends wx.Component {
 		hasAcount:true,
 		list:{}
 	};
-	linkTo(event) {
-		wx.navigateTo({
-			url:event.currentTarget.dataset.link
-		})
+	async linkTo(event) {
+	      if(this.isLink) return;
+	      this.isLink = true;
+	      await wx.navigateTo({
+	        url:event.currentTarget.dataset.link
+	      })
+	      this.isLink = false;
 	}
 	async onLoad(){
 		let listData = await wx.request({

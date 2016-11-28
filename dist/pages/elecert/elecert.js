@@ -120,22 +120,54 @@ var Elecert = function (_wx$Component) {
     }()
   }, {
     key: 'linkTo',
-    value: function linkTo(e) {
-      _labrador2.default.redirectTo({
-        url: e.currentTarget.dataset.link
-      });
-    }
-  }, {
-    key: 'onLoad',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
-        var id, elecertData, createTime, effectiveTime;
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                if (!this.isLink) {
+                  _context2.next = 2;
+                  break;
+                }
+
+                return _context2.abrupt('return');
+
+              case 2:
+                this.isLink = true;
+                _context2.next = 5;
+                return _labrador2.default.navigateTo({
+                  url: event.currentTarget.dataset.link
+                });
+
+              case 5:
+                this.isLink = false;
+
+              case 6:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function linkTo(_x) {
+        return _ref3.apply(this, arguments);
+      }
+
+      return linkTo;
+    }()
+  }, {
+    key: 'onLoad',
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
+        var id, elecertData, createTime, effectiveTime;
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
                 id = e.id;
-                _context2.next = 3;
+                _context3.next = 3;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/account/detail',
                   method: "post",
@@ -149,7 +181,7 @@ var Elecert = function (_wx$Component) {
                 });
 
               case 3:
-                elecertData = _context2.sent;
+                elecertData = _context3.sent;
                 createTime = elecertData.data.data.projectAccount.createTime;
                 effectiveTime = elecertData.data.data.projectAccount.effectiveTime;
 
@@ -165,14 +197,14 @@ var Elecert = function (_wx$Component) {
 
               case 10:
               case 'end':
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
-      function onLoad(_x) {
-        return _ref3.apply(this, arguments);
+      function onLoad(_x2) {
+        return _ref4.apply(this, arguments);
       }
 
       return onLoad;

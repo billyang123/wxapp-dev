@@ -7,11 +7,14 @@ export default class Accountlist extends wx.Component {
 		pageIndex:1,
 		rowsArr:[]
 	};
-	linkTo(event) {
-	      wx.navigateTo({
-	        url:event.currentTarget.dataset.link
-	      })
-	}
+	async linkTo(event) {
+      if(this.isLink) return;
+      this.isLink = true;
+      await wx.navigateTo({
+        url:event.currentTarget.dataset.link
+      })
+      this.isLink = false;
+  }
 	async getAccount(options){
 		let accountList = await wx.request({
             url: 'https://xcx.chinamuxie.com/wxapi/project/account/money/bill/index',

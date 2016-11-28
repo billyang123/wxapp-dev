@@ -94,21 +94,53 @@ var Index = function (_wx$Component) {
     }()
   }, {
     key: 'linkTo',
-    value: function linkTo(event) {
-      _labrador2.default.navigateTo({
-        url: event.currentTarget.dataset.link
-      });
-    }
-  }, {
-    key: 'bannerInit',
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
-        var res, imgUrls, imgUrlsArr, i, imgObj;
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                if (!this.isLink) {
+                  _context2.next = 2;
+                  break;
+                }
+
+                return _context2.abrupt('return');
+
+              case 2:
+                this.isLink = true;
+                _context2.next = 5;
+                return _labrador2.default.navigateTo({
+                  url: event.currentTarget.dataset.link
+                });
+
+              case 5:
+                this.isLink = false;
+
+              case 6:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function linkTo(_x2) {
+        return _ref3.apply(this, arguments);
+      }
+
+      return linkTo;
+    }()
+  }, {
+    key: 'bannerInit',
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+        var res, imgUrls, imgUrlsArr, i, imgObj;
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
                   data: {
@@ -117,7 +149,7 @@ var Index = function (_wx$Component) {
                 });
 
               case 2:
-                res = _context2.sent;
+                res = _context3.sent;
                 imgUrls = [];
                 imgUrlsArr = res.data.data || [];
 
@@ -134,14 +166,14 @@ var Index = function (_wx$Component) {
 
               case 7:
               case 'end':
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
       function bannerInit() {
-        return _ref3.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return bannerInit;
@@ -161,15 +193,15 @@ var Index = function (_wx$Component) {
   }, {
     key: 'objectInit',
     value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
         var _this, objRes, obj_data, project;
 
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 _this = this;
-                _context3.next = 3;
+                _context4.next = 3;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject',
                   header: {
@@ -178,7 +210,7 @@ var Index = function (_wx$Component) {
                 });
 
               case 3:
-                objRes = _context3.sent;
+                objRes = _context4.sent;
                 obj_data = objRes.data.data;
                 project = this.data.project;
 
@@ -195,14 +227,14 @@ var Index = function (_wx$Component) {
 
               case 8:
               case 'end':
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee4, this);
       }));
 
       function objectInit() {
-        return _ref4.apply(this, arguments);
+        return _ref5.apply(this, arguments);
       }
 
       return objectInit;
@@ -210,30 +242,30 @@ var Index = function (_wx$Component) {
   }, {
     key: 'onLoad',
     value: function () {
-      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
+      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(e) {
         var location;
-        return _regenerator2.default.wrap(function _callee4$(_context4) {
+        return _regenerator2.default.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
                 this.bannerInit();
                 this.objectInit();
-                _context4.next = 4;
+                _context5.next = 4;
                 return _labrador2.default.getLocation();
 
               case 4:
-                location = _context4.sent;
+                location = _context5.sent;
 
               case 5:
               case 'end':
-                return _context4.stop();
+                return _context5.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee5, this);
       }));
 
-      function onLoad(_x2) {
-        return _ref5.apply(this, arguments);
+      function onLoad(_x3) {
+        return _ref6.apply(this, arguments);
       }
 
       return onLoad;

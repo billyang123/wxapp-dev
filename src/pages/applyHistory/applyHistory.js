@@ -5,11 +5,14 @@ export default class Claim extends wx.Component {
     apply:true,
     array:[{}]
 	};
-	linkTo(event) {
-	  wx.redirectTo({
-	    url:event.currentTarget.dataset.link
-	  })
-	}
+	async linkTo(event) {
+      if(this.isLink) return;
+      this.isLink = true;
+      await wx.navigateTo({
+        url:event.currentTarget.dataset.link
+      })
+      this.isLink = false;
+  }
   async onLoad(e){
     let res = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/user/claim/list',

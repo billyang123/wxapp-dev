@@ -15,10 +15,13 @@ export default class Index extends wx.Component {
       phoneNumber: event.currentTarget.dataset.phoneNumber
     })
   }
-  linkTo(event) {
-      wx.navigateTo({
+  async linkTo(event) {
+      if(this.isLink) return;
+      this.isLink = true;
+      await wx.navigateTo({
         url:event.currentTarget.dataset.link
       })
+      this.isLink = false;
   }
   async bannerInit() {
     var res = await wx.request({

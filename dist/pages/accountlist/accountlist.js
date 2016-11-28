@@ -65,22 +65,54 @@ var Accountlist = function (_wx$Component) {
 
   (0, _createClass3.default)(Accountlist, [{
     key: "linkTo",
-    value: function linkTo(event) {
-      _labrador2.default.navigateTo({
-        url: event.currentTarget.dataset.link
-      });
-    }
-  }, {
-    key: "getAccount",
     value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(options) {
-        var accountList, __data, rows, i, times;
-
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (!this.isLink) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 2:
+                this.isLink = true;
+                _context.next = 5;
+                return _labrador2.default.navigateTo({
+                  url: event.currentTarget.dataset.link
+                });
+
+              case 5:
+                this.isLink = false;
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function linkTo(_x) {
+        return _ref2.apply(this, arguments);
+      }
+
+      return linkTo;
+    }()
+  }, {
+    key: "getAccount",
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(options) {
+        var accountList, __data, rows, i, times;
+
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/account/money/bill/index',
                   method: "post",
@@ -96,10 +128,10 @@ var Accountlist = function (_wx$Component) {
                 });
 
               case 2:
-                accountList = _context.sent;
+                accountList = _context2.sent;
 
                 if (!(accountList.data.status == 0)) {
-                  _context.next = 10;
+                  _context2.next = 10;
                   break;
                 }
 
@@ -119,18 +151,18 @@ var Accountlist = function (_wx$Component) {
                   rows[i].time = times[1];
                 }
                 __data.rows = rows;
-                return _context.abrupt("return", __data);
+                return _context2.abrupt("return", __data);
 
               case 10:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee, this);
+        }, _callee2, this);
       }));
 
-      function getAccount(_x) {
-        return _ref2.apply(this, arguments);
+      function getAccount(_x2) {
+        return _ref3.apply(this, arguments);
       }
 
       return getAccount;
@@ -138,16 +170,16 @@ var Accountlist = function (_wx$Component) {
   }, {
     key: "bindPickerChange",
     value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
         var index, _rows, accountList;
 
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 index = e.detail.value;
                 _rows = [];
-                _context2.next = 4;
+                _context3.next = 4;
                 return this.getAccount({
                   type: index,
                   pageIndex: 1,
@@ -155,7 +187,7 @@ var Accountlist = function (_wx$Component) {
                 });
 
               case 4:
-                accountList = _context2.sent;
+                accountList = _context3.sent;
 
 
                 if (accountList.rows) {
@@ -170,14 +202,14 @@ var Accountlist = function (_wx$Component) {
 
               case 7:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
-      function bindPickerChange(_x2) {
-        return _ref3.apply(this, arguments);
+      function bindPickerChange(_x3) {
+        return _ref4.apply(this, arguments);
       }
 
       return bindPickerChange;
@@ -185,17 +217,17 @@ var Accountlist = function (_wx$Component) {
   }, {
     key: "onLoad",
     value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
         var accountList;
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context3.prev = _context3.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
-                _context3.next = 2;
+                _context4.next = 2;
                 return this.getAccount({});
 
               case 2:
-                accountList = _context3.sent;
+                accountList = _context4.sent;
 
                 this.setData({
                   rowsArr: accountList.rows
@@ -203,14 +235,14 @@ var Accountlist = function (_wx$Component) {
 
               case 4:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee4, this);
       }));
 
       function onLoad() {
-        return _ref4.apply(this, arguments);
+        return _ref5.apply(this, arguments);
       }
 
       return onLoad;

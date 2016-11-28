@@ -31,11 +31,14 @@ export default class Elecert extends wx.Component {
 		  confirmColor:"#ff6a00"
 		})
 	}
-	linkTo(e) {
-		wx.redirectTo({
-			url:e.currentTarget.dataset.link
-		})
-	}
+	async linkTo(event) {
+          if(this.isLink) return;
+          this.isLink = true;
+          await wx.navigateTo({
+            url:event.currentTarget.dataset.link
+          })
+          this.isLink = false;
+    }
 	async onLoad(e){
 		let id = e.id;
 		let elecertData = await wx.request({

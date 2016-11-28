@@ -3,9 +3,12 @@ import wx from 'labrador';
 export default class Claim extends wx.Component {
 	data = {
 	};
-	linkTo(event) {
-	  wx.redirectTo({
+	async linkTo(event) {
+	  if(this.isLink) return;
+	  this.isLink = true;
+	  await wx.redirectTo({
 	    url:event.currentTarget.dataset.link
 	  })
+	  this.isLink = false;
 	}
 }
