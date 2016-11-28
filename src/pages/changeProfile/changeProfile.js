@@ -23,9 +23,25 @@ export default class Profile extends wx.Component {
         email:this.data.email
       };
     }else {
-      return;
+      if(this.data.email == ""){
+        return wx.showModal({
+          title: '提示',
+          content: "邮箱不能为空！",
+          showCancel: false,
+          success: function(res) {
+          }
+        })
+      }
+      if(this.data.nickName == ""){
+        return wx.showModal({
+          title: '提示',
+          content: "昵称不能为空！",
+          showCancel: false,
+          success: function(res) {
+          }
+        })
+      } 
     }
-    
     let res = await wx.request({
       url: this.data.subUrl,
       method:"POST",
@@ -37,6 +53,14 @@ export default class Profile extends wx.Component {
     if(res.data.status == 0){
       wx.navigateBack()
 
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: res.data.msg,
+        showCancel: false,
+        success: function(res) {
+        }
+      })
     }
   }
   async onLoad(e){
@@ -45,8 +69,9 @@ export default class Profile extends wx.Component {
       this.setData({
         url:'https://xcx.chinamuxie.com/wxapi/user/userInfo/nickname',
         subUrl:'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyNickName',
-        value:'昵称',
+        value:'',
         txt:'昵称',
+        placeholder:"昵称",
         email:null,
         index:id
       })
@@ -54,7 +79,8 @@ export default class Profile extends wx.Component {
       this.setData({
         url:'https://xcx.chinamuxie.com/wxapi/user/userInfo/email',
         subUrl:'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyEmail',
-        value:'请输入您的邮箱',
+        value:'',
+        placeholder:"请输入您的邮箱",
         txt:'邮箱',
         nickName:null,
         index:id
@@ -89,6 +115,13 @@ export default class Profile extends wx.Component {
         })
       }
       
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: res.data.data.msg,
+        success: function(res) {
+        }
+      })
     }
   }
   bindKeyInput(e){

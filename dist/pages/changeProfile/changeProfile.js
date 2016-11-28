@@ -86,7 +86,7 @@ var Profile = function (_wx$Component) {
                   code: _labrador2.default.app.globalData.storage.code,
                   nickName: this.data.nickName
                 };
-                _context.next = 10;
+                _context.next = 13;
                 break;
 
               case 5:
@@ -99,14 +99,37 @@ var Profile = function (_wx$Component) {
                   code: _labrador2.default.app.globalData.storage.code,
                   email: this.data.email
                 };
-                _context.next = 10;
+                _context.next = 13;
                 break;
 
               case 9:
-                return _context.abrupt('return');
+                if (!(this.data.email == "")) {
+                  _context.next = 11;
+                  break;
+                }
 
-              case 10:
-                _context.next = 12;
+                return _context.abrupt('return', _labrador2.default.showModal({
+                  title: '提示',
+                  content: "邮箱不能为空！",
+                  showCancel: false,
+                  success: function success(res) {}
+                }));
+
+              case 11:
+                if (!(this.data.nickName == "")) {
+                  _context.next = 13;
+                  break;
+                }
+
+                return _context.abrupt('return', _labrador2.default.showModal({
+                  title: '提示',
+                  content: "昵称不能为空！",
+                  showCancel: false,
+                  success: function success(res) {}
+                }));
+
+              case 13:
+                _context.next = 15;
                 return _labrador2.default.request({
                   url: this.data.subUrl,
                   method: "POST",
@@ -116,14 +139,21 @@ var Profile = function (_wx$Component) {
                   data: postData
                 });
 
-              case 12:
+              case 15:
                 res = _context.sent;
 
                 if (res.data.status == 0) {
                   _labrador2.default.navigateBack();
+                } else {
+                  _labrador2.default.showModal({
+                    title: '提示',
+                    content: res.data.msg,
+                    showCancel: false,
+                    success: function success(res) {}
+                  });
                 }
 
-              case 14:
+              case 17:
               case 'end':
                 return _context.stop();
             }
@@ -152,8 +182,9 @@ var Profile = function (_wx$Component) {
                   this.setData({
                     url: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/nickname',
                     subUrl: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyNickName',
-                    value: '昵称',
+                    value: '',
                     txt: '昵称',
+                    placeholder: "昵称",
                     email: null,
                     index: id
                   });
@@ -161,7 +192,8 @@ var Profile = function (_wx$Component) {
                   this.setData({
                     url: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/email',
                     subUrl: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyEmail',
-                    value: '请输入您的邮箱',
+                    value: '',
+                    placeholder: "请输入您的邮箱",
                     txt: '邮箱',
                     nickName: null,
                     index: id
@@ -200,6 +232,12 @@ var Profile = function (_wx$Component) {
                       value: this.data.value
                     });
                   }
+                } else {
+                  _labrador2.default.showModal({
+                    title: '提示',
+                    content: res.data.data.msg,
+                    success: function success(res) {}
+                  });
                 }
 
               case 6:

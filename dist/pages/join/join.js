@@ -167,16 +167,17 @@ var Join = function (_wx$Component) {
 
               case 2:
                 this.status = true;
+                console.log(this.data.persons);
                 i = 0;
 
-              case 4:
+              case 5:
                 if (!(i < this.data.persons.length)) {
-                  _context.next = 23;
+                  _context.next = 29;
                   break;
                 }
 
                 if (!(typeof this.data.persons[i].name == "undefined")) {
-                  _context.next = 8;
+                  _context.next = 10;
                   break;
                 }
 
@@ -186,39 +187,42 @@ var Join = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
+                this.status = false;
                 return _context.abrupt('return');
 
-              case 8:
+              case 10:
                 if (!(typeof this.data.persons[i].cardCode == "undefined")) {
-                  _context.next = 11;
-                  break;
-                }
-
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入有效身份证号',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
-                return _context.abrupt('return');
-
-              case 11:
-                if (!(!this.data.persons[i].name.length > 0)) {
                   _context.next = 14;
                   break;
                 }
 
                 _labrador2.default.showModal({
                   title: '提示',
+                  content: '请输入有效身份证号',
+                  showCancel: false,
+                  success: function success(res) {}
+                });
+                this.status = false;
+                return _context.abrupt('return');
+
+              case 14:
+                if (!(!this.data.persons[i].name.length > 0)) {
+                  _context.next = 18;
+                  break;
+                }
+
+                _labrador2.default.showModal({
+                  title: '提示',
                   content: '请输入正确姓名',
                   showCancel: false,
                   success: function success(res) {}
                 });
+                this.status = false;
                 return _context.abrupt('return');
 
-              case 14:
+              case 18:
                 if (this.checkisIDCard(this.data.persons[i].cardCode)) {
-                  _context.next = 17;
+                  _context.next = 22;
                   break;
                 }
 
@@ -228,11 +232,12 @@ var Join = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
+                this.status = false;
                 return _context.abrupt('return');
 
-              case 17:
+              case 22:
                 if (!(this.data.checkedValue.length < 2)) {
-                  _context.next = 20;
+                  _context.next = 26;
                   break;
                 }
 
@@ -242,23 +247,24 @@ var Join = function (_wx$Component) {
                   showCancel: false,
                   success: function success(res) {}
                 });
+                this.status = false;
                 return _context.abrupt('return');
 
-              case 20:
+              case 26:
                 i++;
-                _context.next = 4;
+                _context.next = 5;
                 break;
 
-              case 23:
+              case 29:
                 if (!this.data.bl) {
-                  _context.next = 35;
+                  _context.next = 41;
                   break;
                 }
 
                 this.setData({
                   bl: false
                 });
-                _context.next = 27;
+                _context.next = 33;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
                   header: {
@@ -272,24 +278,24 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 27:
+              case 33:
                 res = _context.sent;
 
                 if (!(res.data.status == 0)) {
-                  _context.next = 33;
+                  _context.next = 39;
                   break;
                 }
 
-                _context.next = 31;
+                _context.next = 37;
                 return _labrador2.default.redirectTo({
                   url: '/pages/joinEnd/joinEnd'
                 });
 
-              case 31:
-                _context.next = 34;
+              case 37:
+                _context.next = 40;
                 break;
 
-              case 33:
+              case 39:
                 _labrador2.default.showModal({
                   title: '提示',
                   content: res.data.msg,
@@ -301,15 +307,15 @@ var Join = function (_wx$Component) {
                   }
                 });
 
-              case 34:
+              case 40:
                 this.setData({
                   bl: true
                 });
 
-              case 35:
+              case 41:
                 this.status = false;
 
-              case 36:
+              case 42:
               case 'end':
                 return _context.stop();
             }

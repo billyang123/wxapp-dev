@@ -4,6 +4,6 @@
     <view class="changeProfile_top_btn" catchtap="_dispatch" data-catchtap="onSub">保存</view>
   </view>
   <view class="changeProfile_userNickname">
-    <input bindinput="_dispatch" value="{{value}}" data-index="{{index}}" data-bindinput="bindKeyInput"/>
+    <input bindinput="_dispatch" placeholder="{{placeholder}}" value="{{value}}" data-index="{{index}}" data-bindinput="bindKeyInput"/>
   </view>
 </view>

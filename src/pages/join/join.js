@@ -100,6 +100,7 @@ export default class Join extends wx.Component {
 	async joinBind(e){
     if(this.status) return;
     this.status = true;
+    console.log(this.data.persons)
     for(let i=0;i<this.data.persons.length;i++) {
       if (typeof this.data.persons[i].name == "undefined") {
         wx.showModal({
@@ -109,6 +110,7 @@ export default class Join extends wx.Component {
           success: function (res) {
           }
         });
+        this.status = false;
         return;
       }
       if (typeof this.data.persons[i].cardCode == "undefined") {
@@ -119,6 +121,7 @@ export default class Join extends wx.Component {
           success: function (res) {
           }
         });
+        this.status = false;
         return;
       }
       if (!this.data.persons[i].name.length>0) {
@@ -129,6 +132,7 @@ export default class Join extends wx.Component {
           success: function (res) {
           }
         });
+        this.status = false;
         return;
       }
       if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
@@ -139,6 +143,7 @@ export default class Join extends wx.Component {
           success: function (res) {
           }
         });
+        this.status = false;
         return;
       }
       if (this.data.checkedValue.length<2){
@@ -149,6 +154,7 @@ export default class Join extends wx.Component {
           success: function (res) {
           }
         });
+        this.status = false;
         return;
       }
     }
