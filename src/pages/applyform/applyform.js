@@ -1,5 +1,5 @@
 import wx from 'labrador';
-
+import { sleep } from '../../utils/util';
 export default class Applyform extends wx.Component {
 	data = {
 		planArr:["请选择"],
@@ -32,6 +32,7 @@ export default class Applyform extends wx.Component {
     });
   }
   async onSub(){
+    await sleep(1000);
     if (this.data.index>0){
       if (typeof this.data.persons.name=="undefined"){
         wx.showModal({

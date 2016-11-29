@@ -38,6 +38,8 @@ var _labrador = require('../../npm/labrador/index.js');
 
 var _labrador2 = _interopRequireDefault(_labrador);
 
+var _util = require('../../utils/util.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Applyform = function (_wx$Component) {
@@ -119,13 +121,17 @@ var Applyform = function (_wx$Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _context2.next = 2;
+                return (0, _util.sleep)(1000);
+
+              case 2:
                 if (!(this.data.index > 0)) {
-                  _context2.next = 22;
+                  _context2.next = 24;
                   break;
                 }
 
                 if (!(typeof this.data.persons.name == "undefined")) {
-                  _context2.next = 4;
+                  _context2.next = 6;
                   break;
                 }
 
@@ -137,9 +143,9 @@ var Applyform = function (_wx$Component) {
                 });
                 return _context2.abrupt('return');
 
-              case 4:
+              case 6:
                 if (!(typeof this.data.persons.phone == "undefined")) {
-                  _context2.next = 7;
+                  _context2.next = 9;
                   break;
                 }
 
@@ -151,9 +157,9 @@ var Applyform = function (_wx$Component) {
                 });
                 return _context2.abrupt('return');
 
-              case 7:
+              case 9:
                 if (!(!this.data.persons.name.length > 0)) {
-                  _context2.next = 10;
+                  _context2.next = 12;
                   break;
                 }
 
@@ -165,9 +171,9 @@ var Applyform = function (_wx$Component) {
                 });
                 return _context2.abrupt('return');
 
-              case 10:
+              case 12:
                 if (!(!this.data.persons.phone.length > 0)) {
-                  _context2.next = 13;
+                  _context2.next = 15;
                   break;
                 }
 
@@ -179,9 +185,9 @@ var Applyform = function (_wx$Component) {
                 });
                 return _context2.abrupt('return');
 
-              case 13:
+              case 15:
                 if (!(!this.data.claimContent.length > 0)) {
-                  _context2.next = 16;
+                  _context2.next = 18;
                   break;
                 }
 
@@ -193,8 +199,8 @@ var Applyform = function (_wx$Component) {
                 });
                 return _context2.abrupt('return');
 
-              case 16:
-                _context2.next = 18;
+              case 18:
+                _context2.next = 20;
                 return _labrador2.default.request({
                   url: 'https://xcx.chinamuxie.com/wxapi/user/claim/commit',
                   method: 'POST',
@@ -210,7 +216,7 @@ var Applyform = function (_wx$Component) {
                   }
                 });
 
-              case 18:
+              case 20:
                 res = _context2.sent;
 
                 if (res.data.status == 0) {
@@ -225,10 +231,10 @@ var Applyform = function (_wx$Component) {
                     success: function success(res) {}
                   });
                 }
-                _context2.next = 23;
+                _context2.next = 25;
                 break;
 
-              case 22:
+              case 24:
                 _labrador2.default.showModal({
                   title: '提示',
                   content: '请选择计划',
@@ -236,7 +242,7 @@ var Applyform = function (_wx$Component) {
                   success: function success(res) {}
                 });
 
-              case 23:
+              case 25:
               case 'end':
                 return _context2.stop();
             }
