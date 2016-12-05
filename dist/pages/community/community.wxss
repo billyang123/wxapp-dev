@@ -61,7 +61,7 @@
   left: 44rpx;
   z-index: 2;
   color: #fff;
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 .community .top-body {
   display: -webkit-box;
