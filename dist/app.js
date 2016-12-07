@@ -56,6 +56,11 @@ var _class = function () {
                 return this.__init();
 
               case 3:
+                _labrador2.default.navigateTo({
+                  url: "/pages/recharge/recharge"
+                });
+
+              case 4:
               case 'end':
                 return _context.stop();
             }
@@ -131,9 +136,6 @@ var _class = function () {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                // if (this.globalData.storage) {
-                //   return this.globalData.storage;
-                // }
                 localSession = {};
                 _context3.next = 3;
                 return _labrador2.default.getStorageInfo();

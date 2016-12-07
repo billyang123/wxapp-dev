@@ -1,12 +1,18 @@
 <view class="container">
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
-			<view class="acimage default-image" catchtap="linkTo" data-link="/pages/profile/profile">
+			<navigator class="acimage default-image" redirect="" url="/pages/profile/profile">
 				<image src="{{userInfo.headImgUrl}}" class="avatar"></image>
 				<view class="volunteer" wx:if="{{isVolunteer}}">
 					<text>自愿者</text>
 				</view>
-			</view>
+			</navigator>
+			<!-- <view class="acimage default-image" catchtap="linkTo" data-link="/pages/profile/profile">
+				<image src="{{userInfo.headImgUrl}}" class="avatar"></image>
+				<view class="volunteer" wx:if="{{isVolunteer}}">
+					<text>自愿者</text>
+				</view>
+			</view> -->
 			<view class="txt-area" wx:if="{{userInfo.existGuarantee}}">
 				<view class="name">
 					<text>{{userInfo.nickName}}</text>
@@ -51,7 +57,7 @@
 		</view>
 	</view>-->
 	<view class="media-list ac-list">
-		<view class="item-link item-content" catchtap="linkTo"  data-link="/pages/inification/inification">
+		<navigator class="item-link item-content" redirect="" url="/pages/inification/inification">
 			<view class="item-media">
 				<image class="img" src="/images/account_wdsq_icon.png"></image>
 			</view>
@@ -63,8 +69,9 @@
 					<text></text>
 				</view>
 			</view>
-		</view>
-		<view class="item-link item-content" catchtap="linkTo"  data-link="/pages/claim/claim">
+		</navigator>
+		<!-- <navigator class="item-link item-content" redirect="" url="/pages/claim/claim"> -->
+		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
 			<view class="item-media">
 				<image class="img" src="/images/account_sqhz_icon.png"></image>
 			</view>
@@ -73,7 +80,8 @@
 					<text>申请互助</text>
 				</view>
 			</view>
-		</view>
+		
+		</navigator>
 	</view>
 	<!--<view class="media-list ac-list">
 		<view class="item-link item-content">
@@ -97,8 +105,8 @@
 			</view>
 		</view>
 	</view>-->
-	<!--<view class="media-list ac-list">
-		<view class="item-link item-content">
+	<view class="media-list ac-list">
+		<!-- <view class="item-link item-content">
 			<view class="item-media">
 				<image class="img" src="/images/account-card-icon.png"></image>
 			</view>
@@ -107,8 +115,8 @@
 					<text>券</text>
 				</view>
 			</view>
-		</view>
-		<view class="item-link item-content">
+		</view> -->
+		<navigator class="item-link item-content" redirect="" url="/pages/qa/qa">
 			<view class="item-media">
 				<image class="img" src="/images/account-question-icon.png"></image>
 			</view>
@@ -117,30 +125,19 @@
 					<text>常见问题</text>
 				</view>
 			</view>
-		</view>
-	</view>-->
-  <view class="hz-content hzo-service">
-    <view class="title">
-      <view class="tname">专属客服</view>
-    </view>
+		</navigator>
+	</view>
+	<view class="or-line">
+		<text class="txt gray">联系我们</text>
+	</view>
+  <view class="hzo-service">
     <view class="hzs-con">
-      <view class="tel">
+      <view class="item tel">
         <text class="gray-m">客服电话：</text>
         <button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
       </view>
-      <view class="work-time">
-        <text class="gray-m">工作时间：  09:30-20:00（周一至周六）</text>
-      </view>
-    </view>
-    <view class="ewm-area">
-      <view>
-        <text>咨询、求助、志愿者、申请互助</text>
-      </view>
-      <view class="gray">
-        <text>长按扫码添加客服，专人答疑</text>
-      </view>
-      <view>
-        <image class="ewm-img" src="/images/kf02_img001.png"></image>
+      <view class="item work-time">
+        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>
       </view>
     </view>
   </view>

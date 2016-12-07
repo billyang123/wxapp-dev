@@ -1,8 +1,9 @@
 .elecert .card {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
-  background-color: #fff;
   padding: 0 35rpx;
+  background: #fff url(/images/yinzhang_201x152.png) no-repeat 520rpx 370rpx;
+  background-size: 201rpx 152rpx;
 }
 .elecert .card-title {
   font-size: 44rpx;
@@ -19,7 +20,7 @@
   margin-top: 40rpx;
 }
 .elecert .card-content .p {
-  margin-bottom: 23rpx;
+  margin-bottom: 15rpx;
 }
 .elecert .card-content .t {
   margin-right: 30rpx;

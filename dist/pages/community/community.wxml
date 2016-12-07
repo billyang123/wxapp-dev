@@ -1,12 +1,6 @@
 <view class="container">
 	<view class="commun-nav">
-		<!--<view class="cnav-li">
-			<text>分享给好友</text>
-		</view>-->
-		<view class="cnav-li join" catchtap="_dispatch" data-link="{{linkUrl}}" data-catchtap="linkTo">
-			<text>立即加入</text>
-     
-		</view>
+		<navigator class="cnav-li join" redirect="" url="{{linkUrl}}">立即加入</navigator>
 	</view>
 	<view class="community">
 		<view class="top-head">
@@ -46,7 +40,7 @@
 			<image src="https://image1.chinamuxie.com/images/project/pj_tit01.png" style="width:404rpx;height:53rpx;"/>
 		</view>
 		<view class="pj_aim">
-			<view wx:for="{{purpose}}" wx:for-index="index" class="lis lis{{index+1}}">
+			<view xmlns:wx="" wx:for="{{purpose}}" wx:for-index="index" class="lis lis{{index+1}}">
 				<text>{{item}}</text>
 			</view>
 		</view>
@@ -56,7 +50,7 @@
 		<view class="media-list pj_meidalist">
 			<view class="item-content">
 				<view class="item-inner">
-					<view class="item-after">
+					<view class="item-title">
 						<text>{{power.t}}</text>
 					</view>
 				</view>
@@ -71,7 +65,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl">
+			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl" data-path="">
 				<view class="item-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>
@@ -86,7 +80,7 @@
 		<view class="media-list pj_meidalist">
 			<view class="item-content">
 				<view class="item-inner">
-					<view class="item-after">
+					<view class="item-title">
 						<text>{{treaty.t}}</text>
 					</view>
 				</view>
@@ -97,7 +91,7 @@
 						<text class="org">{{item[0]}}</text>
 					</view>
 					<view class="item-after">
-						<text class="gray-m fsize-26">{{item[1]}}</text>
+						<text class="gray-m fz32">{{item[1]}}</text>
 					</view>
 				</view>
 			</view>
@@ -116,20 +110,14 @@
 			<view class="item-content" wx:if="{{condition[0]}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text class="gray bb">年龄段</text>
-					</view>
-					<view class="item-after" style="max-width: 566rpx;">
-						<text class="b">{{condition[0]}}</text>
+						<text class="bb">年龄段：{{condition[0]}}</text>
 					</view>
 				</view>
 			</view>
 			<view class="item-content" wx:if="{{condition[1]}}">
 				<view class="item-inner">
 					<view class="item-title">
-						<text class="gray bb">身体健康是指：</text>
-					</view>
-					<view class="item-after" style="max-width: 480rpx;">
-						<text class="b">{{condition[1]}}</text>
+						<text class="bb">身体健康是指：{{condition[1]}}</text>
 					</view>
 				</view>
 			</view>
@@ -144,7 +132,7 @@
 						<text>提交材料</text>
 					</view>
 					<view class="pl-after">
-						<text>拨打</text>
+						<text>拨打  </text>
 						<text class="spr">400-688-6259</text>
 					</view>
 				</view>

@@ -1,8 +1,3 @@
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
-}
-
 export function formatTime(date) {
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -18,6 +13,3 @@ export function sleep(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 
-export function add(a, b) {
-  return a + b;
-}

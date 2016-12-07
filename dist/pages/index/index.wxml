@@ -1,15 +1,15 @@
 <view class="container">
 	<view class="swiper">
 		<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
-  <block wx:for="{{swiper.imgUrls}}">
+  <block xmlns:wx="" wx:for="{{swiper.imgUrls}}">
     <swiper-item>
       <image src="{{item.img}}" class="slide-image swiper-slide-image"/>
     </swiper-item>
   </block>
 </swiper>
 	</view>
-	<view class="broad">
-		<!-- <view class="broad-number">
+	<!-- <view class="broad">
+		<view class="broad-number">
 			<view class="col-50">
 				<view class="nm-line"><text class="bm-num">564,433</text><text>人</text></view>
 				<view class="nm-line"><text>已加入会员人数</text></view>
@@ -18,30 +18,30 @@
 				<view class="nm-line"><text  class="bm-num">1,946,289</text><text>元</text></view>
 				<view class="nm-line"><text>已筹互助金额</text></view>
 			</view>
-		</view> -->
-		<!--<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
+		</view>
+		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
 			<text class="bc-t">公示：</text>
 			<text>【资金公示】十月既第三期资金公示</text>
 			<icon class="iconfont icon-jiantou-right"></icon>
-		</view>-->
-	</view>
-	<view class="hdnav">
-		<view class="col-50" catchtap="_dispatch" data-link="/pages/account/account" data-type="redirectTo" data-catchtap="linkTo">
-			<icon class="myicon-index-1"/>
-			<text class="txt">查看我的保障</text>
-			<icon class="iconfont icon-fangxiang-right"/>
 		</view>
-		<!--<view class="col-50 nr">
+	</view> -->
+	<!-- <view class="hdnav">
+		<view class="col-50" catchtap="linkTo" data-link="/pages/account/account" data-type="redirectTo">
+			<icon class="myicon-index-1"></icon>
+			<text class="txt">查看我的保障</text>
+			<icon class="iconfont icon-fangxiang-right"></icon>
+		</view>
+		<view class="col-50 nr">
 			<icon class="myicon-index-2"></icon>
 			<text class="txt">送亲友</text>
 			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>-->
-	</view>
+		</view>
+	</view> -->
 	<view class="hz-content hz-group">
 		<view class="title">
 			<view class="tname">互助社群</view>
 		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=2" catchtap="_dispatch" data-catchtap="linkTo">
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=2">
 			<image class="img" mode="aspectFill" src="/images/stayChildren02_img001.png"/>
 			<view class="hi-title"><text>留守儿童互助社群</text></view>
 			<view class="hi-info">
@@ -58,8 +58,8 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[2]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
-		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=5" catchtap="_dispatch" data-catchtap="linkTo">
+		</navigator>
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=5">
 			<image class="img" mode="aspectFill" src="/images/8002_img001.png"/>
 			<view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
 			<view class="hi-info">
@@ -76,8 +76,8 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[5]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
-		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=4" catchtap="_dispatch" data-catchtap="linkTo">
+		</navigator>
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=4">
 			<image class="img" mode="aspectFill" src="/images/children02_img001.png"/>
 			<view class="hi-title"><text>少儿大病、意外互助社群</text></view>
 			<view class="hi-info">
@@ -94,8 +94,8 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[4]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
-		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=3" catchtap="_dispatch" data-catchtap="linkTo">
+		</navigator>
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=3">
 			<image class="img" mode="aspectFill" src="/images/traffic02_img001.png"/>
 			<view class="hi-title"><text>交通、旅游意外互助社群</text></view>
 			<view class="hi-info">
@@ -112,8 +112,8 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[3]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
-		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=6" catchtap="_dispatch" data-catchtap="linkTo">
+		</navigator>
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=6">
 			<image class="img" mode="aspectFill" src="/images/old02_img001.png"/>
 			<view class="hi-title"><text>中老年大病、意外互助社群</text></view>
 			<view class="hi-info">
@@ -130,8 +130,8 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[6]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
-		</view>
-		<view class="hz-item" data-link="/pages/community/community?type=1" catchtap="_dispatch" data-catchtap="linkTo">
+		</navigator>
+		<navigator class="hz-item" redirect="" url="/pages/community/community?type=1">
 			<image class="img" mode="aspectFill" src="/images/78902_img001.png"/>
 			<view class="hi-title"><text>789重大疾病互助社群</text></view>
 			<view class="hi-info">
@@ -148,6 +148,14 @@
 					<image mode="aspectFill" wx:for="{{mImgArr[1]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg img{{idx}}"/>
 				</view>
 			</view>
+		</navigator>
+	</view>
+	<view class="hz-content hz-dis">
+		<view class="title">
+			<view class="tname">互助释义</view>
+		</view>
+		<view class="hz-explain">
+			<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的相互捐助行为。</text>
 		</view>
 	</view>
 	<view class="hz-content hz-apply">
@@ -167,7 +175,7 @@
 				</view>
 				<view class="st-inner tel-kf">
 					<text class="gray">客服电话：</text>
-					<button class="telbtn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
 				</view>
 				<view class="st-inner">
 					<text class="gray">有疑问也可电话咨询</text>
@@ -214,7 +222,7 @@
 		</view>
 		<view class="hzo-list">
 			<view class="hzol-item">
-				<icon class="myicon-index-3"/>
+				<image src="/images/guarantee02_icon01.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>0平台费用</text>
 					<icon class="iconfont icon-fangxiang-right"/>
@@ -224,7 +232,7 @@
 				</view>
 			</view>
 			<view class="hzol-item">
-				<icon class="ticon iconfont icon-beiyusan"/>
+				<image src="/images/guarantee02_icon02.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>专业风控</text>
 					<icon class="iconfont icon-fangxiang-right"/>
@@ -234,7 +242,7 @@
 				</view>
 			</view>
 			<view class="hzol-item">
-				<icon class="ticon iconfont icon-zhaoshangyinxing"/>
+				<image src="/images/guarantee02_icon03.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>资金安全</text>
 					<icon class="iconfont icon-fangxiang-right"/>
@@ -244,7 +252,7 @@
 				</view>
 			</view>
 			<view class="hzol-item">
-				<icon class="myicon-index-4"/>
+				<image src="/images/guarantee02_icon04.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>顶级风投</text>
 					<icon class="iconfont icon-fangxiang-right"/>
@@ -302,15 +310,24 @@
 			<view class="tname">专属客服</view>
 		</view>
 		<view class="hzs-con">
+	      <view class="item tel">
+	        <text class="gray-m">客服电话：</text>
+	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+	      </view>
+	      <view class="item work-time">
+	        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>
+	      </view>
+	    </view>
+		<!-- <view class="hzs-con">
 			<view class="tel">
 				<text class="gray-m">客服电话：</text>
-				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
 			</view>
 			<view class="work-time">
-				<text class="gray-m">工作时间：  09:30-20:00（周一至周六）</text>
+				<text class="gray-m">微信客服：搜索微信号</text> <text class="org"> kefu17hz2</text>
 			</view>
-		</view>
-		<view class="ewm-area">
+		</view> -->
+		<!-- <view class="ewm-area">
 			<view>
 				<text>咨询、求助、志愿者、申请互助</text>
 			</view>
@@ -318,8 +335,8 @@
 				<text>长按扫码添加客服，专人答疑</text>
 			</view>
 			<view>
-				<image class="ewm-img" src="/images/kf02_img001.png"/>
+				<image class="ewm-img" src="/images/kf02_img001.png"></image>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </view>

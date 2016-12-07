@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="media-list slide-media-list slide-list slide-slide-list">
-	<view wx:for="{{slide.slideData}}" wx:for-index="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
+	<view xmlns:wx="" wx:for="{{slide.slideData}}" wx:for-index="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
 		<view class="item-content slide-item-content">
 			<view class="item-inner slide-item-inner">
 				<view class="item-title slide-item-title">

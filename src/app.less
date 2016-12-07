@@ -1,29 +1,18 @@
+
 .flexbox() {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
 }
 .align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
-    -webkit-box-align: @ai;
-    -ms-flex-align: @ai;
-    -webkit-align-items: @ai;
     align-items: @ai;
 }
 .align-items(@ai) when (@ai = flex-start) {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    -webkit-align-items: flex-start;
     align-items: flex-start;
 }
 .justify-content(@jc) when (@jc = space-between) {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
     justify-content: space-between;
 }
-/**字体样式**/
-@font-face {font-family: "iconfont";
+@font-face {
+  font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_j49qjnt54ic3ow29.eot?t=1479114231018'); /* IE9*/
   src: url('//at.alicdn.com/t/font_j49qjnt54ic3ow29.eot?t=1479114231018#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('//at.alicdn.com/t/font_j49qjnt54ic3ow29.woff?t=1479114231018') format('woff'), /* chrome, firefox */
@@ -73,6 +62,7 @@
 
 /**app.wxss**/
 
+
 page {
   background-color: #f0f0f0;
 }
@@ -80,6 +70,21 @@ page {
   height: 100%;
   color: #333;
   font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  font-weight: normal;
+  line-height: 44rpx;
+}
+.fz28 {
+  font-size: 28rpx;
+}
+.fz30 {
+  font-size: 30rpx;
+}
+.fz32 {
+  font-size: 32rpx;
+}
+.fz26 {
+  font-size: 26rpx;
 }
 .gray {
   color: #999;
@@ -88,19 +93,61 @@ page {
   color: #666;
 }
 .blue {
-  color: #01c200 !important;
+  color: #09bb07 !important;
+}
+.org {
+  color: #ff6a00;
+}
+.yell {
+  color: #ffa003;
+}
+.warn-tips {
+  padding: 30rpx 36rpx 30rpx 95rpx;
+  background:#ffe9bf;
+  font-size: 30rpx;
+  color: #666;
+  .icon {
+      position: absolute;
+      top: 25rpx;
+      left: 36rpx;
+      margin-right: 10rpx;
+  }
+}
+.error-tips {
+  background-color: #ff3333;
+  height: 70rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  transition:height 0.5;
+  &.error-show {
+    height: 70rpx;
+  }
 }
 .tel-btn {
-  display: inline-block;
-  border:2px solid #ff6a00;
-  border-radius:4rpx;
-  width:342rpx;
-  height:61rpx;
-  font-size:32rpx;
-  color:#ff6a00;
-  line-height:55rpx;
-  background-color: transparent;
+    &:after {
+      border:2px solid #ff6a00;
+    }
+    display: inline-block;
+    border-radius:4rpx;
+    height:55rpx;
+    font-size:32rpx;
+    color:#ff6a00;
+    line-height:55rpx;
+    background-color: transparent;
 }
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background:#ff6a00;
+  width:750rpx;
+  height:98rpx;
+  color: #fff;
+  line-height: 98rpx;
+  font-size: 36rpx;
+} 
 .default-image {
   background: url("/images/default-image.png") no-repeat center #dddee3;
   width: 100%;
@@ -121,11 +168,8 @@ page {
     background-color: #fff;
     box-sizing: border-box;
       min-height: 88rpx;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
+      
       justify-content: space-between;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
       align-items: center;
       border-bottom: 1px solid #ddd;
   }
@@ -134,13 +178,10 @@ page {
       -ms-flex: 0 0 auto;
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
-      -webkit-box-lines: single;
-      -moz-box-lines: single;
-      -webkit-flex-wrap: nowrap;
+      
       flex-wrap: nowrap;
       box-sizing: border-box;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
+      
       align-items: center;
       margin-right: 19rpx;
   }
@@ -162,12 +203,9 @@ page {
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
-      -webkit-box-flex: 1;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
+      
       justify-content: space-between;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
+      
       align-items: center;
   }
 

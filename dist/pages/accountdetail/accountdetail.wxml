@@ -6,7 +6,7 @@
 		<view class="status">
 			<text>成功</text>
 		</view>
-		<view class="num"><text wx:if="{{account.masterType == 2}}">-</text><text wx:if="{{account.masterType == 1}}">+</text>{{account.totalAmt}}</view>
+		<view class="num"><text xmlns:wx="" wx:if="{{account.masterType == 2}}">-</text><text wx:if="{{account.masterType == 1}}">+</text>{{account.totalAmt}}</view>
 	</view>
 	<view class="media-list">
 		<view class="item-content">

@@ -4,7 +4,7 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 20rpx;
-  border-bottom: 1rpx solid #ddd;
+  box-shadow: 0 1px 0 0 #ddd;
 }
 .join-main .input-area .section {
   padding: 26rpx 35rpx;
@@ -23,7 +23,7 @@
 }
 .join-main .input-area input {
   height: 52rpx;
-  width: 332rpx;
+  width: 335rpx;
   float: left;
 }
 .join-main .input-area input::-webkit-input-placeholder {
@@ -36,13 +36,13 @@
 }
 .join-main .add-btn {
   background: #ffffff;
-  border: 1rpx solid #dddddd;
+  border: 1rpx solid #ddd;
   border-radius: 5rpx;
   width: 449rpx;
   height: 86rpx;
   line-height: 86rpx;
-  font-size: 28rpx;
-  color: #666;
+  font-size: 36rpx;
+  color: #333;
   text-align: center;
   margin: 40rpx auto;
 }
@@ -97,16 +97,12 @@
 }
 .join-main .checkbox-group {
   padding: 0 35rpx;
-  margin-top: 20rpx;
 }
 .join-main .checkbox-group .checkbox {
   font-size: 28rpx;
   color: #666;
   line-height: 40rpx;
   margin-bottom: 20rpx;
-}
-.join-main .checkbox-group .checkbox .text {
-  color: #333;
 }
 .join-main .justjoin {
   position: fixed;

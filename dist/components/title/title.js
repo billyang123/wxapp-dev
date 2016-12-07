@@ -29,7 +29,7 @@ var _labrador = require('../../npm/labrador/index.js');
 
 var _labrador2 = _interopRequireDefault(_labrador);
 
-var _randomColor = require('../../utils/random-color.js');
+var _randomColor = require('../../utils/random-color');
 
 var _randomColor2 = _interopRequireDefault(_randomColor);
 

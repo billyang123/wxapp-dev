@@ -10,24 +10,20 @@ export default class {
     var _this = this;
     //await wx.clearStorage();
     await this.__init();
+    wx.navigateTo({
+      url:"/pages/recharge/recharge"
+    })
   }
   async __init(){
     this.globalData.storage =  await this.getStorage();
-    //let ckSess = await wx.checkSession();
-    //ckSess.errMsg != "checkSession:ok"
-    //console.log(ckSess.errMsg != "checkSession:ok" || !this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code))
     if(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
       let loginInfo = await wx.login();
       await wx.setStorage({ key: 'code', data: loginInfo.code });
     }
-    
     await this.getUserInfo();
     this.globalData.storage = await this.getStorage();
   }
   async getStorage (){
-    // if (this.globalData.storage) {
-    //   return this.globalData.storage;
-    // }
     let localSession = {};
     let storageInfo = await wx.getStorageInfo();
     let keys = storageInfo.keys;
@@ -39,9 +35,6 @@ export default class {
     return localSession;
   }
   async getUserInfo() {
-    // if(this.globalData.userInfo){
-    //   return this.globalData.userInfo;
-    // }
     let res = await wx.getUserInfo();
     this.globalData.userInfo = res.userInfo;
     return res.userInfo;
@@ -100,7 +93,7 @@ export default class {
     if(userInfoPost.data.data == "logged"){
       wx.navigateTo({
        url:url
-       });
+      });
     }
     if(userInfoPost.data.data == "notLogged"){
       await wx.navigateTo({

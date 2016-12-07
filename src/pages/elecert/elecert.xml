@@ -50,6 +50,14 @@
 			</view>
 		</view>
 	</view>
+	<view style="padding:10rpx 34rpx">
+		<view class="fz28">
+			<text class="gray">已同意</text><text>《17互助公约》</text>
+		</view>
+		<view class="fz28">
+			<text class="gray">已同意</text><text>《789重大疾病互助共约》</text>
+		</view>
+	</view>
 	<view class="btn-padd">
 		<view class="btn btn-org" catchtap="linkTo" data-link="/pages/community/community?type={{projectId}}">
 			<text>查看社群详情</text>

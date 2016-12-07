@@ -38,6 +38,10 @@ var _labrador = require('../../npm/labrador/index.js');
 
 var _labrador2 = _interopRequireDefault(_labrador);
 
+var _alert = require('../../components/alert/alert.js');
+
+var _alert2 = _interopRequireDefault(_alert);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var jsonData = {
@@ -50,7 +54,7 @@ var Join = function (_wx$Component) {
   function Join() {
     var _ref;
 
-    var _temp, _this, _ret;
+    var _temp, _this2, _ret;
 
     (0, _classCallCheck3.default)(this, Join);
 
@@ -58,7 +62,7 @@ var Join = function (_wx$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Join.__proto__ || (0, _getPrototypeOf2.default)(Join)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+    return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Join.__proto__ || (0, _getPrototypeOf2.default)(Join)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
       projectId: 1,
       persons: [{}],
       publicConvention: '',
@@ -68,7 +72,9 @@ var Join = function (_wx$Component) {
       conditionTxt: '',
       bl: true,
       checkedValue: ["1", "2"]
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+    }, _this2.children = {
+      alert: new _alert2.default({ msg: "@msg" })
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
   }
 
   (0, _createClass3.default)(Join, [{
@@ -76,39 +82,19 @@ var Join = function (_wx$Component) {
     value: function addPerson(e) {
       for (var i = 0; i < this.data.persons.length; i++) {
         if (typeof this.data.persons[i].name == "undefined") {
-          _labrador2.default.showModal({
-            title: '提示',
-            content: '请输入正确姓名',
-            showCancel: false,
-            success: function success(res) {}
-          });
+          this.children.alert.show("请输入正确姓名");
           return;
         }
         if (typeof this.data.persons[i].cardCode == "undefined") {
-          _labrador2.default.showModal({
-            title: '提示',
-            content: '请输入有效身份证号',
-            showCancel: false,
-            success: function success(res) {}
-          });
+          this.children.alert.show("请输入有效身份证号");
           return;
         }
         if (!this.data.persons[i].name.length > 0) {
-          _labrador2.default.showModal({
-            title: '提示',
-            content: '请输入正确姓名',
-            showCancel: false,
-            success: function success(res) {}
-          });
+          this.children.alert.show("请输入正确姓名");
           return;
         }
         if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
-          _labrador2.default.showModal({
-            title: '提示',
-            content: '请输入有效身份证号',
-            showCancel: false,
-            success: function success(res) {}
-          });
+          this.children.alert.show("请输入有效身份证号");
           return;
         }
       }
@@ -150,6 +136,32 @@ var Join = function (_wx$Component) {
       }
     }
   }, {
+    key: 'showAlert',
+    value: function showAlert(txt) {
+      var _this = this;
+      if (!this.Animation) {
+        this.Animation = _labrador2.default.createAnimation({
+          duration: 400,
+          timingFunction: 'ease'
+        });
+      }
+      this.Animation.height("70rpx").step();
+      this.setData({
+        error: {
+          msg: txt,
+          anim: this.Animation.export()
+        }
+      });
+      setTimeout(function () {
+        this.Animation.height(0).step();
+        _this.setData({
+          error: {
+            anim: _this.Animation.export()
+          }
+        });
+      }, 3000);
+    }
+  }, {
     key: 'joinBind',
     value: function () {
       var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
@@ -181,12 +193,7 @@ var Join = function (_wx$Component) {
                   break;
                 }
 
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入正确姓名',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
+                this.children.alert.show("请输入正确姓名");
                 this.status = false;
                 return _context.abrupt('return');
 
@@ -196,12 +203,8 @@ var Join = function (_wx$Component) {
                   break;
                 }
 
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入有效身份证号',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
+                this.children.alert.show("请输入有效身份证号");
+
                 this.status = false;
                 return _context.abrupt('return');
 
@@ -211,12 +214,7 @@ var Join = function (_wx$Component) {
                   break;
                 }
 
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入正确姓名',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
+                this.children.alert.show("请输入正确姓名");
                 this.status = false;
                 return _context.abrupt('return');
 
@@ -226,12 +224,7 @@ var Join = function (_wx$Component) {
                   break;
                 }
 
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '请输入有效身份证号',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
+                this.children.alert.show("请输入有效身份证号");
                 this.status = false;
                 return _context.abrupt('return');
 
@@ -241,12 +234,7 @@ var Join = function (_wx$Component) {
                   break;
                 }
 
-                _labrador2.default.showModal({
-                  title: '提示',
-                  content: '加入前请先同意社群公约',
-                  showCancel: false,
-                  success: function success(res) {}
-                });
+                this.children.alert.show("加入前请先同意社群公约");
                 this.status = false;
                 return _context.abrupt('return');
 

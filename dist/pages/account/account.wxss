@@ -165,36 +165,19 @@
   width: 48rpx;
   height: 48rpx;
 }
-.hzo-service .hzs-con {
-  padding: 36rpx;
-  border-bottom: 1rpx solid #ddd;
+.hzo-service {
+  background-color: #fff;
 }
 .hzo-service .tel {
   overflow: hidden;
-  margin: 27rpx 0 38rpx 0;
-}
-.hzo-service .work-time,
-.hzo-service .tel {
-  padding: 0 40rpx 0 40rpx;
-}
-.hzo-service .ewm-img {
-  width: 420rpx;
-  height: 220rpx;
+  border-bottom: 1rpx solid #ddd;
 }
 .hzo-service .tel .gray-m {
   float: left;
   line-height: 60rpx;
 }
-.hzo-service .time {
-  margin-bottom: 35rpx;
-}
-.hzo-service .ewm-area {
-  text-align: center;
-  line-height: 40rpx;
-  padding: 32rpx 0;
-}
-.hzo-service .ewm-area .gray {
-  margin: 17rpx 0 23rpx 0;
+.hzo-service .item {
+  padding: 34rpx 32rpx;
 }
 .hz-content {
   background-color: #fff;
@@ -298,4 +281,22 @@
   top: 40rpx;
   width: 220rpx;
   height: 260rpx;
+}
+.or-line {
+  position: relative;
+  border-bottom: 1rpx dashed #ddd;
+  margin: 40rpx 24rpx;
+}
+.or-line .txt {
+  display: block;
+  position: absolute;
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  left: 50%;
+  margin-left: -75rpx;
+  color: #999;
+  font-size: 28rpx;
+  top: -22rpx;
+  background-color: #f0f0f0;
 }

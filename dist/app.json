@@ -19,7 +19,12 @@
     "pages/elecert/elecert",
     "pages/accountlist/accountlist",
     "pages/accountdetail/accountdetail",
-    "pages/joinEnd/joinEnd"
+    "pages/joinEnd/joinEnd",
+    "pages/paySuccess/paySuccess",
+    "pages/recharge/recharge",
+    "pages/applyhuzhu/applyhuzhu",
+    "pages/qa/qa",
+    "pages/qaDetail/qaDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

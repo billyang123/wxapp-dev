@@ -1,5 +1,5 @@
 import wx from 'labrador';
-
+import Alert from '../../components/alert/alert';
 let jsonData={
   items:[
     {convention:'《17互助公约》',checked: 'true'},
@@ -23,46 +23,26 @@ export default class Join extends wx.Component {
     bl:true,
     checkedValue:["1","2"]
 	};
+  children = {
+    alert: new Alert({msg:"@msg"})
+  };
+
 	addPerson(e){
     for(let i=0;i<this.data.persons.length;i++) {
       if (typeof this.data.persons[i].name == "undefined") {
-        wx.showModal({
-          title: '提示',
-          content: '请输入正确姓名',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入正确姓名");
         return;
       }
       if (typeof this.data.persons[i].cardCode == "undefined") {
-        wx.showModal({
-          title: '提示',
-          content: '请输入有效身份证号',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入有效身份证号");  
         return;
       }
       if (!this.data.persons[i].name.length>0) {
-        wx.showModal({
-          title: '提示',
-          content: '请输入正确姓名',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入正确姓名");
         return;
       }
       if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
-        wx.showModal({
-          title: '提示',
-          content: '请输入有效身份证号',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入有效身份证号");
         return;
       }
     }
@@ -96,64 +76,59 @@ export default class Join extends wx.Component {
       return false;
     }
   }
-  
+  showAlert(txt){
+    var _this = this;
+    if(!this.Animation){
+      this.Animation  = wx.createAnimation({
+          duration: 400,
+          timingFunction: 'ease',
+      });
+    }
+    this.Animation.height("70rpx").step();
+    this.setData({
+      error:{
+        msg:txt,
+        anim:this.Animation.export()
+      }
+    })
+    setTimeout(function(){
+      this.Animation.height(0).step();
+      _this.setData({
+        error:{
+          anim:_this.Animation.export()
+        }
+      })
+    },3000)
+  }
 	async joinBind(e){
     if(this.status) return;
     this.status = true;
     console.log(this.data.persons)
     for(let i=0;i<this.data.persons.length;i++) {
       if (typeof this.data.persons[i].name == "undefined") {
-        wx.showModal({
-          title: '提示',
-          content: '请输入正确姓名',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入正确姓名");
         this.status = false;
         return;
       }
       if (typeof this.data.persons[i].cardCode == "undefined") {
-        wx.showModal({
-          title: '提示',
-          content: '请输入有效身份证号',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入有效身份证号");
+
         this.status = false;
         return;
       }
       if (!this.data.persons[i].name.length>0) {
-        wx.showModal({
-          title: '提示',
-          content: '请输入正确姓名',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("请输入正确姓名");
         this.status = false;
         return;
       }
       if (!this.checkisIDCard(this.data.persons[i].cardCode)) {
-        wx.showModal({
-          title: '提示',
-          content: '请输入有效身份证号',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+
+        this.children.alert.show("请输入有效身份证号");
         this.status = false;
         return;
       }
       if (this.data.checkedValue.length<2){
-        wx.showModal({
-          title: '提示',
-          content: '加入前请先同意社群公约',
-          showCancel: false,
-          success: function (res) {
-          }
-        });
+        this.children.alert.show("加入前请先同意社群公约");
         this.status = false;
         return;
       }

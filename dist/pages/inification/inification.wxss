@@ -69,6 +69,7 @@
 }
 .num-box {
   padding: 30rpx 0;
+  margin-bottom: 30rpx;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +122,7 @@
   color: #999;
 }
 .group-item {
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
 }
 .group-item .gi-content,
 .group-item .gi-title {

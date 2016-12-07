@@ -2,6 +2,7 @@
 	<view class="justjoin" catchtap="joinBind">
 		<text>立即加入</text>
 	</view>
+	<component key="alert"/>
 	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
 		<view class="sec-con">
 			<view class="section">
@@ -10,7 +11,7 @@
 			</view>
 			<view class="section">
 				<view class="section_title">证件号码</view>
-				<input bindinput="bindKeyInput" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
+				<input bindinput="bindKeyInput" type="idcard" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
 			</view>
 		</view>
 		<view class="del-btn" catchtap="removePerson" data-idx="{{idx}}">
@@ -19,7 +20,7 @@
 	</view>
 	<view class="add-btn" catchtap="addPerson">
 		<icon class="icon-add iconfont icon-roundadd"></icon>
-		<text> 继续添加</text>
+		<text> 为家人添加保障</text>
 	</view>
 	<!-- <view class="money">
 		<view class="t">
@@ -30,22 +31,22 @@
 		</view>
 	</view> -->
 	<view class="intro">
-		<view><text>{{conditionTxt}}</text></view>
+		<view>
+			<text>请为本人或配偶，及他们的直系亲属添加保障。直系亲属是指，父母、儿女、（外）祖父母以（外）孙子女。</text>
+		</view>
+		<!-- <view><text>{{conditionTxt}}</text></view>
 		<view class="tip">
 			请在加入本互助社群前咨询家人，避免重复加入。
-		</view>
+		</view> -->
 	</view>
 	<view class="checkbox-group">
     <checkbox-group bindchange="checkChange">
 		<view>
 			<label class="checkbox">
-			    <checkbox checked="true" value="1" />已同意 <text class="text">{{publicConvention}}</text>
+			    <checkbox checked="true" value="1" />  我同意
+			    <text class="text org">{{publicConvention}}</text>
+			    <text class="text org">{{conventionTxt}}</text>
 			</label>
-		</view>
-		<view>
-			<label class="checkbox">
-		    	<checkbox checked="true" value="2"/>已同意 <text class="text">{{conventionTxt}}</text>
-		  	</label>
 		</view>
     </checkbox-group>
 	</view>

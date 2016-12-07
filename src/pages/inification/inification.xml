@@ -39,24 +39,24 @@
 		</view>
 	</view>
 	<view class="my-group" wx:else>
-		<view class="top-title">
+		<!-- <view class="top-title">
 			<text></text>
 			<view class="h2">我的社群</view>
 			<view class="tt-r" catchtap="linkTo" data-link="/pages/accountlist/accountlist">
 				<text>账单</text>
 			</view>
-		</view>
+		</view> -->
 		<view class="num-box">
 			<view class="num-item">
 				<view class="num">{{totalPersons}}</view>
-				<view class="txt">加入人数（亲友）</view>
+				<view class="txt">加入社群数</view>
 			</view>
 			<view class="num-item">
 				<view class="num">{{totalAmt}}</view>
 				<view class="txt">最高互助额度（元）</view>
 			</view>
 		</view>
-		<view class="relationship">
+		<!-- <view class="relationship">
 			<view>
 				<view class="icon-img"><image src="/images/relationship-icon01.png" class="img"></image></view>
 				<view class="txt"><text>配偶</text></view>
@@ -73,7 +73,7 @@
 				<view class="icon-img"><image src="/images/relationship-icon04.png" class="img"></image></view>
 				<view class="txt"><text>外祖父母</text></view>
 			</view>
-		</view>
+		</view> -->
 		<view class="group-item" wx:for="{{list}}">
 			<view class="gi-title">
 				<view class="gt">
@@ -96,13 +96,18 @@
 				</view>
 			</view>
 			<view class="gi-footer">
-				<!--<view class="gi-item">
+				<navigator class="gi-item" redirect="" url="/pages/recharge/recharge">
 					<text>充值</text>
-				</view>-->
-				<view class="gi-item"  catchtap="linkTo" data-link="/pages/elecert/elecert?id={{item.id}}">
+				</navigator>
+					
+				<navigator class="gi-item" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
 					<text>查看凭单</text>
-				</view>
+				</navigator>
+		
 			</view>
 		</view>
+	</view>
+	<view class="bottom-btn">
+		<text>添加家人</text>
 	</view>
 </view>

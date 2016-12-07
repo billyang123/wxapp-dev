@@ -1,6 +1,0 @@
-.profile {
-  font-size: 28rpx;
-}
-.profile .item-title {
-  color: #666;
-}
