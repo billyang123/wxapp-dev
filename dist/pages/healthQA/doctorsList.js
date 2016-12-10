@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -48,6 +46,5 @@ var DoctorsList = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvY3RvcnNMaXN0LmpzIl0sIm5hbWVzIjpbIkRvY3RvcnNMaXN0IiwiZGF0YSIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7Ozs7SUFDcUJBLFc7Ozs7Ozs7Ozs7Ozs7O29OQUNwQkMsSSxHQUFPLEU7Ozs7RUFEaUMsbUJBQUdDLFM7O2tCQUF2QkYsVyIsImZpbGUiOiJ1bmtub3duIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHd4IGZyb20gJ2xhYnJhZG9yJztcbmV4cG9ydCBkZWZhdWx0IGNsYXNzIERvY3RvcnNMaXN0IGV4dGVuZHMgd3guQ29tcG9uZW50IHtcblx0ZGF0YSA9IHtcblx0fTtcbn0iXX0=
 Page(_labrador._createPage(DoctorsList));
-
-})(module,require);

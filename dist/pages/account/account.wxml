@@ -65,7 +65,7 @@
 		</view>
 	</view>-->
 	<view class="media-list ac-list">
-		<navigator class="item-link item-content" redirect="" url="/pages/inification/inification">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/inification/inification" data-catchtap="linkTo">
 			<view class="item-media">
 				<image class="img" src="{{assetsPath}}/images/account_wdsq_icon.png"/>
 			</view>
@@ -77,9 +77,9 @@
 					<text>充值、互助凭单</text>
 				</view>
 			</view>
-		</navigator>
+		</view>
 		<!-- <navigator class="item-link item-content" redirect="" url="/pages/claim/claim"> -->
-		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
+		<view class="item-link item-content" catchtap="_dispatch" data-link="/pages/applyhuzhu/applyhuzhu" data-catchtap="linkTo">
 			<view class="item-media">
 				<image class="img" src="{{assetsPath}}/images/account_sqhz_icon.png"/>
 			</view>
@@ -89,7 +89,7 @@
 				</view>
 			</view>
 		
-		</navigator>
+		</view>
 	</view>
 	<!--<view class="media-list ac-list">
 		<view class="item-link item-content">

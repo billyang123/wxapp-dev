@@ -228,12 +228,11 @@ var Index = function (_wx$Component) {
               case 0:
                 this.bannerInit();
                 this.objectInit();
-                _context4.next = 4;
-                return _labrador2.default.navigateTo({
-                  url: "/pages/healthQA/doctorDetail"
-                });
+                // await wx.navigateTo({
+                //     url:"/pages/healthQA/doctorDetail"
+                //   })
 
-              case 4:
+              case 2:
               case 'end':
                 return _context4.stop();
             }

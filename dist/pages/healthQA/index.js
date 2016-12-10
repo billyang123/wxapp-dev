@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -54,6 +52,5 @@ var HealthIndex = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIkhlYWx0aEluZGV4IiwiZGF0YSIsImNoaWxkcmVuIiwibmF2YmFyIiwiY3VyIiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7Ozs7QUFDQTs7Ozs7O0lBQ3FCQSxXOzs7Ozs7Ozs7Ozs7OztvTkFDcEJDLEksR0FBTyxFLFFBRVBDLFEsR0FBVztBQUNQQyxXQUFRLHFCQUFXLEVBQUNDLEtBQUksQ0FBTCxFQUFYO0FBREQsRzs7OztFQUg2QixtQkFBR0MsUzs7a0JBQXZCTCxXIiwiZmlsZSI6InVua25vd24iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgd3ggZnJvbSAnbGFicmFkb3InO1xuaW1wb3J0IE5hdmJhciBmcm9tICcuLi8uLi9jb21wb25lbnRzL25hdmJhci9uYXZiYXInO1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSGVhbHRoSW5kZXggZXh0ZW5kcyB3eC5Db21wb25lbnQge1xuXHRkYXRhID0ge1xuXHR9O1xuXHRjaGlsZHJlbiA9IHtcblx0ICAgIG5hdmJhcjogbmV3IE5hdmJhcih7Y3VyOjF9KVxuXHR9O1xufSJdfQ==
 Page(_labrador._createPage(HealthIndex));
-
-})(module,require);

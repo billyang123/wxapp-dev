@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -48,6 +46,5 @@ var HealthDetail = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRldGFpbC5qcyJdLCJuYW1lcyI6WyJIZWFsdGhEZXRhaWwiLCJkYXRhIiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7Ozs7OztJQUNxQkEsWTs7Ozs7Ozs7Ozs7Ozs7c05BQ3BCQyxJLEdBQU8sRTs7OztFQURrQyxtQkFBR0MsUzs7a0JBQXhCRixZIiwiZmlsZSI6InVua25vd24iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgd3ggZnJvbSAnbGFicmFkb3InO1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSGVhbHRoRGV0YWlsIGV4dGVuZHMgd3guQ29tcG9uZW50IHtcblx0ZGF0YSA9IHtcblx0fTtcbn0iXX0=
 Page(_labrador._createPage(HealthDetail));
-
-})(module,require);

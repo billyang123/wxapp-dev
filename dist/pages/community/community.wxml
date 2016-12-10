@@ -65,7 +65,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl">
+			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl" data-path="">
 				<view class="item-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>

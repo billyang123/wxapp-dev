@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -58,6 +56,5 @@ var DoctorDetail = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvY3RvckRldGFpbC5qcyJdLCJuYW1lcyI6WyJEb2N0b3JEZXRhaWwiLCJkYXRhIiwiZSIsImNvbnNvbGUiLCJsb2ciLCJkZXRhaWwiLCJ2YWx1ZSIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7Ozs7O0lBQ3FCQSxZOzs7Ozs7Ozs7Ozs7OztzTkFDcEJDLEksR0FBTyxFOzs7OzttQ0FFVUMsQyxFQUFFO0FBQ2xCQyxXQUFRQyxHQUFSLENBQVlGLEVBQUVHLE1BQUYsQ0FBU0MsS0FBckI7QUFDQTs7O0VBTHdDLG1CQUFHQyxTOztrQkFBeEJQLFkiLCJmaWxlIjoidW5rbm93biIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB3eCBmcm9tICdsYWJyYWRvcic7XG5leHBvcnQgZGVmYXVsdCBjbGFzcyBEb2N0b3JEZXRhaWwgZXh0ZW5kcyB3eC5Db21wb25lbnQge1xuXHRkYXRhID0ge1xuXHR9O1xuXHRiaW5kVGV4dEFyZWFCbHVyKGUpe1xuXHRcdGNvbnNvbGUubG9nKGUuZGV0YWlsLnZhbHVlKVxuXHR9XG59Il19
 Page(_labrador._createPage(DoctorDetail));
-
-})(module,require);

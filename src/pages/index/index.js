@@ -77,8 +77,8 @@ export default class Index extends wx.Component {
   async onLoad(e) {
     this.bannerInit();
     this.objectInit();
-    await wx.navigateTo({
-        url:"/pages/healthQA/doctorDetail"
-      })
+    // await wx.navigateTo({
+    //     url:"/pages/healthQA/doctorDetail"
+    //   })
   }
 }

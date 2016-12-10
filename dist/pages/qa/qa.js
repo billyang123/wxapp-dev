@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -48,6 +46,5 @@ var Qa = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInFhLmpzIl0sIm5hbWVzIjpbIlFhIiwiZGF0YSIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7Ozs7SUFFcUJBLEU7Ozs7Ozs7Ozs7Ozs7O2tNQUNwQkMsSSxHQUFPLEU7Ozs7RUFEd0IsbUJBQUdDLFM7O2tCQUFkRixFIiwiZmlsZSI6InVua25vd24iLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgd3ggZnJvbSAnbGFicmFkb3InO1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBRYSBleHRlbmRzIHd4LkNvbXBvbmVudCB7XG5cdGRhdGEgPSB7XG5cblx0fTtcbn0iXX0=
 Page(_labrador._createPage(Qa));
-
-})(module,require);

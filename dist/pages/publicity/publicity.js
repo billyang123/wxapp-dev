@@ -1,6 +1,4 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-
+"use strict";var exports=module.exports={};
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -48,6 +46,5 @@ var Range = function (_wx$Component) {
 }(_labrador2.default.Component);
 
 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInB1YmxpY2l0eS5qcyJdLCJuYW1lcyI6WyJSYW5nZSIsImRhdGEiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7Ozs7O0lBRXFCQSxLOzs7Ozs7Ozs7Ozs7Ozt3TUFDcEJDLEksR0FBTyxFOzs7O0VBRDJCLG1CQUFHQyxTOztrQkFBakJGLEsiLCJmaWxlIjoidW5rbm93biIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB3eCBmcm9tICdsYWJyYWRvcic7XG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFJhbmdlIGV4dGVuZHMgd3guQ29tcG9uZW50IHtcblx0ZGF0YSA9IHtcblxuXHR9O1xufSJdfQ==
 Page(_labrador._createPage(Range));
-
-})(module,require);

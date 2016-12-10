@@ -32,7 +32,7 @@
 			</view>
 		</view>
 		<view class="add_plan_btn_box">
-			<view class="add_plan_btn" data-link="/pages/index/index" catchtap="_dispatch" data-catchtap="linkTo">
+			<view class="add_plan_btn" data-link="/pages/index/index" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
 				<icon class="icon-add"/>
 				<text>    立即加入</text>
 			</view>
