@@ -37,6 +37,9 @@ var _class = function () {
       userInfo: null,
       storage: null
     };
+    this.data = {
+      assetsPath: 'https://s1.chinamuxie.com/www/assets/xcx'
+    };
   }
 
   (0, _createClass3.default)(_class, [{
@@ -56,11 +59,6 @@ var _class = function () {
                 return this.__init();
 
               case 3:
-                _labrador2.default.navigateTo({
-                  url: "/pages/recharge/recharge"
-                });
-
-              case 4:
               case 'end':
                 return _context.stop();
             }
@@ -74,6 +72,18 @@ var _class = function () {
 
       return onLaunch;
     }()
+  }, {
+    key: 'makePhoneCall',
+    value: function makePhoneCall(event) {
+      _labrador2.default.showModal({
+        title: '拨打电话：' + event.currentTarget.dataset.phoneNumber,
+        success: function success(res) {
+          _labrador2.default.makePhoneCall({
+            phoneNumber: event.currentTarget.dataset.phoneNumber
+          });
+        }
+      });
+    }
   }, {
     key: '__init',
     value: function () {

@@ -31,14 +31,18 @@
 .slide-list.media-list .item-xmain {
   background-color: #f7f8fa;
   font-size: 32rpx;
-  line-height: 40rpx;
+  line-height: 58rpx;
   overflow: hidden;
 }
 .slide-list.media-list .item-xmain .p {
   text-indent: 56rpx;
+  color: #666;
 }
 .slide-list.media-list .item-xmain-bd {
   padding: 25rpx;
+}
+.slide-list.media-list .item-xmain.auto {
+  height: auto !important;
 }
 .range-list.media-list .icon-chevron {
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAuCAYAAAA2oQl1AAAAAXNSR0IArs4c6QAAAkhJREFUWAm1mL1OwzAQx5u0SAU6ti/QB4GGrwUFmDqx8ByAEFIXngIhMXVDoUjlQ4W9z9CZoUsXWgZU/v+qB07z5SSOpcjni30/n++cOLGGw+HaaDS6KpVKZ7jKlmXd1+v1C8dxZmgbK1a32+3A2rlqEbC3+XzuttvtqarPI9sYTE98BZBdwDxMYt13I0eDoHLYeNMwmzEJA1FnEmbD2CVsDoqGWQR4nrcxnU4fITpRQOhfcR1lTZAFiMaLhv2Biob5QEXCAiCBzWazHhKlxXZESRUz7qNAcV33q1qtHiL13wM3/xV7EB8Gg0H1XxUthXok3ZkgGp69NBqNo6RnYyyIQFOwRJApWGiMZOmk1ozZ/ng8joyZFohAgUH8kAms1sjSgyiY1tKpBvv9/uZkMulBt63qVRnZ+oyX57GaIKlBNJgFlgmUBZYZpAvjAtRqteNcIF0YYnaTG6QJ+9RObxpMKLGTzg1aZuATJrEVNREs3V3sLKIGil4Hgr6LZKjIoLS1spfiPOHGPcHG/c7kkQLRfjqkBmWBcLVSgZYnJQZe2xMJiXbWyQswC4QwLZBAEg4rL6tPbPGGdeLS6UKSzg2xIFOQWI9MQggK3bCELA/9LXaKKFrHLBkbSAYF4kinkJqnVN+rOqSPT+WLUQpI6s+XP1CRELq2ABUNIcjmIR2B9yAnxST1chEgxcaBr4PGjihWa7y03qDLBaFNfiyfrhqXNiG4b+THBtP7RwyrtUkI7RJ0qwIom4bQZqXZbF7jpxPlM1yF/XT6Bd3Qk6GRT6BxAAAAAElFTkSuQmCC") no-repeat;

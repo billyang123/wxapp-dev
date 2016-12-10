@@ -4,19 +4,19 @@ export default class Slide extends wx.Component {
 	data = {
 		slideAnim:[],
 		chevronAnim:[],
-		slideData:[]
+		slideData:[],
+		slideMore:[]
 	};
 	props = {
-	    slideData: []
+	    slideData: [],
+	    slideMore:[]
 	};
 	onUpdate(props) {
 	    this.setData('slideData', props.slideData);
-   /* this.setData({
-      slideData:props.slideData
-    });*/
-    this.initAnim();
-   
-
+	    if(props.slideMore){
+	    	this.setData('slideMore', props.slideMore);
+	    }
+    	this.initAnim();
 	}
 	setSlide(e){
 		let index = parseInt(e.currentTarget.dataset.index);
@@ -28,17 +28,22 @@ export default class Slide extends wx.Component {
 		let curSlide = slideData[index];
 		
 		let o = 1,h = curSlide.height+"rpx",deg=-90;
+		let auto = " auto";
 		if(curSlide.isDown){
 			o = 0;
 			h = 0;
 			deg = 90;
+			auto = "";
 		}
 		curSlide.isDown = !curSlide.isDown;
 		curSlide.opacity = o;
+
 		this.slide.opacity(o).height(h).step();
+
 		this.chevron.rotate(deg).step();
 		slideAnim[index] = this.slide.export();
 		chevronAnim[index] = this.chevron.export();
+		curSlide.auto = auto;
 		slideData[index] = curSlide;
 		this.setData({
 			slideData:slideData,

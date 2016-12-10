@@ -48,9 +48,11 @@ var Slide = function (_wx$Component) {
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Slide.__proto__ || (0, _getPrototypeOf2.default)(Slide)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			slideAnim: [],
 			chevronAnim: [],
-			slideData: []
+			slideData: [],
+			slideMore: []
 		}, _this.props = {
-			slideData: []
+			slideData: [],
+			slideMore: []
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
@@ -58,9 +60,9 @@ var Slide = function (_wx$Component) {
 		key: 'onUpdate',
 		value: function onUpdate(props) {
 			this.setData('slideData', props.slideData);
-			/* this.setData({
-      slideData:props.slideData
-    });*/
+			if (props.slideMore) {
+				this.setData('slideMore', props.slideMore);
+			}
 			this.initAnim();
 		}
 	}, {
@@ -77,17 +79,22 @@ var Slide = function (_wx$Component) {
 			var o = 1,
 			    h = curSlide.height + "rpx",
 			    deg = -90;
+			var auto = " auto";
 			if (curSlide.isDown) {
 				o = 0;
 				h = 0;
 				deg = 90;
+				auto = "";
 			}
 			curSlide.isDown = !curSlide.isDown;
 			curSlide.opacity = o;
+
 			this.slide.opacity(o).height(h).step();
+
 			this.chevron.rotate(deg).step();
 			slideAnim[index] = this.slide.export();
 			chevronAnim[index] = this.chevron.export();
+			curSlide.auto = auto;
 			slideData[index] = curSlide;
 			this.setData({
 				slideData: slideData,

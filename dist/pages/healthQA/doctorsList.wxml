@@ -1,0 +1,50 @@
+<view class="container doctors">
+	<navigator class="doctor" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail">
+		<view class="doctor-inner">
+			<view class="media">
+				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			</view>
+			<view>
+				<view class="nick">沈虹</view>
+				<view class="t">肿瘤内科副主任医师</view>
+				<view class="t">2个回答，29090人收听</view>
+				<view class="tags">
+					<text>防癌</text>
+					<text>肿瘤</text>
+				</view>
+			</view>
+		</view>
+	</navigator>
+	<view class="doctor">
+		<view class="doctor-inner">
+			<view class="media">
+				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			</view>
+			<view>
+				<view class="nick">沈虹</view>
+				<view class="t">肿瘤内科副主任医师</view>
+				<view class="t">2个回答，29090人收听</view>
+				<view class="tags">
+					<text>防癌</text>
+					<text>肿瘤</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="doctor">
+		<view class="doctor-inner">
+			<view class="media">
+				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			</view>
+			<view>
+				<view class="nick">沈虹</view>
+				<view class="t">肿瘤内科副主任医师</view>
+				<view class="t">2个回答，29090人收听</view>
+				<view class="tags">
+					<text>防癌</text>
+					<text>肿瘤</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

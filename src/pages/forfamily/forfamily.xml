@@ -10,7 +10,8 @@
 				<view>我只希望他们都能够健健康康</view>
 			</view>
 		</view>
-		<view class="give-family-list">
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=1">
+		
 			<view class="dl">
 				<view class="dt">
 					<text>给爱人</text>
@@ -29,26 +30,105 @@
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="give-family-list">
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
 			<view class="dl">
 				<view class="dt">
-					<text>给爱人</text>
+					<text>给老婆</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
-						<text>789重大疾病互助社群</text>
+						<text>80后孕妈婴宝互助社群</text>
 					</view>
 					<view class="p">
 						<text>适用于</text>
-						<text class="i">18-46</text>
-						<text>周岁健康人群</text>
+						<text class="i">80后备孕、已孕妈妈</text>
 					</view>
 					<view class="p">
-						<text>癌症等25种重大疾病互助</text>
+						<text>孕期、孕产、婴儿疾病互助</text>
 					</view>
 				</view>
 			</view>
-		</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
+			<view class="dl">
+				<view class="dt">
+					<text>给孩子</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>少儿大病、意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">1-17</text>
+						<text>周岁少儿</text>
+					</view>
+					<view class="p">
+						<text>少儿大病、意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
+			<view class="dl">
+				<view class="dt">
+					<text>给父母</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>中老年大病、意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">46-70</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>抗癌、大病、意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=3">
+			<view class="dl">
+				<view class="dt">
+					<text>给全家</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>中老年大病、意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">16-60</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>公共交通、旅游意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=2">
+			<view class="dl">
+				<view class="dt">
+					<text>给孩子</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>留守儿童互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">3-15</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>大病、意外、走失、辍学互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
 	</view>
 </view>

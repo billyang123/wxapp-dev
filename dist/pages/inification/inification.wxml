@@ -32,7 +32,7 @@
 			</view>
 		</view>
 		<view class="add_plan_btn_box">
-			<view class="add_plan_btn" data-link="/pages/index/index" catchtap="_dispatch" data-catchtap="linkTo" data-path="">
+			<view class="add_plan_btn" data-link="/pages/index/index" catchtap="_dispatch" data-catchtap="linkTo">
 				<icon class="icon-add"/>
 				<text>    立即加入</text>
 			</view>
@@ -53,7 +53,7 @@
 			</view>
 			<view class="num-item">
 				<view class="num">{{totalAmt}}</view>
-				<view class="txt">最高互助额度（元）</view>
+				<view class="txt">最高互助额度(元)</view>
 			</view>
 		</view>
 		<!-- <view class="relationship">
@@ -96,18 +96,18 @@
 				</view>
 			</view>
 			<view class="gi-footer">
-				<navigator class="gi-item" redirect="" url="/pages/recharge/recharge">
+				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge">
 					<text>充值</text>
 				</navigator>
 					
-				<navigator class="gi-item" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
+				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
 					<text>查看凭单</text>
 				</navigator>
 		
 			</view>
 		</view>
 	</view>
-	<view class="bottom-btn">
+	<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
 		<text>添加家人</text>
-	</view>
+	</navigator>
 </view>

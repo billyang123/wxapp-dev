@@ -1,0 +1,79 @@
+<view class="container health">
+	<view class="health-detail">
+		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
+		<view class="content">
+			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			<view class="bubble">
+				<icon class="wave wave-default"/>
+				<text>限时免费听</text>
+			</view>
+			<view class="gray fz28">听过9228次</view>
+		</view>
+		<view class="info gray fz28">
+			<text>沈虹   肿瘤内科副主任医师</text>
+			<view>
+				<text>55</text>
+			</view>
+		</view>
+	</view>
+	<view class="comment">
+		<view class="comment-inner">
+			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			<view class="comment-content">
+				<view class="title">
+					<text>章先森</text>
+					<view>45</view>
+				</view>
+				<view class="content">这里是留言的话，如果换行那就换行好了，没有关系，同样进行位移就可以了</view>
+				<view class="optaout">
+					<text>2016/03/25  18:35:45</text>
+					<text class="reply-link">回复</text>
+				</view>
+			</view>
+			<view class="comment-reply">
+				<view class="cr-p">
+					<text class="nk">不爱吃肉的狼：</text>
+					<text>吃货只关心好不好吃的问题！</text>
+				</view>
+				<view class="cr-p">
+					<text class="nk">不爱吃肉的狼：</text>
+					<text>你可真是知道吃，吃瓜算了，吃货只关心好不好吃的问题！</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="comment">
+		<view class="comment-inner">
+			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+			<view class="comment-content">
+				<view class="title">
+					<text>章先森</text>
+					<view>45</view>
+				</view>
+				<view class="content">这里是留言的话，如果换行那就换行好了，没有关系，同样进行位移就可以了</view>
+				<view class="optaout">
+					<text>2016/03/25  18:35:45</text>
+					<text class="reply-link">回复</text>
+				</view>
+			</view>
+			<view class="comment-reply">
+				<view class="cr-p">
+					<text class="nk">不爱吃肉的狼：</text>
+					<text>吃货只关心好不好吃的问题！</text>
+				</view>
+				<view class="cr-p">
+					<text class="nk">不爱吃肉的狼：</text>
+					<text>你可真是知道吃，吃瓜算了，吃货只关心好不好吃的问题！</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="commit-form">
+		<view class="commit-input">
+			<input type="text" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/>
+		</view>
+		<view class="commit-num">
+			<text>68</text>
+		</view>
+	</view>
+</view>

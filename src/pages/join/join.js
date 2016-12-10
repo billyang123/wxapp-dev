@@ -53,6 +53,7 @@ export default class Join extends wx.Component {
 	}
 	removePerson(e){
 		if(this.data.persons.length==1){
+
 			return;
 		}
 		let idx=e.currentTarget.dataset.idx;

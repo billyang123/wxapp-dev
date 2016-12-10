@@ -23,17 +23,17 @@
 			</view>
 		</view>
 		<view class="rc-number-tab">
-			<view class="num" catchtap="_dispatch" data-num="9" data-catchtap="moneyTab" data-path="">
+			<view class="num" catchtap="_dispatch" data-num="9" data-catchtap="moneyTab">
 				<text>9元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" xmlns:wx="" wx:if="{{tabNum == 9}}"/>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" xmlns:wx="" wx:if="{{tabNum == 9}}"/>
 			</view>
-			<view class="num" data-num="99" catchtap="_dispatch" data-catchtap="moneyTab" data-path="">
+			<view class="num" data-num="99" catchtap="_dispatch" data-catchtap="moneyTab">
 				<text>99元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"/>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"/>
 			</view>
-			<view class="num" data-num="199" catchtap="_dispatch" data-catchtap="moneyTab" data-path="">
+			<view class="num" data-num="199" catchtap="_dispatch" data-catchtap="moneyTab">
 				<text>199元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"/>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"/>
 			</view>
 		</view>
 		<view class="or-line">

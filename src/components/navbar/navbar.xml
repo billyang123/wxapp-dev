@@ -1,0 +1,8 @@
+<view class="tabBottombar">
+	<navigator class="vb-block" redirect="true" wx:for="{{list}}" wx:for-index="index" hover-class="none" url="{{item.pagePath}}">
+		<view>
+			<image class="icon-img" src="{{assetsPath}}{{index==cur?item.selectedImg:item.img}}"></image>
+		</view>
+		<view class="txt"><text class="{{index==cur?'org':''}}">{{item.txt}}</text></view>
+	</navigator>
+</view>

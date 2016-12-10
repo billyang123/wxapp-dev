@@ -65,7 +65,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl" data-path="">
+			<view class="item-link item-content" wx:for="{{power.ll}}" catchtap="_dispatch" data-link="{{item.link}}" data-catchtap="linkUrl">
 				<view class="item-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>
@@ -95,13 +95,13 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-content item-link" wx:for="{{treaty.ll}}">
+			<navigator class="item-content item-link" redirect="" url="{{item[1]}}" wx:for="{{treaty.ll}}">
 				<view class="item-inner">
 					<view class="item-title">
 						<text class="gray">{{item[0]}}</text>
 					</view>
 				</view>
-			</view>
+			</navigator>
 		</view>
 		<view class="pj_tit">
 			<image src="https://image1.chinamuxie.com/images/project/pj_tit04.png" style="width:378rpx;height:53rpx;"/>
@@ -199,10 +199,32 @@
 				<icon class="icon-chevron slide-icon-chevron" animation="{{slide.chevronAnim[idx]}}"/>
 			</view>
 		</view>
-		<view class="item-xmain slide-item-xmain" animation="{{slide.slideAnim[idx]}}" style="height:0;">
+		<view class="item-xmain{{item.auto}} slide-item-xmain{{item.auto}}" animation="{{slide.slideAnim[idx]}}" style="height:0;">
 			<view class="item-xmain-bd slide-item-xmain-bd">
 				<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text">
 					<text>{{text}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:for="{{slide.slideMore}}">
+		<navigator wx:if="{{item.link}}" class="item-link slide-item-link item-content slide-item-content" redirect="" url="{{item.link}}">
+			<view class="item-inner slide-item-inner">
+				<view class="item-title slide-item-title">
+					<text class="org slide-org">{{item.title}}</text>
+				</view>
+				<view class="item-title slide-item-title" wx:if="{{item.after}}">
+					<text>{{item.after}}</text>
+				</view>
+			</view>
+		</navigator>
+		<view wx:else="wx:else" class="item-link slide-item-link item-content slide-item-content">
+			<view class="item-inner slide-item-inner">
+				<view class="item-title slide-item-title">
+					<text>{{item.title}}</text>
+				</view>
+				<view class="item-title slide-item-title" wx:if="{{item.after}}">
+					<text>{{item.after}}</text>
 				</view>
 			</view>
 		</view>

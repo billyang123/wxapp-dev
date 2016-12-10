@@ -6,12 +6,25 @@ export default class {
     userInfo: null,
     storage:null
   };
+  data = {
+    assetsPath:'https://s1.chinamuxie.com/www/assets/xcx'
+  };
   async onLaunch() {
     var _this = this;
     //await wx.clearStorage();
     await this.__init();
-    wx.navigateTo({
-      url:"/pages/recharge/recharge"
+    // wx.navigateTo({
+    //   url:"/pages/recharge/recharge"
+    // })
+  }
+  makePhoneCall(event){
+    wx.showModal({
+      title: '拨打电话：'+event.currentTarget.dataset.phoneNumber,
+      success: function(res) {
+        wx.makePhoneCall({
+          phoneNumber: event.currentTarget.dataset.phoneNumber
+        }) 
+      }
     })
   }
   async __init(){

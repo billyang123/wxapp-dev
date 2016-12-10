@@ -8,5 +8,5 @@
       <text class="joinEnd_txt02">已成功加入计划，享高额保障</text>
     </view>
   </view>
-  <view class="joinEnd_btn" catchtap="_dispatch" data-catchtap="lookBind" data-path="">查看我的保障</view>
+  <view class="joinEnd_btn" catchtap="_dispatch" data-catchtap="lookBind">查看我的保障</view>
 </view>

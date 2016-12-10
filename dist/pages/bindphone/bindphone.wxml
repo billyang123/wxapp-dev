@@ -21,16 +21,16 @@
 			<view class="input-area">
 				<view class="section">
 					<view class="section_title">手机号</view>
-					<input bindinput="_dispatch" placeholder-style="color:#ddd" style="width:540rpx;" placeholder="输入手机号码" data-name="phoneValue" maxlength="11" data-bindinput="bindKeyInput" data-path=""/>
+					<input bindinput="_dispatch" placeholder-style="color:#ddd" style="width:540rpx;" placeholder="输入手机号码" data-name="phoneValue" maxlength="11" data-bindinput="bindKeyInput"/>
 				</view>
 				<view class="section pcode">
 					<view class="section_title">验证码</view>
-					<input bindinput="_dispatch" placeholder-style="color:#ddd" placeholder="输入验证码" data-name="codeValue" maxlength="6" data-bindinput="bindKeyInput" data-path=""/>
-					<view class="{{cDisCls}}" bindtap="_dispatch" data-bindtap="getCheckCode" data-path="">{{btnText}}</view>
+					<input bindinput="_dispatch" placeholder-style="color:#ddd" placeholder="输入验证码" data-name="codeValue" maxlength="6" data-bindinput="bindKeyInput"/>
+					<view class="{{cDisCls}}" bindtap="_dispatch" data-bindtap="getCheckCode">{{btnText}}</view>
 				</view>
 			</view>
 			<view class="bind-btn">
-				<button class="submitbtn {{disabled?'disabled':''}}" disabled="{{disabled}}" bindtap="_dispatch" data-bindtap="doBind" data-path="">绑定</button>
+				<button class="submitbtn {{disabled?'disabled':''}}" disabled="{{disabled}}" bindtap="_dispatch" data-bindtap="doBind">绑定</button>
 			</view>
 		</form>
 	</view>

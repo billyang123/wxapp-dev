@@ -1,0 +1,68 @@
+<view class="container">
+	<view class="doctor-detail">
+		<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
+		<view class="title">肿瘤内科主任 沈虹</view>
+		<view class="gov">浙江大学医学院附属儿童医院</view>
+		<view class="intro">毕业于长春中医学院，先后在云南现代妇产科医院、深圳市瑞慈体检中心工作。拥有16年医学临床工作经验，擅长中西医结合的妇科疾病治疗、慢病体检报告解读。</view>
+		<view class="section">
+		  <textarea bindblur="bindTextAreaBlur" placeholder="这里可以提交你的问题哦…" />
+		  <view class="sizeNum">0/60</view>
+		</view>
+		<view>
+			<button class="submit-btn" hover-class="none">发送</button>
+		</view>
+	</view>
+	<view class="dlist-title">他回答了89个问题，共有15780次收听</view>
+	<navigator class="health-detail" redirect="" hover-class="none" url="/pages/healthQA/detail">
+		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
+		<view class="content">
+			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
+			<view class="bubble">
+				<icon class="wave waveing"></icon>
+				<text>限时免费听</text>
+			</view>
+			<view class="gray fz28">听过9228次</view>
+		</view>
+		<view class="info gray fz28">
+			<text>沈虹   肿瘤内科副主任医师</text>
+		</view>
+		<view class="opt">
+			<view class="op">
+				<icon class="icon-commit"></icon>
+				<text>68</text>
+			</view>
+			<view class="op">
+				<icon class="icon-prise"></icon>
+				<text>45</text>
+			</view>
+		</view>
+	</navigator>
+	<navigator class="tab-panel health-detail" redirect="" hover-class="none" url="/pages/healthQA/detail">
+		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
+		<view class="content">
+			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
+			<view class="bubble">
+				<icon class="wave waveing"></icon>
+				<text>限时免费听</text>
+			</view>
+			<view class="gray fz28">听过9228次</view>
+		</view>
+		<view class="info gray fz28">
+			<text>沈虹   肿瘤内科副主任医师</text>
+		</view>
+		<view class="opt">
+			<view class="op">
+				<icon class="icon-commit"></icon>
+				<text>68</text>
+			</view>
+			<view class="op">
+				<icon class="icon-prise"></icon>
+				<text>45</text>
+			</view>
+		</view>
+	</navigator>
+	<view class="loading">
+		<icon class="weui-loading"></icon>
+		<text>稍等下，精彩马上准备好…</text>
+	</view>
+</view>

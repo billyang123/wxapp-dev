@@ -1,0 +1,15 @@
+.submit-btn {
+  width: 666rpx;
+  height: 90rpx;
+}
+.submit-commit .section {
+  margin-bottom: 32rpx;
+}
+.submit-commit textarea {
+  background: #fff;
+  box-shadow: 0 1px 0 0 #ddd;
+  padding: 32rpx;
+  width: 100%;
+  height: 366px;
+  box-sizing: border-box;
+}

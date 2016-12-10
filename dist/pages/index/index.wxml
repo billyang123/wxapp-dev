@@ -1,13 +1,28 @@
 <view class="container">
+	<!-- <view class="swiper">
+		<swiper indicator-dots="false" autoplay="true" interval="5000" duration="1000">
+		  <block wx:for="{{bannerImgs}}">
+		  	<navigator redirect="" hover-class="none" url="{{item.href}}">
+			    <swiper-item data-link="{{item.href}}">
+			    	<image src="{{item.img}}" class="slide-image" data-link="{{item.href}}"/>
+			    </swiper-item>
+		    </navigator>
+		  </block>
+		</swiper>
+	</view> -->
 	<view class="swiper">
-		<swiper indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}">
-  <block xmlns:wx="" wx:for="{{swiper.imgUrls}}">
-    <swiper-item>
-      <image src="{{item.img}}" class="slide-image swiper-slide-image"/>
-    </swiper-item>
-  </block>
-</swiper>
+		<navigator redirect="" hover-class="none" url="{{banner.href}}">
+			<image src="{{banner.img}}" class="slide-image"/>
+		</navigator>
 	</view>
+	<view class="tabBottombar navbar-tabBottombar">
+	<navigator class="vb-block navbar-vb-block" redirect="true" xmlns:wx="" wx:for="{{navbar.list}}" wx:for-index="index" hover-class="none" url="{{item.pagePath}}">
+		<view>
+			<image class="icon-img navbar-icon-img" src="{{navbar.assetsPath}}{{index==navbar.cur?item.selectedImg:item.img}}"/>
+		</view>
+		<view class="txt navbar-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
+	</navigator>
+</view>
 	<!-- <view class="broad">
 		<view class="broad-number">
 			<view class="col-50">
@@ -41,8 +56,8 @@
 		<view class="title">
 			<view class="tname">互助社群</view>
 		</view>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=2">
-			<image class="img" mode="aspectFill" src="/images/stayChildren02_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=2">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/stayChildren02_img001.png"/>
 			<view class="hi-title"><text>留守儿童互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -59,8 +74,8 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=5">
-			<image class="img" mode="aspectFill" src="/images/8002_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=5">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/8002_img001.png"/>
 			<view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -77,8 +92,8 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=4">
-			<image class="img" mode="aspectFill" src="/images/children02_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=4">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/children02_img001.png"/>
 			<view class="hi-title"><text>少儿大病、意外互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -95,8 +110,8 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=3">
-			<image class="img" mode="aspectFill" src="/images/traffic02_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=3">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/traffic02_img001.png"/>
 			<view class="hi-title"><text>交通、旅游意外互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -113,8 +128,8 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=6">
-			<image class="img" mode="aspectFill" src="/images/old02_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=6">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/old02_img001.png"/>
 			<view class="hi-title"><text>中老年大病、意外互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -131,8 +146,8 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="hz-item" redirect="" url="/pages/community/community?type=1">
-			<image class="img" mode="aspectFill" src="/images/78902_img001.png"/>
+		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=1">
+			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/78902_img001.png"/>
 			<view class="hi-title"><text>789重大疾病互助社群</text></view>
 			<view class="hi-info">
 				<view class="p">
@@ -175,7 +190,7 @@
 				</view>
 				<view class="st-inner tel-kf">
 					<text class="gray">客服电话：</text>
-					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 				</view>
 				<view class="st-inner">
 					<text class="gray">有疑问也可电话咨询</text>
@@ -222,40 +237,40 @@
 		</view>
 		<view class="hzo-list">
 			<view class="hzol-item">
-				<image src="/images/guarantee02_icon01.png" class="guarant-icon"/>
+				<image src="{{assetsPath}}/images/guarantee02_icon01.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>0平台费用</text>
-					<icon class="iconfont icon-fangxiang-right"/>
+					
 				</view>
 				<view class="tf">
 					<text>互助金将100%用于社群互助，平台免费，不抽取任何形式的佣金</text>
 				</view>
 			</view>
 			<view class="hzol-item">
-				<image src="/images/guarantee02_icon02.png" class="guarant-icon"/>
+				<image src="{{assetsPath}}/images/guarantee02_icon02.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>专业风控</text>
-					<icon class="iconfont icon-fangxiang-right"/>
+					
 				</view>
 				<view class="tf">
 					<text>权威第三方公估公司商保通、中瑞国际实地调查验证审核</text>
 				</view>
 			</view>
 			<view class="hzol-item">
-				<image src="/images/guarantee02_icon03.png" class="guarant-icon"/>
+				<image src="{{assetsPath}}/images/guarantee02_icon03.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>资金安全</text>
-					<icon class="iconfont icon-fangxiang-right"/>
+					
 				</view>
 				<view class="tf">
 					<text>招商银行资金专户全程管理，定期公示资金进出及明细</text>
 				</view>
 			</view>
 			<view class="hzol-item">
-				<image src="/images/guarantee02_icon04.png" class="guarant-icon"/>
+				<image src="{{assetsPath}}/images/guarantee02_icon04.png" class="guarant-icon"/>
 				<view class="tt">
 					<text>顶级风投</text>
-					<icon class="iconfont icon-fangxiang-right"/>
+					
 				</view>
 				<view class="tf">
 					<text>执一资本、经纬创投、晨兴资本、李治国，顶级风投全力支持，重金投资</text>
@@ -312,7 +327,7 @@
 		<view class="hzs-con">
 	      <view class="item tel">
 	        <text class="gray-m">客服电话：</text>
-	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 	      </view>
 	      <view class="item work-time">
 	        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>

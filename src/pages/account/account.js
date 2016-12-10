@@ -1,9 +1,13 @@
 import wx from 'labrador';
-
+import Navbar from '../../components/navbar/navbar';
 export default class Account extends wx.Component {
 	data = {
 		login:false,
-		userInfo:{}
+		userInfo:{},
+		assetsPath:wx.app.data.assetsPath
+	};
+	children = {
+	    navbar: new Navbar({cur:1})
 	};
 	async linkTo(event) {
 		if(this.isLink) return;
@@ -24,6 +28,9 @@ export default class Account extends wx.Component {
 	  } 
 	  return str.join("&"); 
 	} 
+	makePhoneCall(event){
+		wx.app.makePhoneCall(event)
+	}
 	async doLogin() {
 		if(this.data.login){
 			return;
@@ -106,7 +113,6 @@ export default class Account extends wx.Component {
 		await this.doLogin();
 	}
 	async onShow(){
-
 		let myuser = await this.getUser(wx.app.globalData.storage.code);
 		//console.log(myuser)
 		if(myuser.data.data.loginStatus){

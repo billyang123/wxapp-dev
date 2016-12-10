@@ -1,7 +1,29 @@
-@import 'swiper';
+@import 'navbar';
+.container {
+  padding-bottom: 100rpx;
+}
+
 .swiper {
   margin-bottom: 30rpx;
+  background-color: #fff;
+  height: 250rpx;
+  image {
+    height: 250rpx;
+    width: 750rpx;
+  }
 }
+// .swiper {
+//   //background-color: #000;
+//   swiper {
+//     height: 250rpx;
+//   }
+//   height: 250rpx;
+//   width: 750rpx;
+//   .slide-image {
+//     width: 750rpx;
+//     height: 250rpx;
+//   }
+// }
 // .broad {
 //   background-color: #fff;
 //   margin-bottom: 20rpx;
@@ -104,7 +126,7 @@
   background-color: #fff;
   // border-top: 1rpx solid #ddd;
   margin-bottom: 20rpx;
-  box-shadow:0 1px 0 0 #dddddd;
+  border-bottom: 1rpx solid rgba(221,221,221,0.80);
   .title {
     padding: 39rpx 36rpx 12rpx 36rpx;
     
@@ -149,7 +171,10 @@
   .hz-item {
     position: relative;
     padding: 40rpx 30rpx 40rpx 285rpx;
-    box-shadow:0 1px 0 0 #ddd;
+    border-bottom: 1rpx solid rgba(221,221,221,0.50);
+    &:last-child {
+      border-bottom:none;
+    }
     height: 260rpx;
     .hi-title {
       font-size:36rpx;
@@ -323,7 +348,7 @@
       padding: 30rpx 36rpx 30rpx 150rpx;
       position: relative;
       height: 120rpx;
-      border-bottom: 1rpx solid #ddd;
+      border-bottom: 1rpx solid rgba(221,221,221,0.50);
       &:last-child {
         border-bottom: 0;
       }
@@ -350,11 +375,11 @@
   background-color: #fff;
   .title {
     padding:39rpx 36rpx 39rpx 36rpx;
+    border-bottom: 1rpx solid rgba(221,221,221,0.80);
   }
   .tel {
-    border-top: 1rpx solid #ddd;
     overflow: hidden;
-    border-bottom: 1rpx solid #ddd;
+    border-bottom: 1rpx solid rgba(221,221,221,0.80);
   }
   .tel .gray-m {
     float: left;
@@ -396,17 +421,17 @@
 //   //   }
 //   // }
 // }
-.myicon-index-3 {
-  background-image: url("/images/guarantee02_icon01.png");
-  background-repeat: no-repeat;
-  background-size: 53rpx 67rpx;
-  width: 53rpx;
-  height: 67rpx;
-}
-.myicon-index-4 {
-  background-image: url("/images/guarantee02_icon04.png");
-  background-repeat: no-repeat;
-  background-size: 65rpx 65rpx;
-  width: 65rpx;
-  height: 65rpx;
-}
+// .myicon-index-3 {
+//   background-image: url("/images/guarantee02_icon01.png");
+//   background-repeat: no-repeat;
+//   background-size: 53rpx 67rpx;
+//   width: 53rpx;
+//   height: 67rpx;
+// }
+// .myicon-index-4 {
+//   background-image: url("/images/guarantee02_icon04.png");
+//   background-repeat: no-repeat;
+//   background-size: 65rpx 65rpx;
+//   width: 65rpx;
+//   height: 65rpx;
+// }

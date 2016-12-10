@@ -9,7 +9,7 @@
 .join-main .input-area .section {
   padding: 26rpx 35rpx;
   overflow: hidden;
-  border-bottom: 1rpx solid #ddd;
+  border-bottom: 1rpx solid rgba(221, 221, 221, 0.5);
 }
 .join-main .input-area .section:last-child {
   border-bottom: 0;
@@ -35,7 +35,7 @@
   width: 625rpx;
 }
 .join-main .add-btn {
-  background: #ffffff;
+  background: #f8f8f8;
   border: 1rpx solid #ddd;
   border-radius: 5rpx;
   width: 449rpx;
@@ -103,6 +103,10 @@
   color: #666;
   line-height: 40rpx;
   margin-bottom: 20rpx;
+}
+.join-main .checkbox-group .checkbox checkbox {
+  position: relative;
+  top: 4rpx;
 }
 .join-main .justjoin {
   position: fixed;

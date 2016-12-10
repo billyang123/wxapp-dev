@@ -54,6 +54,7 @@
   writing-mode: tb-rl;
   font-size: 36rpx;
   line-height: 90rpx;
+  font-family: PingFangSC-Regular;
 }
 .give-family-list .dl .dd {
   float: left;

@@ -65,19 +65,8 @@
   width: 590rpx;
   float: left;
 }
-.or-line {
-  position: relative;
-  border-bottom: 1rpx dashed #ddd;
-  margin: 40rpx 0;
-}
 .or-line .txt {
-  display: block;
-  position: absolute;
-  background-color: #fff;
-  width: 100rpx;
-  height: 50rpx;
-  text-align: center;
-  left: 50%;
-  margin-left: -50rpx;
-  top: -22rpx;
+  width: 240rpx;
+  margin-left: -120rpx;
+  background-color: #fff !important;
 }

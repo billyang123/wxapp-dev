@@ -158,8 +158,6 @@ page {
 .media-list {
   margin-bottom: 20rpx;
   .item-content,.item-media {
-    display: -webkit-box;
-      display: -webkit-flex;
       display: flex;
   }
   .item-content {
@@ -167,16 +165,17 @@ page {
     padding-right: 36rpx;
     background-color: #fff;
     box-sizing: border-box;
-      min-height: 88rpx;
-      
+      min-height: 100rpx;
+      position: relative;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1rpx solid rgba(221,221,221,0.80);
+      
+      //box-shadow:0 1px 0 0 rgba(221,221,221,0.50);
+
+      //box-shadow:0 1rpx 0 0 #ddd;
   }
   .item-media {
-      -webkit-flex-shrink: 0;
-      -ms-flex: 0 0 auto;
-      -webkit-flex-shrink: 0;
       flex-shrink: 0;
       
       flex-wrap: nowrap;
@@ -186,10 +185,6 @@ page {
       margin-right: 19rpx;
   }
   .item-link .item-inner {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=);
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 13rpx 23rpx;
     padding-right: 30rpx;
   }
   .item-inner {
@@ -197,11 +192,10 @@ page {
       width: 100%;
       padding-top: 26rpx;
       padding-bottom: 26rpx;
-      min-height: 88rpx;
+      min-height: 100rpx;
       overflow: hidden;
       box-sizing: border-box;
-      display: -webkit-box;
-      display: -webkit-flex;
+      
       display: flex;
       
       justify-content: space-between;
@@ -231,9 +225,11 @@ page {
   background-color: #fff;
   padding: 0 35rpx;
   border-bottom: 1rpx solid #ddd;
-  .flexbox();
-  .align-items(center);
-  .justify-content(space-between);
+  display: flex;
+  
+  justify-content: space-between;
+  
+  align-items: center;
   .h2 {
     height: 100rpx;
     line-height: 100rpx;
@@ -243,4 +239,35 @@ page {
     font-size: 32rpx;
     color: #666;
   }
+}
+.or-line {
+  position: relative;
+  border-bottom: 1rpx dashed #ddd;
+  margin: 40rpx 24rpx;
+  .txt {
+    display: block;
+    position: absolute;
+    height: 50rpx;
+    text-align: center;
+    left: 50%;
+    color: #999;
+    font-size: 28rpx;
+    top: -22rpx;
+    background-color: #f0f0f0;
+  }
+}
+.item-link .item-inner,.doctor .doctor-inner {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 13rpx 23rpx;
+}
+.submit-btn {
+  background:#ff6a00;
+  //border:2px solid rgba(4,4,4,0.08);
+  &::after {
+    border:2px solid rgba(4,4,4,0.08);
+  }
+  color: #fff;
+  border-radius:10rpx;
 }

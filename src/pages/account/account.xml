@@ -1,4 +1,5 @@
 <view class="container">
+	<component key="navbar"/>
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
 			<navigator class="acimage default-image" redirect="" url="/pages/profile/profile">
@@ -59,21 +60,21 @@
 	<view class="media-list ac-list">
 		<navigator class="item-link item-content" redirect="" url="/pages/inification/inification">
 			<view class="item-media">
-				<image class="img" src="/images/account_wdsq_icon.png"></image>
+				<image class="img" src="{{assetsPath}}/images/account_wdsq_icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
 					<text>我的互助</text>
 				</view>
 				<view class="item-after">
-					<text></text>
+					<text>充值、互助凭单</text>
 				</view>
 			</view>
 		</navigator>
 		<!-- <navigator class="item-link item-content" redirect="" url="/pages/claim/claim"> -->
 		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
 			<view class="item-media">
-				<image class="img" src="/images/account_sqhz_icon.png"></image>
+				<image class="img" src="{{assetsPath}}/images/account_sqhz_icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">
@@ -118,7 +119,7 @@
 		</view> -->
 		<navigator class="item-link item-content" redirect="" url="/pages/qa/qa">
 			<view class="item-media">
-				<image class="img" src="/images/account-question-icon.png"></image>
+				<image class="img" src="{{assetsPath}}/images/account-question-icon.png"></image>
 			</view>
 			<view class="item-inner">
 				<view class="item-title">

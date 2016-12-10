@@ -1,5 +1,5 @@
 <view class="container">
-	<view class="bottom-btn">
+	<view class="bottom-btn" data-phone-number="400-688-6259" catchtap="_dispatch" data-catchtap="makePhoneCall">
 		<text>拨打400-688-6259 申请互助</text>
 	</view>
  	<view class="hz-content hz-apply">

@@ -4,7 +4,7 @@
 	</view>
 	<component key="alert"/>
 	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
-		<view class="sec-con">
+		<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
 			<view class="section">
 				<view class="section_title">姓名</view>
 				<input bindinput="bindKeyInput" placeholder="例如：张三" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}"/>
@@ -14,7 +14,7 @@
 				<input bindinput="bindKeyInput" type="idcard" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
 			</view>
 		</view>
-		<view class="del-btn" catchtap="removePerson" data-idx="{{idx}}">
+		<view class="del-btn" catchtap="removePerson" data-idx="{{idx}}" wx:if="{{persons.length!=1}}">
 			<icon class="del-icon"></icon>
 		</view>
 	</view>
@@ -43,10 +43,13 @@
     <checkbox-group bindchange="checkChange">
 		<view>
 			<label class="checkbox">
-			    <checkbox checked="true" value="1" />  我同意
-			    <text class="text org">{{publicConvention}}</text>
-			    <text class="text org">{{conventionTxt}}</text>
+			    <checkbox checked="true" value="1" /> 已同意 <text class="text">{{publicConvention}}</text>
 			</label>
+		</view>
+		<view>
+			<label class="checkbox">
+		    	<checkbox checked="true" value="2"/> 已同意 <text class="text">{{conventionTxt}}</text>
+		  	</label>
 		</view>
     </checkbox-group>
 	</view>

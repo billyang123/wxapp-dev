@@ -47,7 +47,8 @@ var Recharge = function (_wx$Component) {
 
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Recharge.__proto__ || (0, _getPrototypeOf2.default)(Recharge)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			tabNum: 0,
-			totalNum: 0
+			totalNum: 0,
+			assetsPath: _labrador2.default.app.data.assetsPath
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 

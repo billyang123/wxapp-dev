@@ -95,13 +95,13 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-content item-link" wx:for="{{treaty.ll}}">
+			<navigator class="item-content item-link" redirect="" url="{{item[1]}}" wx:for="{{treaty.ll}}">
 				<view class="item-inner">
 					<view class="item-title">
 						<text class="gray">{{item[0]}}</text>
 					</view>
 				</view>
-			</view>
+			</navigator>
 		</view>
 		<view class="pj_tit">
 			<image src="https://image1.chinamuxie.com/images/project/pj_tit04.png" style="width:378rpx;height:53rpx;"></image>

@@ -13,6 +13,10 @@ var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.j
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
 var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
@@ -44,6 +48,12 @@ var Applyhuzu = function (_wx$Component) {
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Applyhuzu.__proto__ || (0, _getPrototypeOf2.default)(Applyhuzu)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
+	(0, _createClass3.default)(Applyhuzu, [{
+		key: 'makePhoneCall',
+		value: function makePhoneCall(event) {
+			_labrador2.default.app.makePhoneCall(event);
+		}
+	}]);
 	return Applyhuzu;
 }(_labrador2.default.Component);
 

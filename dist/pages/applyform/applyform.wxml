@@ -6,7 +6,7 @@
 					所属计划
 				</view>
 				<view class="item-after">
-					<picker bindchange="_dispatch" value="{{index}}" range="{{planArr}}" data-bindchange="bindPickerChange" data-path="">
+					<picker bindchange="_dispatch" value="{{index}}" range="{{planArr}}" data-bindchange="bindPickerChange">
 					    <view class="picker">
 					      {{planArr[index]}}
 					    </view>
@@ -20,7 +20,7 @@
 			<view class="item-inner">
 				<view class="item-title">
 					<text class="txt">申请人</text>
-					<input bindinput="_dispatch" placeholder="请填写申请人姓名" data-name="name" data-bindinput="bindKeyInput" data-path=""/>
+					<input bindinput="_dispatch" placeholder="请填写申请人姓名" data-name="name" data-bindinput="bindKeyInput"/>
 				</view>
 			</view>
 		</view>
@@ -28,15 +28,15 @@
 			<view class="item-inner">
 				<view class="item-title">
 					<text class="txt">联系方式</text>
-					<input bindinput="_dispatch" type="number" placeholder="请填写联系方式" data-name="phone" data-bindinput="bindKeyInput" data-path=""/>
+					<input bindinput="_dispatch" type="number" placeholder="请填写联系方式" data-name="phone" data-bindinput="bindKeyInput"/>
 				</view>
 			</view>
 		</view>
 	</view>
 	<view class="section">
-	  <textarea maxlength="140" bindblur="_dispatch" placeholder="请简要叙述事件内容" data-name="txtarea" data-bindblur="bindTextAreaBlur" data-path=""/>
+	  <textarea maxlength="140" bindblur="_dispatch" placeholder="请简要叙述事件内容" data-name="txtarea" data-bindblur="bindTextAreaBlur"/>
 	</view>
-	<view class="apply-btn" catchtap="_dispatch" data-catchtap="onSub" data-path="">
+	<view class="apply-btn" catchtap="_dispatch" data-catchtap="onSub">
 		<text>提交申请</text>
 	</view>
 </view>

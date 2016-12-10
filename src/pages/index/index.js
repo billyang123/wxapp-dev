@@ -1,18 +1,29 @@
 import wx from 'labrador';
 
-import Swiper from '../../components/swiper/swiper';
+//import Swiper from '../../components/swiper/swiper';
+import Navbar from '../../components/navbar/navbar';
 export default class Index extends wx.Component {
   data = {
-    bannerImgs:[],
+    banner:{
+        img:'https://portrait.chinamuxie.com/${oss.photo.resourceImgPrefix}online-59c0fbca845e40059e9e6f1be1f66cad.jpg',
+        href:'/pages/bannerIndex/bannerIndex'
+    },
     media:[],
-    mImgArr:{}
+    mImgArr:{},
+    assetsPath:wx.app.data.assetsPath
   };
   children = {
-    swiper: new Swiper({imgUrls:"@bannerImgs"})
+    //swiper: new Swiper({imgUrls:"@bannerImgs"}),
+    navbar: new Navbar({cur:0})
   };
-  async makePhoneCall(event){
-    wx.makePhoneCall({
-      phoneNumber: event.currentTarget.dataset.phoneNumber
+  makePhoneCall(event){
+    wx.showModal({
+      title: '拨打电话：'+event.currentTarget.dataset.phoneNumber,
+      success: function(res) {
+        wx.makePhoneCall({
+          phoneNumber: event.currentTarget.dataset.phoneNumber
+        }) 
+      }
     })
   }
   async linkTo(event) {
@@ -42,16 +53,6 @@ export default class Index extends wx.Component {
       bannerImgs:imgUrls
     })
   }
-  mreplace(str,arr) {
-    for (var i = 0; i < arr.length; i++) {
-      let reg = new RegExp("\\{"+i+"\\}", "gim");
-      let mtch = str.match(reg)
-      if(mtch){
-        str = str.replace(mtch[0],arr[i])
-      }
-    }
-    return str;
-  }
   async objectInit(){
     let _this = this;
     let objRes = await wx.request({
@@ -75,7 +76,9 @@ export default class Index extends wx.Component {
   }
   async onLoad(e) {
     this.bannerInit();
-    this.objectInit(); 
-    let location = await wx.getLocation();
+    this.objectInit();
+    await wx.navigateTo({
+        url:"/pages/healthQA/doctorDetail"
+      })
   }
 }

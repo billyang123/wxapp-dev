@@ -8,7 +8,6 @@ export function formatTime(date) {
   let second = date.getSeconds();
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
 }
-
 export function sleep(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }

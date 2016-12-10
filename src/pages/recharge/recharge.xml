@@ -25,15 +25,15 @@
 		<view class="rc-number-tab">
 			<view class="num" catchtap="moneyTab" data-num="9">
 				<text>9元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 9}}"></image>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 9}}"></image>
 			</view>
 			<view class="num" data-num="99" catchtap="moneyTab">
 				<text>99元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"></image>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"></image>
 			</view>
 			<view class="num" data-num="199" catchtap="moneyTab">
 				<text>199元</text>
-				<image class="num_active" src="/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"></image>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"></image>
 			</view>
 		</view>
 		<view class="or-line">

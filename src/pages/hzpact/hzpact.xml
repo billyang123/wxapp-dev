@@ -1,0 +1,8 @@
+<view class="container">
+	<view class="top-title">
+		<text></text>
+		<view class="h2">{{title}}</view>
+		<text></text>
+	</view>
+	<component key="slide"/>
+</view>

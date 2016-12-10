@@ -107,6 +107,7 @@ var Join = function (_wx$Component) {
     key: 'removePerson',
     value: function removePerson(e) {
       if (this.data.persons.length == 1) {
+
         return;
       }
       var idx = e.currentTarget.dataset.idx;

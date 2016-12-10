@@ -24,7 +24,6 @@ function formatTime(date) {
   var second = date.getSeconds();
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
 }
-
 function sleep(time) {
   return new _promise2.default(function (resolve) {
     return setTimeout(resolve, time);

@@ -1,7 +1,6 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
 var global=window=require('../../npm/labrador/global.js');
-"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -43,6 +42,10 @@ var _labrador = require('../../npm/labrador/index.js');
 
 var _labrador2 = _interopRequireDefault(_labrador);
 
+var _navbar = require('../../components/navbar/navbar.js');
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Account = function (_wx$Component) {
@@ -61,12 +64,15 @@ var Account = function (_wx$Component) {
 
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Account.__proto__ || (0, _getPrototypeOf2.default)(Account)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			login: false,
-			userInfo: {}
+			userInfo: {},
+			assetsPath: _labrador2.default.app.data.assetsPath
+		}, _this.children = {
+			navbar: new _navbar2.default({ cur: 1 })
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
 	(0, _createClass3.default)(Account, [{
-		key: "linkTo",
+		key: 'linkTo',
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
 				return _regenerator2.default.wrap(function _callee$(_context) {
@@ -78,7 +84,7 @@ var Account = function (_wx$Component) {
 									break;
 								}
 
-								return _context.abrupt("return");
+								return _context.abrupt('return');
 
 							case 2:
 								this.isLink = true;
@@ -92,7 +98,7 @@ var Account = function (_wx$Component) {
         })*/
 
 							case 6:
-							case "end":
+							case 'end':
 								return _context.stop();
 						}
 					}
@@ -106,7 +112,7 @@ var Account = function (_wx$Component) {
 			return linkTo;
 		}()
 	}, {
-		key: "bindLogin",
+		key: 'bindLogin',
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
@@ -117,7 +123,7 @@ var Account = function (_wx$Component) {
 								return this.checkLogin();
 
 							case 2:
-							case "end":
+							case 'end':
 								return _context2.stop();
 						}
 					}
@@ -131,7 +137,7 @@ var Account = function (_wx$Component) {
 			return bindLogin;
 		}()
 	}, {
-		key: "json2Form",
+		key: 'json2Form',
 		value: function json2Form(json) {
 			var str = [];
 			for (var p in json) {
@@ -140,7 +146,12 @@ var Account = function (_wx$Component) {
 			return str.join("&");
 		}
 	}, {
-		key: "doLogin",
+		key: 'makePhoneCall',
+		value: function makePhoneCall(event) {
+			_labrador2.default.app.makePhoneCall(event);
+		}
+	}, {
+		key: 'doLogin',
 		value: function () {
 			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
 				var _data;
@@ -155,7 +166,7 @@ var Account = function (_wx$Component) {
 									break;
 								}
 
-								return _context3.abrupt("return");
+								return _context3.abrupt('return');
 
 							case 2:
 								if (!this.status) {
@@ -163,7 +174,7 @@ var Account = function (_wx$Component) {
 									break;
 								}
 
-								return _context3.abrupt("return");
+								return _context3.abrupt('return');
 
 							case 4:
 								this.status = true;
@@ -223,7 +234,7 @@ var Account = function (_wx$Component) {
 										signature: userInfo.signature,
 										encryptedData: encodeURIComponent(userInfo.encryptedData),
 										iv: encodeURIComponent(userInfo.iv)
-									}, (0, _defineProperty3.default)(_data, "code", postdata.code), (0, _defineProperty3.default)(_data, "sessionKey", _labrador2.default.app.globalData.storage.sessionKey), _data)
+									}, (0, _defineProperty3.default)(_data, 'code', postdata.code), (0, _defineProperty3.default)(_data, 'sessionKey', _labrador2.default.app.globalData.storage.sessionKey), _data)
 								});
 
 							case 21:
@@ -263,7 +274,7 @@ var Account = function (_wx$Component) {
 								this.status = false;
 
 							case 32:
-							case "end":
+							case 'end':
 								return _context3.stop();
 						}
 					}
@@ -277,7 +288,7 @@ var Account = function (_wx$Component) {
 			return doLogin;
 		}()
 	}, {
-		key: "getUser",
+		key: 'getUser',
 		value: function () {
 			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(code) {
 				var myuser;
@@ -299,10 +310,10 @@ var Account = function (_wx$Component) {
 
 							case 2:
 								myuser = _context4.sent;
-								return _context4.abrupt("return", myuser);
+								return _context4.abrupt('return', myuser);
 
 							case 4:
-							case "end":
+							case 'end':
 								return _context4.stop();
 						}
 					}
@@ -316,7 +327,7 @@ var Account = function (_wx$Component) {
 			return getUser;
 		}()
 	}, {
-		key: "checkLogin",
+		key: 'checkLogin',
 		value: function () {
 			var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5() {
 				return _regenerator2.default.wrap(function _callee5$(_context5) {
@@ -327,7 +338,7 @@ var Account = function (_wx$Component) {
 								return this.doLogin();
 
 							case 2:
-							case "end":
+							case 'end':
 								return _context5.stop();
 						}
 					}
@@ -341,7 +352,7 @@ var Account = function (_wx$Component) {
 			return checkLogin;
 		}()
 	}, {
-		key: "onShow",
+		key: 'onShow',
 		value: function () {
 			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
 				var myuser;
@@ -381,7 +392,7 @@ var Account = function (_wx$Component) {
 								});
 
 							case 12:
-							case "end":
+							case 'end':
 								return _context6.stop();
 						}
 					}

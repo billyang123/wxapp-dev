@@ -24,28 +24,20 @@
     "pages/recharge/recharge",
     "pages/applyhuzhu/applyhuzhu",
     "pages/qa/qa",
-    "pages/qaDetail/qaDetail"
+    "pages/qaDetail/qaDetail",
+    "pages/hzpact/hzpact",
+    "pages/packlist/packlist",
+    "pages/bannerIndex/bannerIndex",
+    "pages/healthQA/index",
+    "pages/healthQA/detail",
+    "pages/healthQA/doctorsList",
+    "pages/healthQA/commit",
+    "pages/healthQA/doctorDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "17互助",
     "navigationBarTextStyle":"#fff"
-  },
-  "tabBar": {
-    "color":"#333",
-    "backgroundColor":"#fff",
-    "selectedColor":"#ff6a00",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "互助计划",
-      "iconPath":"images/page_icon01.png",
-      "selectedIconPath":"images/page_icon11.png"
-    }, {
-      "pagePath": "pages/account/account",
-      "text": "我的保障",
-      "iconPath":"images/page_icon04.png",
-      "selectedIconPath":"images/page_icon14.png"
-    }]
   }
 }
