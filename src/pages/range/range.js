@@ -863,43 +863,9 @@ export default class Range extends wx.Component {
 	};
   async onLoad(e){
     let id = parseInt(e.type);
-   if (id==1){
-     this.setData({
-       slidedata:postData.project01
+    this.setData({
+       slidedata:postData['project0'+id]
      });
-     return;
-   }
-    if (id==2){
-      this.setData({
-        slidedata:postData.project02
-      });
-      return;
-    }
-    if (id==3){
-      this.setData({
-        slidedata:postData.project03
-      });
-      return;
-    }
-    if (id==4){
-      this.setData({
-        slidedata:postData.project04
-      });
-      return;
-    }
-    if (id==5){
-      this.setData({
-        slidedata:postData.project05
-      });
-      return;
-    }
-    if (id==6){
-      this.setData({
-        slidedata:postData.project06
-      });
-      return;
-    }
-   
   }
   children = {
     slide: new Slide({slideData:"@slidedata"})

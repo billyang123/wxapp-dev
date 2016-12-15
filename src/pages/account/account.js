@@ -7,7 +7,7 @@ export default class Account extends wx.Component {
 		assetsPath:wx.app.data.assetsPath
 	};
 	children = {
-	    navbar: new Navbar({cur:1})
+	    navbar: new Navbar({cur:2})
 	};
 	async linkTo(event) {
 		if(this.isLink) return;

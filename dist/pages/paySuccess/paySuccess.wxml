@@ -15,7 +15,7 @@
 	<view class="ps-item ps-item-tel">
 		<view class="p-tel">
 			<text class="txt">客服电话：</text>
-			<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+			<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 		</view>
 		<view class="p-time gray">工作时间:（9:00-21:00）周一至周六</view>
 	</view>

@@ -72,7 +72,7 @@
 			</view>
 		</view>
 		<!-- <navigator class="item-link item-content" redirect="" url="/pages/claim/claim"> -->
-		<view class="item-link item-content" catchtap="linkTo" data-link="/pages/applyhuzhu/applyhuzhu">
+		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
 			<view class="item-media">
 				<image class="img" src="{{assetsPath}}/images/account_sqhz_icon.png"></image>
 			</view>
@@ -82,7 +82,7 @@
 				</view>
 			</view>
 		
-		</view>
+		</navigator>
 	</view>
 	<!--<view class="media-list ac-list">
 		<view class="item-link item-content">

@@ -70,33 +70,33 @@ export default class Hzpactlist extends wx.Component {
 		})
 	}
 }
-function getTxt(){
-	var obj = {
-		title:$(".header-fixed > span").text()
-	};
-	var result = []
-	$('.am-panel').each(function(index,item) {
-		$(item).find(".am-panel-collapse").show();
-		var r = {
-			a:"",
-			height:$(item).find(".am-panel-collapse").outerHeight()*2,
-			opacity:1,
-			isDown:false
-		};
-		r.t = $(item).find(".am-panel-title").text();
-		var arr = [];
+// function getTxt(){
+// 	var obj = {
+// 		title:$(".header-fixed > span").text()
+// 	};
+// 	var result = []
+// 	$('.am-panel').each(function(index,item) {
+// 		$(item).find(".am-panel-collapse").show();
+// 		var r = {
+// 			a:"",
+// 			height:$(item).find(".am-panel-collapse").outerHeight()*2,
+// 			opacity:1,
+// 			isDown:false
+// 		};
+// 		r.t = $(item).find(".am-panel-title").text();
+// 		var arr = [];
 
-		$(item).find(".am-panel-bd>p .am-panel-bd>table").each(function(idx,dt){
+// 		$(item).find(".am-panel-bd>p .am-panel-bd>table").each(function(idx,dt){
 
-			var str = "";
-			$(dt).find("span").each(function(i,span){
-				str += $(span).html();
-			})
-			arr.push(str)
-		})
-		r.txt = arr;
-		result.push(r);
-	})
-	obj.slidedata = result;
-	return JSON.stringify(obj)
-}
+// 			var str = "";
+// 			$(dt).find("span").each(function(i,span){
+// 				str += $(span).html();
+// 			})
+// 			arr.push(str)
+// 		})
+// 		r.txt = arr;
+// 		result.push(r);
+// 	})
+// 	obj.slidedata = result;
+// 	return JSON.stringify(obj)
+// }

@@ -1,5 +1,7 @@
-<view class="container health">
-	<view class="tabBottombar navbar-tabBottombar">
+<!-- <view wx:if="{{hasRefesh}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;font-size:24rpx;color:#999;"><icon type="waiting" color="#999" size="18"></icon><text>刷新中...</text></view> -->
+<scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
+	<view class="container health">
+		<view class="tabBottombar navbar-tabBottombar">
 	<navigator class="vb-block navbar-vb-block" redirect="true" xmlns:wx="" wx:for="{{navbar.list}}" wx:for-index="index" hover-class="none" url="{{item.pagePath}}">
 		<view>
 			<image class="icon-img navbar-icon-img" src="{{navbar.assetsPath}}{{index==navbar.cur?item.selectedImg:item.img}}"/>
@@ -7,115 +9,69 @@
 		<view class="txt navbar-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
 	</navigator>
 </view>
-	<view class="health-hd">
-		<view class="grad">
-			<view>
-				<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+		<!-- <loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>   -->
+		<view class="health-hd">
+			<view class="grad">
+				<view>
+					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+				</view>
+				<view class="nickname">方勇</view>
+				<view class="title">肿瘤内科医师</view>
 			</view>
-			<view class="nickname">方勇</view>
-			<view class="title">肿瘤内科医师</view>
+			<view class="grad">
+				<view>
+					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+				</view>
+				<view class="nickname">方勇</view>
+				<view class="title">肿瘤内科医师</view>
+			</view>
 		</view>
-		<view class="grad">
-			<view>
-				<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+		<view class="askaction">
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
+				<button class="ask-btn">我要提问</button>
+			</navigator>
+		</view>
+		<scroll-view scroll-x="true" style="100%">
+			<view class="mytab">
+				<view class="scroll-view-item tab-item{{tabIndex == idx?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="tabs">
+					<text>{{item.title}}</text>
+				</view>
 			</view>
-			<view class="nickname">方勇</view>
-			<view class="title">肿瘤内科医师</view>
+		</scroll-view>
+		<!-- <component key="qalist" /> -->
+		<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
+				<view class="title">{{item.questionContent}}</view>
+				<view class="content">
+					<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
+					
+					<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" bindended="_dispatch" data-catchtap="bindAudio" data-bindended="audioPlayEnd">
+						<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
+						<text>限时免费听</text>
+					</view>
+					<view class="gray fz28">听过{{item.tuneNumber}}次</view>
+				</view>
+				<view class="info gray fz28">
+					<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
+				</view>
+			</navigator>
+			<view class="opt">
+				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?id={{item.id}}" class="op">
+					<icon class="iconfont icon-comment"/>
+					<text>{{item.commentNumber}}</text>
+				</navigator>
+				<view class="op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+					<icon class="iconfont icon-appreciate" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+					<text>{{item.praiseNumber}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="loading" wx:if="{{hasMore}}">
+			<icon class="weui-loading"/>
+			<text>稍等下，精彩马上准备好…</text>
+		</view>
+		<view class="loading" wx:else="wx:else">
+			<text>没有更多内容了</text>
 		</view>
 	</view>
-	<view class="askaction">
-		<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
-			<button class="ask-btn">我要提问</button>
-		</navigator>
-	</view>
-	<view class="mytab">
-		<view class="tab-item active">
-			<text>全部</text>
-		</view>
-		<view class="tab-item">
-			<text>肿瘤内科</text>
-		</view>
-		<view class="tab-item">
-			<text>妇产科</text>
-		</view>
-		<view class="tab-item">
-			<text>心理咨询</text>
-		</view>
-	</view>
-	<navigator class="tab-panel health-detail" redirect="" hover-class="none" url="/pages/healthQA/detail">
-		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
-		<view class="content">
-			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-			<view class="bubble">
-				<icon class="wave waveing"/>
-				<text>限时免费听</text>
-			</view>
-			<view class="gray fz28">听过9228次</view>
-		</view>
-		<view class="info gray fz28">
-			<text>沈虹   肿瘤内科副主任医师</text>
-		</view>
-		<view class="opt">
-			<view class="op">
-				<icon class="icon-commit"/>
-				<text>68</text>
-			</view>
-			<view class="op">
-				<icon class="icon-prise"/>
-				<text>45</text>
-			</view>
-		</view>
-	</navigator>
-	<view class="tab-panel health-detail">
-		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
-		<view class="content">
-			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-			<view class="bubble">
-				<icon class="wave wave-default"/>
-				<text>限时免费听</text>
-			</view>
-			<view class="gray fz28">听过9228次</view>
-		</view>
-		<view class="info gray fz28">
-			<text>沈虹   肿瘤内科副主任医师</text>
-		</view>
-		<view class="opt">
-			<view class="op">
-				<icon class="icon-commit"/>
-				<text>68</text>
-			</view>
-			<view class="op">
-				<icon class="icon-prise"/>
-				<text>45</text>
-			</view>
-		</view>
-	</view>
-	<view class="tab-panel health-detail">
-		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
-		<view class="content">
-			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-			<view class="bubble">
-				<icon class="wave wave-default"/>
-				<text>限时免费听</text>
-			</view>
-			<view class="gray fz28">听过9228次</view>
-		</view>
-		<view class="info gray fz28">
-			<text>沈虹   肿瘤内科副主任医师</text>
-		</view>
-		<view class="opt">
-			<view class="op">
-				<icon class="icon-commit"/>
-				<text>68</text>
-			</view>
-			<view class="op">
-				<icon class="icon-prise"/>
-				<text>45</text>
-			</view>
-		</view>
-	</view>
-	<view class="loading">
-		<icon class="weui-loading"/>
-		<text>稍等下，精彩马上准备好…</text>
-	</view>
-</view>
+</scroll-view>

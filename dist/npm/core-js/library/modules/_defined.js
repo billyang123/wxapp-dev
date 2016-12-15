@@ -1,8 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function(it){
-  if(it == undefined)throw TypeError("Can't call method on  " + it);
-  return it;
-};
-})(module,require);
+"use strict";!function(r,o){r.exports={};r.exports=function(r){if(void 0==r)throw TypeError("Can't call method on  "+r);return r}}(module,require);

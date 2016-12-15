@@ -1,12 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-"use strict";
-
-exports.__esModule = true;
-
-exports.default = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-})(module,require);
+"use strict";!function(e,n){var o=e.exports={};o.__esModule=!0,o.default=function(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}}(module,require);

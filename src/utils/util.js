@@ -11,4 +11,14 @@ export function formatTime(date) {
 export function sleep(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
+export function getParams(obj){
+	let arr = [];
+	for (index in obj) {
+		if(typeof(obj[index]) == "object"){
+			obj[index] = JSON.stringify(obj[index])
+		}
+		arr.push(index+"="+obj[index])
+	}
+	return arr.join("&");
+}
 

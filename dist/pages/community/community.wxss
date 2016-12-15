@@ -26,7 +26,7 @@
 .slide-list.media-list .item-inner .icon-chevron {
   position: absolute;
   right: 9rpx;
-  top: 32rpx;
+  top: 38rpx;
 }
 .slide-list.media-list .item-xmain {
   background-color: #f7f8fa;
@@ -105,7 +105,7 @@
   background-color: #fff;
 }
 .community .pj_aim .lis {
-  height: 60rpx;
+  min-height: 60rpx;
   line-height: 60rpx;
   padding-left: 80rpx;
   color: #666;

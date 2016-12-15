@@ -8,7 +8,6 @@
     "pages/publicity/publicity",
     "pages/join/join",
     "pages/inification/inification",
-    "pages/claim/claim",
     "pages/forfamily/forfamily",
     "pages/applyform/applyform",
     "pages/applyHistory/applyHistory",
@@ -30,9 +29,9 @@
     "pages/bannerIndex/bannerIndex",
     "pages/healthQA/index",
     "pages/healthQA/detail",
+    "pages/healthQA/doctorDetail",
     "pages/healthQA/doctorsList",
-    "pages/healthQA/commit",
-    "pages/healthQA/doctorDetail"
+    "pages/healthQA/commit"
   ],
   "window":{
     "backgroundTextStyle":"light",

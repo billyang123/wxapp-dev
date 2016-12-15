@@ -1,1 +1,1 @@
-"use strict";var exports=module.exports={};module.exports = { "default": require('../../../core-js/library/fn/json/stringify.js'), __esModule: true };
+"use strict";!function(e,r){e.exports={};e.exports={default:r("../../../core-js/library/fn/json/stringify.js"),__esModule:!0}}(module,require);

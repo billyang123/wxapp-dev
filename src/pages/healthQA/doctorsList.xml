@@ -1,50 +1,26 @@
+<scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="loadMore">
 <view class="container doctors">
-	<navigator class="doctor" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail">
+	<navigator class="doctor" wx:for="{{list}}" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 		<view class="doctor-inner">
 			<view class="media">
-				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
+				<image class="avatar" src="{{item.doctorHeadImgUrl}}"></image>
 			</view>
 			<view>
-				<view class="nick">沈虹</view>
-				<view class="t">肿瘤内科副主任医师</view>
-				<view class="t">2个回答，29090人收听</view>
+				<view class="nick">{{item.doctorName}}</view>
+				<view class="t">{{item.title}}</view>
+				<view class="t">{{item.faNumber}}个回答，{{item.fansNumber}}人收听</view>
 				<view class="tags">
-					<text>防癌</text>
-					<text>肿瘤</text>
+					<text wx:for="{{item.healthDoctorLabels}}" wx:for-item="tag">{{tag.healthLabel.labelName}}</text>
 				</view>
 			</view>
 		</view>
 	</navigator>
-	<view class="doctor">
-		<view class="doctor-inner">
-			<view class="media">
-				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
-			</view>
-			<view>
-				<view class="nick">沈虹</view>
-				<view class="t">肿瘤内科副主任医师</view>
-				<view class="t">2个回答，29090人收听</view>
-				<view class="tags">
-					<text>防癌</text>
-					<text>肿瘤</text>
-				</view>
-			</view>
-		</view>
+	<view class="loading" wx:if="{{hasMore}}">
+		<icon class="weui-loading"></icon>
+		<text>稍等下，精彩马上准备好…</text>
 	</view>
-	<view class="doctor">
-		<view class="doctor-inner">
-			<view class="media">
-				<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
-			</view>
-			<view>
-				<view class="nick">沈虹</view>
-				<view class="t">肿瘤内科副主任医师</view>
-				<view class="t">2个回答，29090人收听</view>
-				<view class="tags">
-					<text>防癌</text>
-					<text>肿瘤</text>
-				</view>
-			</view>
-		</view>
+	<view class="loading" wx:else >
+		<text>没有更多内容了</text>
 	</view>
 </view>
+</scroll-view>

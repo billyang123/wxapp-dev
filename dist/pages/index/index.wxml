@@ -190,7 +190,7 @@
 				</view>
 				<view class="st-inner tel-kf">
 					<text class="gray">客服电话：</text>
-					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 				</view>
 				<view class="st-inner">
 					<text class="gray">有疑问也可电话咨询</text>
@@ -327,7 +327,7 @@
 		<view class="hzs-con">
 	      <view class="item tel">
 	        <text class="gray-m">客服电话：</text>
-	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall" data-path="">400-688-6259</button>
+	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
 	      </view>
 	      <view class="item work-time">
 	        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>

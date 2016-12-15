@@ -26,7 +26,7 @@
 .slide-list.media-list .item-inner .icon-chevron {
   position: absolute;
   right: 9rpx;
-  top: 32rpx;
+  top: 38rpx;
 }
 .slide-list.media-list .item-xmain {
   background-color: #f7f8fa;

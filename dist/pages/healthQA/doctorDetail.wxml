@@ -1,68 +1,54 @@
+<scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="container">
 	<view class="doctor-detail">
-		<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-		<view class="title">肿瘤内科主任 沈虹</view>
-		<view class="gov">浙江大学医学院附属儿童医院</view>
-		<view class="intro">毕业于长春中医学院，先后在云南现代妇产科医院、深圳市瑞慈体检中心工作。拥有16年医学临床工作经验，擅长中西医结合的妇科疾病治疗、慢病体检报告解读。</view>
+		<image class="avatar" src="{{detail.doctorHeadImgUrl}}"/>
+		<view class="title">{{detail.doctorTitle}} {{detail.doctorName}}</view>
+		<view class="gov">{{detail.doctorHospital}}</view>
+		<view class="intro">{{detail.doctorDesc}}</view>
 		<view class="section">
-		  <textarea bindblur="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindblur="bindTextAreaBlur"/>
-		  <view class="sizeNum">0/60</view>
+			<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
+		  <textarea class="textarea" bindlinechange="_dispatch" bindblur="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindlinechange="linechange" data-bindblur="setNumValue"/>
+		  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 		</view>
 		<view>
-			<button class="submit-btn" hover-class="none">发送</button>
+			<button class="submit-btn" hover-class="none" bindtap="_dispatch" disabled="{{disabled}}" data-bindtap="submit">发送</button>
 		</view>
 	</view>
-	<view class="dlist-title">他回答了89个问题，共有15780次收听</view>
-	<navigator class="health-detail" redirect="" hover-class="none" url="/pages/healthQA/detail">
-		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
-		<view class="content">
-			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-			<view class="bubble">
-				<icon class="wave waveing"/>
-				<text>限时免费听</text>
+	<view class="dlist-title" xmlns:wx="" wx:if="{{list.length>0}}">他回答了89个问题，共有15780次收听</view>
+	<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+		<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
+			<view class="title">{{item.questionContent}}</view>
+			<view class="content">
+				<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
+				
+				<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" bindended="_dispatch" data-catchtap="bindAudio" data-bindended="audioPlayEnd">
+					<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
+					<text>限时免费听</text>
+				</view>
+				<view class="gray fz28">听过{{item.tuneNumber}}次</view>
 			</view>
-			<view class="gray fz28">听过9228次</view>
-		</view>
-		<view class="info gray fz28">
-			<text>沈虹   肿瘤内科副主任医师</text>
-		</view>
+			<view class="info gray fz28">
+				<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
+			</view>
+		</navigator>
 		<view class="opt">
 			<view class="op">
-				<icon class="icon-commit"/>
-				<text>68</text>
+				<icon class="iconfont icon-comment"/>
+				<text>{{item.commentNumber}}</text>
 			</view>
-			<view class="op">
-				<icon class="icon-prise"/>
-				<text>45</text>
-			</view>
-		</view>
-	</navigator>
-	<navigator class="tab-panel health-detail" redirect="" hover-class="none" url="/pages/healthQA/detail">
-		<view class="title">如何预防癌症，有什么行之有效轻便的方法？</view>
-		<view class="content">
-			<image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-			<view class="bubble">
-				<icon class="wave waveing"/>
-				<text>限时免费听</text>
-			</view>
-			<view class="gray fz28">听过9228次</view>
-		</view>
-		<view class="info gray fz28">
-			<text>沈虹   肿瘤内科副主任医师</text>
-		</view>
-		<view class="opt">
-			<view class="op">
-				<icon class="icon-commit"/>
-				<text>68</text>
-			</view>
-			<view class="op">
-				<icon class="icon-prise"/>
-				<text>45</text>
+			<view class="op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+				<icon class="iconfont icon-appreciate" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+				<text>{{item.praiseNumber}}</text>
 			</view>
 		</view>
-	</navigator>
-	<view class="loading">
+	</view>
+	<view class="loading" wx:if="{{hasMore}}">
 		<icon class="weui-loading"/>
 		<text>稍等下，精彩马上准备好…</text>
 	</view>
+	<view class="loading" wx:else="wx:else">
+		<text wx:if="{{list.length>0}}">没有更多内容了</text>
+		<text style="padding:36rpx 0;display:inline-block;" wx:else="wx:else">暂无回答问题</text>
+	</view>
 </view>
+</scroll-view>

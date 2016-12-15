@@ -1,8 +1,8 @@
 <view class="container submit-commit">
 	<view class="section">
-	  <textarea bindblur="_dispatch" auto-focus="auto-focus" placeholder="写评论..." data-bindblur="bindTextAreaBlur"/>
+	  <textarea bindblur="_dispatch" bindfocus="_dispatch" auto-focus="true" placeholder="写评论..." data-bindblur="bindTextAreaBlur" data-bindfocus="bindTextAreaFocus"/>
 	</view>
 	<view>
-		<button class="submit-btn" hover-class="none">发送</button>
+		<button class="submit-btn" hover-class="none" disabled="{{disabled}]">发送</button>
 	</view>
 </view>

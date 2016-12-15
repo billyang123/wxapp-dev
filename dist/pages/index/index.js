@@ -49,7 +49,7 @@ var Index = function (_wx$Component) {
   function Index() {
     var _ref;
 
-    var _temp, _this2, _ret;
+    var _temp, _this, _ret;
 
     (0, _classCallCheck3.default)(this, Index);
 
@@ -57,18 +57,16 @@ var Index = function (_wx$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Index.__proto__ || (0, _getPrototypeOf2.default)(Index)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
       banner: {
         img: 'https://portrait.chinamuxie.com/${oss.photo.resourceImgPrefix}online-59c0fbca845e40059e9e6f1be1f66cad.jpg',
         href: '/pages/bannerIndex/bannerIndex'
       },
-      media: [],
-      mImgArr: {},
       assetsPath: _labrador2.default.app.data.assetsPath
-    }, _this2.children = {
+    }, _this.children = {
       //swiper: new Swiper({imgUrls:"@bannerImgs"}),
       navbar: new _navbar2.default({ cur: 0 })
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
   (0, _createClass3.default)(Index, [{
@@ -121,130 +119,6 @@ var Index = function (_wx$Component) {
       }
 
       return linkTo;
-    }()
-  }, {
-    key: 'bannerInit',
-    value: function () {
-      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
-        var res, imgUrls, imgUrlsArr, i, imgObj;
-        return _regenerator2.default.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return _labrador2.default.request({
-                  url: 'https://xcx.chinamuxie.com/wxapi/banner/list',
-                  data: {
-                    bannerType: 0
-                  }
-                });
-
-              case 2:
-                res = _context2.sent;
-                imgUrls = [];
-                imgUrlsArr = res.data.data || [];
-
-                for (i = 0; i < imgUrlsArr.length; i++) {
-                  imgObj = {};
-
-                  imgObj.img = imgUrlsArr[i].bannerImgUrl;
-                  imgObj.link = imgUrlsArr[i].bannerLinkUrl;
-                  imgUrls.push(imgObj);
-                }
-                this.setData({
-                  bannerImgs: imgUrls
-                });
-
-              case 7:
-              case 'end':
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function bannerInit() {
-        return _ref3.apply(this, arguments);
-      }
-
-      return bannerInit;
-    }()
-  }, {
-    key: 'objectInit',
-    value: function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
-        var _this, objRes, obj_data, project;
-
-        return _regenerator2.default.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _this = this;
-                _context3.next = 3;
-                return _labrador2.default.request({
-                  url: 'https://xcx.chinamuxie.com/wxapi/project/getIndexProject',
-                  header: {
-                    'content-type': 'application/x-www-form-urlencoded'
-                  }
-                });
-
-              case 3:
-                objRes = _context3.sent;
-                obj_data = objRes.data.data;
-                project = this.data.project;
-
-                obj_data.forEach(function (item) {
-                  var id = item.id - 1;
-                  //project[id].content = _this.mreplace(project[id].content,[item.minAge,item.maxAge,item.projectTotalUser])
-                  //project[item.id].content = project[item.id].content.replace("{0}",item.minAge).replace("{1}",item.maxAge).replace("{2}",item.projectTotalUser);
-                  //console.log(project[item.id].content)
-                  mImgArr[id].mImgArr = item.headImg;
-                });
-                this.setData({
-                  mImgArr: mImgArr
-                });
-
-              case 8:
-              case 'end':
-                return _context3.stop();
-            }
-          }
-        }, _callee3, this);
-      }));
-
-      function objectInit() {
-        return _ref4.apply(this, arguments);
-      }
-
-      return objectInit;
-    }()
-  }, {
-    key: 'onLoad',
-    value: function () {
-      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
-        return _regenerator2.default.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                this.bannerInit();
-                this.objectInit();
-                // await wx.navigateTo({
-                //     url:"/pages/healthQA/doctorDetail"
-                //   })
-
-              case 2:
-              case 'end':
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function onLoad(_x2) {
-        return _ref5.apply(this, arguments);
-      }
-
-      return onLoad;
     }()
   }]);
   return Index;
