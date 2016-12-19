@@ -44,6 +44,7 @@
 .submit-btn {
   width: 274rpx;
   height: 90rpx;
+  color: #fff !important;
 }
 .dlist-title {
   text-align: left;

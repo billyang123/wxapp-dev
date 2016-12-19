@@ -1266,5 +1266,17 @@
   },
   "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/recharge/recharge.js": {
     "depends": {}
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/components/qalist/qalist.js": {
+    "depends": {}
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/healthQA/commit.js": {
+    "depends": {}
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/healthQA/doctorDetail.js": {
+    "depends": {}
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/healthQA/doctorsList.js": {
+    "depends": {}
   }
 }

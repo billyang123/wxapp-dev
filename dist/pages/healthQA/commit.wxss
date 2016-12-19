@@ -1,6 +1,7 @@
 .submit-btn {
   width: 666rpx;
   height: 90rpx;
+  color: #fff !important;
 }
 .submit-commit .section {
   margin-bottom: 32rpx;

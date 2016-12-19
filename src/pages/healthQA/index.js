@@ -35,7 +35,8 @@ export default class HealthIndex extends wx.Component {
 		hasMore:true,
      	hasRefesh:false,
      	size:5,
-		page:0
+		page:0,
+		doclist:[]
 	};
 	children = {
 	    navbar: new Navbar({cur:1})
@@ -107,6 +108,23 @@ export default class HealthIndex extends wx.Component {
 	    	list:[]
 	    })
 		this.getQAList();
+	}
+	async getDoctors(){
+		var res = await wx.app.ajax({
+			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
+			data:{
+				page:this.data.page,
+				size:this.data.size
+			}
+		})
+		if(!res.data){
+			this.setData({
+		    	doclist:[]
+		    })
+		}
+	    this.setData({
+	    	doclist:res.data.content.splice(0,2)
+	    })
 	}
 	async getQAList(){
 		var res = await wx.app.ajax({
@@ -180,6 +198,7 @@ export default class HealthIndex extends wx.Component {
 	    });
 		//console.log(systemInfo)
 		this.praiseTmp = [];
+		this.getDoctors();
 		this.getQAList();
 
 	}
@@ -196,7 +215,7 @@ export default class HealthIndex extends wx.Component {
 	// }
 	onReady(e) {
 	    // 使用 wx.createAudioContext 获取 audio 上下文 context
-	    console.log(wx.createAudioContext)
+	    //console.log(wx.createAudioContext)
 	    // this.audioCtx = wx.createAudioContext('myAudiod');
 	    // console.log(this.audioCtx)
 	    // this.audioCtx.play();

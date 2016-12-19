@@ -18,14 +18,6 @@ export default class DoctorDetail extends wx.Component {
 		detail:{},
 		disabled:true
 	};
-	// bindinput(e){
-	// 	let _value = e.detail.value;
-	// 	console.log(_value)
-	// }
-	audioPlay(event){
-		// let id = event.currentTarget.dataset.id;
-		// this.data.audio[id].status=!this.data.audio[id].status;
-	}
 	audioPlayEnd(event){
 		let id = event.currentTarget.dataset.id;
 		this.data.audio[id].status = false;

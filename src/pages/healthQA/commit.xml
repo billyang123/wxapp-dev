@@ -3,6 +3,6 @@
 	  <textarea bindblur="bindTextAreaBlur" bindfocus="bindTextAreaFocus" auto-focus="true" placeholder="写评论..." />
 	</view>
 	<view>
-		<button class="submit-btn" hover-class="none" disabled="{{disabled}]">发送</button>
+		<button class="submit-btn" hover-class="none" disabled="{{disabled}}" bindtap="submit">发送</button>
 	</view>
 </view>

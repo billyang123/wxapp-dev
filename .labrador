@@ -8,6 +8,7 @@
     }
   },
   "classNames": {
-    "for-test":true
+    "for-test":true,
+    "slide-image":true
   }
 }

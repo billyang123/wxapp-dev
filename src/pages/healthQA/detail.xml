@@ -3,7 +3,10 @@
 	<view class="health-detail">
 		<view class="title">{{detail.questionContent}}</view>
 		<view class="content">
-			<image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
+				<image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
+			</navigator>
+			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
 			<view class="bubble" catchtap="bindAudio" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}" bindended="audioPlayEnd">
 				<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"></icon>
 				<text>限时免费听</text>
@@ -32,7 +35,7 @@
 				<view class="content">{{item.commentContent}}</view>
 				<view class="optaout">
 					<text>{{item.createTime}}</text>
-					<navigator class="reply-link" redirect="" hover-class="none" url="/pages/healthQA/commit?cid={{item.id}}&qid={{detail.id}}">回复</navigator>
+					<navigator class="reply-link" redirect="" hover-class="none" url="/pages/healthQA/commit?qaCommentId={{item.id}}">回复</navigator>
 				</view>
 			</view>
 			<view class="comment-reply">

@@ -33,7 +33,7 @@
   background-color: #fff;
   height: 250rpx;
 }
-.swiper image {
+.slide-image {
   height: 250rpx;
   width: 750rpx;
 }

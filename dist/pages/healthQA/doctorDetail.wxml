@@ -7,7 +7,7 @@
 		<view class="intro">{{detail.doctorDesc}}</view>
 		<view class="section">
 			<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
-		  <textarea class="textarea" bindlinechange="_dispatch" bindblur="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindlinechange="linechange" data-bindblur="setNumValue"/>
+		  <textarea class="textarea" bindblur="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindblur="setNumValue"/>
 		  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 		</view>
 		<view>

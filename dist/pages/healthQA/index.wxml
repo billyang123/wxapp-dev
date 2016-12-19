@@ -1,4 +1,3 @@
-<!-- <view wx:if="{{hasRefesh}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;font-size:24rpx;color:#999;"><icon type="waiting" color="#999" size="18"></icon><text>刷新中...</text></view> -->
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 	<view class="container health">
 		<view class="tabBottombar navbar-tabBottombar">
@@ -9,22 +8,14 @@
 		<view class="txt navbar-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
 	</navigator>
 </view>
-		<!-- <loading hidden="{{hidden}}" bindchange="loadingChange">加载中...</loading>   -->
 		<view class="health-hd">
-			<view class="grad">
+			<navigator redirect="" hover-class="none" class="grad" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 				<view>
-					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
+					<image src="{{item.doctorHeadImgUrl}}"/>
 				</view>
-				<view class="nickname">方勇</view>
-				<view class="title">肿瘤内科医师</view>
-			</view>
-			<view class="grad">
-				<view>
-					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"/>
-				</view>
-				<view class="nickname">方勇</view>
-				<view class="title">肿瘤内科医师</view>
-			</view>
+				<view class="nickname">{{item.doctorName}}</view>
+				<view class="title">{{item.title}}</view>
+			</navigator>
 		</view>
 		<view class="askaction">
 			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
@@ -38,7 +29,6 @@
 				</view>
 			</view>
 		</scroll-view>
-		<!-- <component key="qalist" /> -->
 		<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
 			<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
 				<view class="title">{{item.questionContent}}</view>
@@ -56,7 +46,7 @@
 				</view>
 			</navigator>
 			<view class="opt">
-				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?id={{item.id}}" class="op">
+				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?qId={{item.id}}" class="op">
 					<icon class="iconfont icon-comment"/>
 					<text>{{item.commentNumber}}</text>
 				</navigator>

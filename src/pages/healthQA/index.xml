@@ -2,20 +2,13 @@
 	<view class="container health">
 		<component key="navbar"/>
 		<view class="health-hd">
-			<view class="grad">
+			<navigator redirect="" hover-class="none" class="grad" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 				<view>
-					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
+					<image src="{{item.doctorHeadImgUrl}}"></image>
 				</view>
-				<view class="nickname">方勇</view>
-				<view class="title">肿瘤内科医师</view>
-			</view>
-			<view class="grad">
-				<view>
-					<image src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKd4IyzdaapVvfC2dNdXl52kkkxibpwpIhGWGJXkbN7sffEiadd0K3j1kRzH7Jmw9cX9T4PMs0w2mRQ/0"></image>
-				</view>
-				<view class="nickname">方勇</view>
-				<view class="title">肿瘤内科医师</view>
-			</view>
+				<view class="nickname">{{item.doctorName}}</view>
+				<view class="title">{{item.title}}</view>
+			</navigator>
 		</view>
 		<view class="askaction">
 			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
@@ -46,7 +39,7 @@
 				</view>
 			</navigator>
 			<view class="opt">
-				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?id={{item.id}}" class="op">
+				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?qId={{item.id}}" class="op">
 					<icon class="iconfont icon-comment"></icon>
 					<text>{{item.commentNumber}}</text>
 				</navigator>
@@ -60,7 +53,7 @@
 			<icon class="weui-loading"></icon>
 			<text>稍等下，精彩马上准备好…</text>
 		</view>
-		<view class="loading" wx:else >
+		<view class="loading" wx:else>
 			<text>没有更多内容了</text>
 		</view>
 	</view>
