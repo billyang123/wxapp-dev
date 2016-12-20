@@ -1,1 +1,13 @@
-"use strict";!function(e,t){var r=(e.exports={},t("./_object-keys.js")),o=t("./_to-iobject.js");e.exports=function(e,t){for(var s,i=o(e),n=r(i),u=n.length,c=0;u>c;)if(i[s=n[c++]]===t)return s}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var getKeys   = require('./_object-keys.js')
+  , toIObject = require('./_to-iobject.js');
+module.exports = function(object, el){
+  var O      = toIObject(object)
+    , keys   = getKeys(O)
+    , length = keys.length
+    , index  = 0
+    , key;
+  while(length > index)if(O[key = keys[index++]] === el)return key;
+};
+})(module,require);

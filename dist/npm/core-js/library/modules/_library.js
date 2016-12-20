@@ -1,1 +1,4 @@
-"use strict";!function(e,r){e.exports={};e.exports=!0}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+module.exports = true;
+})(module,require);

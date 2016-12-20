@@ -3,10 +3,10 @@
   height: 90rpx;
   color: #fff !important;
 }
-.submit-commit .section {
+.section {
   margin-bottom: 32rpx;
 }
-.submit-commit textarea {
+textarea {
   background: #fff;
   box-shadow: 0 1px 0 0 #ddd;
   padding: 32rpx;

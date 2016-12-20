@@ -7,7 +7,7 @@
 				<image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
 			</navigator>
 			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
-			<view class="bubble" catchtap="bindAudio" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}" bindended="audioPlayEnd">
+			<view class="bubble" catchtap="bindAudio" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}">
 				<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"></icon>
 				<text>限时免费听</text>
 			</view>
@@ -21,42 +21,44 @@
 			</view>
 		</view>
 	</view>
-	<view class="comment" wx:for="{{list}}" wx:for-index="index">
-		<view class="comment-inner">
-			<image class="avatar" src="{{item.headImg}}"></image>
-			<view class="comment-content">
-				<view class="title">
-					<text>{{item.nickName}}</text>
-					<view catchtap="praise" data-id="{{item.id}}" data-type="list" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}">
-						<icon class="iconfont icon-appreciate fz42" style="{{item.praiseed?'color:#ff6a00':''}}"></icon>
-						<text>  {{item.praiseNumber}}</text>
+	<view>
+		<view class="comment" wx:for="{{list}}" wx:for-index="index">
+			<view class="comment-inner">
+				<image class="avatar" src="{{item.headImg}}"></image>
+				<view class="comment-content">
+					<view class="title">
+						<text>{{item.nickName}}</text>
+						<view catchtap="praise" data-id="{{item.id}}" data-type="list" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}">
+							<icon class="iconfont icon-appreciate fz42" style="{{item.praiseed?'color:#ff6a00':''}}"></icon>
+							<text>  {{item.praiseNumber}}</text>
+						</view>
+					</view>
+					<view class="content">{{item.commentContent}}</view>
+					<view class="optaout">
+						<text>{{item.createTime}}</text>
+						<navigator class="reply-link" redirect="" hover-class="none" url="/pages/healthQA/commit?qaCommentId={{item.id}}">回复</navigator>
 					</view>
 				</view>
-				<view class="content">{{item.commentContent}}</view>
-				<view class="optaout">
-					<text>{{item.createTime}}</text>
-					<navigator class="reply-link" redirect="" hover-class="none" url="/pages/healthQA/commit?qaCommentId={{item.id}}">回复</navigator>
-				</view>
-			</view>
-			<view class="comment-reply">
+				<view class="comment-reply" wx:if="{{item.commentReply && item.commentReply.length>0}}">
 
-				<view class="cr-p" wx:for="{{item.commentReply}}" wx:for-index="idx" wx:for-item="comm" data-cid="{{comm.healthQaCommentId}}">
-					<text class="nk">{{comm.userNickname}}：</text>
-					<text>{{comm.replyContent}}</text>
+					<view class="cr-p" wx:for="{{item.commentReply}}" wx:for-index="idx" wx:for-item="comm" data-cid="{{comm.healthQaCommentId}}">
+						<text class="nk">{{comm.userNickname}}：</text>
+						<text>{{comm.replyContent}}</text>
+					</view>
+					
 				</view>
-				
 			</view>
 		</view>
 	</view>
-	<view class="commit-form" catchtap="commitFocus">
+	<navigator class="commit-form" redirect="" hover-class="none" url="/pages/healthQA/commit?qaId={{detail.id}}">
 		<view class="commit-input">
-			<input type="text" placeholder="写留言…" bindinput="bindinput" auto-focus="{{commitfocus}}" placeholder-style="color:#999;font-size:28rpx;"/>
+			<input type="text" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/>
 		</view>
 		<view class="commit-num">
 			<icon class="iconfont icon-comment fz42"></icon>
 			<text class="gray fz36">  {{totalComNum}}</text>
 		</view>
-	</view>
+	</navigator>
 	<view class="loading" wx:if="{{hasMore}}">
 		<icon class="weui-loading"></icon>
 		<text>稍等下，精彩马上准备好…</text>

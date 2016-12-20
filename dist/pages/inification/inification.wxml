@@ -32,10 +32,10 @@
 			</view>
 		</view>
 		<view class="add_plan_btn_box">
-			<view class="add_plan_btn" data-link="/pages/index/index" catchtap="_dispatch" data-catchtap="linkTo">
+			<navigator class="add_plan_btn" redirect="true" url="/pages/forfamily/forfamily">
 				<icon class="icon-add"/>
 				<text>    立即加入</text>
-			</view>
+			</navigator>
 		</view>
 	</view>
 	<view class="my-group" wx:else="wx:else">
@@ -106,8 +106,8 @@
 		
 			</view>
 		</view>
+		<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
+			<text>添加家人</text>
+		</navigator>
 	</view>
-	<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
-		<text>添加家人</text>
-	</navigator>
 </view>

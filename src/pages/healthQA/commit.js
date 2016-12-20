@@ -28,6 +28,7 @@ export default class Commit extends wx.Component {
 	}
 	async submit(){
 		this.postdata.content = this.data.textareaVal;
+		console.log(this.postdata.content)
 		var res = await wx.app.ajax({
 			url: this.url,
 			data:this.postdata,
@@ -51,16 +52,15 @@ export default class Commit extends wx.Component {
 	async onLoad(e){
 		this.data.cid = e.qid;
 		this.data.rid = e.rid;
+		this.postdata = {
+			code:wx.app.globalData.storage.code
+		}
 		if(e.qaCommentId){
-			this.postdata = {
-				qaCommentId:e.qaCommentId
-			}
+			this.postdata.qaCommentId = e.qaCommentId
 			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/reply'
 		}
 		if(e.qaId){
-			this.postdata = {
-				qaId:e.qaId
-			}
+			this.postdata.qaId = e.qaId
 			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/add'
 		}
 		console.log(e)

@@ -11,7 +11,7 @@
 // .justify-content(@jc) when (@jc = space-between) {
 //     justify-content: space-between;
 // }
-
+@import "./base/mixin.less";
 @import "./base/iconfont.less";
 /**app.wxss**/
 page {
@@ -103,7 +103,7 @@ page {
   font-size: 36rpx;
 } 
 .default-image {
-  background: url("/images/default-image.png") no-repeat center #dddee3;
+  background: url("@{assetsPath}/images/default-image.png") no-repeat center #dddee3;
   width: 100%;
   height: 100%;
   background-position: center center;

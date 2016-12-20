@@ -19,18 +19,23 @@ export default class HealthDetail extends wx.Component {
 		audio:{},
 		totalComNum:0,
 		commitfocus:false,
-		commitValue:""
+		commitValue:"",
+		loading:false
 	};
 	audioPlay(event){
 		// let id = event.currentTarget.dataset.id;
 		// this.data.audio[id].status=!this.data.audio[id].status;
 	}
-	audioPlayEnd(event){
-		let id = event.currentTarget.dataset.id;
-		this.data.audio[id].status = false;
-		this.setData({
-	       audio:this.data.audio
-	    });
+	audioPlayEnd(){
+		var _this = this;
+	    wx.onBackgroundAudioStop(function(e){
+	    	console.log(e);
+	    	let id = _this.data.playAudio.id;
+			_this.data.audio[id].status = false;
+			_this.setData({
+		       audio:_this.data.audio
+		    });
+	    })
 	}
 	async praise(event){
 		var index = event.currentTarget.dataset.index;
@@ -109,6 +114,8 @@ export default class HealthDetail extends wx.Component {
 
 	}
 	async getCommitList(){
+		if(this.data.loading) return;
+		this.data.loading = true;
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/list',
 			data:{
@@ -125,7 +132,7 @@ export default class HealthDetail extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1){
+		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
@@ -134,11 +141,12 @@ export default class HealthDetail extends wx.Component {
 		}
 	    this.setData({
 	    	hasMore:loadMore,
-	    	list:content,
+	    	list:this.data.list.concat(content),
 	    	hidden: true,
 	       	hasRefesh: false,
 	       	totalComNum:res.data.totalElements
 	    })
+	    this.data.loading = false;
 	}
 	async loadMore(e){
 		console.log("loadMore")
@@ -146,8 +154,8 @@ export default class HealthDetail extends wx.Component {
 		    hasRefesh:true
 		});
 	    if (!this.data.hasMore) return
+	    this.data.page++;
 	   	await this.getCommitList();
-	   	this.data.page++;
 	}
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
@@ -169,7 +177,6 @@ export default class HealthDetail extends wx.Component {
 		})
 	}
 	bindinput(e){
-		
 		this.setData({
 			commitValue:e.detail.value
 		})
@@ -183,5 +190,6 @@ export default class HealthDetail extends wx.Component {
 	    });
 		this.getCommitList();
 		this.getDetail();
+		this.audioPlayEnd();
 	}
 }

@@ -20,7 +20,7 @@ export default class Elecert extends wx.Component {
 		project:{},
 		list:{},
 		projectAccount:{},
-    projectId:''
+        projectId:''
 	};
 	async showIntro(){
 		let showModal = await wx.showModal({

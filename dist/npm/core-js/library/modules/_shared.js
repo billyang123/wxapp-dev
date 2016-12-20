@@ -1,1 +1,10 @@
-"use strict";!function(r,o){var e=(r.exports={},window=o("../../../labrador/global.js")),e=o("./_global.js"),s="__core-js_shared__",t=e[s]||(e[s]={});r.exports=function(r){return t[r]||(t[r]={})}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var global = require('./_global.js')
+  , SHARED = '__core-js_shared__'
+  , store  = global[SHARED] || (global[SHARED] = {});
+module.exports = function(key){
+  return store[key] || (store[key] = {});
+};
+})(module,require);

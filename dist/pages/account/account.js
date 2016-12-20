@@ -1,1 +1,252 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var n=e.exports={};window=t("../../npm/labrador/global.js");Object.defineProperty(n,"__esModule",{value:!0});var r=t("../../npm/babel-runtime/helpers/defineProperty.js"),u=a(r),s=t("../../npm/babel-runtime/regenerator/index.js"),o=a(s),i=t("../../npm/babel-runtime/helpers/asyncToGenerator.js"),l=a(i),c=t("../../npm/babel-runtime/core-js/object/get-prototype-of.js"),d=a(c),p=t("../../npm/babel-runtime/helpers/classCallCheck.js"),f=a(p),h=t("../../npm/babel-runtime/helpers/createClass.js"),g=a(h),b=t("../../npm/babel-runtime/helpers/possibleConstructorReturn.js"),x=a(b),m=t("../../npm/babel-runtime/helpers/inherits.js"),v=a(m),k=t("../../npm/labrador/index.js"),w=a(k),y=t("../../components/navbar/navbar.js"),j=a(y),D=function(e){function t(){var e,a,n,r;(0,f.default)(this,t);for(var u=arguments.length,s=Array(u),o=0;o<u;o++)s[o]=arguments[o];return a=n=(0,x.default)(this,(e=t.__proto__||(0,d.default)(t)).call.apply(e,[this].concat(s))),n.data={login:!1,userInfo:{},assetsPath:w.default.app.data.assetsPath},n.children={navbar:new j.default({cur:2})},r=a,(0,x.default)(n,r)}return(0,v.default)(t,e),(0,g.default)(t,[{key:"linkTo",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(t){return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(!this.isLink){e.next=2;break}return e.abrupt("return");case 2:return this.isLink=!0,e.next=5,w.default.app.bindLogin(t.currentTarget.dataset.link,this.data.login);case 5:this.isLink=!1;case 6:case"end":return e.stop()}},e,this)}));return e}()},{key:"bindLogin",value:function(){function e(){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(){return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.checkLogin();case 2:case"end":return e.stop()}},e,this)}));return e}()},{key:"json2Form",value:function(e){var t=[];for(var a in e)t.push(encodeURIComponent(a)+"="+encodeURIComponent(e[a]));return t.join("&")}},{key:"makePhoneCall",value:function(e){w.default.app.makePhoneCall(e)}},{key:"doLogin",value:function(){function e(){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(){var t,a,n,r,s,i;return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(!this.data.login){e.next=2;break}return e.abrupt("return");case 2:if(!this.status){e.next=4;break}return e.abrupt("return");case 4:if(this.status=!0,w.default.showToast({title:"登录中",icon:"loading",duration:3e4}),a={code:w.default.app.globalData.storage.code,sessionKey:w.default.app.globalData.storage.sessionKey},a.sessionKey){e.next=16;break}return e.next=10,w.default.request({url:"https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin",method:"POST",header:{"content-type":"application/x-www-form-urlencoded"},data:a});case 10:return n=e.sent,e.next=13,w.default.setStorage({key:"sessionKey",data:n.data.data});case 13:return e.next=15,w.default.app.getStorage();case 15:w.default.app.globalData.storage=e.sent;case 16:return e.next=18,w.default.getUserInfo();case 18:return r=e.sent,e.next=21,w.default.request({url:"https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",method:"POST",header:{"content-type":"application/x-www-form-urlencoded"},data:(t={code:w.default.app.globalData.storage.code,rawData:r.rawData,signature:r.signature,encryptedData:encodeURIComponent(r.encryptedData),iv:encodeURIComponent(r.iv)},(0,u.default)(t,"code",a.code),(0,u.default)(t,"sessionKey",w.default.app.globalData.storage.sessionKey),t)});case 21:if(s=e.sent,"logged"!=s.data.data){e.next=27;break}return e.next=25,this.getUser(a.code);case 25:i=e.sent,i.data.data.loginStatus&&this.setData({login:!0,userInfo:i.data.data});case 27:if("notLogged"!=s.data.data){e.next=30;break}return e.next=30,w.default.navigateTo({url:"/pages/bindphone/bindphone"});case 30:w.default.hideToast(),this.status=!1;case 32:case"end":return e.stop()}},e,this)}));return e}()},{key:"getUser",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(t){var a;return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,w.default.request({url:"https://xcx.chinamuxie.com/wxapi/user/account",method:"get",header:{"content-type":"application/x-www-form-urlencoded"},data:{code:t}});case 2:return a=e.sent,e.abrupt("return",a);case 4:case"end":return e.stop()}},e,this)}));return e}()},{key:"checkLogin",value:function(){function e(){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(){return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.doLogin();case 2:case"end":return e.stop()}},e,this)}));return e}()},{key:"onShow",value:function(){function e(){return t.apply(this,arguments)}var t=(0,l.default)(o.default.mark(function e(){var t;return o.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.getUser(w.default.app.globalData.storage.code);case 2:if(t=e.sent,!t.data.data.loginStatus){e.next=7;break}this.setData({login:!0,userInfo:t.data.data}),e.next=12;break;case 7:return e.next=9,w.default.clearStorage();case 9:return e.next=11,w.default.app.__init();case 11:this.setData({login:!1});case 12:case"end":return e.stop()}},e,this)}));return e}()}]),t}(w.default.Component);Page(k._createPage(D))}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _getPrototypeOf = require('../../npm/babel-runtime/core-js/object/get-prototype-of.js');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('../../npm/babel-runtime/helpers/inherits.js');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _labrador = require('../../npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+var _navbar = require('../../components/navbar/navbar.js');
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Account = function (_wx$Component) {
+	(0, _inherits3.default)(Account, _wx$Component);
+
+	function Account() {
+		var _ref;
+
+		var _temp, _this2, _ret;
+
+		(0, _classCallCheck3.default)(this, Account);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = Account.__proto__ || (0, _getPrototypeOf2.default)(Account)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
+			login: false,
+			userInfo: {},
+			assetsPath: _labrador2.default.app.data.assetsPath,
+			wxUserInfo: {}
+		}, _this2.children = {
+			navbar: new _navbar2.default({ cur: 2 })
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
+	}
+
+	(0, _createClass3.default)(Account, [{
+		key: 'linkTo',
+		value: function () {
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
+				var _this;
+
+				return _regenerator2.default.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								_this = this;
+
+								if (!this.isLink) {
+									_context.next = 3;
+									break;
+								}
+
+								return _context.abrupt('return');
+
+							case 3:
+								this.isLink = true;
+
+								if (!this.data.login) {
+									_context.next = 9;
+									break;
+								}
+
+								_context.next = 7;
+								return _labrador2.default.navigateTo({
+									url: event.currentTarget.dataset.link
+								});
+
+							case 7:
+								_context.next = 11;
+								break;
+
+							case 9:
+								_context.next = 11;
+								return _labrador2.default.app.doLogin(function (res) {
+									_this.setData({
+										login: true,
+										userInfo: res.data
+									});
+									_labrador2.default.navigateTo({
+										url: event.currentTarget.dataset.link
+									});
+								});
+
+							case 11:
+								//await wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+								this.isLink = false;
+								/*wx.navigateTo({
+          url:event.currentTarget.dataset.link
+        })*/
+
+							case 12:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function linkTo(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return linkTo;
+		}()
+	}, {
+		key: 'bindLogin',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+				var _this;
+
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								_this = this;
+								//await this.checkLogin();
+
+								console.log(_this);
+								_labrador2.default.app.doLogin(function (res) {
+									_this.setData({
+										login: true,
+										userInfo: res.data
+									});
+								});
+
+							case 3:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function bindLogin() {
+				return _ref3.apply(this, arguments);
+			}
+
+			return bindLogin;
+		}()
+	}, {
+		key: 'json2Form',
+		value: function json2Form(json) {
+			var str = [];
+			for (var p in json) {
+				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+			}
+			return str.join("&");
+		}
+	}, {
+		key: 'makePhoneCall',
+		value: function makePhoneCall(event) {
+			_labrador2.default.app.makePhoneCall(event);
+		}
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+				var myuser;
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+								console.log(_labrador2.default.app.globalData);
+
+								if (_labrador2.default.app.globalData.storage.code) {
+									_context3.next = 5;
+									break;
+								}
+
+								this.setData({
+									login: false
+								});
+								_context3.next = 10;
+								break;
+
+							case 5:
+								_context3.next = 7;
+								return _labrador2.default.app.getUser(_labrador2.default.app.globalData.storage.code);
+
+							case 7:
+								myuser = _context3.sent;
+
+								console.log(myuser);
+								if (myuser.data.loginStatus) {
+									this.setData({
+										login: true,
+										userInfo: myuser.data
+									});
+								} else {
+									//await wx.clearStorage();
+									this.setData({
+										login: false
+									});
+								}
+
+							case 10:
+							case 'end':
+								return _context3.stop();
+						}
+					}
+				}, _callee3, this);
+			}));
+
+			function onLoad() {
+				return _ref4.apply(this, arguments);
+			}
+
+			return onLoad;
+		}()
+	}]);
+	return Account;
+}(_labrador2.default.Component);
+
+
+Page(_labrador._createPage(Account));
+
+})(module,require);

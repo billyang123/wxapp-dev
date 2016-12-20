@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/navbar';
 export default class Index extends wx.Component {
   data = {
     banner:{
-        img:'https://portrait.chinamuxie.com/${oss.photo.resourceImgPrefix}online-59c0fbca845e40059e9e6f1be1f66cad.jpg',
+        img:'/images/banner_01_750x250.png',
         href:'/pages/bannerIndex/bannerIndex'
     },
     assetsPath:wx.app.data.assetsPath

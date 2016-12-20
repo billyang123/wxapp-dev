@@ -8,9 +8,12 @@ export default class DoctorsList extends wx.Component {
 		hasMore:true,
      	hasRefesh:false,
      	windowHieght:'',
-		list:[]
+		list:[],
+		loading:false
 	};
 	async getDoctorList(id){
+		if(this.data.loading) return;
+		this.data.loading = true;
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
 			data:{
@@ -26,23 +29,24 @@ export default class DoctorsList extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1){
+		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 	    this.setData({
 	    	hasMore:loadMore,
-	    	list:res.data.content,
+	    	list:this.data.list.concat(res.data.content),
 	    	hidden: true,
 	       	hasRefesh: false
 	    })
+	    this.data.loading = false;
 	}
 	async loadMore(e){
 		console.log("loadMore")
-		this.data.page++;
 		that.setData({
 		    hasRefesh:true
 		});
 	    if (!this.data.hasMore) return
+	    this.data.page++;
 	   	await this.getQAList();
 	}
 	async onLoad(){

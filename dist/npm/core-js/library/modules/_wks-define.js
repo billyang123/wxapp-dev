@@ -1,1 +1,13 @@
-"use strict";!function(o,r){var l=(o.exports={},window=r("../../../labrador/global.js")),l=r("./_global.js"),s=r("./_core.js"),e=r("./_library.js"),a=r("./_wks-ext.js"),t=r("./_object-dp.js").f;o.exports=function(o){var r=s.Symbol||(s.Symbol=e?{}:l.Symbol||{});"_"==o.charAt(0)||o in r||t(r,o,{value:a.f(o)})}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var global         = require('./_global.js')
+  , core           = require('./_core.js')
+  , LIBRARY        = require('./_library.js')
+  , wksExt         = require('./_wks-ext.js')
+  , defineProperty = require('./_object-dp.js').f;
+module.exports = function(name){
+  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
+  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
+};
+})(module,require);

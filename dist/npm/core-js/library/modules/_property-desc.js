@@ -1,1 +1,11 @@
-"use strict";!function(e,r){e.exports={};e.exports=function(e,r){return{enumerable:!(1&e),configurable:!(2&e),writable:!(4&e),value:r}}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+module.exports = function(bitmap, value){
+  return {
+    enumerable  : !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable    : !(bitmap & 4),
+    value       : value
+  };
+};
+})(module,require);

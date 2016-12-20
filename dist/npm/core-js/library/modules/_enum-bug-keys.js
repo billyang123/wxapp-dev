@@ -1,1 +1,7 @@
-"use strict";!function(t,r){t.exports={};t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+// IE 8- don't enum bug keys
+module.exports = (
+  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+).split(',');
+})(module,require);

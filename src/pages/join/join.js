@@ -142,12 +142,12 @@ export default class Join extends wx.Component {
       let res = await wx.request({
         url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
         header: {
-          'content-type': "application/json"//'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method:"POST",
         data:{
           projectId:this.data.projectId,
-          persons:this.data.persons,
+          persons:JSON.stringify(this.data.persons),
           code:wx.app.globalData.storage.code
         }
       });
@@ -182,7 +182,7 @@ export default class Join extends wx.Component {
 		});
 	}
   async onLoad(e){
-    let id = parseInt(e.type);
+    var id = parseInt(e.type)
     this.setData({
       publicConvention:jsonData.items[0].convention,
       conventionTxt:jsonData.items[id].convention,

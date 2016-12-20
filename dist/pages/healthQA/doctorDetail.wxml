@@ -7,11 +7,11 @@
 		<view class="intro">{{detail.doctorDesc}}</view>
 		<view class="section">
 			<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
-		  <textarea class="textarea" bindblur="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindblur="setNumValue"/>
+		  <textarea class="textarea" bindblur="_dispatch" bindlinechange="_dispatch" placeholder="这里可以提交你的问题哦…" data-bindblur="setNumValue" data-bindlinechange="linechange"/>
 		  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 		</view>
 		<view>
-			<button class="submit-btn" hover-class="none" bindtap="_dispatch" disabled="{{disabled}}" data-bindtap="submit">发送</button>
+			<button class="submit-btn" hover-class="none" bindtap="_dispatch" disabled="{{disabled}}" data-bindtap="QaAdd">发送</button>
 		</view>
 	</view>
 	<view class="dlist-title" xmlns:wx="" wx:if="{{list.length>0}}">他回答了89个问题，共有15780次收听</view>
@@ -21,7 +21,7 @@
 			<view class="content">
 				<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
 				
-				<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" bindended="_dispatch" data-catchtap="bindAudio" data-bindended="audioPlayEnd">
+				<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-catchtap="bindAudio">
 					<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
 					<text>限时免费听</text>
 				</view>

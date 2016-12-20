@@ -7,11 +7,11 @@
 		<view class="intro">{{detail.doctorDesc}}</view>
 		<view class="section">
 			<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
-		  <textarea class="textarea" bindblur="setNumValue" placeholder="这里可以提交你的问题哦…" />
+		  <textarea class="textarea" bindblur="setNumValue" bindlinechange="linechange" placeholder="这里可以提交你的问题哦…" />
 		  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 		</view>
 		<view>
-			<button class="submit-btn" hover-class="none" bindtap="submit" disabled="{{disabled}}">发送</button>
+			<button class="submit-btn" hover-class="none" bindtap="QaAdd" disabled="{{disabled}}">发送</button>
 		</view>
 	</view>
 	<view class="dlist-title" wx:if="{{list.length>0}}">他回答了89个问题，共有15780次收听</view>
@@ -21,7 +21,7 @@
 			<view class="content">
 				<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"></image>
 				
-				<view class="bubble" catchtap="bindAudio" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" bindended="audioPlayEnd">
+				<view class="bubble" catchtap="bindAudio" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}">
 					<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"></icon>
 					<text>限时免费听</text>
 				</view>

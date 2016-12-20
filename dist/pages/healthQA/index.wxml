@@ -35,7 +35,7 @@
 				<view class="content">
 					<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
 					
-					<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" bindended="_dispatch" data-catchtap="bindAudio" data-bindended="audioPlayEnd">
+					<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" data-catchtap="bindAudio">
 						<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
 						<text>限时免费听</text>
 					</view>
@@ -46,7 +46,7 @@
 				</view>
 			</navigator>
 			<view class="opt">
-				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?qId={{item.id}}" class="op">
+				<navigator redirect="" hover-class="none" url="/pages/healthQA/commit?qaId={{item.id}}" class="op">
 					<icon class="iconfont icon-comment"/>
 					<text>{{item.commentNumber}}</text>
 				</navigator>
@@ -56,6 +56,7 @@
 				</view>
 			</view>
 		</view>
+		
 		<view class="loading" wx:if="{{hasMore}}">
 			<icon class="weui-loading"/>
 			<text>稍等下，精彩马上准备好…</text>

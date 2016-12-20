@@ -1,18 +1,10 @@
 .flexbox() {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
 }
 .align-items(@ai) when not (@ai = flex-start) and not (@ai = flex-end) {
-    -webkit-box-align: @ai;
-    -ms-flex-align: @ai;
-    -webkit-align-items: @ai;
     align-items: @ai;
 }
 .flex-shrink(@fs) {
-    -webkit-flex-shrink: @fs;
-    -ms-flex: 0 @fs auto;
     flex-shrink: @fs;
 }
 .give-family {
@@ -31,7 +23,7 @@
 			    font-size: 150rpx;
 			    color: #dddddd;
 			    top: 30rpx;
-			    left: -150rpx;
+			    left: -100rpx;
 			}
 			&:after {
 				content: '”';
@@ -39,7 +31,7 @@
 			    font-size: 150rpx;
 			    color: #dddddd;
 			    bottom: -50rpx;
-			    right: -150rpx;
+			    right: -90rpx;
 			}
 		}
 	}
@@ -58,7 +50,7 @@
 				height: 240rpx;
 				background-color: #FF6A00;
 				color: #fff;
-				layout-flow : vertical-ideographic; /*这样也有一样的竖排效果，一样的不支持FF*/
+				layout-flow : vertical-ideographic;
 			   	text-align:center;
 			    letter-spacing: 4rpx;
 			    writing-mode: tb-rl;

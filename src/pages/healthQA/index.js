@@ -1,6 +1,5 @@
 import wx from 'labrador';
 import Navbar from '../../components/navbar/navbar';
-import { sleep } from '../../utils/util';
 export default class HealthIndex extends wx.Component {
 	data = {
 		//tab
@@ -36,7 +35,8 @@ export default class HealthIndex extends wx.Component {
      	hasRefesh:false,
      	size:5,
 		page:0,
-		doclist:[]
+		doclist:[],
+		loading:false
 	};
 	children = {
 	    navbar: new Navbar({cur:1})
@@ -45,12 +45,16 @@ export default class HealthIndex extends wx.Component {
 		// let id = event.currentTarget.dataset.id;
 		// this.data.audio[id].status=!this.data.audio[id].status;
 	}
-	audioPlayEnd(event){
-		let id = event.currentTarget.dataset.id;
-		this.data.audio[id].status = false;
-		this.setData({
-	       audio:this.data.audio
-	    });
+	audioPlayEnd(){
+		var _this = this;
+	    wx.onBackgroundAudioStop(function(e){
+	    	console.log(e);
+	    	let id = _this.data.playAudio.id;
+			_this.data.audio[id].status = false;
+			_this.setData({
+		       audio:_this.data.audio
+		    });
+	    })
 	}
 	async bindAudio(event){
 		let src = event.currentTarget.dataset.url;
@@ -113,8 +117,8 @@ export default class HealthIndex extends wx.Component {
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
 			data:{
-				page:this.data.page,
-				size:this.data.size
+				page:0,
+				size:2
 			}
 		})
 		if(!res.data){
@@ -127,6 +131,8 @@ export default class HealthIndex extends wx.Component {
 	    })
 	}
 	async getQAList(){
+		if(this.data.loading) return;
+		this.data.loading = true;
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/list',
 			data:{
@@ -143,25 +149,23 @@ export default class HealthIndex extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1){
+		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 	    this.setData({
 	    	hasMore:loadMore,
-	    	list:res.data.content,
+	    	list:this.data.list.concat(res.data.content),
 	    	hidden: true,
 	       	hasRefesh: false
 	    })
+
+	    this.data.loading = false;
 	}
 	async loadMore(e){
 		console.log("loadMore")
-		that.setData({
-		    hasRefesh:true
-		});
-	    if (!this.data.hasMore) return
+	    if(!this.data.hasMore) return
+	    this.data.page++
 	   	await this.getQAList();
-	   	this.data.page++;
-
 	}
 	async praise(event){
 		var index = event.currentTarget.dataset.index;
@@ -200,6 +204,7 @@ export default class HealthIndex extends wx.Component {
 		this.praiseTmp = [];
 		this.getDoctors();
 		this.getQAList();
+		this.audioPlayEnd();
 
 	}
 	// async refesh(){

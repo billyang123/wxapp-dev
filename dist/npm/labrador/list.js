@@ -1,1 +1,179 @@
-"use strict";!function(t,e){function n(t){return t&&t.__esModule?t:{default:t}}function o(t,e,n){this.data=[],this.Component=t,this._refKey=e,this.map=n,this.props={};var o=this;this._refs={},["onLoad","onReady","onShow","onHide","onUnload","onPullDownRefreash"].forEach(function(e){t.prototype[e]&&(o[e]=function(){o["_"+e]=!0;var t=arguments;o.children.forEach(function(n){n[e].apply(n,t)})})})}var a=(t.exports={},e("../babel-runtime/core-js/object/assign.js")),r=n(a),i=e("../babel-runtime/core-js/object/keys.js"),s=n(i),p=e("../babel-runtime/core-js/json/stringify.js");n(p);o.prototype.setData=function(t,e){this.data[t]=e,this.parent.setData(this.key,this.data)},o.prototype._init=function(t,e){var n=this;n.key=t,n.parent=e,n.id=e.id+":"+t,t&&e&&e.path?n.path=e.path+"."+t:n.path=t,n.name=n.constructor.name||n.path,n.children=[],e._registerRef(n._refKey,"items",n)},o.prototype._createItem=function(t,e){var n=this,o=n.parent,a={},r=null;return(0,s.default)(this.map).forEach(function(t){var i=n.map[t];if("string"==typeof i){var s=i.substr(1);">>"===i?(i=e,n._refs[">"]||(n._refs[">"]=[]),n._refs[">"].push(t)):">"===i[0]?(i=e[s],n._refs[s]=t):"#"===i[0]&&(i=o[s],"function"==typeof i&&(i=function(){o[s].apply(o,[r].concat(Array.prototype.slice.call(arguments)))}))}a[t]=i}),a._item=e,r=new n.Component(a,!0),r._init(t,n),n._onLoad&&r.onLoad&&r.onLoad(),n._onReady&&r.onReady&&r.onReady(),r},o.prototype.onUpdate=function(t){function e(t){for(var e in n)if(n[e].props._item===t)return n.splice(e,1)[0]}var n=this.children,o=[],a=[];for(var i in t.items){var p=t.items[i],f=e(p);if(f){var h={};for(var c in this._refs){var u=this._refs[c];">"!==c?p[c]!==f.props[u]&&(h[u]=p[c]):u.forEach(function(t){h[t]=p})}(0,s.default)(h).length&&(h=(0,r.default)({},f.props,h),f.onUpdate&&f.onUpdate(h),f.props=h)}else f=this._createItem(i,p);i!=f.key&&f._setKey(i,this),o.push(f),a.push(f.data)}this.children=o,this.data=a,this.parent.setData(this.key,a),n.forEach(function(t){t.onUnload&&t.onUnload()})},t.exports=o}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+
+var _assign = require('../babel-runtime/core-js/object/assign.js');
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _keys = require('../babel-runtime/core-js/object/keys.js');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _stringify = require('../babel-runtime/core-js/json/stringify.js');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @copyright Maichong Software Ltd. 2016 http://maichong.it
+ * @date 2016-10-16
+ * @author Liang <liang@maichong.it>
+ */
+
+function List(Component, ref, map) {
+  this.data = [];
+  this.Component = Component;
+  this._refKey = ref;
+  this.map = map;
+  this.props = {};
+  var me = this;
+  this._refs = {};
+
+  //检查子组件存在的生命周期函数
+  //注意：如果子组件的子组件有某个生命周期函数，那么子组件中也应当有对应的显式声明，哪怕是空函数，否者子组件的子组件不会被调用
+  ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefreash'].forEach(function (name) {
+    if (Component.prototype[name]) {
+      me[name] = function () {
+        me['_' + name] = true;
+        var args = arguments;
+        me.children.forEach(function (child) {
+          child[name].apply(child, args);
+        });
+      };
+    }
+  });
+}
+
+List.prototype.setData = function setData(key, data) {
+  this.data[key] = data;
+  this.parent.setData(this.key, this.data);
+};
+
+List.prototype._init = function init(key, parent) {
+  var me = this;
+  me.key = key;
+  me.parent = parent;
+  me.id = parent.id + ':' + key;
+  if (key && parent && parent.path) {
+    me.path = parent.path + '.' + key;
+  } else {
+    me.path = key;
+  }
+  me.name = me.constructor.name || me.path;
+  me.children = [];
+
+  parent._registerRef(me._refKey, 'items', me);
+};
+
+List.prototype._createItem = function (key, item) {
+  var me = this;
+  var parent = me.parent;
+  var props = {};
+  var component = null;
+  if (false) {
+    console.log('%c%s create item key: %s item: %o', 'color:#2a8f99', me.id, key, JSON.parse((0, _stringify2.default)(item)));
+  }
+  (0, _keys2.default)(this.map).forEach(function (k) {
+    var value = me.map[k];
+    if (typeof value === 'string') {
+      var refKey = value.substr(1);
+      if (value === '>>') {
+        value = item;
+        if (!me._refs['>']) {
+          me._refs['>'] = [];
+        }
+        me._refs['>'].push(k);
+      } else if (value[0] === '>') {
+        value = item[refKey];
+        me._refs[refKey] = k;
+      } else if (value[0] === '#') {
+        value = parent[refKey];
+        if (typeof value === 'function') {
+          value = function value() {
+            parent[refKey].apply(parent, [component].concat(Array.prototype.slice.call(arguments)));
+          };
+        }
+      }
+    }
+    props[k] = value;
+  });
+  props._item = item;
+  component = new me.Component(props, true);
+  component._init(key, me);
+  if (me._onLoad && component.onLoad) {
+    component.onLoad();
+  }
+  if (me._onReady && component.onReady) {
+    component.onReady();
+  }
+  return component;
+};
+
+List.prototype.onUpdate = function (props) {
+  var originalChildren = this.children;
+  var children = [];
+  var data = [];
+
+  function findChildForItem(item) {
+    for (var i in originalChildren) {
+      if (originalChildren[i].props._item === item) {
+        return originalChildren.splice(i, 1)[0];
+      }
+    }
+  }
+
+  for (var i in props.items) {
+    var item = props.items[i];
+    var child = findChildForItem(item);
+    if (!child) {
+      child = this._createItem(i, item);
+    } else {
+      var newProps = {};
+      for (var refKey in this._refs) {
+        /**
+         * refKey 为对应引用item的key
+         * k 为子控件props对应的key
+         */
+        var k = this._refs[refKey];
+        if (refKey === '>') {
+          k.forEach(function (kk) {
+            newProps[kk] = item;
+          });
+          continue;
+        }
+        if (item[refKey] !== child.props[k]) {
+          newProps[k] = item[refKey];
+        }
+      }
+      if ((0, _keys2.default)(newProps).length) {
+        newProps = (0, _assign2.default)({}, child.props, newProps);
+        if (false) {
+          console.log('%c%s onUpdate(%o)', 'color:#2a8f99', child.id, JSON.parse((0, _stringify2.default)(newProps)));
+        }
+        if (child.onUpdate) {
+          child.onUpdate(newProps);
+        }
+        child.props = newProps;
+      }
+    }
+    if (i != child.key) {
+      child._setKey(i, this);
+    }
+    children.push(child);
+    data.push(child.data);
+  }
+  this.children = children;
+  this.data = data;
+  this.parent.setData(this.key, data);
+
+  //销毁不再需要的子组件
+  originalChildren.forEach(function (c) {
+    if (c.onUnload) {
+      c.onUnload();
+    }
+  });
+};
+
+module.exports = List;
+})(module,require);

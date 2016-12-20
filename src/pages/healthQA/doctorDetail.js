@@ -16,7 +16,8 @@ export default class DoctorDetail extends wx.Component {
 		page:0,
 
 		detail:{},
-		disabled:true
+		disabled:true,
+		loading:false
 	};
 	audioPlayEnd(event){
 		let id = event.currentTarget.dataset.id;
@@ -71,6 +72,8 @@ export default class DoctorDetail extends wx.Component {
 
 	}
 	async getQAList(){
+		if(this.data.loading) return;
+		this.data.loading = true;
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/list',
 			data:{
@@ -87,15 +90,16 @@ export default class DoctorDetail extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1){
+		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 	    this.setData({
 	    	hasMore:loadMore,
-	    	list:res.data.content,
+	    	list:this.data.list.concat(res.data.content),
 	    	hidden: true,
 	       	hasRefesh: false
 	    })
+	    this.data.loading = false;
 	}
 	async loadMore(e){	
 		console.log("loadMore")
@@ -103,8 +107,8 @@ export default class DoctorDetail extends wx.Component {
 		    hasRefesh:true
 		});
 	    if (!this.data.hasMore) return
+	    this.data.page++;
 	   	await this.getQAList();
-	   	this.data.page++;
 	}
 	async praise(event){
 		var index = event.currentTarget.dataset.index;
@@ -139,7 +143,8 @@ export default class DoctorDetail extends wx.Component {
 			type:"post",
 			data:{
 				healthDoctorId:this.data.id,
-				questionContent:this.data.textareaValue
+				questionContent:this.data.textareaValue,
+				code:wx.app.globalData.storage.code
 			}
 		})
 		if(res.status == 0){
@@ -149,16 +154,29 @@ export default class DoctorDetail extends wx.Component {
 			  duration: 2000
 			})
 		}
+		if(res.status == 1){
+			var sModal = await wx.showModal({
+			  title: '提示',
+			  content: '需要先登录'
+			})
+			if(sModal.confirm){
+				wx.redirectTo({
+		    		url:'/pages/account/account'
+		    	})
+			}
+		}
 	}
 	setNumValue(e){
 		let _value = e.detail.value;
-		if(!_value) return;
 		_value = _value.replace(/(^\s*)|(\s*$)/g, "");
 		this.setData({
 			curLength:_value.length,
 			textareaValue:_value,
 			disabled:false
 		})
+	}
+	linechange(e){
+		console.log(e)
 	}
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
@@ -184,5 +202,6 @@ export default class DoctorDetail extends wx.Component {
 		//console.log(systemInfo)
 
 		this.getQAList();
+		this.getDetail();
 	}
 }

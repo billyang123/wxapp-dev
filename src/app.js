@@ -43,8 +43,9 @@ export default class {
   };
   async onLaunch() {
     var _this = this;
+    this.globalData.storage = await this.getStorage();
     //await wx.clearStorage();
-    await this.__init();
+    //await this.__init();
     // wx.navigateTo({
     //   url:"/pages/recharge/recharge"
     // })
@@ -84,66 +85,107 @@ export default class {
     this.globalData.userInfo = res.userInfo;
     return res.userInfo;
   }
-
-  
-  async bindLogin(url,bl){
-    await this.checkLogin(url,bl);
-  }
-  async checkLogin(url,bl){
-    //wx.clearStorage();
-    await this.doLogin(url,bl);
-  }
-  async doLogin(url,bl) {
-    if(bl){
-      wx.navigateTo({
-        url:url
-      });
-      return;
-    }
-    let postdata = {
-      code:wx.app.globalData.storage.code,
-      sessionKey:wx.app.globalData.storage.sessionKey
-    };
-    //console.log(wx.app.globalData)
-    if(!postdata.sessionKey){
-      //await wx.setStorage({ key: 'sessionKey', data: "111"});
-      let rdRes = await wx.request({
-        url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin',
-        method:"POST",
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: postdata
-      });
-      await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
-      wx.app.globalData.storage =  await  wx.app.getStorage();
-    }
-    let userInfo = await wx.getUserInfo();
-    let userInfoPost = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth',
-      method:"POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+  async getUser(code){
+    let myuser = this.ajax({
+      url:'https://xcx.chinamuxie.com/wxapi/user/account',
+      type:"get",
       data: {
+        code:code
+      }
+    })
+    return myuser;
+  }
+  
+  // async bindLogin(url,bl){
+  //   await this.checkLogin(url,bl);
+  // }
+  // async checkLogin(){
+  //   let res = await this.getUser(this.globalData.storage.code);
+  //   if(res.data.loginStatus){
+  //     callback && callback(res)
+  //   }else{
+  //     if(bl){
+  //       let mMode = wx.showModal({
+  //         title: '提示',
+  //         content: "请先登录"
+  //       })
+  //       if(mMode.confirm){
+  //         wx.redirectTo({
+  //           url: '/pages/account'
+  //         })
+  //       }
+  //       return;
+  //     }
+  //     this.doLogin(callback)
+  //   }
+  // }
+  async checkLogin(){
+    let res = await this.getUser(this.globalData.storage.code);
+    return res.data.loginStatus;
+  }
+  async login(callback,d){
+    let loginStatus = false; 
+    if(d){
+      let res = await this.getUser(this.globalData.storage.code);
+      loginStatus = res.data.loginStatus
+    }
+    if(loginStatus){
+      callback && callback(res)
+    }else{
+      this.doLogin(callback)
+    }
+  }
+  async doLogin(callback){
+    wx.showToast({
+      title: '登录中',
+      icon: 'loading',
+      duration: 10000
+    })
+    let loginInfo = await wx.login();
+    let rdRes = await wx.request({
+      url: "https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin",
+      method:"post",
+      header: {
+          'content-type': 'application/x-www-form-urlencoded'
+      },
+      data:{
+        code:loginInfo.code
+      }
+    })
+    console.log(rdRes)
+    await wx.setStorage({ key: 'code', data: loginInfo.code });
+    await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
+    this.globalData.storage =  {
+      code:loginInfo.code,
+      sessionKey:rdRes.data.data
+    };
+    console.log(this.globalData.storage)
+    let userInfo = await wx.getUserInfo();
+    console.log(userInfo)
+    let userInfoPost = await wx.request({
+      url: "https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",
+      method:"post",
+      header: {
+          'content-type': 'application/x-www-form-urlencoded'
+      },
+      data:{
         rawData:userInfo.rawData,
         signature:userInfo.signature,
         encryptedData:encodeURIComponent(userInfo.encryptedData),
         iv:encodeURIComponent(userInfo.iv),
-        sessionKey: wx.app.globalData.storage.sessionKey,
-        code:postdata.code
+        sessionKey: rdRes.data.data,
+        code:loginInfo.code
       }
-    });
-    
+    })
+    wx.hideToast()
     if(userInfoPost.data.data == "logged"){
-      wx.navigateTo({
-       url:url
-      });
+      let _user = await this.getUser(loginInfo.code);
+      callback && callback(_user);
     }
     if(userInfoPost.data.data == "notLogged"){
-      await wx.navigateTo({
-        url:'/pages/bindphone/bindphone'
-      })
+        await wx.navigateTo({
+            url:'/pages/bindphone/bindphone'
+        })
     }
   }
   async ajax(options){
@@ -161,15 +203,23 @@ export default class {
     if(res.statusCode == 200){
       return res.data;
     }else{
-      wx.showModal({
-        title: '提示',
-        content: res.errMsg,
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
+      if(res.data.status == 1){
+        let mMode = wx.showModal({
+          title: '提示',
+          content: "请先登录"
+        })
+        if(mMode.confirm){
+          wx.redirectTo({
+            url: '/pages/account'
+          })
         }
-      })
+        return;
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: res.errMsg
+        })
+      }
     }
   }
 }

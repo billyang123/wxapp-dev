@@ -1,1 +1,4 @@
-"use strict";!function(e,s){e.exports={};e.exports={default:s("../../../core-js/library/fn/object/assign.js"),__esModule:!0}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+module.exports = { "default": require('../../../core-js/library/fn/object/assign.js'), __esModule: true };
+})(module,require);

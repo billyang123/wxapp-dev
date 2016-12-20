@@ -1,1 +1,15 @@
-"use strict";!function(t,e){var r=(t.exports={},e("./_object-create.js")),s=e("./_property-desc.js"),o=e("./_set-to-string-tag.js"),i={};e("./_hide.js")(i,e("./_wks.js")("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(i,{next:s(1,n)}),o(t,e+" Iterator")}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var create         = require('./_object-create.js')
+  , descriptor     = require('./_property-desc.js')
+  , setToStringTag = require('./_set-to-string-tag.js')
+  , IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+require('./_hide.js')(IteratorPrototype, require('./_wks.js')('iterator'), function(){ return this; });
+
+module.exports = function(Constructor, NAME, next){
+  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+})(module,require);

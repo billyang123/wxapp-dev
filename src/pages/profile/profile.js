@@ -15,6 +15,7 @@ export default class Profile extends wx.Component {
     chooseSex:'男'
 	};
   async getData(){
+    let userInfo = await wx.getUserInfo();
     let res = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/index',
       method:"GET",
@@ -33,7 +34,7 @@ export default class Profile extends wx.Component {
         userIdNumber:res.data.data.userIdNumber,
         userPhone:res.data.data.userPhone,
         userEmail:res.data.data.userEmail,
-        userHeadimgurl:res.data.data.userHeadimgurl
+        userHeadimgurl:res.data.data.userHeadimgurl || userInfo.userInfo.avatarUrl
       })
     }
   }

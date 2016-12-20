@@ -1,1 +1,590 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var n=e.exports={};window=t("./npm/labrador/global.js");Object.defineProperty(n,"__esModule",{value:!0});var r=t("./npm/babel-runtime/regenerator/index.js"),u=a(r),s=t("./npm/babel-runtime/helpers/asyncToGenerator.js"),o=a(s),i=t("./npm/babel-runtime/helpers/classCallCheck.js"),c=a(i),l=t("./npm/babel-runtime/helpers/createClass.js"),f=a(l),d=t("./npm/labrador/index.js"),p=a(d);t("./utils/util.js");Date.prototype.format=function(e){var t={"M+":this.getMonth()+1,"d+":this.getDate(),"h+":this.getHours()%12==0?12:this.getHours()%12,"H+":this.getHours(),"m+":this.getMinutes(),"s+":this.getSeconds(),"q+":Math.floor((this.getMonth()+3)/3),S:this.getMilliseconds()},a={0:"/u65e5",1:"/u4e00",2:"/u4e8c",3:"/u4e09",4:"/u56db",5:"/u4e94",6:"/u516d"};/(y+)/.test(e)&&(e=e.replace(RegExp.$1,(this.getFullYear()+"").substr(4-RegExp.$1.length))),/(E+)/.test(e)&&(e=e.replace(RegExp.$1,(RegExp.$1.length>1?RegExp.$1.length>2?"/u661f/u671f":"/u5468":"")+a[this.getDay()+""]));for(var n in t)new RegExp("("+n+")").test(e)&&(e=e.replace(RegExp.$1,1==RegExp.$1.length?t[n]:("00"+t[n]).substr((""+t[n]).length)));return e};var h=function(){function e(){(0,c.default)(this,e),this.globalData={userInfo:null,storage:null},this.data={assetsPath:"https://s1.chinamuxie.com/www/assets/xcx"}}return(0,f.default)(e,[{key:"onLaunch",value:function(){function e(){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(){var t;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return t=this,e.next=3,this.__init();case 3:case"end":return e.stop()}},e,this)}));return e}()},{key:"makePhoneCall",value:function(e){p.default.showModal({title:"拨打电话："+e.currentTarget.dataset.phoneNumber,success:function(t){p.default.makePhoneCall({phoneNumber:e.currentTarget.dataset.phoneNumber})}})}},{key:"__init",value:function(){function e(){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(){var t;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.getStorage();case 2:if(this.globalData.storage=e.sent,this.globalData.storage&&(!this.globalData.storage||this.globalData.storage.code)){e.next=9;break}return e.next=6,p.default.login();case 6:return t=e.sent,e.next=9,p.default.setStorage({key:"code",data:t.code});case 9:return e.next=11,this.getUserInfo();case 11:return e.next=13,this.getStorage();case 13:this.globalData.storage=e.sent;case 14:case"end":return e.stop()}},e,this)}));return e}()},{key:"getStorage",value:function(){function e(){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(){var t,a,n,r,s;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return t={},e.next=3,p.default.getStorageInfo();case 3:a=e.sent,n=a.keys,r=0;case 6:if(!(r<n.length)){e.next=14;break}return e.next=9,p.default.getStorage({key:n[r]});case 9:s=e.sent,t[n[r]]=s.data||"";case 11:r++,e.next=6;break;case 14:return e.abrupt("return",t);case 15:case"end":return e.stop()}},e,this)}));return e}()},{key:"getUserInfo",value:function(){function e(){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(){var t;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,p.default.getUserInfo();case 2:return t=e.sent,this.globalData.userInfo=t.userInfo,e.abrupt("return",t.userInfo);case 5:case"end":return e.stop()}},e,this)}));return e}()},{key:"bindLogin",value:function(){function e(e,a){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(t,a){return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.checkLogin(t,a);case 2:case"end":return e.stop()}},e,this)}));return e}()},{key:"checkLogin",value:function(){function e(e,a){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(t,a){return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.doLogin(t,a);case 2:case"end":return e.stop()}},e,this)}));return e}()},{key:"doLogin",value:function(){function e(e,a){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(t,a){var n,r,s,o;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(!a){e.next=3;break}return p.default.navigateTo({url:t}),e.abrupt("return");case 3:if(n={code:p.default.app.globalData.storage.code,sessionKey:p.default.app.globalData.storage.sessionKey},n.sessionKey){e.next=13;break}return e.next=7,p.default.request({url:"https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin",method:"POST",header:{"content-type":"application/x-www-form-urlencoded"},data:n});case 7:return r=e.sent,e.next=10,p.default.setStorage({key:"sessionKey",data:r.data.data});case 10:return e.next=12,p.default.app.getStorage();case 12:p.default.app.globalData.storage=e.sent;case 13:return e.next=15,p.default.getUserInfo();case 15:return s=e.sent,e.next=18,p.default.request({url:"https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",method:"POST",header:{"content-type":"application/x-www-form-urlencoded"},data:{rawData:s.rawData,signature:s.signature,encryptedData:encodeURIComponent(s.encryptedData),iv:encodeURIComponent(s.iv),sessionKey:p.default.app.globalData.storage.sessionKey,code:n.code}});case 18:if(o=e.sent,"logged"==o.data.data&&p.default.navigateTo({url:t}),"notLogged"!=o.data.data){e.next=23;break}return e.next=23,p.default.navigateTo({url:"/pages/bindphone/bindphone"});case 23:case"end":return e.stop()}},e,this)}));return e}()},{key:"ajax",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,o.default)(u.default.mark(function e(t){var a,n;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return a={url:t.url,method:t.type||"get",header:{"content-type":"application/x-www-form-urlencoded"}},t.data&&(a.data=t.data),e.next=4,p.default.request(a);case 4:if(n=e.sent,200!=n.statusCode){e.next=9;break}return e.abrupt("return",n.data);case 9:p.default.showModal({title:"提示",content:n.errMsg,success:function(e){e.confirm&&console.log("用户点击确定")}});case 10:case"end":return e.stop()}},e,this)}));return e}()}]),e}();n.default=h;var g=new n.default;Object.getOwnPropertyNames(g.constructor.prototype).forEach(function(e){"constructor"!==e&&(g[e]=g.constructor.prototype[e])}),App(g)}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('./npm/labrador/global.js');
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _regenerator = require('./npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('./npm/babel-runtime/helpers/asyncToGenerator.js');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _classCallCheck2 = require('./npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('./npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _labrador = require('./npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+var _util = require('./utils/util.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+Date.prototype.format = function (fmt) {
+  var o = {
+    "M+": this.getMonth() + 1, //月份         
+    "d+": this.getDate(), //日         
+    "h+": this.getHours() % 12 == 0 ? 12 : this.getHours() % 12, //小时         
+    "H+": this.getHours(), //小时         
+    "m+": this.getMinutes(), //分         
+    "s+": this.getSeconds(), //秒         
+    "q+": Math.floor((this.getMonth() + 3) / 3), //季度         
+    "S": this.getMilliseconds() //毫秒         
+  };
+  var week = {
+    "0": "/u65e5",
+    "1": "/u4e00",
+    "2": "/u4e8c",
+    "3": "/u4e09",
+    "4": "/u56db",
+    "5": "/u4e94",
+    "6": "/u516d"
+  };
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+  }
+  if (/(E+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length > 1 ? RegExp.$1.length > 2 ? "/u661f/u671f" : "/u5468" : "") + week[this.getDay() + ""]);
+  }
+  for (var k in o) {
+    if (new RegExp("(" + k + ")").test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+    }
+  }
+  return fmt;
+};
+
+var _class = function () {
+  function _class() {
+    (0, _classCallCheck3.default)(this, _class);
+    this.globalData = {
+      userInfo: null,
+      storage: null
+    };
+    this.data = {
+      assetsPath: 'https://s1.chinamuxie.com/www/assets/xcx'
+    };
+  }
+
+  (0, _createClass3.default)(_class, [{
+    key: 'onLaunch',
+    value: function () {
+      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+        var _this;
+
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this = this;
+                _context.next = 3;
+                return this.getStorage();
+
+              case 3:
+                this.globalData.storage = _context.sent;
+
+              case 4:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function onLaunch() {
+        return _ref.apply(this, arguments);
+      }
+
+      return onLaunch;
+    }()
+  }, {
+    key: 'makePhoneCall',
+    value: function makePhoneCall(event) {
+      _labrador2.default.showModal({
+        title: '拨打电话：' + event.currentTarget.dataset.phoneNumber,
+        success: function success(res) {
+          _labrador2.default.makePhoneCall({
+            phoneNumber: event.currentTarget.dataset.phoneNumber
+          });
+        }
+      });
+    }
+  }, {
+    key: '__init',
+    value: function () {
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+        var loginInfo;
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return this.getStorage();
+
+              case 2:
+                this.globalData.storage = _context2.sent;
+
+                if (!(!this.globalData.storage || this.globalData.storage && !this.globalData.storage.code)) {
+                  _context2.next = 9;
+                  break;
+                }
+
+                _context2.next = 6;
+                return _labrador2.default.login();
+
+              case 6:
+                loginInfo = _context2.sent;
+                _context2.next = 9;
+                return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
+
+              case 9:
+                _context2.next = 11;
+                return this.getUserInfo();
+
+              case 11:
+                _context2.next = 13;
+                return this.getStorage();
+
+              case 13:
+                this.globalData.storage = _context2.sent;
+
+              case 14:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function __init() {
+        return _ref2.apply(this, arguments);
+      }
+
+      return __init;
+    }()
+  }, {
+    key: 'getStorage',
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+        var localSession, storageInfo, keys, i, _res;
+
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                localSession = {};
+                _context3.next = 3;
+                return _labrador2.default.getStorageInfo();
+
+              case 3:
+                storageInfo = _context3.sent;
+                keys = storageInfo.keys;
+                i = 0;
+
+              case 6:
+                if (!(i < keys.length)) {
+                  _context3.next = 14;
+                  break;
+                }
+
+                _context3.next = 9;
+                return _labrador2.default.getStorage({ key: keys[i] });
+
+              case 9:
+                _res = _context3.sent;
+
+                localSession[keys[i]] = _res.data || '';
+
+              case 11:
+                i++;
+                _context3.next = 6;
+                break;
+
+              case 14:
+                return _context3.abrupt('return', localSession);
+
+              case 15:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function getStorage() {
+        return _ref3.apply(this, arguments);
+      }
+
+      return getStorage;
+    }()
+  }, {
+    key: 'getUserInfo',
+    value: function () {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+        var res;
+        return _regenerator2.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return _labrador2.default.getUserInfo();
+
+              case 2:
+                res = _context4.sent;
+
+                this.globalData.userInfo = res.userInfo;
+                return _context4.abrupt('return', res.userInfo);
+
+              case 5:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function getUserInfo() {
+        return _ref4.apply(this, arguments);
+      }
+
+      return getUserInfo;
+    }()
+  }, {
+    key: 'getUser',
+    value: function () {
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(code) {
+        var myuser;
+        return _regenerator2.default.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                myuser = this.ajax({
+                  url: 'https://xcx.chinamuxie.com/wxapi/user/account',
+                  type: "get",
+                  data: {
+                    code: code
+                  }
+                });
+                return _context5.abrupt('return', myuser);
+
+              case 2:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function getUser(_x) {
+        return _ref5.apply(this, arguments);
+      }
+
+      return getUser;
+    }()
+
+    // async bindLogin(url,bl){
+    //   await this.checkLogin(url,bl);
+    // }
+    // async checkLogin(){
+    //   let res = await this.getUser(this.globalData.storage.code);
+    //   if(res.data.loginStatus){
+    //     callback && callback(res)
+    //   }else{
+    //     if(bl){
+    //       let mMode = wx.showModal({
+    //         title: '提示',
+    //         content: "请先登录"
+    //       })
+    //       if(mMode.confirm){
+    //         wx.redirectTo({
+    //           url: '/pages/account'
+    //         })
+    //       }
+    //       return;
+    //     }
+    //     this.doLogin(callback)
+    //   }
+    // }
+
+  }, {
+    key: 'checkLogin',
+    value: function () {
+      var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
+        var res;
+        return _regenerator2.default.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.next = 2;
+                return this.getUser(this.globalData.storage.code);
+
+              case 2:
+                res = _context6.sent;
+                return _context6.abrupt('return', res.data.loginStatus);
+
+              case 4:
+              case 'end':
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this);
+      }));
+
+      function checkLogin() {
+        return _ref6.apply(this, arguments);
+      }
+
+      return checkLogin;
+    }()
+  }, {
+    key: 'login',
+    value: function () {
+      var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(callback, d) {
+        var loginStatus, _res2;
+
+        return _regenerator2.default.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                loginStatus = false;
+
+                if (!d) {
+                  _context7.next = 6;
+                  break;
+                }
+
+                _context7.next = 4;
+                return this.getUser(this.globalData.storage.code);
+
+              case 4:
+                _res2 = _context7.sent;
+
+                loginStatus = _res2.data.loginStatus;
+
+              case 6:
+                if (loginStatus) {
+                  callback && callback(res);
+                } else {
+                  this.doLogin(callback);
+                }
+
+              case 7:
+              case 'end':
+                return _context7.stop();
+            }
+          }
+        }, _callee7, this);
+      }));
+
+      function login(_x2, _x3) {
+        return _ref7.apply(this, arguments);
+      }
+
+      return login;
+    }()
+  }, {
+    key: 'doLogin',
+    value: function () {
+      var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8(callback) {
+        var loginInfo, rdRes, userInfo, userInfoPost, _user;
+
+        return _regenerator2.default.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                _labrador2.default.showToast({
+                  title: '登录中',
+                  icon: 'loading',
+                  duration: 10000
+                });
+                _context8.next = 3;
+                return _labrador2.default.login();
+
+              case 3:
+                loginInfo = _context8.sent;
+                _context8.next = 6;
+                return _labrador2.default.request({
+                  url: "https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin",
+                  method: "post",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    code: loginInfo.code
+                  }
+                });
+
+              case 6:
+                rdRes = _context8.sent;
+
+                console.log(rdRes);
+                _context8.next = 10;
+                return _labrador2.default.setStorage({ key: 'code', data: loginInfo.code });
+
+              case 10:
+                _context8.next = 12;
+                return _labrador2.default.setStorage({ key: 'sessionKey', data: rdRes.data.data });
+
+              case 12:
+                this.globalData.storage = {
+                  code: loginInfo.code,
+                  sessionKey: rdRes.data.data
+                };
+                console.log(this.globalData.storage);
+                _context8.next = 16;
+                return _labrador2.default.getUserInfo();
+
+              case 16:
+                userInfo = _context8.sent;
+
+                console.log(userInfo);
+                _context8.next = 20;
+                return _labrador2.default.request({
+                  url: "https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",
+                  method: "post",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  data: {
+                    rawData: userInfo.rawData,
+                    signature: userInfo.signature,
+                    encryptedData: encodeURIComponent(userInfo.encryptedData),
+                    iv: encodeURIComponent(userInfo.iv),
+                    sessionKey: rdRes.data.data,
+                    code: loginInfo.code
+                  }
+                });
+
+              case 20:
+                userInfoPost = _context8.sent;
+
+                _labrador2.default.hideToast();
+
+                if (!(userInfoPost.data.data == "logged")) {
+                  _context8.next = 27;
+                  break;
+                }
+
+                _context8.next = 25;
+                return this.getUser(loginInfo.code);
+
+              case 25:
+                _user = _context8.sent;
+
+                callback && callback(_user);
+
+              case 27:
+                if (!(userInfoPost.data.data == "notLogged")) {
+                  _context8.next = 30;
+                  break;
+                }
+
+                _context8.next = 30;
+                return _labrador2.default.navigateTo({
+                  url: '/pages/bindphone/bindphone'
+                });
+
+              case 30:
+              case 'end':
+                return _context8.stop();
+            }
+          }
+        }, _callee8, this);
+      }));
+
+      function doLogin(_x4) {
+        return _ref8.apply(this, arguments);
+      }
+
+      return doLogin;
+    }()
+  }, {
+    key: 'ajax',
+    value: function () {
+      var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee9(options) {
+        var setting, res, mMode;
+        return _regenerator2.default.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                setting = {
+                  url: options.url,
+                  method: options.type || "get",
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  }
+                };
+
+                if (options.data) {
+                  setting.data = options.data;
+                }
+                _context9.next = 4;
+                return _labrador2.default.request(setting);
+
+              case 4:
+                res = _context9.sent;
+
+                if (!(res.statusCode == 200)) {
+                  _context9.next = 9;
+                  break;
+                }
+
+                return _context9.abrupt('return', res.data);
+
+              case 9:
+                if (!(res.data.status == 1)) {
+                  _context9.next = 15;
+                  break;
+                }
+
+                mMode = _labrador2.default.showModal({
+                  title: '提示',
+                  content: "请先登录"
+                });
+
+                if (mMode.confirm) {
+                  _labrador2.default.redirectTo({
+                    url: '/pages/account'
+                  });
+                }
+                return _context9.abrupt('return');
+
+              case 15:
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: res.errMsg
+                });
+
+              case 16:
+              case 'end':
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this);
+      }));
+
+      function ajax(_x5) {
+        return _ref9.apply(this, arguments);
+      }
+
+      return ajax;
+    }()
+  }]);
+  return _class;
+}();
+
+exports.default = _class;
+{
+var __app=new exports.default();Object.getOwnPropertyNames(__app.constructor.prototype).forEach(function(name){if(name!=='constructor')__app[name]=__app.constructor.prototype[name]});App(__app);
+}
+})(module,require);
