@@ -140,7 +140,7 @@ export default class Join extends wx.Component {
         bl:false
       });
       let res = await wx.request({
-        url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCard',
+        url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCardPay',
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },
@@ -152,6 +152,7 @@ export default class Join extends wx.Component {
         }
       });
       if(res.data.status == 0){
+        let payResult = await wx.requestPayment(res.data.data)
         await wx.redirectTo({
           url:'/pages/joinEnd/joinEnd'
         })

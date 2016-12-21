@@ -1,4 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-exports.f = {}.propertyIsEnumerable;
-})(module,require);
+"use strict";!function(e,r){var t=e.exports={};t.f={}.propertyIsEnumerable}(module,require);

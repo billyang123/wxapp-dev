@@ -1,10 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-module.exports = function(exec){
-  try {
-    return !!exec();
-  } catch(e){
-    return true;
-  }
-};
-})(module,require);
+"use strict";!function(r,t){r.exports={};r.exports=function(r){try{return!!r()}catch(r){return!0}}}(module,require);

@@ -144,21 +144,33 @@ export default class HealthIndex extends wx.Component {
 		if(!res.data){
 			this.setData({
 		    	hasMore:false,
-		    	list:[]
+		    	list:[],
+		    	hidden: true,
+	       		hasRefesh: false,
+	       		loading:false
 		    })
+		    this.data.loading = false;
+		    return;
 		}
 		let loadMore = true;
 		let content = res.data.content;
 		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
+		for (var i = 0; i < content.length; i++) {
+			if(this.praiseTmp.indexOf(content[i].id+'')>=0){
+				content[i].praiseed = true
+			}else{
+				content[i].praiseed = false
+			}
+		}
+		console.log(content,this.praiseTmp)
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(res.data.content),
 	    	hidden: true,
 	       	hasRefesh: false
 	    })
-
 	    this.data.loading = false;
 	}
 	async loadMore(e){
@@ -170,8 +182,7 @@ export default class HealthIndex extends wx.Component {
 	async praise(event){
 		var index = event.currentTarget.dataset.index;
 		var id = event.currentTarget.dataset.id;
-		var localId = id+"_"+index;
-		console.log(localId)
+		var localId = id;
 		if(this.praiseTmp.indexOf(localId)>=0){
 			return;
 		}

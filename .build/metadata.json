@@ -1176,9 +1176,7 @@
     "depends": {}
   },
   "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/account/account.js": {
-    "depends": {
-      "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/defineProperty.js": "/Users/yangbinbin/Desktop/myWork/wxapp-dev/dist/npm/babel-runtime/helpers/defineProperty.js"
-    }
+    "depends": {}
   },
   "/Users/yangbinbin/Desktop/myWork/wxapp-dev/node_modules/babel-runtime/helpers/defineProperty.js": {
     "depends": {}

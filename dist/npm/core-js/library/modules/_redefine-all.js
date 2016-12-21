@@ -1,10 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-var hide = require('./_hide.js');
-module.exports = function(target, src, safe){
-  for(var key in src){
-    if(safe && target[key])target[key] = src[key];
-    else hide(target, key, src[key]);
-  } return target;
-};
-})(module,require);
+"use strict";!function(r,e){var t=(r.exports={},e("./_hide.js"));r.exports=function(r,e,i){for(var n in e)i&&r[n]?r[n]=e[n]:t(r,n,e[n]);return r}}(module,require);

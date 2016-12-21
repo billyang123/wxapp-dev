@@ -1,6 +1,6 @@
 <view class="container">
 	<view class="commun-nav">
-		<navigator class="cnav-li join" redirect="" url="{{linkUrl}}">立即加入</navigator>
+		<view class="cnav-li join" bindtap="linkTo" data-link="{{linkUrl}}">立即加入</view>
 	</view>
 	<view class="community">
 		<view class="top-head">
@@ -65,14 +65,14 @@
 					</view>
 				</view>
 			</view>
-			<view class="item-link item-content" wx:for="{{power.ll}}"  catchtap="linkUrl" data-link="{{item.link}}">
+			<navigator class="item-link item-content" wx:for="{{power.ll}}" redirect="" url="{{item.link}}">
 				<view class="item-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>
 						<text class="org" wx:if="{{item.o}}">{{item.o}}</text>
 					</view>
 				</view>
-			</view>
+			</navigator>
 		</view>
 		<view class="pj_tit">
 			<image src="https://wx.chinamuxie.com/images/project/pj_tit03.png" style="width:378rpx;height:53rpx;"></image>

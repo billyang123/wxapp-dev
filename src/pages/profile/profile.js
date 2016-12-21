@@ -168,10 +168,10 @@ export default class Profile extends wx.Component {
     });
     if(res.data.status == 0){
       wx.clearStorage();
-      wx.navigateBack();
-     
-
-
+      wx.redirectTo({
+        url:'/pages/account/account'
+      });
+      //wx.navigateBack();
     }
     this.status = false;
   }

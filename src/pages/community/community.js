@@ -456,8 +456,8 @@ export default class Community extends wx.Component {
 		slidedata:[],
 		bannerImg:{},
 		numData:{},
-    linkUrl:'',
-    login:true
+	    linkUrl:'',
+	    login:true
 	};
 /*/pages/join/join*/
 	children = {
@@ -467,22 +467,26 @@ export default class Community extends wx.Component {
 	    }]})
 	};
 	async linkTo(event) {
+		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
-    	await wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
+      	if(!this.data.login){
+      		await wx.app.doLogin(function(res){
+				_this.setData({
+					login:true,
+					userInfo:res.data
+				});
+				wx.navigateTo({
+		            url:event.currentTarget.dataset.link
+		        })
+			})
+      	}else{
+      		await wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
     	this.isLink = false;
-	    /*wx.navigateTo({
-	      url:event.currentTarget.dataset.link
-	    })*/
 	}
-  async linkUrl(event) {
-  	if(this.isLink1) return;
-    this.isLink1 = true;
-    await wx.navigateTo({
-     url:event.currentTarget.dataset.link
-     })
-    this.isLink1 = false;
-  }
   async getUser(code){
     let myuser = await wx.request({
       url: 'https://xcx.chinamuxie.com/wxapi/user/account',

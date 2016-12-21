@@ -5,7 +5,7 @@ export default class Account extends wx.Component {
 		login:false,
 		userInfo:{},
 		assetsPath:wx.app.data.assetsPath,
-		wxUserInfo:{}
+		wxUserInfo:wx.app.globalData.userInfo
 	};
 	children = {
 	    navbar: new Navbar({cur:2})
@@ -14,11 +14,7 @@ export default class Account extends wx.Component {
 		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
-      	if(this.data.login){
-      		await wx.navigateTo({
-	            url:event.currentTarget.dataset.link
-	        })
-      	}else{
+      	if(!this.data.login){
       		await wx.app.doLogin(function(res){
 				_this.setData({
 					login:true,
@@ -28,21 +24,22 @@ export default class Account extends wx.Component {
 		            url:event.currentTarget.dataset.link
 		        })
 			})
+      	}else{
+      		await wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
       	}
-    	//await wx.app.bindLogin(event.currentTarget.dataset.link,this.data.login);
     	this.isLink = false;
-	    /*wx.navigateTo({
-	      url:event.currentTarget.dataset.link
-	    })*/
 	}
 	async bindLogin(){
 		var _this = this;
 		//await this.checkLogin();
-		console.log(_this)
-		wx.app.doLogin(function(res){
+		//console.log(_this)
+		wx.app.doLogin(function(res,wxUserInfo){
 			_this.setData({
 				login:true,
-				userInfo:res.data
+				userInfo:res.data,
+				wxUserInfo:wxUserInfo
 			});
 		})
 	}
@@ -64,11 +61,11 @@ export default class Account extends wx.Component {
 			})
 		}else{
 			let myuser = await wx.app.getUser(wx.app.globalData.storage.code);
-			console.log(myuser)
 			if(myuser.data.loginStatus){
 	    		this.setData({
 					login:true,
-					userInfo:myuser.data
+					userInfo:myuser.data,
+					wxUserInfo:wx.app.globalData.userInfo
 				})
 	    	}else{
 	    		//await wx.clearStorage();

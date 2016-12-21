@@ -43,6 +43,7 @@ export default class {
   };
   async onLaunch() {
     var _this = this;
+    this.globalData.userInfo = await wx.getStorage({ key:'userInfo'});
     this.globalData.storage = await this.getStorage();
     //await wx.clearStorage();
     //await this.__init();
@@ -60,15 +61,15 @@ export default class {
       }
     })
   }
-  async __init(){
-    this.globalData.storage =  await this.getStorage();
-    if(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
-      let loginInfo = await wx.login();
-      await wx.setStorage({ key: 'code', data: loginInfo.code });
-    }
-    await this.getUserInfo();
-    this.globalData.storage = await this.getStorage();
-  }
+  // async __init(){
+  //   this.globalData.storage =  await this.getStorage();
+  //   if(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
+  //     let loginInfo = await wx.login();
+  //     await wx.setStorage({ key: 'code', data: loginInfo.code });
+  //   }
+  //   await this.getUserInfo();
+  //   this.globalData.storage = await this.getStorage();
+  // }
   async getStorage (){
     let localSession = {};
     let storageInfo = await wx.getStorageInfo();
@@ -95,30 +96,6 @@ export default class {
     })
     return myuser;
   }
-  
-  // async bindLogin(url,bl){
-  //   await this.checkLogin(url,bl);
-  // }
-  // async checkLogin(){
-  //   let res = await this.getUser(this.globalData.storage.code);
-  //   if(res.data.loginStatus){
-  //     callback && callback(res)
-  //   }else{
-  //     if(bl){
-  //       let mMode = wx.showModal({
-  //         title: '提示',
-  //         content: "请先登录"
-  //       })
-  //       if(mMode.confirm){
-  //         wx.redirectTo({
-  //           url: '/pages/account'
-  //         })
-  //       }
-  //       return;
-  //     }
-  //     this.doLogin(callback)
-  //   }
-  // }
   async checkLogin(){
     let res = await this.getUser(this.globalData.storage.code);
     return res.data.loginStatus;
@@ -152,16 +129,25 @@ export default class {
         code:loginInfo.code
       }
     })
-    console.log(rdRes)
+    console.log(rdRes.data)
+    if(rdRes.data.status == 7){
+      wx.hideToast()
+      await wx.showModal({
+          title: '提示',
+          content: res.data.msg
+      })
+      return
+    }
     await wx.setStorage({ key: 'code', data: loginInfo.code });
     await wx.setStorage({ key: 'sessionKey', data: rdRes.data.data});
     this.globalData.storage =  {
       code:loginInfo.code,
       sessionKey:rdRes.data.data
     };
-    console.log(this.globalData.storage)
+    //console.log(this.globalData.storage)
     let userInfo = await wx.getUserInfo();
-    console.log(userInfo)
+    this.globalData.userInfo = userInfo.userInfo
+    await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
     let userInfoPost = await wx.request({
       url: "https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",
       method:"post",
@@ -180,7 +166,7 @@ export default class {
     wx.hideToast()
     if(userInfoPost.data.data == "logged"){
       let _user = await this.getUser(loginInfo.code);
-      callback && callback(_user);
+      callback && callback(_user,userInfo);
     }
     if(userInfoPost.data.data == "notLogged"){
         await wx.navigateTo({
@@ -217,7 +203,7 @@ export default class {
       }else{
         wx.showModal({
           title: '提示',
-          content: res.errMsg
+          content: res.msg
         })
       }
     }

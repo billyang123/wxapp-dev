@@ -1,38 +1,28 @@
 import wx from 'labrador';
+import Alert from '../../components/alert/alert';
 export default class Commit extends wx.Component {
 	data = {
 		qid:"",
 		cid:"",
-		textareaVal:"",
-		disabled:false,
 		url:""
 	};
-	bindTextAreaBlur(e){
-		if(e.detail.value == "") {
-			this.setData({
-				disabled:true,
-				textareaVal:''
-			})
-		}else{
-			this.setData({
-				disabled:false,
-				textareaVal:e.detail.value
-			})
+	children = {
+	    alert: new Alert({msg:"@msg"})
+	};
+	async formSubmit(e){
+		let content = e.detail.value.content;
+		content = content.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
+		if(content == ""){
+			return this.children.alert.show("请输入评论内容");
 		}
-	}
-	bindTextAreaFocus(e){
-		if(e.detail.value =="") return;
-		this.setData({
-			disabled:false
-		})
-	}
-	async submit(){
-		this.postdata.content = this.data.textareaVal;
-		console.log(this.postdata.content)
+		if(content.length>=60){
+			return this.children.alert.show("评论内容需少于60个字");
+		}
+		this.postdata.content = content;
 		var res = await wx.app.ajax({
 			url: this.url,
-			data:this.postdata,
-			type:"post"
+			type:"post",
+			data:this.postdata
 		})
 		if(res.status==0){
 			await wx.navigateBack()

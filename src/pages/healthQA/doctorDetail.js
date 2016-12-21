@@ -1,4 +1,5 @@
 import wx from 'labrador';
+import Alert from '../../components/alert/alert';
 export default class DoctorDetail extends wx.Component {
 	data = {
 		id:1,
@@ -16,8 +17,13 @@ export default class DoctorDetail extends wx.Component {
 		page:0,
 
 		detail:{},
-		disabled:true,
 		loading:false
+		// lineValue:"",
+		// top:"17rpx",
+		// value:""
+	};
+	children = {
+	    alert: new Alert({msg:"@msg"})
 	};
 	audioPlayEnd(event){
 		let id = event.currentTarget.dataset.id;
@@ -85,8 +91,13 @@ export default class DoctorDetail extends wx.Component {
 		if(!res.data){
 			this.setData({
 		    	hasMore:false,
-		    	list:[]
+		    	list:[],
+		    	hidden: true,
+	       		hasRefesh: false,
+	       		loading:false
 		    })
+		    this.data.loading = false;
+		    return;
 		}
 		let loadMore = true;
 		let content = res.data.content;
@@ -137,13 +148,21 @@ export default class DoctorDetail extends wx.Component {
 		}
 
 	}
-	async QaAdd(){
+	async formSubmit(e){
+		let qcontent = e.detail.value.questionContent;
+		qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
+		if(qcontent == ""){
+			return this.children.alert.show("请输入提问内容");
+		}
+		if(qcontent.length>=60){
+			return this.children.alert.show("提问内容需少于60个字");
+		}
 		var res = await wx.app.ajax({
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/add',
 			type:"post",
 			data:{
 				healthDoctorId:this.data.id,
-				questionContent:this.data.textareaValue,
+				questionContent:qcontent,
 				code:wx.app.globalData.storage.code
 			}
 		})
@@ -152,6 +171,11 @@ export default class DoctorDetail extends wx.Component {
 			  title: '提问成功',
 			  icon: 'success',
 			  duration: 2000
+			})
+			this.setData({
+				textareaValue:'',
+				curLength:0,
+				disabled:false
 			})
 		}
 		if(res.status == 1){
@@ -168,15 +192,18 @@ export default class DoctorDetail extends wx.Component {
 	}
 	setNumValue(e){
 		let _value = e.detail.value;
-		_value = _value.replace(/(^\s*)|(\s*$)/g, "");
+		_value = _value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
 		this.setData({
 			curLength:_value.length,
-			textareaValue:_value,
-			disabled:false
+			textareaValue:_value
 		})
 	}
 	linechange(e){
 		console.log(e)
+		// this.setData({
+		// 	top:this.inputTop+e.detail.height+"rpx",
+		// 	lineValue:""
+		// })
 	}
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
@@ -190,10 +217,25 @@ export default class DoctorDetail extends wx.Component {
 			detail:res.data
 		})
 	}
+	// bindinput(e){
+	// 	let _value = e.detail.value;
+	// 	let disabled = this.data.disabled;
+	// 	this.data.textareaValue = _value
+	// 	this.data.value = _value.replace(/(^\s*)|(\s*$)/g, "");
+	// 	if(this.data.value == ""){
+	// 		disabled = false;
+	// 	}else{
+	// 		disabled = true;
+	// 	}
+	// 	this.setData({
+	// 		curLength:_value.length,
+	// 		textareaValue:this.data.textareaValue,
+	// 		disabled:disabled
+	// 	})
+	// }
 	async onLoad(e){
 		//console.log(e.id)
 		this.data.id = parseInt(e.id);
-
 		//加载更多设置高度
 		let systemInfo = await wx.getSystemInfo();
 		this.setData({

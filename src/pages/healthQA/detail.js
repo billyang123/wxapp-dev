@@ -127,8 +127,13 @@ export default class HealthDetail extends wx.Component {
 		if(!res.data){
 			this.setData({
 		    	hasMore:false,
-		    	list:[]
+		    	list:[],
+		    	hidden: true,
+	       		hasRefesh: false,
+	       		loading:false
 		    })
+		    this.data.loading = false;
+		    return;
 		}
 		let loadMore = true;
 		let content = res.data.content;
