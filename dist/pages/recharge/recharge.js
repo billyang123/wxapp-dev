@@ -93,7 +93,7 @@ var Recharge = function (_wx$Component) {
 							case 3:
 								res = _context.sent;
 
-								if (!(res.status == 0)) {
+								if (!(res.data.status == 0)) {
 									_context.next = 10;
 									break;
 								}

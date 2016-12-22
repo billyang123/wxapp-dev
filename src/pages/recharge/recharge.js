@@ -22,7 +22,7 @@ export default class Recharge extends wx.Component {
 	          	code:wx.app.globalData.storage.code
 	        }
 	    });
-		if(res.status == 0){
+		if(res.data.status == 0){
 			let payResult = await wx.requestPayment(res.data.data)
 			await wx.redirectTo({
 	          url:'/pages/paySuccess/paySuccess'

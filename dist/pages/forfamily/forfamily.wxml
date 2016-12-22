@@ -14,7 +14,9 @@
 		
 			<view class="dl">
 				<view class="dt">
-					<text>给爱人</text>
+					<text>给</text>
+					<text>爱</text>
+					<text>人</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
@@ -34,7 +36,10 @@
 		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
 			<view class="dl">
 				<view class="dt">
-					<text>给老婆</text>
+					<!-- <text>给老婆</text> -->
+					<text>给</text>
+					<text>老</text>
+					<text>婆</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
@@ -53,7 +58,10 @@
 		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
 			<view class="dl">
 				<view class="dt">
-					<text>给孩子</text>
+					<!-- <text>给孩子</text> -->
+					<text>给</text>
+					<text>孩</text>
+					<text>子</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
@@ -73,7 +81,9 @@
 		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
 			<view class="dl">
 				<view class="dt">
-					<text>给父母</text>
+					<text>给</text>
+					<text>父</text>
+					<text>母</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
@@ -93,7 +103,9 @@
 		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=3">
 			<view class="dl">
 				<view class="dt">
-					<text>给全家</text>
+					<text>给</text>
+					<text>全</text>
+					<text>家</text>
 				</view>
 				<view class="dd">
 					<view class="h2">
@@ -113,7 +125,9 @@
 		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=2">
 			<view class="dl">
 				<view class="dt">
-					<text>给孩子</text>
+					<text>给</text>
+					<text>孩</text>
+					<text>子</text>
 				</view>
 				<view class="dd">
 					<view class="h2">

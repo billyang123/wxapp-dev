@@ -3,7 +3,7 @@
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
 			<navigator class="acimage default-image" redirect="" url="/pages/profile/profile">
-				<image src="{{userInfo.headImgUrl}}" class="avatar"></image>
+				<image src="{{userInfo.headImgUrl || wxUserInfo.avatarUrl}}" class="avatar"></image>
 				<view class="volunteer" wx:if="{{isVolunteer}}">
 					<text>自愿者</text>
 				</view>

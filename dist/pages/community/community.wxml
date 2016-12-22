@@ -209,7 +209,7 @@
 	</view>
 	<view wx:for="{{slide.slideMore}}">
 		<navigator wx:if="{{item.link}}" class="item-link slide-item-link item-content slide-item-content" redirect="" url="{{item.link}}">
-			<view class="item-inner slide-item-inner">
+			<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
 				<view class="item-title slide-item-title">
 					<text class="org slide-org">{{item.title}}</text>
 				</view>
