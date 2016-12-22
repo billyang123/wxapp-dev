@@ -25,7 +25,7 @@
 			<view class="content">
 				<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"></image>
 				
-				<view class="bubble" catchtap="bindAudio" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}">
+				<view class="bubble" catchtap="bindAudio" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-index="{{index}}">
 					<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"></icon>
 					<text>限时免费听</text>
 				</view>
@@ -36,7 +36,7 @@
 			</view>
 		</navigator>
 		<view class="opt">
-			<view class="op">
+			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="checkLink" class="op">
 				<icon class="iconfont icon-comment"></icon>
 				<text>{{item.commentNumber}}</text>
 			</view>

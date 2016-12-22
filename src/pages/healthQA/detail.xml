@@ -7,7 +7,7 @@
 				<image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
 			</navigator>
 			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
-			<view class="bubble" catchtap="bindAudio" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}">
+			<view class="bubble" catchtap="bindAudio" data-index="1" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}">
 				<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"></icon>
 				<text>限时免费听</text>
 			</view>
@@ -36,7 +36,7 @@
 					<view class="content">{{item.commentContent}}</view>
 					<view class="optaout">
 						<text>{{item.createTime}}</text>
-						<navigator class="reply-link" redirect="" hover-class="none" url="/pages/healthQA/commit?qaCommentId={{item.id}}">回复</navigator>
+						<view catchtap="checkLink" data-link="/pages/healthQA/commit?qaCommentId={{item.id}}" class="reply-link">回复</view>
 					</view>
 				</view>
 				<view class="comment-reply" wx:if="{{item.commentReply && item.commentReply.length>0}}">
@@ -50,7 +50,7 @@
 			</view>
 		</view>
 	</view>
-	<navigator class="commit-form" redirect="" hover-class="none" url="/pages/healthQA/commit?qaId={{detail.id}}">
+	<view class="commit-form" catchtap="checkLink" data-link="/pages/healthQA/commit?qaId={{detail.id}}">
 		<view class="commit-input">
 			<input type="text" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/>
 		</view>
@@ -58,7 +58,7 @@
 			<icon class="iconfont icon-comment fz42"></icon>
 			<text class="gray fz36">  {{totalComNum}}</text>
 		</view>
-	</navigator>
+	</view>
 	<view class="loading" wx:if="{{hasMore}}">
 		<icon class="weui-loading"></icon>
 		<text>稍等下，精彩马上准备好…</text>

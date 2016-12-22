@@ -77,9 +77,25 @@ export default class HealthDetail extends wx.Component {
 		}
 		this.praiseLoad = false;
 	}
+	setNumTune(index,id){
+		let locaId = id+"_tune_"+index;
+		if(!this.tuneNum){
+			this.tuneNum = [];
+		}
+		if(this.tuneNum.indexOf(locaId)<0){
+			wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
+			let detail = this.data.detail;
+			detail.tuneNumber += 1;
+			this.setData({
+				detail:detail
+			})
+			this.tuneNum.push(locaId)
+		}
+	}
 	async bindAudio(event){
 		let src = event.currentTarget.dataset.url;
 		let id = event.currentTarget.dataset.id;
+		let index = event.currentTarget.dataset.index;
 		if(!this.data.audio[id]){
 			this.data.audio[id] = {
 				id:id,
@@ -87,6 +103,7 @@ export default class HealthDetail extends wx.Component {
 				status:false
 			}
 		}
+		//wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}})
 		if(this.data.playAudio.src!=src){
 			if(this.data.playAudio.id){
 				this.data.audio[this.data.playAudio.id].status = false;
@@ -120,7 +137,7 @@ export default class HealthDetail extends wx.Component {
 		       audio:this.data.audio
 		    });
 		}
-
+		this.setNumTune(index,id);
 	}
 	async getCommitList(){
 		if(this.data.loading) return;
@@ -194,6 +211,27 @@ export default class HealthDetail extends wx.Component {
 		this.setData({
 			commitfocus:true
 		})
+	}
+	async checkLink(event){
+		var _this = this;
+		if(this.isLink) return;
+      	this.isLink = true;
+      	if(!this.data.login){
+      		await wx.app.doLogin(function(res){
+				_this.setData({
+					login:true,
+					userInfo:res.data
+				});
+				wx.navigateTo({
+		            url:event.currentTarget.dataset.link
+		        })
+			})
+      	}else{
+      		await wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
+    	this.isLink = false;
 	}
 	bindinput(e){
 		this.setData({

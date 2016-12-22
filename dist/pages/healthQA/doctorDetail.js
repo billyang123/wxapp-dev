@@ -50,7 +50,7 @@ var DoctorDetail = function (_wx$Component) {
 	function DoctorDetail() {
 		var _ref;
 
-		var _temp, _this, _ret;
+		var _temp, _this2, _ret;
 
 		(0, _classCallCheck3.default)(this, DoctorDetail);
 
@@ -58,7 +58,7 @@ var DoctorDetail = function (_wx$Component) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DoctorDetail.__proto__ || (0, _getPrototypeOf2.default)(DoctorDetail)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+		return _ret = (_temp = (_this2 = (0, _possibleConstructorReturn3.default)(this, (_ref = DoctorDetail.__proto__ || (0, _getPrototypeOf2.default)(DoctorDetail)).call.apply(_ref, [this].concat(args))), _this2), _this2.data = {
 			id: 1,
 			curLength: 0,
 			maxLength: 60,
@@ -77,9 +77,9 @@ var DoctorDetail = function (_wx$Component) {
 			// lineValue:"",
 			// top:"17rpx",
 			// value:""
-		}, _this.children = {
+		}, _this2.children = {
 			alert: new _alert2.default({ msg: "@msg" })
-		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this2, _ret);
 	}
 
 	(0, _createClass3.default)(DoctorDetail, [{
@@ -92,16 +92,99 @@ var DoctorDetail = function (_wx$Component) {
 			});
 		}
 	}, {
-		key: 'bindAudio',
+		key: 'checkLink',
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
-				var src, id;
+				var _this;
+
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
+								_this = this;
+
+								if (!this.isLink) {
+									_context.next = 3;
+									break;
+								}
+
+								return _context.abrupt('return');
+
+							case 3:
+								this.isLink = true;
+
+								if (this.data.login) {
+									_context.next = 9;
+									break;
+								}
+
+								_context.next = 7;
+								return _labrador2.default.app.doLogin(function (res) {
+									_this.setData({
+										login: true,
+										userInfo: res.data
+									});
+									_labrador2.default.navigateTo({
+										url: event.currentTarget.dataset.link
+									});
+								});
+
+							case 7:
+								_context.next = 11;
+								break;
+
+							case 9:
+								_context.next = 11;
+								return _labrador2.default.navigateTo({
+									url: event.currentTarget.dataset.link
+								});
+
+							case 11:
+								this.isLink = false;
+
+							case 12:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function checkLink(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return checkLink;
+		}()
+	}, {
+		key: 'setNumTune',
+		value: function setNumTune(index, id) {
+			var locaId = id + "_tune_" + index;
+			if (!this.tuneNum) {
+				this.tuneNum = [];
+			}
+			if (this.tuneNum.indexOf(locaId) < 0) {
+				_labrador2.default.app.ajax({ url: "https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune", type: "post", data: { qaId: id } });
+				var _list = this.data.list;
+				_list[index].tuneNumber += 1;
+				this.setData({
+					list: _list
+				});
+				this.tuneNum.push(locaId);
+			}
+		}
+	}, {
+		key: 'bindAudio',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
+				var src, id, index;
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
 								src = event.currentTarget.dataset.url;
 								id = event.currentTarget.dataset.id;
+								index = event.currentTarget.dataset.index;
 
 								if (!this.data.audio[id]) {
 									this.data.audio[id] = {
@@ -110,9 +193,10 @@ var DoctorDetail = function (_wx$Component) {
 										status: false
 									};
 								}
+								_labrador2.default.app.ajax({ url: "https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune", type: "post", data: { qaId: id } });
 
 								if (!(this.data.playAudio.src != src)) {
-									_context.next = 11;
+									_context2.next = 13;
 									break;
 								}
 
@@ -123,12 +207,12 @@ var DoctorDetail = function (_wx$Component) {
 									});
 								}
 								this.data.audio[id].status = true;
-								_context.next = 8;
+								_context2.next = 10;
 								return _labrador2.default.playBackgroundAudio({
 									dataUrl: src
 								});
 
-							case 8:
+							case 10:
 								this.setData({
 									audio: this.data.audio,
 									playAudio: {
@@ -136,47 +220,50 @@ var DoctorDetail = function (_wx$Component) {
 										src: src
 									}
 								});
-								_context.next = 21;
+								_context2.next = 23;
 								break;
 
-							case 11:
+							case 13:
 								if (!this.data.audio[id].status) {
-									_context.next = 17;
+									_context2.next = 19;
 									break;
 								}
 
-								_context.next = 14;
+								_context2.next = 16;
 								return _labrador2.default.pauseBackgroundAudio();
 
-							case 14:
+							case 16:
 								this.data.audio[id].status = false;
-								_context.next = 20;
+								_context2.next = 22;
 								break;
 
-							case 17:
-								_context.next = 19;
+							case 19:
+								_context2.next = 21;
 								return _labrador2.default.playBackgroundAudio({
 									dataUrl: src
 								});
 
-							case 19:
+							case 21:
 								this.data.audio[id].status = true;
 
-							case 20:
+							case 22:
 								this.setData({
 									audio: this.data.audio
 								});
 
-							case 21:
+							case 23:
+								this.setNumTune(index, id);
+
+							case 24:
 							case 'end':
-								return _context.stop();
+								return _context2.stop();
 						}
 					}
-				}, _callee, this);
+				}, _callee2, this);
 			}));
 
-			function bindAudio(_x) {
-				return _ref2.apply(this, arguments);
+			function bindAudio(_x2) {
+				return _ref3.apply(this, arguments);
 			}
 
 			return bindAudio;
@@ -184,22 +271,22 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'getQAList',
 		value: function () {
-			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
 				var res, loadMore, content, i;
-				return _regenerator2.default.wrap(function _callee2$(_context2) {
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
 					while (1) {
-						switch (_context2.prev = _context2.next) {
+						switch (_context3.prev = _context3.next) {
 							case 0:
 								if (!this.data.loading) {
-									_context2.next = 2;
+									_context3.next = 2;
 									break;
 								}
 
-								return _context2.abrupt('return');
+								return _context3.abrupt('return');
 
 							case 2:
 								this.data.loading = true;
-								_context2.next = 5;
+								_context3.next = 5;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/list',
 									data: {
@@ -210,10 +297,10 @@ var DoctorDetail = function (_wx$Component) {
 								});
 
 							case 5:
-								res = _context2.sent;
+								res = _context3.sent;
 
 								if (res.data) {
-									_context2.next = 10;
+									_context3.next = 10;
 									break;
 								}
 
@@ -225,7 +312,7 @@ var DoctorDetail = function (_wx$Component) {
 									loading: false
 								});
 								this.data.loading = false;
-								return _context2.abrupt('return');
+								return _context3.abrupt('return');
 
 							case 10:
 								loadMore = true;
@@ -251,14 +338,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 16:
 							case 'end':
-								return _context2.stop();
+								return _context3.stop();
 						}
 					}
-				}, _callee2, this);
+				}, _callee3, this);
 			}));
 
 			function getQAList() {
-				return _ref3.apply(this, arguments);
+				return _ref4.apply(this, arguments);
 			}
 
 			return getQAList;
@@ -266,35 +353,35 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'loadMore',
 		value: function () {
-			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(e) {
-				return _regenerator2.default.wrap(function _callee3$(_context3) {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(e) {
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
 					while (1) {
-						switch (_context3.prev = _context3.next) {
+						switch (_context4.prev = _context4.next) {
 							case 0:
 								console.log("loadMore");
 
 								if (this.data.hasMore) {
-									_context3.next = 3;
+									_context4.next = 3;
 									break;
 								}
 
-								return _context3.abrupt('return');
+								return _context4.abrupt('return');
 
 							case 3:
 								this.data.page++;
-								_context3.next = 6;
+								_context4.next = 6;
 								return this.getQAList();
 
 							case 6:
 							case 'end':
-								return _context3.stop();
+								return _context4.stop();
 						}
 					}
-				}, _callee3, this);
+				}, _callee4, this);
 			}));
 
-			function loadMore(_x2) {
-				return _ref4.apply(this, arguments);
+			function loadMore(_x3) {
+				return _ref5.apply(this, arguments);
 			}
 
 			return loadMore;
@@ -302,19 +389,19 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'praise',
 		value: function () {
-			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(event) {
+			var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(event) {
 				var index, id, localId, res, _list;
 
-				return _regenerator2.default.wrap(function _callee4$(_context4) {
+				return _regenerator2.default.wrap(function _callee5$(_context5) {
 					while (1) {
-						switch (_context4.prev = _context4.next) {
+						switch (_context5.prev = _context5.next) {
 							case 0:
 								if (!this.praiseLoad) {
-									_context4.next = 2;
+									_context5.next = 2;
 									break;
 								}
 
-								return _context4.abrupt('return');
+								return _context5.abrupt('return');
 
 							case 2:
 								this.praiseLoad = true;
@@ -323,14 +410,14 @@ var DoctorDetail = function (_wx$Component) {
 								localId = id;
 
 								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
-									_context4.next = 8;
+									_context5.next = 8;
 									break;
 								}
 
-								return _context4.abrupt('return');
+								return _context5.abrupt('return');
 
 							case 8:
-								_context4.next = 10;
+								_context5.next = 10;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 									type: "post",
@@ -341,7 +428,7 @@ var DoctorDetail = function (_wx$Component) {
 								});
 
 							case 10:
-								res = _context4.sent;
+								res = _context5.sent;
 
 								console.log(res);
 								if (res.status == 0) {
@@ -358,14 +445,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 14:
 							case 'end':
-								return _context4.stop();
+								return _context5.stop();
 						}
 					}
-				}, _callee4, this);
+				}, _callee5, this);
 			}));
 
-			function praise(_x3) {
-				return _ref5.apply(this, arguments);
+			function praise(_x4) {
+				return _ref6.apply(this, arguments);
 			}
 
 			return praise;
@@ -373,33 +460,33 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'formSubmit',
 		value: function () {
-			var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(e) {
+			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(e) {
 				var qcontent, res, sModal;
-				return _regenerator2.default.wrap(function _callee5$(_context5) {
+				return _regenerator2.default.wrap(function _callee6$(_context6) {
 					while (1) {
-						switch (_context5.prev = _context5.next) {
+						switch (_context6.prev = _context6.next) {
 							case 0:
 								qcontent = e.detail.value.questionContent;
 
 								qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
 
 								if (!(qcontent == "")) {
-									_context5.next = 4;
+									_context6.next = 4;
 									break;
 								}
 
-								return _context5.abrupt('return', this.children.alert.show("请输入提问内容"));
+								return _context6.abrupt('return', this.children.alert.show("请输入提问内容"));
 
 							case 4:
 								if (!(qcontent.length >= 60)) {
-									_context5.next = 6;
+									_context6.next = 6;
 									break;
 								}
 
-								return _context5.abrupt('return', this.children.alert.show("提问内容需少于60个字"));
+								return _context6.abrupt('return', this.children.alert.show("提问内容需少于60个字"));
 
 							case 6:
-								_context5.next = 8;
+								_context6.next = 8;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/add',
 									type: "post",
@@ -411,7 +498,7 @@ var DoctorDetail = function (_wx$Component) {
 								});
 
 							case 8:
-								res = _context5.sent;
+								res = _context6.sent;
 
 								if (res.status == 0) {
 									_labrador2.default.showToast({
@@ -427,18 +514,18 @@ var DoctorDetail = function (_wx$Component) {
 								}
 
 								if (!(res.status == 1)) {
-									_context5.next = 15;
+									_context6.next = 15;
 									break;
 								}
 
-								_context5.next = 13;
+								_context6.next = 13;
 								return _labrador2.default.showModal({
 									title: '提示',
 									content: '需要先登录'
 								});
 
 							case 13:
-								sModal = _context5.sent;
+								sModal = _context6.sent;
 
 								if (sModal.confirm) {
 									_labrador2.default.redirectTo({
@@ -448,14 +535,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 15:
 							case 'end':
-								return _context5.stop();
+								return _context6.stop();
 						}
 					}
-				}, _callee5, this);
+				}, _callee6, this);
 			}));
 
-			function formSubmit(_x4) {
-				return _ref6.apply(this, arguments);
+			function formSubmit(_x5) {
+				return _ref7.apply(this, arguments);
 			}
 
 			return formSubmit;
@@ -473,13 +560,13 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'getDetail',
 		value: function () {
-			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
+			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7() {
 				var res;
-				return _regenerator2.default.wrap(function _callee6$(_context6) {
+				return _regenerator2.default.wrap(function _callee7$(_context7) {
 					while (1) {
-						switch (_context6.prev = _context6.next) {
+						switch (_context7.prev = _context7.next) {
 							case 0:
-								_context6.next = 2;
+								_context7.next = 2;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/detail',
 									data: {
@@ -488,7 +575,7 @@ var DoctorDetail = function (_wx$Component) {
 								});
 
 							case 2:
-								res = _context6.sent;
+								res = _context7.sent;
 
 								this.setData({
 									detail: res.data
@@ -496,14 +583,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 4:
 							case 'end':
-								return _context6.stop();
+								return _context7.stop();
 						}
 					}
-				}, _callee6, this);
+				}, _callee7, this);
 			}));
 
 			function getDetail() {
-				return _ref7.apply(this, arguments);
+				return _ref8.apply(this, arguments);
 			}
 
 			return getDetail;
@@ -528,20 +615,20 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'onLoad',
 		value: function () {
-			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(e) {
+			var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8(e) {
 				var systemInfo;
-				return _regenerator2.default.wrap(function _callee7$(_context7) {
+				return _regenerator2.default.wrap(function _callee8$(_context8) {
 					while (1) {
-						switch (_context7.prev = _context7.next) {
+						switch (_context8.prev = _context8.next) {
 							case 0:
 								//console.log(e.id)
 								this.data.id = parseInt(e.id);
 								//加载更多设置高度
-								_context7.next = 3;
+								_context8.next = 3;
 								return _labrador2.default.getSystemInfo();
 
 							case 3:
-								systemInfo = _context7.sent;
+								systemInfo = _context8.sent;
 
 								this.setData({
 									windowHieght: systemInfo.windowHeight
@@ -553,14 +640,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 7:
 							case 'end':
-								return _context7.stop();
+								return _context8.stop();
 						}
 					}
-				}, _callee7, this);
+				}, _callee8, this);
 			}));
 
-			function onLoad(_x5) {
-				return _ref8.apply(this, arguments);
+			function onLoad(_x6) {
+				return _ref9.apply(this, arguments);
 			}
 
 			return onLoad;
@@ -568,21 +655,21 @@ var DoctorDetail = function (_wx$Component) {
 	}, {
 		key: 'onPullDownRefresh',
 		value: function () {
-			var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8() {
-				return _regenerator2.default.wrap(function _callee8$(_context8) {
+			var _ref10 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee9() {
+				return _regenerator2.default.wrap(function _callee9$(_context9) {
 					while (1) {
-						switch (_context8.prev = _context8.next) {
+						switch (_context9.prev = _context9.next) {
 							case 0:
 								this.setData({
 									hasMore: true,
 									page: 0,
 									list: []
 								});
-								_context8.next = 3;
+								_context9.next = 3;
 								return this.getQAList();
 
 							case 3:
-								_context8.next = 5;
+								_context9.next = 5;
 								return this.getDetail();
 
 							case 5:
@@ -590,14 +677,14 @@ var DoctorDetail = function (_wx$Component) {
 
 							case 6:
 							case 'end':
-								return _context8.stop();
+								return _context9.stop();
 						}
 					}
-				}, _callee8, this);
+				}, _callee9, this);
 			}));
 
 			function onPullDownRefresh() {
-				return _ref9.apply(this, arguments);
+				return _ref10.apply(this, arguments);
 			}
 
 			return onPullDownRefresh;

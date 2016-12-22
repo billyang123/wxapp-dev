@@ -182,16 +182,34 @@ var HealthDetail = function (_wx$Component) {
 			return praise;
 		}()
 	}, {
+		key: "setNumTune",
+		value: function setNumTune(index, id) {
+			var locaId = id + "_tune_" + index;
+			if (!this.tuneNum) {
+				this.tuneNum = [];
+			}
+			if (this.tuneNum.indexOf(locaId) < 0) {
+				_labrador2.default.app.ajax({ url: "https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune", type: "post", data: { qaId: id } });
+				var detail = this.data.detail;
+				detail.tuneNumber += 1;
+				this.setData({
+					detail: detail
+				});
+				this.tuneNum.push(locaId);
+			}
+		}
+	}, {
 		key: "bindAudio",
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(event) {
-				var src, id;
+				var src, id, index;
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
 								src = event.currentTarget.dataset.url;
 								id = event.currentTarget.dataset.id;
+								index = event.currentTarget.dataset.index;
 
 								if (!this.data.audio[id]) {
 									this.data.audio[id] = {
@@ -200,9 +218,10 @@ var HealthDetail = function (_wx$Component) {
 										status: false
 									};
 								}
+								//wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}})
 
 								if (!(this.data.playAudio.src != src)) {
-									_context2.next = 11;
+									_context2.next = 12;
 									break;
 								}
 
@@ -213,12 +232,12 @@ var HealthDetail = function (_wx$Component) {
 									});
 								}
 								this.data.audio[id].status = true;
-								_context2.next = 8;
+								_context2.next = 9;
 								return _labrador2.default.playBackgroundAudio({
 									dataUrl: src
 								});
 
-							case 8:
+							case 9:
 								this.setData({
 									audio: this.data.audio,
 									playAudio: {
@@ -226,38 +245,41 @@ var HealthDetail = function (_wx$Component) {
 										src: src
 									}
 								});
-								_context2.next = 21;
+								_context2.next = 22;
 								break;
 
-							case 11:
+							case 12:
 								if (!this.data.audio[id].status) {
-									_context2.next = 17;
+									_context2.next = 18;
 									break;
 								}
 
-								_context2.next = 14;
+								_context2.next = 15;
 								return _labrador2.default.pauseBackgroundAudio();
 
-							case 14:
+							case 15:
 								this.data.audio[id].status = false;
-								_context2.next = 20;
+								_context2.next = 21;
 								break;
 
-							case 17:
-								_context2.next = 19;
+							case 18:
+								_context2.next = 20;
 								return _labrador2.default.playBackgroundAudio({
 									dataUrl: src
 								});
 
-							case 19:
+							case 20:
 								this.data.audio[id].status = true;
 
-							case 20:
+							case 21:
 								this.setData({
 									audio: this.data.audio
 								});
 
-							case 21:
+							case 22:
+								this.setNumTune(index, id);
+
+							case 23:
 							case "end":
 								return _context2.stop();
 						}
@@ -443,6 +465,71 @@ var HealthDetail = function (_wx$Component) {
 			});
 		}
 	}, {
+		key: "checkLink",
+		value: function () {
+			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(event) {
+				var _this;
+
+				return _regenerator2.default.wrap(function _callee6$(_context6) {
+					while (1) {
+						switch (_context6.prev = _context6.next) {
+							case 0:
+								_this = this;
+
+								if (!this.isLink) {
+									_context6.next = 3;
+									break;
+								}
+
+								return _context6.abrupt("return");
+
+							case 3:
+								this.isLink = true;
+
+								if (this.data.login) {
+									_context6.next = 9;
+									break;
+								}
+
+								_context6.next = 7;
+								return _labrador2.default.app.doLogin(function (res) {
+									_this.setData({
+										login: true,
+										userInfo: res.data
+									});
+									_labrador2.default.navigateTo({
+										url: event.currentTarget.dataset.link
+									});
+								});
+
+							case 7:
+								_context6.next = 11;
+								break;
+
+							case 9:
+								_context6.next = 11;
+								return _labrador2.default.navigateTo({
+									url: event.currentTarget.dataset.link
+								});
+
+							case 11:
+								this.isLink = false;
+
+							case 12:
+							case "end":
+								return _context6.stop();
+						}
+					}
+				}, _callee6, this);
+			}));
+
+			function checkLink(_x4) {
+				return _ref7.apply(this, arguments);
+			}
+
+			return checkLink;
+		}()
+	}, {
 		key: "bindinput",
 		value: function bindinput(e) {
 			this.setData({
@@ -452,18 +539,18 @@ var HealthDetail = function (_wx$Component) {
 	}, {
 		key: "onLoad",
 		value: function () {
-			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(e) {
+			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(e) {
 				var systemInfo;
-				return _regenerator2.default.wrap(function _callee6$(_context6) {
+				return _regenerator2.default.wrap(function _callee7$(_context7) {
 					while (1) {
-						switch (_context6.prev = _context6.next) {
+						switch (_context7.prev = _context7.next) {
 							case 0:
 								this.praiseTmp = [];
-								_context6.next = 3;
+								_context7.next = 3;
 								return _labrador2.default.getSystemInfo();
 
 							case 3:
-								systemInfo = _context6.sent;
+								systemInfo = _context7.sent;
 
 								this.data.id = parseInt(e.id);
 								this.setData({
@@ -475,14 +562,14 @@ var HealthDetail = function (_wx$Component) {
 
 							case 9:
 							case "end":
-								return _context6.stop();
+								return _context7.stop();
 						}
 					}
-				}, _callee6, this);
+				}, _callee7, this);
 			}));
 
-			function onLoad(_x4) {
-				return _ref7.apply(this, arguments);
+			function onLoad(_x5) {
+				return _ref8.apply(this, arguments);
 			}
 
 			return onLoad;
@@ -490,21 +577,21 @@ var HealthDetail = function (_wx$Component) {
 	}, {
 		key: "onPullDownRefresh",
 		value: function () {
-			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7() {
-				return _regenerator2.default.wrap(function _callee7$(_context7) {
+			var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8() {
+				return _regenerator2.default.wrap(function _callee8$(_context8) {
 					while (1) {
-						switch (_context7.prev = _context7.next) {
+						switch (_context8.prev = _context8.next) {
 							case 0:
 								this.setData({
 									hasMore: true,
 									page: 0,
 									list: []
 								});
-								_context7.next = 3;
+								_context8.next = 3;
 								return this.getDetail();
 
 							case 3:
-								_context7.next = 5;
+								_context8.next = 5;
 								return this.getCommitList();
 
 							case 5:
@@ -512,14 +599,14 @@ var HealthDetail = function (_wx$Component) {
 
 							case 6:
 							case "end":
-								return _context7.stop();
+								return _context8.stop();
 						}
 					}
-				}, _callee7, this);
+				}, _callee8, this);
 			}));
 
 			function onPullDownRefresh() {
-				return _ref8.apply(this, arguments);
+				return _ref9.apply(this, arguments);
 			}
 
 			return onPullDownRefresh;
