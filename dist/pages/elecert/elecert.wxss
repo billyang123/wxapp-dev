@@ -2,7 +2,10 @@
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   padding: 0 35rpx;
-  background: #fff url("https://s1.chinamuxie.com/www/assets/xcx/images/yinzhang_201x152.png") no-repeat 520rpx 370rpx;
+  background-color: #fff;
+  background-image: url("https://s1.chinamuxie.com/www/assets/xcx/images/yinzhang_201x152.png");
+  background-repeat: no-repeat;
+  background-position: 520rpx 370rpx;
   background-size: 201rpx 152rpx;
 }
 .card-title {

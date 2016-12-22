@@ -62,6 +62,7 @@ var Index = function (_wx$Component) {
         img: '/images/banner_01_750x250.png',
         href: '/pages/bannerIndex/bannerIndex'
       },
+      mImgArr: {},
       assetsPath: _labrador2.default.app.data.assetsPath
     }, _this.children = {
       //swiper: new Swiper({imgUrls:"@bannerImgs"}),
@@ -71,12 +72,72 @@ var Index = function (_wx$Component) {
 
   (0, _createClass3.default)(Index, [{
     key: 'onLoad',
-    value: function onLoad(e) {
-      console.log(e);
-      // wx.redirectTo({
-      //   url: '/pages/bindphone/bindphone'
-      // })
-    }
+    value: function () {
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                //console.log(e)
+                // wx.redirectTo({
+                //   url: '/pages/bindphone/bindphone'
+                // })
+                this.getIndexProject();
+
+              case 1:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function onLoad() {
+        return _ref2.apply(this, arguments);
+      }
+
+      return onLoad;
+    }()
+  }, {
+    key: 'getIndexProject',
+    value: function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+        var res, _data, _mImgArr, i;
+
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _labrador2.default.app.ajax({ url: "https://xcx.chinamuxie.com/wxapi/project/getIndexProject" });
+
+              case 2:
+                res = _context2.sent;
+                _data = res.data;
+                _mImgArr = {};
+
+                for (i = 0; i < _data.length; i++) {
+                  _mImgArr[_data[i].id] = _data[i];
+                }
+                console.log(_mImgArr);
+                this.setData({
+                  mImgArr: _mImgArr
+                });
+
+              case 8:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function getIndexProject() {
+        return _ref3.apply(this, arguments);
+      }
+
+      return getIndexProject;
+    }()
   }, {
     key: 'makePhoneCall',
     value: function makePhoneCall(event) {
@@ -92,21 +153,21 @@ var Index = function (_wx$Component) {
   }, {
     key: 'linkTo',
     value: function () {
-      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
-        return _regenerator2.default.wrap(function _callee$(_context) {
+      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(event) {
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 if (!this.isLink) {
-                  _context.next = 2;
+                  _context3.next = 2;
                   break;
                 }
 
-                return _context.abrupt('return');
+                return _context3.abrupt('return');
 
               case 2:
                 this.isLink = true;
-                _context.next = 5;
+                _context3.next = 5;
                 return _labrador2.default.navigateTo({
                   url: event.currentTarget.dataset.link
                 });
@@ -116,14 +177,14 @@ var Index = function (_wx$Component) {
 
               case 6:
               case 'end':
-                return _context.stop();
+                return _context3.stop();
             }
           }
-        }, _callee, this);
+        }, _callee3, this);
       }));
 
       function linkTo(_x) {
-        return _ref2.apply(this, arguments);
+        return _ref4.apply(this, arguments);
       }
 
       return linkTo;

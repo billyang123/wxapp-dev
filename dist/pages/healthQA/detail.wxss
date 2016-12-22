@@ -1,3 +1,6 @@
+.container {
+  padding-bottom: 108rpx;
+}
 .health-detail {
   background-color: #fff;
   padding: 32rpx;
@@ -124,6 +127,7 @@
   width: 546rpx;
   height: 68rpx;
   border: 2rpx solid #ccc;
+  border-width: 2rpx;
   padding: 8rpx 39rpx;
 }
 .commit-form .commit-num {

@@ -99,7 +99,7 @@ var Recharge = function (_wx$Component) {
 								}
 
 								_context.next = 7;
-								return _labrador2.default.requestPayment(res.data);
+								return _labrador2.default.requestPayment(res.data.data);
 
 							case 7:
 								payResult = _context.sent;

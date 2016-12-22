@@ -63,7 +63,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[2]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg {{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
@@ -81,7 +81,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[5]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[5].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
@@ -99,7 +99,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[4]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[4].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
@@ -117,7 +117,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[3]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[3].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
@@ -135,7 +135,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[6]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[6].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
@@ -153,7 +153,7 @@
 			<view class="hi-opt">
 				<button class="joinbtn">立即加入</button>
 				<view class="opt-imglist">
-					<image mode="aspectFill"  wx:for="{{mImgArr[1]}}" wx:for-index="idx" wx:for-item="img" src="{{img.userHeadimgurl}}" class="oimg"></image>
+					<image mode="aspectFill"  wx:for="{{mImgArr[1].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"></image>
 				</view>
 			</view>
 		</navigator>
