@@ -104,7 +104,7 @@ var Indemnification = function (_wx$Component) {
 			return linkTo;
 		}()
 	}, {
-		key: 'onLoad',
+		key: 'getAcList',
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
 				var listData;
@@ -144,11 +144,63 @@ var Indemnification = function (_wx$Component) {
 				}, _callee2, this);
 			}));
 
-			function onLoad() {
+			function getAcList() {
 				return _ref3.apply(this, arguments);
 			}
 
+			return getAcList;
+		}()
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+								this.getAcList();
+
+							case 1:
+							case 'end':
+								return _context3.stop();
+						}
+					}
+				}, _callee3, this);
+			}));
+
+			function onLoad() {
+				return _ref4.apply(this, arguments);
+			}
+
 			return onLoad;
+		}()
+	}, {
+		key: 'onPullDownRefresh',
+		value: function () {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
+					while (1) {
+						switch (_context4.prev = _context4.next) {
+							case 0:
+								_context4.next = 2;
+								return this.getAcList();
+
+							case 2:
+								_labrador2.default.stopPullDownRefresh();
+
+							case 3:
+							case 'end':
+								return _context4.stop();
+						}
+					}
+				}, _callee4, this);
+			}));
+
+			function onPullDownRefresh() {
+				return _ref5.apply(this, arguments);
+			}
+
+			return onPullDownRefresh;
 		}()
 	}]);
 	return Indemnification;

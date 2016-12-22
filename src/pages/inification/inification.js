@@ -17,7 +17,7 @@ export default class Indemnification extends wx.Component {
 		})
 		this.isLink = false;
 	}
-	async onLoad(){
+	async getAcList(){
 		let listData = await wx.request({
             url: 'https://xcx.chinamuxie.com/wxapi/project/account/list',
             method:"get",
@@ -36,5 +36,12 @@ export default class Indemnification extends wx.Component {
         	hasAcount:listData.data.data.hasAcount,
         	list:listData.data.data.list
         });
+	}
+	async onLoad(){
+		this.getAcList()
+	}
+	async onPullDownRefresh(){
+		await this.getAcList()
+		wx.stopPullDownRefresh()
 	}
 }
