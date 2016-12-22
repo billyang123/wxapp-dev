@@ -5,24 +5,26 @@ export default class Recharge extends wx.Component {
     	totalNum:0,
     	assetsPath:wx.app.data.assetsPath
 	};
-	async chashMoney(){
-		// var res = await wx.app.ajax({
-		// 	url: '#',
-		// 	type:"post",
-		// 	data:{
-				
-		// 	}
-		// })
-		// wx.requestPayment(
-		// 	{
-		// 	'timeStamp': '',
-		// 	'nonceStr': '',
-		// 	'package': '',
-		// 	'signType': 'MD5',
-		// 	'paySign': '',
-		// 	'success':function(res){},
-		// 	'fail':function(res){}
-		// })
+	async chashMoney(event){
+		var _url = "https://xcx.chinamuxie.com/wxapi/project/account/recharge";
+		let res = await wx.request({
+	        url:_url,
+	        header: {
+	          'content-type': 'application/x-www-form-urlencoded'
+	        },
+	        method:"POST",
+	        data:{
+	          	projectAccountId:this.projectAccountId,
+				rechargeAmount:this.data.totalNum,
+	          	code:wx.app.globalData.storage.code
+	        }
+	    });
+		if(res.status == 0){
+			let payResult = await wx.requestPayment(res.data);
+			await wx.redirectTo({
+	          url:'/pages/paySuccess/paySuccess'
+	        })
+		}
 	}
 	bindinput(event){
 		this.setData({
@@ -36,5 +38,8 @@ export default class Recharge extends wx.Component {
 			tabNum:num*1,
 			totalNum:num*1
 		})
+	}
+	onLoad(e){
+		this.projectAccountId = e.id
 	}
 }

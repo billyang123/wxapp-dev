@@ -153,6 +153,7 @@ export default class Join extends wx.Component {
       });
       if(res.data.status == 0){
         let payResult = await wx.requestPayment(res.data.data)
+        console.log(payResult)
         await wx.redirectTo({
           url:'/pages/joinEnd/joinEnd'
         })

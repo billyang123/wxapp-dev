@@ -1,1 +1,197 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var r=e.exports={};window=t("../../npm/labrador/global.js");Object.defineProperty(r,"__esModule",{value:!0});var n=t("../../npm/babel-runtime/regenerator/index.js"),s=a(n),u=t("../../npm/babel-runtime/helpers/asyncToGenerator.js"),l=a(u),o=t("../../npm/babel-runtime/core-js/object/get-prototype-of.js"),i=a(o),c=t("../../npm/babel-runtime/helpers/classCallCheck.js"),d=a(c),p=t("../../npm/babel-runtime/helpers/createClass.js"),h=a(p),f=t("../../npm/babel-runtime/helpers/possibleConstructorReturn.js"),m=a(f),b=t("../../npm/babel-runtime/helpers/inherits.js"),x=a(b),v=t("../../npm/labrador/index.js"),g=a(v),j=t("../../components/alert/alert.js"),w=a(j),q=function(e){function t(){var e,a,r,n;(0,d.default)(this,t);for(var s=arguments.length,u=Array(s),l=0;l<s;l++)u[l]=arguments[l];return a=r=(0,m.default)(this,(e=t.__proto__||(0,i.default)(t)).call.apply(e,[this].concat(u))),r.data={qid:"",cid:"",url:""},r.children={alert:new w.default({msg:"@msg"})},n=a,(0,m.default)(r,n)}return(0,x.default)(t,e),(0,h.default)(t,[{key:"formSubmit",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,l.default)(s.default.mark(function e(t){var a,r,n;return s.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(a=t.detail.value.content,a=a.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g,""),""!=a){e.next=4;break}return e.abrupt("return",this.children.alert.show("请输入评论内容"));case 4:if(!(a.length>=60)){e.next=6;break}return e.abrupt("return",this.children.alert.show("评论内容需少于60个字"));case 6:return this.postdata.content=a,e.next=9,g.default.app.ajax({url:this.url,type:"post",data:this.postdata});case 9:if(r=e.sent,0!=r.status){e.next=13;break}return e.next=13,g.default.navigateBack();case 13:if(1!=r.status){e.next=18;break}return e.next=16,g.default.showModal({title:"提示",content:"需要先登录"});case 16:n=e.sent,n.confirm&&g.default.redirectTo({url:"/pages/account/account"});case 18:case"end":return e.stop()}},e,this)}));return e}()},{key:"onLoad",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,l.default)(s.default.mark(function e(t){return s.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:this.data.cid=t.qid,this.data.rid=t.rid,this.postdata={code:g.default.app.globalData.storage.code},t.qaCommentId&&(this.postdata.qaCommentId=t.qaCommentId,this.url="https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/reply"),t.qaId&&(this.postdata.qaId=t.qaId,this.url="https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/add"),console.log(t);case 6:case"end":return e.stop()}},e,this)}));return e}()}]),t}(g.default.Component);Page(v._createPage(q))}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _getPrototypeOf = require('../../npm/babel-runtime/core-js/object/get-prototype-of.js');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('../../npm/babel-runtime/helpers/inherits.js');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _labrador = require('../../npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+var _alert = require('../../components/alert/alert.js');
+
+var _alert2 = _interopRequireDefault(_alert);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Commit = function (_wx$Component) {
+	(0, _inherits3.default)(Commit, _wx$Component);
+
+	function Commit() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		(0, _classCallCheck3.default)(this, Commit);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Commit.__proto__ || (0, _getPrototypeOf2.default)(Commit)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+			qid: "",
+			cid: "",
+			url: ""
+		}, _this.children = {
+			alert: new _alert2.default({ msg: "@msg" })
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	}
+
+	(0, _createClass3.default)(Commit, [{
+		key: 'formSubmit',
+		value: function () {
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(e) {
+				var content, res, sModal;
+				return _regenerator2.default.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								content = e.detail.value.content;
+
+								content = content.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
+
+								if (!(content == "")) {
+									_context.next = 4;
+									break;
+								}
+
+								return _context.abrupt('return', this.children.alert.show("请输入评论内容"));
+
+							case 4:
+								if (!(content.length >= 60)) {
+									_context.next = 6;
+									break;
+								}
+
+								return _context.abrupt('return', this.children.alert.show("评论内容需少于60个字"));
+
+							case 6:
+								this.postdata.content = content;
+								_context.next = 9;
+								return _labrador2.default.app.ajax({
+									url: this.url,
+									type: "post",
+									data: this.postdata
+								});
+
+							case 9:
+								res = _context.sent;
+
+								if (!(res.status == 0)) {
+									_context.next = 13;
+									break;
+								}
+
+								_context.next = 13;
+								return _labrador2.default.navigateBack();
+
+							case 13:
+								if (!(res.status == 1)) {
+									_context.next = 18;
+									break;
+								}
+
+								_context.next = 16;
+								return _labrador2.default.showModal({
+									title: '提示',
+									content: '需要先登录'
+								});
+
+							case 16:
+								sModal = _context.sent;
+
+								if (sModal.confirm) {
+									_labrador2.default.redirectTo({
+										url: '/pages/account/account'
+									});
+								}
+
+							case 18:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function formSubmit(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return formSubmit;
+		}()
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								this.data.cid = e.qid;
+								this.data.rid = e.rid;
+								this.postdata = {
+									code: _labrador2.default.app.globalData.storage.code
+								};
+								if (e.qaCommentId) {
+									this.postdata.qaCommentId = e.qaCommentId;
+									this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/reply';
+								}
+								if (e.qaId) {
+									this.postdata.qaId = e.qaId;
+									this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/add';
+								}
+								console.log(e);
+
+							case 6:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function onLoad(_x2) {
+				return _ref3.apply(this, arguments);
+			}
+
+			return onLoad;
+		}()
+	}]);
+	return Commit;
+}(_labrador2.default.Component);
+
+
+Page(_labrador._createPage(Commit));
+
+})(module,require);

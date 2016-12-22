@@ -1,1 +1,49 @@
-.paySuccess .header-tip{padding:0 38rpx}.paySuccess .header-tip .item-content{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=);background-position:right center;background-repeat:no-repeat;background-size:13rpx 23rpx;padding-right:30rpx;display:flex;justify-content:flex-start;align-items:center;height:170rpx}.paySuccess .header-tip icon{position:relative;top:10rpx}.paySuccess .header-tip .txt{font-size:34rpx}.paySuccess .header-tip .info{font-size:28rpx}.paySuccess .header-tip .inner{padding:0 20rpx}.paySuccess .ps-item{background-color:#fff;padding:36rpx 32rpx;border-bottom:1rpx solid #ddd}.paySuccess .ps-item.ps-item-tel{padding:20rpx 32rpx 36rpx}.paySuccess .ps-item .p-tel .txt{display:inline-block;line-height:55rpx}.paySuccess .ps-item .p-tel .tel-btn{position:relative;top:15rpx}.paySuccess .ps-item .p-inner{line-height:1}.paySuccess .ps-item .p-time{margin-top:24rpx}
+.paySuccess .header-tip {
+  padding: 0 38rpx;
+}
+.paySuccess .header-tip .item-content {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 13rpx 23rpx;
+  padding-right: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 170rpx;
+}
+.paySuccess .header-tip icon {
+  position: relative;
+  top: 10rpx;
+}
+.paySuccess .header-tip .txt {
+  font-size: 34rpx;
+}
+.paySuccess .header-tip .info {
+  font-size: 28rpx;
+}
+.paySuccess .header-tip .inner {
+  padding: 0 20rpx;
+}
+.paySuccess .ps-item {
+  background-color: #fff;
+  padding: 36rpx 32rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.paySuccess .ps-item.ps-item-tel {
+  padding: 20rpx 32rpx 36rpx 32rpx;
+}
+.paySuccess .ps-item .p-tel .txt {
+  display: inline-block;
+  line-height: 55rpx;
+}
+.paySuccess .ps-item .p-tel .tel-btn {
+  position: relative;
+  top: 15rpx;
+}
+.paySuccess .ps-item .p-inner {
+  line-height: 1;
+}
+.paySuccess .ps-item .p-time {
+  margin-top: 24rpx;
+}

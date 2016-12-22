@@ -1,1 +1,224 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var r=e.exports={};window=t("../../npm/labrador/global.js");Object.defineProperty(r,"__esModule",{value:!0});var n=t("../../npm/babel-runtime/regenerator/index.js"),s=a(n),i=t("../../npm/babel-runtime/helpers/asyncToGenerator.js"),o=a(i),u=t("../../npm/babel-runtime/core-js/object/get-prototype-of.js"),l=a(u),d=t("../../npm/babel-runtime/helpers/classCallCheck.js"),h=a(d),c=t("../../npm/babel-runtime/helpers/createClass.js"),p=a(c),f=t("../../npm/babel-runtime/helpers/possibleConstructorReturn.js"),g=a(f),b=t("../../npm/babel-runtime/helpers/inherits.js"),m=a(b),v=t("../../npm/labrador/index.js"),x=a(v),w=function(e){function t(){var e,a,r,n;(0,h.default)(this,t);for(var s=arguments.length,i=Array(s),o=0;o<s;o++)i[o]=arguments[o];return a=r=(0,g.default)(this,(e=t.__proto__||(0,l.default)(t)).call.apply(e,[this].concat(i))),r.data={id:"",size:5,page:0,hidden:!1,hasMore:!0,hasRefesh:!1,windowHieght:"",list:[],loading:!1},n=a,(0,g.default)(r,n)}return(0,m.default)(t,e),(0,p.default)(t,[{key:"getDoctorList",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,o.default)(s.default.mark(function e(t){var a,r,n;return s.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(!this.data.loading){e.next=2;break}return e.abrupt("return");case 2:return this.data.loading=!0,e.next=5,x.default.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list",data:{page:this.data.page,size:this.data.size}});case 5:if(a=e.sent,a.data){e.next=10;break}return this.setData({hasMore:!1,list:[],hidden:!0,hasRefesh:!1,loading:!1}),this.data.loading=!1,e.abrupt("return");case 10:r=!0,n=a.data.content,1!=a.data.totalPages&&a.data.totalPages!=this.data.page+1||(r=!1),this.setData({hasMore:r,list:this.data.list.concat(a.data.content),hidden:!0,hasRefesh:!1}),this.data.loading=!1;case 15:case"end":return e.stop()}},e,this)}));return e}()},{key:"loadMore",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,o.default)(s.default.mark(function e(t){return s.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(console.log("loadMore"),that.setData({hasRefesh:!0}),this.data.hasMore){e.next=4;break}return e.abrupt("return");case 4:return this.data.page++,e.next=7,this.getQAList();case 7:case"end":return e.stop()}},e,this)}));return e}()},{key:"onLoad",value:function(){function e(){return t.apply(this,arguments)}var t=(0,o.default)(s.default.mark(function e(){var t;return s.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,x.default.getSystemInfo();case 2:t=e.sent,this.setData({windowHieght:t.windowHeight}),this.getDoctorList();case 5:case"end":return e.stop()}},e,this)}));return e}()}]),t}(x.default.Component);Page(v._createPage(w))}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _getPrototypeOf = require('../../npm/babel-runtime/core-js/object/get-prototype-of.js');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('../../npm/babel-runtime/helpers/inherits.js');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _labrador = require('../../npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DoctorsList = function (_wx$Component) {
+	(0, _inherits3.default)(DoctorsList, _wx$Component);
+
+	function DoctorsList() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		(0, _classCallCheck3.default)(this, DoctorsList);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = DoctorsList.__proto__ || (0, _getPrototypeOf2.default)(DoctorsList)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+			id: "",
+			size: 5,
+			page: 0,
+			hidden: false,
+			hasMore: true,
+			hasRefesh: false,
+			windowHieght: '',
+			list: [],
+			loading: false
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	}
+
+	(0, _createClass3.default)(DoctorsList, [{
+		key: 'getDoctorList',
+		value: function () {
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(id) {
+				var res, loadMore, content;
+				return _regenerator2.default.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								if (!this.data.loading) {
+									_context.next = 2;
+									break;
+								}
+
+								return _context.abrupt('return');
+
+							case 2:
+								this.data.loading = true;
+								_context.next = 5;
+								return _labrador2.default.app.ajax({
+									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
+									data: {
+										page: this.data.page,
+										size: this.data.size
+									}
+								});
+
+							case 5:
+								res = _context.sent;
+
+								if (res.data) {
+									_context.next = 10;
+									break;
+								}
+
+								this.setData({
+									hasMore: false,
+									list: [],
+									hidden: true,
+									hasRefesh: false,
+									loading: false
+								});
+								this.data.loading = false;
+								return _context.abrupt('return');
+
+							case 10:
+								loadMore = true;
+								content = res.data.content;
+
+								if (res.data.totalPages == 1 || res.data.totalPages == this.data.page + 1) {
+									loadMore = false;
+								}
+								this.setData({
+									hasMore: loadMore,
+									list: this.data.list.concat(res.data.content),
+									hidden: true,
+									hasRefesh: false
+								});
+								this.data.loading = false;
+
+							case 15:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function getDoctorList(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return getDoctorList;
+		}()
+	}, {
+		key: 'loadMore',
+		value: function () {
+			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(e) {
+				return _regenerator2.default.wrap(function _callee2$(_context2) {
+					while (1) {
+						switch (_context2.prev = _context2.next) {
+							case 0:
+								console.log("loadMore");
+								that.setData({
+									hasRefesh: true
+								});
+
+								if (this.data.hasMore) {
+									_context2.next = 4;
+									break;
+								}
+
+								return _context2.abrupt('return');
+
+							case 4:
+								this.data.page++;
+								_context2.next = 7;
+								return this.getQAList();
+
+							case 7:
+							case 'end':
+								return _context2.stop();
+						}
+					}
+				}, _callee2, this);
+			}));
+
+			function loadMore(_x2) {
+				return _ref3.apply(this, arguments);
+			}
+
+			return loadMore;
+		}()
+	}, {
+		key: 'onLoad',
+		value: function () {
+			var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3() {
+				var systemInfo;
+				return _regenerator2.default.wrap(function _callee3$(_context3) {
+					while (1) {
+						switch (_context3.prev = _context3.next) {
+							case 0:
+								_context3.next = 2;
+								return _labrador2.default.getSystemInfo();
+
+							case 2:
+								systemInfo = _context3.sent;
+
+								this.setData({
+									windowHieght: systemInfo.windowHeight
+								});
+								this.getDoctorList();
+
+							case 5:
+							case 'end':
+								return _context3.stop();
+						}
+					}
+				}, _callee3, this);
+			}));
+
+			function onLoad() {
+				return _ref4.apply(this, arguments);
+			}
+
+			return onLoad;
+		}()
+	}]);
+	return DoctorsList;
+}(_labrador2.default.Component);
+
+
+Page(_labrador._createPage(DoctorsList));
+
+})(module,require);

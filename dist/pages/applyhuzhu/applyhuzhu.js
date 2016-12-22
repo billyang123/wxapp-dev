@@ -1,1 +1,63 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var r=e.exports={};Object.defineProperty(r,"__esModule",{value:!0});var l=t("../../npm/babel-runtime/core-js/object/get-prototype-of.js"),n=a(l),u=t("../../npm/babel-runtime/helpers/classCallCheck.js"),o=a(u),s=t("../../npm/babel-runtime/helpers/createClass.js"),p=a(s),i=t("../../npm/babel-runtime/helpers/possibleConstructorReturn.js"),c=a(i),f=t("../../npm/babel-runtime/helpers/inherits.js"),d=a(f),m=t("../../npm/labrador/index.js"),b=a(m),h=function(e){function t(){var e,a,r,l;(0,o.default)(this,t);for(var u=arguments.length,s=Array(u),p=0;p<u;p++)s[p]=arguments[p];return a=r=(0,c.default)(this,(e=t.__proto__||(0,n.default)(t)).call.apply(e,[this].concat(s))),r.data={},l=a,(0,c.default)(r,l)}return(0,d.default)(t,e),(0,p.default)(t,[{key:"makePhoneCall",value:function(e){b.default.app.makePhoneCall(e)}}]),t}(b.default.Component);Page(m._createPage(h))}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _getPrototypeOf = require('../../npm/babel-runtime/core-js/object/get-prototype-of.js');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('../../npm/babel-runtime/helpers/inherits.js');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _labrador = require('../../npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Applyhuzu = function (_wx$Component) {
+	(0, _inherits3.default)(Applyhuzu, _wx$Component);
+
+	function Applyhuzu() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		(0, _classCallCheck3.default)(this, Applyhuzu);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Applyhuzu.__proto__ || (0, _getPrototypeOf2.default)(Applyhuzu)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	}
+
+	(0, _createClass3.default)(Applyhuzu, [{
+		key: 'makePhoneCall',
+		value: function makePhoneCall(event) {
+			_labrador2.default.app.makePhoneCall(event);
+		}
+	}]);
+	return Applyhuzu;
+}(_labrador2.default.Component);
+
+
+Page(_labrador._createPage(Applyhuzu));
+
+})(module,require);

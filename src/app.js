@@ -45,11 +45,6 @@ export default class {
     var _this = this;
     this.globalData.userInfo = await wx.getStorage({ key:'userInfo'});
     this.globalData.storage = await this.getStorage();
-    //await wx.clearStorage();
-    //await this.__init();
-    // wx.navigateTo({
-    //   url:"/pages/recharge/recharge"
-    // })
   }
   makePhoneCall(event){
     wx.showModal({
@@ -61,15 +56,6 @@ export default class {
       }
     })
   }
-  // async __init(){
-  //   this.globalData.storage =  await this.getStorage();
-  //   if(!this.globalData.storage || (this.globalData.storage && !this.globalData.storage.code)){
-  //     let loginInfo = await wx.login();
-  //     await wx.setStorage({ key: 'code', data: loginInfo.code });
-  //   }
-  //   await this.getUserInfo();
-  //   this.globalData.storage = await this.getStorage();
-  // }
   async getStorage (){
     let localSession = {};
     let storageInfo = await wx.getStorageInfo();
@@ -157,8 +143,8 @@ export default class {
       data:{
         rawData:userInfo.rawData,
         signature:userInfo.signature,
-        encryptedData:encodeURIComponent(userInfo.encryptedData),
-        iv:encodeURIComponent(userInfo.iv),
+        encryptedData:userInfo.encryptedData,
+        iv:userInfo.iv,
         sessionKey: rdRes.data.data,
         code:loginInfo.code
       }

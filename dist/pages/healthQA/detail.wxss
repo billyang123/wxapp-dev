@@ -1,1 +1,131 @@
-.health-detail{background-color:#fff;padding:32rpx;margin-bottom:20rpx}.health-detail .title{line-height:32rpx}.health-detail .opt{display:flex;align-items:center;margin-top:38rpx}.health-detail .opt .op{flex-shrink:1;text-align:center;color:#999;position:relative;width:100%}.health-detail .opt .op:first-child{border-right:1rpx solid #ddd}.health-detail .info{display:flex;align-items:center;justify-content:space-between}.health-detail .content{display:flex;align-items:center;justify-content:flex-start;margin:25rpx 0}.health-detail .content .avatar{width:80rpx;height:80rpx;margin-right:20rpx;border-radius:100%}.comment{background-color:#fff;padding-left:24rpx}.comment-inner{position:relative;padding:18rpx 24rpx 30rpx 98rpx;border-bottom:1rpx solid #ddd}.comment:last-child .comment-inner{border-bottom:0}.comment .comment-reply{background-color:#ebecf0;padding:14rpx;margin-top:22rpx;position:relative}.comment .comment-reply::before{content:"";display:block;position:absolute;width:0;height:0;border:solid #fff;border-bottom:9rpx solid #ebecf0;top:-14rpx;left:35rpx}.comment .comment-reply .nk{color:#999}.comment .comment-reply .cr-p{font-size:26rpx}.comment .title{display:flex;align-items:center;color:#999;justify-content:space-between;font-size:30rpx;height:75rpx;line-height:75rpx}.comment .content{font-size:28rpx;line-height:36rpx;margin-bottom:18rpx}.comment .optaout{color:#999;font-size:26rpx}.comment .reply-link{margin-left:25rpx;display:inline-block}.comment .avatar{position:absolute;width:80rpx;height:80rpx;border-radius:100%;left:0;top:18rpx}.commit-form{position:fixed;box-sizing:border-box;bottom:0;left:0;height:108rpx;background-color:#fff;width:100%;display:flex;align-items:center;color:#666;justify-content:space-between;border-top:1rpx solid #ddd;padding:0 24rpx}.commit-form .commit-input{box-sizing:border-box;border-radius:35rpx;width:546rpx;height:68rpx;border:solid #ccc;padding:8rpx 39rpx}.commit-form .commit-num{color:#666}
+.health-detail {
+  background-color: #fff;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+}
+.health-detail .title {
+  line-height: 32rpx;
+}
+.health-detail .opt {
+  display: flex;
+  align-items: center;
+  margin-top: 38rpx;
+}
+.health-detail .opt .op {
+  flex-shrink: 1;
+  text-align: center;
+  color: #999;
+  position: relative;
+  width: 100%;
+}
+.health-detail .opt .op:first-child {
+  border-right: 1rpx solid #ddd;
+}
+.health-detail .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.health-detail .content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 25rpx 0 25rpx 0;
+}
+.health-detail .content .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 100%;
+}
+.comment {
+  background-color: #fff;
+  padding-left: 24rpx;
+}
+.comment-inner {
+  position: relative;
+  padding: 18rpx 24rpx 30rpx 98rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.comment:last-child .comment-inner {
+  border-bottom: 0;
+}
+.comment .comment-reply {
+  background-color: #ebecf0;
+  padding: 14rpx;
+  margin-top: 22rpx;
+  position: relative;
+}
+.comment .comment-reply::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8rpx solid #fff;
+  border-bottom: 9rpx solid #ebecf0;
+  top: -14rpx;
+  left: 35rpx;
+}
+.comment .comment-reply .nk {
+  color: #999;
+}
+.comment .comment-reply .cr-p {
+  font-size: 26rpx;
+}
+.comment .title {
+  display: flex;
+  align-items: center;
+  color: #999;
+  justify-content: space-between;
+  font-size: 30rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+}
+.comment .content {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  margin-bottom: 18rpx;
+}
+.comment .optaout {
+  color: #999;
+  font-size: 26rpx;
+}
+.comment .reply-link {
+  margin-left: 25rpx;
+  display: inline-block;
+}
+.comment .avatar {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  left: 0;
+  top: 18rpx;
+}
+.commit-form {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  height: 108rpx;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #666;
+  justify-content: space-between;
+  border-top: 1rpx solid #ddd;
+  padding: 0 24rpx;
+}
+.commit-form .commit-input {
+  box-sizing: border-box;
+  border-radius: 35rpx;
+  width: 546rpx;
+  height: 68rpx;
+  border: 2rpx solid #ccc;
+  padding: 8rpx 39rpx;
+}
+.commit-form .commit-num {
+  color: #666;
+}

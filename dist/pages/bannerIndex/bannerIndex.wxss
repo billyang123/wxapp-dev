@@ -1,1 +1,77 @@
-.qalist .nn,.qalist .qn{font-family:FZLTTHJW--GB1-0;line-height:48rpx}.kf-btm,.kf-btm .tel-btn,.qalist{position:relative}.bn-con{background-color:#fbe9d1}.bn-con .imgarea{overflow:hidden}.bn-con image{display:block;float:left}.qalist{padding:0 52rpx 56rpx}.qalist .qustion{margin-top:48rpx}.qalist .answer,.qalist .qustion{overflow:hidden;margin-bottom:16rpx}.qalist .nn{width:48rpx;height:48rpx;margin-right:20rpx;text-align:center;font-size:32rpx;color:#fff;border-radius:6rpx;float:left}.qalist .an,.qalist .qn{float:left;width:575rpx}.qalist .nn.qx{background-color:#ff6a00}.qalist .nn.ax{background-color:#1dc11d}.qalist .qn{font-size:36rpx;font-weight:700;color:#654935;letter-spacing:0}.qalist .an{font-size:30rpx;line-height:46rpx}.kf-btm{background:url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index07_750x266.png) no-repeat;background-size:750rpx 266rpx;width:750rpx;height:266rpx}.kf-btm .cit{margin-bottom:40rpx}.kf-btm .tel-btn{top:12rpx}.kf-btm .contactus{position:absolute;bottom:0;left:0;width:100%;padding-left:120rpx}
+.bn-con {
+  background-color: #fbe9d1;
+}
+.bn-con .imgarea {
+  overflow: hidden;
+}
+.bn-con image {
+  display: block;
+  float: left;
+}
+.qalist {
+  position: relative;
+  padding: 0 52rpx 56rpx 52rpx;
+}
+.qalist .qustion {
+  margin-top: 48rpx;
+}
+.qalist .qustion,
+.qalist .answer {
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+.qalist .nn {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  line-height: 48rpx;
+  font-family: FZLTTHJW--GB1-0;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 6rpx;
+  float: left;
+}
+.qalist .nn.qx {
+  background-color: #ff6a00;
+}
+.qalist .nn.ax {
+  background-color: #1dc11d;
+}
+.qalist .qn {
+  font-size: 36rpx;
+  font-weight: bold;
+  font-family: FZLTTHJW--GB1-0;
+  color: #654935;
+  letter-spacing: 0;
+  line-height: 48rpx;
+  width: 575rpx;
+  float: left;
+}
+.qalist .an {
+  float: left;
+  width: 575rpx;
+  font-size: 30rpx;
+  line-height: 46rpx;
+}
+.kf-btm {
+  background: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index07_750x266.png) no-repeat;
+  background-size: 750rpx 266rpx;
+  width: 750rpx;
+  height: 266rpx;
+  position: relative;
+}
+.kf-btm .cit {
+  margin-bottom: 40rpx;
+}
+.kf-btm .tel-btn {
+  position: relative;
+  top: 12rpx;
+}
+.kf-btm .contactus {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 120rpx;
+}

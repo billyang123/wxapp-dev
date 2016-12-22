@@ -8,12 +8,6 @@
 					<text>自愿者</text>
 				</view>
 			</navigator>
-			<!-- <view class="acimage default-image" catchtap="linkTo" data-link="/pages/profile/profile">
-				<image src="{{userInfo.headImgUrl}}" class="avatar"></image>
-				<view class="volunteer" wx:if="{{isVolunteer}}">
-					<text>自愿者</text>
-				</view>
-			</view> -->
 			<view class="txt-area" wx:if="{{userInfo.existGuarantee}}">
 				<view class="name">
 					<text>{{userInfo.nickName}}</text>
@@ -21,12 +15,8 @@
 				<view class="hnumber">
 					<view class="hn-l">
 						<view class="num"><text>第{{userInfo.serialNumber}}名加入社群，已加入{{userInfo.joinedDays}}天</text></view>
-						<!--<view class="th"><text>加入社群排位</text></view>-->
 					</view>
-					<!--<view class="hn-l">
-						<view class="num"><text></text></view>
-						<view class="th"><text>加入社群天数</text></view>
-					</view>-->
+					
 				</view>
 				<!-- <view class="msgnum-icon">
 					<view class="num">
@@ -45,18 +35,6 @@
 			</view>
 		</view>
 	</view>
-	<!--<view class="hdnav">
-		<view class="col-50">
-			<icon class="myicon-index-1"></icon>
-			<text class="txt">为家人加社群</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-		<view class="col-50 nr">
-			<icon class="myicon-index-2"></icon>
-			<text class="txt">送亲友</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-	</view>-->
 	<view class="media-list ac-list">
 		<view class="item-link item-content" catchtap="linkTo" data-link="/pages/inification/inification">
 			<view class="item-media">
@@ -71,7 +49,6 @@
 				</view>
 			</view>
 		</view>
-		<!-- <navigator class="item-link item-content" redirect="" url="/pages/claim/claim"> -->
 		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
 			<view class="item-media">
 				<image class="img" src="{{assetsPath}}/images/account_sqhz_icon.png"></image>
@@ -84,39 +61,9 @@
 		
 		</navigator>
 	</view>
-	<!--<view class="media-list ac-list">
-		<view class="item-link item-content">
-			<view class="item-media">
-				<image class="img" src="/images/account-volunteer-icon.png"></image>
-			</view>
-			<view class="item-inner">
-				<view class="item-title">
-					<text>志愿者</text>
-				</view>
-			</view>
-		</view>
-		<view class="item-link item-content">
-			<view class="item-media">
-				<image class="img" src="/images/account-city-icon.png"></image>
-			</view>
-			<view class="item-inner">
-				<view class="item-title">
-					<text>同城会</text>
-				</view>
-			</view>
-		</view>
-	</view>-->
+	
 	<view class="media-list ac-list">
-		<!-- <view class="item-link item-content">
-			<view class="item-media">
-				<image class="img" src="/images/account-card-icon.png"></image>
-			</view>
-			<view class="item-inner">
-				<view class="item-title">
-					<text>券</text>
-				</view>
-			</view>
-		</view> -->
+		
 		<navigator class="item-link item-content" redirect="" url="/pages/qa/qa">
 			<view class="item-media">
 				<image class="img" src="{{assetsPath}}/images/account-question-icon.png"></image>

@@ -1,1 +1,5 @@
-"use strict";!function(e,r){e.exports={};e.exports=r("../../regenerator-runtime/runtime-module.js")}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+module.exports = require('../../regenerator-runtime/runtime-module.js');
+
+})(module,require);

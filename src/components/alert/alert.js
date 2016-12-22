@@ -38,7 +38,6 @@ export default class Alert extends wx.Component {
     }.bind(this),3000)
   }
   hide(){
-  	console.log(this.Animation)
   	this.Animation.height(0).step();
     this.setData({
     	animdata:this.Animation.export()

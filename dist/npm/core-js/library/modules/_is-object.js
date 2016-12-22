@@ -1,1 +1,6 @@
-"use strict";!function(t,e){t.exports={};t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+module.exports = function(it){
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+})(module,require);

@@ -1,1 +1,8 @@
-"use strict";!function(e,r){e.exports={};r("../../modules/es6.object.define-property.js");var o=r("../../modules/_core.js").Object;e.exports=function(e,r,t){return o.defineProperty(e,r,t)}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+require('../../modules/es6.object.define-property.js');
+var $Object = require('../../modules/_core.js').Object;
+module.exports = function defineProperty(it, key, desc){
+  return $Object.defineProperty(it, key, desc);
+};
+})(module,require);

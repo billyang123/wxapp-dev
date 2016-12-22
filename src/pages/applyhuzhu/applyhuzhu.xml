@@ -33,13 +33,6 @@
 						<text class="gray-m">3）进入保障期，保障生效</text>
 					</view>
 				</view>
-				<!-- <view class="st-inner tel-kf">
-					<text class="gray">客服电话：</text>
-					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
-				</view>
-				<view class="st-inner">
-					<text class="gray">有疑问也可电话咨询</text>
-				</view> -->
 			</view>
 			<view class="step-item">
 				<view class="stepbar">

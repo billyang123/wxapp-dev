@@ -1,1 +1,7 @@
-"use strict";!function(e,t){e.exports={};t("./_object-sap.js")("getOwnPropertyNames",function(){return t("./_object-gopn-ext.js").f})}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+// 19.1.2.7 Object.getOwnPropertyNames(O)
+require('./_object-sap.js')('getOwnPropertyNames', function(){
+  return require('./_object-gopn-ext.js').f;
+});
+})(module,require);

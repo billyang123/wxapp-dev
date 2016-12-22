@@ -1,1 +1,11 @@
-"use strict";!function(r,e){var t=(r.exports={},e("./_object-dp.js")),s=e("./_property-desc.js");r.exports=e("./_descriptors.js")?function(r,e,o){return t.f(r,e,s(1,o))}:function(r,e,t){return r[e]=t,r}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var dP         = require('./_object-dp.js')
+  , createDesc = require('./_property-desc.js');
+module.exports = require('./_descriptors.js') ? function(object, key, value){
+  return dP.f(object, key, createDesc(1, value));
+} : function(object, key, value){
+  object[key] = value;
+  return object;
+};
+})(module,require);
