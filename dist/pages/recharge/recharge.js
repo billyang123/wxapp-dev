@@ -1,6 +1,7 @@
 'use strict';
 (function(module,require){var exports=module.exports={};
 var global=window=require('../../npm/labrador/global.js');
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -57,12 +58,15 @@ var Recharge = function (_wx$Component) {
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Recharge.__proto__ || (0, _getPrototypeOf2.default)(Recharge)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			tabNum: 0,
 			totalNum: 0,
-			assetsPath: _labrador2.default.app.data.assetsPath
+			assetsPath: _labrador2.default.app.data.assetsPath,
+			yuNum: "",
+			name: "",
+			pname: ""
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 	}
 
 	(0, _createClass3.default)(Recharge, [{
-		key: 'chashMoney',
+		key: "chashMoney",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
 				var _url, res, payResult;
@@ -105,7 +109,7 @@ var Recharge = function (_wx$Component) {
 								});
 
 							case 10:
-							case 'end':
+							case "end":
 								return _context.stop();
 						}
 					}
@@ -119,14 +123,14 @@ var Recharge = function (_wx$Component) {
 			return chashMoney;
 		}()
 	}, {
-		key: 'bindinput',
+		key: "bindinput",
 		value: function bindinput(event) {
 			this.setData({
 				totalNum: event.detail.value * 1
 			});
 		}
 	}, {
-		key: 'moneyTab',
+		key: "moneyTab",
 		value: function moneyTab(event) {
 			console.log(event);
 			var num = event.currentTarget.dataset.num;
@@ -136,9 +140,15 @@ var Recharge = function (_wx$Component) {
 			});
 		}
 	}, {
-		key: 'onLoad',
+		key: "onLoad",
 		value: function onLoad(e) {
-			this.projectAccountId = e.id;
+			console.log(e);
+			this.setData({
+				yuNum: e["amp;num"],
+				name: e["amp;name"],
+				pname: e["amp;pname"]
+			});
+			this.projectAccountId = e.pid;
 		}
 	}]);
 	return Recharge;

@@ -96,7 +96,7 @@
 				</view>
 			</view>
 			<view class="gi-footer">
-				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge">
+				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge?pid={{item.id}}&name={{item.insuredName}}&pname={{item.projectName}}&num={{item.availableBalance}}">
 					<text>充值</text>
 				</navigator>
 					

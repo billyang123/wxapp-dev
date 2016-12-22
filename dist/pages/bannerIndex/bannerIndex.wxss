@@ -3,6 +3,7 @@
 }
 .imgarea {
   overflow: hidden;
+  width: 750rpx;
 }
 image {
   display: block;

@@ -3,7 +3,10 @@ export default class Recharge extends wx.Component {
 	data={
 		tabNum:0,
     	totalNum:0,
-    	assetsPath:wx.app.data.assetsPath
+    	assetsPath:wx.app.data.assetsPath,
+    	yuNum:"",
+    	name:"",
+    	pname:""
 	};
 	async chashMoney(event){
 		var _url = "https://xcx.chinamuxie.com/wxapi/project/account/recharge";
@@ -40,6 +43,12 @@ export default class Recharge extends wx.Component {
 		})
 	}
 	onLoad(e){
-		this.projectAccountId = e.id
+		console.log(e)
+		this.setData({
+			yuNum:e["amp;num"],
+	    	name:e["amp;name"],
+	    	pname:e["amp;pname"]
+		})
+		this.projectAccountId = e.pid
 	}
 }
