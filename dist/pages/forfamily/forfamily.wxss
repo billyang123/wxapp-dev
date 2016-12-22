@@ -1,7 +1,7 @@
 .give-family-item {
   padding: 42rpx 0;
 }
-.give-family-item .p {
+.prr {
   margin: 0 auto;
   position: relative;
   width: 420rpx;
@@ -9,7 +9,7 @@
   line-height: 40rpx;
   color: #666;
 }
-.give-family-item .p:before {
+.prr:before {
   content: '“';
   position: absolute;
   font-size: 150rpx;
@@ -17,7 +17,7 @@
   top: 30rpx;
   left: -100rpx;
 }
-.give-family-item .p:after {
+.prr:after {
   content: '”';
   position: absolute;
   font-size: 150rpx;
@@ -29,13 +29,13 @@
   background-color: #fff;
   margin-bottom: 20rpx;
 }
-.give-family-list .dl {
+.dl {
   overflow: hidden;
   padding-right: 23rpx;
   display: flex;
   align-items: center;
 }
-.give-family-list .dl .dt {
+.dt {
   float: left;
   width: 90rpx;
   height: 240rpx;
@@ -49,7 +49,7 @@
   line-height: 90rpx;
   font-family: PingFangSC-Regular;
 }
-.give-family-list .dl .dd {
+.dd {
   float: left;
   padding: 0 68rpx 0 38rpx;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXBAMAAAAiiNiyAAAAG1BMVEUAAACrq6uqqqqrq6uqqqqrq6urq6vMzMyqqqqiVq4uAAAACHRSTlMAoeWJinDgBVRF68UAAAAwSURBVAjXYwgyYAADjUYI7dEhAKYZO6ACEuQIQAwt61CA8WHyCPWEuQj3INwHcy8A8hQTRXGkcZ8AAAAASUVORK5CYII=") no-repeat right center;
@@ -58,13 +58,13 @@
   width: 100%;
   align-items: center;
 }
-.give-family-list .dl .dd .h2 {
+.h2 {
   font-size: 36rpx;
   height: 40rpx;
   font-weight: 500;
   padding-bottom: 20rpx;
 }
-.give-family-list .dl .dd .p {
+.p {
   color: #999;
   line-height: 38rpx;
   font-size: 28rpx;

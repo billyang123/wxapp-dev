@@ -1,10 +1,10 @@
 <view class="container submit-commit">
 	<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
 		<view class="section">
-		  <textarea name="content" placeholder="写评论..."/>
+		  <textarea name="content" value="{{content}}" placeholder="写评论..."/>
 		</view>
 		<view>
-			<button formType="submit" class="submit-btn" hover-class="none">发送</button>
+			<button formType="submit" type="warn" class="submit-btn" hover-class="none">发送</button>
 		</view>
 	</form>
 </view>

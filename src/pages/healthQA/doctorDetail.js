@@ -104,6 +104,13 @@ export default class DoctorDetail extends wx.Component {
 		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
+		for (var i = 0; i < content.length; i++) {
+			if(this.praiseTmp.indexOf(content[i].id+'')>=0){
+				content[i].praiseed = true
+			}else{
+				content[i].praiseed = false
+			}
+		}
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(res.data.content),
@@ -114,18 +121,17 @@ export default class DoctorDetail extends wx.Component {
 	}
 	async loadMore(e){	
 		console.log("loadMore")
-		that.setData({
-		    hasRefesh:true
-		});
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getQAList();
 	}
 	async praise(event){
+		//this.praiseLoad = false;
+		if(this.praiseLoad) return;
+		this.praiseLoad = true;
 		var index = event.currentTarget.dataset.index;
 		var id = event.currentTarget.dataset.id;
-		var localId = id+"_"+index;
-		console.log(localId)
+		var localId = id;
 		if(this.praiseTmp.indexOf(localId)>=0){
 			return;
 		}
@@ -133,7 +139,8 @@ export default class DoctorDetail extends wx.Component {
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 			type:"post",
 			data:{
-				qaId:id
+				qaId:id,
+				code:wx.app.globalData.storage.code
 			}
 		})
 		console.log(res)
@@ -146,7 +153,7 @@ export default class DoctorDetail extends wx.Component {
 			})
 			this.praiseTmp.push(localId);
 		}
-
+		this.praiseLoad = false;
 	}
 	async formSubmit(e){
 		let qcontent = e.detail.value.questionContent;
@@ -198,13 +205,6 @@ export default class DoctorDetail extends wx.Component {
 			textareaValue:_value
 		})
 	}
-	linechange(e){
-		console.log(e)
-		// this.setData({
-		// 	top:this.inputTop+e.detail.height+"rpx",
-		// 	lineValue:""
-		// })
-	}
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
 		var res = await wx.app.ajax({
@@ -245,5 +245,15 @@ export default class DoctorDetail extends wx.Component {
 
 		this.getQAList();
 		this.getDetail();
+	}
+	async onPullDownRefresh(){
+		this.setData({
+	    	hasMore:true,
+	    	page:0,
+	    	list:[]
+	    })
+		await this.getQAList();
+		await this.getDetail();
+		wx.stopPullDownRefresh()
 	}
 }

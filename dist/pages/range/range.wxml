@@ -32,7 +32,7 @@
 			</view>
 		</navigator>
 		<view wx:else="wx:else" class="item-link slide-item-link item-content slide-item-content">
-			<view class="item-inner slide-item-inner">
+			<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
 				<view class="item-title slide-item-title">
 					<text>{{item.title}}</text>
 				</view>

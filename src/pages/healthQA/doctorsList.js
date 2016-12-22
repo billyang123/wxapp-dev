@@ -47,9 +47,6 @@ export default class DoctorsList extends wx.Component {
 	}
 	async loadMore(e){
 		console.log("loadMore")
-		that.setData({
-		    hasRefesh:true
-		});
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getQAList();
@@ -60,5 +57,14 @@ export default class DoctorsList extends wx.Component {
 	       windowHieght:systemInfo.windowHeight
 	    });
 		this.getDoctorList();
+	}
+	async onPullDownRefresh(){
+		this.setData({
+	    	hasMore:true,
+	    	page:0,
+	    	list:[]
+	    })
+		await this.getDoctorList();
+		wx.stopPullDownRefresh()
 	}
 }

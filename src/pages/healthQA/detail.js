@@ -38,19 +38,28 @@ export default class HealthDetail extends wx.Component {
 	    })
 	}
 	async praise(event){
+		if(this.praiseLoad) return;
+		this.praiseLoad = true;
 		var index = event.currentTarget.dataset.index;
 		var id = event.currentTarget.dataset.id;
 		var type = event.currentTarget.dataset.type
-		var localId = [type,id,index].join("_");
-		if(this.praiseTmp[localId]){
+		var localId = type+id;
+		if(this.praiseTmp.indexOf(localId)>=0){
 			return;
 		}
+		let url = type=="detail"?'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise':'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise'
+		let data = {
+			code:wx.app.globalData.storage.code
+		}
+		if(type=="detail"){
+			data.qaId = id;
+		}else{
+			data.qaCommentId = id;
+		}
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise',
+			url: url,
 			type:"post",
-			data:{
-				qacomment:id
-			}
+			data:data
 		})
 		console.log(res)
 		if(res.status==0){
@@ -64,9 +73,9 @@ export default class HealthDetail extends wx.Component {
 			let data = {}
 			data[type] = this.data[type]
 			this.setData(data)
-			this.praiseTmp[localId] = 1;
+			this.praiseTmp.push(localId);
 		}
-
+		this.praiseLoad = false;
 	}
 	async bindAudio(event){
 		let src = event.currentTarget.dataset.url;
@@ -129,7 +138,6 @@ export default class HealthDetail extends wx.Component {
 		    	hasMore:false,
 		    	list:[],
 		    	hidden: true,
-	       		hasRefesh: false,
 	       		loading:false
 		    })
 		    this.data.loading = false;
@@ -142,22 +150,23 @@ export default class HealthDetail extends wx.Component {
 		}
 		for (var i = 0; i < content.length; i++) {
 			content[i].createTime = (new Date(content[i].createTime)).format('yyyy/MM/dd hh:mm:ss');
-			content[i].commentReply = JSON.parse(content[i].commentReply)
+			content[i].commentReply = JSON.parse(content[i].commentReply);
+			if(this.praiseTmp.indexOf('list'+content[i].id)>=0){
+				content[i].praiseed = true
+			}else{
+				content[i].praiseed = false
+			}
 		}
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(content),
 	    	hidden: true,
-	       	hasRefesh: false,
 	       	totalComNum:res.data.totalElements
 	    })
 	    this.data.loading = false;
 	}
 	async loadMore(e){
 		console.log("loadMore")
-		that.setData({
-		    hasRefesh:true
-		});
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getCommitList();
@@ -172,6 +181,11 @@ export default class HealthDetail extends wx.Component {
 		})
 
 		console.log(res)
+		if(this.praiseTmp.indexOf('detail'+res.data.id)>=0){
+			res.data.praiseed = true
+		}else{
+			res.data.praiseed = false
+		}
 		this.setData({
 			detail:res.data
 		})
@@ -187,7 +201,7 @@ export default class HealthDetail extends wx.Component {
 		})
 	}
 	async onLoad(e){
-		this.praiseTmp = {};
+		this.praiseTmp = [];
 		let systemInfo = await wx.getSystemInfo();
 		this.data.id = parseInt(e.id);
 		this.setData({
@@ -196,5 +210,15 @@ export default class HealthDetail extends wx.Component {
 		this.getCommitList();
 		this.getDetail();
 		this.audioPlayEnd();
+	}
+	async onPullDownRefresh(){
+		this.setData({
+	    	hasMore:true,
+	    	page:0,
+	    	list:[]
+	    })
+		await this.getDetail();
+		await this.getCommitList();
+		wx.stopPullDownRefresh()
 	}
 }

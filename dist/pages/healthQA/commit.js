@@ -61,7 +61,8 @@ var Commit = function (_wx$Component) {
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Commit.__proto__ || (0, _getPrototypeOf2.default)(Commit)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			qid: "",
 			cid: "",
-			url: ""
+			url: "",
+			content: ''
 		}, _this.children = {
 			alert: new _alert2.default({ msg: "@msg" })
 		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
@@ -107,27 +108,29 @@ var Commit = function (_wx$Component) {
 							case 9:
 								res = _context.sent;
 
-								if (!(res.status == 0)) {
-									_context.next = 13;
-									break;
+								if (res.status == 0) {
+									_labrador2.default.showToast({
+										title: '提问成功',
+										icon: 'success',
+										duration: 2000
+									});
+									this.setData({
+										content: ""
+									});
 								}
 
-								_context.next = 13;
-								return _labrador2.default.navigateBack();
-
-							case 13:
 								if (!(res.status == 1)) {
-									_context.next = 18;
+									_context.next = 16;
 									break;
 								}
 
-								_context.next = 16;
+								_context.next = 14;
 								return _labrador2.default.showModal({
 									title: '提示',
 									content: '需要先登录'
 								});
 
-							case 16:
+							case 14:
 								sModal = _context.sent;
 
 								if (sModal.confirm) {
@@ -136,7 +139,7 @@ var Commit = function (_wx$Component) {
 									});
 								}
 
-							case 18:
+							case 16:
 							case 'end':
 								return _context.stop();
 						}

@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "向医生提问"
+  "navigationBarTitleText": "向医生提问",
+  "enablePullDownRefresh":true
 }

@@ -2,7 +2,7 @@
   position: relative;
   border-bottom: 1rpx solid #dddddd;
 }
-.changeProfile_top .changeProfile_top_txt {
+.changeProfile_top_txt {
   height: 90rpx;
   text-align: center;
   line-height: 90rpx;
@@ -10,7 +10,7 @@
   background-color: #ffffff;
   color: #666666;
 }
-.changeProfile_top .changeProfile_top_btn {
+.changeProfile_top_btn {
   position: absolute;
   height: 90rpx;
   right: 0;
@@ -26,7 +26,7 @@
   background-color: #ffffff;
   padding-left: 24rpx;
 }
-.changeProfile_userNickname input {
+input {
   height: 88rpx;
   line-height: 88rpx;
   color: #666666;

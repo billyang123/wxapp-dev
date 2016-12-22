@@ -185,7 +185,7 @@ var DoctorDetail = function (_wx$Component) {
 		key: 'getQAList',
 		value: function () {
 			var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
-				var res, loadMore, content;
+				var res, loadMore, content, i;
 				return _regenerator2.default.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
@@ -234,6 +234,13 @@ var DoctorDetail = function (_wx$Component) {
 								if (res.data.totalPages == 1 || res.data.totalPages == this.data.page + 1) {
 									loadMore = false;
 								}
+								for (i = 0; i < content.length; i++) {
+									if (this.praiseTmp.indexOf(content[i].id + '') >= 0) {
+										content[i].praiseed = true;
+									} else {
+										content[i].praiseed = false;
+									}
+								}
 								this.setData({
 									hasMore: loadMore,
 									list: this.data.list.concat(res.data.content),
@@ -242,7 +249,7 @@ var DoctorDetail = function (_wx$Component) {
 								});
 								this.data.loading = false;
 
-							case 15:
+							case 16:
 							case 'end':
 								return _context2.stop();
 						}
@@ -265,23 +272,20 @@ var DoctorDetail = function (_wx$Component) {
 						switch (_context3.prev = _context3.next) {
 							case 0:
 								console.log("loadMore");
-								that.setData({
-									hasRefesh: true
-								});
 
 								if (this.data.hasMore) {
-									_context3.next = 4;
+									_context3.next = 3;
 									break;
 								}
 
 								return _context3.abrupt('return');
 
-							case 4:
+							case 3:
 								this.data.page++;
-								_context3.next = 7;
+								_context3.next = 6;
 								return this.getQAList();
 
-							case 7:
+							case 6:
 							case 'end':
 								return _context3.stop();
 						}
@@ -305,30 +309,38 @@ var DoctorDetail = function (_wx$Component) {
 					while (1) {
 						switch (_context4.prev = _context4.next) {
 							case 0:
-								index = event.currentTarget.dataset.index;
-								id = event.currentTarget.dataset.id;
-								localId = id + "_" + index;
-
-								console.log(localId);
-
-								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
-									_context4.next = 6;
+								if (!this.praiseLoad) {
+									_context4.next = 2;
 									break;
 								}
 
 								return _context4.abrupt('return');
 
-							case 6:
-								_context4.next = 8;
+							case 2:
+								this.praiseLoad = true;
+								index = event.currentTarget.dataset.index;
+								id = event.currentTarget.dataset.id;
+								localId = id;
+
+								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
+									_context4.next = 8;
+									break;
+								}
+
+								return _context4.abrupt('return');
+
+							case 8:
+								_context4.next = 10;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 									type: "post",
 									data: {
-										qaId: id
+										qaId: id,
+										code: _labrador2.default.app.globalData.storage.code
 									}
 								});
 
-							case 8:
+							case 10:
 								res = _context4.sent;
 
 								console.log(res);
@@ -342,8 +354,9 @@ var DoctorDetail = function (_wx$Component) {
 									});
 									this.praiseTmp.push(localId);
 								}
+								this.praiseLoad = false;
 
-							case 11:
+							case 14:
 							case 'end':
 								return _context4.stop();
 						}
@@ -458,15 +471,6 @@ var DoctorDetail = function (_wx$Component) {
 			});
 		}
 	}, {
-		key: 'linechange',
-		value: function linechange(e) {
-			console.log(e);
-			// this.setData({
-			// 	top:this.inputTop+e.detail.height+"rpx",
-			// 	lineValue:""
-			// })
-		}
-	}, {
 		key: 'getDetail',
 		value: function () {
 			var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6() {
@@ -560,6 +564,43 @@ var DoctorDetail = function (_wx$Component) {
 			}
 
 			return onLoad;
+		}()
+	}, {
+		key: 'onPullDownRefresh',
+		value: function () {
+			var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee8() {
+				return _regenerator2.default.wrap(function _callee8$(_context8) {
+					while (1) {
+						switch (_context8.prev = _context8.next) {
+							case 0:
+								this.setData({
+									hasMore: true,
+									page: 0,
+									list: []
+								});
+								_context8.next = 3;
+								return this.getQAList();
+
+							case 3:
+								_context8.next = 5;
+								return this.getDetail();
+
+							case 5:
+								_labrador2.default.stopPullDownRefresh();
+
+							case 6:
+							case 'end':
+								return _context8.stop();
+						}
+					}
+				}, _callee8, this);
+			}));
+
+			function onPullDownRefresh() {
+				return _ref9.apply(this, arguments);
+			}
+
+			return onPullDownRefresh;
 		}()
 	}]);
 	return DoctorDetail;

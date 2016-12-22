@@ -1,10 +1,10 @@
 .bn-con {
   background-color: #fbe9d1;
 }
-.bn-con .imgarea {
+.imgarea {
   overflow: hidden;
 }
-.bn-con image {
+image {
   display: block;
   float: left;
 }
@@ -12,15 +12,15 @@
   position: relative;
   padding: 0 52rpx 56rpx 52rpx;
 }
-.qalist .qustion {
+.qustion {
   margin-top: 48rpx;
 }
-.qalist .qustion,
-.qalist .answer {
+.qustion,
+.answer {
   overflow: hidden;
   margin-bottom: 16rpx;
 }
-.qalist .nn {
+.nn {
   width: 48rpx;
   height: 48rpx;
   margin-right: 20rpx;
@@ -32,13 +32,13 @@
   border-radius: 6rpx;
   float: left;
 }
-.qalist .nn.qx {
+.qx {
   background-color: #ff6a00;
 }
-.qalist .nn.ax {
+.ax {
   background-color: #1dc11d;
 }
-.qalist .qn {
+.qn {
   font-size: 36rpx;
   font-weight: bold;
   font-family: FZLTTHJW--GB1-0;
@@ -48,7 +48,7 @@
   width: 575rpx;
   float: left;
 }
-.qalist .an {
+.an {
   float: left;
   width: 575rpx;
   font-size: 30rpx;
@@ -61,14 +61,14 @@
   height: 266rpx;
   position: relative;
 }
-.kf-btm .cit {
+.cit {
   margin-bottom: 40rpx;
 }
-.kf-btm .tel-btn {
+.tel-btn {
   position: relative;
   top: 12rpx;
 }
-.kf-btm .contactus {
+.contactus {
   position: absolute;
   bottom: 0;
   left: 0;

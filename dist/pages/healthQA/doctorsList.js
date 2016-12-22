@@ -150,23 +150,20 @@ var DoctorsList = function (_wx$Component) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
 								console.log("loadMore");
-								that.setData({
-									hasRefesh: true
-								});
 
 								if (this.data.hasMore) {
-									_context2.next = 4;
+									_context2.next = 3;
 									break;
 								}
 
 								return _context2.abrupt('return');
 
-							case 4:
+							case 3:
 								this.data.page++;
-								_context2.next = 7;
+								_context2.next = 6;
 								return this.getQAList();
 
-							case 7:
+							case 6:
 							case 'end':
 								return _context2.stop();
 						}
@@ -213,6 +210,39 @@ var DoctorsList = function (_wx$Component) {
 			}
 
 			return onLoad;
+		}()
+	}, {
+		key: 'onPullDownRefresh',
+		value: function () {
+			var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+				return _regenerator2.default.wrap(function _callee4$(_context4) {
+					while (1) {
+						switch (_context4.prev = _context4.next) {
+							case 0:
+								this.setData({
+									hasMore: true,
+									page: 0,
+									list: []
+								});
+								_context4.next = 3;
+								return this.getDoctorList();
+
+							case 3:
+								_labrador2.default.stopPullDownRefresh();
+
+							case 4:
+							case 'end':
+								return _context4.stop();
+						}
+					}
+				}, _callee4, this);
+			}));
+
+			function onPullDownRefresh() {
+				return _ref5.apply(this, arguments);
+			}
+
+			return onPullDownRefresh;
 		}()
 	}]);
 	return DoctorsList;

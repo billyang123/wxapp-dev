@@ -30,7 +30,7 @@
     "pages/healthQA/commit"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "17互助",
     "navigationBarTextStyle":"#fff"

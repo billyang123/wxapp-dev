@@ -102,34 +102,52 @@ var HealthDetail = function (_wx$Component) {
 		key: "praise",
 		value: function () {
 			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
-				var index, id, type, localId, res, data;
+				var index, id, type, localId, url, data, res, _data;
+
 				return _regenerator2.default.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
-								index = event.currentTarget.dataset.index;
-								id = event.currentTarget.dataset.id;
-								type = event.currentTarget.dataset.type;
-								localId = [type, id, index].join("_");
-
-								if (!this.praiseTmp[localId]) {
-									_context.next = 6;
+								if (!this.praiseLoad) {
+									_context.next = 2;
 									break;
 								}
 
 								return _context.abrupt("return");
 
-							case 6:
-								_context.next = 8;
+							case 2:
+								this.praiseLoad = true;
+								index = event.currentTarget.dataset.index;
+								id = event.currentTarget.dataset.id;
+								type = event.currentTarget.dataset.type;
+								localId = type + id;
+
+								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
+									_context.next = 9;
+									break;
+								}
+
+								return _context.abrupt("return");
+
+							case 9:
+								url = type == "detail" ? 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise' : 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise';
+								data = {
+									code: _labrador2.default.app.globalData.storage.code
+								};
+
+								if (type == "detail") {
+									data.qaId = id;
+								} else {
+									data.qaCommentId = id;
+								}
+								_context.next = 14;
 								return _labrador2.default.app.ajax({
-									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise',
+									url: url,
 									type: "post",
-									data: {
-										qacomment: id
-									}
+									data: data
 								});
 
-							case 8:
+							case 14:
 								res = _context.sent;
 
 								console.log(res);
@@ -141,14 +159,15 @@ var HealthDetail = function (_wx$Component) {
 										this.data[type][index].praiseNumber += 1;
 										this.data[type][index].praiseed = true;
 									}
-									data = {};
+									_data = {};
 
-									data[type] = this.data[type];
-									this.setData(data);
-									this.praiseTmp[localId] = 1;
+									_data[type] = this.data[type];
+									this.setData(_data);
+									this.praiseTmp.push(localId);
 								}
+								this.praiseLoad = false;
 
-							case 11:
+							case 18:
 							case "end":
 								return _context.stop();
 						}
@@ -292,7 +311,6 @@ var HealthDetail = function (_wx$Component) {
 									hasMore: false,
 									list: [],
 									hidden: true,
-									hasRefesh: false,
 									loading: false
 								});
 								this.data.loading = false;
@@ -308,12 +326,16 @@ var HealthDetail = function (_wx$Component) {
 								for (i = 0; i < content.length; i++) {
 									content[i].createTime = new Date(content[i].createTime).format('yyyy/MM/dd hh:mm:ss');
 									content[i].commentReply = JSON.parse(content[i].commentReply);
+									if (this.praiseTmp.indexOf('list' + content[i].id) >= 0) {
+										content[i].praiseed = true;
+									} else {
+										content[i].praiseed = false;
+									}
 								}
 								this.setData({
 									hasMore: loadMore,
 									list: this.data.list.concat(content),
 									hidden: true,
-									hasRefesh: false,
 									totalComNum: res.data.totalElements
 								});
 								this.data.loading = false;
@@ -341,23 +363,20 @@ var HealthDetail = function (_wx$Component) {
 						switch (_context4.prev = _context4.next) {
 							case 0:
 								console.log("loadMore");
-								that.setData({
-									hasRefesh: true
-								});
 
 								if (this.data.hasMore) {
-									_context4.next = 4;
+									_context4.next = 3;
 									break;
 								}
 
 								return _context4.abrupt("return");
 
-							case 4:
+							case 3:
 								this.data.page++;
-								_context4.next = 7;
+								_context4.next = 6;
 								return this.getCommitList();
 
-							case 7:
+							case 6:
 							case "end":
 								return _context4.stop();
 						}
@@ -393,11 +412,16 @@ var HealthDetail = function (_wx$Component) {
 
 
 								console.log(res);
+								if (this.praiseTmp.indexOf('detail' + res.data.id) >= 0) {
+									res.data.praiseed = true;
+								} else {
+									res.data.praiseed = false;
+								}
 								this.setData({
 									detail: res.data
 								});
 
-							case 5:
+							case 6:
 							case "end":
 								return _context5.stop();
 						}
@@ -434,7 +458,7 @@ var HealthDetail = function (_wx$Component) {
 					while (1) {
 						switch (_context6.prev = _context6.next) {
 							case 0:
-								this.praiseTmp = {};
+								this.praiseTmp = [];
 								_context6.next = 3;
 								return _labrador2.default.getSystemInfo();
 
@@ -462,6 +486,43 @@ var HealthDetail = function (_wx$Component) {
 			}
 
 			return onLoad;
+		}()
+	}, {
+		key: "onPullDownRefresh",
+		value: function () {
+			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7() {
+				return _regenerator2.default.wrap(function _callee7$(_context7) {
+					while (1) {
+						switch (_context7.prev = _context7.next) {
+							case 0:
+								this.setData({
+									hasMore: true,
+									page: 0,
+									list: []
+								});
+								_context7.next = 3;
+								return this.getDetail();
+
+							case 3:
+								_context7.next = 5;
+								return this.getCommitList();
+
+							case 5:
+								_labrador2.default.stopPullDownRefresh();
+
+							case 6:
+							case "end":
+								return _context7.stop();
+						}
+					}
+				}, _callee7, this);
+			}));
+
+			function onPullDownRefresh() {
+				return _ref8.apply(this, arguments);
+			}
+
+			return onPullDownRefresh;
 		}()
 	}]);
 	return HealthDetail;

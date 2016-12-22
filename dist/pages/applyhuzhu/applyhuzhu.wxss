@@ -3,24 +3,21 @@
   margin-bottom: 20rpx;
   margin-top: 30rpx;
 }
-.hz-content .title {
+.title {
   padding: 39rpx 36rpx 12rpx 36rpx;
   font-size: 36rpx;
 }
-.hz-content .title .tname {
+.tname {
   font-family: PingFangSC-Medium;
   border-left: 10rpx solid #ff6a00;
   padding-left: 18rpx;
   background-position: right 8rpx;
   background-repeat: no-repeat;
 }
-.hz-content .p {
+.p {
   line-height: 48rpx;
 }
-.hz-process {
-  padding: 40rpx 30rpx 40rpx 73rpx;
-}
-.hz-process .stepbar {
+.stepbar {
   border-radius: 50%;
   width: 64rpx;
   height: 64rpx;
@@ -31,7 +28,7 @@
   left: -40rpx;
   background-color: #fff;
 }
-.hz-process .stepbar .t-num {
+.t-num {
   border-radius: 50%;
   width: 64rpx;
   height: 64rpx;
@@ -41,29 +38,22 @@
   text-align: center;
   color: #fff;
 }
-.hz-process .step-item {
+.step-item {
   position: relative;
   padding-left: 52rpx;
   border-left: 1px solid #ff6a00;
   padding-bottom: 46rpx;
   padding-top: 18rpx;
 }
-.hz-process .step-item:last-child {
+.step-item:last-child {
   border-left: 1px solid transparent;
 }
-.hz-process .st-inner {
+.st-inner {
   font-size: 32rpx;
   color: #333;
   line-height: 40rpx;
 }
-.hz-process .st-inner.tel-kf {
-  margin: 12rpx 0;
-}
-.hz-process .st-inner.tel-kf .gray {
-  line-height: 60rpx;
-  float: left;
-}
-.hz-process .st-inner .st {
+.st {
   margin-right: 27rpx;
   font-size: 36rpx;
   color: #333;
@@ -71,7 +61,6 @@
   margin-bottom: 10rpx;
   display: block;
 }
-.hz-process .st-inner .gray {
-  color: #999;
-  font-size: 28rpx;
+.hz-process {
+  padding: 40rpx 30rpx 40rpx 73rpx;
 }

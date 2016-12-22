@@ -11,9 +11,9 @@
 		<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
 			<view class="section">
 				<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
-			  <textarea class="textarea" bindblur="_dispatch" name="questionContent" bindlinechange="_dispatch" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}" data-bindblur="setNumValue" data-bindlinechange="linechange"/>
+			  <textarea class="textarea" bindinput="_dispatch" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}" data-bindinput="setNumValue"/>
 			  	<!-- <input class="same-textarea" bindinput="bindinput" value="{{lineValue}}" style="top:{{top}}"/> -->
-			  	<!-- <view class="sizeNum">{{curLength}}/{{maxLength}}</view> -->
+			  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 			</view>
 			<view>
 				<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>

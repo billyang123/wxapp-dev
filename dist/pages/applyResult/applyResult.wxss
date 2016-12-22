@@ -1,7 +1,7 @@
 .af-result-pic {
   padding-top: 184rpx;
 }
-.af-result-pic .img {
+.img {
   width: 130rpx;
   height: 144rpx;
   display: block;

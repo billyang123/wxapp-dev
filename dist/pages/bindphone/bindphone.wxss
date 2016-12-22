@@ -69,6 +69,3 @@ input::-webkit-input-placeholder {
 .bind-btn {
   padding: 36rpx 25rpx 0 25rpx;
 }
-button[disabled][type="warn"] {
-  background-color: #ff6a00;
-}

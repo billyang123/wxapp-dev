@@ -393,28 +393,38 @@ var HealthIndex = function (_wx$Component) {
 					while (1) {
 						switch (_context5.prev = _context5.next) {
 							case 0:
-								index = event.currentTarget.dataset.index;
-								id = event.currentTarget.dataset.id;
-								localId = id;
-
-								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
-									_context5.next = 5;
+								if (!this.praiseLoad) {
+									_context5.next = 2;
 									break;
 								}
 
 								return _context5.abrupt('return');
 
-							case 5:
-								_context5.next = 7;
+							case 2:
+								this.praiseLoad = true;
+								index = event.currentTarget.dataset.index;
+								id = event.currentTarget.dataset.id;
+								localId = id;
+
+								if (!(this.praiseTmp.indexOf(localId) >= 0)) {
+									_context5.next = 8;
+									break;
+								}
+
+								return _context5.abrupt('return');
+
+							case 8:
+								_context5.next = 10;
 								return _labrador2.default.app.ajax({
 									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 									type: "post",
 									data: {
-										qaId: id
+										qaId: id,
+										code: _labrador2.default.app.globalData.storage.code
 									}
 								});
 
-							case 7:
+							case 10:
 								res = _context5.sent;
 
 								console.log(res);
@@ -428,8 +438,9 @@ var HealthIndex = function (_wx$Component) {
 									});
 									this.praiseTmp.push(localId);
 								}
+								this.praiseLoad = false;
 
-							case 10:
+							case 14:
 							case 'end':
 								return _context5.stop();
 						}
@@ -503,6 +514,43 @@ var HealthIndex = function (_wx$Component) {
 			// this.audioCtx.play();
 			this.playingAudio = {};
 		}
+	}, {
+		key: 'onPullDownRefresh',
+		value: function () {
+			var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7() {
+				return _regenerator2.default.wrap(function _callee7$(_context7) {
+					while (1) {
+						switch (_context7.prev = _context7.next) {
+							case 0:
+								this.setData({
+									hasMore: true,
+									page: 0,
+									list: []
+								});
+								_context7.next = 3;
+								return this.getDoctors();
+
+							case 3:
+								_context7.next = 5;
+								return this.getQAList();
+
+							case 5:
+								_labrador2.default.stopPullDownRefresh();
+
+							case 6:
+							case 'end':
+								return _context7.stop();
+						}
+					}
+				}, _callee7, this);
+			}));
+
+			function onPullDownRefresh() {
+				return _ref8.apply(this, arguments);
+			}
+
+			return onPullDownRefresh;
+		}()
 	}]);
 	return HealthIndex;
 }(_labrador2.default.Component);

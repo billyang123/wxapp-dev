@@ -4,7 +4,8 @@ export default class Commit extends wx.Component {
 	data = {
 		qid:"",
 		cid:"",
-		url:""
+		url:"",
+		content:''
 	};
 	children = {
 	    alert: new Alert({msg:"@msg"})
@@ -25,7 +26,14 @@ export default class Commit extends wx.Component {
 			data:this.postdata
 		})
 		if(res.status==0){
-			await wx.navigateBack()
+			wx.showToast({
+			  title: '提问成功',
+			  icon: 'success',
+			  duration: 2000
+			})
+			this.setData({
+				content:""
+			})
 		}
 		if(res.status == 1){
 			var sModal = await wx.showModal({

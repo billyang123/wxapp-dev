@@ -19,31 +19,31 @@
   margin-bottom: 20rpx;
   box-shadow: 0 1px 0 0 #ddd;
 }
-.input-area .section {
+.section {
   padding: 26rpx 35rpx;
   overflow: hidden;
   border-bottom: 1rpx solid rgba(221, 221, 221, 0.5);
 }
-.input-area .section:last-child {
+.section:last-child {
   border-bottom: 0;
 }
-.input-area .section_title {
+.section_title {
   font-size: 34rpx;
   width: 200rpx;
   float: left;
   height: 52rpx;
   line-height: 52rpx;
 }
-.input-area input {
+input {
   height: 52rpx;
   width: 335rpx;
   float: left;
 }
-.input-area input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   font-size: 24rpx;
   color: #c7c7c7;
 }
-.input-area .sec-con {
+.sec-con {
   float: left;
   width: 625rpx;
 }
@@ -78,7 +78,7 @@
   padding: 0 35rpx;
   margin-bottom: 20rpx;
 }
-.money .t {
+.t {
   height: 40rpx;
   border-left: 10rpx solid #ff6a00;
   text-indent: 20rpx;
@@ -87,7 +87,7 @@
   line-height: 40rpx;
   margin-bottom: 30rpx;
 }
-.money .num {
+.num {
   background: url(https://image1.chinamuxie.com/images/common/money_icon.png) no-repeat;
   background-size: 226rpx 84rpx;
   border-radius: 5rpx;
@@ -99,15 +99,11 @@
 .checkbox-group {
   padding: 0 35rpx;
 }
-.checkbox-group .checkbox {
+.checkbox {
   font-size: 28rpx;
   color: #666;
   line-height: 40rpx;
   margin-bottom: 20rpx;
-}
-.checkbox-group .checkbox checkbox {
-  position: relative;
-  top: 4rpx;
 }
 .justjoin {
   position: fixed;

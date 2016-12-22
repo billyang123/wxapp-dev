@@ -180,6 +180,8 @@ export default class HealthIndex extends wx.Component {
 	   	await this.getQAList();
 	}
 	async praise(event){
+		if(this.praiseLoad) return;
+		this.praiseLoad = true;
 		var index = event.currentTarget.dataset.index;
 		var id = event.currentTarget.dataset.id;
 		var localId = id;
@@ -190,7 +192,8 @@ export default class HealthIndex extends wx.Component {
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 			type:"post",
 			data:{
-				qaId:id
+				qaId:id,
+				code:wx.app.globalData.storage.code
 			}
 		})
 		console.log(res)
@@ -203,7 +206,7 @@ export default class HealthIndex extends wx.Component {
 			})
 			this.praiseTmp.push(localId);
 		}
-
+		this.praiseLoad = false;
 	}
 	async onLoad(){
 		//加载更多设置高度
@@ -236,5 +239,15 @@ export default class HealthIndex extends wx.Component {
 	    // console.log(this.audioCtx)
 	    // this.audioCtx.play();
 	    this.playingAudio = {}
+	}
+	async onPullDownRefresh(){
+		this.setData({
+	    	hasMore:true,
+	    	page:0,
+	    	list:[]
+	    })
+		await this.getDoctors();
+		await this.getQAList();
+		wx.stopPullDownRefresh()
 	}
 }

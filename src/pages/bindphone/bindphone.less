@@ -29,18 +29,18 @@
 	overflow: hidden;
     display: flex;
     align-items: center;
-    &:first-child {
-		border-bottom: 1rpx solid #ddd;
-	}
+}
+.section:first-child {
+	border-bottom: 1rpx solid #ddd;
 }
 input {
 	height: 60rpx;
 	line-height: 60rpx;
 	font-size: 28rpx;
-	&::-webkit-input-placeholder {
-		font-size: 24rpx;
-		color: #ddd;
-	}
+}
+input::-webkit-input-placeholder {
+	font-size: 24rpx;
+	color: #ddd;
 }
 .btn {
 	border: 0;
@@ -68,7 +68,4 @@ input {
 }
 .bind-btn {
 	padding: 36rpx 25rpx 0 25rpx;
-}
-button[disabled][type="warn"] {
-	background-color: #ff6a00;
 }
