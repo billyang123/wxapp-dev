@@ -2,7 +2,7 @@
   text-align: center;
   padding: 50rpx 0 30rpx 0;
 }
-.bind-top .head {
+.head {
   width: 170rpx;
   height: 170rpx;
   border-radius: 100%;
@@ -10,46 +10,39 @@
   overflow: hidden;
   margin: 0 auto;
 }
-.bind-top .head .img {
+.name {
+  margin-top: 40rpx;
+  color: #666;
+}
+.img {
   width: 170rpx;
   height: 170rpx;
   border-radius: 100%;
 }
-.bind-top .name {
-  margin-top: 40rpx;
-  color: #666;
-}
-.bind-form .input-area {
+.input-area {
   background-color: #fff;
   border-bottom: 1rpx solid #ddd;
   padding-left: 36rpx;
 }
-.bind-form .section {
+.section {
   min-height: 87rpx;
   overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
-.bind-form .section:first-child {
+.section:first-child {
   border-bottom: 1rpx solid #ddd;
 }
-.bind-form .section input {
+input {
   height: 60rpx;
   line-height: 60rpx;
   font-size: 28rpx;
 }
-.bind-form .section input::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   font-size: 24rpx;
   color: #ddd;
 }
-.bind-form .section.pcode input {
-  width: 330rpx;
-}
-.bind-form .section.pcode .btn {
+.btn {
   border: 0;
   height: 40rpx;
   color: #ff6a00;
@@ -62,10 +55,10 @@
   border-radius: 0;
   text-align: center;
 }
-.bind-form .section.pcode .btn.disabled {
+.disabled {
   color: #c7c7c7;
 }
-.bind-form .section .section_title {
+.section_title {
   font-size: 28rpx;
   width: 150rpx;
   color: #666;
@@ -76,10 +69,6 @@
 .bind-btn {
   padding: 36rpx 25rpx 0 25rpx;
 }
-.bind-btn .submitbtn {
-  color: #fff;
+button[disabled][type="warn"] {
   background-color: #ff6a00;
-}
-.bind-btn .submitbtn.disabled {
-  color: rgba(255, 255, 255, 0.6);
 }

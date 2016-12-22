@@ -47,7 +47,7 @@
 	</view> -->
 	<view class="hz-content hz-group">
 		<view class="title">
-			<view class="tname">互助社群</view>
+			<view class="tname hz-group-tname">互助社群</view>
 		</view>
 		<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=2">
 			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/stayChildren02_img001.png"></image>
@@ -160,7 +160,7 @@
 	</view>
 	<view class="hz-content hz-dis">
 		<view class="title">
-			<view class="tname">互助释义</view>
+			<view class="tname hz-dis-tname">互助释义</view>
 		</view>
 		<view class="hz-explain">
 			<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的相互捐助行为。</text>
@@ -168,7 +168,7 @@
 	</view>
 	<view class="hz-content hz-apply">
 		<view class="title">
-			<view class="tname">申请互助</view>
+			<view class="tname hz-apply-tname">申请互助</view>
 		</view>
 		<view class="hz-process">
 			<view class="step-item">
@@ -179,14 +179,14 @@
 				</view>
 				<view class="st-inner">
 					<text class="st">申请互助金</text>
-					<text class="gray">拨打客服热线，提交相关资料</text>
+					<text class="gray st-gra">拨打客服热线，提交相关资料</text>
 				</view>
 				<view class="st-inner tel-kf">
-					<text class="gray">客服电话：</text>
+					<text class="gray st-gra kf-gra">客服电话：</text>
 					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
 				</view>
 				<view class="st-inner">
-					<text class="gray">有疑问也可电话咨询</text>
+					<text class="gray st-gra">有疑问也可电话咨询</text>
 				</view>
 			</view>
 			<view class="step-item">
@@ -197,7 +197,7 @@
 				</view>
 				<view class="st-inner">
 					<text class="st">事件审核</text>
-					<text class="gray">权威公估机构调查</text>
+					<text class="gray st-gra">权威公估机构调查</text>
 				</view>
 			</view>
 			<view class="step-item">
@@ -208,7 +208,7 @@
 				</view>
 				<view class="st-inner">
 					<text class="st">全员公示</text>
-					<text class="gray">事故审核结果，向全体会员公示</text>
+					<text class="gray st-gra">事故审核结果，向全体会员公示</text>
 				</view>
 			</view>
 			<view class="step-item">
@@ -219,14 +219,14 @@
 				</view>
 				<view class="st-inner">
 					<text class="st">资金划款</text>
-					<text class="gray">资金无异议，招商银行直接划款</text>
+					<text class="gray st-gra">资金无异议，招商银行直接划款</text>
 				</view>
 			</view>
 		</view>
 	</view>
 	<view class="hz-content hzo-guarantee">
 		<view class="title">
-			<view class="tname">运营保证</view>
+			<view class="tname hzo-guarantee-tname">运营保证</view>
 		</view>
 		<view class="hzo-list">
 			<view class="hzol-item">
@@ -314,8 +314,8 @@
 		</view>
 	</view>-->
 	<view class="hz-content hzo-service">
-		<view class="title">
-			<view class="tname">专属客服</view>
+		<view class="title sertt">
+			<view class="tname hzo-service-tname">专属客服</view>
 		</view>
 		<view class="hzs-con">
 	      <view class="item tel">

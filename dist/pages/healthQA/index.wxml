@@ -5,7 +5,7 @@
 		<view>
 			<image class="icon-img navbar-icon-img" src="{{navbar.assetsPath}}{{index==navbar.cur?item.selectedImg:item.img}}"/>
 		</view>
-		<view class="txt navbar-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
+		<view class="vb-txt navbar-vb-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
 	</navigator>
 </view>
 		<view class="health-hd">

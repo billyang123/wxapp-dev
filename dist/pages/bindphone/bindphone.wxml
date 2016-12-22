@@ -1,7 +1,7 @@
 
 <view class="container">
 	<view class="warn-tips">
-		<icon class="icon" type="warn" size="28" color="orange"/>
+		<icon class="warn-tips-icon" type="warn" size="28" color="orange"/>
 		<text class="text">为了你的权益得到保障，建议你绑定手机号码</text>
 	</view>
 	<view class="bind-top">
@@ -25,12 +25,12 @@
 				</view>
 				<view class="section pcode">
 					<view class="section_title">验证码</view>
-					<input bindinput="_dispatch" placeholder-style="color:#ddd" placeholder="输入验证码" data-name="codeValue" maxlength="6" data-bindinput="bindKeyInput"/>
+					<input bindinput="_dispatch" placeholder-style="color:#ddd" placeholder="输入验证码" data-name="codeValue" maxlength="6" style="width:330rpx" data-bindinput="bindKeyInput"/>
 					<view class="{{cDisCls}}" bindtap="_dispatch" data-bindtap="getCheckCode">{{btnText}}</view>
 				</view>
 			</view>
 			<view class="bind-btn">
-				<button class="submitbtn {{disabled?'disabled':''}}" disabled="{{disabled}}" bindtap="_dispatch" data-bindtap="doBind">绑定</button>
+				<button type="warn" class="submitbtn" disabled="{{disabled}}" bindtap="_dispatch" data-bindtap="doBind">绑定</button>
 			</view>
 		</form>
 	</view>

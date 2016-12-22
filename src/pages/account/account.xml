@@ -36,11 +36,11 @@
 		</view>
 	</view>
 	<view class="media-list ac-list">
-		<view class="item-link item-content" catchtap="linkTo" data-link="/pages/inification/inification">
+		<view class="item-content" catchtap="linkTo" data-link="/pages/inification/inification">
 			<view class="item-media">
-				<image class="img" src="{{assetsPath}}/images/account_wdsq_icon.png"></image>
+				<image class="ac-list-img" src="{{assetsPath}}/images/account_wdsq_icon.png"></image>
 			</view>
-			<view class="item-inner">
+			<view class="item-inner item-link-inner">
 				<view class="item-title">
 					<text>我的互助</text>
 				</view>
@@ -49,11 +49,11 @@
 				</view>
 			</view>
 		</view>
-		<navigator class="item-link item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
+		<navigator class="item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
 			<view class="item-media">
-				<image class="img" src="{{assetsPath}}/images/account_sqhz_icon.png"></image>
+				<image class="ac-list-img" src="{{assetsPath}}/images/account_sqhz_icon.png"></image>
 			</view>
-			<view class="item-inner">
+			<view class="item-inner item-link-inner">
 				<view class="item-title">
 					<text>申请互助</text>
 				</view>
@@ -64,11 +64,11 @@
 	
 	<view class="media-list ac-list">
 		
-		<navigator class="item-link item-content" redirect="" url="/pages/qa/qa">
+		<navigator class="item-content" redirect="" url="/pages/qa/qa">
 			<view class="item-media">
-				<image class="img" src="{{assetsPath}}/images/account-question-icon.png"></image>
+				<image class="ac-list-img" src="{{assetsPath}}/images/account-question-icon.png"></image>
 			</view>
-			<view class="item-inner">
+			<view class="item-inner item-link-inner">
 				<view class="item-title">
 					<text>常见问题</text>
 				</view>
@@ -76,7 +76,7 @@
 		</navigator>
 	</view>
 	<view class="or-line">
-		<text class="txt gray">联系我们</text>
+		<text class="or-line-txt gray">联系我们</text>
 	</view>
   <view class="hzo-service">
     <view class="hzs-con">

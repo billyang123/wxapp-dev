@@ -3,6 +3,6 @@
 		<view>
 			<image class="icon-img" src="{{assetsPath}}{{index==cur?item.selectedImg:item.img}}"></image>
 		</view>
-		<view class="txt"><text class="{{index==cur?'org':''}}">{{item.txt}}</text></view>
+		<view class="vb-txt"><text class="{{index==cur?'org':''}}">{{item.txt}}</text></view>
 	</navigator>
 </view>

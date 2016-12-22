@@ -70,6 +70,14 @@ var Index = function (_wx$Component) {
   }
 
   (0, _createClass3.default)(Index, [{
+    key: 'onLoad',
+    value: function onLoad(e) {
+      console.log(e);
+      // wx.redirectTo({
+      //   url: '/pages/bindphone/bindphone'
+      // })
+    }
+  }, {
     key: 'makePhoneCall',
     value: function makePhoneCall(event) {
       _labrador2.default.showModal({

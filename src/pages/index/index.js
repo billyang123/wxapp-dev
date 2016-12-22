@@ -14,6 +14,12 @@ export default class Index extends wx.Component {
     //swiper: new Swiper({imgUrls:"@bannerImgs"}),
     navbar: new Navbar({cur:0})
   };
+  onLoad(e){
+    console.log(e)
+    // wx.redirectTo({
+    //   url: '/pages/bindphone/bindphone'
+    // })
+  }
   makePhoneCall(event){
     wx.showModal({
       title: '拨打电话：'+event.currentTarget.dataset.phoneNumber,
