@@ -46,10 +46,10 @@ export default class HealthDetail extends wx.Component {
 			return;
 		}
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
+			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise',
 			type:"post",
 			data:{
-				qaId:id
+				qacomment:id
 			}
 		})
 		console.log(res)

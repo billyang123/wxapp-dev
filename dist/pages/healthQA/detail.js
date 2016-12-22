@@ -122,10 +122,10 @@ var HealthDetail = function (_wx$Component) {
 							case 6:
 								_context.next = 8;
 								return _labrador2.default.app.ajax({
-									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
+									url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise',
 									type: "post",
 									data: {
-										qaId: id
+										qacomment: id
 									}
 								});
 

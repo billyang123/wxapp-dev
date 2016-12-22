@@ -14,7 +14,7 @@
 			  	<!-- <view class="sizeNum">{{curLength}}/{{maxLength}}</view> -->
 			</view>
 			<view>
-				<button formType="submit" class="submit-btn" hover-class="none">我要提问</button>
+				<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>
 			</view>
 		</form>
 	</view>
