@@ -45,6 +45,9 @@ export default class {
     var _this = this;
     this.globalData.userInfo = await wx.getStorage({ key:'userInfo'});
     this.globalData.storage = await this.getStorage();
+    // await wx.navigateTo({
+    //     url:'/pages/paySuccess/paySuccess'
+    // })
   }
   makePhoneCall(event){
     wx.showModal({

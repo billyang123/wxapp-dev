@@ -2,7 +2,7 @@ import wx from 'labrador';
 export default class Recharge extends wx.Component {
 	data={
 		tabNum:0,
-    	totalNum:0,
+    	totalNum:"",
     	assetsPath:wx.app.data.assetsPath,
     	yuNum:"",
     	name:"",
@@ -18,7 +18,7 @@ export default class Recharge extends wx.Component {
 	        method:"POST",
 	        data:{
 	          	projectAccountId:this.projectAccountId,
-				rechargeAmount:this.data.totalNum,
+				rechargeAmount:this.data.totalNum*1,
 	          	code:wx.app.globalData.storage.code
 	        }
 	    });
@@ -31,7 +31,7 @@ export default class Recharge extends wx.Component {
 	}
 	bindinput(event){
 		this.setData({
-			totalNum:event.detail.value*1
+			totalNum:event.detail.value
 		})
 	}
 	moneyTab(event){

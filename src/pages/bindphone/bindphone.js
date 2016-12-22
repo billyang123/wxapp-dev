@@ -100,7 +100,10 @@ export default class Bindphone extends wx.Component {
           icon: 'success',
           duration: 2000
         });
-        wx.navigateBack()
+        await wx.redirectTo({
+          url:"/pages/account/account"
+        })
+        //wx.navigateBack()
       }else {
         wx.showModal({
           title: '提示',

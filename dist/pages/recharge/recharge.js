@@ -57,7 +57,7 @@ var Recharge = function (_wx$Component) {
 
 		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Recharge.__proto__ || (0, _getPrototypeOf2.default)(Recharge)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
 			tabNum: 0,
-			totalNum: 0,
+			totalNum: "",
 			assetsPath: _labrador2.default.app.data.assetsPath,
 			yuNum: "",
 			name: "",
@@ -85,7 +85,7 @@ var Recharge = function (_wx$Component) {
 									method: "POST",
 									data: {
 										projectAccountId: this.projectAccountId,
-										rechargeAmount: this.data.totalNum,
+										rechargeAmount: this.data.totalNum * 1,
 										code: _labrador2.default.app.globalData.storage.code
 									}
 								});
@@ -126,7 +126,7 @@ var Recharge = function (_wx$Component) {
 		key: "bindinput",
 		value: function bindinput(event) {
 			this.setData({
-				totalNum: event.detail.value * 1
+				totalNum: event.detail.value
 			});
 		}
 	}, {

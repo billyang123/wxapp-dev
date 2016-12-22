@@ -155,7 +155,7 @@ var Bindphone = function (_wx$Component) {
 
               case 6:
                 if (!this.data.btnBl) {
-                  _context.next = 13;
+                  _context.next = 19;
                   break;
                 }
 
@@ -179,30 +179,43 @@ var Bindphone = function (_wx$Component) {
               case 10:
                 postBind = _context.sent;
 
-                if (postBind.data.status == 0) {
-                  _labrador2.default.showToast({
-                    title: '绑定成功',
-                    icon: 'success',
-                    duration: 2000
-                  });
-                  _labrador2.default.navigateBack();
-                } else {
-                  _labrador2.default.showModal({
-                    title: '提示',
-                    content: postBind.data.msg,
-                    showCancel: false,
-                    success: function success(res) {
-                      if (res.confirm) {
-                        console.log('用户点击确定');
-                      }
-                    }
-                  });
+                if (!(postBind.data.status == 0)) {
+                  _context.next = 17;
+                  break;
                 }
+
+                _labrador2.default.showToast({
+                  title: '绑定成功',
+                  icon: 'success',
+                  duration: 2000
+                });
+                _context.next = 15;
+                return _labrador2.default.redirectTo({
+                  url: "/pages/account/account"
+                });
+
+              case 15:
+                _context.next = 18;
+                break;
+
+              case 17:
+                _labrador2.default.showModal({
+                  title: '提示',
+                  content: postBind.data.msg,
+                  showCancel: false,
+                  success: function success(res) {
+                    if (res.confirm) {
+                      console.log('用户点击确定');
+                    }
+                  }
+                });
+
+              case 18:
                 this.setData({
                   btnBl: true
                 });
 
-              case 13:
+              case 19:
               case "end":
                 return _context.stop();
             }
