@@ -1,10 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-var toInteger = require('./_to-integer.js')
-  , max       = Math.max
-  , min       = Math.min;
-module.exports = function(index, length){
-  index = toInteger(index);
-  return index < 0 ? max(index + length, 0) : min(index, length);
-};
-})(module,require);
+"use strict";!function(t,e){var r=(t.exports={},e("./_to-integer.js")),n=Math.max,i=Math.min;t.exports=function(t,e){return t=r(t),t<0?n(t+e,0):i(t,e)}}(module,require);

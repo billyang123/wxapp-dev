@@ -1,104 +1,104 @@
 <view class="container">
-	<view class="navtab">
-		<view class="tab-item active">
-			<view class="tab-link">
-				<text>案例公示</text>
-			</view>
-		</view>
-		<view class="tab-item">
-			<view class="tab-link">
-				<text>资金公示</text>
-			</view>
-		</view>
-	</view>
-	<view class="tab-content">
-		<view class="publicity-item-more">
-			<view><image src="https://image1.chinamuxie.com/images/common/fundsPublicity_icon.png" style="width:65rpx;height:65rpx;"/></view>
-			<view class="txt"><text>资金由招商银行全程监管，安全透明公开</text></view>
-			<view class="more-link"><text>了解详情》</text></view>
-		</view>
-		<view class="fundsPublicity-item">
-			<view class="fundsPublicity-item-inner">
-				<view class="dt">
-					<view class="p">10月</view>
-					<view class="i">资金公示</view>
-				</view>
-				<view class="dd">
-					<view class="h2">第5期资金公示</view>
-					<view class="p">截至2016年10月31日，累计互助基金198,9411 元，发生0起互助事件。</view>
-				</view>
-			</view>
-		</view>
-	</view>
-	<view class="tab-content">
-		<view class="publicity-item-more">
-			<view><image src="https://image1.chinamuxie.com/images/common/casePublicity_icon.png" style="width:65rpx;height:65rpx;"/></view>
-			<view class="txt"><text>案例由第三方公估公司全程审核，确保真实</text></view>
-			<view class="more-link"><text>了解详情》</text></view>
-		</view>
-		<view class="casePublicity-item">
-			<view class="casePublicity-item-inner">
-				<view class="dl">
-					<view class="dt">
-						<image src="https://image1.chinamuxie.com/images/project/789_img001.png" style="width:200rpx;height:200rpx;"/>
-					</view>
-					<view class="dd">
-						<view class="h2">【第1期案例公示】</view>
-						<view class="p">
-							<text class="t">参与计划：</text>
-							<text class="org">789</text>重大疾病互助计划
-						</view>
-						<view class="p">
-							<text class="t">互助金额：</text>
-							<text class="org">283000</text>元
-						</view>
-						<view class="p">
-							<text class="t">人均均摊：</text>
-							<text class="org">0.98</text>元
-						</view>
-					</view>
-				</view>
-				<view class="bt-dl">
-					<view class="btd-text">
-						<text>XXX，男，24周岁，2016.5.23加入789重大疾病互助计划，于2016.5.6发现结肠癌晚期...</text>
-					</view>
-					<view class="time">
-						<text>—— 2016年10月21日</text>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="casePublicity-item">
-			<view class="casePublicity-item-inner">
-				<view class="dl">
-					<view class="dt">
-						<image src="https://image1.chinamuxie.com/images/project/789_img001.png" style="width:200rpx;height:200rpx;"/>
-					</view>
-					<view class="dd">
-						<view class="h2">【第1期案例公示】</view>
-						<view class="p">
-							<text class="t">参与计划：</text>
-							<text class="org">789</text>重大疾病互助计划
-						</view>
-						<view class="p">
-							<text class="t">互助金额：</text>
-							<text class="org">283000</text>元
-						</view>
-						<view class="p">
-							<text class="t">人均均摊：</text>
-							<text class="org">0.98</text>元
-						</view>
-					</view>
-				</view>
-				<view class="bt-dl">
-					<view class="btd-text">
-						<text>XXX，男，24周岁，2016.5.23加入789重大疾病互助计划，于2016.5.6发现结肠癌晚期...</text>
-					</view>
-					<view class="time">
-						<text>—— 2016年10月21日</text>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
+<view class="navtab">
+<view class="tab-item active">
+<view class="tab-link">
+<text>案例公示</text>
+</view>
+</view>
+<view class="tab-item">
+<view class="tab-link">
+<text>资金公示</text>
+</view>
+</view>
+</view>
+<view class="tab-content">
+<view class="publicity-item-more">
+<view><image src="https://image1.chinamuxie.com/images/common/fundsPublicity_icon.png" style="width:65rpx;height:65rpx;"/></view>
+<view class="txt"><text>资金由招商银行全程监管，安全透明公开</text></view>
+<view class="more-link"><text>了解详情》</text></view>
+</view>
+<view class="fundsPublicity-item">
+<view class="fundsPublicity-item-inner">
+<view class="dt">
+<view class="p">10月</view>
+<view class="i">资金公示</view>
+</view>
+<view class="dd">
+<view class="h2">第5期资金公示</view>
+<view class="p">截至2016年10月31日，累计互助基金198,9411 元，发生0起互助事件。</view>
+</view>
+</view>
+</view>
+</view>
+<view class="tab-content">
+<view class="publicity-item-more">
+<view><image src="https://image1.chinamuxie.com/images/common/casePublicity_icon.png" style="width:65rpx;height:65rpx;"/></view>
+<view class="txt"><text>案例由第三方公估公司全程审核，确保真实</text></view>
+<view class="more-link"><text>了解详情》</text></view>
+</view>
+<view class="casePublicity-item">
+<view class="casePublicity-item-inner">
+<view class="dl">
+<view class="dt">
+<image src="https://image1.chinamuxie.com/images/project/789_img001.png" style="width:200rpx;height:200rpx;"/>
+</view>
+<view class="dd">
+<view class="h2">【第1期案例公示】</view>
+<view class="p">
+<text class="t">参与计划：</text>
+<text class="org">789</text>重大疾病互助计划
+</view>
+<view class="p">
+<text class="t">互助金额：</text>
+<text class="org">283000</text>元
+</view>
+<view class="p">
+<text class="t">人均均摊：</text>
+<text class="org">0.98</text>元
+</view>
+</view>
+</view>
+<view class="bt-dl">
+<view class="btd-text">
+<text>XXX，男，24周岁，2016.5.23加入789重大疾病互助计划，于2016.5.6发现结肠癌晚期...</text>
+</view>
+<view class="time">
+<text>—— 2016年10月21日</text>
+</view>
+</view>
+</view>
+</view>
+<view class="casePublicity-item">
+<view class="casePublicity-item-inner">
+<view class="dl">
+<view class="dt">
+<image src="https://image1.chinamuxie.com/images/project/789_img001.png" style="width:200rpx;height:200rpx;"/>
+</view>
+<view class="dd">
+<view class="h2">【第1期案例公示】</view>
+<view class="p">
+<text class="t">参与计划：</text>
+<text class="org">789</text>重大疾病互助计划
+</view>
+<view class="p">
+<text class="t">互助金额：</text>
+<text class="org">283000</text>元
+</view>
+<view class="p">
+<text class="t">人均均摊：</text>
+<text class="org">0.98</text>元
+</view>
+</view>
+</view>
+<view class="bt-dl">
+<view class="btd-text">
+<text>XXX，男，24周岁，2016.5.23加入789重大疾病互助计划，于2016.5.6发现结肠癌晚期...</text>
+</view>
+<view class="time">
+<text>—— 2016年10月21日</text>
+</view>
+</view>
+</view>
+</view>
+</view>
 </view>

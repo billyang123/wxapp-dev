@@ -1,8 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-var id = 0
-  , px = Math.random();
-module.exports = function(key){
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-})(module,require);
+"use strict";!function(t,o){var r=(t.exports={},0),n=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++r+n).toString(36))}}(module,require);

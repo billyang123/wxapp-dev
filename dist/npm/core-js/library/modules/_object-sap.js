@@ -1,13 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// most Object methods by ES6 should accept primitives
-var $export = require('./_export.js')
-  , core    = require('./_core.js')
-  , fails   = require('./_fails.js');
-module.exports = function(KEY, exec){
-  var fn  = (core.Object || {})[KEY] || Object[KEY]
-    , exp = {};
-  exp[KEY] = exec(fn);
-  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
-};
-})(module,require);
+"use strict";!function(e,t){var r=(e.exports={},t("./_export.js")),c=t("./_core.js"),o=t("./_fails.js");e.exports=function(e,t){var s=(c.Object||{})[e]||Object[e],i={};i[e]=t(s),r(r.S+r.F*o(function(){s(1)}),"Object",i)}}(module,require);

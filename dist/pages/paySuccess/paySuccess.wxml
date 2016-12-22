@@ -1,32 +1,31 @@
 <view class="container paySuccess">
-	<view class="header-tip">
-		<div class="item-content">
-			<icon type="success" size="45"/>
-			<view class="item-inner item-link-inner">
-				<view class="item-title">
-					<view class="txt">
-						<text class="blue">支付成功</text>
-					</view>
-					<view class="info">
-						<text class="gray">已成功加入789重大疾病互助社群</text>
-					</view>
-				</view>
-			
-			</view>
-		</div>
-	</view>
-	<view class="ps-item ps-item-tel">
-		<view class="p-tel">
-			<text class="txt">客服电话：</text>
-			<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
-		</view>
-		<view class="p-time gray">工作时间:（9:00-21:00）周一至周六</view>
-	</view>
-	<view class="ps-item">
-		<view class="p-inner">
-			<text class="txt">微信客服：</text>
-			<text>搜索微信号</text><text class="org">  kefu17hz2</text>
-		</view>
-		<view class="p-time gray">咨询、求助、志愿者、申请互助</view>
-	</view>
+<view class="header-tip">
+<div class="item-content">
+<icon type="success" size="45"/>
+<view class="item-inner item-link-inner">
+<view class="item-title">
+<view class="txt">
+<text class="blue">支付成功</text>
+</view>
+<view class="info">
+<text class="gray">计划余额充值成功！</text>
+</view>
+</view>
+</view>
+</div>
+</view>
+<view class="ps-item ps-item-tel">
+<view class="p-tel">
+<text class="txt">客服电话：</text>
+<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+</view>
+<view class="p-time gray">工作时间:（9:00-21:00）周一至周六</view>
+</view>
+<view class="ps-item">
+<view class="p-inner">
+<text class="ptxt">微信客服：</text>
+<text>搜索微信号</text><text class="org">  kefu17hz2</text>
+</view>
+<view class="p-time gray">咨询、求助、志愿者、申请互助</view>
+</view>
 </view>

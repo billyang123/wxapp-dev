@@ -1,8 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-var core  = require('../../modules/_core.js')
-  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-})(module,require);
+"use strict";!function(r,i){var t=(r.exports={},i("../../modules/_core.js")),e=t.JSON||(t.JSON={stringify:JSON.stringify});r.exports=function(r){return e.stringify.apply(e,arguments)}}(module,require);
