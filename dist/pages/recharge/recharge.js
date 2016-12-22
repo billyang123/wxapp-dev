@@ -125,6 +125,11 @@ var Recharge = function (_wx$Component) {
 	}, {
 		key: "bindinput",
 		value: function bindinput(event) {
+			if (event.detail.value != "") {
+				this.setData({
+					tabNum: 0
+				});
+			}
 			this.setData({
 				totalNum: event.detail.value
 			});

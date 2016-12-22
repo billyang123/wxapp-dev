@@ -137,37 +137,17 @@ var HealthIndex = function (_wx$Component) {
 
 							case 3:
 								this.isLink = true;
-
-								if (this.data.login) {
-									_context.next = 9;
-									break;
-								}
-
-								_context.next = 7;
-								return _labrador2.default.app.doLogin(function (res) {
-									_this.setData({
-										login: true,
-										userInfo: res.data
-									});
+								_context.next = 6;
+								return _labrador2.default.app.login(function (res) {
 									_labrador2.default.navigateTo({
 										url: event.currentTarget.dataset.link
 									});
 								});
 
-							case 7:
-								_context.next = 11;
-								break;
-
-							case 9:
-								_context.next = 11;
-								return _labrador2.default.navigateTo({
-									url: event.currentTarget.dataset.link
-								});
-
-							case 11:
+							case 6:
 								this.isLink = false;
 
-							case 12:
+							case 7:
 							case 'end':
 								return _context.stop();
 						}

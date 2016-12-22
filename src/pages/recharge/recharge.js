@@ -30,6 +30,11 @@ export default class Recharge extends wx.Component {
 		}
 	}
 	bindinput(event){
+		if(event.detail.value != ""){
+			this.setData({
+				tabNum:0
+			})
+		}
 		this.setData({
 			totalNum:event.detail.value
 		})

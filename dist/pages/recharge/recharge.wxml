@@ -40,7 +40,7 @@
 			<text class="or-line-txt gray">或</text>
 		</view>
 		<view class="rc-input">
-			<input placeholder="其他金额，9元以上" bindinput="_dispatch" type="text" value="{{totalNum || ''}}" class="input" placeholder-style="color:#ddd" data-bindinput="bindinput"/>
+			<input placeholder="其他金额，9元以上" bindinput="_dispatch" type="text" class="input" placeholder-style="color:#ddd" data-bindinput="bindinput"/>
 			<text>元</text>
 		</view>
 	</view>
