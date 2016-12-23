@@ -1,1 +1,10 @@
-"use strict";!function(t,e){var o=(t.exports={},e("./_object-dp.js").f),r=e("./_has.js"),s=e("./_wks.js")("toStringTag");t.exports=function(t,e,u){t&&!r(t=u?t:t.prototype,s)&&o(t,s,{configurable:!0,value:e})}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var def = require('./_object-dp.js').f
+  , has = require('./_has.js')
+  , TAG = require('./_wks.js')('toStringTag');
+
+module.exports = function(it, tag, stat){
+  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+};
+})(module,require);

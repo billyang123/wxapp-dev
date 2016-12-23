@@ -466,40 +466,22 @@ export default class Community extends wx.Component {
 	    	link:"/pages/qa/qa"
 	    }]})
 	};
-	async linkTo(event) {
+	async checkLink(event){
 		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
-      	if(!this.data.login){
-      		await wx.app.doLogin(function(res){
-				_this.setData({
-					login:true,
-					userInfo:res.data
-				});
-				wx.navigateTo({
-		            url:event.currentTarget.dataset.link
-		        })
-			})
-      	}else{
-      		await wx.navigateTo({
-	            url:event.currentTarget.dataset.link
-	        })
+      	let d = await wx.app.checkLogin();
+      	if(!d){
+      		await wx.app.doLogin()
       	}
+      	wx.navigateTo({
+            url:event.currentTarget.dataset.link
+        })
     	this.isLink = false;
 	}
-  async getUser(code){
-    let myuser = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/user/account',
-      method:"get",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        code:code
-      }
-    });
-    return myuser;
-  }
+	linkTo(event) {
+		this.checkLink(event)
+	}
     async onLoad(e){
     	let id = parseInt(e.type);
       this.setData({
@@ -526,15 +508,5 @@ export default class Community extends wx.Component {
     		diff:jsonData.diff,
     		numData:ResData.data.data
     	});
-      let myuser = await this.getUser(wx.app.globalData.storage.code);
-      if(myuser.data.data.loginStatus){
-        this.setData({
-          login:true,
-        })
-      }else{
-        this.setData({
-          login:false
-        })
-      }
     }
 }

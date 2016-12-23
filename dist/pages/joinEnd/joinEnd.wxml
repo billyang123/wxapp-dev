@@ -1,12 +1,12 @@
 <view class="container">
-<view class="joinEnd">
-<view class="joinEnd_pic">
-<image class="img" src="https://image1.chinamuxie.com/src/images/fs-face.png"/>
-</view>
-<view class="joinEnd_txt">
-<text class="joinEnd_txt01">恭喜你，加入成功</text>
-<text class="joinEnd_txt02">已成功加入计划，享高额保障</text>
-</view>
-</view>
-<view class="joinEnd_btn" catchtap="_dispatch" data-catchtap="lookBind">查看我的保障</view>
+  <view class="joinEnd">
+    <view class="joinEnd_pic">
+      <image class="img" src="https://image1.chinamuxie.com/src/images/fs-face.png"/>
+    </view>
+    <view class="joinEnd_txt">
+      <text class="joinEnd_txt01">恭喜你，加入成功</text>
+      <text class="joinEnd_txt02">已成功加入计划，享高额保障</text>
+    </view>
+  </view>
+  <view class="joinEnd_btn" catchtap="_dispatch" data-catchtap="lookBind">查看我的保障</view>
 </view>

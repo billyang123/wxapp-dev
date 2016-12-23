@@ -17,7 +17,18 @@ export default class DoctorDetail extends wx.Component {
 		page:0,
 
 		detail:{},
-		loading:false
+		loading:false,
+
+
+
+		//含有播放泡泡的
+		playAudio:{
+			id:null,
+			src:null
+		},
+		audio:{},
+		//赞
+		praiseNum:{}
 		// lineValue:"",
 		// top:"17rpx",
 		// value:""
@@ -36,11 +47,13 @@ export default class DoctorDetail extends wx.Component {
 		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
-      	await wx.app.login(function(res){
-			wx.navigateTo({
-	            url:event.currentTarget.dataset.link
-	        })
-		})
+      	let d = await wx.app.checkLogin();
+      	if(!d){
+      		await wx.app.doLogin()
+      	}
+      	wx.navigateTo({
+            url:event.currentTarget.dataset.link
+        })
     	this.isLink = false;
 	}
 	setNumTune(index,id){
@@ -69,7 +82,7 @@ export default class DoctorDetail extends wx.Component {
 				status:false
 			}
 		}
-		wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}})
+		//wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}})
 		if(this.data.playAudio.src!=src){
 			if(this.data.playAudio.id){
 				this.data.audio[this.data.playAudio.id].status = false;
@@ -113,7 +126,7 @@ export default class DoctorDetail extends wx.Component {
 			data:{
 				page:this.data.page,
 				size:this.data.size,
-				dockerId:this.data.id
+				doctorId:this.data.id
 			}
 		})
 		if(!res.data){
@@ -139,9 +152,10 @@ export default class DoctorDetail extends wx.Component {
 				content[i].praiseed = false
 			}
 		}
+		console.log(content)
 	    this.setData({
 	    	hasMore:loadMore,
-	    	list:this.data.list.concat(res.data.content),
+	    	list:this.data.list.concat(content),
 	    	hidden: true,
 	       	hasRefesh: false
 	    })
@@ -263,6 +277,7 @@ export default class DoctorDetail extends wx.Component {
 	// }
 	async onLoad(e){
 		//console.log(e.id)
+		this.praiseTmp = []
 		this.data.id = parseInt(e.id);
 		//加载更多设置高度
 		let systemInfo = await wx.getSystemInfo();

@@ -1,52 +1,52 @@
 <view class="container recharge">
-<view class="user-info">
-<view class="title">账户信息</view>
-<view class="p">
-<text class="t gray">姓名</text>
-<text>{{name}}</text>
-</view>
-<view class="p">
-<text class="t gray">计划</text>
-<text>{{pname}}</text>
-</view>
-<view class="p">
-<text class="t gray">余额</text>
-<text class="org d">¥</text>
-<text class="org num-s">{{yuNum}}</text>
-</view>
-</view>
-<view class="recharge-box">
-<view class="pd40">
-<view class="title">充值金额</view>
-<view class="tip">
-<text class="yell">* 为了你能够持续获得保障，请保证账户余额充足</text>
-</view>
-</view>
-<view class="rc-number-tab">
-<view class="num" catchtap="_dispatch" data-num="9" data-catchtap="moneyTab">
-<text>9元</text>
-<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" xmlns:wx="" wx:if="{{tabNum == 9}}"/>
-</view>
-<view class="num" data-num="99" catchtap="_dispatch" data-catchtap="moneyTab">
-<text>99元</text>
-<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"/>
-</view>
-<view class="num" data-num="199" catchtap="_dispatch" data-catchtap="moneyTab">
-<text>199元</text>
-<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"/>
-</view>
-</view>
-<view class="or-line">
-<text class="or-line-txt gray">或</text>
-</view>
-<view class="rc-input">
-<input placeholder="其他金额，9元以上" bindinput="_dispatch" type="text" class="input" placeholder-style="color:#ddd" data-bindinput="bindinput"/>
-<text>元</text>
-</view>
-</view>
-<view class="btn-padd">
-<view class="btn btn-org" catchtap="_dispatch" data-catchtap="chashMoney">
-<text>立即充值</text>
-</view>
-</view>
+	<view class="user-info">
+		<view class="title">账户信息</view>
+		<view class="p">
+			<text class="t gray">姓名</text>
+			<text>{{name}}</text>
+		</view>
+		<view class="p">
+			<text class="t gray">计划</text>
+			<text>{{pname}}</text>
+		</view>
+		<view class="p">
+			<text class="t gray">余额</text>
+			<text class="org d">¥</text>
+			<text class="org num-s">{{yuNum}}</text>
+		</view>
+	</view>
+	<view class="recharge-box">
+		<view class="pd40">
+			<view class="title">充值金额</view>
+			<view class="tip">
+				<text class="yell">* 为了你能够持续获得保障，请保证账户余额充足</text>
+			</view>
+		</view>
+		<view class="rc-number-tab">
+			<view class="num" catchtap="_dispatch" data-num="9" data-catchtap="moneyTab">
+				<text>9元</text>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" xmlns:wx="" wx:if="{{tabNum == 9}}"/>
+			</view>
+			<view class="num" data-num="99" catchtap="_dispatch" data-catchtap="moneyTab">
+				<text>99元</text>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 99}}"/>
+			</view>
+			<view class="num" data-num="199" catchtap="_dispatch" data-catchtap="moneyTab">
+				<text>199元</text>
+				<image class="num_active" src="{{assetsPath}}/images/select_group_check_36x36_2.png" wx:if="{{tabNum == 199}}"/>
+			</view>
+		</view>
+		<view class="or-line">
+			<text class="or-line-txt gray">或</text>
+		</view>
+		<view class="rc-input">
+			<input placeholder="其他金额，9元以上" bindinput="_dispatch" type="text" class="input" placeholder-style="color:#ddd" data-bindinput="bindinput"/>
+			<text>元</text>
+		</view>
+	</view>
+	<view class="btn-padd">
+		<view class="btn btn-org" catchtap="_dispatch" data-catchtap="chashMoney">
+			<text>立即充值</text>
+		</view>
+	</view>
 </view>

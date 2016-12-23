@@ -1,1 +1,5 @@
-"use strict";!function(e,o){e.exports={},window=o("../../../labrador/global.js");e.exports=o("./_global.js").document&&document.documentElement}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+module.exports = require('./_global.js').document && document.documentElement;
+})(module,require);

@@ -1,1 +1,71 @@
-.head,.img{width:170rpx;height:170rpx}.head,.section{overflow:hidden}.bind-top,.btn{text-align:center}.bind-top{padding:50rpx 0 30rpx}.head{border-radius:100%;border:solid #fff;margin:0 auto}.input-area,.section:first-child{border-bottom:1rpx solid #ddd}.name{margin-top:40rpx;color:#666}.img{border-radius:100%}.input-area{background-color:#fff;padding-left:36rpx}.section{min-height:87rpx;display:flex;align-items:center}input{height:60rpx;line-height:60rpx;font-size:28rpx}input::-webkit-input-placeholder{font-size:24rpx;color:#ddd}.btn{border:0;height:40rpx;color:#ff6a00;width:235rpx;line-height:40rpx;outline:0;background-color:transparent;border-left:2px solid #ddd;font-size:28rpx;border-radius:0}.disabled{color:#c7c7c7}.section_title{font-size:28rpx;width:150rpx;color:#666;height:87rpx;line-height:87rpx;float:left}.bind-btn{padding:36rpx 25rpx 0}
+.bind-top {
+  text-align: center;
+  padding: 50rpx 0 30rpx 0;
+}
+.head {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 100%;
+  border: 5rpx solid #fff;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.name {
+  margin-top: 40rpx;
+  color: #666;
+}
+.img {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 100%;
+}
+.input-area {
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  padding-left: 36rpx;
+}
+.section {
+  min-height: 87rpx;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.section:first-child {
+  border-bottom: 1rpx solid #ddd;
+}
+input {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+input::-webkit-input-placeholder {
+  font-size: 24rpx;
+  color: #ddd;
+}
+.btn {
+  border: 0;
+  height: 40rpx;
+  color: #ff6a00;
+  width: 235rpx;
+  line-height: 40rpx;
+  outline: 0;
+  background-color: transparent;
+  border-left: 2px solid #ddd;
+  font-size: 28rpx;
+  border-radius: 0;
+  text-align: center;
+}
+.disabled {
+  color: #c7c7c7;
+}
+.section_title {
+  font-size: 28rpx;
+  width: 150rpx;
+  color: #666;
+  height: 87rpx;
+  line-height: 87rpx;
+  float: left;
+}
+.bind-btn {
+  padding: 36rpx 25rpx 0 25rpx;
+}

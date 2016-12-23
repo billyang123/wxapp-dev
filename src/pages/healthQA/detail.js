@@ -216,11 +216,13 @@ export default class HealthDetail extends wx.Component {
 		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
-      	await wx.app.login(function(res){
-			wx.navigateTo({
-	            url:event.currentTarget.dataset.link
-	        })
-		})
+      	let d = await wx.app.checkLogin();
+      	if(!d){
+      		await wx.app.doLogin()
+      	}
+      	wx.navigateTo({
+            url:event.currentTarget.dataset.link
+        })
     	this.isLink = false;
 	}
 	bindinput(e){

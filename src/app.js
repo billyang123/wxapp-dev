@@ -93,10 +93,11 @@ export default class {
     let loginStatus = false; 
     if(d){
       let res = await this.getUser(this.globalData.storage.code);
+      console.log(res)
       loginStatus = res.data.loginStatus
     }
     if(loginStatus){
-      callback && callback(res)
+      callback && callback(res);
     }else{
       this.doLogin(callback)
     }
@@ -155,6 +156,7 @@ export default class {
     wx.hideToast()
     if(userInfoPost.data.data == "logged"){
       let _user = await this.getUser(loginInfo.code);
+      //return _user
       callback && callback(_user,userInfo);
     }
     if(userInfoPost.data.data == "notLogged"){

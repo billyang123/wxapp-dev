@@ -12,7 +12,7 @@
 	</view> -->
 	<view class="swiper">
 		<navigator redirect="" hover-class="none" url="{{banner.href}}">
-			<image src="{{banner.img}}" class="slide-image"/>
+			<image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
 		</navigator>
 	</view>
 	<component key="navbar"/>

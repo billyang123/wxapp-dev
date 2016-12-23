@@ -26,14 +26,19 @@ export default class Commit extends wx.Component {
 			data:this.postdata
 		})
 		if(res.status==0){
-			wx.showToast({
-			  title: '提问成功',
+			await wx.showToast({
+			  title: '评论成功',
 			  icon: 'success',
 			  duration: 2000
 			})
 			this.setData({
 				content:""
 			})
+			setTimeout(function(){
+				wx.redirectTo({
+		    		url:'/pages/healthQA/detail?id='
+		    	})
+			},2000)
 		}
 		if(res.status == 1){
 			var sModal = await wx.showModal({
@@ -48,8 +53,10 @@ export default class Commit extends wx.Component {
 		}
 	}
 	async onLoad(e){
-		this.data.cid = e.qid;
-		this.data.rid = e.rid;
+
+		// this.data.cid = e.qid;
+		// this.data.rid = e.rid;
+		console.log(e)
 		this.postdata = {
 			code:wx.app.globalData.storage.code
 		}

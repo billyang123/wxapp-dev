@@ -1,1 +1,66 @@
-.hz-content,.stepbar{background-color:#fff}.stepbar,.t-num{width:64rpx;height:64rpx}.st,.tname{font-family:PingFangSC-Medium}.hz-content{margin-bottom:20rpx;margin-top:30rpx}.title{padding:39rpx 36rpx 12rpx;font-size:36rpx}.tname{border-left:10rpx solid #ff6a00;padding-left:18rpx;background-position:right 8rpx;background-repeat:no-repeat}.p{line-height:48rpx}.stepbar{border-radius:50%;border:solid #ff6a00;padding:7rpx;position:absolute;top:0;left:-40rpx}.t-num{border-radius:50%;line-height:64rpx;font-size:32rpx;background-color:#ff6a00;text-align:center;color:#fff}.step-item{position:relative;padding-left:52rpx;border-left:1px solid #ff6a00;padding-bottom:46rpx;padding-top:18rpx}.step-item:last-child{border-left:1px solid transparent}.st-inner{font-size:32rpx;color:#333;line-height:40rpx}.st{margin-right:27rpx;font-size:36rpx;color:#333;margin-bottom:10rpx;display:block}.hz-process{padding:40rpx 30rpx 40rpx 73rpx}
+.hz-content {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+}
+.title {
+  padding: 39rpx 36rpx 12rpx 36rpx;
+  font-size: 36rpx;
+}
+.tname {
+  font-family: PingFangSC-Medium;
+  border-left: 10rpx solid #ff6a00;
+  padding-left: 18rpx;
+  background-position: right 8rpx;
+  background-repeat: no-repeat;
+}
+.p {
+  line-height: 48rpx;
+}
+.stepbar {
+  border-radius: 50%;
+  width: 64rpx;
+  height: 64rpx;
+  border: 1rpx solid #ff6a00;
+  padding: 7rpx;
+  position: absolute;
+  top: 0;
+  left: -40rpx;
+  background-color: #fff;
+}
+.t-num {
+  border-radius: 50%;
+  width: 64rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 32rpx;
+  background-color: #ff6a00;
+  text-align: center;
+  color: #fff;
+}
+.step-item {
+  position: relative;
+  padding-left: 52rpx;
+  border-left: 1px solid #ff6a00;
+  padding-bottom: 46rpx;
+  padding-top: 18rpx;
+}
+.step-item:last-child {
+  border-left: 1px solid transparent;
+}
+.st-inner {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+.st {
+  margin-right: 27rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-family: PingFangSC-Medium;
+  margin-bottom: 10rpx;
+  display: block;
+}
+.hz-process {
+  padding: 40rpx 30rpx 40rpx 73rpx;
+}

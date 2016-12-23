@@ -1,1 +1,8 @@
-"use strict";!function(e,r){e.exports={};r("../../modules/es6.object.create.js");var t=r("../../modules/_core.js").Object;e.exports=function(e,r){return t.create(e,r)}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+require('../../modules/es6.object.create.js');
+var $Object = require('../../modules/_core.js').Object;
+module.exports = function create(P, D){
+  return $Object.create(P, D);
+};
+})(module,require);
