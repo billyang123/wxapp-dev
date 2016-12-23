@@ -137,40 +137,31 @@ export default class Join extends wx.Component {
         return;
       }
     }
-  
-    if (this.data.bl){
-      this.setData({
-        bl:false
-      });
-      let res = await wx.request({
-        url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCardPay',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        method:"POST",
-        data:{
-          projectId:this.data.projectId,
-          persons:JSON.stringify(this.data.persons),
-          code:wx.app.globalData.storage.code
-        }
-      });
-      if(res.data.status == 0){
-        let payResult = await wx.requestPayment(res.data.data)
-        await wx.redirectTo({
-          url:'/pages/joinEnd/joinEnd'
-        })
-      }else {
-        wx.showModal({
-          title: '提示',
-          content: res.data.msg,
-          showCancel:false
-        })
+    let res = await wx.request({
+      url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCardPay',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method:"POST",
+      data:{
+        projectId:this.data.projectId,
+        persons:JSON.stringify(this.data.persons),
+        code:wx.app.globalData.storage.code
       }
-      this.setData({
-        bl:true
-      });
-    }
+    });
     this.status = false;  
+    if(res.data.status == 0){
+      let payResult = await wx.requestPayment(res.data.data)
+      await wx.redirectTo({
+        url:'/pages/joinEnd/joinEnd'
+      })
+    }else {
+      wx.showModal({
+        title: '提示',
+        content: res.data.msg,
+        showCancel:false
+      })
+    }
 	}
 	bindKeyInput(e){
 		let name = e.currentTarget.dataset.name,

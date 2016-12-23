@@ -17,6 +17,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
 }
 export default class Elecert extends wx.Component {
 	data = {
+        items:['《17互助公约》','《789重大疾病互助公约》','《留守儿童互助公约》','《公共交通、旅游意外互助公约》','《少儿大病、意外互助计划公约》','《80后孕妈婴宝互助公约》','《中老年大病意外互助公约》'],
 		project:{},
 		list:{},
 		projectAccount:{},
