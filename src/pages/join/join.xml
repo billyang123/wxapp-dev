@@ -1,17 +1,17 @@
 <view class="container join-main">
 	<view class="justjoin" catchtap="joinBind">
-		<text>立即加入</text>
+		<text>微信支付{{totalAmt}}元</text>
 	</view>
 	<component key="alert"/>
 	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
 		<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
 			<view class="section">
 				<view class="section_title">姓名</view>
-				<input bindinput="bindKeyInput" placeholder="例如：张三" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}"/>
+				<input bindinput="bindKeyInput" placeholder="被保障人姓名" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}"/>
 			</view>
 			<view class="section">
 				<view class="section_title">证件号码</view>
-				<input bindinput="bindKeyInput" type="idcard" placeholder="身份证号" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
+				<input bindinput="bindKeyInput" type="idcard" placeholder="被保障人身份证" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
 			</view>
 		</view>
 		<view class="del-btn" catchtap="removePerson" data-idx="{{idx}}" wx:if="{{persons.length!=1}}">

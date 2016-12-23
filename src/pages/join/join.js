@@ -1,6 +1,7 @@
 import wx from 'labrador';
 import Alert from '../../components/alert/alert';
 let jsonData={
+  totalAmt:0,
   items:[
     {convention:'《17互助公约》',checked: 'true'},
     {convention:'《789重大疾病互助公约》',checked: 'true',condition:'加入条件：适用于18-46周岁，在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。',remind:'请在加入本互助社群前咨询家人，避免重复加入。'},
@@ -48,7 +49,8 @@ export default class Join extends wx.Component {
     }
 		this.data.persons.push({});
 		this.setData({
-			persons:this.data.persons
+			persons:this.data.persons,
+      totalAmt:this.initAmt*this.data.persons.length
 		});
 	}
 	removePerson(e){
@@ -59,7 +61,8 @@ export default class Join extends wx.Component {
 		let idx=e.currentTarget.dataset.idx;
 		this.data.persons.splice(parseInt(idx),1);
 		this.setData({
-			persons:this.data.persons
+			persons:this.data.persons,
+      totalAmt:this.initAmt*this.data.persons.length
 		});
 	}
   checkChange(e){
@@ -153,7 +156,6 @@ export default class Join extends wx.Component {
       });
       if(res.data.status == 0){
         let payResult = await wx.requestPayment(res.data.data)
-        console.log(payResult)
         await wx.redirectTo({
           url:'/pages/joinEnd/joinEnd'
         })
@@ -161,12 +163,7 @@ export default class Join extends wx.Component {
         wx.showModal({
           title: '提示',
           content: res.data.msg,
-          showCancel:false,
-          success: function(res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            }
-          }
+          showCancel:false
         })
       }
       this.setData({
@@ -185,7 +182,16 @@ export default class Join extends wx.Component {
 	}
   async onLoad(e){
     var id = parseInt(e.type)
+    let sResDta = await wx.app.ajax({
+        url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
+        type:"get",
+        data: {
+          id:id
+        }
+    });
+    this.initAmt = sResDta.data.initAmt;
     this.setData({
+      totalAmt:this.initAmt,
       publicConvention:jsonData.items[0].convention,
       conventionTxt:jsonData.items[id].convention,
       projectId:id,

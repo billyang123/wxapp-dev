@@ -55,6 +55,7 @@ export default class Account extends wx.Component {
 	}
 	async onLoad(){
 		console.log(wx.app.globalData)
+		wx.app.stopAudio();
 		if(!wx.app.globalData.storage.code){
 			this.setData({
 				login:false

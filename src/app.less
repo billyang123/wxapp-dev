@@ -83,6 +83,7 @@ page {
     &:after {
       border:2px solid #ff6a00;
     }
+    overflow:initial;
     display: inline-block;
     border-radius:4rpx;
     height:55rpx;
@@ -307,49 +308,52 @@ button[type="warn"] {
     transform: rotate3d(0, 0, 1, 360deg);
   }
 }
+//health-detail
 .health-detail {
   background-color: #fff;
-  padding: 32rpx;
-  margin-bottom: 20rpx;
-  .title {
-    line-height: 32rpx;
+  padding: 20rpx 24rpx;
+}
+.hd-title {
+  line-height: 32rpx;
+}
+.hd-iconfont {
+  font-size: 42rpx;
+  color: #666;
+  margin-right: 5rpx;
+  position: relative;
+  top: 3rpx;
+}
+.hd-opt {
+  display: flex;
+  align-items: center;
+  margin-top: 38rpx;
+}
+.hd-op {
+  flex-shrink:1;
+  width: 100%;
+  text-align: center;
+  color: #999;
+  position: relative;
+  width: 100%;
+  line-height: 54rpx;
+  &:first-child {
+    border-right: 1rpx solid #ddd;
   }
-  .opt {
-    display: flex;
-    align-items: center;
-    margin-top: 38rpx;
-    .op {
-      flex-shrink:1;
-      width: 100%;
-      text-align: center;
-      color: #999;
-      position: relative;
-      width: 100%;
-      line-height: 54rpx;
-
-      &:first-child {
-
-        border-right: 1rpx solid #ddd;
-      }
-      .iconfont {
-        font-size: 42rpx;
-        color: #666;
-        margin-right: 5rpx;
-        position: relative;
-        top: 3rpx;
-      }
-    }
-  }
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 25rpx 0 25rpx 0;
-    .avatar {
-      width: 80rpx;
-      height: 80rpx;
-      margin-right: 20rpx;
-      border-radius: 100%;
-    }
-  }
+}
+.hd-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 25rpx 0 25rpx 0;
+}
+.hd-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 100%;
+}
+.hd-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
 }

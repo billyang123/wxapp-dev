@@ -58,6 +58,7 @@ export default class Commit extends wx.Component {
 
 		// this.data.cid = e.qid;
 		// this.data.rid = e.rid;
+		wx.app.stopAudio();
 		console.log(e)
 		this.postdata = {
 			code:wx.app.globalData.storage.code

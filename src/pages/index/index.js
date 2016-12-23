@@ -20,6 +20,7 @@ export default class Index extends wx.Component {
     // wx.redirectTo({
     //   url: '/pages/bindphone/bindphone'
     // })
+    wx.app.stopAudio();
     this.getIndexProject();
   }
   async getIndexProject(){

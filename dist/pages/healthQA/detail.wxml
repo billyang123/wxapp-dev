@@ -1,10 +1,10 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="container health">
 <view class="health-detail">
-<view class="title">{{detail.questionContent}}</view>
-<view class="content">
+<view class="hd-title">{{detail.questionContent}}</view>
+<view class="hd-content">
 <navigator redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
-<image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"/>
+<image class="hd-avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"/>
 </navigator>
 <!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
 <view class="bubble" catchtap="_dispatch" data-index="1" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}" data-catchtap="bindAudio">
@@ -13,10 +13,10 @@
 </view>
 <view class="gray fz28">听过{{detail.tuneNumber}}次</view>
 </view>
-<view class="info gray fz28">
+<view class="hd-info gray fz28">
 <text>{{detail.healthDoctor.doctorName}}   {{detail.healthDoctor.doctorTitle}}</text>
 <view catchtap="_dispatch" data-id="{{detail.id}}" data-type="detail" data-index="0" style="{{detail.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate fz42" style="{{detail.praiseed?'color:#ff6a00':''}}"/>
+<icon class="iconfont icon-appreciate fz42 hd-iconfont" style="{{detail.praiseed?'color:#ff6a00':''}}"/>
 <text>  {{detail.praiseNumber}}</text>
 </view>
 </view>

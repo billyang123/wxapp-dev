@@ -1,11 +1,12 @@
+<view class="container">
 <view class="bn-con">
 <view class="imgarea">
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png" style="width:750rpx;height:748rpx;"/>
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png" style="width:750rpx;height:584rpx;"/>
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png" style="width:750rpx;height:495rpx;"/>
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png" style="width:750rpx;height:802rpx;"/>
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png" style="width:750rpx;height:1395rpx;"/>
-<image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png" style="width:750rpx;height:131rpx;"/>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png" style="width:750rpx;height:748rpx;"/></view>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png" style="width:750rpx;height:584rpx;"/></view>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png" style="width:750rpx;height:495rpx;"/></view>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png" style="width:750rpx;height:802rpx;"/></view>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png" style="width:750rpx;height:1395rpx;"/></view>
+<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png" style="width:750rpx;height:131rpx;"/></view>
 </view>
 <view class="qalist">
 <view class="qustion">
@@ -83,6 +84,7 @@
 <text>微信客服：</text>
 <text>搜索微信号 </text>
 <text class="org">kefu17hz2</text>
+</view>
 </view>
 </view>
 </view>

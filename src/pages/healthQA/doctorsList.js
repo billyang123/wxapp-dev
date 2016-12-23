@@ -52,6 +52,9 @@ export default class DoctorsList extends wx.Component {
 	   	await this.getQAList();
 	}
 	async onLoad(){
+
+		wx.app.stopAudio();
+
 		let systemInfo = await wx.getSystemInfo();
 		this.setData({
 	       windowHieght:systemInfo.windowHeight

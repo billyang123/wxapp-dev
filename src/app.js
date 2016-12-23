@@ -70,6 +70,13 @@ export default class {
     //this.globalData.storage = localSession;
     return localSession;
   }
+  async stopAudio(){
+    let sta = await wx.getBackgroundAudioPlayerState();
+    console.log(sta)
+    if(sta.status==1){
+      wx.stopBackgroundAudio()
+    }
+  }
   async getUserInfo() {
     let res = await wx.getUserInfo();
     this.globalData.userInfo = res.userInfo;

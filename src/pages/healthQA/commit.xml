@@ -1,4 +1,5 @@
 <view class="container submit-commit">
+	<component key="alert"/>
 	<form bindsubmit="formSubmit" >
 		<view class="section">
 		  <textarea name="content" value="{{content}}" placeholder="写评论..." />

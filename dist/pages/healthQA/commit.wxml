@@ -1,4 +1,7 @@
 <view class="container submit-commit">
+<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
+<text>{{alert.msg}}</text>
+</view>
 <form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
 <view class="section">
 <textarea name="content" value="{{content}}" placeholder="写评论..."/>

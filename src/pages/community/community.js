@@ -487,12 +487,9 @@ export default class Community extends wx.Component {
       this.setData({
         linkUrl:'/pages/join/join?type='+id
       });
-    	let ResData = await wx.request({
+    	let ResData = await wx.app.ajax({
             url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
-            method:"get",
-            header: {
-			    'content-type': 'application/x-www-form-urlencoded'
-			},
+            type:"get",
             data: {
             	id:id
             }
@@ -506,7 +503,7 @@ export default class Community extends wx.Component {
     		treaty:jsonData.treaty[id-1],
     		condition:jsonData.condition[id-1],
     		diff:jsonData.diff,
-    		numData:ResData.data.data
+    		numData:ResData.data
     	});
     }
 }

@@ -203,7 +203,7 @@ export default class DoctorDetail extends wx.Component {
 		if(qcontent == ""){
 			return this.children.alert.show("请输入提问内容");
 		}
-		if(qcontent.length>=60){
+		if(qcontent.length>60){
 			return this.children.alert.show("提问内容需少于60个字");
 		}
 		var res = await wx.app.ajax({
@@ -259,24 +259,9 @@ export default class DoctorDetail extends wx.Component {
 			detail:res.data
 		})
 	}
-	// bindinput(e){
-	// 	let _value = e.detail.value;
-	// 	let disabled = this.data.disabled;
-	// 	this.data.textareaValue = _value
-	// 	this.data.value = _value.replace(/(^\s*)|(\s*$)/g, "");
-	// 	if(this.data.value == ""){
-	// 		disabled = false;
-	// 	}else{
-	// 		disabled = true;
-	// 	}
-	// 	this.setData({
-	// 		curLength:_value.length,
-	// 		textareaValue:this.data.textareaValue,
-	// 		disabled:disabled
-	// 	})
-	// }
 	async onLoad(e){
 		//console.log(e.id)
+		wx.app.stopAudio();
 		this.praiseTmp = []
 		this.data.id = parseInt(e.id);
 		//加载更多设置高度

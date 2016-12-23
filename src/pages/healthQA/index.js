@@ -50,9 +50,10 @@ export default class HealthIndex extends wx.Component {
 	    wx.onBackgroundAudioStop(function(e){
 	    	console.log(e);
 	    	let id = _this.data.playAudio.id;
-			_this.data.audio[id].status = false;
+	    	let audio = _this.data.audio;
+			audio[id].status = false;
 			_this.setData({
-		       audio:_this.data.audio
+		       audio:audio
 		    });
 	    })
 	}
@@ -84,54 +85,53 @@ export default class HealthIndex extends wx.Component {
 			this.tuneNum.push(locaId)
 		}
 	}
-	async bindAudio(event){
+	bindAudio(event){
 		let src = event.currentTarget.dataset.url;
 		let id = event.currentTarget.dataset.id;
 		let index = event.currentTarget.dataset.index;
-		if(!this.data.audio[id]){
-			this.data.audio[id] = {
+		let auido = this.data.audio;
+		let playAudio = this.data.playAudio;
+		if(!auido[id]){
+			auido[id] = {
 				id:id,
 				src:src,
 				status:false
 			}
 		}
-		if(this.data.playAudio.src!=src){
-			if(this.data.playAudio.id){
-				this.data.audio[this.data.playAudio.id].status = false;
-				this.setData({
-			       audio:this.data.audio
-			    });
+		if(playAudio.id!=id){
+			if(playAudio.id){
+				if(auido[playAudio.id].status){
+					auido[playAudio.id].status = false;
+					wx.stopBackgroundAudio();
+				}
 			}
-			this.data.audio[id].status = true;
-			await wx.playBackgroundAudio({
+			auido[id].status = true;
+			wx.playBackgroundAudio({
 		    	dataUrl:src
 		    })
-			this.setData({
-		       audio:this.data.audio,
-		       playAudio:{
-		       		id:id,
-					src:src
-		       }
-		    });
 		}else{
-			if(this.data.audio[id].status){
-				//let playerState = await wx.getBackgroundAudioPlayerState();
-				await wx.pauseBackgroundAudio()
-				this.data.audio[id].status = false;
+			if(auido[id].status){
+				wx.stopBackgroundAudio();
+				auido[id].status = false;
 			}else{
-				await wx.playBackgroundAudio({
+				wx.playBackgroundAudio({
 			    	dataUrl:src
 			    })
-				this.data.audio[id].status = true;
+				auido[id].status = true;
 			}
-			this.setData({
-		       audio:this.data.audio
-		    });
 		}
+		this.setData({
+	       audio:auido,
+	       playAudio:{
+	       		id:id,
+				src:src
+	       }
+	    });
 		this.setNumTune(index,id)
 	}
 	tabs(event){
 		console.log(event)
+		//wx.app.stopAudio();
 		this.setData({
 			tabIndex:event.currentTarget.dataset.index
 		})
@@ -141,6 +141,7 @@ export default class HealthIndex extends wx.Component {
 	    	list:[]
 	    })
 		this.getQAList();
+
 	}
 	async getDoctors(){
 		var res = await wx.app.ajax({

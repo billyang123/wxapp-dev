@@ -231,6 +231,7 @@ export default class HealthDetail extends wx.Component {
 		})
 	}
 	async onLoad(e){
+		wx.app.stopAudio();
 		this.praiseTmp = [];
 		let systemInfo = await wx.getSystemInfo();
 		this.data.id = parseInt(e.id);
