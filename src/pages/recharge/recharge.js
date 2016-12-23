@@ -1,14 +1,21 @@
 import wx from 'labrador';
+import Alert from '../../components/alert/alert';
 export default class Recharge extends wx.Component {
 	data={
-		tabNum:0,
+		tabNum:9,
     	totalNum:"",
     	assetsPath:wx.app.data.assetsPath,
     	yuNum:"",
     	name:"",
     	pname:""
 	};
+	children = {
+	    alert: new Alert({msg:"@msg"})
+	};
 	async chashMoney(event){
+		if(this.data.totalNum*1<=0){
+			return this.children.alert.show("充值金额需大于0元")
+		}
 		var _url = "https://xcx.chinamuxie.com/wxapi/project/account/recharge";
 		let res = await wx.request({
 	        url:_url,

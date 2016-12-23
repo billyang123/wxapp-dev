@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar/navbar';
 export default class HealthIndex extends wx.Component {
 	data = {
 		//tab
-		tabIndex:1,
+		tabIndex:0,
 		tabData:[
 			{
 				title:"全部",
@@ -133,7 +133,7 @@ export default class HealthIndex extends wx.Component {
 		//console.log(event)
 		//wx.app.stopAudio();
 		this.setData({
-			tabIndex:event.currentTarget.dataset.index
+			tabIndex:event.currentTarget.dataset.id
 		})
 		this.setData({
 	    	hasMore:true,
@@ -184,7 +184,7 @@ export default class HealthIndex extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
+		if(res.data.totalPages <= 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
@@ -238,6 +238,16 @@ export default class HealthIndex extends wx.Component {
 		}
 		this.praiseLoad = false;
 	}
+	async getLabel(){
+		var res = await wx.app.ajax({
+			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/labellist',
+			type:"get"
+		})
+		console.log(res)
+		this.setData({
+			tabData:res.data
+		})
+	}
 	async onLoad(){
 		//加载更多设置高度
 		let systemInfo = await wx.getSystemInfo();
@@ -247,6 +257,7 @@ export default class HealthIndex extends wx.Component {
 		//console.log(systemInfo)
 		this.praiseTmp = [];
 		this.getDoctors();
+		this.getLabel();
 		this.getQAList();
 		this.audioPlayEnd();
 
@@ -276,8 +287,9 @@ export default class HealthIndex extends wx.Component {
 	    	page:0,
 	    	list:[]
 	    })
-		await this.getDoctors();
-		await this.getQAList();
+		this.getDoctors();
+		this.getLabel();
+		this.getQAList();
 		wx.stopPullDownRefresh()
 	}
 }

@@ -1,4 +1,5 @@
 <view class="container recharge">
+	<component key="alert"/>
 	<view class="user-info">
 		<view class="title">账户信息</view>
 		<view class="p">

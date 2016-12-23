@@ -1,6 +1,6 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="loadMore">
 	<view class="container health">
-		<component key="navbar"/>
+		<!-- <component key="navbar"/> -->
 		<view class="health-hd">
 			<navigator redirect="" hover-class="none" class="grad" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 				<view>
@@ -17,8 +17,11 @@
 		</view>
 		<scroll-view scroll-x="true" style="100%">
 			<view class="mytab">
-				<view class="scroll-view-item tab-item{{tabIndex == idx?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="tabs" data-index="{{idx}}">
-					<text>{{item.title}}</text>
+				<view class="scroll-view-item tab-item{{tabIndex == 0?' active':''}}" catchtap="tabs" data-id="0">
+					<text>全部</text>
+				</view>
+				<view class="scroll-view-item tab-item{{tabIndex == item.id?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="tabs" data-id="{{item.id}}">
+					<text>{{item.labelName}}</text>
 				</view>
 			</view>
 		</scroll-view>

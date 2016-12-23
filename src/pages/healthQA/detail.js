@@ -162,7 +162,7 @@ export default class HealthDetail extends wx.Component {
 		}
 		let loadMore = true;
 		let content = res.data.content;
-		if(res.data.totalPages == 1 || res.data.totalPages == this.data.page+1){
+		if(res.data.totalPages <= 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {

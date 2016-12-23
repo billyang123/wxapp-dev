@@ -5,9 +5,9 @@
 <view class="container">
 <view class="doctor-detail">
 <image class="avatar" src="{{detail.doctorHeadImgUrl}}"/>
-<view class="title">{{detail.doctorTitle}} {{detail.doctorName}}</view>
-<view class="gov">{{detail.doctorHospital}}</view>
-<view class="intro">{{detail.doctorDesc}}</view>
+<view class="title">{{detail.doctorTitle || ""}} {{detail.doctorName || ""}}</view>
+<view class="gov">{{detail.doctorHospital || ""}}</view>
+<view class="intro">{{detail.doctorDesc || ""}}</view>
 <form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
 <view class="section">
 <!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->

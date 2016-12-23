@@ -50,7 +50,7 @@
 			<text class="gray">已同意</text><text>{{items[0]}}</text>
 		</view>
 		<view class="fz28">
-			<text class="gray">已同意</text><text>{{item[projectId]}}</text>
+			<text class="gray">已同意</text><text>{{items[projectId]}}</text>
 		</view>
 	</view>
 	<view class="btn-padd">

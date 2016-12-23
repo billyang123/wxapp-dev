@@ -1,8 +1,8 @@
 <view class="container">
-	<component key="navbar"/>
+	<!-- <component key="navbar"/> -->
 	<view class="account-header">
 		<view class="account-info login" wx:if="{{login}}">
-			<navigator class="acimage default-image" redirect="" url="/pages/profile/profile">
+			<navigator class="acimage default-image" url="/pages/profile/profile">
 				<image src="{{userInfo.headImgUrl || wxUserInfo.avatarUrl}}" class="avatar"></image>
 				<view class="volunteer" wx:if="{{isVolunteer}}">
 					<text>自愿者</text>

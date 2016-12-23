@@ -1,6 +1,6 @@
 <view class="container">
-	<view class="commun-nav">
-		<view class="cnav-li join" bindtap="linkTo" data-link="{{linkUrl}}">立即加入</view>
+	<view class="commun-nav" catchtap="linkTo" data-link="{{linkUrl}}">
+		<view class="cnav-li join">立即加入</view>
 	</view>
 	<view class="community">
 		<view class="top-head">

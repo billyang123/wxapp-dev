@@ -15,14 +15,7 @@
 <image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
 </navigator>
 </view>
-<view class="tabBottombar navbar-tabBottombar">
-<navigator class="vb-block navbar-vb-block" redirect="true" xmlns:wx="" wx:for="{{navbar.list}}" wx:for-index="index" hover-class="none" url="{{item.pagePath}}">
-<view>
-<image class="icon-img navbar-icon-img" src="{{navbar.assetsPath}}{{index==navbar.cur?item.selectedImg:item.img}}"/>
-</view>
-<view class="vb-txt navbar-vb-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
-</navigator>
-</view>
+<!-- <component key="navbar"/> -->
 <!-- <view class="broad">
 <view class="broad-number">
 <view class="col-50">
@@ -56,7 +49,7 @@
 <view class="title">
 <view class="tname hz-group-tname">互助社群</view>
 </view>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=2">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=2">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/stayChildren02_img001.png"/>
 <view class="hi-title"><text>留守儿童互助社群</text></view>
 <view class="hi-info">
@@ -70,11 +63,11 @@
 <view class="hi-opt">
 <button class="joinbtn">立即加入</button>
 <view class="opt-imglist">
-<image mode="aspectFill" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg {{idx+1}}"/>
+<image mode="aspectFill" xmlns:wx="" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg {{idx+1}}"/>
 </view>
 </view>
 </navigator>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=5">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=5">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/8002_img001.png"/>
 <view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
 <view class="hi-info">
@@ -92,7 +85,7 @@
 </view>
 </view>
 </navigator>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=4">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=4">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/children02_img001.png"/>
 <view class="hi-title"><text>少儿大病、意外互助社群</text></view>
 <view class="hi-info">
@@ -110,7 +103,7 @@
 </view>
 </view>
 </navigator>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=3">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=3">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/traffic02_img001.png"/>
 <view class="hi-title"><text>交通、旅游意外互助社群</text></view>
 <view class="hi-info">
@@ -128,7 +121,7 @@
 </view>
 </view>
 </navigator>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=6">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=6">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/old02_img001.png"/>
 <view class="hi-title"><text>中老年大病、意外互助社群</text></view>
 <view class="hi-info">
@@ -146,7 +139,7 @@
 </view>
 </view>
 </navigator>
-<navigator class="hz-item" redirect="" hover-class="none" url="/pages/community/community?type=1">
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=1">
 <image class="img" mode="aspectFill" src="{{assetsPath}}/images/78902_img001.png"/>
 <view class="hi-title"><text>789重大疾病互助社群</text></view>
 <view class="hi-info">

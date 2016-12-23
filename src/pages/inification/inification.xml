@@ -6,7 +6,7 @@
 		<view class="null-top-word"><text>你还没有加入互助社群</text></view>
 		<view class="fz28 gray"><text>请加入互助社群，开启保障</text></view>
 		<view class="btn-padd">
-			<navigator class="btn btn-org" open-type="redirect" url="/pages/index/index">
+			<navigator class="btn btn-org" open-type="switchTab" url="/pages/index/index">
 				<text>    立即加入</text>
 			</navigator>
 		</view>

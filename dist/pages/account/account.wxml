@@ -1,15 +1,8 @@
 <view class="container">
-<view class="tabBottombar navbar-tabBottombar">
-<navigator class="vb-block navbar-vb-block" redirect="true" xmlns:wx="" wx:for="{{navbar.list}}" wx:for-index="index" hover-class="none" url="{{item.pagePath}}">
-<view>
-<image class="icon-img navbar-icon-img" src="{{navbar.assetsPath}}{{index==navbar.cur?item.selectedImg:item.img}}"/>
-</view>
-<view class="vb-txt navbar-vb-txt"><text class="{{index==navbar.cur?'org':''}} navbar-{{index==navbar.cur?'org':''}}">{{item.txt}}</text></view>
-</navigator>
-</view>
+<!-- <component key="navbar"/> -->
 <view class="account-header">
-<view class="account-info login" wx:if="{{login}}">
-<navigator class="acimage default-image" redirect="" url="/pages/profile/profile">
+<view class="account-info login" xmlns:wx="" wx:if="{{login}}">
+<navigator class="acimage default-image" url="/pages/profile/profile">
 <image src="{{userInfo.headImgUrl || wxUserInfo.avatarUrl}}" class="avatar"/>
 <view class="volunteer" wx:if="{{isVolunteer}}">
 <text>自愿者</text>

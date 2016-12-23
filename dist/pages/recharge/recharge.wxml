@@ -1,4 +1,7 @@
 <view class="container recharge">
+<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
+<text>{{alert.msg}}</text>
+</view>
 <view class="user-info">
 <view class="title">账户信息</view>
 <view class="p">
