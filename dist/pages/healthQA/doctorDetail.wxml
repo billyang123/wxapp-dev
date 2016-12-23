@@ -23,26 +23,26 @@
 <view class="dlist-title" xmlns:wx="" wx:if="{{list.length>0}}">他回答了89个问题，共有15780次收听</view>
 <view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
 <navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
-<view class="title">{{item.questionContent}}</view>
-<view class="content">
-<image class="avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
+<view class="hd-title">{{item.questionContent}}</view>
+<view class="hd-content">
+<image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
 <view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
 <icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
 <text>限时免费听</text>
 </view>
 <view class="gray fz28">听过{{item.tuneNumber}}次</view>
 </view>
-<view class="info gray fz28">
+<view class="hd-info gray fz28">
 <text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
 </view>
 </navigator>
-<view class="opt">
-<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="op" data-catchtap="checkLink">
-<icon class="iconfont icon-comment"/>
+<view class="hd-opt">
+<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="hd-op" data-catchtap="checkLink">
+<icon class="iconfont icon-comment hd-iconfont"/>
 <text>{{item.commentNumber}}</text>
 </view>
-<view class="op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+<view class="hd-op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+<icon class="iconfont icon-appreciate hd-iconfont" style="{{item.praiseed?'color:#ff6a00':''}}"/>
 <text>{{item.praiseNumber}}</text>
 </view>
 </view>

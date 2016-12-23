@@ -130,7 +130,7 @@ export default class HealthIndex extends wx.Component {
 		this.setNumTune(index,id)
 	}
 	tabs(event){
-		console.log(event)
+		//console.log(event)
 		//wx.app.stopAudio();
 		this.setData({
 			tabIndex:event.currentTarget.dataset.index
