@@ -34,10 +34,12 @@ export default class Commit extends wx.Component {
 			this.setData({
 				content:""
 			})
+			//wx.navigateBack()
 			setTimeout(function(){
-				wx.redirectTo({
-		    		url:'/pages/healthQA/detail?id='
-		    	})
+				wx.navigateBack()
+				// wx.redirectTo({
+		  //   		url:'/pages/healthQA/detail?id='+this.qaId
+		  //   	})
 			},2000)
 		}
 		if(res.status == 1){
@@ -62,10 +64,12 @@ export default class Commit extends wx.Component {
 		}
 		if(e.qaCommentId){
 			this.postdata.qaCommentId = e.qaCommentId
+			this.qaId = e['amp;qaId'];
 			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/reply'
 		}
 		if(e.qaId){
-			this.postdata.qaId = e.qaId
+			this.postdata.qaId = e.qaId;
+			this.qaId = e.qaId;
 			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/add'
 		}
 		console.log(e)
