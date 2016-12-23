@@ -53,9 +53,7 @@ export default class Account extends wx.Component {
 	makePhoneCall(event){
 		wx.app.makePhoneCall(event)
 	}
-	async onLoad(){
-		console.log(wx.app.globalData)
-		wx.app.stopAudio();
+	async initAcount(){
 		if(!wx.app.globalData.storage.code){
 			this.setData({
 				login:false
@@ -75,5 +73,14 @@ export default class Account extends wx.Component {
 				})
 	    	}
 		}
+	}
+	async onLoad(){
+		//console.log(wx.app.globalData)
+		this.initAcount()
+	}
+	async onPullDownRefresh(){
+		
+		await this.initAcount()
+		wx.stopPullDownRefresh()
 	}
 }

@@ -146,6 +146,7 @@ export default class DoctorDetail extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
+
 			if(this.praiseTmp.indexOf(content[i].id+'')>=0){
 				content[i].praiseed = true
 			}else{
@@ -198,6 +199,10 @@ export default class DoctorDetail extends wx.Component {
 		this.praiseLoad = false;
 	}
 	async formSubmit(e){
+		let d = await wx.app.checkLogin();
+      	if(!d){
+      		await wx.app.doLogin()
+      	}
 		let qcontent = e.detail.value.questionContent;
 		qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
 		if(qcontent == ""){

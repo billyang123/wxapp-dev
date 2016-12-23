@@ -3,7 +3,7 @@ import Alert from '../../components/alert/alert';
 export default class Recharge extends wx.Component {
 	data={
 		tabNum:9,
-    	totalNum:"",
+		inputNum:0,
     	assetsPath:wx.app.data.assetsPath,
     	yuNum:"",
     	name:"",
@@ -13,9 +13,11 @@ export default class Recharge extends wx.Component {
 	    alert: new Alert({msg:"@msg"})
 	};
 	async chashMoney(event){
-		if(this.data.totalNum*1<=0){
+		this.totalNum = (this.data.tabNum*1)+(this.data.inputNum*1);
+		if(this.totalNum*1<=0){
 			return this.children.alert.show("充值金额需大于0元")
 		}
+		//return console.log(this.data.tabNum,this.data.inputNum,this.totalNum)
 		var _url = "https://xcx.chinamuxie.com/wxapi/project/account/recharge";
 		let res = await wx.request({
 	        url:_url,
@@ -25,7 +27,7 @@ export default class Recharge extends wx.Component {
 	        method:"POST",
 	        data:{
 	          	projectAccountId:this.projectAccountId,
-				rechargeAmount:this.data.totalNum*1,
+				rechargeAmount:this.totalNum*1,
 	          	code:wx.app.globalData.storage.code
 	        }
 	    });
@@ -39,11 +41,15 @@ export default class Recharge extends wx.Component {
 	bindinput(event){
 		if(event.detail.value != ""){
 			this.setData({
-				tabNum:0
+				tabNum:0,
+			})
+		}else{
+			this.setData({
+				inputNum:0,
 			})
 		}
 		this.setData({
-			totalNum:event.detail.value
+			inputNum:event.detail.value
 		})
 	}
 	moneyTab(event){
@@ -51,11 +57,12 @@ export default class Recharge extends wx.Component {
 		var num = event.currentTarget.dataset.num;
 		this.setData({
 			tabNum:num*1,
-			totalNum:num*1
+			inputNum:0
 		})
 	}
 	onLoad(e){
 		console.log(e)
+		this.totalNum = 0;
 		this.setData({
 			yuNum:e["amp;num"],
 	    	name:e["amp;name"],

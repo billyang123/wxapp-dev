@@ -83,9 +83,8 @@ export default class {
     return res.userInfo;
   }
   async getUser(code){
-    let myuser = this.ajax({
+    let myuser = await this.ajax({
       url:'https://xcx.chinamuxie.com/wxapi/user/account',
-      type:"get",
       data: {
         code:code
       }
@@ -93,8 +92,12 @@ export default class {
     return myuser;
   }
   async checkLogin(){
-    let res = await this.getUser(this.globalData.storage.code);
-    return res.data.loginStatus;
+    if(this.globalData.storage && this.globalData.storage.code){
+      let res = await this.getUser(this.globalData.storage.code);
+      return res.data.loginStatus;
+    }else{
+      return false
+    }
   }
   async login(callback,d){
     let loginStatus = false; 

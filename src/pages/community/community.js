@@ -468,8 +468,8 @@ export default class Community extends wx.Component {
 	};
 	async checkLink(event){
 		var _this = this;
-		if(this.isLink) return;
-      	this.isLink = true;
+		if(this.isloading) return;
+      	this.isloading = true;
       	let d = await wx.app.checkLogin();
       	if(!d){
       		await wx.app.doLogin()
@@ -477,16 +477,17 @@ export default class Community extends wx.Component {
       	wx.navigateTo({
             url:event.currentTarget.dataset.link
         })
-    	this.isLink = false;
+    	this.isloading = false;
 	}
 	linkTo(event) {
 		this.checkLink(event)
 	}
     async onLoad(e){
+    	this.isloading = false;
     	let id = parseInt(e.type);
-      this.setData({
-        linkUrl:'/pages/join/join?type='+id
-      });
+	      this.setData({
+	        linkUrl:'/pages/join/join?type='+id
+	      });
     	let ResData = await wx.app.ajax({
             url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
             type:"get",

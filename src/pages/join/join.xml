@@ -6,11 +6,11 @@
 	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
 		<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
 			<view class="section">
-				<view class="section_title">姓名</view>
+				<view class="section_title">姓  名</view>
 				<input bindinput="bindKeyInput" placeholder="被保障人姓名" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}"/>
 			</view>
 			<view class="section">
-				<view class="section_title">证件号码</view>
+				<view class="section_title">身份证</view>
 				<input bindinput="bindKeyInput" type="idcard" placeholder="被保障人身份证" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}"/>
 			</view>
 		</view>
@@ -43,12 +43,12 @@
     <checkbox-group bindchange="checkChange">
 		<view>
 			<label class="checkbox">
-			    <checkbox checked="true" value="1" /> 已同意 <text class="text">{{publicConvention}}</text>
+			    <checkbox checked="true" value="1" /> 已同意 <text class="text org">{{publicConvention}}</text>
 			</label>
 		</view>
 		<view>
 			<label class="checkbox">
-		    	<checkbox checked="true" value="2"/> 已同意 <text class="text">{{conventionTxt}}</text>
+		    	<checkbox checked="true" value="2"/> 已同意 <text class="text org">{{conventionTxt}}</text>
 		  	</label>
 		</view>
     </checkbox-group>
