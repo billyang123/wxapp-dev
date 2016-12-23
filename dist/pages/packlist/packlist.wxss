@@ -1,1 +1,1 @@
-.media-list.qa-list{background-color:#fff;padding-left:36rpx;border:solid #ddd;position:relative;margin-top:30rpx}.media-list.qa-list .item-content{padding-left:0}.media-list.qa-list .item-content:last-child{border-bottom:0}
+.qa-list{background-color:#fff;padding-left:36rpx;border:solid #ddd;border-width:1rpx;position:relative;margin-top:30rpx}.item-content{padding-left:0}.item-content:last-child{border-bottom:0}

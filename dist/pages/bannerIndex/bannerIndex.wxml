@@ -1,12 +1,12 @@
 <view class="container">
 <view class="bn-con">
 <view class="imgarea">
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png" style="width:750rpx;height:748rpx;"/></view>
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png" style="width:750rpx;height:584rpx;"/></view>
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png" style="width:750rpx;height:495rpx;"/></view>
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png" style="width:750rpx;height:802rpx;"/></view>
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png" style="width:750rpx;height:1395rpx;"/></view>
-<view><image src="https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png" style="width:750rpx;height:131rpx;"/></view>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png);height:748rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png);height:584rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png);height:495rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png);height:802rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png);height:1395rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png);height:131rpx;"/>
 </view>
 <view class="qalist">
 <view class="qustion">

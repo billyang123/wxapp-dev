@@ -5,7 +5,7 @@ export default class BannerIndex extends wx.Component {
 		
 	}
 	makePhoneCall(event){
-		console.log(event)
+		//console.log(event)
 		wx.app.makePhoneCall(event)
 	}
 }

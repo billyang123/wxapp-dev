@@ -29,6 +29,11 @@
 		</view>
 	</view>
 	<view class="card-info media-list">
+		<navigator class="item-content" url="/pages/range/range?type={{projectId}}">
+			<view class="item-inner item-link-inner">
+				<view class="item-title">互助范围</view>
+			</view>
+		</navigator>
 		<view class="item-content" wx:for="{{list}}">
 			<view class="item-inner">
 				<view class="item-title-row">
