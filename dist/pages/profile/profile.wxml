@@ -1,103 +1,103 @@
 <view class="container profile">
-<view class="profile_pop" animation="{{animationData}}">
-<view class="profile_pop_cont">
-<view class="profile_pop_close" catchtap="_dispatch" data-catchtap="chooseClose">取消</view>
-<view class="profile_pop_sure" catchtap="_dispatch" data-choose="{{chooseSex}}" data-catchtap="chooseSure">确定</view>
-</view>
-<view class="profile_pop_choose">
-<view class="profile_pop_sex profile_pop_sexm active" catchtap="_dispatch" id="sexm" xmlns:wx="" wx:if="{{sexm}}" data-catchtap="chooseSex">男</view>
-<view class="profile_pop_sex profile_pop_sexm" catchtap="_dispatch" id="sexm" wx:else="wx:else" data-catchtap="chooseSex">男</view>
-<view class="profile_pop_sex profile_pop_sexw active" catchtap="_dispatch" id="sexw" wx:if="{{sexw}}" data-catchtap="chooseSex">女</view>
-<view class="profile_pop_sex profile_pop_sexw" catchtap="_dispatch" id="sexw" wx:else="wx:else" data-catchtap="chooseSex">女</view>
-</view>
-</view>
-<view class="media-list">
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>头像</text>
-</view>
-<view class="item-after" wx:if="{{userHeadimgurl}}">
-<image src="{{userHeadimgurl}}" style="width:100rpx;height:100rpx;border-radius:100%"/>
-</view>
-</view>
-</view>
-<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=1" catchtap="_dispatch" data-catchtap="linkTo">
-<view class="item-inner">
-<view class="item-title">
-<text>昵称</text>
-</view>
-<view class="item-after" wx:if="{{userNickname}}">
-<text>{{userNickname}}</text>
-</view>
-</view>
-</view>
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>姓名</text>
-</view>
-<view class="item-after" wx:if="{{userTrueName}}">
-<text>{{userTrueName}}</text>
-</view>
-</view>
-</view>
-<view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose">
-<view class="item-inner">
-<view class="item-title">
-<text>性别</text>
-</view>
-<view class="item-after" wx:if="{{userGender}}">
-<text>{{userGender}}</text>
-</view>
-</view>
-</view>
-</view>
-<view class="media-list">
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>证件类型</text>
-</view>
-<view class="item-after">
-<text>身份证</text>
-</view>
-</view>
-</view>
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>证件号码</text>
-</view>
-<view class="item-after" wx:if="{{userIdNumber}}">
-<text>{{userIdNumber}}</text>
-</view>
-</view>
-</view>
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>手机号码</text>
-</view>
-<view class="item-after" wx:if="{{userPhone}}">
-<text>{{userPhone}}</text>
-</view>
-</view>
-</view>
-<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=2" catchtap="_dispatch" data-catchtap="linkTo">
-<view class="item-inner">
-<view class="item-title">
-<text>邮箱地址</text>
-</view>
-<view class="item-after" wx:if="{{userEmail}}">
-<text>{{userEmail}}</text>
-</view>
-</view>
-</view>
-</view>
-<view class="btn-padd">
-<view class="btn btn-org" catchtap="_dispatch" data-catchtap="quit">
-<text>退出登录</text>
-</view>
-</view>
+  <view class="profile_pop" animation="{{animationData}}">
+    <view class="profile_pop_cont">
+      <view class="profile_pop_close" catchtap="_dispatch" data-catchtap="chooseClose">取消</view>
+      <view class="profile_pop_sure" catchtap="_dispatch" data-choose="{{chooseSex}}" data-catchtap="chooseSure">确定</view>
+    </view>
+    <view class="profile_pop_choose">
+      <view class="profile_pop_sex profile_pop_sexm active" catchtap="_dispatch" id="sexm" xmlns:wx="" wx:if="{{sexm}}" data-catchtap="chooseSex">男</view>
+      <view class="profile_pop_sex profile_pop_sexm" catchtap="_dispatch" id="sexm" wx:else="wx:else" data-catchtap="chooseSex">男</view>
+      <view class="profile_pop_sex profile_pop_sexw active" catchtap="_dispatch" id="sexw" wx:if="{{sexw}}" data-catchtap="chooseSex">女</view>
+      <view class="profile_pop_sex profile_pop_sexw" catchtap="_dispatch" id="sexw" wx:else="wx:else" data-catchtap="chooseSex">女</view>
+    </view>
+  </view>
+	<view class="media-list">
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>头像</text>
+				</view>
+				<view class="item-after" wx:if="{{userHeadimgurl}}">
+					<image src="{{userHeadimgurl}}" style="width:100rpx;height:100rpx;border-radius:100%"/>
+				</view>
+			</view>
+		</view>
+		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=1" catchtap="_dispatch" data-catchtap="linkTo">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>昵称</text>
+				</view>
+				<view class="item-after" wx:if="{{userNickname}}">
+					<text>{{userNickname}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>姓名</text>
+				</view>
+				<view class="item-after" wx:if="{{userTrueName}}">
+					<text>{{userTrueName}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>性别</text>
+				</view>
+				<view class="item-after" wx:if="{{userGender}}">
+					<text>{{userGender}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="media-list">
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>证件类型</text>
+				</view>
+				<view class="item-after">
+					<text>身份证</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>证件号码</text>
+				</view>
+				<view class="item-after" wx:if="{{userIdNumber}}">
+					<text>{{userIdNumber}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-content">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>手机号码</text>
+				</view>
+				<view class="item-after" wx:if="{{userPhone}}">
+					<text>{{userPhone}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=2" catchtap="_dispatch" data-catchtap="linkTo">
+			<view class="item-inner">
+				<view class="item-title">
+					<text>邮箱地址</text>
+				</view>
+				<view class="item-after" wx:if="{{userEmail}}">
+					<text>{{userEmail}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="btn-padd">
+		<view class="btn btn-org" catchtap="_dispatch" data-catchtap="quit">
+			<text>退出登录</text>
+		</view>
+	</view>
 </view>

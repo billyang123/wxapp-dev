@@ -1,1 +1,8 @@
-"use strict";!function(e,s){e.exports={};s("../modules/es6.object.to-string.js"),s("../modules/es6.string.iterator.js"),s("../modules/web.dom.iterable.js"),s("../modules/es6.promise.js"),e.exports=s("../modules/_core.js").Promise}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+require('../modules/es6.object.to-string.js');
+require('../modules/es6.string.iterator.js');
+require('../modules/web.dom.iterable.js');
+require('../modules/es6.promise.js');
+module.exports = require('../modules/_core.js').Promise;
+})(module,require);

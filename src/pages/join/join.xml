@@ -43,12 +43,12 @@
     <checkbox-group bindchange="checkChange">
 		<view>
 			<label class="checkbox">
-			    <checkbox checked="true" value="1" /> 已同意 <text class="text org">{{publicConvention}}</text>
+			    <checkbox checked="true" value="1" disabled="true" /> 已同意 <navigator open-type="redirect" url="/pages/hzpact/hzpact?type=1" class="text org">{{publicConvention}}</navigator>
 			</label>
 		</view>
 		<view>
 			<label class="checkbox">
-		    	<checkbox checked="true" value="2"/> 已同意 <text class="text org">{{conventionTxt}}</text>
+		    	<checkbox checked="true" value="2" disabled="true"/> 已同意 <navigator open-type="redirect" url="{{link}}" class="text org">{{conventionTxt}}</navigator>
 		  	</label>
 		</view>
     </checkbox-group>

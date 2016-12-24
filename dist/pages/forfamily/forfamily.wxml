@@ -1,147 +1,148 @@
 <view class="container">
-<view class="give-family">
-<view class="give-family-banner">
-<image src="https://image1.chinamuxie.com/images/common/give-family.png" style="width:750rpx;height:250rpx;"/>
-</view>
-<view class="give-family-item">
-<view class="prr">
-<view>父母在慢慢变老，孩子在慢慢长大</view>
-<view>为人子女，为人父母</view>
-<view>我只希望他们都能够健健康康</view>
-</view>
-</view>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=1">
-<view class="dl">
-<view class="dt">
-<text>给</text>
-<text>爱</text>
-<text>人</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>789重大疾病互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">18-46</text>
-<text>周岁健康人群</text>
-</view>
-<view class="p">
-<text>癌症等25种重大疾病互助</text>
-</view>
-</view>
-</view>
-</navigator>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
-<view class="dl">
-<view class="dt">
-<!-- <text>给老婆</text> -->
-<text>给</text>
-<text>老</text>
-<text>婆</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>80后孕妈婴宝互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">80后备孕、已孕妈妈</text>
-</view>
-<view class="p">
-<text>孕期、孕产、婴儿疾病互助</text>
-</view>
-</view>
-</view>
-</navigator>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
-<view class="dl">
-<view class="dt">
-<!-- <text>给孩子</text> -->
-<text>给</text>
-<text>孩</text>
-<text>子</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>少儿大病、意外互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">1-17</text>
-<text>周岁少儿</text>
-</view>
-<view class="p">
-<text>少儿大病、意外互助</text>
-</view>
-</view>
-</view>
-</navigator>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
-<view class="dl">
-<view class="dt">
-<text>给</text>
-<text>父</text>
-<text>母</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>中老年大病、意外互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">46-70</text>
-<text>周岁健康人群</text>
-</view>
-<view class="p">
-<text>抗癌、大病、意外互助</text>
-</view>
-</view>
-</view>
-</navigator>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=3">
-<view class="dl">
-<view class="dt">
-<text>给</text>
-<text>全</text>
-<text>家</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>交通、旅游意外互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">16-60</text>
-<text>周岁健康人群</text>
-</view>
-<view class="p">
-<text>公共交通、旅游意外互助</text>
-</view>
-</view>
-</view>
-</navigator>
-<navigator class="give-family-list" redirect="" url="/pages/join/join?type=2">
-<view class="dl">
-<view class="dt">
-<text>给</text>
-<text>孩</text>
-<text>子</text>
-</view>
-<view class="dd">
-<view class="h2">
-<text>留守儿童互助社群</text>
-</view>
-<view class="p">
-<text>适用于</text>
-<text class="i">3-15</text>
-<text>周岁健康人群</text>
-</view>
-<view class="p">
-<text>大病、意外、走失、辍学互助</text>
-</view>
-</view>
-</view>
-</navigator>
-</view>
+	<view class="give-family">
+		<view class="give-family-banner">
+			<image src="https://image1.chinamuxie.com/images/common/give-family.png" style="width:750rpx;height:250rpx;"/>
+		</view>
+		<view class="give-family-item">
+			<view class="prr">
+				<view>父母在慢慢变老，孩子在慢慢长大</view>
+				<view>为人子女，为人父母</view>
+				<view>我只希望他们都能够健健康康</view>
+			</view>
+		</view>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=1">
+		
+			<view class="dl">
+				<view class="dt">
+					<text>给</text>
+					<text>爱</text>
+					<text>人</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>789重大疾病互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">18-46</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>癌症等25种重大疾病互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
+			<view class="dl">
+				<view class="dt">
+					<!-- <text>给老婆</text> -->
+					<text>给</text>
+					<text>老</text>
+					<text>婆</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>80后孕妈婴宝互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">80后备孕、已孕妈妈</text>
+					</view>
+					<view class="p">
+						<text>孕期、孕产、婴儿疾病互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
+			<view class="dl">
+				<view class="dt">
+					<!-- <text>给孩子</text> -->
+					<text>给</text>
+					<text>孩</text>
+					<text>子</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>少儿大病、意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">1-17</text>
+						<text>周岁少儿</text>
+					</view>
+					<view class="p">
+						<text>少儿大病、意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
+			<view class="dl">
+				<view class="dt">
+					<text>给</text>
+					<text>父</text>
+					<text>母</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>中老年大病、意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">46-70</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>抗癌、大病、意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=3">
+			<view class="dl">
+				<view class="dt">
+					<text>给</text>
+					<text>全</text>
+					<text>家</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>交通、旅游意外互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">16-60</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>公共交通、旅游意外互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=2">
+			<view class="dl">
+				<view class="dt">
+					<text>给</text>
+					<text>孩</text>
+					<text>子</text>
+				</view>
+				<view class="dd">
+					<view class="h2">
+						<text>留守儿童互助社群</text>
+					</view>
+					<view class="p">
+						<text>适用于</text>
+						<text class="i">3-15</text>
+						<text>周岁健康人群</text>
+					</view>
+					<view class="p">
+						<text>大病、意外、走失、辍学互助</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
 </view>

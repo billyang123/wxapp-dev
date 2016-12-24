@@ -1,1 +1,36 @@
-"use strict";!function(e,t){function o(e){return e&&e.__esModule?e:{default:e}}var r=e.exports={};r.__esModule=!0;var u=t("../core-js/object/set-prototype-of.js"),n=o(u),f=t("../core-js/object/create.js"),l=o(f),s=t("./typeof.js"),a=o(s);r.default=function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+("undefined"==typeof t?"undefined":(0,a.default)(t)));e.prototype=(0,l.default)(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(n.default?(0,n.default)(e,t):e.__proto__=t)}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+"use strict";
+
+exports.__esModule = true;
+
+var _setPrototypeOf = require('../core-js/object/set-prototype-of.js');
+
+var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+var _create = require('../core-js/object/create.js');
+
+var _create2 = _interopRequireDefault(_create);
+
+var _typeof2 = require('./typeof.js');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
+  }
+
+  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
+};
+})(module,require);

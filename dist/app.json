@@ -41,7 +41,7 @@
     "list": [
         {
             "pagePath": "pages/index/index",
-            "text": "互助计划",
+            "text": "互助社群",
             "iconPath":"images/page_icon01.png",
             "selectedIconPath":"images/page_icon11.png"
         },

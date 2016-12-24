@@ -1,62 +1,64 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
-<view class="container health">
-<!-- <component key="navbar"/> -->
-<view class="health-hd">
-<navigator redirect="" hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
-<view>
-<image src="{{item.doctorHeadImgUrl}}"/>
-</view>
-<view class="nickname">{{item.doctorName}}</view>
-<view class="dtitle">{{item.doctorOffice}}{{item.doctorTitle}}</view>
-</navigator>
-</view>
-<view class="askaction">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
-<button class="ask-btn">我要提问</button>
-</navigator>
-</view>
-<scroll-view scroll-x="true" style="100%">
-<view class="mytab">
-<view class="scroll-view-item tab-item{{tabIndex == 0?' active':''}}" catchtap="_dispatch" data-id="0" data-catchtap="tabs">
-<text>全部</text>
-</view>
-<view class="scroll-view-item tab-item{{tabIndex == item.id?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="_dispatch" data-id="{{item.id}}" data-catchtap="tabs">
-<text>{{item.labelName}}</text>
-</view>
-</view>
-</scroll-view>
-<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
-<view class="hd-title">{{item.questionContent}}</view>
-<view class="hd-content">
-<image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
-<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
-<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
-<text>限时免费听</text>
-</view>
-<view class="gray fz28">听过{{item.tuneNumber}}次</view>
-</view>
-<view class="info gray fz28">
-<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorOffice}}{{item.healthDoctor.doctorTitle}}</text>
-</view>
-</navigator>
-<view class="hd-opt">
-<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="hd-op" data-index="{{page*size+index}}" data-catchtap="checkLink">
-<icon class="iconfont icon-comment hd-iconfont"/>
-<text>{{item.commentNumber}}</text>
-</view>
-<view class="hd-op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate hd-iconfont" style="{{item.praiseed?'color:#ff6a00':''}}"/>
-<text>{{item.praiseNumber}}</text>
-</view>
-</view>
-</view>
-<view class="loading" wx:if="{{hasMore}}">
-<icon class="weui-loading"/>
-<text>稍等下，精彩马上准备好…</text>
-</view>
-<view class="loading" wx:else="wx:else">
-<text>没有更多内容了</text>
-</view>
-</view>
+	<view class="container health">
+		<!-- <component key="navbar"/> -->
+		<view class="health-hd">
+			<navigator redirect="" hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
+				<view>
+					<image src="{{item.doctorHeadImgUrl}}"/>
+				</view>
+				<view class="nickname">{{item.doctorName}}</view>
+				<view class="dtitle">{{item.doctorOffice}}{{item.doctorTitle}}</view>
+			</navigator>
+		</view>
+		<view class="askaction">
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
+				<button class="ask-btn">我要提问</button>
+			</navigator>
+		</view>
+		<scroll-view scroll-x="true" style="100%">
+			<view class="mytab">
+				<view class="scroll-view-item tab-item{{tabIndex == 0?' active':''}}" catchtap="_dispatch" data-id="0" data-catchtap="tabs">
+					<text>全部</text>
+				</view>
+				<view class="scroll-view-item tab-item{{tabIndex == item.id?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="_dispatch" data-id="{{item.id}}" data-catchtap="tabs">
+					<text>{{item.labelName}}</text>
+				</view>
+			</view>
+		</scroll-view>
+		<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
+				<view class="hd-title">{{item.questionContent}}</view>
+				<view class="hd-content">
+					<image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
+					
+					<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
+						<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
+						<text>限时免费听</text>
+					</view>
+					<view class="gray fz28">听过{{item.tuneNumber}}次</view>
+				</view>
+				<view class="info gray fz28">
+					<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorOffice}}{{item.healthDoctor.doctorTitle}}</text>
+				</view>
+			</navigator>
+			<view class="hd-opt">
+				<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="hd-op" data-index="{{page*size+index}}" data-catchtap="checkLink">
+					<icon class="iconfont icon-comment hd-iconfont"/>
+					<text>{{item.commentNumber}}</text>
+				</view>
+				<view class="hd-op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+					<icon class="iconfont icon-appreciate hd-iconfont" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+					<text>{{item.praiseNumber}}</text>
+				</view>
+			</view>
+		</view>
+		
+		<view class="loading" wx:if="{{hasMore}}">
+			<icon class="weui-loading"/>
+			<text>稍等下，精彩马上准备好…</text>
+		</view>
+		<view class="loading" wx:else="wx:else">
+			<text>没有更多内容了</text>
+		</view>
+	</view>
 </scroll-view>

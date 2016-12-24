@@ -1,1 +1,16 @@
-"use strict";!function(e,r){var t=(e.exports={},r("./_object-dp.js")),s=r("./_an-object.js"),o=r("./_object-keys.js");e.exports=r("./_descriptors.js")?Object.defineProperties:function(e,r){s(e);for(var c,j=o(r),n=j.length,i=0;n>i;)t.f(e,c=j[i++],r[c]);return e}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var dP       = require('./_object-dp.js')
+  , anObject = require('./_an-object.js')
+  , getKeys  = require('./_object-keys.js');
+
+module.exports = require('./_descriptors.js') ? Object.defineProperties : function defineProperties(O, Properties){
+  anObject(O);
+  var keys   = getKeys(Properties)
+    , length = keys.length
+    , i = 0
+    , P;
+  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
+  return O;
+};
+})(module,require);

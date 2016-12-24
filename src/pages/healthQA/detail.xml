@@ -52,7 +52,8 @@
 	</view>
 	<view class="commit-form" catchtap="checkLink" data-link="/pages/healthQA/commit?qaId={{detail.id}}">
 		<view class="commit-input">
-			<input type="text" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/>
+			<text style="color:#999;font-size:28rpx;">写留言…</text>
+			<!-- <input type="text" disabled="true" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/> -->
 		</view>
 		<view class="commit-num">
 			<icon class="iconfont icon-comment fz42"></icon>

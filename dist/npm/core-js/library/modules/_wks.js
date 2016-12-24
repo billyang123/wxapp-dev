@@ -1,1 +1,15 @@
-"use strict";!function(o,r){var s=(o.exports={},window=r("../../../labrador/global.js"),r("./_shared.js")("wks")),e=r("./_uid.js"),t=r("./_global.js").Symbol,l="function"==typeof t,n=o.exports=function(o){return s[o]||(s[o]=l&&t[o]||(l?t:e)("Symbol."+o))};n.store=s}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var store      = require('./_shared.js')('wks')
+  , uid        = require('./_uid.js')
+  , Symbol     = require('./_global.js').Symbol
+  , USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function(name){
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+})(module,require);

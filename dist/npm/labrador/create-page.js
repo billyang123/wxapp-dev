@@ -1,1 +1,233 @@
-"use strict";!function(t,e){function r(t){return t&&t.__esModule?t:{default:t}}var a=(t.exports={},e("../babel-runtime/core-js/object/assign.js")),n=r(a),o=e("../babel-runtime/core-js/object/keys.js"),c=r(o),f=e("../babel-runtime/core-js/json/stringify.js"),s=(r(f),e("../babel-runtime/core-js/object/get-own-property-names.js")),i=r(s);t.exports=function(t){var e={},r=new t;e.data=r.data||{},e.name=t.name,(0,i.default)(t.prototype).forEach(function(r){"constructor"!==r&&(e[r]=t.prototype[r])});var a,o=e.onLoad,f=t.prototype.__lookupGetter__("children");return f||(a=r.children),e._dispatch=function(t){for(var e=this,r=t.currentTarget.dataset.path||"",a=t.currentTarget.dataset["bind"+t.type]||t.currentTarget.dataset["catch"+t.type];r;){var n=r.indexOf("."),o="";if(n===-1?(o=r,r=""):(o=r.substr(0,n),r=r.substr(n+1)),e=e.children[o],!e)return void console.error("Can not resolve component by path "+t.currentTarget.dataset.path)}return e[a]?e[a](t):void console.error("Can not resolve event handle "+t.currentTarget.dataset.path+"#"+a)},e.onLoad=function(){var t=this;t.id=t.__route__,t.onLoad=function(){},t.props={},f&&(a=f.call(t)),Object.defineProperty(t,"children",{value:a});var e=t.setData;if(t.setData=function(r,o){if("string"==typeof r){var f={};f[r]=o,r=f}if(e.call(t,r),a){var s=[];if((0,c.default)(r).forEach(function(e){t._refs[e]&&s.push(e)}),s.length){var i={};s.forEach(function(e){t._refs[e].forEach(function(t){var a=t[1];i[a.key]||(i[a.key]={}),i[a.key][t[0]]=r[e]})}),(0,c.default)(i).forEach(function(t){var e=a[t],r=(0,n.default)({},e.props,i[t]);e.onUpdate&&e.onUpdate(r),e.props=r})}}},a){t._refs={},t._registerRef=function(e,r,a){t._refs[e]||(t._refs[e]=[]),t._refs[e].push([r,a])};var r={};(0,c.default)(a).forEach(function(e){var n=a[e];n._init(e,t),r[e]=n.data}),this.setData(r);var s=[],i=["onReady","onShow","onHide","onUnload","onPullDownRefreash"];(0,c.default)(a).forEach(function(t){var e=a[t];e.onLoad&&e.onLoad(),i.forEach(function(t){s.indexOf(t)===-1&&e[t]&&s.push(t)})}),s.forEach(function(e){var r=t[e];t[e]=function(){(0,c.default)(a).forEach(function(t){var r=a[t];r[e]&&r[e].apply(r,arguments)}),r&&r.apply(this,arguments)}})}o&&o.apply(t,arguments)},e}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+/**
+ * @copyright Maichong Software Ltd. 2016 http://maichong.it
+ * @date 2016-10-11
+ * @author Liang <liang@maichong.it>
+ */
+
+
+var _assign = require('../babel-runtime/core-js/object/assign.js');
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _keys = require('../babel-runtime/core-js/object/keys.js');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _stringify = require('../babel-runtime/core-js/json/stringify.js');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _getOwnPropertyNames = require('../babel-runtime/core-js/object/get-own-property-names.js');
+
+var _getOwnPropertyNames2 = _interopRequireDefault(_getOwnPropertyNames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function createPage(Component) {
+  var config = {};
+
+  var t = new Component();
+  config.data = t.data || {};
+  config.name = Component.name;
+
+  //复制组件定义的原型方法
+  (0, _getOwnPropertyNames2.default)(Component.prototype).forEach(function (name) {
+    if (name === 'constructor') return;
+    config[name] = Component.prototype[name];
+  });
+
+  var onLoad = config.onLoad;
+
+  var getter = Component.prototype.__lookupGetter__('children');
+  var children;
+  if (!getter) {
+    children = t.children;
+  }
+
+  config._dispatch = function (event) {
+    var com = this;
+    var path = event.currentTarget.dataset.path || '';
+    var handler = event.currentTarget.dataset['bind' + event.type] || event.currentTarget.dataset['catch' + event.type];
+    while (path) {
+      var index = path.indexOf('.');
+      var key = '';
+      if (index === -1) {
+        key = path;
+        path = '';
+      } else {
+        key = path.substr(0, index);
+        path = path.substr(index + 1);
+      }
+      com = com.children[key];
+      if (!com) {
+        console.error('Can not resolve component by path ' + event.currentTarget.dataset.path);
+        return;
+      }
+    }
+    if (com[handler]) {
+      if (false) {
+        console.log('%c%s %s(%o)', 'color:#2a8f99', com.id, handler, event);
+      }
+      return com[handler](event);
+    } else {
+      console.error('Can not resolve event handle ' + event.currentTarget.dataset.path + '#' + handler);
+    }
+  };
+
+  config.onLoad = function () {
+    var me = this;
+    me.id = me.__route__;
+    me.onLoad = function () {};
+    me.props = {};
+    if (false) {
+      console.log('%c%s onLoad', 'color:#2a8f99', me.id);
+    }
+    if (getter) {
+      children = getter.call(me);
+    }
+
+    Object.defineProperty(me, 'children', {
+      value: children
+    });
+
+    var setData = me.setData;
+
+    /**
+     * 设置模板数据
+     * @param {object|string} data
+     * @param {object} [value]
+     */
+    me.setData = function (data, value) {
+      if (typeof data === 'string') {
+        var tmp = {};
+        tmp[data] = value;
+        data = tmp;
+      }
+      if (false) {
+        var original = JSON.parse((0, _stringify2.default)(this.data));
+        var append = JSON.parse((0, _stringify2.default)(data));
+        setData.call(me, data);
+        var changed = (0, _stringify2.default)(original) !== (0, _stringify2.default)(this.data);
+        console.log('%c%s setData(%o) : %o -> %o Page:%o %s', 'color:#' + (changed ? '2a8f99' : 'bbb'), me.id, append, original, JSON.parse((0, _stringify2.default)(this.data)), me, changed ? '' : 'Unchanged');
+      } else {
+        setData.call(me, data);
+      }
+
+      if (!children) return;
+      //需要用到更新的数据key列表
+      var updatedKeys = [];
+      (0, _keys2.default)(data).forEach(function (k) {
+        if (me._refs[k]) {
+          updatedKeys.push(k);
+        }
+      });
+      //console.log('updatedKeys', updatedKeys, this);
+      if (!updatedKeys.length) return;
+
+      var datas = {};
+      updatedKeys.forEach(function (k) {
+        me._refs[k].forEach(function (arr) {
+          var com = arr[1];
+          if (!datas[com.key]) {
+            datas[com.key] = {};
+          }
+          datas[com.key][arr[0]] = data[k];
+        });
+      });
+
+      //console.log('datas', datas);
+      (0, _keys2.default)(datas).forEach(function (k) {
+        var com = children[k];
+        var d = (0, _assign2.default)({}, com.props, datas[k]);
+        if (false && com.propTypes) {
+          (0, _keys2.default)(datas[k]).forEach(function (propName) {
+            var validator = com.propTypes[propName];
+            if (typeof validator !== 'function') {
+              console.warn('组件"' + com.name + '"的"' + propName + '"属性类型检测器不是一个有效函数');
+              return;
+            }
+            var error = validator(d, propName, com.name);
+            if (error) {
+              console.warn(error.message);
+            }
+          });
+        }
+        if (com.onUpdate) {
+          if (false) {
+            console.log('%c%s onUpdate(%o)', 'color:#2a8f99', com.id, JSON.parse((0, _stringify2.default)(d)));
+          }
+          com.onUpdate(d);
+        }
+        com.props = d;
+      });
+    };
+
+    if (children) {
+      me._refs = {};
+
+      me._registerRef = function (ref, prop, component) {
+        if (!me._refs[ref]) {
+          me._refs[ref] = [];
+        }
+        me._refs[ref].push([prop, component]);
+      };
+      var data = {};
+      (0, _keys2.default)(children).forEach(function (key) {
+        var component = children[key];
+        component._init(key, me);
+        data[key] = component.data;
+      });
+
+      this.setData(data);
+
+      //优化性能
+      var existFn = [];
+      var allFn = ['onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefreash'];
+      (0, _keys2.default)(children).forEach(function (key) {
+        var component = children[key];
+        if (component.onLoad) {
+          if (false) {
+            console.log('%c%s onLoad', 'color:#2a8f99', component.id);
+          }
+          component.onLoad();
+        }
+
+        allFn.forEach(function (name) {
+          if (existFn.indexOf(name) === -1 && component[name]) {
+            existFn.push(name);
+          }
+        });
+      });
+
+      existFn.forEach(function (name) {
+        var func = me[name];
+        me[name] = function () {
+          (0, _keys2.default)(children).forEach(function (k) {
+            var component = children[k];
+            if (component[name]) {
+              if (false) {
+                console.log('%c%s %s', 'color:#2a8f99', component.id, name);
+              }
+              component[name].apply(component, arguments);
+            }
+          });
+          if (func) {
+            if (false) {
+              console.log('%c%s %s', 'color:#2a8f99', me.id, name);
+            }
+            func.apply(this, arguments);
+          }
+        };
+      });
+    }
+
+    if (onLoad) {
+      onLoad.apply(me, arguments);
+    }
+  }; //end of onLoad
+
+  return config;
+};
+})(module,require);

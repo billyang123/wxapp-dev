@@ -40,8 +40,8 @@ export default class Elecert extends wx.Component {
         });
         let createTime = elecertData.data.data.projectAccount.createTime;
         let effectiveTime = elecertData.data.data.projectAccount.effectiveTime;
-        elecertData.data.data.projectAccount.createTime = (new Date(createTime)).Format("yyyy-MM-dd hh:mm:ss");
-        elecertData.data.data.projectAccount.effectiveTime = (new Date(effectiveTime)).Format("yyyy-MM-dd hh:mm:ss")
+        elecertData.data.data.projectAccount.createTime = (new Date(createTime)).format("yyyy-MM-dd hh:mm:ss");
+        elecertData.data.data.projectAccount.effectiveTime = (new Date(effectiveTime)).format("yyyy-MM-dd hh:mm:ss")
         this.setData({
         	project:elecertData.data.data.project,
 			    list:elecertData.data.data.list,

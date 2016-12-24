@@ -239,6 +239,9 @@ export default class HealthDetail extends wx.Component {
 	}
 	async setSubCommit(){
 		let commit = await wx.getStorage({key:'commit'})
+		if(!commit.data.time){
+			return;
+		}
 		let _list = this.data.list;
 		if(!_list[this.commitIndex].commentReply){
 			_list[this.commitIndex].commentReply = [] 
@@ -258,6 +261,9 @@ export default class HealthDetail extends wx.Component {
 	}
 	async setCommit(){
 		let commit = await wx.getStorage({key:'commit'})
+		if(!commit.data.time){
+			return;
+		}
 		let _list = this.data.list;
 		if(commit.data.qaId){
 			let ob = {
@@ -288,6 +294,7 @@ export default class HealthDetail extends wx.Component {
 	onShow(e){
 		console.log("onShow",this.eId)
 		wx.app.stopAudio();
+
 		if(this.data.id){
 			if(typeof(this.commitIndex) == "number"){
 				this.setSubCommit();

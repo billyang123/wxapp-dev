@@ -1,1 +1,17 @@
-"use strict";!function(o,s){var e=(o.exports={},window=s("../../../labrador/global.js")),e=s("./_global.js"),r=s("./_core.js"),t=s("./_object-dp.js"),i=s("./_descriptors.js"),n=s("./_wks.js")("species");o.exports=function(o){var s="function"==typeof r[o]?r[o]:e[o];i&&s&&!s[n]&&t.f(s,n,{configurable:!0,get:function(){return this}})}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var global      = require('./_global.js')
+  , core        = require('./_core.js')
+  , dP          = require('./_object-dp.js')
+  , DESCRIPTORS = require('./_descriptors.js')
+  , SPECIES     = require('./_wks.js')('species');
+
+module.exports = function(KEY){
+  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
+  if(DESCRIPTORS && C && !C[SPECIES])dP.f(C, SPECIES, {
+    configurable: true,
+    get: function(){ return this; }
+  });
+};
+})(module,require);

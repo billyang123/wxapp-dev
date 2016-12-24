@@ -5,8 +5,8 @@
 		<text></text>
 	</view>
 	<view class="media-list qa-list">
-		<navigator class="item-link item-content" wx:for="{{list}}" redirect="" url="{{item.link}}">
-			<view class="item-inner">
+		<navigator class="item-content" wx:for="{{list}}" redirect="" url="{{item.link}}">
+			<view class="item-inner item-link-inner">
 				<view class="item-title">
 					<text>{{item.n}}</text>
 				</view>

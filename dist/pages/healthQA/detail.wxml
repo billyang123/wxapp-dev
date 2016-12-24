@@ -1,68 +1,71 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="container health">
-<view class="health-detail">
-<view class="hd-title">{{detail.questionContent}}</view>
-<view class="hd-content">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
-<image class="hd-avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"/>
-</navigator>
-<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
-<view class="bubble" catchtap="_dispatch" data-index="1" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}" data-catchtap="bindAudio">
-<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"/>
-<text>限时免费听</text>
-</view>
-<view class="gray fz28">听过{{detail.tuneNumber}}次</view>
-</view>
-<view class="hd-info gray fz28">
-<text>{{detail.healthDoctor.doctorName}}   {{detail.healthDoctor.doctorOffice}}{{detail.healthDoctor.doctorTitle}}</text>
-<view catchtap="_dispatch" data-id="{{detail.id}}" data-type="detail" data-index="0" style="{{detail.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate fz42 hd-iconfont" style="{{detail.praiseed?'color:#ff6a00':''}}"/>
-<text>  {{detail.praiseNumber}}</text>
-</view>
-</view>
-</view>
-<view>
-<view class="comment" xmlns:wx="" wx:for="{{list}}" wx:for-index="index">
-<view class="comment-inner">
-<image class="avatar" src="{{item.headImg}}"/>
-<view class="comment-content">
-<view class="title">
-<text>{{item.nickName}}</text>
-<view catchtap="_dispatch" data-id="{{item.id}}" data-type="list" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate fz42" style="{{item.praiseed?'color:#ff6a00':''}}"/>
-<text>  {{item.praiseNumber}}</text>
-</view>
-</view>
-<view class="content">{{item.commentContent}}</view>
-<view class="optaout">
-<text>{{item.createTime}}</text>
-<view catchtap="_dispatch" data-link="/pages/healthQA/commit?qaCommentId={{item.id}}&amp;qaId={{detail.id}}" class="reply-link" data-index="{{page*size+index}}" data-catchtap="checkLink">回复</view>
-</view>
-</view>
-<view class="comment-reply" wx:if="{{item.commentReply && item.commentReply.length>0}}">
-<view class="cr-p" wx:for="{{item.commentReply}}" wx:for-index="idx" wx:for-item="comm" data-cid="{{comm.healthQaCommentId}}">
-<text class="nk">{{comm.userNickname}}：</text>
-<text>{{comm.replyContent}}</text>
-</view>
-</view>
-</view>
-</view>
-</view>
-<view class="commit-form" catchtap="_dispatch" data-link="/pages/healthQA/commit?qaId={{detail.id}}" data-catchtap="checkLink">
-<view class="commit-input">
-<input type="text" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/>
-</view>
-<view class="commit-num">
-<icon class="iconfont icon-comment fz42"/>
-<text class="gray fz36">  {{totalComNum}}</text>
-</view>
-</view>
-<view class="loading" wx:if="{{hasMore}}">
-<icon class="weui-loading"/>
-<text>稍等下，精彩马上准备好…</text>
-</view>
-<view class="loading" wx:else="wx:else">
-<text>没有更多内容了</text>
-</view>
+	<view class="health-detail">
+		<view class="hd-title">{{detail.questionContent}}</view>
+		<view class="hd-content">
+			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
+				<image class="hd-avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"/>
+			</navigator>
+			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
+			<view class="bubble" catchtap="_dispatch" data-index="1" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}" data-catchtap="bindAudio">
+				<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"/>
+				<text>限时免费听</text>
+			</view>
+			<view class="gray fz28">听过{{detail.tuneNumber}}次</view>
+		</view>
+		<view class="hd-info gray fz28">
+			<text>{{detail.healthDoctor.doctorName}}   {{detail.healthDoctor.doctorOffice}}{{detail.healthDoctor.doctorTitle}}</text>
+			<view catchtap="_dispatch" data-id="{{detail.id}}" data-type="detail" data-index="0" style="{{detail.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+				<icon class="iconfont icon-appreciate fz42 hd-iconfont" style="{{detail.praiseed?'color:#ff6a00':''}}"/>
+				<text>  {{detail.praiseNumber}}</text>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="comment" xmlns:wx="" wx:for="{{list}}" wx:for-index="index">
+			<view class="comment-inner">
+				<image class="avatar" src="{{item.headImg}}"/>
+				<view class="comment-content">
+					<view class="title">
+						<text>{{item.nickName}}</text>
+						<view catchtap="_dispatch" data-id="{{item.id}}" data-type="list" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+							<icon class="iconfont icon-appreciate fz42" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+							<text>  {{item.praiseNumber}}</text>
+						</view>
+					</view>
+					<view class="content">{{item.commentContent}}</view>
+					<view class="optaout">
+						<text>{{item.createTime}}</text>
+						<view catchtap="_dispatch" data-link="/pages/healthQA/commit?qaCommentId={{item.id}}&amp;qaId={{detail.id}}" class="reply-link" data-index="{{page*size+index}}" data-catchtap="checkLink">回复</view>
+					</view>
+				</view>
+				<view class="comment-reply" wx:if="{{item.commentReply && item.commentReply.length>0}}">
+
+					<view class="cr-p" wx:for="{{item.commentReply}}" wx:for-index="idx" wx:for-item="comm" data-cid="{{comm.healthQaCommentId}}">
+						<text class="nk">{{comm.userNickname}}：</text>
+						<text>{{comm.replyContent}}</text>
+					</view>
+					
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="commit-form" catchtap="_dispatch" data-link="/pages/healthQA/commit?qaId={{detail.id}}" data-catchtap="checkLink">
+		<view class="commit-input">
+			<text style="color:#999;font-size:28rpx;">写留言…</text>
+			<!-- <input type="text" disabled="true" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/> -->
+		</view>
+		<view class="commit-num">
+			<icon class="iconfont icon-comment fz42"/>
+			<text class="gray fz36">  {{totalComNum}}</text>
+		</view>
+	</view>
+	<view class="loading" wx:if="{{hasMore}}">
+		<icon class="weui-loading"/>
+		<text>稍等下，精彩马上准备好…</text>
+	</view>
+	<view class="loading" wx:else="wx:else">
+		<text>没有更多内容了</text>
+	</view>
 </view>
 </scroll-view>
