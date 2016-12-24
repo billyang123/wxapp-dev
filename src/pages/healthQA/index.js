@@ -188,7 +188,7 @@ export default class HealthIndex extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
-			if(this.praiseTmp.indexOf(content[i].id+'')>=0){
+			if(this.praiseTmp.indexOf(content[i].id)>=0){
 				content[i].praiseed = true
 			}else{
 				content[i].praiseed = false
@@ -222,8 +222,7 @@ export default class HealthIndex extends wx.Component {
 			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
 			type:"post",
 			data:{
-				qaId:id,
-				code:wx.app.globalData.storage.code
+				qaId:id
 			}
 		})
 		console.log(res)
@@ -250,7 +249,10 @@ export default class HealthIndex extends wx.Component {
 	}
 	async onLoad(){
 		//加载更多设置高度
+		this.playingAudio = {};
+		this.praiseLoad = false;
 		let systemInfo = await wx.getSystemInfo();
+		this.praiseLoad = false;
 		this.setData({
 	       windowHieght:systemInfo.windowHeight
 	    });
@@ -260,28 +262,12 @@ export default class HealthIndex extends wx.Component {
 		this.getLabel();
 		this.getQAList();
 		this.audioPlayEnd();
-
 	}
-	// async refesh(){
-	// 	//console.log("refesh")
-	// 	 this.setData({
-	// 	    hasRefesh:true
-	// 	 });
-	// 	 await sleep(2000);
-	// 	 this.setData({
-	//        hidden:true,
-	//        hasRefesh:false
-	//     });
-	// }
-	onReady(e) {
-	    // 使用 wx.createAudioContext 获取 audio 上下文 context
-	    //console.log(wx.createAudioContext)
-	    // this.audioCtx = wx.createAudioContext('myAudiod');
-	    // console.log(this.audioCtx)
-	    // this.audioCtx.play();
-	    this.playingAudio = {}
+	onShow(){
+		wx.app.stopAudio();
 	}
 	async onPullDownRefresh(){
+		this.praiseLoad = false;
 		this.setData({
 	    	hasMore:true,
 	    	page:0,

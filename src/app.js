@@ -168,12 +168,14 @@ export default class {
       let _user = await this.getUser(loginInfo.code);
       //return _user
       callback && callback(_user,userInfo);
+      return true;
     }
     if(userInfoPost.data.data == "notLogged"){
         await wx.navigateTo({
             url:'/pages/bindphone/bindphone'
         })
     }
+    return false;
   }
   async ajax(options){
     let setting = {

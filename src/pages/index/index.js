@@ -45,6 +45,9 @@ export default class Index extends wx.Component {
       }
     })
   }
+  onShow(){
+    wx.app.stopAudio();
+  }
   async linkTo(event) {
       if(this.isLink) return;
       this.isLink = true;

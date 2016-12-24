@@ -212,17 +212,24 @@ export default class HealthDetail extends wx.Component {
 			commitfocus:true
 		})
 	}
+
 	async checkLink(event){
 		var _this = this;
+		var _index = event.currentTarget.dataset.index;
+		if(typeof(_index) == "number") {
+			this.commitIndex = _index;
+		}
 		if(this.isLink) return;
       	this.isLink = true;
       	let d = await wx.app.checkLogin();
       	if(!d){
-      		await wx.app.doLogin()
+      		d = await wx.app.doLogin()
       	}
-      	wx.navigateTo({
-            url:event.currentTarget.dataset.link
-        })
+      	if(d){
+      		wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
     	this.isLink = false;
 	}
 	bindinput(e){
@@ -230,10 +237,36 @@ export default class HealthDetail extends wx.Component {
 			commitValue:e.detail.value
 		})
 	}
+	async setCommit(){
+		let commit = await wx.getStorage({key:'commit'})
+		let _list = this.data.list;
+		if(_list[this.commitIndex].commentReply){
+			_list[this.commitIndex].commentReply.push({
+				userNickname:commit.data.nickName,
+				replyContent:commit.data.content
+			})
+			this.setData({
+				list:_list
+			})
+		}
+	}
+
+	onShow(e){
+		console.log("onShow",this.eId)
+		wx.app.stopAudio();
+		if(this.data.id){
+			if(typeof(this.commitIndex) == "number"){
+				this.setCommit();
+			}
+		}
+	}
+
 	async onLoad(e){
 		wx.app.stopAudio();
+		console.log("onLoad",this.showStatus)
 		this.praiseTmp = [];
 		let systemInfo = await wx.getSystemInfo();
+		//this.eId = parseInt(e.id);
 		this.data.id = parseInt(e.id);
 		this.setData({
 	       windowHieght:systemInfo.windowHeight

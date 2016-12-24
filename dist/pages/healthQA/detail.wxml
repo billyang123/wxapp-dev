@@ -14,7 +14,7 @@
 <view class="gray fz28">听过{{detail.tuneNumber}}次</view>
 </view>
 <view class="hd-info gray fz28">
-<text>{{detail.healthDoctor.doctorName}}   {{detail.healthDoctor.doctorTitle}}</text>
+<text>{{detail.healthDoctor.doctorName}}   {{detail.healthDoctor.doctorOffice}}{{detail.healthDoctor.doctorTitle}}</text>
 <view catchtap="_dispatch" data-id="{{detail.id}}" data-type="detail" data-index="0" style="{{detail.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
 <icon class="iconfont icon-appreciate fz42 hd-iconfont" style="{{detail.praiseed?'color:#ff6a00':''}}"/>
 <text>  {{detail.praiseNumber}}</text>
@@ -36,7 +36,7 @@
 <view class="content">{{item.commentContent}}</view>
 <view class="optaout">
 <text>{{item.createTime}}</text>
-<view catchtap="_dispatch" data-link="/pages/healthQA/commit?qaCommentId={{item.id}}&amp;qaId={{detail.id}}" class="reply-link" data-catchtap="checkLink">回复</view>
+<view catchtap="_dispatch" data-link="/pages/healthQA/commit?qaCommentId={{item.id}}&amp;qaId={{detail.id}}" class="reply-link" data-index="{{index}}" data-catchtap="checkLink">回复</view>
 </view>
 </view>
 <view class="comment-reply" wx:if="{{item.commentReply && item.commentReply.length>0}}">

@@ -7,7 +7,7 @@
 <image src="{{item.doctorHeadImgUrl}}"/>
 </view>
 <view class="nickname">{{item.doctorName}}</view>
-<view class="dtitle">{{item.doctorTitle}}</view>
+<view class="dtitle">{{item.doctorOffice}}{{item.doctorTitle}}</view>
 </navigator>
 </view>
 <view class="askaction">
@@ -37,7 +37,7 @@
 <view class="gray fz28">听过{{item.tuneNumber}}次</view>
 </view>
 <view class="info gray fz28">
-<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
+<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorOffice}}{{item.healthDoctor.doctorTitle}}</text>
 </view>
 </navigator>
 <view class="hd-opt">

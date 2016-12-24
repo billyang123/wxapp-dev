@@ -3,7 +3,7 @@
 <view class="container">
 	<view class="doctor-detail">
 		<image class="avatar" src="{{detail.doctorHeadImgUrl}}"></image>
-		<view class="title">{{detail.doctorTitle || ""}} {{detail.doctorName || ""}}</view>
+		<view class="title">{{detail.healthDoctor.doctorOffice}}{{detail.doctorTitle || ""}} {{detail.doctorName || ""}}</view>
 		<view class="gov">{{detail.doctorHospital || ""}}</view>
 		<view class="intro">{{detail.doctorDesc || ""}}</view>
 		<form bindsubmit="formSubmit" >

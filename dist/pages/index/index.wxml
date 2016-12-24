@@ -63,7 +63,7 @@
 <view class="hi-opt">
 <button class="joinbtn">立即加入</button>
 <view class="opt-imglist">
-<image mode="aspectFill" xmlns:wx="" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg {{idx+1}}"/>
+<image mode="aspectFill" xmlns:wx="" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
 </view>
 </view>
 </navigator>

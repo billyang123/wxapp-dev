@@ -26,10 +26,19 @@ export default class Commit extends wx.Component {
 			data:this.postdata
 		})
 		if(res.status==0){
+			var useInfo = await wx.getStorage({ key: 'userInfo'})
+			console.log(useInfo)
 			await wx.showToast({
 			  title: '评论成功',
 			  icon: 'success',
 			  duration: 2000
+			})
+			await wx.setStorage({
+				key:"commit",
+				data:{
+					nickName:useInfo.data.nickName,
+					content:content
+				}
 			})
 			this.setData({
 				content:""

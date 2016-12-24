@@ -45,16 +45,18 @@ export default class DoctorDetail extends wx.Component {
 	}
 	async checkLink(event){
 		var _this = this;
-		if(this.isLink) return;
-      	this.isLink = true;
+		if(this.isloading) return;
+      	this.isloading = true;
       	let d = await wx.app.checkLogin();
       	if(!d){
-      		await wx.app.doLogin()
+      		d = await wx.app.doLogin()
       	}
-      	wx.navigateTo({
-            url:event.currentTarget.dataset.link
-        })
-    	this.isLink = false;
+      	if(d){
+      		await wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
+    	this.isloading = false;
 	}
 	setNumTune(index,id){
 		let locaId = id+"_tune_"+index;
@@ -266,7 +268,7 @@ export default class DoctorDetail extends wx.Component {
 	}
 	async onLoad(e){
 		//console.log(e.id)
-		wx.app.stopAudio();
+		//wx.app.stopAudio();
 		this.praiseTmp = []
 		this.data.id = parseInt(e.id);
 		//加载更多设置高度
@@ -278,6 +280,9 @@ export default class DoctorDetail extends wx.Component {
 
 		this.getQAList();
 		this.getDetail();
+	}
+	onShow(){
+		wx.app.stopAudio();
 	}
 	async onPullDownRefresh(){
 		this.setData({

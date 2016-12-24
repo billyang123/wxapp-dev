@@ -74,9 +74,13 @@ export default class Account extends wx.Component {
 	    	}
 		}
 	}
-	async onLoad(){
-		//console.log(wx.app.globalData)
+	// async onLoad(){
+	// 	//console.log(wx.app.globalData)
+	// 	//this.initAcount();
+	// }
+	onShow(){
 		this.initAcount()
+		wx.app.stopAudio();
 	}
 	async onPullDownRefresh(){
 		

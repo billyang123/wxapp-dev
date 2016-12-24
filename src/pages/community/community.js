@@ -472,11 +472,14 @@ export default class Community extends wx.Component {
       	this.isloading = true;
       	let d = await wx.app.checkLogin();
       	if(!d){
-      		await wx.app.doLogin()
+      		d = await wx.app.doLogin()
       	}
-      	wx.navigateTo({
-            url:event.currentTarget.dataset.link
-        })
+      	console.log("loginStatus",d)
+      	if(d){
+      		await wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
     	this.isloading = false;
 	}
 	linkTo(event) {
