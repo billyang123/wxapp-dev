@@ -81,7 +81,7 @@ export default class Applyform extends wx.Component {
       }
       
       let res=await wx.request({
-        url:'https://xcx.chinamuxie.com/wxapi/user/claim/commit',
+        url:wx.app.data.ajaxPath+'/wxapi/user/claim/commit',
         method:'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded'
@@ -116,7 +116,7 @@ export default class Applyform extends wx.Component {
   }
   async onLoad(e){
     let res = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/user/claim/index',
+      url: wx.app.data.ajaxPath+'/wxapi/user/claim/index',
       method:"get",
       header: {
         'content-type': 'application/x-www-form-urlencoded'

@@ -1,6 +1,6 @@
 <view class="container paySuccess">
 <view class="header-tip">
-<div class="item-content">
+<navigator class="item-content" url="/pages/account/account" open-type="switchTab" hover-class="none">
 <icon type="success" size="45"/>
 <view class="item-inner item-link-inner">
 <view class="item-title">
@@ -12,7 +12,7 @@
 </view>
 </view>
 </view>
-</div>
+</navigator>
 </view>
 <view class="ps-item ps-item-tel">
 <view class="p-tel">

@@ -18,7 +18,7 @@ export default class Recharge extends wx.Component {
 			return this.children.alert.show("充值金额需大于0元")
 		}
 		//return console.log(this.data.tabNum,this.data.inputNum,this.totalNum)
-		var _url = "https://xcx.chinamuxie.com/wxapi/project/account/recharge";
+		var _url = wx.app.data.ajaxPath+"/wxapi/project/account/recharge";
 		let res = await wx.request({
 	        url:_url,
 	        header: {

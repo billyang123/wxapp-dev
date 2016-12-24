@@ -138,7 +138,7 @@ export default class Join extends wx.Component {
       }
     }
     let res = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/project/join/byIdCardPay',
+      url: wx.app.data.ajaxPath+'/wxapi/project/join/byIdCardPay',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -174,7 +174,7 @@ export default class Join extends wx.Component {
   async onLoad(e){
     var id = parseInt(e.type)
     let sResDta = await wx.app.ajax({
-        url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
+        url: wx.app.data.ajaxPath+'/wxapi/project/detail',
         type:"get",
         data: {
           id:id

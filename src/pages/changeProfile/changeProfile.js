@@ -67,8 +67,8 @@ export default class Profile extends wx.Component {
     let id = parseInt(e.type);
     if (id==1){
       this.setData({
-        url:'https://xcx.chinamuxie.com/wxapi/user/userInfo/nickname',
-        subUrl:'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyNickName',
+        url:wx.app.data.ajaxPath+'/wxapi/user/userInfo/nickname',
+        subUrl:wx.app.data.ajaxPath+'/wxapi/user/userInfo/modifyNickName',
         value:'',
         txt:'昵称',
         placeholder:"昵称",
@@ -77,8 +77,8 @@ export default class Profile extends wx.Component {
       })
     }else if (id==2){
       this.setData({
-        url:'https://xcx.chinamuxie.com/wxapi/user/userInfo/email',
-        subUrl:'https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyEmail',
+        url:wx.app.data.ajaxPath+'/wxapi/user/userInfo/email',
+        subUrl:wx.app.data.ajaxPath+'/wxapi/user/userInfo/modifyEmail',
         value:'',
         placeholder:"请输入您的邮箱",
         txt:'邮箱',

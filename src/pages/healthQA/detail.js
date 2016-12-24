@@ -47,7 +47,7 @@ export default class HealthDetail extends wx.Component {
 		if(this.praiseTmp.indexOf(localId)>=0){
 			return;
 		}
-		let url = type=="detail"?'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise':'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/praise'
+		let url = type=="detail"?wx.app.data.ajaxPath+'/wxapi/healthserv/qa/praise':wx.app.data.ajaxPath+'/wxapi/healthserv/qacomment/praise'
 		let data = {
 			code:wx.app.globalData.storage.code
 		}
@@ -83,7 +83,7 @@ export default class HealthDetail extends wx.Component {
 			this.tuneNum = [];
 		}
 		if(this.tuneNum.indexOf(locaId)<0){
-			wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
+			wx.app.ajax({url:wx.app.data.ajaxPath+"/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
 			let detail = this.data.detail;
 			detail.tuneNumber += 1;
 			this.setData({
@@ -143,7 +143,7 @@ export default class HealthDetail extends wx.Component {
 		if(this.data.loading) return;
 		this.data.loading = true;
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/list',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qacomment/list',
 			data:{
 				qaId:this.data.id,
 				page:this.data.page,
@@ -191,7 +191,7 @@ export default class HealthDetail extends wx.Component {
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/detail',
 			data:{
 				qaId:this.data.id
 			}

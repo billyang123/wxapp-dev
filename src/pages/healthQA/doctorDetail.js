@@ -68,7 +68,7 @@ export default class DoctorDetail extends wx.Component {
 			this.tuneNum = [];
 		}
 		if(this.tuneNum.indexOf(locaId)<0){
-			wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
+			wx.app.ajax({url:wx.app.data.ajaxPath+"/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
 			let _list = this.data.list;
 			_list[index].tuneNumber += 1;
 			this.setData({
@@ -128,7 +128,7 @@ export default class DoctorDetail extends wx.Component {
 		if(this.data.loading) return;
 		this.data.loading = true;
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/list',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/list',
 			data:{
 				page:this.data.page,
 				size:this.data.size,
@@ -185,7 +185,7 @@ export default class DoctorDetail extends wx.Component {
 			return;
 		}
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/praise',
 			type:"post",
 			data:{
 				qaId:id,
@@ -219,7 +219,7 @@ export default class DoctorDetail extends wx.Component {
 			return this.children.alert.show("提问内容需少于60个字");
 		}
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/add',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/add',
 			type:"post",
 			data:{
 				healthDoctorId:this.data.id,
@@ -262,7 +262,7 @@ export default class DoctorDetail extends wx.Component {
 	async getDetail(){
 		//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/detail',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/doctor/detail',
 			data:{
 				doctorId:this.data.id
 			}

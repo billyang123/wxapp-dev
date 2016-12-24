@@ -39,7 +39,9 @@ export default class {
     storage:null
   };
   data = {
-    assetsPath:'https://s1.chinamuxie.com/www/assets/xcx'
+    assetsPath:'https://s1.chinamuxie.com/www/assets/xcx',
+    //ajaxPath:'https://xcx.chinamuxie.com',//'https://xcx.yiqihuzhu.com/',
+    ajaxPath:'https://xcx.yiqihuzhu.com'//'https://xcx.yiqihuzhu.com/',
   };
   async onLaunch() {
     var _this = this;
@@ -48,6 +50,7 @@ export default class {
     // await wx.navigateTo({
     //     url:'/pages/paySuccess/paySuccess'
     // })
+    wx.app.data.ajaxPath
   }
   makePhoneCall(event){
     wx.showModal({
@@ -72,7 +75,6 @@ export default class {
   }
   async stopAudio(){
     let sta = await wx.getBackgroundAudioPlayerState();
-    console.log(sta)
     if(sta.status==1){
       wx.stopBackgroundAudio()
     }
@@ -84,7 +86,7 @@ export default class {
   }
   async getUser(code){
     let myuser = await this.ajax({
-      url:'https://xcx.chinamuxie.com/wxapi/user/account',
+      url:wx.app.data.ajaxPath+'/wxapi/user/account',
       data: {
         code:code
       }
@@ -103,7 +105,6 @@ export default class {
     let loginStatus = false; 
     if(d){
       let res = await this.getUser(this.globalData.storage.code);
-      console.log(res)
       loginStatus = res.data.loginStatus
     }
     if(loginStatus){
@@ -120,7 +121,7 @@ export default class {
     })
     let loginInfo = await wx.login();
     let rdRes = await wx.request({
-      url: "https://xcx.chinamuxie.com/wxapi/user/oauth/wxLogin",
+      url: wx.app.data.ajaxPath+"/wxapi/user/oauth/wxLogin",
       method:"post",
       header: {
           'content-type': 'application/x-www-form-urlencoded'
@@ -129,7 +130,7 @@ export default class {
         code:loginInfo.code
       }
     })
-    console.log(rdRes.data)
+    
     if(rdRes.data.status == 7){
       wx.hideToast()
       await wx.showModal({
@@ -149,7 +150,7 @@ export default class {
     this.globalData.userInfo = userInfo.userInfo
     await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
     let userInfoPost = await wx.request({
-      url: "https://xcx.chinamuxie.com/wxapi/user/oauth/doOauth",
+      url: wx.app.data.ajaxPath+"/wxapi/user/oauth/doOauth",
       method:"post",
       header: {
           'content-type': 'application/x-www-form-urlencoded'

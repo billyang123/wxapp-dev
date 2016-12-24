@@ -82,7 +82,7 @@ export default class HealthIndex extends wx.Component {
 			this.tuneNum = [];
 		}
 		if(this.tuneNum.indexOf(locaId)<0){
-			wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
+			wx.app.ajax({url:wx.app.data.ajaxPath+"/wxapi/healthserv/qa/tune",type:"post",data:{qaId:id}});
 			let _list = this.data.list;
 			_list[index].tuneNumber += 1;
 			this.setData({
@@ -151,7 +151,7 @@ export default class HealthIndex extends wx.Component {
 	}
 	async getDoctors(){
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/doctor/list',
 			data:{
 				page:0,
 				size:2
@@ -170,7 +170,7 @@ export default class HealthIndex extends wx.Component {
 		if(this.data.loading) return;
 		this.data.loading = true;
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/list',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/list',
 			data:{
 				page:this.data.page,
 				size:this.data.size,
@@ -225,7 +225,7 @@ export default class HealthIndex extends wx.Component {
 			return;
 		}
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/praise',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/praise',
 			type:"post",
 			data:{
 				qaId:id
@@ -245,7 +245,7 @@ export default class HealthIndex extends wx.Component {
 	}
 	async getLabel(){
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/qa/labellist',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/labellist',
 			type:"get"
 		})
 		console.log(res)

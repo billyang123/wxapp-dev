@@ -28,7 +28,7 @@ export default class Elecert extends wx.Component {
 	async onLoad(e){
 		let id = e.id;
 		let elecertData = await wx.request({
-            url: 'https://xcx.chinamuxie.com/wxapi/project/account/detail',
+            url: wx.app.data.ajaxPath+'/wxapi/project/account/detail',
             method:"post",
             header: {
 			        'content-type': 'application/x-www-form-urlencoded'

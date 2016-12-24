@@ -83,7 +83,7 @@ export default class Bindphone extends wx.Component {
         btnBl:false
       });
       let postBind = await wx.request({
-        url: 'https://xcx.chinamuxie.com/wxapi/user/doBindPhone',
+        url: wx.app.data.ajaxPath+'/wxapi/user/doBindPhone',
         method:"POST",
         header: {
           'content-type': 'application/x-www-form-urlencoded'
@@ -140,7 +140,7 @@ export default class Bindphone extends wx.Component {
       });
       
       let postCode = await wx.request({
-        url: 'https://xcx.chinamuxie.com/wxapi/user/sendCode',
+        url: wx.app.data.ajaxPath+'/wxapi/user/sendCode',
         method:"POST",
         header: {
           'content-type': 'application/x-www-form-urlencoded'

@@ -24,7 +24,7 @@ export default class Index extends wx.Component {
     this.getIndexProject();
   }
   async getIndexProject(){
-    let res = await wx.app.ajax({url:"https://xcx.chinamuxie.com/wxapi/project/getIndexProject"});
+    let res = await wx.app.ajax({url:wx.app.data.ajaxPath+"/wxapi/project/getIndexProject"});
     var _data = res.data;
     var _mImgArr = {};
     for (var i = 0; i < _data.length; i++) {

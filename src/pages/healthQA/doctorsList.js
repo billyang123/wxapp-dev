@@ -15,7 +15,7 @@ export default class DoctorsList extends wx.Component {
 		if(this.data.loading) return;
 		this.data.loading = true;
 		var res = await wx.app.ajax({
-			url: 'https://xcx.chinamuxie.com/wxapi/healthserv/doctor/list',
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/doctor/list',
 			data:{
 				page:this.data.page,
 				size:this.data.size

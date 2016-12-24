@@ -92,12 +92,12 @@ export default class Commit extends wx.Component {
 		if(e.qaCommentId){
 			this.postdata.qaCommentId = e.qaCommentId
 			this.qaId = e['amp;qaId'];
-			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/reply'
+			this.url = wx.app.data.ajaxPath+'/wxapi/healthserv/qacomment/reply'
 		}
 		if(e.qaId){
 			this.postdata.qaId = e.qaId;
 			this.qaId = e.qaId;
-			this.url = 'https://xcx.chinamuxie.com/wxapi/healthserv/qacomment/add'
+			this.url = wx.app.data.ajaxPath+'/wxapi/healthserv/qacomment/add'
 		}
 		console.log(e)
 	}

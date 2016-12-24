@@ -17,7 +17,7 @@ export default class Profile extends wx.Component {
   async getData(){
     let userInfo = await wx.getUserInfo();
     let res = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/user/userInfo/index',
+      url: wx.app.data.ajaxPath+'/wxapi/user/userInfo/index',
       method:"GET",
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -48,7 +48,7 @@ export default class Profile extends wx.Component {
   }
   async choose(){
     let res = await wx.request({
-      url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/gender",
+      url: wx.app.data.ajaxPath+"/wxapi/user/userInfo/gender",
       method:"GET",
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -127,7 +127,7 @@ export default class Profile extends wx.Component {
       gender:e.currentTarget.dataset.choose
     };
     let res = await wx.request({
-      url: "https://xcx.chinamuxie.com/wxapi/user/userInfo/modifyGender",
+      url: wx.app.data.ajaxPath+"/wxapi/user/userInfo/modifyGender",
       method:"POST",
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -157,7 +157,7 @@ export default class Profile extends wx.Component {
     if(this.status) return;
     this.status = true;
     let res = await wx.request({
-      url: "https://xcx.chinamuxie.com/wxapi/user/logout",
+      url: wx.app.data.ajaxPath+"/wxapi/user/logout",
       method:"GET",
       header: {
         'content-type': 'application/x-www-form-urlencoded'

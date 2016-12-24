@@ -8,5 +8,5 @@
       <text class="joinEnd_txt02">已成功加入计划，享高额保障</text>
     </view>
   </view>
-  <view class="joinEnd_btn" catchtap="lookBind">查看我的保障</view>
+  <navigator class="joinEnd_btn" url="/pages/account/account" open-type="switchTab" hover-class="none">查看我的保障</navigator>
 </view>

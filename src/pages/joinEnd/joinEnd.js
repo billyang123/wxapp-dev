@@ -8,7 +8,7 @@ export default class JoinEnd extends wx.Component {
     if(this.status) return;
     this.status = true;
     let res = await wx.request({
-      url: 'https://xcx.chinamuxie.com/wxapi/project/account/list',
+      url: wx.app.data.ajaxPath+'/wxapi/project/account/list',
       method:"get",
       header: {
         'content-type': 'application/x-www-form-urlencoded'

@@ -163,7 +163,7 @@
 <view class="tname hz-dis-tname">互助释义</view>
 </view>
 <view class="hz-explain">
-<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的相互捐助行为。</text>
+<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的捐助行为。</text>
 </view>
 </view>
 <view class="hz-content hz-apply">
@@ -214,12 +214,12 @@
 <view class="step-item">
 <view class="stepbar">
 <view class="t-num">
-<text>3</text>
+<text>4</text>
 </view>
 </view>
 <view class="st-inner">
 <text class="st">资金划款</text>
-<text class="gray st-gra">资金无异议，招商银行直接划款</text>
+<text class="gray st-gra">公示无异议，招商银行直接划款</text>
 </view>
 </view>
 </view>

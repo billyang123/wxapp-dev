@@ -4,27 +4,33 @@ let jsonData = {
 	topBanner:[
 		{
 			b:"https://image1.chinamuxie.com/images/project/pj789_banner01.png",
-			t:"789重大疾病互助社群"
+			t:"789重大疾病互助社群",
+			n:"90万+"
 		},
 		{
 			b:"https://image1.chinamuxie.com/images/project/pjleftoverChildren_banner01.png",
-			t:"留守儿童互助社群"
+			t:"留守儿童互助社群",
+			n:"1000+"
 		},
 		{
 			b:"https://image1.chinamuxie.com/images/project/pjtravel_banner01.png",
-			t:"交通、旅游意外互助社群"
+			t:"交通、旅游意外互助社群",
+			n:"8万+"
 		},
 		{
 			b:"https://image1.chinamuxie.com/images/project/pjchildren_banner01.png",
-			t:"少儿大病、意外互助社群"
+			t:"少儿大病、意外互助社群",
+			n:"1万+"
 		},
 		{
 			b:"https://image1.chinamuxie.com/images/project/pj80_banner01.png",
-			t:"80后孕妈婴宝互助社群"
+			t:"80后孕妈婴宝互助社群",
+			n:"1万+"
 		},
 		{
 			b:"https://image1.chinamuxie.com/images/project/pjmiddleAged_banner01.png",
-			t:"中老年大病、意外互助社群"
+			t:"中老年大病、意外互助社群",
+			n:"6万+"
 		}
 	],
 	purpose:[
@@ -213,7 +219,7 @@ let jsonData = {
 			"在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"
 		],
 		[
-      "3-15周岁，父母双发或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。",
+      "3-15周岁，父母双方或一方在外地打工，而自己留在农村生活的孩童，或不在父母身边的城市孩童，且身体健康。",
 			"在加入互助社群之前，未曾患有互助公约所描述的25种重大疾病的人群。"
 		],
 		["16-60周岁"],
@@ -393,13 +399,6 @@ let jsonData = {
 				isDown:false
 			},
 			{
-				t:"Q:  为什么加入后90天才开始享受保障？",
-				txt:["90天称为等待期或称观察期，是为了防止已罹患重大疾病的人群加入，遏制道德风险，保证所有保障会员的公平性。90天的观察期仅针对首次加入的保障会员，以及距上一次退出互助小组超过3个自然日重新加入时才存在。"],
-				height:340,
-				opacity:0,
-				isDown:false
-			},
-			{
 				t:"Q:  为什么加入后30天才开始享受保障？",
 				txt:["30天称为等待期或称观察期，是为了防止已罹患重大疾病的人群加入，遏制道德风险，保证所有保障会员的公平性。30天的观察期仅针对首次加入的保障会员，以及距上一次退出互助小组超过3个自然日重新加入时才存在。"],
 				height:340,
@@ -474,7 +473,6 @@ export default class Community extends wx.Component {
       	if(!d){
       		d = await wx.app.doLogin()
       	}
-      	console.log("loginStatus",d)
       	if(d){
       		await wx.navigateTo({
 	            url:event.currentTarget.dataset.link
@@ -492,7 +490,7 @@ export default class Community extends wx.Component {
 	        linkUrl:'/pages/join/join?type='+id
 	      });
     	let ResData = await wx.app.ajax({
-            url: 'https://xcx.chinamuxie.com/wxapi/project/detail',
+            url: wx.app.data.ajaxPath+'/wxapi/project/detail',
             type:"get",
             data: {
             	id:id
