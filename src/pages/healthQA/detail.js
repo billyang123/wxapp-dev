@@ -237,38 +237,6 @@ export default class HealthDetail extends wx.Component {
 			commitValue:e.detail.value
 		})
 	}
-	async setCommit(){
-		let commit = await wx.getStorage({key:'commit'})
-		let _list = this.data.list;
-		if(commit.data.qaId){
-			let ob = {
-				commentContent:commit.data.content,
-				commentRelyNumber:0,
-				commentReply:[],
-				createTime:commit.data.time,
-				headImg:commit.data.avatar,
-				healthQaId:this.data.id,
-				id:commit.data.qaId,
-				nickName:commit.data.nickName,
-				praiseNumber:0,
-				status:0,
-				userInfoId:0
-			}
-			_list.unshift(ob);
-			return this.setData({
-				list:_list
-			})
-		}
-		if(_list[this.commitIndex].commentReply){
-			_list[this.commitIndex].commentReply.push({
-				userNickname:commit.data.nickName,
-				replyContent:commit.data.content
-			})
-			this.setData({
-				list:_list
-			})
-		}
-	}
 	async setSubCommit(){
 		let commit = await wx.getStorage({key:'commit'})
 		let _list = this.data.list;
@@ -280,6 +248,10 @@ export default class HealthDetail extends wx.Component {
 			this.setData({
 				list:_list
 			})
+			await wx.setStorage({
+				key:"commit",
+				data:{}
+			})
 		}
 	}
 	async setCommit(){
@@ -302,6 +274,10 @@ export default class HealthDetail extends wx.Component {
 			_list.unshift(ob);
 			this.setData({
 				list:_list
+			})
+			await wx.setStorage({
+				key:"commit",
+				data:{}
 			})
 		}
 	}
@@ -330,10 +306,6 @@ export default class HealthDetail extends wx.Component {
 		this.getCommitList();
 		this.getDetail();
 		this.audioPlayEnd();
-		await wx.setStorage({
-			key:"commit",
-			data:{}
-		})
 	}
 	async onPullDownRefresh(){
 		this.setData({

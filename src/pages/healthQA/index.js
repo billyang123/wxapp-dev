@@ -280,6 +280,10 @@ export default class HealthIndex extends wx.Component {
 			this.setData({
 				list:_list
 			})
+			await wx.setStorage({
+				key:"commit",
+				data:{}
+			})
 		}
 	}
 	onShow(){

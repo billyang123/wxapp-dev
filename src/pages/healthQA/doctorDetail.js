@@ -298,6 +298,10 @@ export default class DoctorDetail extends wx.Component {
 			this.setData({
 				list:_list
 			})
+			await wx.setStorage({
+				key:"commit",
+				data:{}
+			})
 		}
 	}
 	onShow(){
