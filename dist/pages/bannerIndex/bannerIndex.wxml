@@ -1,91 +1,91 @@
 <view class="container">
-	<view class="bn-con">
-		<view class="imgarea">
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png);height:748rpx;"/>
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png);height:584rpx;"/>
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png);height:495rpx;"/>
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png);height:802rpx;"/>
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png);height:1395rpx;"/>
-			<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png);height:131rpx;"/>
-		</view>
-		<view class="qalist">
-			<view class="qustion">
-				<view class="nn qx">
-					<text>问</text>
-				</view>
-				<view class="qn">
-					<text>互助是不是比传统保险更便宜？</text>
-				</view>
-			</view>
-			<view class="answer">
-				<view class="nn ax">
-					<text>答</text>
-				</view>
-				<view class="an">
-					<text>是的，预计是普通商业保险的30%-40%左右。互助扣除了传统保险运营管理费、渠道抽成费、盈利费用等等一系列费用，最大程度上减轻大家的负担。所以比传统保险要便宜很多。</text>
-				</view>
-			</view>
-			<view class="qustion">
-				<view class="nn qx">
-					<text>问</text>
-				</view>
-				<view class="qn">
-					<text>你们从充值资金中抽成吗？</text>
-				</view>
-			</view>
-			<view class="answer">
-				<view class="nn ax">
-					<text>答</text>
-				</view>
-				<view class="an">
-					<text>不抽成，您充值的金额只会用于互助。由于只用于互助，您充值的金额100%用于帮助他人，负担最小。这就是为什么说，互助比普通的商业保险更加便宜的原因。</text>
-				</view>
-			</view>
-			<view class="qustion">
-				<view class="nn qx">
-					<text>问</text>
-				</view>
-				<view class="qn">
-					<text>和社保、商保冲突吗？</text>
-				</view>
-			</view>
-			<view class="answer">
-				<view class="nn ax">
-					<text>答</text>
-				</view>
-				<view class="an">
-					<text>不冲突，可叠加使用，是两者的补充。例如《789重大疾病互助计划》充分弥补了社保额度低、报销比例低、进口药物不报销等缺陷。社保+商保+17互助才是全方位保障。</text>
-				</view>
-			</view>
-			<view class="qustion">
-				<view class="nn qx">
-					<text>问</text>
-				</view>
-				<view class="qn">
-					<text>保哪些大病，具体保障多少金额？</text>
-				</view>
-			</view>
-			<view class="answer">
-				<view class="nn ax">
-					<text>答</text>
-				</view>
-				<view class="an">
-					<text>具体的内容请看计划详情，不同计划适合不同的人群，保障范围和金额都不一样。大家根据自己的需要参加。也可以为自己的父母、孩子、配偶及配偶的父母加入。</text>
-				</view>
-			</view>
-		</view>
-		<view class="kf-btm">
-			<view class="contactus">
-				<view class="cit">
-					<text>电话客服：</text>
-					<button class="tel-btn" data-bindtap="makePhoneCall" data-phone-number="400-688-6259">400-688-6259</button>
-				</view>
-				<view class="cit">
-					<text>微信客服：</text>
-					<text>搜索微信号 </text>
-					<text class="org">kefu17hz2</text>
-				</view>
-			</view>
-		</view>
-	</view>
+<view class="bn-con">
+<view class="imgarea">
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index01_750x748.png);height:748rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index02_750_584.png);height:584rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index03_750x495.png);height:495rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index04_750x802.png);height:802rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index05_750x1395.png);height:1395rpx;"/>
+<view class="img" style="background-image: url(https://s1.chinamuxie.com/www/assets/xcx/images/banner_index06_750x131.png);height:131rpx;"/>
+</view>
+<view class="qalist">
+<view class="qustion">
+<view class="nn qx">
+<text>问</text>
+</view>
+<view class="qn">
+<text>互助是不是比传统保险更便宜？</text>
+</view>
+</view>
+<view class="answer">
+<view class="nn ax">
+<text>答</text>
+</view>
+<view class="an">
+<text>是的，预计是普通商业保险的30%-40%左右。互助扣除了传统保险运营管理费、渠道抽成费、盈利费用等等一系列费用，最大程度上减轻大家的负担。所以比传统保险要便宜很多。</text>
+</view>
+</view>
+<view class="qustion">
+<view class="nn qx">
+<text>问</text>
+</view>
+<view class="qn">
+<text>你们从充值资金中抽成吗？</text>
+</view>
+</view>
+<view class="answer">
+<view class="nn ax">
+<text>答</text>
+</view>
+<view class="an">
+<text>不抽成，您充值的金额只会用于互助。由于只用于互助，您充值的金额100%用于帮助他人，负担最小。这就是为什么说，互助比普通的商业保险更加便宜的原因。</text>
+</view>
+</view>
+<view class="qustion">
+<view class="nn qx">
+<text>问</text>
+</view>
+<view class="qn">
+<text>和社保、商保冲突吗？</text>
+</view>
+</view>
+<view class="answer">
+<view class="nn ax">
+<text>答</text>
+</view>
+<view class="an">
+<text>不冲突，可叠加使用，是两者的补充。例如《789重大疾病互助计划》充分弥补了社保额度低、报销比例低、进口药物不报销等缺陷。社保+商保+17互助才是全方位保障。</text>
+</view>
+</view>
+<view class="qustion">
+<view class="nn qx">
+<text>问</text>
+</view>
+<view class="qn">
+<text>保哪些大病，具体保障多少金额？</text>
+</view>
+</view>
+<view class="answer">
+<view class="nn ax">
+<text>答</text>
+</view>
+<view class="an">
+<text>具体的内容请看计划详情，不同计划适合不同的人群，保障范围和金额都不一样。大家根据自己的需要参加。也可以为自己的父母、孩子、配偶及配偶的父母加入。</text>
+</view>
+</view>
+</view>
+<view class="kf-btm">
+<view class="contactus">
+<view class="cit">
+<text>电话客服：</text>
+<button class="tel-btn" data-bindtap="makePhoneCall" data-phone-number="400-688-6259">400-688-6259</button>
+</view>
+<view class="cit">
+<text>微信客服：</text>
+<text>搜索微信号 </text>
+<text class="org">kefu17hz2</text>
+</view>
+</view>
+</view>
+</view>
 </view>

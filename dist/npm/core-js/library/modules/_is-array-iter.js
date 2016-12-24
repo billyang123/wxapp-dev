@@ -1,11 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// check on default Array iterator
-var Iterators  = require('./_iterators.js')
-  , ITERATOR   = require('./_wks.js')('iterator')
-  , ArrayProto = Array.prototype;
-
-module.exports = function(it){
-  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-};
-})(module,require);
+"use strict";!function(r,t){var e=(r.exports={},t("./_iterators.js")),o=t("./_wks.js")("iterator"),s=Array.prototype;r.exports=function(r){return void 0!==r&&(e.Array===r||s[o]===r)}}(module,require);

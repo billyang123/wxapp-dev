@@ -1,10 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = require('./_object-keys-internal.js')
-  , enumBugKeys = require('./_enum-bug-keys.js');
-
-module.exports = Object.keys || function keys(O){
-  return $keys(O, enumBugKeys);
-};
-})(module,require);
+"use strict";!function(e,t){var r=(e.exports={},t("./_object-keys-internal.js")),s=t("./_enum-bug-keys.js");e.exports=Object.keys||function(e){return r(e,s)}}(module,require);

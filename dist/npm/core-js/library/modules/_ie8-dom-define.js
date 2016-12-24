@@ -1,6 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-module.exports = !require('./_descriptors.js') && !require('./_fails.js')(function(){
-  return Object.defineProperty(require('./_dom-create.js')('div'), 'a', {get: function(){ return 7; }}).a != 7;
-});
-})(module,require);
+"use strict";!function(e,r){e.exports={};e.exports=!r("./_descriptors.js")&&!r("./_fails.js")(function(){return 7!=Object.defineProperty(r("./_dom-create.js")("div"),"a",{get:function(){return 7}}).a})}(module,require);
