@@ -267,8 +267,11 @@ export default class DoctorDetail extends wx.Component {
 				doctorId:this.data.id
 			}
 		})
+		let height = res.data.faNumber>1?900:500;
+		//console.log(res.data.faNumber)
 		this.setData({
-			detail:res.data
+			detail:res.data,
+			windowHieght:height
 		})
 	}
 	async onLoad(e){
