@@ -14,7 +14,11 @@
 <text class="t">姓名：</text>
 <text class="gray-m">{{projectAccount.insuredName}}</text>
 </view>
-<view class="p">
+<view class="p" xmlns:wx="" wx:if="{{projectAccount.relationshipCode}}">
+<text class="t">关系：</text>
+<text class="gray-m">{{projectAccount.relationshipCode}}</text>
+</view>
+<view class="p" wx:else="">
 <text class="t">身份证号：</text>
 <text class="gray-m">{{projectAccount.insuredIdNumber}}</text>
 </view>
@@ -34,7 +38,7 @@
 <view class="item-title">互助范围</view>
 </view>
 </navigator>
-<view class="item-content" xmlns:wx="" wx:for="{{list}}">
+<view class="item-content" wx:for="{{list}}">
 <view class="item-inner">
 <view class="item-title-row">
 <view class="item-title">{{item.subject_name}}</view>
