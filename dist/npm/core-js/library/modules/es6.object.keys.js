@@ -1,1 +1,12 @@
-"use strict";!function(e,t){var o=(e.exports={},t("./_to-object.js")),r=t("./_object-keys.js");t("./_object-sap.js")("keys",function(){return function(e){return r(o(e))}})}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+// 19.1.2.14 Object.keys(O)
+var toObject = require('./_to-object.js')
+  , $keys    = require('./_object-keys.js');
+
+require('./_object-sap.js')('keys', function(){
+  return function keys(it){
+    return $keys(toObject(it));
+  };
+});
+})(module,require);

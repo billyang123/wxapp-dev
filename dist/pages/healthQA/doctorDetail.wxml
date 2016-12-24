@@ -1,59 +1,60 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
-<text>{{alert.msg}}</text>
+	<text>{{alert.msg}}</text>
 </view>
 <view class="container">
-<view class="doctor-detail">
-<image class="avatar" src="{{detail.doctorHeadImgUrl}}"/>
-<view class="title">{{detail.healthDoctor.doctorOffice}}{{detail.doctorTitle || ""}} {{detail.doctorName || ""}}</view>
-<view class="gov">{{detail.doctorHospital || ""}}</view>
-<view class="intro">{{detail.doctorDesc || ""}}</view>
-<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
-<view class="section">
-<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
-<textarea class="textarea" bindinput="_dispatch" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}" data-bindinput="setNumValue"/>
-<!-- <input class="same-textarea" bindinput="bindinput" value="{{lineValue}}" style="top:{{top}}"/> -->
-<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
-</view>
-<view>
-<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>
-</view>
-</form>
-</view>
-<view class="dlist-title" xmlns:wx="" wx:if="{{list.length>0}}">他回答了{{detail.faNumber}}个问题，共有{{detail.fansNumber}}次收听</view>
-<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
-<view class="hd-title">{{item.questionContent}}</view>
-<view class="hd-content">
-<image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
-<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
-<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
-<text>限时免费听</text>
-</view>
-<view class="gray fz28">听过{{item.tuneNumber}}次</view>
-</view>
-<view class="hd-info gray fz28">
-<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
-</view>
-</navigator>
-<view class="hd-opt">
-<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="hd-op" data-catchtap="checkLink">
-<icon class="iconfont icon-comment hd-iconfont"/>
-<text>{{item.commentNumber}}</text>
-</view>
-<view class="hd-op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
-<icon class="iconfont icon-appreciate hd-iconfont" style="{{item.praiseed?'color:#ff6a00':''}}"/>
-<text>{{item.praiseNumber}}</text>
-</view>
-</view>
-</view>
-<view class="loading" wx:if="{{hasMore}}">
-<icon class="weui-loading"/>
-<text>稍等下，精彩马上准备好…</text>
-</view>
-<view class="loading" wx:else="wx:else">
-<text wx:if="{{list.length>0}}">没有更多内容了</text>
-<text style="padding:36rpx 0;display:inline-block;" wx:else="wx:else">暂无回答问题</text>
-</view>
+	<view class="doctor-detail">
+		<image class="avatar" src="{{detail.doctorHeadImgUrl}}"/>
+		<view class="title">{{detail.healthDoctor.doctorOffice}}{{detail.doctorTitle || ""}} {{detail.doctorName || ""}}</view>
+		<view class="gov">{{detail.doctorHospital || ""}}</view>
+		<view class="intro">{{detail.doctorDesc || ""}}</view>
+		<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
+			<view class="section">
+				<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
+			  <textarea class="textarea" bindinput="_dispatch" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}" data-bindinput="setNumValue"/>
+			  	<!-- <input class="same-textarea" bindinput="bindinput" value="{{lineValue}}" style="top:{{top}}"/> -->
+			  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
+			</view>
+			<view>
+				<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>
+			</view>
+		</form>
+	</view>
+	<view class="dlist-title" xmlns:wx="" wx:if="{{list.length>0}}">他回答了{{detail.faNumber}}个问题，共有{{detail.fansNumber}}次收听</view>
+	<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+		<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
+			<view class="hd-title">{{item.questionContent}}</view>
+			<view class="hd-content">
+				<image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
+				
+				<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
+					<icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
+					<text>限时免费听</text>
+				</view>
+				<view class="gray fz28">听过{{item.tuneNumber}}次</view>
+			</view>
+			<view class="hd-info gray fz28">
+				<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorOffice}}{{item.healthDoctor.doctorTitle}}</text>
+			</view>
+		</navigator>
+		<view class="hd-opt">
+			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="_dispatch" class="hd-op" data-index="{{page*size+index}}" data-catchtap="checkLink">
+				<icon class="iconfont icon-comment hd-iconfont"/>
+				<text>{{item.commentNumber}}</text>
+			</view>
+			<view class="hd-op" catchtap="_dispatch" data-id="{{item.id}}" data-index="{{index}}" style="{{item.praiseed?'color:#ff6a00':''}}" data-catchtap="praise">
+				<icon class="iconfont icon-appreciate hd-iconfont" style="{{item.praiseed?'color:#ff6a00':''}}"/>
+				<text>{{item.praiseNumber}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="loading" wx:if="{{hasMore}}">
+		<icon class="weui-loading"/>
+		<text>稍等下，精彩马上准备好…</text>
+	</view>
+	<view class="loading" wx:else="wx:else">
+		<text wx:if="{{list.length>0}}">没有更多内容了</text>
+		<text style="padding:36rpx 0;display:inline-block;" wx:else="wx:else">暂无回答问题</text>
+	</view>
 </view>
 </scroll-view>

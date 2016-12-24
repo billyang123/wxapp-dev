@@ -1,1 +1,23 @@
-"use strict";!function(r,n){var t=(r.exports={},n("./_a-function.js"));r.exports=function(r,n,u){if(t(r),void 0===n)return r;switch(u){case 1:return function(t){return r.call(n,t)};case 2:return function(t,u){return r.call(n,t,u)};case 3:return function(t,u,e){return r.call(n,t,u,e)}}return function(){return r.apply(n,arguments)}}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+// optional / simple context binding
+var aFunction = require('./_a-function.js');
+module.exports = function(fn, that, length){
+  aFunction(fn);
+  if(that === undefined)return fn;
+  switch(length){
+    case 1: return function(a){
+      return fn.call(that, a);
+    };
+    case 2: return function(a, b){
+      return fn.call(that, a, b);
+    };
+    case 3: return function(a, b, c){
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function(/* ...args */){
+    return fn.apply(that, arguments);
+  };
+};
+})(module,require);

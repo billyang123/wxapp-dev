@@ -1,26 +1,27 @@
 <view class="container">
-<view class="qa-main">
-<view xmlns:wx="" wx:for="{{qaData}}" wx:for-index="idx" wx:for-item="item">
-<view class="h2">
-<text>{{idx+1}}. {{item.n}}</text>
-</view>
-<view class="p" wx:for="{{item.v}}" wx:for-index="keyd" wx:for-item="itemTxt">
-<image wx:if="{{itemTxt.type == 'image'}}" src="{{itemTxt.img}}" style="width:{{itemTxt.w}}rpx;height:{{itemTxt.h}}rpx"/>
-<view wx:elif="{{itemTxt.type == 'table'}}" class="table">
-<view class="tr">
-<view class="th" wx:for="{{itemTxt.db.th}}" wx:for-item="thItem">{{thItem}}</view>
-</view>
-<view class="tr" wx:for="{{itemTxt.db.tr}}" wx:for-item="trItem">
-<view class="td" wx:for="{{trItem}}" wx:for-item="tdItem">{{tdItem}}</view>
-</view>
-</view>
-<view wx:else="wx:else">
-<text>{{itemTxt}}</text>
-</view>
-</view>
-</view>
-<view class="or-line">
-<text class="or-line-txt gray">17互助官方提供</text>
-</view>
-</view>
+	<view class="qa-main">
+		<view xmlns:wx="" wx:for="{{qaData}}" wx:for-index="idx" wx:for-item="item">
+			<view class="h2">
+				<text>{{idx+1}}. {{item.n}}</text>
+			</view>
+			<view class="p" wx:for="{{item.v}}" wx:for-index="keyd" wx:for-item="itemTxt">
+				<image wx:if="{{itemTxt.type == 'image'}}" src="{{itemTxt.img}}" style="width:{{itemTxt.w}}rpx;height:{{itemTxt.h}}rpx"/>
+				<view wx:elif="{{itemTxt.type == 'table'}}" class="table">
+					<view class="tr">
+						<view class="th" wx:for="{{itemTxt.db.th}}" wx:for-item="thItem">{{thItem}}</view>
+					</view>
+					<view class="tr" wx:for="{{itemTxt.db.tr}}" wx:for-item="trItem">
+						<view class="td" wx:for="{{trItem}}" wx:for-item="tdItem">{{tdItem}}</view>
+					</view>
+				</view>
+				<view wx:else="wx:else">
+					<text>{{itemTxt}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="or-line">
+			<text class="or-line-txt gray">17互助官方提供</text>
+		</view>
+	</view>
+
 </view>

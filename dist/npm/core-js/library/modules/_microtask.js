@@ -1,1 +1,72 @@
-"use strict";!function(e,t){var o=(e.exports={},window=t("../../../labrador/global.js")),o=t("./_global.js"),r=t("./_task.js").set,n=o.MutationObserver||o.WebKitMutationObserver,i=o.process,a=o.Promise,s="process"==t("./_cof.js")(i);e.exports=function(){var e,t,c,f=function(){var o,r;for(s&&(o=i.domain)&&o.exit();e;){r=e.fn,e=e.next;try{r()}catch(o){throw e?c():t=void 0,o}}t=void 0,o&&o.enter()};if(s)c=function(){i.nextTick(f)};else if(n){var u=!0,v=document.createTextNode("");new n(f).observe(v,{characterData:!0}),c=function(){v.data=u=!u}}else if(a&&a.resolve){var l=a.resolve();c=function(){l.then(f)}}else c=function(){r.call(o,f)};return function(o){var r={fn:o,next:void 0};t&&(t.next=r),e||(e=r,c()),t=r}}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var global    = require('./_global.js')
+  , macrotask = require('./_task.js').set
+  , Observer  = global.MutationObserver || global.WebKitMutationObserver
+  , process   = global.process
+  , Promise   = global.Promise
+  , isNode    = require('./_cof.js')(process) == 'process';
+
+module.exports = function(){
+  var head, last, notify;
+
+  var flush = function(){
+    var parent, fn;
+    if(isNode && (parent = process.domain))parent.exit();
+    while(head){
+      fn   = head.fn;
+      head = head.next;
+      try {
+        fn();
+      } catch(e){
+        if(head)notify();
+        else last = undefined;
+        throw e;
+      }
+    } last = undefined;
+    if(parent)parent.enter();
+  };
+
+  // Node.js
+  if(isNode){
+    notify = function(){
+      process.nextTick(flush);
+    };
+  // browsers with MutationObserver
+  } else if(Observer){
+    var toggle = true
+      , node   = document.createTextNode('');
+    new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
+    notify = function(){
+      node.data = toggle = !toggle;
+    };
+  // environments with maybe non-completely correct, but existent Promise
+  } else if(Promise && Promise.resolve){
+    var promise = Promise.resolve();
+    notify = function(){
+      promise.then(flush);
+    };
+  // for other environments - macrotask based on:
+  // - setImmediate
+  // - MessageChannel
+  // - window.postMessag
+  // - onreadystatechange
+  // - setTimeout
+  } else {
+    notify = function(){
+      // strange IE + webpack dev server bug - use .call(global)
+      macrotask.call(global, flush);
+    };
+  }
+
+  return function(fn){
+    var task = {fn: fn, next: undefined};
+    if(last)last.next = task;
+    if(!head){
+      head = task;
+      notify();
+    } last = task;
+  };
+};
+})(module,require);

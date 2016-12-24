@@ -20,7 +20,7 @@ export default class Index extends wx.Component {
     // wx.redirectTo({
     //   url: '/pages/bindphone/bindphone'
     // })
-    wx.app.stopAudio();
+    //wx.app.stopAudio();
     this.getIndexProject();
   }
   async getIndexProject(){
@@ -34,6 +34,9 @@ export default class Index extends wx.Component {
     this.setData({
       mImgArr:_mImgArr
     })
+  }
+  onShow(){
+    wx.app.stopAudio();
   }
   makePhoneCall(event){
     wx.showModal({

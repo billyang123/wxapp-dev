@@ -33,12 +33,21 @@ export default class Commit extends wx.Component {
 			  icon: 'success',
 			  duration: 2000
 			})
+			let n_data = {
+				resId:res.data,
+				avatar:useInfo.data.avatarUrl.substring(0,useInfo.data.avatarUrl.length-1)+96,
+				nickName:useInfo.data.nickName,
+				content:content,
+				time:(new Date()).Format("yyyy/MM/dd HH:mm:ss")
+			}
+			if(this.postdata.qaCommentId){
+				n_data["qaCommentId"] = this.postdata.qaCommentId
+			}else{
+				n_data["qaId"] = this.postdata.qaId
+			}
 			await wx.setStorage({
 				key:"commit",
-				data:{
-					nickName:useInfo.data.nickName,
-					content:content
-				}
+				data:n_data
 			})
 			this.setData({
 				content:""
@@ -62,6 +71,13 @@ export default class Commit extends wx.Component {
 		    	})
 			}
 		}
+	}
+	async onShow(){
+		wx.app.stopAudio();
+		await wx.setStorage({
+			key:"commit",
+			data:{}
+		})
 	}
 	async onLoad(e){
 

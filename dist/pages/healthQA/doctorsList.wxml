@@ -1,26 +1,26 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="container doctors">
-<navigator class="doctor" xmlns:wx="" wx:for="{{list}}" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{item.id}}">
-<view class="doctor-inner">
-<view class="media">
-<image class="avatar" src="{{item.doctorHeadImgUrl}}"/>
-</view>
-<view>
-<view class="nick">{{item.doctorName}}</view>
-<view class="t">{{item.office}}{{item.title}}</view>
-<view class="t">{{item.faNumber}}个回答，{{item.fansNumber}}人收听</view>
-<view class="tags">
-<text wx:for="{{item.healthDoctorLabels}}" wx:for-item="tag">{{tag.healthLabel.labelName}}</text>
-</view>
-</view>
-</view>
-</navigator>
-<view class="loading" wx:if="{{hasMore}}">
-<icon class="weui-loading"/>
-<text>稍等下，精彩马上准备好…</text>
-</view>
-<view class="loading" wx:else="wx:else">
-<text>没有更多内容了</text>
-</view>
+	<navigator class="doctor" xmlns:wx="" wx:for="{{list}}" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{item.id}}">
+		<view class="doctor-inner">
+			<view class="media">
+				<image class="avatar" src="{{item.doctorHeadImgUrl}}"/>
+			</view>
+			<view>
+				<view class="nick">{{item.doctorName}}</view>
+				<view class="t">{{item.doctorOffice}}{{item.doctorTitle}}</view>
+				<view class="t">{{item.faNumber}}个回答，{{item.fansNumber}}人收听</view>
+				<view class="tags">
+					<text wx:for="{{item.healthDoctorLabels}}" wx:for-item="tag">{{tag.healthLabel.labelName}}</text>
+				</view>
+			</view>
+		</view>
+	</navigator>
+	<view class="loading" wx:if="{{hasMore}}">
+		<icon class="weui-loading"/>
+		<text>稍等下，精彩马上准备好…</text>
+	</view>
+	<view class="loading" wx:else="wx:else">
+		<text>没有更多内容了</text>
+	</view>
 </view>
 </scroll-view>

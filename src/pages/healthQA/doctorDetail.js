@@ -47,6 +47,10 @@ export default class DoctorDetail extends wx.Component {
 		var _this = this;
 		if(this.isloading) return;
       	this.isloading = true;
+      	var _index = event.currentTarget.dataset.index;
+		if(typeof(_index) == "number") {
+			this.commitIndex = _index;
+		}
       	let d = await wx.app.checkLogin();
       	if(!d){
       		d = await wx.app.doLogin()
@@ -203,8 +207,9 @@ export default class DoctorDetail extends wx.Component {
 	async formSubmit(e){
 		let d = await wx.app.checkLogin();
       	if(!d){
-      		await wx.app.doLogin()
+      		d = await wx.app.doLogin()
       	}
+      	if(!d) return;
 		let qcontent = e.detail.value.questionContent;
 		qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
 		if(qcontent == ""){
@@ -281,8 +286,24 @@ export default class DoctorDetail extends wx.Component {
 		this.getQAList();
 		this.getDetail();
 	}
+	async setCommit(){
+		let commit = await wx.getStorage({key:'commit'})
+		let _list = this.data.list;
+		if(_list[this.commitIndex].commentNumber){
+			console.log(_list[this.commitIndex])
+			_list[this.commitIndex].commentNumber+=1
+			this.setData({
+				list:_list
+			})
+		}
+	}
 	onShow(){
 		wx.app.stopAudio();
+		if(this.data.id){
+			if(typeof(this.commitIndex) == "number"){
+				this.setCommit();
+			}
+		}
 	}
 	async onPullDownRefresh(){
 		this.setData({

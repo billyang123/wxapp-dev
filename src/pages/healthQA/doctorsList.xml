@@ -7,7 +7,7 @@
 			</view>
 			<view>
 				<view class="nick">{{item.doctorName}}</view>
-				<view class="t">{{item.office}}{{item.title}}</view>
+				<view class="t">{{item.doctorOffice}}{{item.doctorTitle}}</view>
 				<view class="t">{{item.faNumber}}个回答，{{item.fansNumber}}人收听</view>
 				<view class="tags">
 					<text wx:for="{{item.healthDoctorLabels}}" wx:for-item="tag">{{tag.healthLabel.labelName}}</text>

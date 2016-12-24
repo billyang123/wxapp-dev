@@ -166,7 +166,7 @@ export default class HealthDetail extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
-			content[i].createTime = (new Date(content[i].createTime)).format('yyyy/MM/dd hh:mm:ss');
+			content[i].createTime = (new Date(content[i].createTime)).format('yyyy/MM/dd HH:mm:ss');
 			content[i].commentReply = JSON.parse(content[i].commentReply);
 			if(this.praiseTmp.indexOf('list'+content[i].id)>=0){
 				content[i].praiseed = true
@@ -240,6 +240,25 @@ export default class HealthDetail extends wx.Component {
 	async setCommit(){
 		let commit = await wx.getStorage({key:'commit'})
 		let _list = this.data.list;
+		if(commit.data.qaId){
+			let ob = {
+				commentContent:commit.data.content,
+				commentRelyNumber:0,
+				commentReply:[],
+				createTime:commit.data.time,
+				headImg:commit.data.avatar,
+				healthQaId:this.data.id,
+				id:commit.data.qaId,
+				nickName:commit.data.nickName,
+				praiseNumber:0,
+				status:0,
+				userInfoId:0
+			}
+			_list.unshift(ob);
+			return this.setData({
+				list:_list
+			})
+		}
 		if(_list[this.commitIndex].commentReply){
 			_list[this.commitIndex].commentReply.push({
 				userNickname:commit.data.nickName,
@@ -250,12 +269,49 @@ export default class HealthDetail extends wx.Component {
 			})
 		}
 	}
-
+	async setSubCommit(){
+		let commit = await wx.getStorage({key:'commit'})
+		let _list = this.data.list;
+		if(_list[this.commitIndex].commentReply){
+			_list[this.commitIndex].commentReply.push({
+				userNickname:commit.data.nickName,
+				replyContent:commit.data.content
+			})
+			this.setData({
+				list:_list
+			})
+		}
+	}
+	async setCommit(){
+		let commit = await wx.getStorage({key:'commit'})
+		let _list = this.data.list;
+		if(commit.data.qaId){
+			let ob = {
+				commentContent:commit.data.content,
+				commentRelyNumber:0,
+				commentReply:[],
+				createTime:commit.data.time,
+				headImg:commit.data.avatar,
+				healthQaId:this.data.id,
+				id:commit.data.qaId,
+				nickName:commit.data.nickName,
+				praiseNumber:0,
+				status:0,
+				userInfoId:0
+			}
+			_list.unshift(ob);
+			this.setData({
+				list:_list
+			})
+		}
+	}
 	onShow(e){
 		console.log("onShow",this.eId)
 		wx.app.stopAudio();
 		if(this.data.id){
 			if(typeof(this.commitIndex) == "number"){
+				this.setSubCommit();
+			}else{
 				this.setCommit();
 			}
 		}

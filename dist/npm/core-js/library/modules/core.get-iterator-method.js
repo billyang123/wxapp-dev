@@ -1,1 +1,11 @@
-"use strict";!function(r,t){var e=(r.exports={},t("./_classof.js")),o=t("./_wks.js")("iterator"),s=t("./_iterators.js");r.exports=t("./_core.js").getIteratorMethod=function(r){if(void 0!=r)return r[o]||r["@@iterator"]||s[e(r)]}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var classof   = require('./_classof.js')
+  , ITERATOR  = require('./_wks.js')('iterator')
+  , Iterators = require('./_iterators.js');
+module.exports = require('./_core.js').getIteratorMethod = function(it){
+  if(it != undefined)return it[ITERATOR]
+    || it['@@iterator']
+    || Iterators[classof(it)];
+};
+})(module,require);

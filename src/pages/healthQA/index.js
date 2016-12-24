@@ -63,11 +63,13 @@ export default class HealthIndex extends wx.Component {
       	this.isLink = true;
       	let d = await wx.app.checkLogin();
       	if(!d){
-      		await wx.app.doLogin()
+      		d = await wx.app.doLogin()
       	}
-      	wx.navigateTo({
-            url:event.currentTarget.dataset.link
-        })
+      	if(d){
+      		wx.navigateTo({
+	            url:event.currentTarget.dataset.link
+	        })
+      	}
     	this.isLink = false;
 	}
 	setNumTune(index,id){
@@ -131,7 +133,7 @@ export default class HealthIndex extends wx.Component {
 	}
 	tabs(event){
 		//console.log(event)
-		//wx.app.stopAudio();
+		wx.app.stopAudio();
 		this.setData({
 			tabIndex:event.currentTarget.dataset.id
 		})
@@ -263,8 +265,23 @@ export default class HealthIndex extends wx.Component {
 		this.getQAList();
 		this.audioPlayEnd();
 	}
+	async setCommit(){
+		let commit = await wx.getStorage({key:'commit'})
+		let _list = this.data.list;
+		if(_list[this.commitIndex].commentNumber){
+			_list[this.commitIndex].commentNumber+=1
+			this.setData({
+				list:_list
+			})
+		}
+	}
 	onShow(){
 		wx.app.stopAudio();
+		if(this.data.id){
+			if(typeof(this.commitIndex) == "number"){
+				this.setCommit();
+			}
+		}
 	}
 	async onPullDownRefresh(){
 		this.praiseLoad = false;

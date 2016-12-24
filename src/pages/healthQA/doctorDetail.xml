@@ -32,11 +32,11 @@
 				<view class="gray fz28">听过{{item.tuneNumber}}次</view>
 			</view>
 			<view class="hd-info gray fz28">
-				<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorTitle}}</text>
+				<text>{{item.healthDoctor.doctorName}}   {{item.healthDoctor.doctorOffice}}{{item.healthDoctor.doctorTitle}}</text>
 			</view>
 		</navigator>
 		<view class="hd-opt">
-			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="checkLink" class="hd-op">
+			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="checkLink" class="hd-op" data-index="{{page*size+index}}">
 				<icon class="iconfont icon-comment hd-iconfont"></icon>
 				<text>{{item.commentNumber}}</text>
 			</view>

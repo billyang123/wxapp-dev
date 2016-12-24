@@ -1,59 +1,61 @@
 <view class="container">
-<view class="nopart" xmlns:wx="" wx:if="{{!hasAcount}}">
-<view class="img-b">
-<image class="img" src="https://s1.chinamuxie.com/www/assets/xcx/images/empty_plan_385x320.png"/>
-</view>
-<view class="null-top-word"><text>你还没有加入互助社群</text></view>
-<view class="fz28 gray"><text>请加入互助社群，开启保障</text></view>
-<view class="btn-padd">
-<navigator class="btn btn-org" open-type="switchTab" url="/pages/index/index">
-<text>    立即加入</text>
-</navigator>
-</view>
-</view>
-<view class="my-group" wx:else="wx:else">
-<view class="num-box">
-<view class="num-item">
-<view class="num">{{totalPersons}}</view>
-<view class="txt">加入社群数</view>
-</view>
-<view class="num-item">
-<view class="num">{{totalAmt}}</view>
-<view class="txt">最高互助额度(元)</view>
-</view>
-</view>
-<view class="group-item" wx:for="{{list}}">
-<view class="gi-title">
-<view class="gt">
-<text>{{item.insuredName}}</text>
-</view>
-</view>
-<view class="gi-content">
-<view class="p">
-<text class="t">加入社群：</text>
-<text class="gray-m">{{item.projectName}}</text>
-</view>
-<view class="p">
-<text class="t">互助金额：</text>
-<text class="gray-m">最高{{item.projectGuaranteeMax}}元</text>
-</view>
-<view class="p">
-<text class="t">账户余额：</text>
-<text class="gray-m">{{item.availableBalance}}元</text>
-<text class="emer" wx:if="{{item.accountStatus == 2}}">余额告急</text>
-</view>
-</view>
-<view class="gi-footer">
-<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge?pid={{item.id}}&amp;name={{item.insuredName}}&amp;pname={{item.projectName}}&amp;num={{item.availableBalance}}">
-<text>充值</text>
-</navigator>
-<navigator class="gi-item" hover-class="none" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
-<text>查看凭单</text>
-</navigator>
-</view>
-</view>
-<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
-<text>添加家人</text>
-</navigator>
-</view>
+	<view class="nopart" xmlns:wx="" wx:if="{{!hasAcount}}">
+		<view class="img-b">
+			<image class="img" src="https://s1.chinamuxie.com/www/assets/xcx/images/empty_plan_385x320.png"/>
+		</view>
+		<view class="null-top-word"><text>你还没有加入互助社群</text></view>
+		<view class="fz28 gray"><text>请加入互助社群，开启保障</text></view>
+		<view class="btn-padd">
+			<navigator class="btn btn-org" open-type="switchTab" url="/pages/index/index">
+				<text>    立即加入</text>
+			</navigator>
+		</view>
+	</view>
+	<view class="my-group" wx:else="wx:else">
+		<view class="num-box">
+			<view class="num-item">
+				<view class="num">{{totalPersons}}</view>
+				<view class="txt">加入社群数</view>
+			</view>
+			<view class="num-item">
+				<view class="num">{{totalAmt}}</view>
+				<view class="txt">最高互助额度(元)</view>
+			</view>
+		</view>
+		<view class="group-item" wx:for="{{list}}">
+			<view class="gi-title">
+				<view class="gt">
+					<text>{{item.insuredName}}</text>
+				</view>
+			</view>
+			<view class="gi-content">
+				<view class="p">
+					<text class="t">加入社群：</text>
+					<text class="gray-m">{{item.projectName}}</text>
+				</view>
+				<view class="p">
+					<text class="t">互助金额：</text>
+					<text class="gray-m">最高{{item.projectGuaranteeMax}}元</text>
+				</view>
+				<view class="p">
+					<text class="t">账户余额：</text>
+					<text class="gray-m">{{item.availableBalance}}元</text>
+					<text class="emer" wx:if="{{item.accountStatus == 2}}">余额告急</text>
+				</view>
+			</view>
+			<view class="gi-footer">
+				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge?pid={{item.id}}&amp;name={{item.insuredName}}&amp;pname={{item.projectName}}&amp;num={{item.availableBalance}}">
+					<text>充值</text>
+				</navigator>
+					
+				<navigator class="gi-item" hover-class="none" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
+					<text>查看凭单</text>
+				</navigator>
+		
+			</view>
+		</view>
+		<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
+			<text>添加家人</text>
+		</navigator>
+	</view>
 </view>
