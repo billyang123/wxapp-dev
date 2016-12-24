@@ -55,7 +55,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=4">
 			<view class="dl">
 				<view class="dt">
 					<!-- <text>给孩子</text> -->
@@ -78,7 +78,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
+		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
 			<view class="dl">
 				<view class="dt">
 					<text>给</text>
