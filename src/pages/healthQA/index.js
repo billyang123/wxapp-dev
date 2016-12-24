@@ -59,8 +59,8 @@ export default class HealthIndex extends wx.Component {
 	}
 	async checkLink(event){
 		var _this = this;
-		if(this.isLink) return;
-      	this.isLink = true;
+		if(this.isloading) return;
+      	this.isloading = true;
       	var _index = event.currentTarget.dataset.index;
 		if(typeof(_index) == "number") {
 			this.commitIndex = _index;
@@ -70,11 +70,11 @@ export default class HealthIndex extends wx.Component {
       		d = await wx.app.doLogin()
       	}
       	if(d){
-      		wx.navigateTo({
+      		await wx.navigateTo({
 	            url:event.currentTarget.dataset.link
 	        })
       	}
-    	this.isLink = false;
+    	this.isloading = false;
 	}
 	setNumTune(index,id){
 		let locaId = id+"_tune_"+index;
