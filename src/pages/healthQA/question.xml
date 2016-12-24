@@ -1,11 +1,11 @@
-<view class="container">
+<!-- <view class="container">
 	<component key="alert"/>
 	<view class="doctor-detail">
 		<form bindsubmit="formSubmit" >
 			<view class="section">
-				<!-- <input class="textarea" bindinput="bindinput" placeholder="这里可以提交你的问题哦…"/> -->
+				
 			  <textarea class="textarea" bindinput="setNumValue" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}"/>
-			  	<!-- <input class="same-textarea" bindinput="bindinput" value="{{lineValue}}" style="top:{{top}}"/> -->
+			  	
 			  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
 			</view>
 			<view>
@@ -13,4 +13,15 @@
 			</view>
 		</form>
 	</view>
+</view> -->
+<view class="container submit-commit">
+	<component key="alert"/>
+	<form bindsubmit="formSubmit" >
+		<view class="section">
+		  <textarea name="questionContent" value="{{textareaValue}}" placeholder="这里可以提交你的问题哦…" />
+		</view>
+		<view>
+			<button formType="submit" type="warn" class="submit-btn" hover-class="none">提交</button>
+		</view>
+	</form>
 </view>

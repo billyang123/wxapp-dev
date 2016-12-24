@@ -3,8 +3,8 @@ import Alert from '../../components/alert/alert';
 export default class Question extends wx.Component {
 	data = {
 		id:1,
-		curLength:0,
-		maxLength:60,
+		// curLength:0,
+		// maxLength:60,
 		textareaValue:"",
 
 
@@ -65,7 +65,9 @@ export default class Question extends wx.Component {
 				curLength:0,
 				disabled:false
 			})
-			wx.navigateBack();
+			setTimeout(function(){
+				wx.navigateBack();
+			},2000)
 		}
 		if(res.status == 1){
 			var sModal = await wx.showModal({
@@ -79,14 +81,14 @@ export default class Question extends wx.Component {
 			}
 		}
 	}
-	setNumValue(e){
-		let _value = e.detail.value;
-		_value = _value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
-		this.setData({
-			curLength:_value.length,
-			textareaValue:_value
-		})
-	}
+	// setNumValue(e){
+	// 	let _value = e.detail.value;
+	// 	_value = _value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
+	// 	this.setData({
+	// 		curLength:_value.length,
+	// 		textareaValue:_value
+	// 	})
+	// }
 	// async getDetail(){
 	// 	//https://xcx.chinamuxie.com/wxapi/healthserv/qa/detail?qaId=2
 	// 	var res = await wx.app.ajax({
