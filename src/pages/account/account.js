@@ -54,7 +54,7 @@ export default class Account extends wx.Component {
 		wx.app.makePhoneCall(event)
 	}
 	async initAcount(){
-		if(!wx.app.globalData.storage.code){
+		if(!wx.app.globalData.storage && !wx.app.globalData.storage.code){
 			this.setData({
 				login:false
 			})
