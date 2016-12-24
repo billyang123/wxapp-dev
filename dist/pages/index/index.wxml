@@ -1,350 +1,346 @@
 <view class="container">
-	<!-- <view class="swiper">
-		<swiper indicator-dots="false" autoplay="true" interval="5000" duration="1000">
-		  <block wx:for="{{bannerImgs}}">
-		  	<navigator redirect="" hover-class="none" url="{{item.href}}">
-			    <swiper-item data-link="{{item.href}}">
-			    	<image src="{{item.img}}" class="slide-image" data-link="{{item.href}}"/>
-			    </swiper-item>
-		    </navigator>
-		  </block>
-		</swiper>
-	</view> -->
-	<view class="swiper">
-		<navigator redirect="" hover-class="none" url="{{banner.href}}">
-			<image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
-		</navigator>
-	</view>
-	<!-- <component key="navbar"/> -->
-	<!-- <view class="broad">
-		<view class="broad-number">
-			<view class="col-50">
-				<view class="nm-line"><text class="bm-num">564,433</text><text>人</text></view>
-				<view class="nm-line"><text>已加入会员人数</text></view>
-			</view>
-			<view class="col-50 sline">
-				<view class="nm-line"><text  class="bm-num">1,946,289</text><text>元</text></view>
-				<view class="nm-line"><text>已筹互助金额</text></view>
-			</view>
-		</view>
-		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
-			<text class="bc-t">公示：</text>
-			<text>【资金公示】十月既第三期资金公示</text>
-			<icon class="iconfont icon-jiantou-right"></icon>
-		</view>
-	</view> -->
-	<!-- <view class="hdnav">
-		<view class="col-50" catchtap="linkTo" data-link="/pages/account/account" data-type="redirectTo">
-			<icon class="myicon-index-1"></icon>
-			<text class="txt">查看我的保障</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-		<view class="col-50 nr">
-			<icon class="myicon-index-2"></icon>
-			<text class="txt">送亲友</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-	</view> -->
-	<view class="hz-content hz-group">
-		<view class="title">
-			<view class="tname hz-group-tname">互助社群</view>
-		</view>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=2">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/stayChildren02_img001.png"/>
-			<view class="hi-title"><text>留守儿童互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">3-15</text><text>周岁健康人群</text>
-				</view>
-				<view class="p">
-					<text>大病、意外、走失、辍学互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" xmlns:wx="" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=5">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/8002_img001.png"/>
-			<view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">80后备孕、已孕妈妈</text>
-				</view>
-				<view class="p">
-					<text>孕期、孕产、婴儿疾病互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" wx:for="{{mImgArr[5].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=4">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/children02_img001.png"/>
-			<view class="hi-title"><text>少儿大病、意外互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">1-17</text><text>周岁少儿</text>
-				</view>
-				<view class="p">
-					<text>少儿大病、意外互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" wx:for="{{mImgArr[4].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=3">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/traffic02_img001.png"/>
-			<view class="hi-title"><text>交通、旅游意外互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">16-60</text><text>周岁健康人群</text>
-				</view>
-				<view class="p">
-					<text>公共交通、旅游意外互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" wx:for="{{mImgArr[3].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=6">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/old02_img001.png"/>
-			<view class="hi-title"><text>中老年大病、意外互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">46-70</text><text>周岁健康人群</text>
-				</view>
-				<view class="p">
-					<text>抗癌、大病、意外互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" wx:for="{{mImgArr[6].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-		<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=1">
-			<image class="img" mode="aspectFill" src="{{assetsPath}}/images/78902_img001.png"/>
-			<view class="hi-title"><text>789重大疾病互助社群</text></view>
-			<view class="hi-info">
-				<view class="p">
-					<text>适用于</text><text class="org">18-46</text><text>周岁健康人群</text>
-				</view>
-				<view class="p">
-					<text>癌症等25种重大疾病互助</text>
-				</view>
-			</view>
-			<view class="hi-opt">
-				<button class="joinbtn">立即加入</button>
-				<view class="opt-imglist">
-					<image mode="aspectFill" wx:for="{{mImgArr[1].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
-				</view>
-			</view>
-		</navigator>
-	</view>
-	<view class="hz-content hz-dis">
-		<view class="title">
-			<view class="tname hz-dis-tname">互助释义</view>
-		</view>
-		<view class="hz-explain">
-			<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的相互捐助行为。</text>
-		</view>
-	</view>
-	<view class="hz-content hz-apply">
-		<view class="title">
-			<view class="tname hz-apply-tname">申请互助</view>
-		</view>
-		<view class="hz-process">
-			<view class="step-item">
-				<view class="stepbar">
-					<view class="t-num">
-						<text>1</text>
-					</view>
-				</view>
-				<view class="st-inner">
-					<text class="st">申请互助金</text>
-					<text class="gray st-gra">拨打客服热线，提交相关资料</text>
-				</view>
-				<view class="st-inner tel-kf">
-					<text class="gray st-gra kf-gra">客服电话：</text>
-					<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
-				</view>
-				<view class="st-inner">
-					<text class="gray st-gra">有疑问也可电话咨询</text>
-				</view>
-			</view>
-			<view class="step-item">
-				<view class="stepbar">
-					<view class="t-num">
-						<text>2</text>
-					</view>
-				</view>
-				<view class="st-inner">
-					<text class="st">事件审核</text>
-					<text class="gray st-gra">权威公估机构调查</text>
-				</view>
-			</view>
-			<view class="step-item">
-				<view class="stepbar">
-					<view class="t-num">
-						<text>3</text>
-					</view>
-				</view>
-				<view class="st-inner">
-					<text class="st">全员公示</text>
-					<text class="gray st-gra">事故审核结果，向全体会员公示</text>
-				</view>
-			</view>
-			<view class="step-item">
-				<view class="stepbar">
-					<view class="t-num">
-						<text>3</text>
-					</view>
-				</view>
-				<view class="st-inner">
-					<text class="st">资金划款</text>
-					<text class="gray st-gra">资金无异议，招商银行直接划款</text>
-				</view>
-			</view>
-		</view>
-	</view>
-	<view class="hz-content hzo-guarantee">
-		<view class="title">
-			<view class="tname hzo-guarantee-tname">运营保证</view>
-		</view>
-		<view class="hzo-list">
-			<view class="hzol-item">
-				<image src="{{assetsPath}}/images/guarantee02_icon01.png" class="guarant-icon"/>
-				<view class="tt">
-					<text>0平台费用</text>
-					
-				</view>
-				<view class="tf">
-					<text>互助金将100%用于社群互助，平台免费，不抽取任何形式的佣金</text>
-				</view>
-			</view>
-			<view class="hzol-item">
-				<image src="{{assetsPath}}/images/guarantee02_icon02.png" class="guarant-icon"/>
-				<view class="tt">
-					<text>专业风控</text>
-					
-				</view>
-				<view class="tf">
-					<text>权威第三方公估公司商保通、中瑞国际实地调查验证审核</text>
-				</view>
-			</view>
-			<view class="hzol-item">
-				<image src="{{assetsPath}}/images/guarantee02_icon03.png" class="guarant-icon"/>
-				<view class="tt">
-					<text>资金安全</text>
-					
-				</view>
-				<view class="tf">
-					<text>招商银行资金专户全程管理，定期公示资金进出及明细</text>
-				</view>
-			</view>
-			<view class="hzol-item">
-				<image src="{{assetsPath}}/images/guarantee02_icon04.png" class="guarant-icon"/>
-				<view class="tt">
-					<text>顶级风投</text>
-					
-				</view>
-				<view class="tf">
-					<text>执一资本、经纬创投、晨兴资本、李治国，顶级风投全力支持，重金投资</text>
-				</view>
-			</view>
-		</view>
-	</view>
-	<!--<view class="hz-content hzo-media">
-		<view class="title">
-			<view class="tname">媒体报道</view>
-		</view>
-		<view class="hz-media-list">
-			<view class="media">
-				<image class="img" src="/images/index02_36kr.png"></image>
-				<view class="mname">
-					<text>17互助：将互联网保险业态升级为互助社群</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_souhu.png"></image>
-				<view class="mname">
-					<text>曾经扛起阿里金融大旗的高竞，想用17互助让保险更性感</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_huxiu.png"></image>
-				<view class="mname">
-					<text>17互助：来自两个500亿市值公司创始人的再创业故事</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_fenghuang.png"></image>
-				<view class="mname">
-					<text>阿里巴巴网商银行和众安保险的创始人他们创业的17互助是什么？</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_baidu.png"></image>
-				<view class="mname">
-					<text>获经纬、执一资本等数千万投资，十年阿里人创办互助保障平台</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-		</view>
-	</view>-->
-	<view class="hz-content hzo-service">
-		<view class="title sertt">
-			<view class="tname hzo-service-tname">专属客服</view>
-		</view>
-		<view class="hzs-con">
-	      <view class="item tel">
-	        <text class="gray-m">客服电话：</text>
-	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
-	      </view>
-	      <view class="item work-time">
-	        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>
-	      </view>
-	    </view>
-		<!-- <view class="hzs-con">
-			<view class="tel">
-				<text class="gray-m">客服电话：</text>
-				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
-			</view>
-			<view class="work-time">
-				<text class="gray-m">微信客服：搜索微信号</text> <text class="org"> kefu17hz2</text>
-			</view>
-		</view> -->
-		<!-- <view class="ewm-area">
-			<view>
-				<text>咨询、求助、志愿者、申请互助</text>
-			</view>
-			<view class="gray">
-				<text>长按扫码添加客服，专人答疑</text>
-			</view>
-			<view>
-				<image class="ewm-img" src="/images/kf02_img001.png"></image>
-			</view>
-		</view> -->
-	</view>
+<!-- <view class="swiper">
+<swiper indicator-dots="false" autoplay="true" interval="5000" duration="1000">
+<block wx:for="{{bannerImgs}}">
+<navigator redirect="" hover-class="none" url="{{item.href}}">
+<swiper-item data-link="{{item.href}}">
+<image src="{{item.img}}" class="slide-image" data-link="{{item.href}}"/>
+</swiper-item>
+</navigator>
+</block>
+</swiper>
+</view> -->
+<view class="swiper">
+<navigator redirect="" hover-class="none" url="{{banner.href}}">
+<image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
+</navigator>
+</view>
+<!-- <component key="navbar"/> -->
+<!-- <view class="broad">
+<view class="broad-number">
+<view class="col-50">
+<view class="nm-line"><text class="bm-num">564,433</text><text>人</text></view>
+<view class="nm-line"><text>已加入会员人数</text></view>
+</view>
+<view class="col-50 sline">
+<view class="nm-line"><text  class="bm-num">1,946,289</text><text>元</text></view>
+<view class="nm-line"><text>已筹互助金额</text></view>
+</view>
+</view>
+<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
+<text class="bc-t">公示：</text>
+<text>【资金公示】十月既第三期资金公示</text>
+<icon class="iconfont icon-jiantou-right"></icon>
+</view>
+</view> -->
+<!-- <view class="hdnav">
+<view class="col-50" catchtap="linkTo" data-link="/pages/account/account" data-type="redirectTo">
+<icon class="myicon-index-1"></icon>
+<text class="txt">查看我的保障</text>
+<icon class="iconfont icon-fangxiang-right"></icon>
+</view>
+<view class="col-50 nr">
+<icon class="myicon-index-2"></icon>
+<text class="txt">送亲友</text>
+<icon class="iconfont icon-fangxiang-right"></icon>
+</view>
+</view> -->
+<view class="hz-content hz-group">
+<view class="title">
+<view class="tname hz-group-tname">互助社群</view>
+</view>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=2">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/stayChildren02_img001.png"/>
+<view class="hi-title"><text>留守儿童互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">3-15</text><text>周岁健康人群</text>
+</view>
+<view class="p">
+<text>大病、意外、走失、辍学互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" xmlns:wx="" wx:for="{{mImgArr[2].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=5">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/8002_img001.png"/>
+<view class="hi-title"><text>80后孕妈婴宝互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">80后备孕、已孕妈妈</text>
+</view>
+<view class="p">
+<text>孕期、孕产、婴儿疾病互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" wx:for="{{mImgArr[5].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=4">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/children02_img001.png"/>
+<view class="hi-title"><text>少儿大病、意外互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">1-17</text><text>周岁少儿</text>
+</view>
+<view class="p">
+<text>少儿大病、意外互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" wx:for="{{mImgArr[4].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=3">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/traffic02_img001.png"/>
+<view class="hi-title"><text>交通、旅游意外互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">16-60</text><text>周岁健康人群</text>
+</view>
+<view class="p">
+<text>公共交通、旅游意外互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" wx:for="{{mImgArr[3].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=6">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/old02_img001.png"/>
+<view class="hi-title"><text>中老年大病、意外互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">46-70</text><text>周岁健康人群</text>
+</view>
+<view class="p">
+<text>抗癌、大病、意外互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" wx:for="{{mImgArr[6].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+<navigator class="hz-item" hover-class="none" url="/pages/community/community?type=1">
+<image class="img" mode="aspectFill" src="{{assetsPath}}/images/78902_img001.png"/>
+<view class="hi-title"><text>789重大疾病互助社群</text></view>
+<view class="hi-info">
+<view class="p">
+<text>适用于</text><text class="org">18-46</text><text>周岁健康人群</text>
+</view>
+<view class="p">
+<text>癌症等25种重大疾病互助</text>
+</view>
+</view>
+<view class="hi-opt">
+<button class="joinbtn">立即加入</button>
+<view class="opt-imglist">
+<image mode="aspectFill" wx:for="{{mImgArr[1].headImg}}" wx:for-index="idx" wx:for-item="img" src="{{img}}" class="oimg img{{idx+1}}"/>
+</view>
+</view>
+</navigator>
+</view>
+<view class="hz-content hz-dis">
+<view class="title">
+<view class="tname hz-dis-tname">互助释义</view>
+</view>
+<view class="hz-explain">
+<text class="gray-m">互助不是商业保险。互助是一种人人为我，我为人人的相互捐助行为。</text>
+</view>
+</view>
+<view class="hz-content hz-apply">
+<view class="title">
+<view class="tname hz-apply-tname">申请互助</view>
+</view>
+<view class="hz-process">
+<view class="step-item">
+<view class="stepbar">
+<view class="t-num">
+<text>1</text>
+</view>
+</view>
+<view class="st-inner">
+<text class="st">申请互助金</text>
+<text class="gray st-gra">拨打客服热线，提交相关资料</text>
+</view>
+<view class="st-inner tel-kf">
+<text class="gray st-gra kf-gra">客服电话：</text>
+<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+</view>
+<view class="st-inner">
+<text class="gray st-gra">有疑问也可电话咨询</text>
+</view>
+</view>
+<view class="step-item">
+<view class="stepbar">
+<view class="t-num">
+<text>2</text>
+</view>
+</view>
+<view class="st-inner">
+<text class="st">事件审核</text>
+<text class="gray st-gra">权威公估机构调查</text>
+</view>
+</view>
+<view class="step-item">
+<view class="stepbar">
+<view class="t-num">
+<text>3</text>
+</view>
+</view>
+<view class="st-inner">
+<text class="st">全员公示</text>
+<text class="gray st-gra">事故审核结果，向全体会员公示</text>
+</view>
+</view>
+<view class="step-item">
+<view class="stepbar">
+<view class="t-num">
+<text>3</text>
+</view>
+</view>
+<view class="st-inner">
+<text class="st">资金划款</text>
+<text class="gray st-gra">资金无异议，招商银行直接划款</text>
+</view>
+</view>
+</view>
+</view>
+<view class="hz-content hzo-guarantee">
+<view class="title">
+<view class="tname hzo-guarantee-tname">运营保证</view>
+</view>
+<view class="hzo-list">
+<view class="hzol-item">
+<image src="{{assetsPath}}/images/guarantee02_icon01.png" class="guarant-icon"/>
+<view class="tt">
+<text>0平台费用</text>
+</view>
+<view class="tf">
+<text>互助金将100%用于社群互助，平台免费，不抽取任何形式的佣金</text>
+</view>
+</view>
+<view class="hzol-item">
+<image src="{{assetsPath}}/images/guarantee02_icon02.png" class="guarant-icon"/>
+<view class="tt">
+<text>专业风控</text>
+</view>
+<view class="tf">
+<text>权威第三方公估公司商保通、中瑞国际实地调查验证审核</text>
+</view>
+</view>
+<view class="hzol-item">
+<image src="{{assetsPath}}/images/guarantee02_icon03.png" class="guarant-icon"/>
+<view class="tt">
+<text>资金安全</text>
+</view>
+<view class="tf">
+<text>招商银行资金专户全程管理，定期公示资金进出及明细</text>
+</view>
+</view>
+<view class="hzol-item">
+<image src="{{assetsPath}}/images/guarantee02_icon04.png" class="guarant-icon"/>
+<view class="tt">
+<text>顶级风投</text>
+</view>
+<view class="tf">
+<text>执一资本、经纬创投、晨兴资本、李治国，顶级风投全力支持，重金投资</text>
+</view>
+</view>
+</view>
+</view>
+<!--<view class="hz-content hzo-media">
+<view class="title">
+<view class="tname">媒体报道</view>
+</view>
+<view class="hz-media-list">
+<view class="media">
+<image class="img" src="/images/index02_36kr.png"></image>
+<view class="mname">
+<text>17互助：将互联网保险业态升级为互助社群</text>
+</view>
+<view class="time">2016-08-01</view>
+</view>
+<view class="media">
+<image class="img" src="/images/index02_souhu.png"></image>
+<view class="mname">
+<text>曾经扛起阿里金融大旗的高竞，想用17互助让保险更性感</text>
+</view>
+<view class="time">2016-08-01</view>
+</view>
+<view class="media">
+<image class="img" src="/images/index02_huxiu.png"></image>
+<view class="mname">
+<text>17互助：来自两个500亿市值公司创始人的再创业故事</text>
+</view>
+<view class="time">2016-08-01</view>
+</view>
+<view class="media">
+<image class="img" src="/images/index02_fenghuang.png"></image>
+<view class="mname">
+<text>阿里巴巴网商银行和众安保险的创始人他们创业的17互助是什么？</text>
+</view>
+<view class="time">2016-08-01</view>
+</view>
+<view class="media">
+<image class="img" src="/images/index02_baidu.png"></image>
+<view class="mname">
+<text>获经纬、执一资本等数千万投资，十年阿里人创办互助保障平台</text>
+</view>
+<view class="time">2016-08-01</view>
+</view>
+</view>
+</view>-->
+<view class="hz-content hzo-service">
+<view class="title sertt">
+<view class="tname hzo-service-tname">专属客服</view>
+</view>
+<view class="hzs-con">
+<view class="item tel">
+<text class="gray-m">客服电话：</text>
+<button class="tel-btn" data-phone-number="400-688-6259" bindtap="_dispatch" data-bindtap="makePhoneCall">400-688-6259</button>
+</view>
+<view class="item work-time">
+<text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>
+</view>
+</view>
+<!-- <view class="hzs-con">
+<view class="tel">
+<text class="gray-m">客服电话：</text>
+<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
+</view>
+<view class="work-time">
+<text class="gray-m">微信客服：搜索微信号</text> <text class="org"> kefu17hz2</text>
+</view>
+</view> -->
+<!-- <view class="ewm-area">
+<view>
+<text>咨询、求助、志愿者、申请互助</text>
+</view>
+<view class="gray">
+<text>长按扫码添加客服，专人答疑</text>
+</view>
+<view>
+<image class="ewm-img" src="/images/kf02_img001.png"></image>
+</view>
+</view> -->
+</view>
 </view>

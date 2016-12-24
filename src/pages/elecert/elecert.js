@@ -1,20 +1,5 @@
 import wx from 'labrador';
 import Slide from '../../components/slide/slide';
-Date.prototype.Format = function (fmt) { //author: meizz 
-    var o = {
-        "M+": this.getMonth() + 1, //月份 
-        "d+": this.getDate(), //日 
-        "h+": this.getHours(), //小时 
-        "m+": this.getMinutes(), //分 
-        "s+": this.getSeconds(), //秒 
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
-        "S": this.getMilliseconds() //毫秒 
-    };
-    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    for (var k in o)
-    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-    return fmt;
-}
 export default class Elecert extends wx.Component {
 	data = {
         items:['《17互助公约》','《789重大疾病互助公约》','《留守儿童互助公约》','《公共交通、旅游意外互助公约》','《少儿大病、意外互助计划公约》','《80后孕妈婴宝互助公约》','《中老年大病意外互助公约》'],

@@ -1,9 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// 7.1.4 ToInteger
-var ceil  = Math.ceil
-  , floor = Math.floor;
-module.exports = function(it){
-  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-};
-})(module,require);
+"use strict";!function(r,t){var e=(r.exports={},Math.ceil),o=Math.floor;r.exports=function(r){return isNaN(r=+r)?0:(r>0?o:e)(r)}}(module,require);

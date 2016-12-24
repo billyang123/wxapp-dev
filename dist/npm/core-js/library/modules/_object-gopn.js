@@ -1,10 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = require('./_object-keys-internal.js')
-  , hiddenKeys = require('./_enum-bug-keys.js').concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
-  return $keys(O, hiddenKeys);
-};
-})(module,require);
+"use strict";!function(e,t){var n=e.exports={},r=t("./_object-keys-internal.js"),o=t("./_enum-bug-keys.js").concat("length","prototype");n.f=Object.getOwnPropertyNames||function(e){return r(e,o)}}(module,require);
