@@ -4,7 +4,7 @@
 		<view class="health-hd">
 			<navigator redirect="" hover-class="none" class="grad" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 				<view>
-					<image src="{{item.doctorHeadImgUrl}}"></image>
+					<image src="{{item.doctorHeadImgUrl}}" class="h-avatar" ></image>
 				</view>
 				<view class="nickname">{{item.doctorName}}</view>
 				<view class="dtitle">{{item.doctorOffice}}{{item.doctorTitle}}</view>
