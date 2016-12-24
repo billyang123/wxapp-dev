@@ -330,6 +330,10 @@ export default class HealthDetail extends wx.Component {
 		this.getCommitList();
 		this.getDetail();
 		this.audioPlayEnd();
+		await wx.setStorage({
+			key:"commit",
+			data:{}
+		})
 	}
 	async onPullDownRefresh(){
 		this.setData({

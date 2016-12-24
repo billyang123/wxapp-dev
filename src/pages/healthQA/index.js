@@ -61,6 +61,10 @@ export default class HealthIndex extends wx.Component {
 		var _this = this;
 		if(this.isLink) return;
       	this.isLink = true;
+      	var _index = event.currentTarget.dataset.index;
+		if(typeof(_index) == "number") {
+			this.commitIndex = _index;
+		}
       	let d = await wx.app.checkLogin();
       	if(!d){
       		d = await wx.app.doLogin()
@@ -268,6 +272,9 @@ export default class HealthIndex extends wx.Component {
 	async setCommit(){
 		let commit = await wx.getStorage({key:'commit'})
 		let _list = this.data.list;
+		if(!commit.data.time){
+			return;
+		}
 		if(_list[this.commitIndex].commentNumber){
 			_list[this.commitIndex].commentNumber+=1
 			this.setData({
@@ -277,10 +284,8 @@ export default class HealthIndex extends wx.Component {
 	}
 	onShow(){
 		wx.app.stopAudio();
-		if(this.data.id){
-			if(typeof(this.commitIndex) == "number"){
-				this.setCommit();
-			}
+		if(typeof(this.commitIndex) == "number"){
+			this.setCommit();
 		}
 	}
 	async onPullDownRefresh(){

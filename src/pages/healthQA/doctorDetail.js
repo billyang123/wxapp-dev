@@ -287,7 +287,10 @@ export default class DoctorDetail extends wx.Component {
 		this.getDetail();
 	}
 	async setCommit(){
-		let commit = await wx.getStorage({key:'commit'})
+		let commit = await wx.getStorage({key:'commit'});
+		if(!commit.data.time){
+			return;
+		}
 		let _list = this.data.list;
 		if(_list[this.commitIndex].commentNumber){
 			console.log(_list[this.commitIndex])

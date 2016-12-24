@@ -33,12 +33,13 @@ export default class Commit extends wx.Component {
 			  icon: 'success',
 			  duration: 2000
 			})
+			let tme = new Date();
 			let n_data = {
 				resId:res.data,
 				avatar:useInfo.data.avatarUrl.substring(0,useInfo.data.avatarUrl.length-1)+96,
 				nickName:useInfo.data.nickName,
 				content:content,
-				time:(new Date()).Format("yyyy/MM/dd HH:mm:ss")
+				time:tme.format("yyyy/MM/dd HH:mm:ss")
 			}
 			if(this.postdata.qaCommentId){
 				n_data["qaCommentId"] = this.postdata.qaCommentId
