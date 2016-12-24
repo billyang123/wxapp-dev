@@ -302,6 +302,7 @@ export default class DoctorDetail extends wx.Component {
 				key:"commit",
 				data:{}
 			})
+			this.commitIndex = null;
 		}
 	}
 	onShow(){

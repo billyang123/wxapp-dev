@@ -284,6 +284,7 @@ export default class HealthIndex extends wx.Component {
 				key:"commit",
 				data:{}
 			})
+			this.commitIndex = null;
 		}
 	}
 	onShow(){

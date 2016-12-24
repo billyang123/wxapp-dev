@@ -240,19 +240,21 @@ export default class HealthDetail extends wx.Component {
 	async setSubCommit(){
 		let commit = await wx.getStorage({key:'commit'})
 		let _list = this.data.list;
-		if(_list[this.commitIndex].commentReply){
-			_list[this.commitIndex].commentReply.push({
-				userNickname:commit.data.nickName,
-				replyContent:commit.data.content
-			})
-			this.setData({
-				list:_list
-			})
-			await wx.setStorage({
-				key:"commit",
-				data:{}
-			})
+		if(!_list[this.commitIndex].commentReply){
+			_list[this.commitIndex].commentReply = [] 
 		}
+		_list[this.commitIndex].commentReply.push({
+			userNickname:commit.data.nickName,
+			replyContent:commit.data.content
+		})
+		this.setData({
+			list:_list
+		})
+		await wx.setStorage({
+			key:"commit",
+			data:{}
+		})
+		this.commitIndex = null;
 	}
 	async setCommit(){
 		let commit = await wx.getStorage({key:'commit'})
@@ -273,12 +275,14 @@ export default class HealthDetail extends wx.Component {
 			}
 			_list.unshift(ob);
 			this.setData({
-				list:_list
+				list:_list,
+				totalComNum:this.data.totalComNum+1
 			})
 			await wx.setStorage({
 				key:"commit",
 				data:{}
 			})
+			this.commitIndex = null;
 		}
 	}
 	onShow(e){
