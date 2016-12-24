@@ -474,7 +474,7 @@ export default class Community extends wx.Component {
       		d = await wx.app.doLogin()
       	}
       	if(d){
-      		await wx.navigateTo({
+      		wx.navigateTo({
 	            url:event.currentTarget.dataset.link
 	        })
       	}

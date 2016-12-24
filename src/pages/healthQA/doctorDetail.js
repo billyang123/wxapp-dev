@@ -1,11 +1,11 @@
 import wx from 'labrador';
-import Alert from '../../components/alert/alert';
+// import Alert from '../../components/alert/alert';
 export default class DoctorDetail extends wx.Component {
 	data = {
 		id:1,
-		curLength:0,
-		maxLength:60,
-		textareaValue:"",
+		// curLength:0,
+		// maxLength:60,
+		// textareaValue:"",
 
 
 		list:[],
@@ -33,9 +33,9 @@ export default class DoctorDetail extends wx.Component {
 		// top:"17rpx",
 		// value:""
 	};
-	children = {
-	    alert: new Alert({msg:"@msg"})
-	};
+	// children = {
+	//     alert: new Alert({msg:"@msg"})
+	// };
 	audioPlayEnd(event){
 		let id = event.currentTarget.dataset.id;
 		this.data.audio[id].status = false;
@@ -169,7 +169,7 @@ export default class DoctorDetail extends wx.Component {
 	    this.data.loading = false;
 	}
 	async loadMore(e){	
-		console.log("loadMore")
+		// console.log("loadMore")
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getQAList();
@@ -192,7 +192,7 @@ export default class DoctorDetail extends wx.Component {
 				code:wx.app.globalData.storage.code
 			}
 		})
-		console.log(res)
+		// console.log(res)
 		if(res.status==0){
 			let _list = this.data.list;
 			_list[parseInt(index)].praiseNumber+=1;
@@ -204,53 +204,53 @@ export default class DoctorDetail extends wx.Component {
 		}
 		this.praiseLoad = false;
 	}
-	async formSubmit(e){
-		let d = await wx.app.checkLogin();
-      	if(!d){
-      		d = await wx.app.doLogin()
-      	}
-      	if(!d) return;
-		let qcontent = e.detail.value.questionContent;
-		qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
-		if(qcontent == ""){
-			return this.children.alert.show("请输入提问内容");
-		}
-		if(qcontent.length>60){
-			return this.children.alert.show("提问内容需少于60个字");
-		}
-		var res = await wx.app.ajax({
-			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/add',
-			type:"post",
-			data:{
-				healthDoctorId:this.data.id,
-				questionContent:qcontent,
-				code:wx.app.globalData.storage.code
-			}
-		})
-		if(res.status == 0){
-			wx.showToast({
-			  title: '提问成功',
-			  icon: 'success',
-			  duration: 2000
-			})
-			this.setData({
-				textareaValue:'',
-				curLength:0,
-				disabled:false
-			})
-		}
-		if(res.status == 1){
-			var sModal = await wx.showModal({
-			  title: '提示',
-			  content: '需要先登录'
-			})
-			if(sModal.confirm){
-				wx.redirectTo({
-		    		url:'/pages/account/account'
-		    	})
-			}
-		}
-	}
+	// async formSubmit(e){
+	// 	let d = await wx.app.checkLogin();
+ //      	if(!d){
+ //      		d = await wx.app.doLogin()
+ //      	}
+ //      	if(!d) return;
+	// 	let qcontent = e.detail.value.questionContent;
+	// 	qcontent = qcontent.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
+	// 	if(qcontent == ""){
+	// 		return this.children.alert.show("请输入提问内容");
+	// 	}
+	// 	if(qcontent.length>60){
+	// 		return this.children.alert.show("提问内容需少于60个字");
+	// 	}
+	// 	var res = await wx.app.ajax({
+	// 		url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/add',
+	// 		type:"post",
+	// 		data:{
+	// 			healthDoctorId:this.data.id,
+	// 			questionContent:qcontent,
+	// 			code:wx.app.globalData.storage.code
+	// 		}
+	// 	})
+	// 	if(res.status == 0){
+	// 		wx.showToast({
+	// 		  title: '提问成功',
+	// 		  icon: 'success',
+	// 		  duration: 2000
+	// 		})
+	// 		this.setData({
+	// 			textareaValue:'',
+	// 			curLength:0,
+	// 			disabled:false
+	// 		})
+	// 	}
+	// 	if(res.status == 1){
+	// 		var sModal = await wx.showModal({
+	// 		  title: '提示',
+	// 		  content: '需要先登录'
+	// 		})
+	// 		if(sModal.confirm){
+	// 			wx.redirectTo({
+	// 	    		url:'/pages/account/account'
+	// 	    	})
+	// 		}
+	// 	}
+	// }
 	setNumValue(e){
 		let _value = e.detail.value;
 		_value = _value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, "");
@@ -267,11 +267,10 @@ export default class DoctorDetail extends wx.Component {
 				doctorId:this.data.id
 			}
 		})
-		let height = res.data.faNumber>1?900:500;
+		//let height = res.data.faNumber>1?900:500;
 		//console.log(res.data.faNumber)
 		this.setData({
-			detail:res.data,
-			windowHieght:height
+			detail:res.data
 		})
 	}
 	async onLoad(e){
@@ -281,8 +280,10 @@ export default class DoctorDetail extends wx.Component {
 		this.data.id = parseInt(e.id);
 		//加载更多设置高度
 		let systemInfo = await wx.getSystemInfo();
+		// console.log(systemInfo.windowHeight)
 		this.setData({
-	       windowHieght:systemInfo.windowHeight
+	       windowHieght:systemInfo.windowHeight,
+	       id:this.data.id
 	    });
 		//console.log(systemInfo)
 
@@ -296,7 +297,7 @@ export default class DoctorDetail extends wx.Component {
 		}
 		let _list = this.data.list;
 		if(_list[this.commitIndex].commentNumber){
-			console.log(_list[this.commitIndex])
+			// console.log(_list[this.commitIndex])
 			_list[this.commitIndex].commentNumber+=1
 			this.setData({
 				list:_list

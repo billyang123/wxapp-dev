@@ -1276,5 +1276,8 @@
   },
   "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/healthQA/doctorsList.js": {
     "depends": {}
+  },
+  "/Users/yangbinbin/Desktop/myWork/wxapp-dev/src/pages/healthQA/question.js": {
+    "depends": {}
   }
 }

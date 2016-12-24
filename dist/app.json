@@ -27,7 +27,8 @@
     "pages/healthQA/detail",
     "pages/healthQA/doctorDetail",
     "pages/healthQA/doctorsList",
-    "pages/healthQA/commit"
+    "pages/healthQA/commit",
+    "pages/healthQA/question"
   ],
   "window":{
     "backgroundTextStyle":"dark",
