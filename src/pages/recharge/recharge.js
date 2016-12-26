@@ -53,7 +53,7 @@ export default class Recharge extends wx.Component {
 		})
 	}
 	moneyTab(event){
-		console.log(event)
+		// console.log(event)
 		var num = event.currentTarget.dataset.num;
 		this.setData({
 			tabNum:num*1,
@@ -61,7 +61,7 @@ export default class Recharge extends wx.Component {
 		})
 	}
 	onLoad(e){
-		console.log(e)
+		// console.log(e)
 		this.totalNum = 0;
 		this.setData({
 			yuNum:e["amp;num"],

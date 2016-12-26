@@ -27,7 +27,7 @@ export default class Commit extends wx.Component {
 		})
 		if(res.status==0){
 			var useInfo = await wx.getStorage({ key: 'userInfo'})
-			console.log(useInfo)
+			//console.log(useInfo)
 			await wx.showToast({
 			  title: '评论成功',
 			  icon: 'success',
@@ -85,7 +85,7 @@ export default class Commit extends wx.Component {
 		// this.data.cid = e.qid;
 		// this.data.rid = e.rid;
 		wx.app.stopAudio();
-		console.log(e)
+		//console.log(e)
 		this.postdata = {
 			code:wx.app.globalData.storage.code
 		}
@@ -99,6 +99,6 @@ export default class Commit extends wx.Component {
 			this.qaId = e.qaId;
 			this.url = wx.app.data.ajaxPath+'/wxapi/healthserv/qacomment/add'
 		}
-		console.log(e)
+		//console.log(e)
 	}
 }

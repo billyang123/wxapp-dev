@@ -48,7 +48,7 @@ export default class HealthIndex extends wx.Component {
 	audioPlayEnd(){
 		var _this = this;
 	    wx.onBackgroundAudioStop(function(e){
-	    	console.log(e);
+	    	//console.log(e);
 	    	let id = _this.data.playAudio.id;
 	    	let audio = _this.data.audio;
 			audio[id].status = false;
@@ -200,7 +200,7 @@ export default class HealthIndex extends wx.Component {
 				content[i].praiseed = false
 			}
 		}
-		console.log(content,this.praiseTmp)
+		//console.log(content,this.praiseTmp)
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(res.data.content),
@@ -210,7 +210,7 @@ export default class HealthIndex extends wx.Component {
 	    this.data.loading = false;
 	}
 	async loadMore(e){
-		console.log("loadMore")
+		//console.log("loadMore")
 	    if(!this.data.hasMore) return
 	    this.data.page++
 	   	await this.getQAList();
@@ -231,7 +231,7 @@ export default class HealthIndex extends wx.Component {
 				qaId:id
 			}
 		})
-		console.log(res)
+		//console.log(res)
 		if(res.status==0){
 			let _list = this.data.list;
 			_list[parseInt(index)].praiseNumber+=1;
@@ -248,7 +248,7 @@ export default class HealthIndex extends wx.Component {
 			url: wx.app.data.ajaxPath+'/wxapi/healthserv/qa/labellist',
 			type:"get"
 		})
-		console.log(res)
+		//console.log(res)
 		this.setData({
 			tabData:res.data
 		})

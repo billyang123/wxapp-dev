@@ -108,12 +108,7 @@ export default class Bindphone extends wx.Component {
         wx.showModal({
           title: '提示',
           content: postBind.data.msg,
-          showCancel:false,
-          success: function(res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            }
-          }
+          showCancel:false
         })
       }
       this.setData({
@@ -127,9 +122,7 @@ export default class Bindphone extends wx.Component {
       wx.showModal({
         title: '提示',
         content: '请输入有效手机号',
-        showCancel: false,
-        success: function (res) {
-        }
+        showCancel: false
       });
       return;
     }

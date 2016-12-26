@@ -30,7 +30,7 @@ export default class Index extends wx.Component {
     for (var i = 0; i < _data.length; i++) {
       _mImgArr[_data[i].id] = _data[i]
     }
-    console.log(_mImgArr)
+    //console.log(_mImgArr)
     this.setData({
       mImgArr:_mImgArr
     })

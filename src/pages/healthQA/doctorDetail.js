@@ -159,7 +159,7 @@ export default class DoctorDetail extends wx.Component {
 				content[i].praiseed = false
 			}
 		}
-		console.log(content)
+		//console.log(content)
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(content),

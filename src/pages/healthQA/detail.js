@@ -29,7 +29,7 @@ export default class HealthDetail extends wx.Component {
 	audioPlayEnd(){
 		var _this = this;
 	    wx.onBackgroundAudioStop(function(e){
-	    	console.log(e);
+	    	//console.log(e);
 	    	let id = _this.data.playAudio.id;
 			_this.data.audio[id].status = false;
 			_this.setData({
@@ -61,7 +61,7 @@ export default class HealthDetail extends wx.Component {
 			type:"post",
 			data:data
 		})
-		console.log(res)
+		//console.log(res)
 		if(res.status==0){
 			if(type == "detail"){
 				this.data[type].praiseNumber+=1;
@@ -183,7 +183,7 @@ export default class HealthDetail extends wx.Component {
 	    this.data.loading = false;
 	}
 	async loadMore(e){
-		console.log("loadMore")
+		//console.log("loadMore")
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getCommitList();
@@ -197,7 +197,7 @@ export default class HealthDetail extends wx.Component {
 			}
 		})
 
-		console.log(res)
+		//console.log(res)
 		if(this.praiseTmp.indexOf('detail'+res.data.id)>=0){
 			res.data.praiseed = true
 		}else{
@@ -292,7 +292,7 @@ export default class HealthDetail extends wx.Component {
 		}
 	}
 	onShow(e){
-		console.log("onShow",this.eId)
+		//console.log("onShow",this.eId)
 		wx.app.stopAudio();
 
 		if(this.data.id){
@@ -306,7 +306,7 @@ export default class HealthDetail extends wx.Component {
 
 	async onLoad(e){
 		wx.app.stopAudio();
-		console.log("onLoad",this.showStatus)
+		//console.log("onLoad",this.showStatus)
 		this.praiseTmp = [];
 		let systemInfo = await wx.getSystemInfo();
 		//this.eId = parseInt(e.id);

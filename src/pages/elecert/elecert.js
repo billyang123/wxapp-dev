@@ -48,6 +48,6 @@ export default class Elecert extends wx.Component {
 			    projectAccount:elecertData.data.data.projectAccount,
           projectId:elecertData.data.data.project.id
         });
-        console.log(elecertData)
+        //console.log(elecertData)
 	}
 }

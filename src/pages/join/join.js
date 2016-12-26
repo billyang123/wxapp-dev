@@ -107,7 +107,7 @@ export default class Join extends wx.Component {
 	async joinBind(e){
     if(this.status) return;
     this.status = true;
-    console.log(this.data.persons)
+    //console.log(this.data.persons)
     for(let i=0;i<this.data.persons.length;i++) {
       if (typeof this.data.persons[i].name == "undefined") {
         this.children.alert.show("请输入正确姓名");

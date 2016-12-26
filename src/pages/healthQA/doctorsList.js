@@ -46,7 +46,7 @@ export default class DoctorsList extends wx.Component {
 	    this.data.loading = false;
 	}
 	async loadMore(e){
-		console.log("loadMore")
+		//console.log("loadMore")
 	    if (!this.data.hasMore) return
 	    this.data.page++;
 	   	await this.getQAList();

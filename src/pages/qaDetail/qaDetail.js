@@ -326,7 +326,7 @@ export default class QaDetail extends wx.Component {
 	};
 	async onLoad(e){
 	    let type = parseInt(e.t);
-	    console.log(textArea[type])
+	    //console.log(textArea[type])
 	    this.setData({
 	    	qaData:textArea[type-1]
 	    })
