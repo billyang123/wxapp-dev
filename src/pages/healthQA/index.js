@@ -151,11 +151,7 @@ export default class HealthIndex extends wx.Component {
 	}
 	async getDoctors(){
 		var res = await wx.app.ajax({
-			url: wx.app.data.ajaxPath+'/wxapi/healthserv/doctor/list',
-			data:{
-				page:0,
-				size:2
-			}
+			url: wx.app.data.ajaxPath+'/wxapi/healthserv/doctor/guestList'
 		})
 		if(!res.data){
 			this.setData({
