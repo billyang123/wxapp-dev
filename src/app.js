@@ -40,8 +40,8 @@ export default class {
   };
   data = {
     assetsPath:'https://s1.chinamuxie.com/www/assets/xcx',
-    ajaxPath:'https://xcx.chinamuxie.com'//'https://xcx.yiqihuzhu.com/',
-    //ajaxPath:'https://xcx.yiqihuzhu.com'//'https://xcx.yiqihuzhu.com/',
+    //ajaxPath:'https://xcx.chinamuxie.com'//'https://xcx.yiqihuzhu.com/',
+    ajaxPath:'https://xcx.yiqihuzhu.com'//'https://xcx.yiqihuzhu.com/',
   };
   async onLaunch() {
     var _this = this;
