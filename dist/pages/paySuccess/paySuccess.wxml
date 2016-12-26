@@ -21,11 +21,11 @@
 </view>
 <view class="p-time gray">工作时间:（9:00-21:00）周一至周六</view>
 </view>
-<view class="ps-item">
+<!-- <view class="ps-item">
 <view class="p-inner">
 <text class="ptxt">微信客服：</text>
 <text>搜索微信号</text><text class="org">  kefu17hz2</text>
 </view>
 <view class="p-time gray">咨询、求助、志愿者、申请互助</view>
-</view>
+</view> -->
 </view>
