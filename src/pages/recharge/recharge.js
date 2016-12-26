@@ -7,16 +7,27 @@ export default class Recharge extends wx.Component {
     	assetsPath:wx.app.data.assetsPath,
     	yuNum:"",
     	name:"",
-    	pname:""
+    	pname:"",
+    	inputValue:""
 	};
 	children = {
 	    alert: new Alert({msg:"@msg"})
 	};
+	handlefocus(event){
+		this.setData({
+			tabNum:0
+		})
+	}
 	async chashMoney(event){
 		this.totalNum = parseInt(this.data.tabNum,10)+parseInt(this.data.inputNum || 0,10);
+
 		if(this.totalNum<9){
 			return this.children.alert.show("充值金额需9元或9元以上的整数")
 		}
+		//console.log(this.totalNum)
+		// if(this.totalNum>9999){
+		// 	return this.children.alert.show("充值金额应小于10000")
+		// }
 		// this.totalNum = this.data.tabNum*1+(this.data.inputNum || 0)*1;
 		// if(this.totalNum<=0){
 		// 	return this.children.alert.show("充值金额需0元以上")
@@ -31,7 +42,7 @@ export default class Recharge extends wx.Component {
 	        method:"POST",
 	        data:{
 	          	projectAccountId:this.projectAccountId,
-				rechargeAmount:this.totalNum*1,
+				rechargeAmount:this.totalNum,
 	          	code:wx.app.globalData.storage.code
 	        }
 	    });
@@ -45,11 +56,11 @@ export default class Recharge extends wx.Component {
 	bindinput(event){
 		if(event.detail.value != ""){
 			this.setData({
-				tabNum:0,
+				tabNum:0
 			})
 		}else{
 			this.setData({
-				inputNum:0,
+				inputNum:0
 			})
 		}
 		this.setData({
@@ -61,7 +72,8 @@ export default class Recharge extends wx.Component {
 		var num = event.currentTarget.dataset.num;
 		this.setData({
 			tabNum:num*1,
-			inputNum:0
+			inputNum:0,
+			inputValue:""
 		})
 	}
 	onLoad(e){
