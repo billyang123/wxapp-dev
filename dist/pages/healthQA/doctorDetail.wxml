@@ -18,7 +18,7 @@
 <view class="hd-title">{{item.questionContent}}</view>
 <view class="hd-content">
 <image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>
-<view class="bubble" catchtap="_dispatch" data-url="{{item.healthDoctor.doctorHeadImgUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
+<view class="bubble" catchtap="_dispatch" data-url="{{item.answerRecUrl}}" data-id="{{item.id}}" data-index="{{index}}" data-catchtap="bindAudio">
 <icon class="wave{{audio[item.id].status?' waveing':' wave-default'}}"/>
 <text>限时免费听</text>
 </view>
