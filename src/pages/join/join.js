@@ -149,8 +149,7 @@ export default class Join extends wx.Component {
         code:wx.app.globalData.storage.code
       }
     });
-    this.status = false;
-    console.log(res)  
+    this.status = false; 
     if(res.data.status == 0){
       let payResult = await wx.requestPayment(res.data.data)
       await wx.redirectTo({

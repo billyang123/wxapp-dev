@@ -5,10 +5,10 @@
       <view class="profile_pop_sure" catchtap="chooseSure" data-choose="{{chooseSex}}">确定</view>
     </view>
     <view class="profile_pop_choose">
-      <view class="profile_pop_sex profile_pop_sexm active" catchtap="chooseSex" id="sexm" wx:if="{{sexm}}">男</view>
-      <view class="profile_pop_sex profile_pop_sexm" catchtap="chooseSex" id="sexm" wx:else>男</view>
-      <view class="profile_pop_sex profile_pop_sexw active" catchtap="chooseSex" id="sexw" wx:if="{{sexw}}">女</view>
-      <view class="profile_pop_sex profile_pop_sexw" catchtap="chooseSex" id="sexw" wx:else>女</view>
+      <view class="profile_pop_sex profile_pop_sexm active" catchtap="chooseSex" data-id="sexm" wx:if="{{sexm}}">男</view>
+      <view class="profile_pop_sex profile_pop_sexm" catchtap="chooseSex" data-id="sexm" wx:else>男</view>
+      <view class="profile_pop_sex profile_pop_sexw active" catchtap="chooseSex" data-id="sexw" wx:if="{{sexw}}">女</view>
+      <view class="profile_pop_sex profile_pop_sexw" catchtap="chooseSex" data-id="sexw" wx:else>女</view>
     </view>
   </view>
 	<view class="media-list">
