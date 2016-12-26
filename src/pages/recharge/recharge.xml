@@ -41,7 +41,7 @@
 			<text class="or-line-txt gray">或</text>
 		</view>
 		<view class="rc-input">
-			<input placeholder="其他金额，9元以上" bindinput="bindinput" type="text" class="input" placeholder-style="color:#ddd"/>
+			<input placeholder="其他金额，9元以上" bindinput="bindinput" type="number" class="input" placeholder-style="color:#ddd"/>
 			<text>元</text>
 		</view>
 	</view>

@@ -13,14 +13,14 @@ export default class Recharge extends wx.Component {
 	    alert: new Alert({msg:"@msg"})
 	};
 	async chashMoney(event){
-		//this.totalNum = parseInt(this.data.tabNum,10)+parseInt(this.data.inputNum || 0,10);
-		// if(this.totalNum<9){
-		// 	return this.children.alert.show("充值金额需9元或9元以上的整数")
-		// }
-		this.totalNum = this.data.tabNum*1+(this.data.inputNum || 0)*1;
-		if(this.totalNum<=0){
-			return this.children.alert.show("充值金额需0元以上")
+		this.totalNum = parseInt(this.data.tabNum,10)+parseInt(this.data.inputNum || 0,10);
+		if(this.totalNum<9){
+			return this.children.alert.show("充值金额需9元或9元以上的整数")
 		}
+		// this.totalNum = this.data.tabNum*1+(this.data.inputNum || 0)*1;
+		// if(this.totalNum<=0){
+		// 	return this.children.alert.show("充值金额需0元以上")
+		// }
 		//return console.log(this.data.tabNum,this.data.inputNum,this.totalNum)
 		var _url = wx.app.data.ajaxPath+"/wxapi/project/account/recharge";
 		let res = await wx.request({
