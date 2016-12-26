@@ -15,8 +15,8 @@
 <button class="ask-btn">我要提问</button>
 </navigator>
 </view>
-<scroll-view scroll-x="true" style="100%">
-<view class="mytab">
+<scroll-view scroll-x="true" style="width:100%">
+<view class="mytab" style="width:{{140+tabData.length*204}}rpx">
 <view class="scroll-view-item tab-item{{tabIndex == 0?' active':''}}" catchtap="_dispatch" data-id="0" data-catchtap="tabs">
 <text>全部</text>
 </view>

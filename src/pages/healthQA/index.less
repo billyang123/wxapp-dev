@@ -53,17 +53,19 @@
 	}
 }
 .mytab {
-	// display: flex;
+	display: flex;
 	overflow: hidden;
 	background-color: #fff;
 	border-bottom: 1rpx solid #ddd;
 	height: 114rpx;
+	flex-wrap: nowrap
 }
 .tab-item {
 	padding: 34rpx 38rpx;
 	float: left;
 	font-size: 32rpx;
 	position: relative;
+	white-space:nowrap;
 }
 .active::after {
 	position: absolute;
