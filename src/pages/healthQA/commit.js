@@ -39,7 +39,7 @@ export default class Commit extends wx.Component {
 				avatar:useInfo.data.avatarUrl.substring(0,useInfo.data.avatarUrl.length-1)+96,
 				nickName:useInfo.data.nickName,
 				content:content,
-				time:tme.format("yyyy/MM/dd HH:mm:ss")
+				time:wx.app.dateformat(tme,"-",":")
 			}
 			if(this.postdata.qaCommentId){
 				n_data["qaCommentId"] = this.postdata.qaCommentId

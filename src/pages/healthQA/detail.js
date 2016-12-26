@@ -8,7 +8,7 @@ export default class HealthDetail extends wx.Component {
 		hidden:false,
 		hasMore:true,
      	hasRefesh:false,
-     	size:5,
+     	size:20,
 		page:0,
 		praiseNum:{},
 		//含有播放泡泡的
@@ -166,7 +166,9 @@ export default class HealthDetail extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
-			content[i].createTime = (new Date(content[i].createTime)).format('yyyy/MM/dd HH:mm:ss');
+			// console.log(content[i].createTime,new Date(content[i].createTime))
+			// content[i].createTime = wx.app.dateformat(new Date(content[i].createTime),"/",":");
+			// console.log(content[i].createTime)
 			content[i].commentReply = JSON.parse(content[i].commentReply);
 			if(this.praiseTmp.indexOf('list'+content[i].id)>=0){
 				content[i].praiseed = true

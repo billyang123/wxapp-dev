@@ -1,53 +1,5 @@
 import wx from 'labrador';
 import { sleep } from './utils/util';
-Date.prototype.format=function(fmt) {
-    //yyyy-MM-dd hh:mm:ss       
-    // var o = {         
-    // "M+" : this.getMonth()+1, //月份         
-    // "d+" : this.getDate(), //日         
-    // "h+" : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时         
-    // "H+" : this.getHours(), //小时         
-    // "m+" : this.getMinutes(), //分         
-    // "s+" : this.getSeconds(), //秒         
-    // "q+" : Math.floor((this.getMonth()+3)/3), //季度         
-    // "S" : this.getMilliseconds() //毫秒         
-    // }; 
-    var o = {
-    "yyyy": this.getFullYear(),      
-    "MM" : this.getMonth()+1, //月份
-    "dd" : this.getDate(), //日             
-    "HH" : this.getHours(), //小时         
-    "mm" : this.getMinutes(), //分         
-    "ss" : this.getSeconds()     
-    };         
-    // var week = {         
-    // "0" : "/u65e5",         
-    // "1" : "/u4e00",         
-    // "2" : "/u4e8c",         
-    // "3" : "/u4e09",         
-    // "4" : "/u56db",         
-    // "5" : "/u4e94",         
-    // "6" : "/u516d"        
-    // };         
-    // if(/yyyy/.test(fmt)){         
-    //     fmt=fmt.replace("yyyy", this.getFullYear()+"");         
-    // }         
-    // if(/(E+)/.test(fmt)){         
-    //     fmt=fmt.replace(RegExp.$1, ((RegExp.$1.length>1) ? (RegExp.$1.length>2 ? "/u661f/u671f" : "/u5468") : "")+week[this.getDay()+""]);         
-    // }         
-    for(var k in o){
-        fmt = fmt.replace(k, o[k])
-        // let reg = new RegExp("("+ k +")");
-        // let rM = fmt.match(reg);
-        // if(rM){
-        //   fmt = fmt.replace(rM[1], o[k])
-        // }
-        // if(new RegExp("("+ k +")").test(fmt)){         
-        //     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));         
-        // }         
-    }         
-    return fmt;         
-}
 export default class {
   globalData = {
     userInfo: null,
@@ -65,7 +17,20 @@ export default class {
     // await wx.navigateTo({
     //     url:'/pages/paySuccess/paySuccess'
     // })
-    wx.app.data.ajaxPath
+    //wx.app.data.ajaxPath
+  }
+  dateformat(date,fmt1,fmt2) {
+    var formatNumber = function(n) {
+      n = n.toString()
+      return n[1] ? n : '0' + n
+    }
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    return [year, month, day].map(formatNumber).join(fmt1) + ' ' + [hour, minute, second].map(formatNumber).join(fmt2)       
   }
   makePhoneCall(event){
     wx.showModal({

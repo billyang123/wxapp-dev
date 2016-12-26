@@ -2,7 +2,7 @@ import wx from 'labrador';
 export default class DoctorsList extends wx.Component {
 	data = {
 		id:"",
-		size:5,
+		size:20,
 		page:0,
 		hidden:false,
 		hasMore:true,

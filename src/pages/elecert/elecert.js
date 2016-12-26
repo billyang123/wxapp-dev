@@ -41,10 +41,10 @@ export default class Elecert extends wx.Component {
             	projectAccountId:id
             }
         });
-        let createTime = elecertData.data.data.projectAccount.createTime;
-        let effectiveTime = elecertData.data.data.projectAccount.effectiveTime;
-        elecertData.data.data.projectAccount.createTime = (new Date(createTime)).format("yyyy-MM-dd hh:mm:ss");
-        elecertData.data.data.projectAccount.effectiveTime = (new Date(effectiveTime)).format("yyyy-MM-dd hh:mm:ss")
+        //let createTime = elecertData.data.data.projectAccount.createTime;
+        //let effectiveTime = elecertData.data.data.projectAccount.effectiveTime;
+        //elecertData.data.data.projectAccount.createTime = wx.app.dateformat(new Date(createTime),"-",":");
+        //elecertData.data.data.projectAccount.effectiveTime = wx.app.dateformat(new Date(effectiveTime),"-",":");
         this.setData({
         	project:elecertData.data.data.project,
 			    list:elecertData.data.data.list,

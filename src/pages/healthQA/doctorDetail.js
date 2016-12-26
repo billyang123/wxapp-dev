@@ -13,7 +13,7 @@ export default class DoctorDetail extends wx.Component {
 		hidden:false,
 		hasMore:true,
      	hasRefesh:false,
-     	size:5,
+     	size:20,
 		page:0,
 
 		detail:{},

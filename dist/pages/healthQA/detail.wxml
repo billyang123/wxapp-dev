@@ -23,7 +23,7 @@
 </view>
 <view class="comment-box">
 <view>
-<view class="comment" xmlns:wx="" wx:for="{{list}}" wx:for-index="index" wx:key="id">
+<view class="comment" xmlns:wx="" wx:for="{{list}}" wx:for-index="index" wx:key="id" wx:if="item.status == 1">
 <view class="comment-inner{{index==list.length-1?' comment-inner-last':''}}">
 <image class="avatar" src="{{item.headImg}}"/>
 <view class="comment-content">
