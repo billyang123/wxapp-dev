@@ -144,7 +144,14 @@ export default class HealthIndex extends wx.Component {
 		this.setData({
 	    	hasMore:true,
 	    	page:0,
-	    	list:[]
+	    	list:[],
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{},
+			//赞
+			praiseNum:{}
 	    })
 		this.getQAList();
 
@@ -297,11 +304,19 @@ export default class HealthIndex extends wx.Component {
 		this.setData({
 	    	hasMore:true,
 	    	page:0,
-	    	list:[]
+	    	list:[],
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{},
+			//赞
+			praiseNum:{}
 	    })
 		this.getDoctors();
 		this.getLabel();
 		this.getQAList();
+		wx.app.stopAudio();
 		wx.stopPullDownRefresh()
 	}
 }

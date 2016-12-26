@@ -20,7 +20,8 @@ export default class HealthDetail extends wx.Component {
 		totalComNum:0,
 		commitfocus:false,
 		commitValue:"",
-		loading:false
+		loading:false,
+		commitlist:[]
 	};
 	audioPlay(event){
 		// let id = event.currentTarget.dataset.id;
@@ -218,8 +219,11 @@ export default class HealthDetail extends wx.Component {
 	async checkLink(event){
 		var _this = this;
 		var _index = event.currentTarget.dataset.index;
+		console.log(_index)
 		if(typeof(_index) == "number") {
 			this.commitIndex = _index;
+		}else{
+			this.commitIndex = null;
 		}
 		if(this.isLink) return;
       	this.isLink = true;
@@ -266,26 +270,19 @@ export default class HealthDetail extends wx.Component {
 		if(!commit.data.time){
 			return;
 		}
-		let _list = this.data.list;
+		let _list = this.data.commitlist;
 		if(commit.data.qaId){
 			let ob = {
 				commentContent:commit.data.content,
-				commentRelyNumber:0,
-				commentReply:[],
 				createTime:commit.data.time,
 				headImg:commit.data.avatar,
-				healthQaId:this.data.id,
-				id:commit.data.qaId,
-				nickName:commit.data.nickName,
-				praiseNumber:0,
-				status:0,
-				userInfoId:0
+				nickName:commit.data.nickName
 			}
 			_list.unshift(ob);
 			this.setData({
-				list:_list,
-				totalComNum:this.data.totalComNum+1
+				commitlist:_list
 			})
+			// this.getCommitList();
 			await wx.setStorage({
 				key:"commit",
 				data:{}
@@ -324,7 +321,15 @@ export default class HealthDetail extends wx.Component {
 		this.setData({
 	    	hasMore:true,
 	    	page:0,
-	    	list:[]
+	    	list:[],
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			commitlist:[],
+			audio:{},
+			//赞
+			praiseNum:{}
 	    })
 		await this.getDetail();
 		await this.getCommitList();

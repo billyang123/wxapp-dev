@@ -23,7 +23,22 @@
 	</view>
 	<view class="comment-box">
 		<view>
-			<view class="comment" wx:for="{{list}}" wx:for-index="index" wx:key="id" wx:if="item.status == 1">
+			<view class="comment" wx:for="{{commitlist}}" wx:for-index="index" wx:key="id">
+				
+				<view class="comment-inner">
+					<image class="avatar" src="{{item.headImg}}"></image>
+					<view class="comment-content">
+						<view class="title">
+							<text>{{item.nickName}}</text>
+						</view>
+						<view class="content">{{item.commentContent}}</view>
+						<view class="optaout">
+							<text>{{item.createTime}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="comment" wx:for="{{list}}" wx:for-index="index" wx:key="id" data-status="{{item.status}}" wx:if="item.status == 1">
 				
 				<view class="comment-inner{{index==list.length-1?' comment-inner-last':''}}">
 					<image class="avatar" src="{{item.headImg}}"></image>

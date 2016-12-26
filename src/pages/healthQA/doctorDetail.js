@@ -321,7 +321,14 @@ export default class DoctorDetail extends wx.Component {
 		this.setData({
 	    	hasMore:true,
 	    	page:0,
-	    	list:[]
+	    	list:[],
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{},
+			//赞
+			praiseNum:{}
 	    })
 		await this.getQAList();
 		await this.getDetail();
