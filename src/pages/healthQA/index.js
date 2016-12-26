@@ -165,6 +165,9 @@ export default class HealthIndex extends wx.Component {
 		    	doclist:[]
 		    })
 		}
+		for (var i = 0; i < res.data.content.length; i++) {
+			res.data.content[i].doctorHeadImgUrl = wx.app.setHttpsUrl(res.data.content[i].doctorHeadImgUrl)
+		}
 	    this.setData({
 	    	doclist:res.data.content.splice(0,2)
 	    })
@@ -199,7 +202,7 @@ export default class HealthIndex extends wx.Component {
 		for (var i = 0; i < content.length; i++) {
 			//console.log(content[i].healthDoctor.doctorHeadImgUrl)
 			//content[i].healthDoctor.doctorHeadImgUrl = content[i].healthDoctor.doctorHeadImgUrl.substring(0,content[i].healthDoctor.doctorHeadImgUrl.length-1)+96;
-
+			content[i].healthDoctor.doctorHeadImgUrl = wx.app.setHttpsUrl(content[i].healthDoctor.doctorHeadImgUrl)
 			if(this.praiseTmp.indexOf(content[i].id)>=0){
 				content[i].praiseed = true
 			}else{

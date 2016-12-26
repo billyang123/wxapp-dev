@@ -54,6 +54,8 @@ export default class Account extends wx.Component {
 		}else{
 			let myuser = await wx.app.getUser(wx.app.globalData.storage.code);
 			if(myuser.data.loginStatus){
+				myuser.data.headImgUrl = wx.app.setHttpsUrl(myuser.data.headImgUrl);
+				//userInfo.headImgUrl || wxUserInfo.avatarUrl
 	    		this.setData({
 					login:true,
 					userInfo:myuser.data,

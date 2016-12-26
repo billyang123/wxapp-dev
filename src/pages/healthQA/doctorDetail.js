@@ -152,7 +152,7 @@ export default class DoctorDetail extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
-
+			content[i].healthDoctor.doctorHeadImgUrl = wx.app.setHttpsUrl(content[i].healthDoctor.doctorHeadImgUrl)
 			if(this.praiseTmp.indexOf(content[i].id+'')>=0){
 				content[i].praiseed = true
 			}else{

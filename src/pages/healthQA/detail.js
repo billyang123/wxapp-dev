@@ -168,9 +168,7 @@ export default class HealthDetail extends wx.Component {
 		}
 		for (var i = 0; i < content.length; i++) {
 			content[i].commentReply = JSON.parse(content[i].commentReply);
-			if(content[i].headImg && (/wx.qlogo.cn\/mmopen/).test(content[i].headImg)){
-				content[i].headImg = content[i].headImg.substring(0,content[i].headImg.length-1)+96;
-			}
+			content[i].headImg = wx.app.setHttpsUrl(content[i].headImg);
 			if(this.praiseTmp.indexOf('list'+content[i].id)>=0){
 				content[i].praiseed = true
 			}else{
@@ -199,15 +197,19 @@ export default class HealthDetail extends wx.Component {
 				qaId:this.data.id
 			}
 		})
-
+		//wx.app.setHttpsUrl
+		//
 		//console.log(res)
-		if(this.praiseTmp.indexOf('detail'+res.data.id)>=0){
-			res.data.praiseed = true
+		var content = res.data;
+
+		if(this.praiseTmp.indexOf('detail'+content.id)>=0){
+			content.praiseed = true
 		}else{
-			res.data.praiseed = false
+			content.praiseed = false
 		}
+		content.healthDoctor.doctorHeadImgUrl = wx.app.setHttpsUrl(content.healthDoctor.doctorHeadImgUrl)
 		this.setData({
-			detail:res.data
+			detail:content
 		})
 	}
 	commitFocus(){

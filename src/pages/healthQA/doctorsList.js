@@ -37,7 +37,10 @@ export default class DoctorsList extends wx.Component {
 		if(res.data.totalPages <= 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
-		console.log(loadMore)
+		//console.log(loadMore)
+		for (var i = 0; i < content.length; i++) {
+			content[i].doctorHeadImgUrl = wx.app.setHttpsUrl(content[i].doctorHeadImgUrl)
+		}
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(res.data.content),

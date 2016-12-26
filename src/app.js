@@ -32,6 +32,17 @@ export default class {
     var second = date.getSeconds()
     return [year, month, day].map(formatNumber).join(fmt1) + ' ' + [hour, minute, second].map(formatNumber).join(fmt2)       
   }
+  setHttpsUrl(url){
+    //https://wx.qlogo.cn/mmopen/PiajxSqBRaEJFWwlW2qwhv9WnHmcDoLcI83AWibecAEKAntTbSfmNp0ReEiarvEl5wx7UvWkQdaNMwOhtDxibibuhufkCmAPAy64MWvcaS2PjzIw/0
+    if(/wx.qlogo.cn\/mmopen\/.+\/0/.test(url)){
+      url = url.replace('/0','/132')
+      console.log(url);
+    }
+    if(!/(http|https)\:/.test(url)){
+      return "https:"+url;
+    }
+    return url;
+  }
   makePhoneCall(event){
     wx.showModal({
       title: '拨打电话：'+event.currentTarget.dataset.phoneNumber,

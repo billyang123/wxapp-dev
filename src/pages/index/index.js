@@ -29,6 +29,10 @@ export default class Index extends wx.Component {
     var _mImgArr = {};
     for (var i = 0; i < _data.length; i++) {
       _mImgArr[_data[i].id] = _data[i]
+      if(!_data[i].headImg) continue;
+      for (var k = 0; k < _data[i].headImg.length; k++) {
+        _data[i].headImg[k] = wx.app.setHttpsUrl(_data[i].headImg[k]);
+      }
     }
     //console.log(_mImgArr)
     this.setData({
