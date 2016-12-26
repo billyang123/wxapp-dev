@@ -190,6 +190,9 @@ export default class HealthIndex extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
+			//console.log(content[i].healthDoctor.doctorHeadImgUrl)
+			//content[i].healthDoctor.doctorHeadImgUrl = content[i].healthDoctor.doctorHeadImgUrl.substring(0,content[i].healthDoctor.doctorHeadImgUrl.length-1)+96;
+
 			if(this.praiseTmp.indexOf(content[i].id)>=0){
 				content[i].praiseed = true
 			}else{

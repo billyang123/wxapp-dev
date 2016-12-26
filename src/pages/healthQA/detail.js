@@ -166,10 +166,10 @@ export default class HealthDetail extends wx.Component {
 			loadMore = false;
 		}
 		for (var i = 0; i < content.length; i++) {
-			// console.log(content[i].createTime,new Date(content[i].createTime))
-			// content[i].createTime = wx.app.dateformat(new Date(content[i].createTime),"/",":");
-			// console.log(content[i].createTime)
 			content[i].commentReply = JSON.parse(content[i].commentReply);
+			if(content[i].headImg && (/wx.qlogo.cn\/mmopen/).test(content[i].headImg)){
+				content[i].headImg = content[i].headImg.substring(0,content[i].headImg.length-1)+96;
+			}
 			if(this.praiseTmp.indexOf('list'+content[i].id)>=0){
 				content[i].praiseed = true
 			}else{

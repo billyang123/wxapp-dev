@@ -11,7 +11,7 @@ export default class DoctorsList extends wx.Component {
 		list:[],
 		loading:false
 	};
-	async getDoctorList(id){
+	async getDoctorList(){
 		if(this.data.loading) return;
 		this.data.loading = true;
 		var res = await wx.app.ajax({
@@ -37,6 +37,7 @@ export default class DoctorsList extends wx.Component {
 		if(res.data.totalPages <= 1 || res.data.totalPages == this.data.page+1){
 			loadMore = false;
 		}
+		console.log(loadMore)
 	    this.setData({
 	    	hasMore:loadMore,
 	    	list:this.data.list.concat(res.data.content),
@@ -49,7 +50,7 @@ export default class DoctorsList extends wx.Component {
 		//console.log("loadMore")
 	    if (!this.data.hasMore) return
 	    this.data.page++;
-	   	await this.getQAList();
+	   	await this.getDoctorList();
 	}
 	async onLoad(){
 
