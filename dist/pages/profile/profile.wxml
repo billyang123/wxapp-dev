@@ -23,8 +23,8 @@
 </view>
 </view>
 <view class="item-content item-link" data-link="/pages/changeProfile/changeProfile?type=1" catchtap="_dispatch" data-catchtap="linkTo">
-<view class="item-inner">
-<view class="item-title item-link-inner">
+<view class="item-inner item-link-inner">
+<view class="item-title">
 <text>昵称</text>
 </view>
 <view class="item-after" wx:if="{{userNickname}}">
@@ -43,8 +43,8 @@
 </view>
 </view>
 <view class="item-content item-link" catchtap="_dispatch" data-catchtap="choose">
-<view class="item-inner">
-<view class="item-title item-link-inner">
+<view class="item-inner item-link-inner">
+<view class="item-title">
 <text>性别</text>
 </view>
 <view class="item-after" wx:if="{{userGender}}">

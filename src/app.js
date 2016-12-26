@@ -7,8 +7,8 @@ export default class {
   };
   data = {
     assetsPath:'https://s1.chinamuxie.com/www/assets/xcx',
-    ajaxPath:'https://xcx.chinamuxie.com'//'https://xcx.yiqihuzhu.com/',
-    //ajaxPath:'https://xcx.yiqihuzhu.com'//'https://xcx.yiqihuzhu.com/',
+    //ajaxPath:'https://xcx.chinamuxie.com'//'https://xcx.yiqihuzhu.com/',
+    ajaxPath:'https://xcx.yiqihuzhu.com'//'https://xcx.yiqihuzhu.com/',
   };
   async onLaunch() {
     var _this = this;
@@ -34,8 +34,8 @@ export default class {
   }
   setHttpsUrl(url){
     //https://wx.qlogo.cn/mmopen/PiajxSqBRaEJFWwlW2qwhv9WnHmcDoLcI83AWibecAEKAntTbSfmNp0ReEiarvEl5wx7UvWkQdaNMwOhtDxibibuhufkCmAPAy64MWvcaS2PjzIw/0
-    if(/wx.qlogo.cn\/mmopen\/.+\/0/.test(url)){
-      url = url.replace('/0','/132')
+    if(/wx.qlogo.cn\/mmopen\/.+\/0$/.test(url)){
+      url = url.substring(0,url.length-1)+ '132';
     }
     if(!/(http|https)\:/.test(url)){
       return "https:"+url;
