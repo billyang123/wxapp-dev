@@ -96,7 +96,10 @@ export default class {
   async checkLogin(){
     if(this.globalData.storage && this.globalData.storage.code){
       let res = await this.getUser(this.globalData.storage.code);
-      return res.data.loginStatus;
+      if(res){
+        return res.data.loginStatus;
+      }
+      return false
     }else{
       return false
     }

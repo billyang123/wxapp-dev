@@ -1,7 +1,7 @@
 
 <view class="container">
 	<view class="warn-tips">
-		<icon class="warn-tips-icon" type="warn" size="28" color="orange"></icon>
+		<icon class="warn-tips-icon" type="warn" size="22" color="orange"></icon>
 		<text class="text">为了你的权益得到保障，建议你绑定手机号码</text>
 	</view>
 	<view class="bind-top">

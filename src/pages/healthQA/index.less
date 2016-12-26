@@ -1,7 +1,7 @@
 @import 'navbar';
-.container {
-	padding-bottom:130rpx;
-}
+// .container {
+// 	padding-bottom:130rpx;
+// }
 .health-hd {
 	background-color:#fff;
 	overflow: hidden;
@@ -36,22 +36,20 @@
 .health-detail {
 	margin-bottom: 20rpx;
 }
-.health {
-	.askaction {
-		padding: 30rpx 0;
+.askaction {
+	padding: 30rpx 0;
+}
+.ask-btn {
+	color: #ff6a00;
+	width: 250rpx;
+	height: 72rpx;
+	line-height: 72rpx;
+	&::after {
+		border-color: #ff6a00 !important;
+		border-width: 4rpx !important;
 	}
-	.ask-btn {
-		color: #ff6a00;
-		width: 250rpx;
-		height: 72rpx;
-		line-height: 72rpx;
-		&::after {
-			border-color: #ff6a00 !important;
-			border-width: 4rpx !important;
-		}
-		&,&.button-hover{
-			background-color: transparent;
-		}
+	&,&.button-hover{
+		background-color: transparent;
 	}
 }
 .mytab {
@@ -60,21 +58,19 @@
 	background-color: #fff;
 	border-bottom: 1rpx solid #ddd;
 	height: 114rpx;
-	.tab-item {
-		padding: 34rpx 38rpx;
-		float: left;
-		font-size: 32rpx;
-		position: relative;
-		&.active {
-			&::after {
-				position: absolute;
-				content: "";
-				width:100%;
-				height: 6rpx;
-				background-color: #ff6a00;
-				bottom: -1rpx;
-				left: 0;
-			}
-		}
-	}
+}
+.tab-item {
+	padding: 34rpx 38rpx;
+	float: left;
+	font-size: 32rpx;
+	position: relative;
+}
+.active::after {
+	position: absolute;
+	content: "";
+	width:100%;
+	height: 6rpx;
+	background-color: #ff6a00;
+	bottom: -1rpx;
+	left: 0;
 }
