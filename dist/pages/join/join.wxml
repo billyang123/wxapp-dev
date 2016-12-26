@@ -1,58 +1,58 @@
 <view class="container join-main">
-	<view class="justjoin" catchtap="_dispatch" data-catchtap="joinBind">
-		<text>微信支付{{totalAmt}}元</text>
-	</view>
-	<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
-	<text>{{alert.msg}}</text>
+<view class="justjoin" catchtap="_dispatch" data-catchtap="joinBind">
+<text>微信支付{{totalAmt}}元</text>
 </view>
-	<view class="input-area" xmlns:wx="" wx:for="{{persons}}" wx:key="idx" wx:for-index="idx">
-		<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
-			<view class="section">
-				<view class="section_title">姓  名</view>
-				<input bindinput="_dispatch" placeholder="被保障人姓名" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}" data-bindinput="bindKeyInput"/>
-			</view>
-			<view class="section">
-				<view class="section_title">身份证</view>
-				<input bindinput="_dispatch" type="idcard" placeholder="被保障人身份证" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}" data-bindinput="bindKeyInput"/>
-			</view>
-		</view>
-		<view class="del-btn" catchtap="_dispatch" data-idx="{{idx}}" wx:if="{{persons.length!=1}}" data-catchtap="removePerson">
-			<icon class="del-icon"/>
-		</view>
-	</view>
-	<view class="add-btn" catchtap="_dispatch" data-catchtap="addPerson">
-		<icon class="icon-add iconfont icon-roundadd"/>
-		<text> 为家人添加保障</text>
-	</view>
-	<!-- <view class="money">
-		<view class="t">
-			<text>选择金额</text>
-		</view>
-		<view class="num">
-			<text>9元</text>
-		</view>
-	</view> -->
-	<view class="intro">
-		<view>
-			<text>请为本人或配偶，及他们的直系亲属添加保障。直系亲属是指，父母、儿女、（外）祖父母以（外）孙子女。</text>
-		</view>
-		<!-- <view><text>{{conditionTxt}}</text></view>
-		<view class="tip">
+<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
+<text>{{alert.msg}}</text>
+</view>
+<view class="input-area" xmlns:wx="" wx:for="{{persons}}" wx:key="idx" wx:for-index="idx">
+<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
+<view class="section">
+<view class="section_title">姓  名</view>
+<input bindinput="_dispatch" placeholder="被保障人姓名" data-idx="{{idx}}" data-name="name" value="{{item.name?item.name:''}}" data-bindinput="bindKeyInput"/>
+</view>
+<view class="section">
+<view class="section_title">身份证</view>
+<input bindinput="_dispatch" type="idcard" placeholder="被保障人身份证" data-idx="{{idx}}" data-name="cardCode" maxlength="18" value="{{item.cardCode?item.cardCode:''}}" data-bindinput="bindKeyInput"/>
+</view>
+</view>
+<view class="del-btn" catchtap="_dispatch" data-idx="{{idx}}" wx:if="{{persons.length!=1}}" data-catchtap="removePerson">
+<icon class="del-icon"/>
+</view>
+</view>
+<view class="add-btn" catchtap="_dispatch" data-catchtap="addPerson">
+<icon class="icon-add iconfont icon-roundadd"/>
+<text> 为家人添加保障</text>
+</view>
+<!-- <view class="money">
+<view class="t">
+<text>选择金额</text>
+</view>
+<view class="num">
+<text>9元</text>
+</view>
+</view> -->
+<view class="intro">
+<view>
+<text>请为本人或配偶，及他们的直系亲属添加保障。直系亲属是指，父母、儿女、（外）祖父母以（外）孙子女。</text>
+</view>
+<!-- <view><text>{{conditionTxt}}</text></view>
+<view class="tip">
 			请在加入本互助社群前咨询家人，避免重复加入。
-		</view> -->
-	</view>
-	<view class="checkbox-group">
-    <checkbox-group bindchange="_dispatch" data-bindchange="checkChange">
-		<view>
-			<label class="checkbox">
-			    <checkbox checked="true" value="1" disabled="true"/> 已同意 <navigator open-type="navigate" url="/pages/hzpact/hzpact?type=1" class="text org">{{publicConvention}}</navigator>
-			</label>
-		</view>
-		<view>
-			<label class="checkbox">
-		    	<checkbox checked="true" value="2" disabled="true"/> 已同意 <navigator open-type="navigate" url="{{link}}" class="text org">{{conventionTxt}}</navigator>
-		  	</label>
-		</view>
-    </checkbox-group>
-	</view>
+</view> -->
+</view>
+<view class="checkbox-group">
+<checkbox-group bindchange="_dispatch" data-bindchange="checkChange">
+<view>
+<label class="checkbox">
+<checkbox checked="true" value="1" disabled="true"/> 已同意 <navigator open-type="navigate" url="/pages/hzpact/hzpact?type=1" class="text org">{{publicConvention}}</navigator>
+</label>
+</view>
+<view>
+<label class="checkbox">
+<checkbox checked="true" value="2" disabled="true"/> 已同意 <navigator open-type="navigate" url="{{link}}" class="text org">{{conventionTxt}}</navigator>
+</label>
+</view>
+</checkbox-group>
+</view>
 </view>

@@ -1,16 +1,16 @@
 <view class="container">
-	<view class="top-title">
-		<text/>
-		<view class="h2">{{title}}</view>
-		<text/>
-	</view>
-	<view class="media-list qa-list">
-		<navigator class="item-content" xmlns:wx="" wx:for="{{list}}" wx:key="idx" wx:for-index="idx" redirect="" url="{{item.link}}">
-			<view class="item-inner item-link-inner">
-				<view class="item-title">
-					<text>{{item.n}}</text>
-				</view>
-			</view>
-		</navigator>
-	</view>
+<view class="top-title">
+<text/>
+<view class="h2">{{title}}</view>
+<text/>
+</view>
+<view class="media-list qa-list">
+<navigator class="item-content" xmlns:wx="" wx:for="{{list}}" wx:key="idx" wx:for-index="idx" redirect="" url="{{item.link}}">
+<view class="item-inner item-link-inner">
+<view class="item-title">
+<text>{{item.n}}</text>
+</view>
+</view>
+</navigator>
+</view>
 </view>

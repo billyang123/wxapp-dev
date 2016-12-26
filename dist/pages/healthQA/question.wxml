@@ -1,29 +1,27 @@
 <!-- <view class="container">
-	<component key="alert"/>
-	<view class="doctor-detail">
-		<form bindsubmit="formSubmit" >
-			<view class="section">
-				
-			  <textarea class="textarea" bindinput="setNumValue" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}"/>
-			  	
-			  	<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
-			</view>
-			<view>
-				<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>
-			</view>
-		</form>
-	</view>
+<component key="alert"/>
+<view class="doctor-detail">
+<form bindsubmit="formSubmit" >
+<view class="section">
+<textarea class="textarea" bindinput="setNumValue" name="questionContent" placeholder="这里可以提交你的问题哦…" value="{{textareaValue}}"/>
+<view class="sizeNum">{{curLength}}/{{maxLength}}</view>
+</view>
+<view>
+<button formType="submit" type="warn" class="submit-btn" hover-class="none">我要提问</button>
+</view>
+</form>
+</view>
 </view> -->
 <view class="container submit-commit">
-	<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
-	<text>{{alert.msg}}</text>
+<view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
+<text>{{alert.msg}}</text>
 </view>
-	<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
-		<view class="section">
-		  <textarea name="questionContent" value="{{textareaValue}}" placeholder="这里可以提交你的问题哦…"/>
-		</view>
-		<view>
-			<button formType="submit" type="warn" class="submit-btn" hover-class="none">提交</button>
-		</view>
-	</form>
+<form bindsubmit="_dispatch" data-bindsubmit="formSubmit">
+<view class="section">
+<textarea name="questionContent" value="{{textareaValue}}" placeholder="这里可以提交你的问题哦…"/>
+</view>
+<view>
+<button formType="submit" type="warn" class="submit-btn" hover-class="none">提交</button>
+</view>
+</form>
 </view>

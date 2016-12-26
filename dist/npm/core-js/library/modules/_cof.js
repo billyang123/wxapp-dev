@@ -1,8 +1,1 @@
-'use strict';
-(function(module,require){var exports=module.exports={};
-var toString = {}.toString;
-
-module.exports = function(it){
-  return toString.call(it).slice(8, -1);
-};
-})(module,require);
+"use strict";!function(r,t){var e=(r.exports={},{}.toString);r.exports=function(r){return e.call(r).slice(8,-1)}}(module,require);
