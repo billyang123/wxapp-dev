@@ -14,8 +14,8 @@ export default class Recharge extends wx.Component {
 	};
 	async chashMoney(event){
 		this.totalNum = (this.data.tabNum*1)+(this.data.inputNum*1);
-		if(this.totalNum*1<=0){
-			return this.children.alert.show("充值金额需大于0元")
+		if(this.totalNum*1<=9){
+			return this.children.alert.show("充值金额需9元以上的整数")
 		}
 		//return console.log(this.data.tabNum,this.data.inputNum,this.totalNum)
 		var _url = wx.app.data.ajaxPath+"/wxapi/project/account/recharge";
@@ -53,7 +53,7 @@ export default class Recharge extends wx.Component {
 		})
 	}
 	moneyTab(event){
-		// console.log(event)
+		//console.log(event)
 		var num = event.currentTarget.dataset.num;
 		this.setData({
 			tabNum:num*1,
