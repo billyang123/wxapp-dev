@@ -178,7 +178,7 @@ export default class Profile extends wx.Component {
  /* async onLoad(e){
     this.getData();
   }*/
-  async onLoad(e){
+  async onShow(e){
     this.getData();
   }
 }
