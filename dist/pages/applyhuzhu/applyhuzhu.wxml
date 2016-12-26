@@ -1,84 +1,84 @@
 <view class="container">
-<view class="bottom-btn" data-phone-number="400-688-6259" catchtap="_dispatch" data-catchtap="makePhoneCall">
-<text>拨打400-688-6259 申请互助</text>
-</view>
-<view class="hz-content hz-apply">
-<view class="title">
-<view class="tname">互助流程</view>
-</view>
-<view class="hz-process">
-<view class="step-item">
-<view class="stepbar">
-<view class="t-num">
-<text>1</text>
-</view>
-</view>
-<view class="st-inner">
-<view class="p">
-<text class="st">发起申请</text>
-</view>
-<view class="p">
-<text class="gray-m">拨打客服热线，提交材料进行互助申请</text>
-</view>
-<view class="p">
-<text class="org">* 互助申请者需处于保障期内，流程如下</text>
-</view>
-<view class="p">
-<text class="gray-m">1）加入17互助社群</text>
-</view>
-<view class="p">
-<text class="gray-m">2）进入等待期</text>
-</view>
-<view class="p">
-<text class="gray-m">3）进入保障期，保障生效</text>
-</view>
-</view>
-</view>
-<view class="step-item">
-<view class="stepbar">
-<view class="t-num">
-<text>2</text>
-</view>
-</view>
-<view class="st-inner">
-<view class="p">
-<text class="st">事件审核</text>
-</view>
-<view class="p">
-<text class="gray-m">权威公估机构调查</text>
-</view>
-</view>
-</view>
-<view class="step-item">
-<view class="stepbar">
-<view class="t-num">
-<text>3</text>
-</view>
-</view>
-<view class="st-inner">
-<view class="p">
-<text class="st">全员公示</text>
-</view>
-<view class="p">
-<text class="gray-m">事故审核结果，向全体会员公示</text>
-</view>
-</view>
-</view>
-<view class="step-item">
-<view class="stepbar">
-<view class="t-num">
-<text>3</text>
-</view>
-</view>
-<view class="st-inner">
-<view class="p">
-<text class="st">资金划款</text>
-</view>
-<view class="p">
-<text class="gray-m">资金无异议，招商银行直接划款</text>
-</view>
-</view>
-</view>
-</view>
-</view>
+	<view class="bottom-btn" data-phone-number="400-688-6259" catchtap="_dispatch" data-catchtap="makePhoneCall">
+		<text>拨打400-688-6259 申请互助</text>
+	</view>
+ 	<view class="hz-content hz-apply">
+		<view class="title">
+			<view class="tname">互助流程</view>
+		</view>
+		<view class="hz-process">
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>1</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<view class="p">
+						<text class="st">发起申请</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">拨打客服热线，提交材料进行互助申请</text>
+					</view>
+					<view class="p">
+						<text class="org">* 互助申请者需处于保障期内，流程如下</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">1）加入17互助社群</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">2）进入等待期</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">3）进入保障期，保障生效</text>
+					</view>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>2</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<view class="p">
+						<text class="st">事件审核</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">权威公估机构调查</text>
+					</view>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>3</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<view class="p">
+						<text class="st">全员公示</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">事故审核结果，向全体会员公示</text>
+					</view>
+				</view>
+			</view>
+			<view class="step-item">
+				<view class="stepbar">
+					<view class="t-num">
+						<text>3</text>
+					</view>
+				</view>
+				<view class="st-inner">
+					<view class="p">
+						<text class="st">资金划款</text>
+					</view>
+					<view class="p">
+						<text class="gray-m">资金无异议，招商银行直接划款</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>

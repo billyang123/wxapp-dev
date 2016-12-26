@@ -1,1 +1,11 @@
-"use strict";!function(o,r){var s=(o.exports={},r("./_an-object.js")),t=r("./_a-function.js"),e=r("./_wks.js")("species");o.exports=function(o,r){var n,c=s(o).constructor;return void 0===c||void 0==(n=s(c)[e])?r:t(n)}}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+var anObject  = require('./_an-object.js')
+  , aFunction = require('./_a-function.js')
+  , SPECIES   = require('./_wks.js')('species');
+module.exports = function(O, D){
+  var C = anObject(O).constructor, S;
+  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+};
+})(module,require);

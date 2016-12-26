@@ -15,7 +15,7 @@ export default class Profile extends wx.Component {
     chooseSex:'男'
 	};
   async getData(){
-    let userInfo = await wx.getUserInfo();
+    let userInfo = wx.app.globalData.userInfo;
     let res = await wx.request({
       url: wx.app.data.ajaxPath+'/wxapi/user/userInfo/index',
       method:"GET",
@@ -34,7 +34,7 @@ export default class Profile extends wx.Component {
         userIdNumber:res.data.data.userIdNumber,
         userPhone:res.data.data.userPhone,
         userEmail:res.data.data.userEmail,
-        userHeadimgurl:res.data.data.userHeadimgurl || userInfo.userInfo.avatarUrl
+        userHeadimgurl:wx.app.setHttpsUrl(res.data.data.userHeadimgurl) || userInfo.avatarUrl
       })
     }
   }
@@ -178,7 +178,7 @@ export default class Profile extends wx.Component {
  /* async onLoad(e){
     this.getData();
   }*/
-  async onShow(e){
+  async onLoad(e){
     this.getData();
   }
 }

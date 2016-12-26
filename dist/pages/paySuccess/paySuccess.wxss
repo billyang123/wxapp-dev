@@ -1,1 +1,33 @@
-icon{margin-right:20rpx;position:relative;top:10rpx}.ps-item{background-color:#fff;padding:36rpx 32rpx;border-bottom:1rpx solid #ddd}.txt{font-size:34rpx}.info{font-size:28rpx}.ps-item-tel{padding:20rpx 32rpx 36rpx}.ptxt{display:inline-block;line-height:55rpx}.p-tel .tel-btn{position:relative;top:15rpx}.p-inner{line-height:1}.p-time{margin-top:24rpx}
+icon {
+  margin-right: 20rpx;
+  position: relative;
+  top: 10rpx;
+}
+.ps-item {
+  background-color: #fff;
+  padding: 36rpx 32rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.txt {
+  font-size: 34rpx;
+}
+.info {
+  font-size: 28rpx;
+}
+.ps-item-tel {
+  padding: 20rpx 32rpx 36rpx 32rpx;
+}
+.ptxt {
+  display: inline-block;
+  line-height: 55rpx;
+}
+.p-tel .tel-btn {
+  position: relative;
+  top: 15rpx;
+}
+.p-inner {
+  line-height: 1;
+}
+.p-time {
+  margin-top: 24rpx;
+}

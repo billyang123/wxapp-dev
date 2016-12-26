@@ -1,235 +1,235 @@
 <view class="container">
-<view class="commun-nav" catchtap="_dispatch" data-link="{{linkUrl}}" data-catchtap="linkTo">
-<view class="cnav-li join">立即加入</view>
-</view>
-<view class="community">
-<view class="top-head">
-<image class="img" src="{{bannerImg.b}}"/>
-<text class="txt">{{bannerImg.t}}</text>
-</view>
-<view class="top-body">
-<view class="tb-item">
-<view class="nmb-txt">
-<!-- <text class="num">{{numData.jionNumbers}}</text> -->
-<text class="num">{{bannerImg.n}}</text>
-<text>人</text>
-</view>
-<view class="tb-txt">
+	<view class="commun-nav" catchtap="_dispatch" data-link="{{linkUrl}}" data-catchtap="linkTo">
+		<view class="cnav-li join">立即加入</view>
+	</view>
+	<view class="community">
+		<view class="top-head">
+			<image class="img" src="{{bannerImg.b}}"/>
+			<text class="txt">{{bannerImg.t}}</text>
+		</view>
+		<view class="top-body">
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<!-- <text class="num">{{numData.jionNumbers}}</text> -->
+					<text class="num">{{bannerImg.n}}</text>
+					<text>人</text>
+				</view>
+				<view class="tb-txt">
 					本社群加入人数
-</view>
-</view>
-<view class="tb-item">
-<view class="nmb-txt">
-<text class="num">{{numData.totalAmt}}</text>
-<text>{{numData.totalAmtUnit}}</text>
-</view>
-<view class="tb-txt">
+				</view>
+			</view>
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<text class="num">{{numData.totalAmt}}</text>
+					<text>{{numData.totalAmtUnit}}</text>
+				</view>
+				<view class="tb-txt">
 					本社群互助金额
-</view>
-</view>
-<view class="tb-item">
-<view class="nmb-txt">
-<text class="num">{{numData.totalDefend}}</text>
-<text>起</text>
-</view>
-<view class="tb-txt">
+				</view>
+			</view>
+			<view class="tb-item">
+				<view class="nmb-txt">
+					<text class="num">{{numData.totalDefend}}</text>
+					<text>起</text>
+				</view>
+				<view class="tb-txt">
 					互助事件
-</view>
-</view>
-</view>
-<view class="pj_tit">
-<image src="https://image1.chinamuxie.com/images/project/pj_tit01.png" style="width:404rpx;height:53rpx;"/>
-</view>
-<view class="pj_aim">
-<view xmlns:wx="" wx:for="{{purpose}}" wx:for-index="index" wx:key="index" class="lis lis{{index+1}}">
-<text>{{item}}</text>
-</view>
-</view>
-<view class="pj_tit">
-<image src="https://image1.chinamuxie.com/images/project/pj_tit02.png" style="width:378rpx;height:53rpx;"/>
-</view>
-<view class="media-list pj_meidalist">
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>{{power.t}}</text>
-</view>
-</view>
-</view>
-<view class="item-content" wx:for="{{power.l}}" wx:key="index" wx:for-index="index">
-<view class="item-inner">
-<view class="item-title">
-<text>{{item[0]}}</text>
-</view>
-<view class="item-after">
-<text>{{item[1]}}</text>
-</view>
-</view>
-</view>
-<navigator class="item-link item-content" wx:for="{{power.ll}}" wx:key="index" wx:for-index="index" redirect="" url="{{item.link}}">
-<view class="item-inner item-link-inner">
-<view class="item-title">
-<text wx:if="{{item.t}}">{{item.t}}</text>
-<text class="org" wx:if="{{item.o}}">{{item.o}}</text>
-</view>
-</view>
-</navigator>
-</view>
-<view class="pj_tit">
-<image src="https://wx.chinamuxie.com/images/project/pj_tit03.png" style="width:378rpx;height:53rpx;"/>
-</view>
-<view class="media-list pj_meidalist">
-<view class="item-content">
-<view class="item-inner">
-<view class="item-title">
-<text>{{treaty.t}}</text>
-</view>
-</view>
-</view>
-<view class="item-content" wx:for="{{treaty.l}}" wx:key="index" wx:for-index="index">
-<view class="item-inner">
-<view class="item-title">
-<text class="org">{{item[0]}}</text>
-</view>
-<view class="item-after">
-<text class="gray-m fz32">{{item[1]}}</text>
-</view>
-</view>
-</view>
-<navigator class="item-content item-link" redirect="" url="{{item[1]}}" wx:for="{{treaty.ll}}" wx:key="index" wx:for-index="index">
-<view class="item-inner item-link-inner">
-<view class="item-title">
-<text class="gray">{{item[0]}}</text>
-</view>
-</view>
-</navigator>
-</view>
-<view class="pj_tit">
-<image src="https://image1.chinamuxie.com/images/project/pj_tit04.png" style="width:378rpx;height:53rpx;"/>
-</view>
-<view class="media-list pj_meidalist pj-list">
-<view class="item-content" wx:if="{{condition[0]}}">
-<view class="item-inner">
-<view class="item-title">
-<text class="bb">年龄段：{{condition[0]}}</text>
-</view>
-</view>
-</view>
-<view class="item-content" wx:if="{{condition[1]}}">
-<view class="item-inner">
-<view class="item-title">
-<text class="bb">身体健康是指：{{condition[1]}}</text>
-</view>
-</view>
-</view>
-</view>
-<view class="pj_tit">
-<image src="https://image1.chinamuxie.com/images/project/pj_tit05.png" style="width:461rpx;height:53rpx;"/>
-</view>
-<view class="process">
-<view class="proc-li">
-<view class="proc-inner">
-<view class="pl-title">
-<text>提交材料</text>
-</view>
-<view class="pl-after">
-<text>拨打  </text>
-<text class="spr">400-688-6259</text>
-</view>
-</view>
-</view>
-<view class="proc-li">
-<view class="proc-inner">
-<view class="pl-title">
-<text>事件审核</text>
-</view>
-<view class="pl-after">
-<text>商保通等权威公估机构实地调查</text>
-</view>
-</view>
-</view>
-<view class="proc-li">
-<view class="proc-inner">
-<view class="pl-title">
-<text>全员公示</text>
-</view>
-<view class="pl-after">
-<text>事故核查结果，向全体会员公示</text>
-</view>
-</view>
-</view>
-<view class="proc-li">
-<view class="proc-inner">
-<view class="pl-title">
-<text>资金划款</text>
-</view>
-<view class="pl-after">
-<text>公示无异议后，招商银行直接划款</text>
-</view>
-</view>
-</view>
-</view>
-<view class="pj_tit">
-<image src="https://wx.chinamuxie.com/images/project/pj_tit06.png" style="width:573rpx;height:53rpx;"/>
-</view>
-<view class="diff-list">
-<view class="dl-item" wx:for="{{diff}}" wx:key="index" wx:for-index="index">
-<view class="dl-media">
-<view class="dlimg">
-<text>{{item.t}}</text>
-</view>
-</view>
-<view class="dl-after">
-<text>{{item.n}}</text>
-</view>
-</view>
-</view>
-<view class="pj_tit">
-<image src="https://wx.chinamuxie.com/images/project/pj_tit07.png" style="width:378rpx;height:53rpx;"/>
-</view>
-<view class="media-list slide-media-list slide-list slide-slide-list">
-<view wx:for="{{slide.slideData}}" wx:for-index="idx" wx:key="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
-<view class="item-content slide-item-content">
-<view class="item-inner slide-item-inner">
-<view class="item-title slide-item-title">
-<text>{{item.t}}</text>
-</view>
-<view class="item-after slide-item-after" wx:if="{{item.a}}">
-<text>{{item.a}}</text>
-</view>
-<icon class="icon-chevron slide-icon-chevron" animation="{{slide.chevronAnim[idx]}}"/>
-</view>
-</view>
-<view class="item-xmain{{item.auto}} slide-item-xmain{{item.auto}}" animation="{{slide.slideAnim[idx]}}" style="height:0;">
-<view class="item-xmain-bd slide-item-xmain-bd">
-<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text" wx:key="index" wx:for-index="index">
-<text>{{text}}</text>
-</view>
-</view>
-</view>
-</view>
-<view wx:for="{{slide.slideMore}}" wx:key="index" wx:for-index="index">
-<navigator wx:if="{{item.link}}" class="item-link slide-item-link item-content slide-item-content" redirect="" url="{{item.link}}">
-<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
-<view class="item-title slide-item-title">
-<text class="org slide-org">{{item.title}}</text>
-</view>
-<view class="item-title slide-item-title" wx:if="{{item.after}}">
-<text>{{item.after}}</text>
-</view>
-</view>
-</navigator>
-<view wx:else="wx:else" class="item-link slide-item-link item-content slide-item-content">
-<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
-<view class="item-title slide-item-title">
-<text>{{item.title}}</text>
-</view>
-<view class="item-title slide-item-title" wx:if="{{item.after}}">
-<text>{{item.after}}</text>
-</view>
-</view>
-</view>
-</view>
-</view>
-</view>
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit01.png" style="width:404rpx;height:53rpx;"/>
+		</view>
+		<view class="pj_aim">
+			<view xmlns:wx="" wx:for="{{purpose}}" wx:for-index="index" wx:key="index" class="lis lis{{index+1}}">
+				<text>{{item}}</text>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit02.png" style="width:378rpx;height:53rpx;"/>
+		</view>
+		<view class="media-list pj_meidalist">
+			<view class="item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>{{power.t}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-content" wx:for="{{power.l}}" wx:key="index" wx:for-index="index">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>{{item[0]}}</text>
+					</view>
+					<view class="item-after">
+						<text>{{item[1]}}</text>
+					</view>
+				</view>
+			</view>
+			<navigator class="item-link item-content" wx:for="{{power.ll}}" wx:key="index" wx:for-index="index" redirect="" url="{{item.link}}">
+				<view class="item-inner item-link-inner">
+					<view class="item-title">
+						<text wx:if="{{item.t}}">{{item.t}}</text>
+						<text class="org" wx:if="{{item.o}}">{{item.o}}</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit03.png" style="width:378rpx;height:53rpx;"/>
+		</view>
+		<view class="media-list pj_meidalist">
+			<view class="item-content">
+				<view class="item-inner">
+					<view class="item-title">
+						<text>{{treaty.t}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-content" wx:for="{{treaty.l}}" wx:key="index" wx:for-index="index">
+				<view class="item-inner">
+					<view class="item-title">
+						<text class="org">{{item[0]}}</text>
+					</view>
+					<view class="item-after">
+						<text class="gray-m fz32">{{item[1]}}</text>
+					</view>
+				</view>
+			</view>
+			<navigator class="item-content item-link" redirect="" url="{{item[1]}}" wx:for="{{treaty.ll}}" wx:key="index" wx:for-index="index">
+				<view class="item-inner item-link-inner">
+					<view class="item-title">
+						<text class="gray">{{item[0]}}</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit04.png" style="width:378rpx;height:53rpx;"/>
+		</view>
+		<view class="media-list pj_meidalist pj-list">
+			<view class="item-content" wx:if="{{condition[0]}}">
+				<view class="item-inner">
+					<view class="item-title">
+						<text class="bb">年龄段：{{condition[0]}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="item-content" wx:if="{{condition[1]}}">
+				<view class="item-inner">
+					<view class="item-title">
+						<text class="bb">身体健康是指：{{condition[1]}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://image1.chinamuxie.com/images/project/pj_tit05.png" style="width:461rpx;height:53rpx;"/>
+		</view>
+		<view class="process">
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>提交材料</text>
+					</view>
+					<view class="pl-after">
+						<text>拨打  </text>
+						<text class="spr">400-688-6259</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>事件审核</text>
+					</view>
+					<view class="pl-after">
+						<text>商保通等权威公估机构实地调查</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>全员公示</text>
+					</view>
+					<view class="pl-after">
+						<text>事故核查结果，向全体会员公示</text>
+					</view>
+				</view>
+			</view>
+			<view class="proc-li">
+				<view class="proc-inner">
+					<view class="pl-title">
+						<text>资金划款</text>
+					</view>
+					<view class="pl-after">
+						<text>公示无异议后，招商银行直接划款</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit06.png" style="width:573rpx;height:53rpx;"/>
+		</view>
+		<view class="diff-list">
+			<view class="dl-item" wx:for="{{diff}}" wx:key="index" wx:for-index="index">
+				<view class="dl-media">
+					<view class="dlimg">
+						<text>{{item.t}}</text>
+					</view>
+				</view>
+				<view class="dl-after">
+					<text>{{item.n}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="pj_tit">
+			<image src="https://wx.chinamuxie.com/images/project/pj_tit07.png" style="width:378rpx;height:53rpx;"/>
+		</view>
+		<view class="media-list slide-media-list slide-list slide-slide-list">
+	<view wx:for="{{slide.slideData}}" wx:for-index="idx" wx:key="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
+		<view class="item-content slide-item-content">
+			<view class="item-inner slide-item-inner">
+				<view class="item-title slide-item-title">
+					<text>{{item.t}}</text>
+				</view>
+				<view class="item-after slide-item-after" wx:if="{{item.a}}">
+					<text>{{item.a}}</text>
+				</view>
+				<icon class="icon-chevron slide-icon-chevron" animation="{{slide.chevronAnim[idx]}}"/>
+			</view>
+		</view>
+		<view class="item-xmain{{item.auto}} slide-item-xmain{{item.auto}}" animation="{{slide.slideAnim[idx]}}" style="height:0;">
+			<view class="item-xmain-bd slide-item-xmain-bd">
+				<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text" wx:key="index" wx:for-index="index">
+					<text>{{text}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:for="{{slide.slideMore}}" wx:key="index" wx:for-index="index">
+		<navigator wx:if="{{item.link}}" class="item-link slide-item-link item-content slide-item-content" redirect="" url="{{item.link}}">
+			<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
+				<view class="item-title slide-item-title">
+					<text class="org slide-org">{{item.title}}</text>
+				</view>
+				<view class="item-title slide-item-title" wx:if="{{item.after}}">
+					<text>{{item.after}}</text>
+				</view>
+			</view>
+		</navigator>
+		<view wx:else="wx:else" class="item-link slide-item-link item-content slide-item-content">
+			<view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
+				<view class="item-title slide-item-title">
+					<text>{{item.title}}</text>
+				</view>
+				<view class="item-title slide-item-title" wx:if="{{item.after}}">
+					<text>{{item.after}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+	</view>
 </view>

@@ -1,1 +1,186 @@
-"use strict";!function(e,t){function a(e){return e&&e.__esModule?e:{default:e}}var n=e.exports={};window=t("../../npm/labrador/global.js");Object.defineProperty(n,"__esModule",{value:!0});var r=t("../../npm/babel-runtime/regenerator/index.js"),u=a(r),s=t("../../npm/babel-runtime/helpers/asyncToGenerator.js"),l=a(s),o=t("../../npm/babel-runtime/core-js/object/get-prototype-of.js"),i=a(o),c=t("../../npm/babel-runtime/helpers/classCallCheck.js"),p=a(c),d=t("../../npm/babel-runtime/helpers/createClass.js"),m=a(d),h=t("../../npm/babel-runtime/helpers/possibleConstructorReturn.js"),f=a(h),b=t("../../npm/babel-runtime/helpers/inherits.js"),j=a(b),y=t("../../npm/labrador/index.js"),v=a(y),N=t("../../components/alert/alert.js"),g=a(N),x=function(e){function t(){var e,a,n,r;(0,p.default)(this,t);for(var u=arguments.length,s=Array(u),l=0;l<u;l++)s[l]=arguments[l];return a=n=(0,f.default)(this,(e=t.__proto__||(0,i.default)(t)).call.apply(e,[this].concat(s))),n.data={tabNum:9,inputNum:0,assetsPath:v.default.app.data.assetsPath,yuNum:"",name:"",pname:""},n.children={alert:new g.default({msg:"@msg"})},r=a,(0,f.default)(n,r)}return(0,j.default)(t,e),(0,m.default)(t,[{key:"chashMoney",value:function(){function e(e){return t.apply(this,arguments)}var t=(0,l.default)(u.default.mark(function e(t){var a,n,r;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:if(this.totalNum=1*this.data.tabNum+1*this.data.inputNum,!(1*this.totalNum<=0)){e.next=3;break}return e.abrupt("return",this.children.alert.show("充值金额需大于0元"));case 3:return a=v.default.app.data.ajaxPath+"/wxapi/project/account/recharge",e.next=6,v.default.request({url:a,header:{"content-type":"application/x-www-form-urlencoded"},method:"POST",data:{projectAccountId:this.projectAccountId,rechargeAmount:1*this.totalNum,code:v.default.app.globalData.storage.code}});case 6:if(n=e.sent,0!=n.data.status){e.next=13;break}return e.next=10,v.default.requestPayment(n.data.data);case 10:return r=e.sent,e.next=13,v.default.redirectTo({url:"/pages/paySuccess/paySuccess"});case 13:case"end":return e.stop()}},e,this)}));return e}()},{key:"bindinput",value:function(e){""!=e.detail.value?this.setData({tabNum:0}):this.setData({inputNum:0}),this.setData({inputNum:e.detail.value})}},{key:"moneyTab",value:function(e){var t=e.currentTarget.dataset.num;this.setData({tabNum:1*t,inputNum:0})}},{key:"onLoad",value:function(e){this.totalNum=0,this.setData({yuNum:e["amp;num"],name:e["amp;name"],pname:e["amp;pname"]}),this.projectAccountId=e.pid}}]),t}(v.default.Component);Page(y._createPage(x))}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../npm/labrador/global.js');
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _regenerator = require('../../npm/babel-runtime/regenerator/index.js');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _asyncToGenerator2 = require('../../npm/babel-runtime/helpers/asyncToGenerator.js');
+
+var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+
+var _getPrototypeOf = require('../../npm/babel-runtime/core-js/object/get-prototype-of.js');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('../../npm/babel-runtime/helpers/classCallCheck.js');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('../../npm/babel-runtime/helpers/createClass.js');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('../../npm/babel-runtime/helpers/possibleConstructorReturn.js');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('../../npm/babel-runtime/helpers/inherits.js');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _labrador = require('../../npm/labrador/index.js');
+
+var _labrador2 = _interopRequireDefault(_labrador);
+
+var _alert = require('../../components/alert/alert.js');
+
+var _alert2 = _interopRequireDefault(_alert);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Recharge = function (_wx$Component) {
+	(0, _inherits3.default)(Recharge, _wx$Component);
+
+	function Recharge() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		(0, _classCallCheck3.default)(this, Recharge);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Recharge.__proto__ || (0, _getPrototypeOf2.default)(Recharge)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
+			tabNum: 9,
+			inputNum: 0,
+			assetsPath: _labrador2.default.app.data.assetsPath,
+			yuNum: "",
+			name: "",
+			pname: ""
+		}, _this.children = {
+			alert: new _alert2.default({ msg: "@msg" })
+		}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	}
+
+	(0, _createClass3.default)(Recharge, [{
+		key: 'chashMoney',
+		value: function () {
+			var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(event) {
+				var _url, res, payResult;
+
+				return _regenerator2.default.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								this.totalNum = this.data.tabNum * 1 + this.data.inputNum * 1;
+
+								if (!(this.totalNum * 1 <= 0)) {
+									_context.next = 3;
+									break;
+								}
+
+								return _context.abrupt('return', this.children.alert.show("充值金额需大于0元"));
+
+							case 3:
+								//return console.log(this.data.tabNum,this.data.inputNum,this.totalNum)
+								_url = _labrador2.default.app.data.ajaxPath + "/wxapi/project/account/recharge";
+								_context.next = 6;
+								return _labrador2.default.request({
+									url: _url,
+									header: {
+										'content-type': 'application/x-www-form-urlencoded'
+									},
+									method: "POST",
+									data: {
+										projectAccountId: this.projectAccountId,
+										rechargeAmount: this.totalNum * 1,
+										code: _labrador2.default.app.globalData.storage.code
+									}
+								});
+
+							case 6:
+								res = _context.sent;
+
+								if (!(res.data.status == 0)) {
+									_context.next = 13;
+									break;
+								}
+
+								_context.next = 10;
+								return _labrador2.default.requestPayment(res.data.data);
+
+							case 10:
+								payResult = _context.sent;
+								_context.next = 13;
+								return _labrador2.default.redirectTo({
+									url: '/pages/paySuccess/paySuccess'
+								});
+
+							case 13:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, this);
+			}));
+
+			function chashMoney(_x) {
+				return _ref2.apply(this, arguments);
+			}
+
+			return chashMoney;
+		}()
+	}, {
+		key: 'bindinput',
+		value: function bindinput(event) {
+			if (event.detail.value != "") {
+				this.setData({
+					tabNum: 0
+				});
+			} else {
+				this.setData({
+					inputNum: 0
+				});
+			}
+			this.setData({
+				inputNum: event.detail.value
+			});
+		}
+	}, {
+		key: 'moneyTab',
+		value: function moneyTab(event) {
+			// console.log(event)
+			var num = event.currentTarget.dataset.num;
+			this.setData({
+				tabNum: num * 1,
+				inputNum: 0
+			});
+		}
+	}, {
+		key: 'onLoad',
+		value: function onLoad(e) {
+			// console.log(e)
+			this.totalNum = 0;
+			this.setData({
+				yuNum: e["amp;num"],
+				name: e["amp;name"],
+				pname: e["amp;pname"]
+			});
+			this.projectAccountId = e.pid;
+		}
+	}]);
+	return Recharge;
+}(_labrador2.default.Component);
+
+
+Page(_labrador._createPage(Recharge));
+
+})(module,require);

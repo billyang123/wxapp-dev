@@ -1,1 +1,302 @@
-"use strict";!function(t,n){var r,e,o,i=(t.exports={},window=n("../../../labrador/global.js")),s=n("./_library.js"),i=n("./_global.js"),c=n("./_ctx.js"),a=n("./_classof.js"),u=n("./_export.js"),f=n("./_is-object.js"),h=n("./_a-function.js"),_=n("./_an-instance.js"),l=n("./_for-of.js"),v=n("./_species-constructor.js"),d=n("./_task.js").set,j=n("./_microtask.js")(),p="Promise",m=i.TypeError,y=i.process,w=i[p],y=i.process,b="process"==a(y),g=function(){},P=!!function(){try{var t=w.resolve(1),r=(t.constructor={})[n("./_wks.js")("species")]=function(t){t(g,g)};return(b||"function"==typeof PromiseRejectionEvent)&&t.then(g)instanceof r}catch(t){}}(),k=function(t,n){return t===n||t===w&&n===o},x=function(t){var n;return!(!f(t)||"function"!=typeof(n=t.then))&&n},F=function(t){return k(w,t)?new S(t):new e(t)},S=e=function(t){var n,r;this.promise=new t(function(t,e){if(void 0!==n||void 0!==r)throw m("Bad Promise constructor");n=t,r=e}),this.resolve=h(n),this.reject=h(r)},E=function(t){try{t()}catch(t){return{error:t}}},R=function(t,n){if(!t._n){t._n=!0;var r=t._c;j(function(){for(var e=t._v,o=1==t._s,i=0,s=function(n){var r,i,s=o?n.ok:n.fail,c=n.resolve,a=n.reject,u=n.domain;try{s?(o||(2==t._h&&G(t),t._h=1),s===!0?r=e:(u&&u.enter(),r=s(e),u&&u.exit()),r===n.promise?a(m("Promise-chain cycle")):(i=x(r))?i.call(r,c,a):c(r)):a(e)}catch(t){a(t)}};r.length>i;)s(r[i++]);t._c=[],t._n=!1,n&&!t._h&&q(t)})}},q=function(t){d.call(i,function(){var n,r,e,o=t._v;if(B(t)&&(n=E(function(){b?y.emit("unhandledRejection",o,t):(r=i.onunhandledrejection)?r({promise:t,reason:o}):(e=i.console)&&e.error&&e.error("Unhandled promise rejection",o)}),t._h=b||B(t)?2:1),t._a=void 0,n)throw n.error})},B=function(t){if(1==t._h)return!1;for(var n,r=t._a||t._c,e=0;r.length>e;)if(n=r[e++],n.fail||!B(n.promise))return!1;return!0},G=function(t){d.call(i,function(){var n;b?y.emit("rejectionHandled",t):(n=i.onrejectionhandled)&&n({promise:t,reason:t._v})})},H=function(t){var n=this;n._d||(n._d=!0,n=n._w||n,n._v=t,n._s=2,n._a||(n._a=n._c.slice()),R(n,!0))},T=function(t){var n,r=this;if(!r._d){r._d=!0,r=r._w||r;try{if(r===t)throw m("Promise can't be resolved itself");(n=x(t))?j(function(){var e={_w:r,_d:!1};try{n.call(t,c(T,e,1),c(H,e,1))}catch(t){H.call(e,t)}}):(r._v=t,r._s=1,R(r,!1))}catch(t){H.call({_w:r,_d:!1},t)}}};P||(w=function(t){_(this,w,p,"_h"),h(t),r.call(this);try{t(c(T,this,1),c(H,this,1))}catch(t){H.call(this,t)}},r=function(t){this._c=[],this._a=void 0,this._s=0,this._d=!1,this._v=void 0,this._h=0,this._n=!1},r.prototype=n("./_redefine-all.js")(w.prototype,{then:function(t,n){var r=F(v(this,w));return r.ok="function"!=typeof t||t,r.fail="function"==typeof n&&n,r.domain=b?y.domain:void 0,this._c.push(r),this._a&&this._a.push(r),this._s&&R(this,!1),r.promise},catch:function(t){return this.then(void 0,t)}}),S=function(){var t=new r;this.promise=t,this.resolve=c(T,t,1),this.reject=c(H,t,1)}),u(u.G+u.W+u.F*!P,{Promise:w}),n("./_set-to-string-tag.js")(w,p),n("./_set-species.js")(p),o=n("./_core.js")[p],u(u.S+u.F*!P,p,{reject:function(t){var n=F(this),r=n.reject;return r(t),n.promise}}),u(u.S+u.F*(s||!P),p,{resolve:function(t){if(t instanceof w&&k(t.constructor,this))return t;var n=F(this),r=n.resolve;return r(t),n.promise}}),u(u.S+u.F*!(P&&n("./_iter-detect.js")(function(t){w.all(t).catch(g)})),p,{all:function(t){var n=this,r=F(n),e=r.resolve,o=r.reject,i=E(function(){var r=[],i=0,s=1;l(t,!1,function(t){var c=i++,a=!1;r.push(void 0),s++,n.resolve(t).then(function(t){a||(a=!0,r[c]=t,--s||e(r))},o)}),--s||e(r)});return i&&o(i.error),r.promise},race:function(t){var n=this,r=F(n),e=r.reject,o=E(function(){l(t,!1,function(t){n.resolve(t).then(r.resolve,e)})});return o&&e(o.error),r.promise}})}(module,require);
+'use strict';
+(function(module,require){var exports=module.exports={};
+var global=window=require('../../../labrador/global.js');
+var LIBRARY            = require('./_library.js')
+  , global             = require('./_global.js')
+  , ctx                = require('./_ctx.js')
+  , classof            = require('./_classof.js')
+  , $export            = require('./_export.js')
+  , isObject           = require('./_is-object.js')
+  , aFunction          = require('./_a-function.js')
+  , anInstance         = require('./_an-instance.js')
+  , forOf              = require('./_for-of.js')
+  , speciesConstructor = require('./_species-constructor.js')
+  , task               = require('./_task.js').set
+  , microtask          = require('./_microtask.js')()
+  , PROMISE            = 'Promise'
+  , TypeError          = global.TypeError
+  , process            = global.process
+  , $Promise           = global[PROMISE]
+  , process            = global.process
+  , isNode             = classof(process) == 'process'
+  , empty              = function(){ /* empty */ }
+  , Internal, GenericPromiseCapability, Wrapper;
+
+var USE_NATIVE = !!function(){
+  try {
+    // correct subclassing with @@species support
+    var promise     = $Promise.resolve(1)
+      , FakePromise = (promise.constructor = {})[require('./_wks.js')('species')] = function(exec){ exec(empty, empty); };
+    // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
+    return (isNode || typeof PromiseRejectionEvent == 'function') && promise.then(empty) instanceof FakePromise;
+  } catch(e){ /* empty */ }
+}();
+
+// helpers
+var sameConstructor = function(a, b){
+  // with library wrapper special case
+  return a === b || a === $Promise && b === Wrapper;
+};
+var isThenable = function(it){
+  var then;
+  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+};
+var newPromiseCapability = function(C){
+  return sameConstructor($Promise, C)
+    ? new PromiseCapability(C)
+    : new GenericPromiseCapability(C);
+};
+var PromiseCapability = GenericPromiseCapability = function(C){
+  var resolve, reject;
+  this.promise = new C(function($$resolve, $$reject){
+    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
+    resolve = $$resolve;
+    reject  = $$reject;
+  });
+  this.resolve = aFunction(resolve);
+  this.reject  = aFunction(reject);
+};
+var perform = function(exec){
+  try {
+    exec();
+  } catch(e){
+    return {error: e};
+  }
+};
+var notify = function(promise, isReject){
+  if(promise._n)return;
+  promise._n = true;
+  var chain = promise._c;
+  microtask(function(){
+    var value = promise._v
+      , ok    = promise._s == 1
+      , i     = 0;
+    var run = function(reaction){
+      var handler = ok ? reaction.ok : reaction.fail
+        , resolve = reaction.resolve
+        , reject  = reaction.reject
+        , domain  = reaction.domain
+        , result, then;
+      try {
+        if(handler){
+          if(!ok){
+            if(promise._h == 2)onHandleUnhandled(promise);
+            promise._h = 1;
+          }
+          if(handler === true)result = value;
+          else {
+            if(domain)domain.enter();
+            result = handler(value);
+            if(domain)domain.exit();
+          }
+          if(result === reaction.promise){
+            reject(TypeError('Promise-chain cycle'));
+          } else if(then = isThenable(result)){
+            then.call(result, resolve, reject);
+          } else resolve(result);
+        } else reject(value);
+      } catch(e){
+        reject(e);
+      }
+    };
+    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+    promise._c = [];
+    promise._n = false;
+    if(isReject && !promise._h)onUnhandled(promise);
+  });
+};
+var onUnhandled = function(promise){
+  task.call(global, function(){
+    var value = promise._v
+      , abrupt, handler, console;
+    if(isUnhandled(promise)){
+      abrupt = perform(function(){
+        if(isNode){
+          process.emit('unhandledRejection', value, promise);
+        } else if(handler = global.onunhandledrejection){
+          handler({promise: promise, reason: value});
+        } else if((console = global.console) && console.error){
+          console.error('Unhandled promise rejection', value);
+        }
+      });
+      // Browsers should not trigger `rejectionHandled` event if it was handled here, NodeJS - should
+      promise._h = isNode || isUnhandled(promise) ? 2 : 1;
+    } promise._a = undefined;
+    if(abrupt)throw abrupt.error;
+  });
+};
+var isUnhandled = function(promise){
+  if(promise._h == 1)return false;
+  var chain = promise._a || promise._c
+    , i     = 0
+    , reaction;
+  while(chain.length > i){
+    reaction = chain[i++];
+    if(reaction.fail || !isUnhandled(reaction.promise))return false;
+  } return true;
+};
+var onHandleUnhandled = function(promise){
+  task.call(global, function(){
+    var handler;
+    if(isNode){
+      process.emit('rejectionHandled', promise);
+    } else if(handler = global.onrejectionhandled){
+      handler({promise: promise, reason: promise._v});
+    }
+  });
+};
+var $reject = function(value){
+  var promise = this;
+  if(promise._d)return;
+  promise._d = true;
+  promise = promise._w || promise; // unwrap
+  promise._v = value;
+  promise._s = 2;
+  if(!promise._a)promise._a = promise._c.slice();
+  notify(promise, true);
+};
+var $resolve = function(value){
+  var promise = this
+    , then;
+  if(promise._d)return;
+  promise._d = true;
+  promise = promise._w || promise; // unwrap
+  try {
+    if(promise === value)throw TypeError("Promise can't be resolved itself");
+    if(then = isThenable(value)){
+      microtask(function(){
+        var wrapper = {_w: promise, _d: false}; // wrap
+        try {
+          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+        } catch(e){
+          $reject.call(wrapper, e);
+        }
+      });
+    } else {
+      promise._v = value;
+      promise._s = 1;
+      notify(promise, false);
+    }
+  } catch(e){
+    $reject.call({_w: promise, _d: false}, e); // wrap
+  }
+};
+
+// constructor polyfill
+if(!USE_NATIVE){
+  // 25.4.3.1 Promise(executor)
+  $Promise = function Promise(executor){
+    anInstance(this, $Promise, PROMISE, '_h');
+    aFunction(executor);
+    Internal.call(this);
+    try {
+      executor(ctx($resolve, this, 1), ctx($reject, this, 1));
+    } catch(err){
+      $reject.call(this, err);
+    }
+  };
+  Internal = function Promise(executor){
+    this._c = [];             // <- awaiting reactions
+    this._a = undefined;      // <- checked in isUnhandled reactions
+    this._s = 0;              // <- state
+    this._d = false;          // <- done
+    this._v = undefined;      // <- value
+    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
+    this._n = false;          // <- notify
+  };
+  Internal.prototype = require('./_redefine-all.js')($Promise.prototype, {
+    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
+    then: function then(onFulfilled, onRejected){
+      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
+      reaction.ok     = typeof onFulfilled == 'function' ? onFulfilled : true;
+      reaction.fail   = typeof onRejected == 'function' && onRejected;
+      reaction.domain = isNode ? process.domain : undefined;
+      this._c.push(reaction);
+      if(this._a)this._a.push(reaction);
+      if(this._s)notify(this, false);
+      return reaction.promise;
+    },
+    // 25.4.5.1 Promise.prototype.catch(onRejected)
+    'catch': function(onRejected){
+      return this.then(undefined, onRejected);
+    }
+  });
+  PromiseCapability = function(){
+    var promise  = new Internal;
+    this.promise = promise;
+    this.resolve = ctx($resolve, promise, 1);
+    this.reject  = ctx($reject, promise, 1);
+  };
+}
+
+$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
+require('./_set-to-string-tag.js')($Promise, PROMISE);
+require('./_set-species.js')(PROMISE);
+Wrapper = require('./_core.js')[PROMISE];
+
+// statics
+$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
+  // 25.4.4.5 Promise.reject(r)
+  reject: function reject(r){
+    var capability = newPromiseCapability(this)
+      , $$reject   = capability.reject;
+    $$reject(r);
+    return capability.promise;
+  }
+});
+$export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
+  // 25.4.4.6 Promise.resolve(x)
+  resolve: function resolve(x){
+    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
+    if(x instanceof $Promise && sameConstructor(x.constructor, this))return x;
+    var capability = newPromiseCapability(this)
+      , $$resolve  = capability.resolve;
+    $$resolve(x);
+    return capability.promise;
+  }
+});
+$export($export.S + $export.F * !(USE_NATIVE && require('./_iter-detect.js')(function(iter){
+  $Promise.all(iter)['catch'](empty);
+})), PROMISE, {
+  // 25.4.4.1 Promise.all(iterable)
+  all: function all(iterable){
+    var C          = this
+      , capability = newPromiseCapability(C)
+      , resolve    = capability.resolve
+      , reject     = capability.reject;
+    var abrupt = perform(function(){
+      var values    = []
+        , index     = 0
+        , remaining = 1;
+      forOf(iterable, false, function(promise){
+        var $index        = index++
+          , alreadyCalled = false;
+        values.push(undefined);
+        remaining++;
+        C.resolve(promise).then(function(value){
+          if(alreadyCalled)return;
+          alreadyCalled  = true;
+          values[$index] = value;
+          --remaining || resolve(values);
+        }, reject);
+      });
+      --remaining || resolve(values);
+    });
+    if(abrupt)reject(abrupt.error);
+    return capability.promise;
+  },
+  // 25.4.4.4 Promise.race(iterable)
+  race: function race(iterable){
+    var C          = this
+      , capability = newPromiseCapability(C)
+      , reject     = capability.reject;
+    var abrupt = perform(function(){
+      forOf(iterable, false, function(promise){
+        C.resolve(promise).then(capability.resolve, reject);
+      });
+    });
+    if(abrupt)reject(abrupt.error);
+    return capability.promise;
+  }
+});
+})(module,require);

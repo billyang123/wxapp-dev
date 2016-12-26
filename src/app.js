@@ -36,7 +36,6 @@ export default class {
     //https://wx.qlogo.cn/mmopen/PiajxSqBRaEJFWwlW2qwhv9WnHmcDoLcI83AWibecAEKAntTbSfmNp0ReEiarvEl5wx7UvWkQdaNMwOhtDxibibuhufkCmAPAy64MWvcaS2PjzIw/0
     if(/wx.qlogo.cn\/mmopen\/.+\/0/.test(url)){
       url = url.replace('/0','/132')
-      console.log(url);
     }
     if(!/(http|https)\:/.test(url)){
       return "https:"+url;

@@ -269,6 +269,7 @@ export default class DoctorDetail extends wx.Component {
 		})
 		//let height = res.data.faNumber>1?900:500;
 		//console.log(res.data.faNumber)
+		res.data.doctorHeadImgUrl = wx.app.setHttpsUrl(res.data.doctorHeadImgUrl);
 		this.setData({
 			detail:res.data
 		})
