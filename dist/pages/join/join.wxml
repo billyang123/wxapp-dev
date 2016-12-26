@@ -5,7 +5,7 @@
 <view class="error-tips alert-error-tips" animation="{{alert.animdata}}" style="height:0">
 <text>{{alert.msg}}</text>
 </view>
-<view class="input-area" xmlns:wx="" wx:for="{{persons}}" wx:for-index="idx">
+<view class="input-area" xmlns:wx="" wx:for="{{persons}}" wx:key="idx" wx:for-index="idx">
 <view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
 <view class="section">
 <view class="section_title">姓  名</view>

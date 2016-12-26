@@ -1,6 +1,6 @@
 <view class="container">
 <view class="media-list slide-media-list slide-list slide-slide-list">
-<view xmlns:wx="" wx:for="{{slide.slideData}}" wx:for-index="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
+<view xmlns:wx="" wx:for="{{slide.slideData}}" wx:for-index="idx" wx:key="idx" catchtap="_dispatch" data-index="{{idx}}" data-catchtap="setSlide" data-path="slide">
 <view class="item-content slide-item-content">
 <view class="item-inner slide-item-inner">
 <view class="item-title slide-item-title">
@@ -14,13 +14,13 @@
 </view>
 <view class="item-xmain{{item.auto}} slide-item-xmain{{item.auto}}" animation="{{slide.slideAnim[idx]}}" style="height:0;">
 <view class="item-xmain-bd slide-item-xmain-bd">
-<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text">
+<view class="p slide-p" wx:for="{{item.txt}}" wx:for-item="text" wx:key="index" wx:for-index="index">
 <text>{{text}}</text>
 </view>
 </view>
 </view>
 </view>
-<view wx:for="{{slide.slideMore}}">
+<view wx:for="{{slide.slideMore}}" wx:key="index" wx:for-index="index">
 <navigator wx:if="{{item.link}}" class="item-link slide-item-link item-content slide-item-content" redirect="" url="{{item.link}}">
 <view class="item-inner slide-item-inner item-link-inner slide-item-link-inner">
 <view class="item-title slide-item-title">

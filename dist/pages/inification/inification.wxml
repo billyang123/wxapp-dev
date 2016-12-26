@@ -22,7 +22,7 @@
 <view class="txt">最高互助额度(元)</view>
 </view>
 </view>
-<view class="group-item" wx:for="{{list}}">
+<view class="group-item" wx:for="{{list}}" wx:key="idx" wx:for-index="idx">
 <view class="gi-title">
 <view class="gt">
 <text>{{item.insuredName}}</text>

@@ -5,6 +5,9 @@ export default class Elecert extends wx.Component {
         items:['《17互助公约》','《789重大疾病互助公约》','《留守儿童互助公约》','《公共交通、旅游意外互助公约》','《少儿大病、意外互助计划公约》','《80后孕妈婴宝互助公约》','《中老年大病意外互助公约》'],
 		project:{},
 		list:{},
+    relationship:{
+      SELF:"本人",MATE:"配偶",CHILDRENS:"子女",PARENTS:"双方父母",GRANDCHILD:"(外)孙子女",GRANDPARENTS:"双方(外)祖父母"
+    },
 		projectAccount:{},
         projectId:''
 	};

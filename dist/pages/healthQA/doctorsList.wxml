@@ -1,6 +1,6 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="_dispatch" data-bindscrolltolower="loadMore">
 <view class="container doctors">
-<navigator class="doctor" xmlns:wx="" wx:for="{{list}}" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{item.id}}">
+<navigator class="doctor" xmlns:wx="" wx:for="{{list}}" wx:key="id" redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 <view class="doctor-inner">
 <view class="media">
 <image class="avatar" src="{{item.doctorHeadImgUrl}}"/>

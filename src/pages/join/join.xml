@@ -3,7 +3,7 @@
 		<text>微信支付{{totalAmt}}元</text>
 	</view>
 	<component key="alert"/>
-	<view class="input-area" wx:for="{{persons}}" wx:for-index="idx">
+	<view class="input-area" wx:for="{{persons}}" wx:key="idx" wx:for-index="idx">
 		<view class="sec-con" style="width:{{persons.length==1?750:625}}rpx">
 			<view class="section">
 				<view class="section_title">姓  名</view>

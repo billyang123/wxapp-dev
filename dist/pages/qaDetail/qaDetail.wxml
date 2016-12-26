@@ -1,6 +1,6 @@
 <view class="container">
 <view class="qa-main">
-<view xmlns:wx="" wx:for="{{qaData}}" wx:for-index="idx" wx:for-item="item">
+<view xmlns:wx="" wx:for="{{qaData}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
 <view class="h2">
 <text>{{idx+1}}. {{item.n}}</text>
 </view>

@@ -11,7 +11,7 @@
 		</view>
 	</view>
 	<view class="dlist-title" wx:if="{{list.length>0}}">他回答了{{detail.faNumber}}个问题，共有{{detail.fansNumber}}次收听</view>
-	<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+	<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index" wx:key="id">
 		<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
 			<view class="hd-title">{{item.questionContent}}</view>
 			<view class="hd-content">

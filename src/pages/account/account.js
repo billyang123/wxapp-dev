@@ -43,13 +43,6 @@ export default class Account extends wx.Component {
 			});
 		})
 	}
-	json2Form(json) { 
-	  var str = []; 
-	  for(var p in json){ 
-	    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p])); 
-	  } 
-	  return str.join("&"); 
-	} 
 	makePhoneCall(event){
 		wx.app.makePhoneCall(event)
 	}

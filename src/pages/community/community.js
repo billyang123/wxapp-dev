@@ -470,11 +470,6 @@ export default class Community extends wx.Component {
 		if(this.isloading) return;
       	this.isloading = true;
       	let d = await wx.app.checkLogin();
-      	wx.showToast({
-	        title: '555',
-	        icon: 'loading',
-	        duration: 10000
-	      })
       	if(!d){
       		d = await wx.app.doLogin()
       	}

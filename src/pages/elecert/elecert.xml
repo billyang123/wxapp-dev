@@ -16,7 +16,7 @@
 			</view>
 			<view class="p" wx:if="{{projectAccount.relationshipCode}}">
 				<text class="t">关系：</text>
-				<text class="gray-m">{{projectAccount.relationshipCode}}</text>
+				<text class="gray-m">{{relationship[projectAccount.relationshipCode]}}</text>
 			</view>
 			<view class="p" wx:else="">
 				<text class="t">身份证号：</text>
@@ -38,7 +38,7 @@
 				<view class="item-title">互助范围</view>
 			</view>
 		</navigator>
-		<view class="item-content" wx:for="{{list}}">
+		<view class="item-content" wx:for="{{list}}" wx:key="idx" wx:for-index="idx">
 			<view class="item-inner">
 				<view class="item-title-row">
 					<view class="item-title">{{item.subject_name}}</view>

@@ -2,7 +2,7 @@
 <view class="container health">
 <!-- <component key="navbar"/> -->
 <view class="health-hd">
-<navigator redirect="" hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" url="/pages/healthQA/doctorDetail?id={{item.id}}">
+<navigator redirect="" hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" wx:key="id" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 <view>
 <image src="{{item.doctorHeadImgUrl}}" class="h-avatar"/>
 </view>
@@ -20,12 +20,12 @@
 <view class="scroll-view-item tab-item{{tabIndex == 0?' active':''}}" catchtap="_dispatch" data-id="0" data-catchtap="tabs">
 <text>全部</text>
 </view>
-<view class="scroll-view-item tab-item{{tabIndex == item.id?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" catchtap="_dispatch" data-id="{{item.id}}" data-catchtap="tabs">
+<view class="scroll-view-item tab-item{{tabIndex == item.id?' active':''}}" wx:for="{{tabData}}" wx:for-index="idx" wx:key="id" catchtap="_dispatch" data-id="{{item.id}}" data-catchtap="tabs">
 <text>{{item.labelName}}</text>
 </view>
 </view>
 </scroll-view>
-<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index">
+<view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index" wx:key="id">
 <navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
 <view class="hd-title">{{item.questionContent}}</view>
 <view class="hd-content">

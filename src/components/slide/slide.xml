@@ -1,5 +1,5 @@
 <view class="media-list slide-list">
-	<view wx:for="{{slideData}}" wx:for-index="idx" catchtap="setSlide" data-index="{{idx}}">
+	<view wx:for="{{slideData}}" wx:for-index="idx" wx:key="idx" catchtap="setSlide" data-index="{{idx}}">
 		<view class="item-content">
 			<view class="item-inner">
 				<view class="item-title">
@@ -13,13 +13,13 @@
 		</view>
 		<view class="item-xmain{{item.auto}}" animation="{{slideAnim[idx]}}" style="height:0;">
 			<view class="item-xmain-bd">
-				<view class="p" wx:for="{{item.txt}}" wx:for-item="text">
+				<view class="p" wx:for="{{item.txt}}" wx:for-item="text" wx:key="index" wx:for-index="index">
 					<text>{{text}}</text>
 				</view>
 			</view>
 		</view>
 	</view>
-	<view wx:for="{{slideMore}}">
+	<view wx:for="{{slideMore}}" wx:key="index" wx:for-index="index">
 		<navigator wx:if="{{item.link}}" class="item-link item-content" redirect="" url="{{item.link}}">
 			<view class="item-inner item-link-inner">
 				<view class="item-title">
