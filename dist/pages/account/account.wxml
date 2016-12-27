@@ -48,7 +48,7 @@
 </view>
 </view>
 </view>
-<navigator class="item-content" redirect="" url="/pages/applyhuzhu/applyhuzhu">
+<navigator class="item-content" url="/pages/applyhuzhu/applyhuzhu">
 <view class="item-media">
 <image class="ac-list-img" src="{{assetsPath}}/images/account_sqhz_icon.png"/>
 </view>
@@ -60,7 +60,7 @@
 </navigator>
 </view>
 <view class="media-list ac-list">
-<navigator class="item-content" redirect="" url="/pages/qa/qa">
+<navigator class="item-content" url="/pages/qa/qa">
 <view class="item-media">
 <image class="ac-list-img" src="{{assetsPath}}/images/account-question-icon.png"/>
 </view>

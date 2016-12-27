@@ -1,41 +1,41 @@
 <view class="container">
 <view class="media-list qa-list">
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=1">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=1">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>平台介绍</text>
 </view>
 </view>
 </navigator>
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=2">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=2">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>平台规则</text>
 </view>
 </view>
 </navigator>
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=3">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=3">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>互助申请</text>
 </view>
 </view>
 </navigator>
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=4">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=4">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>风险控制</text>
 </view>
 </view>
 </navigator>
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=5">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=5">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>资金安全公开、监督透明</text>
 </view>
 </view>
 </navigator>
-<navigator class="item-link item-content" redirect="" url="/pages/qaDetail/qaDetail?t=6">
+<navigator class="item-link item-content" open-type="navigate" url="/pages/qaDetail/qaDetail?t=6">
 <view class="item-inner item-link-inner">
 <view class="item-title">
 <text>公司介绍</text>

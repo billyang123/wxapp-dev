@@ -2,7 +2,7 @@
 <view class="container health">
 <!-- <component key="navbar"/> -->
 <view class="health-hd">
-<navigator redirect="" hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" wx:key="id" url="/pages/healthQA/doctorDetail?id={{item.id}}">
+<navigator hover-class="none" class="grad" xmlns:wx="" wx:for="{{doclist}}" wx:key="id" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 <view>
 <image src="{{item.doctorHeadImgUrl}}" class="h-avatar"/>
 </view>
@@ -11,7 +11,7 @@
 </navigator>
 </view>
 <view class="askaction">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorsList">
+<navigator hover-class="none" url="/pages/healthQA/doctorsList">
 <button class="ask-btn">我要提问</button>
 </navigator>
 </view>
@@ -26,7 +26,7 @@
 </view>
 </scroll-view>
 <view class="tab-panel health-detail" wx:for="{{list}}" wx:for-index="index" wx:key="id">
-<navigator redirect="" hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
+<navigator hover-class="none" url="/pages/healthQA/detail?id={{item.id}}">
 <view class="hd-title">{{item.questionContent}}</view>
 <view class="hd-content">
 <image class="hd-avatar" src="{{item.healthDoctor.doctorHeadImgUrl}}"/>

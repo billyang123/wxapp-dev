@@ -8,8 +8,6 @@
     "pages/join/join",
     "pages/inification/inification",
     "pages/forfamily/forfamily",
-    "pages/applyform/applyform",
-    "pages/applyResult/applyResult",
     "pages/profile/profile",
     "pages/changeProfile/changeProfile",
     "pages/elecert/elecert",

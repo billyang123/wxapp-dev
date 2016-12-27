@@ -44,15 +44,15 @@
 </view>
 </view>
 <view class="gi-footer">
-<navigator class="gi-item" hover-class="none" redirect="" url="/pages/recharge/recharge?pid={{item.id}}&amp;name={{item.insuredName}}&amp;pname={{item.projectName}}&amp;num={{item.availableBalance}}">
+<navigator class="gi-item" hover-class="none" open-type="navigate" url="/pages/recharge/recharge?pid={{item.id}}&amp;name={{item.insuredName}}&amp;pname={{item.projectName}}&amp;num={{item.availableBalance}}">
 <text>充值</text>
 </navigator>
-<navigator class="gi-item" hover-class="none" redirect="" url="/pages/elecert/elecert?id={{item.id}}">
-<text>查看凭单</text>
+<navigator class="gi-item" hover-class="none" open-type="navigate" url="/pages/elecert/elecert?id={{item.id}}">
+<text>查看凭单</text>open-type="navigate"
 </navigator>
 </view>
 </view>
-<navigator class="bottom-btn" hover-class="none" redirect="true" url="/pages/forfamily/forfamily">
+<navigator class="bottom-btn" hover-class="none" open-type="navigate" url="/pages/forfamily/forfamily">
 <text>添加家人</text>
 </navigator>
 </view>
