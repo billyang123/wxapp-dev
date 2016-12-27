@@ -141,7 +141,7 @@ export default class {
     //console.log(this.globalData.storage)
     let userInfo = await wx.getUserInfo();
     this.globalData.userInfo = userInfo.userInfo
-    
+    await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
     let userInfoPost = await wx.request({
       url: wx.app.data.ajaxPath+"/wxapi/user/oauth/doOauth",
       method:"post",
