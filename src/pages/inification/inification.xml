@@ -49,7 +49,7 @@
 				</navigator>
 					
 				<navigator class="gi-item" hover-class="none" open-type="navigate" url="/pages/elecert/elecert?id={{item.id}}">
-					<text>查看凭单</text>open-type="navigate"
+					<text>查看凭单</text>
 				</navigator>
 		
 			</view>
