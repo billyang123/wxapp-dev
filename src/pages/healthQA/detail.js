@@ -221,7 +221,7 @@ export default class HealthDetail extends wx.Component {
 	async checkLink(event){
 		var _this = this;
 		var _index = event.currentTarget.dataset.index;
-		console.log(_index)
+		//console.log(_index)
 		if(typeof(_index) == "number") {
 			this.commitIndex = _index;
 		}else{
