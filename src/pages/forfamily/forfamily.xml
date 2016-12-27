@@ -10,7 +10,7 @@
 				<view>我只希望他们都能够健健康康</view>
 			</view>
 		</view>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=1">
+		<navigator class="give-family-list" url="/pages/join/join?type=1">
 		
 			<view class="dl">
 				<view class="dt">
@@ -33,7 +33,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=5">
+		<navigator class="give-family-list" url="/pages/join/join?type=5">
 			<view class="dl">
 				<view class="dt">
 					<!-- <text>给老婆</text> -->
@@ -55,7 +55,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=4">
+		<navigator class="give-family-list" url="/pages/join/join?type=4">
 			<view class="dl">
 				<view class="dt">
 					<!-- <text>给孩子</text> -->
@@ -78,7 +78,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=6">
+		<navigator class="give-family-list" url="/pages/join/join?type=6">
 			<view class="dl">
 				<view class="dt">
 					<text>给</text>
@@ -100,7 +100,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=3">
+		<navigator class="give-family-list" url="/pages/join/join?type=3">
 			<view class="dl">
 				<view class="dt">
 					<text>给</text>
@@ -122,7 +122,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator class="give-family-list" redirect="" url="/pages/join/join?type=2">
+		<navigator class="give-family-list" url="/pages/join/join?type=2">
 			<view class="dl">
 				<view class="dt">
 					<text>给</text>

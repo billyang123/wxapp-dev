@@ -3,7 +3,7 @@
 	<view class="health-detail">
 		<view class="hd-title">{{detail.questionContent}}</view>
 		<view class="hd-content">
-			<navigator redirect="" hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
+			<navigator hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
 				<image class="hd-avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
 			</navigator>
 			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->

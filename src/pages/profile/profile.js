@@ -88,16 +88,16 @@ export default class Profile extends wx.Component {
     
   }
   chooseSex(e){
-    let id=e.currentTarget.id;
+    let id=e.currentTarget.dataset.id;
     if (id=="sexm"){
       this.setData({
         sexm:id,
-        sexw:null,
+        sexw:false,
         chooseSex:'男'
       })
     }else if (id=="sexw"){
       this.setData({
-        sexm:null,
+        sexm:false,
         sexw:id,
         chooseSex:'女'
       })
@@ -178,7 +178,7 @@ export default class Profile extends wx.Component {
  /* async onLoad(e){
     this.getData();
   }*/
-  async onLoad(e){
+  async onShow(e){
     this.getData();
   }
 }

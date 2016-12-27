@@ -11,7 +11,7 @@
 </swiper>
 </view> -->
 <view class="swiper">
-<navigator redirect="" hover-class="none" url="{{banner.href}}">
+<navigator open-type="navigate" hover-class="none" url="{{banner.href}}">
 <image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
 </navigator>
 </view>

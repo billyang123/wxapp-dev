@@ -66,7 +66,7 @@
 					</view>
 				</view>
 			</view>
-			<navigator class="item-link item-content" wx:for="{{power.ll}}" wx:key="index" wx:for-index="index" redirect="" url="{{item.link}}">
+			<navigator class="item-link item-content" wx:for="{{power.ll}}" wx:key="index" wx:for-index="index"  url="{{item.link}}">
 				<view class="item-inner item-link-inner">
 					<view class="item-title">
 						<text wx:if="{{item.t}}">{{item.t}}</text>
@@ -96,7 +96,7 @@
 					</view>
 				</view>
 			</view>
-			<navigator class="item-content item-link" redirect="" url="{{item[1]}}" wx:for="{{treaty.ll}}" wx:key="index" wx:for-index="index">
+			<navigator class="item-content item-link"  url="{{item[1]}}" wx:for="{{treaty.ll}}" wx:key="index" wx:for-index="index">
 				<view class="item-inner item-link-inner">
 					<view class="item-title">
 						<text class="gray">{{item[0]}}</text>
