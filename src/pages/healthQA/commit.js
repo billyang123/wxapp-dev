@@ -36,7 +36,7 @@ export default class Commit extends wx.Component {
 			let tme = new Date();
 			let n_data = {
 				resId:res.data,
-				avatar:useInfo.data.avatarUrl.substring(0,useInfo.data.avatarUrl.length-1)+96,
+				avatar:wx.app.setHttpsUrl(useInfo.data.avatarUrl),
 				nickName:useInfo.data.nickName,
 				content:content,
 				time:wx.app.dateformat(tme,"-",":")
