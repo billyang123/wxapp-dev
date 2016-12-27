@@ -23,15 +23,15 @@ export default class Recharge extends wx.Component {
 		// if(this.totalNum<9){
 		// 	return this.children.alert.show("充值金额需9元或9元以上的整数")
 		// }
-		this.totalNum = this.data.tabNum*1+(this.data.inputNum || 0)*1;
-		if(this.totalNum<=0){
-			return this.children.alert.show("充值金额需0元以上")
-		}
-		// this.totalNum = parseInt(this.data.tabNum,10)+parseInt(this.data.inputNum || 0,10);
-
-		// if(this.totalNum<9){
-		// 	return this.children.alert.show("充值金额需9元或9元以上的整数")
+		// this.totalNum = this.data.tabNum*1+(this.data.inputNum || 0)*1;
+		// if(this.totalNum<=0){
+		// 	return this.children.alert.show("充值金额需0元以上")
 		// }
+		this.totalNum = parseInt(this.data.tabNum,10)+parseInt(this.data.inputNum || 0,10);
+		//console.log(this.totalNum,this.totalNum)
+		if(!this.totalNum || this.totalNum<9){
+			return this.children.alert.show("充值金额需9元或9元以上的整数")
+		}
 		//console.log(this.totalNum)
 		// if(this.totalNum>9999){
 		// 	return this.children.alert.show("充值金额应小于10000")

@@ -51,6 +51,8 @@ export default class Profile extends wx.Component {
       data: postData
     });
     if(res.data.status == 0){
+      wx.app.globalData.userInfo.nickName = this.data.nickName;
+      await wx.setStorage({ key: 'userInfo', data: wx.app.globalData.userInfo});
       wx.navigateBack()
 
     }else{

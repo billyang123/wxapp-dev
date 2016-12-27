@@ -160,15 +160,6 @@ export default class {
     wx.hideToast()
     if(userInfoPost.data.data == "logged"){
       let _user = await this.getUser(loginInfo.code);
-      if(_user.data){
-        if(_user.data.nickName){
-          this.globalData.userInfo.nickName = _user.data.nickName
-        }
-        if(_user.data.headImgUrl){
-          this.globalData.userInfo.avatarUrl = _user.data.headImgUrl
-        }
-      }
-      await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
       //return _user
       callback && callback(_user,userInfo);
       return true;
