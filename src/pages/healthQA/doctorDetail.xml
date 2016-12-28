@@ -28,7 +28,7 @@
 			</view>
 		</navigator>
 		<view class="hd-opt">
-			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="checkLink" class="hd-op" data-index="{{page*size+index}}">
+			<view data-link="/pages/healthQA/commit?qaId={{item.id}}" catchtap="checkLink" class="hd-op" data-id="{{item.id}}" data-index="{{page*size+index}}">
 				<icon class="iconfont icon-comment hd-iconfont"></icon>
 				<text>{{item.commentNumber}}</text>
 			</view>

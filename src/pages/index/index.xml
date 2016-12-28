@@ -4,6 +4,9 @@
 			<image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
 		</navigator>
 	</view>
+	<!-- <view class="title">
+		<view class="tname hz-group-tname">互助社群</view>
+	</view> -->
 	<view class="hz-content hz-group">
 		<view class="title">
 			<view class="tname hz-group-tname">互助社群</view>
