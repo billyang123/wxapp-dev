@@ -1,7 +1,7 @@
 import wx from 'labrador';
 
 //import Swiper from '../../components/swiper/swiper';
-import Navbar from '../../components/navbar/navbar';
+// import Navbar from '../../components/navbar/navbar';
 export default class Index extends wx.Component {
   data = {
     banner:{
@@ -11,10 +11,17 @@ export default class Index extends wx.Component {
     mImgArr:{},
     assetsPath:wx.app.data.assetsPath
   };
-  children = {
-    //swiper: new Swiper({imgUrls:"@bannerImgs"}),
-    navbar: new Navbar({cur:0})
-  };
+  // children = {
+  //   //swiper: new Swiper({imgUrls:"@bannerImgs"}),
+  //   navbar: new Navbar({cur:0})
+  // };
+  // onShareAppMessage() {
+  //   return {
+  //     title: '互助社群',
+  //     desc: '互助社群描述',
+  //     path: '/pages/index/index'
+  //   }
+  // }
   async onLoad(){
     //console.log(e)
     // wx.redirectTo({

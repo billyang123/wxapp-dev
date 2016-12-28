@@ -6,7 +6,6 @@
 			<navigator hover-class="none" url="/pages/healthQA/doctorDetail?id={{detail.healthDoctor.id}}">
 				<image class="hd-avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image>
 			</navigator>
-			<!-- <image class="avatar" src="{{detail.healthDoctor.doctorHeadImgUrl}}"></image> -->
 			<view class="bubble" catchtap="bindAudio" data-index="1" data-url="{{detail.answerRecUrl}}" data-id="{{detail.id}}">
 				<icon class="wave{{audio[detail.id].status?' waveing':' wave-default'}}"></icon>
 				<text>限时免费听</text>
@@ -78,7 +77,6 @@
 	<view class="commit-form" catchtap="checkLink" data-link="/pages/healthQA/commit?qaId={{detail.id}}">
 		<view class="commit-input">
 			<text style="color:#999;font-size:28rpx;">写留言…</text>
-			<!-- <input type="text" disabled="true" placeholder="写留言…" placeholder-style="color:#999;font-size:28rpx;"/> -->
 		</view>
 		<view class="commit-num">
 			<icon class="iconfont icon-comment fz42"></icon>

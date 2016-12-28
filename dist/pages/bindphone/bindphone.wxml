@@ -11,10 +11,6 @@
 <view class="name">
 <text>{{userInfo.nickName}}</text>
 </view>
-<!-- <view class="note">
-<icon class="icon-tip"></icon>
-<text>为了使用顺畅，请绑定您的手机号</text>
-</view> -->
 </view>
 <view class="bind-form">
 <form>

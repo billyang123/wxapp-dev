@@ -10,7 +10,7 @@
 		<view class="top-body">
 			<view class="tb-item">
 				<view class="nmb-txt">
-					<!-- <text class="num">{{numData.jionNumbers}}</text> -->
+					
 					<text class="num">{{bannerImg.n}}</text>
 					<text>人</text>
 				</view>

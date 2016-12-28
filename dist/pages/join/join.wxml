@@ -24,22 +24,10 @@
 <icon class="icon-add iconfont icon-roundadd"/>
 <text> 为家人添加保障</text>
 </view>
-<!-- <view class="money">
-<view class="t">
-<text>选择金额</text>
-</view>
-<view class="num">
-<text>9元</text>
-</view>
-</view> -->
 <view class="intro">
 <view>
 <text>请为本人或配偶，及他们的直系亲属添加保障。直系亲属是指，父母、儿女、（外）祖父母以（外）孙子女。</text>
 </view>
-<!-- <view><text>{{conditionTxt}}</text></view>
-<view class="tip">
-			请在加入本互助社群前咨询家人，避免重复加入。
-</view> -->
 </view>
 <view class="checkbox-group">
 <checkbox-group bindchange="_dispatch" data-bindchange="checkChange">

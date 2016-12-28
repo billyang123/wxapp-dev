@@ -1,5 +1,4 @@
 import wx from 'labrador';
-import Navbar from '../../components/navbar/navbar';
 export default class HealthIndex extends wx.Component {
 	data = {
 		//tab
@@ -38,9 +37,9 @@ export default class HealthIndex extends wx.Component {
 		doclist:[],
 		loading:false
 	};
-	children = {
-	    navbar: new Navbar({cur:1})
-	};
+	// children = {
+	//     navbar: new Navbar({cur:1})
+	// };
 	audioPlay(event){
 		// let id = event.currentTarget.dataset.id;
 		// this.data.audio[id].status=!this.data.audio[id].status;

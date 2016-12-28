@@ -1,6 +1,5 @@
 <scroll-view scroll-y="true" style="height: {{windowHieght}}px;" bindscrolltolower="loadMore">
 	<view class="container health">
-		<!-- <component key="navbar"/> -->
 		<view class="health-hd">
 			<navigator hover-class="none" class="grad" wx:for="{{doclist}}" wx:key="id" url="/pages/healthQA/doctorDetail?id={{item.id}}">
 				<view>

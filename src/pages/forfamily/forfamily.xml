@@ -36,7 +36,6 @@
 		<navigator class="give-family-list" url="/pages/join/join?type=5">
 			<view class="dl">
 				<view class="dt">
-					<!-- <text>给老婆</text> -->
 					<text>给</text>
 					<text>老</text>
 					<text>婆</text>

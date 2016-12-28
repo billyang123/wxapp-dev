@@ -1,50 +1,9 @@
 <view class="container">
-	<!-- <view class="swiper">
-		<swiper indicator-dots="false" autoplay="true" interval="5000" duration="1000">
-		  <block wx:for="{{bannerImgs}}">
-		  	<navigator redirect="" hover-class="none" url="{{item.href}}">
-			    <swiper-item data-link="{{item.href}}">
-			    	<image src="{{item.img}}" class="slide-image" data-link="{{item.href}}"/>
-			    </swiper-item>
-		    </navigator>
-		  </block>
-		</swiper>
-	</view> -->
 	<view class="swiper">
 		<navigator open-type="navigate" hover-class="none" url="{{banner.href}}">
 			<image src="{{assetsPath}}{{banner.img}}" class="slide-image"/>
 		</navigator>
 	</view>
-	<!-- <component key="navbar"/> -->
-	<!-- <view class="broad">
-		<view class="broad-number">
-			<view class="col-50">
-				<view class="nm-line"><text class="bm-num">564,433</text><text>人</text></view>
-				<view class="nm-line"><text>已加入会员人数</text></view>
-			</view>
-			<view class="col-50 sline">
-				<view class="nm-line"><text  class="bm-num">1,946,289</text><text>元</text></view>
-				<view class="nm-line"><text>已筹互助金额</text></view>
-			</view>
-		</view>
-		<view class="broad-case" data-link="/pages/publicity/publicity" catchtap="linkTo">
-			<text class="bc-t">公示：</text>
-			<text>【资金公示】十月既第三期资金公示</text>
-			<icon class="iconfont icon-jiantou-right"></icon>
-		</view>
-	</view> -->
-	<!-- <view class="hdnav">
-		<view class="col-50" catchtap="linkTo" data-link="/pages/account/account" data-type="redirectTo">
-			<icon class="myicon-index-1"></icon>
-			<text class="txt">查看我的保障</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-		<view class="col-50 nr">
-			<icon class="myicon-index-2"></icon>
-			<text class="txt">送亲友</text>
-			<icon class="iconfont icon-fangxiang-right"></icon>
-		</view>
-	</view> -->
 	<view class="hz-content hz-group">
 		<view class="title">
 			<view class="tname hz-group-tname">互助社群</view>
@@ -271,48 +230,7 @@
 			</view>
 		</view>
 	</view>
-	<!--<view class="hz-content hzo-media">
-		<view class="title">
-			<view class="tname">媒体报道</view>
-		</view>
-		<view class="hz-media-list">
-			<view class="media">
-				<image class="img" src="/images/index02_36kr.png"></image>
-				<view class="mname">
-					<text>17互助：将互联网保险业态升级为互助社群</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_souhu.png"></image>
-				<view class="mname">
-					<text>曾经扛起阿里金融大旗的高竞，想用17互助让保险更性感</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_huxiu.png"></image>
-				<view class="mname">
-					<text>17互助：来自两个500亿市值公司创始人的再创业故事</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_fenghuang.png"></image>
-				<view class="mname">
-					<text>阿里巴巴网商银行和众安保险的创始人他们创业的17互助是什么？</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-			<view class="media">
-				<image class="img" src="/images/index02_baidu.png"></image>
-				<view class="mname">
-					<text>获经纬、执一资本等数千万投资，十年阿里人创办互助保障平台</text>
-				</view>
-				<view class="time">2016-08-01</view>
-			</view>
-		</view>
-	</view>-->
+	
 	<view class="hz-content hzo-service">
 		<view class="title sertt">
 			<view class="tname hzo-service-tname">专属客服</view>
@@ -322,29 +240,7 @@
 	        <text class="gray-m">客服电话：</text>
 	        <button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
 	      </view>
-	      <!-- <view class="item work-time">
-	        <text>微信客服： 搜索微信号</text> <text class="org">  kefu17hz2</text>
-	      </view> -->
+	     
 	    </view>
-		<!-- <view class="hzs-con">
-			<view class="tel">
-				<text class="gray-m">客服电话：</text>
-				<button class="tel-btn" data-phone-number="400-688-6259" bindtap="makePhoneCall">400-688-6259</button>
-			</view>
-			<view class="work-time">
-				<text class="gray-m">微信客服：搜索微信号</text> <text class="org"> kefu17hz2</text>
-			</view>
-		</view> -->
-		<!-- <view class="ewm-area">
-			<view>
-				<text>咨询、求助、志愿者、申请互助</text>
-			</view>
-			<view class="gray">
-				<text>长按扫码添加客服，专人答疑</text>
-			</view>
-			<view>
-				<image class="ewm-img" src="/images/kf02_img001.png"></image>
-			</view>
-		</view> -->
 	</view>
 </view>

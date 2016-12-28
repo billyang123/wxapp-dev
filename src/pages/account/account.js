@@ -1,5 +1,5 @@
 import wx from 'labrador';
-import Navbar from '../../components/navbar/navbar';
+// import Navbar from '../../components/navbar/navbar';
 export default class Account extends wx.Component {
 	data = {
 		login:false,
@@ -7,9 +7,9 @@ export default class Account extends wx.Component {
 		assetsPath:wx.app.data.assetsPath,
 		wxUserInfo:wx.app.globalData.userInfo
 	};
-	children = {
-	    navbar: new Navbar({cur:2})
-	};
+	// children = {
+	//     navbar: new Navbar({cur:2})
+	// };
 	async linkTo(event) {
 		var _this = this;
 		if(this.isLink) return;
