@@ -36,6 +36,7 @@ export default class Account extends wx.Component {
 		//await this.checkLogin();
 		//console.log(_this)
 		wx.app.doLogin(function(res,wxUserInfo){
+			//wx.app.setUser(res)
 			_this.setData({
 				login:true,
 				userInfo:res.data,
@@ -54,13 +55,7 @@ export default class Account extends wx.Component {
 		}else{
 			let myuser = await wx.app.getUser(wx.app.globalData.storage.code);
 			if(myuser.data.loginStatus){
-				if(myuser.data.nickName){
-		          wx.app.globalData.userInfo.nickName = myuser.data.nickName
-		        }
-		        if(myuser.data.headImgUrl){
-		          wx.app.globalData.userInfo.avatarUrl = myuser.data.headImgUrl
-		        }
-				myuser.data.headImgUrl = wx.app.setHttpsUrl(myuser.data.headImgUrl);
+				wx.app.setUser(myuser)
 				//userInfo.headImgUrl || wxUserInfo.avatarUrl
 				//console.log(myuser.data)
 	    		this.setData({
@@ -68,7 +63,6 @@ export default class Account extends wx.Component {
 					userInfo:myuser.data,
 					wxUserInfo:wx.app.globalData.userInfo
 				})
-				await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
 	    	}else{
 	    		//await wx.clearStorage();
 	    		this.setData({

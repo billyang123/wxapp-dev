@@ -141,7 +141,7 @@ export default class {
     //console.log(this.globalData.storage)
     let userInfo = await wx.getUserInfo();
     this.globalData.userInfo = userInfo.userInfo
-    await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
+    //await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
     let userInfoPost = await wx.request({
       url: wx.app.data.ajaxPath+"/wxapi/user/oauth/doOauth",
       method:"post",
@@ -161,6 +161,7 @@ export default class {
     if(userInfoPost.data.data == "logged"){
       let _user = await this.getUser(loginInfo.code);
       //return _user
+      this.setUser(_user)
       callback && callback(_user,userInfo);
       return true;
     }
@@ -170,6 +171,17 @@ export default class {
         })
     }
     return false;
+  }
+  async setUser(myuser){
+    if(!myuser || !myuser.data) return;
+    if(myuser.data.nickName){
+          this.globalData.userInfo.nickName = myuser.data.nickName
+        }
+        if(myuser.data.headImgUrl){
+          myuser.data.headImgUrl = this.setHttpsUrl(myuser.data.headImgUrl);
+            this.globalData.userInfo.avatarUrl = myuser.data.headImgUrl
+        }
+    await wx.setStorage({ key: 'userInfo', data: this.globalData.userInfo});
   }
   async ajax(options){
     let setting = {
