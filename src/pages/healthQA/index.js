@@ -297,10 +297,20 @@ export default class HealthIndex extends wx.Component {
 		}
 	}
 	onShow(){
-		wx.app.stopAudio();
+		//wx.app.stopAudio();
 		if(typeof(this.commitIndex) == "number"){
 			this.setCommit();
 		}
+	}
+	onHide(){
+		wx.app.stopAudio();
+		this.setData({	
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{}
+	    })
 	}
 	async onPullDownRefresh(){
 		this.praiseLoad = false;

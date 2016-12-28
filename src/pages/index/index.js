@@ -39,9 +39,6 @@ export default class Index extends wx.Component {
       mImgArr:_mImgArr
     })
   }
-  onShow(){
-    wx.app.stopAudio();
-  }
   makePhoneCall(event){
     wx.showModal({
       title: '拨打电话：'+event.currentTarget.dataset.phoneNumber,

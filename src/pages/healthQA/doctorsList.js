@@ -66,7 +66,7 @@ export default class DoctorsList extends wx.Component {
 		this.getDoctorList();
 	}
 	onShow(){
-		wx.app.stopAudio();
+		// wx.app.stopAudio();
 	}
 	async onPullDownRefresh(){
 		this.setData({

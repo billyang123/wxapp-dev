@@ -77,7 +77,7 @@ export default class Account extends wx.Component {
 	// }
 	onShow(){
 		this.initAcount()
-		wx.app.stopAudio();
+		// wx.app.stopAudio();
 	}
 	async onPullDownRefresh(){
 		

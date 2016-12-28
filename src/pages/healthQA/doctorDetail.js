@@ -311,12 +311,22 @@ export default class DoctorDetail extends wx.Component {
 		}
 	}
 	onShow(){
-		wx.app.stopAudio();
+		
 		if(this.data.id){
 			if(typeof(this.commitIndex) == "number"){
 				this.setCommit();
 			}
 		}
+	}
+	onHide(){
+		wx.app.stopAudio();
+		this.setData({	
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{}
+	    })
 	}
 	async onPullDownRefresh(){
 		this.setData({
@@ -331,6 +341,7 @@ export default class DoctorDetail extends wx.Component {
 			//赞
 			praiseNum:{}
 	    })
+	    wx.app.stopAudio();
 		await this.getQAList();
 		await this.getDetail();
 		wx.stopPullDownRefresh()

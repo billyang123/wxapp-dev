@@ -294,8 +294,7 @@ export default class HealthDetail extends wx.Component {
 	}
 	onShow(e){
 		//console.log("onShow",this.eId)
-		wx.app.stopAudio();
-
+		//wx.app.stopAudio();
 		if(this.data.id){
 			if(typeof(this.commitIndex) == "number"){
 				this.setSubCommit();
@@ -304,9 +303,18 @@ export default class HealthDetail extends wx.Component {
 			}
 		}
 	}
-
-	async onLoad(e){
+	onHide(){
 		wx.app.stopAudio();
+		this.setData({	
+	    	playAudio:{
+				id:null,
+				src:null
+			},
+			audio:{}
+	    })
+	}
+	async onLoad(e){
+		//wx.app.stopAudio();
 		//console.log("onLoad",this.showStatus)
 		this.praiseTmp = [];
 		let systemInfo = await wx.getSystemInfo();
@@ -320,6 +328,7 @@ export default class HealthDetail extends wx.Component {
 		this.audioPlayEnd();
 	}
 	async onPullDownRefresh(){
+		wx.app.stopAudio();
 		this.setData({
 	    	hasMore:true,
 	    	page:0,

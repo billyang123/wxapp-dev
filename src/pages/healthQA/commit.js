@@ -74,7 +74,6 @@ export default class Commit extends wx.Component {
 		}
 	}
 	async onShow(){
-		wx.app.stopAudio();
 		await wx.setStorage({
 			key:"commit",
 			data:{}
@@ -84,7 +83,7 @@ export default class Commit extends wx.Component {
 
 		// this.data.cid = e.qid;
 		// this.data.rid = e.rid;
-		wx.app.stopAudio();
+		//wx.app.stopAudio();
 		//console.log(e)
 		this.postdata = {
 			code:wx.app.globalData.storage.code
